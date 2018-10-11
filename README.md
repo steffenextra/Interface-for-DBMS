@@ -1,2 +1,2 @@
 # projektarbeit
-Programming an C-Interface for the communication with an DBMS 
+Programming an Library for the communication with an DBMS
