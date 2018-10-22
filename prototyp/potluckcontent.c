@@ -2,6 +2,12 @@
 #include <string.h>
 #include <stdbool.h>
 
+/* Beispielprogramm für den  Prototypen. Das Beispielprogramm  
+enthält  eine Struktur mit den selben Attributen wie unsere Datenbank.
+Es soll die Struktur uebergeben werden, sodass mit dieser 
+ein neuer Datensatz in unserer Datenbank ensteht.
+*/
+
 struct Date
 {
   int day;
@@ -24,6 +30,10 @@ int main(void)
   
     printf("ID: %d\n", plc1.id);
     printf("Name: %s\n", plc1.name);
+    printf("Food: %s\n", plc1.food);
+    printf("Confirmed: %d\n", plc1.confirmed);
     printf("Date: %d-%d-%d\n", plc1.sign_up.day, plc1.sign_up.month,plc1.sign_up.year);
+
+    
   return 0;
 }
