@@ -3,8 +3,9 @@
 #include <stdlib.h>
 #include <unistd.h> 
 //#include "my_global.h"
-#include "/usr/include/mysql/mysql.h"
-//#include "/usr/local/mysql/include/mysql.h"
+//#include "/usr/include/mysql/mysql.h"
+#include "/usr/local/mysql/include/mysql.h"
+#include "createDatabase.h"
 MYSQL *mysql;
 
 
@@ -35,10 +36,12 @@ MYSQL connectionless(const char *host,const char *user,const char *passwort,unsi
         fprintf (stderr, "Fehler mysql_real_connect():"
           "%u (%s)\n",mysql_errno (mysql), mysql_error (mysql));
     }
-    else
+    else{
         printf("Erfolgreich mit dem MySQL-Server verbunden\n");
+    }
 
 	return *mysql;
+
 }
 
 void disconnect()

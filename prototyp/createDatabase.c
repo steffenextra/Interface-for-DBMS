@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <iostream>
 #include <string>
-//#include "/usr/local/mysql/include/mysql.h"
-#include "/usr/include/mysql/mysql.h"
+#include "/usr/local/mysql/include/mysql.h"
+//#include "/usr/include/mysql/mysql.h"
 #include "connection.h"
 
 using namespace std;
 
 
-	void createDatabase (MYSQL mysql, char *databaseName){
+	void createDatabase (MYSQL *mysql, char *databaseName){
 
 
 		mysql = mysql_init(mysql);
