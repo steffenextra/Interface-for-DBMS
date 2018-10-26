@@ -3,8 +3,8 @@
 #include <stdlib.h>
 #include <unistd.h> 
 //#include "my_global.h"
-#include "/usr/include/mysql/mysql.h"
-
+//#include "/usr/include/mysql/mysql.h"
+#include "/usr/local/mysql/include/mysql.h"
 MYSQL *mysql;
 
 
@@ -17,7 +17,7 @@ void check_error(void)  {
    }
 }
 
-void connectionless(const char *host,const char *user,const char *passwort,unsigned int port,const char *unix_socket,unsigned int client_flag) 
+void connectionless(const char *host,const char *user,const char *passwort,unsigned int port,/*const char *unix_socket*/const char *macOS_socket,unsigned int client_flag) 
 {
    mysql=mysql_init(mysql);
    check_error();
@@ -30,7 +30,7 @@ void connectionless(const char *host,const char *user,const char *passwort,unsig
           passwort, /* Passwort für user_name */
           NULL,  /* Name der Datenbank */
           port,     /* Port (default=0) */
-          unix_socket,  /* Socket (default=NULL) */
+          macOS_socket/*unix_socket*/,  /* Socket (default=NULL) */
           0      /* keine Flags */  )  == NULL) {
         fprintf (stderr, "Fehler mysql_real_connect():"
           "%u (%s)\n",mysql_errno (mysql), mysql_error (mysql));
@@ -44,15 +44,3 @@ void disconnect()
      mysql_close(mysql);
 }
 
-
-int main (int argc, char *argv[]) {
-        const char *host="localhost";
-        const char *user="root";
-        const char *passwort="";
-        //const char *db;
-        unsigned int port=3350;
-        const char *unix_socket="/opt/lampp/var/mysql/mysql.sock";
-        unsigned int client_flag=0;
-  connectionless(host,user,passwort,port,unix_socket,client_flag);
-  disconnect();
-}
