@@ -54,4 +54,5 @@ int main (int argc, char *argv[]) {
         const char *unix_socket="/opt/lampp/var/mysql/mysql.sock";
         unsigned int client_flag=0;
   connectionless(host,user,passwort,port,unix_socket,client_flag);
+  disconnect();
 }
