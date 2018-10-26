@@ -8,14 +8,16 @@
 using namespace std;
 
 
-	void createDatabase (MYSQL *mysql, char *databaseName){
+	void createDatabase (MYSQL *mysql, string databaseName){
 
+		std::cout << mysql << std::endl;
 
 		mysql = mysql_init(mysql);
+		string sqlQuery = "CREATE DATABASE " + databaseName;
+		std::cout << sqlQuery << std::endl;
 		check_error();
-
-		string sqlQuery =  "CREATE DATABASE" + (string) databaseName;
 		mysql_query (mysql, sqlQuery.c_str());
+		
 
 	}
 
