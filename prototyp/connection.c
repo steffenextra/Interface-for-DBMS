@@ -10,14 +10,14 @@ MYSQL *mysql;
 
 void load_defaults(const char *conf_file, const char **groups,int *argc, char ***argv); // to Do flag ueberpruefen.
 
-void check_error(void)  {
+void check_error(void){
    if (mysql_errno(mysql) != 0) {
       fprintf(stderr, "Fehler: %s\n", mysql_error(mysql));
       exit(EXIT_FAILURE);
    }
 }
 
-void connectionless(const char *host,const char *user,const char *passwort,unsigned int port,/*const char *unix_socket*/const char *macOS_socket,unsigned int client_flag) 
+MYSQL connectionless(const char *host,const char *user,const char *passwort,unsigned int port,/*const char *unix_socket*/const char *macOS_socket,unsigned int client_flag) 
 {
    mysql=mysql_init(mysql);
    check_error();
@@ -37,6 +37,8 @@ void connectionless(const char *host,const char *user,const char *passwort,unsig
     }
     else
         printf("Erfolgreich mit dem MySQL-Server verbunden\n");
+
+	return *mysql;
 }
 
 void disconnect()
