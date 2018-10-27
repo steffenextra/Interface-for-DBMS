@@ -5,11 +5,8 @@
 //#include "my_global.h"
 #include "/usr/include/mysql/mysql.h"
 //#include "/usr/local/mysql/include/mysql.h"
-#include "createDatabase.h"
+
 MYSQL *mysql;
-
-
-void load_defaults(const char *conf_file, const char **groups,int *argc, char ***argv); // to Do flag ueberpruefen.
 
 void check_error(void){
    if (mysql_errno(mysql) != 0) {
