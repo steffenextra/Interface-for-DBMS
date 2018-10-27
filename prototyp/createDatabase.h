@@ -1,4 +1,4 @@
-#include "/usr/local/mysql/include/mysql.h"
-#include <string>
+//#include "/usr/local/mysql/include/mysql.h"
+#include "/usr/include/mysql/mysql.h"
 
-void createDatabase (MYSQL *mysql, std::string databaseName);
+void createDatabase ( char* databaseName);
