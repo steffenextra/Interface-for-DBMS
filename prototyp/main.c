@@ -8,7 +8,6 @@
 
 
 int main (int argc, char *argv[]) {
-	MYSQL *connection;
 
         const char *host="localhost";
         const char *user="root";
@@ -18,12 +17,10 @@ int main (int argc, char *argv[]) {
 //       const char *unix_socket="/opt/lampp/var/mysql/mysql.sock";
 	const char *macOS_socket = "/Applications/MAMP/tmp/mysql/mysql.sock";
         unsigned int client_flag=0;
-	connection = mysql_init(connection);
 
+	connectionless(host,user,passwort,port,/*unix_socket*/macOS_socket,client_flag);
+	createDatabase("my_Database");
+	disconnect();
 
-		connectionless(host,user,passwort,port,/*unix_socket*/macOS_socket,client_flag);
-		createDatabase("my_Database");
-
-		disconnect();
 }
 

@@ -6,9 +6,13 @@
 
 
 	void createDatabase (char* databaseName){
+
 		char sqlcommand[30]= "CREATE DATABASE ";
+
 		strcat(sqlcommand,databaseName);
+
 		check_error();
+
 		connection_query(sqlcommand);
 
 	}
