@@ -3,8 +3,8 @@
 #include <stdlib.h>
 #include <unistd.h> 
 //#include "my_global.h"
-#include "/usr/include/mysql/mysql.h"
-//#include "/usr/local/mysql/include/mysql.h"
+//#include "/usr/include/mysql/mysql.h"
+#include "/usr/local/mysql/include/mysql.h"
 
 MYSQL *mysql;
 
@@ -20,7 +20,7 @@ void connection_query(char* sqlcommand)
     mysql_query (mysql, sqlcommand);
 }
 
-void connectionless(const char host [], const char user [], const char passwort [], unsigned int port,const char *unix_socket, unsigned int client_flag) 
+void connectionless(const char host [], const char user [], const char passwort [], unsigned int port,const char *macOS_socket, unsigned int client_flag) 
 {
    mysql=mysql_init(mysql);
    check_error();
@@ -33,7 +33,7 @@ void connectionless(const char host [], const char user [], const char passwort 
           passwort, /* Passwort für user_name */
           NULL,  /* Name der Datenbank */
           port,     /* Port (default=0) */
-          unix_socket,
+          macOS_socket,
           0      /* keine Flags */  )  == NULL) {
          fprintf(stderr, "Fehler mysql_real_connect():" "%u (%s)\n", mysql_errno (mysql), mysql_error (mysql));
     }
