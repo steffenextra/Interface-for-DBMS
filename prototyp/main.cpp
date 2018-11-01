@@ -19,7 +19,8 @@ int main (int argc, char *argv[]) {
 	const char *macOS_socket = "/Applications/MAMP/tmp/mysql/mysql.sock";
         unsigned int client_flag=0;
 	connectionless(host,user,passwort,port,/*unix_socket*/macOS_socket,client_flag);
-	createDatabase("test123");
+//	createDatabase("test123");
+	deleteDatabase("hello");
 	disconnect();
 
 }

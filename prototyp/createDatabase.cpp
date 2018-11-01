@@ -16,4 +16,15 @@
 
 	}
 
+	void deleteDatabase(std::string databaseName){
+
+		std::string sqlCommand = "DROP DATABASE " + databaseName;
+
+		check_error();
+
+		connection_query(sqlCommand.c_str());
+
+		std::cout << "Datenbank " << databaseName << " erfolgreich gelöscht" << std::endl;
+
+	}
 

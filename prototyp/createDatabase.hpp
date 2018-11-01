@@ -4,3 +4,4 @@
 #include <iostream>
 
 void createDatabase (std::string databaseName);
+void deleteDatabase (std::string databaseName);
