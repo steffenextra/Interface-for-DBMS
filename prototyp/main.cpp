@@ -18,9 +18,8 @@ int main (int argc, char *argv[]) {
 //       const char *unix_socket="/opt/lampp/var/mysql/mysql.sock";
 	const char *macOS_socket = "/Applications/MAMP/tmp/mysql/mysql.sock";
         unsigned int client_flag=0;
-	std::string a = "mydata";
 	connectionless(host,user,passwort,port,/*unix_socket*/macOS_socket,client_flag);
-	createDatabase(a);
+	createDatabase("test123");
 	disconnect();
 
 }
