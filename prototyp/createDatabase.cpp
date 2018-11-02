@@ -1,4 +1,4 @@
-x#include <stdio.h>
+#include <stdio.h>
 #include <string.h>
 #include "/usr/local/mysql/include/mysql.h"
 //#include "/usr/include/mysql/mysql.h"

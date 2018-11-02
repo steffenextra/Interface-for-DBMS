@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h> 
-//#include "my_global.h"
 //#include "/usr/include/mysql/mysql.h"
 #include "/usr/local/mysql/include/mysql.h"
 #include <string>
@@ -21,10 +20,9 @@ MYSQL *mysql;
 	void connection_query(std::string sqlCommand){
 
 		mysql_query (mysql, sqlCommand.c_str());
-
 	}
 
-	void connectionless(const char host [], const char user [], const char passwort [], unsigned int port,const char *macOS_socket, unsigned int client_flag){
+	void connectionless(const char host [], const char user [], const char passwort [],const char db [], unsigned int port,const char *macOS_socket, unsigned int client_flag){
 
 		mysql=mysql_init(mysql);
 		check_error();
@@ -34,14 +32,14 @@ MYSQL *mysql;
 			host,					/* Host-Name */
 			user,					/* User-Name */
 			passwort,				/* Passwort für user_name */
-			NULL,					/* Name der Datenbank */
+			db,					/* Name der Datenbank */
 			port,					/* Port (default=0) */
 			macOS_socket,				/* Angesprochener Socket (je nach Betriebssystem) */
 			0               )  == NULL) {		/* keine Flags */
 		fprintf(stderr, "Fehler mysql_real_connect():" "%u (%s)\n", mysql_errno (mysql), mysql_error (mysql));
 		}
 		else{
-			printf("Erfolgreich mit dem MySQL-Server verbunden\n");
+			printf("Erfolgreich mit dem MySQL-Server auf %s%s",  host, " verbunden\n");
 		}
 
 	}
@@ -51,5 +49,6 @@ MYSQL *mysql;
 		mysql_close(mysql);
 
 	}
+
 
 
