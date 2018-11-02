@@ -1,10 +1,4 @@
-#include <stdio.h>
-#include <string>
-#include "/usr/local/mysql/include/mysql.h"
-//#include "/usr/include/mysql/mysql.h"
-#include "connection.hpp"
-#include <iostream>
-
+#include "tables.hpp"
 
 	void createTable (std::string tableName, std::string column_one){
 
