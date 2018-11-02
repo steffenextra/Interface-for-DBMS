@@ -14,6 +14,7 @@ MYSQL *mysql;
 	void connection_query(std::string sqlCommand){
 
 		mysql_query (mysql, sqlCommand.c_str());
+		check_error();
 	}
 
 	void connectionless(const char host [], const char user [], const char passwort [],const char db [], unsigned int port,const char *macOS_socket, unsigned int client_flag){
