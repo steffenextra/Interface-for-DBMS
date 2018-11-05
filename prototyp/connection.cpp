@@ -1,6 +1,8 @@
 #include "connection.hpp"
 
 MYSQL *mysql;
+MYSQL_ROW row;
+MYSQL_RES *result;
 
 	void check_error(void){
 
@@ -9,6 +11,19 @@ MYSQL *mysql;
 			exit(EXIT_FAILURE);
 		}
 
+	}
+
+	void connection_feedback(std::string sqlCommand)
+	{
+		mysql_query(mysql, sqlCommand.c_str());
+		check_error();
+		result=mysql_use_result(mysql);
+		
+		while((row=mysql_fetch_row(result))!=NULL)
+		{
+			std::cout<< row[0];
+		}
+		
 	}
 
 	void connection_query(std::string sqlCommand){

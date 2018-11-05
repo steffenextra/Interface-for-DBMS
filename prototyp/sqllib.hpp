@@ -1,6 +1,6 @@
 
-#include "/usr/local/mysql/include/mysql.h"
-//#include "/usr/include/mysql/mysql.h"
+//#include "/usr/local/mysql/include/mysql.h"
+#include "/usr/include/mysql/mysql.h"
 #include <string>
 #include <iostream>
 #include <stdio.h>
@@ -17,6 +17,7 @@
 //---Connection---
 
 void check_error(void);
+void connection_feedback(std::string sqlCommand);
 void connection_query(std::string sqlcommand);
 void connectionless(const char *host,const char *user,const char *passwort, const char *db, unsigned int port,const char *unix_socket,unsigned int client_flag);
 void disconnect();
@@ -31,5 +32,5 @@ void deleteDatabase (std::string databaseName);
 
 void createTable (std::string tableName, std::string column_one);
 void deleteTable (std::string tableName);
-
+void showTable (std::string tableName);
 
