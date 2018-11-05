@@ -5,10 +5,10 @@ int main (int argc, char *argv[]) {
 
 
         const char* host ="localhost";
-        const char* user ="root";
+        const char* user ="";
         const char* passwort ="root";
         const char* db = "test";
-        unsigned int port=8889;
+        unsigned int port=3306;
 //       const char *unix_socket="/opt/lampp/var/mysql/mysql.sock";
 	const char* macOS_socket = "/Applications/MAMP/tmp/mysql/mysql.sock";
         unsigned int client_flag=0;

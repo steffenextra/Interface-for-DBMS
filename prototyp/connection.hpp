@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h> 
-//#include "/usr/include/mysql/mysql.h"
-#include "/usr/local/mysql/include/mysql.h"
+#include "/usr/include/mysql/mysql.h"
+//#include "/usr/local/mysql/include/mysql.h"
 #include <string>
 #include <iostream>
 
