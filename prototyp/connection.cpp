@@ -21,7 +21,7 @@ MYSQL_RES *result;
 		
 		while((row=mysql_fetch_row(result))!=NULL)
 		{
-			std::cout<< row[0];
+			std::cout<< *row << std::endl;
 		}
 		
 	}

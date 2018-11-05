@@ -14,7 +14,7 @@ int main (int argc, char *argv[]) {
         unsigned int client_flag=0;
 	connectionless(host, user, passwort, db, port, unix_socket/*macOS_socket*/, client_flag);
      //   createDatabase("DatabaseNumberOne1");
-	createTable("tableNumberOne", "Name varchar(255)");
+//	createTable("tableNumberOne", "Name varchar(255)");
        showTable("tableNumberOne");
 //	deleteTable("testtest");
 	disconnect();

@@ -7,3 +7,4 @@
 
 void createTable (std::string tableName, std::string column_one);
 void deleteTable (std::string tableName);
+void showTable (std::string tableName);
