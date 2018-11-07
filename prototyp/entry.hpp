@@ -8,3 +8,7 @@
 #include <string>
 #include "connection.hpp"
 #include <iostream>
+
+
+void setEntry(std::string tableName, std::string columnName, std::string entry);
+void modifierEntry(std::string tableName, std::string columnName, std::string oldEntry,std::string newEntry);
