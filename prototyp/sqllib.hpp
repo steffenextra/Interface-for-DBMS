@@ -14,8 +14,9 @@
 
 
 #include "connection.hpp"
-#include "Database.hpp"
+#include "database.hpp"
 #include "tables.hpp"
+#include "entry.hpp"
 
 
 //---Connection---
