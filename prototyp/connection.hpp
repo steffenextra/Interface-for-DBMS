@@ -1,8 +1,12 @@
+#ifdef __APPLE__
+#include "/usr/local/mysql/include/mysql.h"
+#elif defined __linux__
+#include "/usr/include/mysql/mysql.h"
+#endif
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h> 
-#include "/usr/include/mysql/mysql.h"
-//#include "/usr/local/mysql/include/mysql.h"
 #include <string>
 #include <iostream>
 
