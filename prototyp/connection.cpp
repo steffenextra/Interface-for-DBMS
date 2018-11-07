@@ -23,7 +23,6 @@ MYSQL_RES *result;
 		{
 			std::cout<< *row << std::endl;
 		}
-		
 	}
 
 	void connection_query(std::string sqlCommand){

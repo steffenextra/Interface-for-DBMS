@@ -13,9 +13,15 @@ int main (int argc, char *argv[]) {
 //	const char* macOS_socket = "/Applications/MAMP/tmp/mysql/mysql.sock";
         unsigned int client_flag=0;
 	connectionless(host, user, passwort, db, port, unix_socket/*macOS_socket*/, client_flag);
-     //   createDatabase("DatabaseNumberOne1");
-//	createTable("tableNumberOne", "Name varchar(255)");
-       showTable("tableNumberOne");
+   
+      //Methods test
+     //createDatabase("DatabaseNumberOne1");
+     //createTable("tableNumberOne", "Name varchar(255)");
+      //showTable("tableNumberOne");
+     // setColumn("tableNumberOne","PLZ","varchar(255)");
+      //  modifierColumnName("tableNumberOne","Adr", "Adresse","varchar(255)");
+    // deleteColumn("tableNumberOne","Adresse");
+      getColumn("tableNumberOne");
 //	deleteTable("testtest");
 	disconnect();
 
