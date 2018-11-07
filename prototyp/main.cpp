@@ -22,8 +22,11 @@ int main (int argc, char *argv[]) {
       //  modifierColumnName("tableNumberOne","Adr", "Adresse","varchar(255)");
     // deleteColumn("tableNumberOne","Adresse");
         //setEntry("tableNumberOne","Name","Anna");
-        modifierEntry("tableNumberOne","Name","Anna","Inga");
-      getColumn("tableNumberOne");
+        //modifierEntry("tableNumberOne","Name","Anna","Inga");
+        setEntry("tableNumberOne","Nachname", "Müller");
+        setEntry("tableNumberOne","PLZ", "26817");
+        showTable("tableNumberOne");
+     // getColumn("tableNumberOne");
 //	deleteTable("testtest");
 	disconnect();
 
