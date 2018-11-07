@@ -9,7 +9,7 @@
 #include "connection.hpp"
 #include <iostream>
 
-void createTable (std::string tableName, std::string column_one);
+void createTable (bool primary_key, std::string tableName, std::string column_one);
 void showTable (std::string tableName);
 void deleteTable (std::string tableName);
 void setColumn(std::string tableName, std::string ColumnName,std::string datatype);

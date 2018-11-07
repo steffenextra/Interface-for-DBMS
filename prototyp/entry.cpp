@@ -5,7 +5,7 @@
 void setEntry(std::string tableName, std::string columnName, std::string entry)
 {
         std::string sqlCommand = "INSERT INTO " + tableName + " (" + columnName + ") VALUES ("+ "'" + entry + "'" + ")" ;
-    	check_error();
+        check_error();
 		connection_query(sqlCommand.c_str());
 }
 
@@ -21,7 +21,9 @@ void setAllEntry()
 
 }
 
-void deleteEntry()
+void deleteEntry(std::string tableName, std::string columnName, std::string entry)
 {
-
+	std::string sqlCommand = "DELETE FROM " + tableName + " WHERE " + columnName + "= " + "'" + entry + "'";
+	check_error();
+		connection_query(sqlCommand.c_str());
 }

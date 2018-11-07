@@ -2,12 +2,21 @@
 
 	
 
-	void createTable (std::string tableName, std::string column_one, bool primaryKey){
+	void createTable (bool primary_key, std::string tableName, std::string column_one){
 
-		
-		std::string sqlCommand = "CREATE TABLE " + tableName + " ( " + column_one +  " );";
-		check_error();
-		connection_query(sqlCommand.c_str());
+		if (primary_key == true){
+
+			std::string sqlCommand = "CREATE TABLE " + tableName + " ( ID int NOT NULL  PRIMARY KEY AUTO_INCREMENT, " + column_one +  " );";
+			check_error();
+			connection_query(sqlCommand.c_str());
+
+		}else {
+
+			std::string sqlCommand = "CREATE TABLE " + tableName + " ( " + column_one +  " );";
+			check_error();
+			connection_query(sqlCommand.c_str());
+
+		}
 
 	}
 

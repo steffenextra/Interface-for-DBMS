@@ -12,3 +12,5 @@
 
 void setEntry(std::string tableName, std::string columnName, std::string entry);
 void modifierEntry(std::string tableName, std::string columnName, std::string oldEntry,std::string newEntry);
+
+void deleteEntry(std::string tableName, std::string columnName, std::string entry);
