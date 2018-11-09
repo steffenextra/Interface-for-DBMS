@@ -21,12 +21,16 @@ int main (int argc, char *argv[]) {
         std::vector<std::string> columns; // jede gerade Index der Spaltennamen, Ungerade der Datentyp
         columns.push_back("Name");
         columns.push_back("char(50)");
-        columns.push_back("Release");
+        columns.push_back ("Nachname");
         columns.push_back("char(50)");
-        columns.push_back("genre");
-        columns.push_back("char(50)");
+        columns.push_back("PLZ");
+        columns.push_back("int");
+	columns.push_back("Adresse");
+	columns.push_back("char(50)");
+	columns.push_back("Zwischenname");
+	columns.push_back("char(50)");
 
-        std::vector<std::string> row; // jede gerade Index der Spaltennamen, Ungerade der Datensatz
+	std::vector<std::string> row; // jede gerade Index der Spaltennamen, Ungerade der Datensatz
 
                                     //string mit '' versehen
         row.push_back("Name");
@@ -39,15 +43,13 @@ int main (int argc, char *argv[]) {
         row.push_back("'Straße 1'");
         row.push_back("Zwischenname");
         row.push_back("'Heinrich'");
-       
-        setAllEntry("tableNumberOne",row);
 
-     //createTable(true,"tabelle2",columns);
-       // setColumn("tabelle2","Release2","char(50)");
-      //  setColumn("tabelle2","Zwischennamen","char(50)");
-   //   deleteTable("tabelle2");
-        
-        
+
+        createTable(true,"tabelle2",columns);
+	setAllEntry("tabelle2", row);
+	deleteEntry("tabelle2", "ID", "1");
+	deleteTable("tabelle2");
+
 	disconnect();
 
 }

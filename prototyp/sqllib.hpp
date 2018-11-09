@@ -10,8 +10,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h> 
-
+#include <unistd.h>
 
 #include "connection.hpp"
 #include "database.hpp"
@@ -35,7 +34,8 @@ void disconnect();
 void createDatabase (std::string databaseName);
 void deleteDatabase (std::string databaseName);
 
-//--table
+
+//---table---
 
 void createTable (bool primary_key, std::string tableName,std::vector<std::string> columns);
 void showTable (std::string tableName);
@@ -46,7 +46,8 @@ void changeTheDatatype(std::string tableName, std::string columnName, std::strin
 void getAllColumn(std::string tableName);
 void deleteColumn(std::string tableName, std::string columnName);
 
-//--entry
+
+//---entry---
 void setEntry(std::string tableName, std::string columnName, std::string entry);
 void modifierEntry(std::string tableName, std::string columnName, std::string oldEntry,std::string newEntry);
 void setAllEntry(std::string tableName,std::vector<std::string> row);

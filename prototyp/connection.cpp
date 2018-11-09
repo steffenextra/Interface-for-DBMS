@@ -19,11 +19,9 @@ MYSQL_RES *result;
 		check_error();
 		result=mysql_use_result(mysql);
 
-			while((row=mysql_fetch_row(result))!=NULL){
-
-				std::cout<< *row << std::endl;
-
-			}
+		while((row=mysql_fetch_row(result))!=NULL){
+			std::cout<< *row << std::endl;
+		}
 
 	}
 
