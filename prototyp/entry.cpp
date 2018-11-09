@@ -22,22 +22,30 @@ void setAllEntry(std::string tableName,std::vector<std::string> row)
 
 	std::string columnName;
 	std::string insertData;
+	for(int i=0;i<row.size();i++){
 
-	for(int i=0;i<row.size();i++)
-	{
-		if(i%2==0)
-		{
-			columnName=columnName + " " + row.at(i) + ",";
+		if(i%2==0){
+
+			columnName=columnName + " " + row.at(i);
+
+				if (i != row.size()-2){
+					columnName+= ", ";
+				}
 		}
 		else{
-			insertData= insertData + " " + row.at(i)+ ",";
+			insertData= insertData + " " + row.at(i);
+
+				if (i != row.size()-1){
+					insertData += ", ";
+				}
 		}
-	}
-	std::cout << columnName;
+}
+
+//	std::cout << columnName;
 	std::string sqlCommand = "INSERT INTO " + tableName + "( " + columnName + " ) VALUES(" + insertData + ");";
 	check_error();
 	connection_query(sqlCommand.c_str());
-	
+
 }
 
 void deleteEntry(std::string tableName, std::string columnName, std::string entry)
