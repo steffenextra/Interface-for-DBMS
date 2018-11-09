@@ -26,4 +26,6 @@ void deleteEntry(std::string tableName, std::string columnName, std::string entr
 	std::string sqlCommand = "DELETE FROM " + tableName + " WHERE " + columnName + "= " + "'" + entry + "'";
 	check_error();
 		connection_query(sqlCommand.c_str());
+		std::cout << entry + " successfully deleted" << std::endl;
+
 }

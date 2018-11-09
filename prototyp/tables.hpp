@@ -8,8 +8,9 @@
 #include <string>
 #include "connection.hpp"
 #include <iostream>
+#include <vector>
 
-void createTable (bool primary_key, std::string tableName, std::string column_one);
+void createTable (bool primary_key, std::string tableName,std::vector<std::string> columns);
 void showTable (std::string tableName);
 void deleteTable (std::string tableName);
 void setColumn(std::string tableName, std::string ColumnName,std::string datatype);

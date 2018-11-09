@@ -6,6 +6,8 @@
 		std::string sqlCommand = "CREATE DATABASE " + databaseName;
 		check_error();
 		connection_query(sqlCommand.c_str());
+		std::cout << databaseName + " successfully deleted" << std::endl;;
+
 
 	}
 
@@ -14,6 +16,6 @@
 		std::string sqlCommand = "DROP DATABASE " + databaseName;
 		check_error();
 		connection_query(sqlCommand.c_str());
-
+		std::cout << databaseName + " successfully deleted" << std::endl;
 	}
 
