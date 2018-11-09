@@ -22,9 +22,9 @@
 
 		}
 		//insert the other Columns
-		for(int i=2; i<columns.size(); i++) //i=2 because the first column and datatype are already added
+		for(int i=2; i<(columns.size()-1); i++) //i=2 because the first column and datatype are already added
 		{
-			if(i%2==0)
+			if(i%2==1)
 			{
 				setColumn(tableName,columns.at(i),columns.at(i+1));
 			}
@@ -70,7 +70,7 @@
 		connection_query(sqlCommand.c_str());
 	}
 
-	void getColumn(std::string tableName)
+	void getAllColumn(std::string tableName)
 	{
 		std::string sqlCommand ="SHOW COLUMNS FROM " + tableName;
 		check_error();

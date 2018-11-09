@@ -24,12 +24,28 @@ int main (int argc, char *argv[]) {
         columns.push_back("Release");
         columns.push_back("char(50)");
         columns.push_back("genre");
-        columns.push_back("char(50)");;
+        columns.push_back("char(50)");
 
+        std::vector<std::string> row; // jede gerade Index der Spaltennamen, Ungerade der Datensatz
 
-       // createTable(true,"tabelle2",columns);
-   
-      //  deleteTable("tabelle2");
+                                        //string mit '' versehen
+        row.push_back("Name");
+        row.push_back("'Dieter'");
+        row.push_back("Nachname");
+        row.push_back("'Saathoff'");
+        row.push_back("PLZ");
+        row.push_back("'26817'");
+        row.push_back("Adressse");
+        row.push_back("'Straße 1'");
+        row.push_back("Zwischennamen");
+        row.push_back("'Heinrich'");
+       
+        setAllEntry("tableNumberOne",row);
+
+     //createTable(true,"tabelle2",columns);
+       // setColumn("tabelle2","Release2","char(50)");
+      //  setColumn("tabelle2","Zwischennamen","char(50)");
+   //   deleteTable("tabelle2");
         
         
 	disconnect();

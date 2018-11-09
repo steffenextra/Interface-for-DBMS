@@ -43,12 +43,12 @@ void deleteTable (std::string tableName);
 void setColumn(std::string tableName, std::string ColumnName,std::string datatype);
 void modifierColumnName(std::string tableName, std::string oldColumnName, std::string newColumnName,std::string datatype);
 void changeTheDatatype(std::string tableName, std::string columnName, std::string datatype);
-void getColumn(std::string tableName);
+void getAllColumn(std::string tableName);
 void deleteColumn(std::string tableName, std::string columnName);
 
 //--entry
 void setEntry(std::string tableName, std::string columnName, std::string entry);
 void modifierEntry(std::string tableName, std::string columnName, std::string oldEntry,std::string newEntry);
-
+void setAllEntry(std::string tableName,std::vector<std::string> row);
 void deleteEntry(std::string tableName, std::string columnName, std::string entry);
 
