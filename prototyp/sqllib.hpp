@@ -44,6 +44,7 @@ void setColumn(std::string tableName, std::string ColumnName,std::string datatyp
 void modifierColumnName(std::string tableName, std::string oldColumnName, std::string newColumnName,std::string datatype);
 void changeTheDatatype(std::string tableName, std::string columnName, std::string datatype);
 void getAllColumn(std::string tableName);
+void showColumnTyp(std::string tableName,std::string datatype);
 void deleteColumn(std::string tableName, std::string columnName);
 
 

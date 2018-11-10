@@ -85,6 +85,16 @@
 
 	}
 
+	void showColumnTyp(std::string tableName,std::string datatype)
+	{
+		//SHOW COLUMNS FROM employees WHERE Type LIKE 'Varchar%';
+		//must be fix
+		std::string sqlCommand="SHOW COLUMNS FROM " + tableName + "WHERE TYPE LIKE " + datatype;
+		check_error();
+		connection_query(sqlCommand.c_str());
+	}
+		
+		
 	void deleteColumn(std::string tableName, std::string columnName){
 
 		std::string sqlCommand= "ALTER TABLE " + tableName + " DROP " + columnName;
