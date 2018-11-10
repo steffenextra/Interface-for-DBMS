@@ -89,9 +89,9 @@
 	{
 		//SHOW COLUMNS FROM employees WHERE Type LIKE 'Varchar%';
 		//must be fix
-		std::string sqlCommand="SHOW COLUMNS FROM " + tableName + "WHERE TYPE LIKE " + datatype;
+		std::string sqlCommand="SHOW COLUMNS FROM " + tableName + " WHERE TYPE LIKE '" + datatype + "%'";
 		check_error();
-		connection_query(sqlCommand.c_str());
+		connection_feedback(sqlCommand.c_str());
 	}
 		
 		

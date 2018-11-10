@@ -11,4 +11,5 @@
 #include <iostream>
 
 void createDatabase (std::string databaseName);
+void showDatabases();
 void deleteDatabase (std::string databaseName);
