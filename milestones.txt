@@ -1,0 +1,9 @@
+SELECT Abfragen (ASC/DESC) GROUP BY
+
+SECONDARY KEY
+PRIMARY KEY / NEW SET
+Mehrere Tabellen
+Entities der Tabellen erstellen
+MTA's
+
+
