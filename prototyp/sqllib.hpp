@@ -1,7 +1,10 @@
 
 #ifdef __APPLE__
 #include "/usr/local/mysql/include/mysql.h"
+#define pathto "/Applications/MAMP/tmp/mysql/mysql.sock"
 #elif defined __linux__
+#undef pathto
+#define pathto  "/opt/lampp/var/mysql/mysql.sock"
 #include "/usr/include/mysql/mysql.h"
 #endif
 

@@ -1,11 +1,10 @@
 #include "tables.hpp"
-#include <vector>
 
 
 
 	void createTable (bool primary_key, std::string tableName,std::vector<std::string> columns){
 
-		//to notice (primary key and secondary key) 
+		//to notice (primary key and secondary key)
 		std::string columnnamesAndDatatype;
 		columnnamesAndDatatype=columns.at(0)+  " " + columns.at(1);
 
@@ -33,7 +32,7 @@
 		std::cout << tableName + " successfully created" << std::endl;
 
 	}
-
+	//need a bugfix, just screening the first value of the column
 	void showTable (std::string tableName){
 
 		std::string sqlCommand ="SELECT * FROM " + tableName;
@@ -68,7 +67,6 @@
 	}
 
 	void changeTheDatatype(std::string tableName, std::string columnName, std::string datatype){
-
 		//has to be tested
 
 		std::string sqlCommand="AlTER TABLE " + tableName + " MODIFY " + columnName + " " + datatype;
@@ -85,16 +83,17 @@
 
 	}
 
-	void showColumnTyp(std::string tableName,std::string datatype)
-	{
+	void showColumnTyp(std::string tableName,std::string datatype){
+
 		//SHOW COLUMNS FROM employees WHERE Type LIKE 'Varchar%';
 		//must be fix
 		std::string sqlCommand="SHOW COLUMNS FROM " + tableName + " WHERE TYPE LIKE '" + datatype + "%'";
 		check_error();
 		connection_feedback(sqlCommand.c_str());
+
 	}
-		
-		
+
+
 	void deleteColumn(std::string tableName, std::string columnName){
 
 		std::string sqlCommand= "ALTER TABLE " + tableName + " DROP " + columnName;

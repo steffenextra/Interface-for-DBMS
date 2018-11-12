@@ -15,6 +15,10 @@ MYSQL_RES *result;
 
 	void connection_feedback(std::string sqlCommand){
 
+		std::cout << std::endl;
+                std::cout <<"\033[1;31m DEBUG : INPUT FOR THE MYSQL_QUERY\033[0m" << std::endl;
+                std::cout << sqlCommand << std::endl;
+                std::cout << std::endl;
 		mysql_query(mysql, sqlCommand.c_str());
 		check_error();
 		result=mysql_use_result(mysql);
@@ -22,7 +26,7 @@ MYSQL_RES *result;
 		while((row=mysql_fetch_row(result))!=NULL){
 			std::cout<< *row << std::endl;
 		}
-
+		std::cout << std::endl;
 	}
 
 	void connection_query(std::string sqlCommand){
