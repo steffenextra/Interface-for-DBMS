@@ -1,9 +1,11 @@
-SELECT Abfragen (ASC/DESC) GROUP BY
+SELECT requests (ASC/DESC) GROUP BY
 
+
+fix the showTables method (Maybe include a countColumns method for the output)
 SECONDARY KEY
 PRIMARY KEY / NEW SET
-Mehrere Tabellen
-Entities der Tabellen erstellen
+more tables
+entities for the tables 
 MTA's
 
 
