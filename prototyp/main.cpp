@@ -45,6 +45,8 @@ int main (int argc, char *argv[]) {
 
        // showTable("tableNumberOne");
 	//showColumnTyp("tableNumberOne", "VARCHAR");
+
+        selectOneColumn("tableNumberOne","Name","Dieter");
 	disconnect();
 
 }

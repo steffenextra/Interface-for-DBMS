@@ -10,4 +10,4 @@
 #include <iostream>
 #include <vector>
 
-void selectOneColumn(std::string tableName,std::string ColumnName,std::string selected_at,std::string sort_by);
+void selectOneColumn(std::string tableName,std::string ColumnName,std::string selected_at);

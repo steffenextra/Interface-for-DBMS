@@ -19,6 +19,7 @@
 #include "database.hpp"
 #include "tables.hpp"
 #include "entry.hpp"
+#include "selectionRequest.hpp"
 #include <vector>
 
 
@@ -26,7 +27,6 @@
 //---Connection---
 
 void check_error(void);
-void connection_feedbackAll(std::string sqlCommand);
 void connection_feedback(std::string sqlCommand);
 void connection_query(std::string sqlcommand);
 void connectionless(const char *host,const char *user,const char *passwort, const char *db, unsigned int port,const char *unix_socket,unsigned int client_flag);
@@ -59,3 +59,5 @@ void modifierEntry(std::string tableName, std::string columnName, std::string ol
 void setAllEntry(std::string tableName,std::vector<std::string> row);
 void deleteEntry(std::string tableName, std::string columnName, std::string entry);
 
+//---selectionRequest---
+void selectOneColumn(std::string tableName,std::string ColumnName,std::string selected_at);
