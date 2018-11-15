@@ -14,7 +14,27 @@ MYSQL_FIELD *field;
 
 	}
 
-	void connection_feedback(std::string sqlCommand){
+		void connection_feedback(std::string sqlCommand){
+
+                std::cout << std::endl;
+                std::cout <<"\033[1;31m DEBUG : INPUT FOR THE MYSQL_QUERY\033[0m" << std::endl;
+                std::cout << sqlCommand << std::endl;
+                std::cout << std::endl;
+                mysql_query(mysql, sqlCommand.c_str());
+                check_error();
+                result=mysql_use_result(mysql);
+
+                while((row=mysql_fetch_row(result))!=NULL){
+                        std::cout<< *row << std::endl;
+                }
+                std::cout << std::endl;
+        }
+
+
+
+
+
+	void connection_feedbackAll(std::string sqlCommand){
 		//printf  substitute -> cout
 		std::cout << std::endl;
                 std::cout <<"\033[1;31m DEBUG : INPUT FOR THE MYSQL_QUERY\033[0m" << std::endl;
