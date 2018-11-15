@@ -103,4 +103,13 @@
 
 	}
 
+	void setSecondaryKey(std::string tableNameSecondary, std::string foreignKey, std::string id, std::string tableNamePrimary, std::string primaryKey ){
+
+	std::string sqlCommand = "ALTER TABLE " + tableNameSecondary + "ADD FOREIGN KEY (" + foreignKey + ") REFERENCES " + tableNamePrimary + "( " + primaryKey + ");";
+	check_error();
+	connection_query(sqlCommand.c_str());
+	std::cout << "Secondary key set on " + foreignKey << std::endl;
+
+	}
+
 //	void insertTable(){}
