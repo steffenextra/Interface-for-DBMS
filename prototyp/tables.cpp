@@ -112,7 +112,7 @@
 
         }
 
-	void deleteSecondaryKey();
+	void deleteSecondaryKey(std::string tableNameSecondary);
 
 
 
