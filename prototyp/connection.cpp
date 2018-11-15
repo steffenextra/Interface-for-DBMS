@@ -16,13 +16,17 @@ MYSQL_FIELD *field;
 
 	void connection_feedback(std::string sqlCommand){
 		//printf  substitute -> cout
-		mysql_query(mysql,"SELECT * FROM tableNumberOne");
+		std::cout << std::endl;
+                std::cout <<"\033[1;31m DEBUG : INPUT FOR THE MYSQL_QUERY\033[0m" << std::endl;
+                std::cout << sqlCommand << std::endl;
+                std::cout << std::endl;
+		mysql_query(mysql,sqlCommand.c_str());
 		MYSQL_RES *result = mysql_store_result(mysql);
 		int num_fields = mysql_num_fields(result);
 
 		if (result == NULL){
-     		check_error();
-  		}
+		check_error();
+		}
 
 		while ((row = mysql_fetch_row(result))!=NULL) 
 		{ 
@@ -42,9 +46,9 @@ MYSQL_FIELD *field;
 			} 
 		}
 
-		  printf("\n");
-  
-  		mysql_free_result(result);
+		printf("\n");
+
+		mysql_free_result(result);
 	}
 
 	void connection_query(std::string sqlCommand){

@@ -6,7 +6,7 @@ int main (int argc, char *argv[]) {
 
         const char* host ="localhost";
         const char* user ="root";
-        const char* passwort ="";
+        const char* passwort ="root";
         const char* db = "DatabaseNumberOne1";
         unsigned int port=3306;
         unsigned int client_flag=0;
@@ -44,7 +44,7 @@ int main (int argc, char *argv[]) {
 
 
   
-//	showColumnTyp("tabelle2", "char");
+	showColumnTyp("tabelle2", "char");
 	disconnect();
 
 }
