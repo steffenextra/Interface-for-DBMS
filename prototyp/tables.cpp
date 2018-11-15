@@ -108,7 +108,7 @@
 	std::string sqlCommand = "ALTER TABLE " + tableNameSecondary + "ADD FOREIGN KEY (" + foreignKey + ") REFERENCES " + tableNamePrimary + "( " + primaryKey + ");";
 	check_error();
 	connection_query(sqlCommand.c_str());
-	std::cout << "Secondary key set on " + foreignKey << std::endl;
+	std::cout << "Secondary key set on " + foreignKey  + "with the MasterKey on Table: " + tableNamePrimary + " and primary key " + primaryKey << std::endl;
 
 	}
 
