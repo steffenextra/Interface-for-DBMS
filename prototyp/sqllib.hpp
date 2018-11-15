@@ -58,3 +58,5 @@ void modifierEntry(std::string tableName, std::string columnName, std::string ol
 void setAllEntry(std::string tableName,std::vector<std::string> row);
 void deleteEntry(std::string tableName, std::string columnName, std::string entry);
 
+//--selection--
+void selectOneColumn(std::string tableName,std::string ColumnName,std::string selected_at,std::string sort_by);

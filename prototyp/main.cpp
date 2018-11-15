@@ -43,7 +43,9 @@ int main (int argc, char *argv[]) {
         row.push_back("'Heinrich'");
 
 
-  
+
+
+        selectOneColumn("tableNumberOne","Name","peter"," ");
 //	showColumnTyp("tabelle2", "char");
 	disconnect();
 
