@@ -112,6 +112,8 @@
 
         }
 
+	void deleteSecondaryKey();
+
 
 
 //	void insertTable(){}
