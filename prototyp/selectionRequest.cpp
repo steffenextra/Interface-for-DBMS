@@ -21,7 +21,7 @@ void sortTable(std::string tableName,std::string ColumnName,std::string sort_by)
         check_error();
 	    connection_feedback(sqlCommand.c_str());
     }
-    //
+    //hallo
     else{
         check_error();
     }
