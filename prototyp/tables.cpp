@@ -85,8 +85,6 @@
 
 	void showColumnTyp(std::string tableName,std::string datatype){
 
-		//SHOW COLUMNS FROM employees WHERE Type LIKE 'Varchar%';
-		//must be fix
 		std::string sqlCommand="SHOW COLUMNS FROM " + tableName + " WHERE TYPE LIKE '" + datatype + "%'";
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
@@ -103,16 +101,24 @@
 
 	}
 
-	void setSecondaryKey(std::string tableNameSecondary, std::string foreignKey, std::string id, std::string tableNamePrimary, std::string primaryKey ){
+	void setSecondaryKey(std::string tableNameSecondary, std::string foreignKey, std::string id, std::string tableNamePrimary, std::string primaryKey, std::string constraint ){
 
-		std::string sqlCommand = "ALTER TABLE " + tableNameSecondary + "ADD FOREIGN KEY (" + foreignKey + ") REFERENCES " + tableNamePrimary + "( " + primaryKey + ");";
+		std::string sqlCommand ="ALTER TABLE " + tableNameSecondary + " ADD CONSTRAINT " +constraint + 
+					" ADD FOREIGN KEY (" + foreignKey + ") REFERENCES " + tableNamePrimary + "( " + primaryKey + ");";
 		check_error();
 		connection_query(sqlCommand.c_str());
 		std::cout << "Secondary key set on " + foreignKey  + "with the MasterKey on Table: " + tableNamePrimary + " and primary key " + primaryKey << std::endl;
 
         }
 
-	void deleteSecondaryKey(std::string tableNameSecondary);
+	void deleteSecondaryKey(std::string tableName, std::string constraint){
+			//need a fix 
+		std::string sqlCommand = "ALTER TABLE " + tableName + " DROP CONSTRAINT " + constraint + ";";
+		check_error();
+		connection_query (sql.Command.c_str());
+		std::cout << "deleted the foreign key on the Field " + contraint << std::endl;
+
+	}
 
 
 

@@ -1,11 +1,18 @@
-SELECT requests (ASC/DESC) GROUP BY
+12.11.18 - 26.11.18
 
+SELECT requests (ASC/DESC) GROUP BY // done
 
-fix the showTables method (Maybe include a countColumns method for the output)
-SECONDARY KEY
-PRIMARY KEY / NEW SET
-more tables
-entities for the tables 
+fix the showTables method // done
+
+SECONDARY KEY // mostly done (need to implement the foreign key for the createTable-method (maybe just a condition))
+
+More SELECT requests
+
+PRIMARY KEY ->  NEW SET
+
+more tables (?)
+
 MTA's
+
 
 
