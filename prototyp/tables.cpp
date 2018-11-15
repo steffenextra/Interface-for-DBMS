@@ -112,6 +112,8 @@
 
         }
 
+	void deleteSecondaryKey(std::string tableNameSecondary);
+
 
 
 //	void insertTable(){}
