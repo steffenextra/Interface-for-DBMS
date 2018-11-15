@@ -37,7 +37,7 @@
 
 		std::string sqlCommand ="SELECT * FROM " + tableName;
 		check_error();
-		connection_feedback(sqlCommand.c_str());
+		connection_feedbackAll(sqlCommand.c_str());
 
 	}
 
@@ -89,7 +89,7 @@
 		//must be fix
 		std::string sqlCommand="SHOW COLUMNS FROM " + tableName + " WHERE TYPE LIKE '" + datatype + "%'";
 		check_error();
-		connection_feedback(sqlCommand.c_str());
+		connection_feedbackAll(sqlCommand.c_str());
 
 	}
 
@@ -102,5 +102,8 @@
 		std::cout << columnName + " successfully deleted" << std::endl;
 
 	}
+
+
+
 
 //	void insertTable(){}
