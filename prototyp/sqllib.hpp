@@ -65,3 +65,4 @@ void deleteEntry(std::string tableName, std::string columnName, std::string entr
 
 //---selectionRequest---
 void selectOneColumn(std::string tableName,std::string ColumnName,std::string selected_at);
+void sortTable(std::string tableName,std::string ColumnName,std::string sort_by);

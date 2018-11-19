@@ -32,6 +32,7 @@
 		std::cout << tableName + " successfully created" << std::endl;
 
 	}
+
 	void showTable (std::string tableName){
 
 		std::string sqlCommand ="SELECT * FROM " + tableName;
@@ -94,6 +95,14 @@
 		std::string sqlCommand ="SHOW COLUMNS FROM " + tableName;
 		check_error();
 		connection_feedback(sqlCommand.c_str());
+
+	}
+
+	void countDatasets(std::string tableName){
+
+		std::string sqlCommand = "SELECT COUNT (*) FROM " + tableName;
+		check_error();
+		connection_query(sqlCommand.c_str());
 
 	}
 
@@ -161,4 +170,3 @@
 	}
 
 
-//	void insertTable(){}

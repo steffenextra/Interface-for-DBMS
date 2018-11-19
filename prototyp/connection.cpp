@@ -24,11 +24,11 @@ MYSQL_FIELD *field;
                 check_error();
                 result=mysql_use_result(mysql);
 
-                while((row=mysql_fetch_row(result))!=NULL){
-                        std::cout<< *row << std::endl;
-                }
-                std::cout << std::endl;
-        }
+			while((row=mysql_fetch_row(result))!=NULL){
+				std::cout<< *row << std::endl;
+			}
+				std::cout << std::endl;
+		}
 
 
 
@@ -48,22 +48,22 @@ MYSQL_FIELD *field;
 		check_error();
 		}
 
-		while ((row = mysql_fetch_row(result))!=NULL) 
-		{ 
-			for(int i = 0; i < num_fields; i++) 
-			{ 
-				if (i == 0) 
-				{              
-					while(field = mysql_fetch_field(result)) 
+		while ((row = mysql_fetch_row(result))!=NULL)
+		{
+			for(int i = 0; i < num_fields; i++)
+			{
+				if (i == 0)
+				{
+					while(field = mysql_fetch_field(result))
 					{
 						printf("%s ", field->name);
 					}
-					
-					printf("\n");           
+
+					printf("\n");
 				}
-				
-				printf("%s  ", row[i] ? row[i] : "NULL"); 
-			} 
+
+				printf("%s  ", row[i] ? row[i] : "NULL");
+			}
 		}
 
 		printf("\n");

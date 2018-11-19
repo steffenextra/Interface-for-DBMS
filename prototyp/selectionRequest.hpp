@@ -11,3 +11,4 @@
 #include <vector>
 
 void selectOneColumn(std::string tableName,std::string ColumnName,std::string selected_at);
+void sortTable(std::string tableName,std::string ColumnName,std::string sort_by);
