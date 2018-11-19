@@ -4,13 +4,20 @@ SELECT requests (ASC/DESC) GROUP BY // done
 
 fix the showTables method // done
 
-SECONDARY KEY // mostly done (need to implement the foreign key for the createTable-method (maybe just a condition))
+PRIMARY KEY ->  NEW SET // done
 
-More SELECT requests
+SECONDARY KEY // done
 
-PRIMARY KEY ->  NEW SET
 
-more tables (?)
+
+More SELECT requests --> in progress
+
+(JOIN and UNION Statements)
+--------------------------
+
+PROJEKTMANAGEMENT STUFF
+
+Gliederung der Doku
 
 MTA's
 
