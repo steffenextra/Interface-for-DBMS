@@ -19,3 +19,7 @@ void changeTheDatatype(std::string tableName, std::string columnName, std::strin
 void getAllColumn(std::string tableName);
 void showColumnTyp(std::string tableName,std::string datatype);
 void deleteColumn(std::string tableName, std::string columnName);
+void setSecondaryKey(std::string tableNameSecondary, std::string foreignKey, std::string tableNamePrimary, std::string primaryKey, std::string constraint);
+void deleteSecondaryKey(std::string tableName, std::string constraint);
+void setPrimaryKey(std::string tableName, std::string primaryKey);
+void deletePrimaryKey (std::string tableName);

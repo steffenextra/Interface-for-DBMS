@@ -6,13 +6,13 @@ int main (int argc, char *argv[]) {
 
         const char* host ="localhost";
         const char* user ="root";
-        const char* passwort ="";
+        const char* passwort ="root";
         const char* db = "DatabaseNumberOne1";
         unsigned int port=3306;
         unsigned int client_flag=0;
 	connectionless(host, user, passwort, db, port,pathto, client_flag);
-	
-        
+
+
         //method-tests
 
 
@@ -42,11 +42,10 @@ int main (int argc, char *argv[]) {
         row.push_back("Zwischennamen");
         row.push_back("'Heinrich'");
 
-
-       // showTable("tableNumberOne");
-	//showColumnTyp("tableNumberOne", "VARCHAR");
-
-        selectOneColumn("tableNumberOne","Name","Dieter");
+//	setSecondaryKey("tabelle3", "ID", "tabelle2", "ID", "Person_ID");
+//	deleteSecondaryKey("tabelle3", "Person_ID");
+	setPrimaryKey("tabelle2", "ID");
+	deletePrimaryKey("tabelle2");
 	disconnect();
 
 }

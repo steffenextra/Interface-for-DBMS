@@ -2,7 +2,7 @@
 
 
 
-	void createTable (bool primary_key, std::string tableName,std::vector<std::string> columns){
+	void createTable (bool primary_key, bool foreign_key, std::string tableName,std::vector<std::string> columns){
 
 		//to notice (primary key and secondary key)
 		std::string columnnamesAndDatatype;
@@ -32,7 +32,6 @@
 		std::cout << tableName + " successfully created" << std::endl;
 
 	}
-	//need a bugfix, just screening the first value of the column
 	void showTable (std::string tableName){
 
 		std::string sqlCommand ="SELECT * FROM " + tableName;
@@ -68,7 +67,6 @@
 
 	void changeTheDatatype(std::string tableName, std::string columnName, std::string datatype){
 		//has to be tested
-
 		std::string sqlCommand="AlTER TABLE " + tableName + " MODIFY " + columnName + " " + datatype;
 		check_error();
 		connection_query(sqlCommand.c_str());
@@ -101,10 +99,9 @@
 
 	}
 
-	void setSecondaryKey(std::string tableNameSecondary, std::string foreignKey, std::string id, std::string tableNamePrimary, std::string primaryKey, std::string constraint ){
+	void setSecondaryKey(std::string tableNameSecondary, std::string foreignKey, std::string tableNamePrimary, std::string primaryKey, std::string constraint){
 
-		std::string sqlCommand ="ALTER TABLE " + tableNameSecondary + " ADD CONSTRAINT " +constraint + 
-					" ADD FOREIGN KEY (" + foreignKey + ") REFERENCES " + tableNamePrimary + "( " + primaryKey + ");";
+		std::string sqlCommand ="ALTER TABLE " + tableNameSecondary + " ADD CONSTRAINT "+ constraint + " FOREIGN KEY (" + foreignKey + ") REFERENCES " + tableNamePrimary + " (" + primaryKey + ");";
 		check_error();
 		connection_query(sqlCommand.c_str());
 		std::cout << "Secondary key set on " + foreignKey  + "with the MasterKey on Table: " + tableNamePrimary + " and primary key " + primaryKey << std::endl;
@@ -112,14 +109,30 @@
         }
 
 	void deleteSecondaryKey(std::string tableName, std::string constraint){
-			//need a fix 
-		std::string sqlCommand = "ALTER TABLE " + tableName + " DROP CONSTRAINT " + constraint + ";";
+		std::string sqlCommand = "ALTER TABLE " + tableName + " DROP FOREIGN KEY " + constraint + ";";
 		check_error();
-		connection_query (sql.Command.c_str());
-		std::cout << "deleted the foreign key on the Field " + contraint << std::endl;
+		connection_query (sqlCommand.c_str());
+		std::cout << "deleted the foreign key on the Field " + constraint << std::endl;
 
 	}
 
+	void setPrimaryKey(std::string tableName, std::string primaryKey){
+
+		std::string sqlCommand = "ALTER TABLE " + tableName + " ADD PRIMARY KEY (" + primaryKey + ");"; 
+		check_error();
+		connection_query(sqlCommand.c_str());
+		std::cout << "Primary key set on: " + primaryKey << std::endl;
+	}
+
+
+	void deletePrimaryKey (std::string tableName){
+
+		std::string sqlCommand = "ALTER TABLE " + tableName + " DROP PRIMARY KEY";
+		check_error();
+		connection_query(sqlCommand.c_str());
+		std::cout << "Primary key successfully deleted" << std::endl;
+
+	}
 
 
 //	void insertTable(){}
