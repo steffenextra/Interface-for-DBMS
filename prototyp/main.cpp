@@ -43,9 +43,9 @@ int main (int argc, char *argv[]) {
         row.push_back("'Heinrich'");
 
 //	setSecondaryKey("tabelle3", "ID", "tabelle2", "ID", "Person_ID");
-//	deleteSecondaryKey("tabelle3", "Person_ID");
-	setPrimaryKey("tabelle2", "ID");
-	deletePrimaryKey("tabelle2");
+//        deleteSecondaryKey("tabelle3", "Person_ID");
+//	setPrimaryKey("tabelle3", "ID");
+	deletePrimaryKey("tabelle3");
 	disconnect();
 
 }

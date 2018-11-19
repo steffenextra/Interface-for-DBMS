@@ -104,14 +104,24 @@
 		std::string sqlCommand ="ALTER TABLE " + tableNameSecondary + " ADD CONSTRAINT "+ constraint + " FOREIGN KEY (" + foreignKey + ") REFERENCES " + tableNamePrimary + " (" + primaryKey + ");";
 		check_error();
 		connection_query(sqlCommand.c_str());
-		std::cout << "Secondary key set on " + foreignKey  + "with the MasterKey on Table: " + tableNamePrimary + " and primary key " + primaryKey << std::endl;
+		std::cout << "Secondary key set on " + foreignKey  + " with the PrimaryKey " + primaryKey + " on Table: " + tableNamePrimary  << std::endl;
 
         }
 
+	void deleteConstraint(std::string tableName, std::string constraint){
+
+                std::string sqlCommand = "ALTER TABLE " + tableName + " DROP INDEX " + constraint;
+                check_error();
+                connection_query(sqlCommand.c_str());
+
+        }
+
+
 	void deleteSecondaryKey(std::string tableName, std::string constraint){
-		std::string sqlCommand = "ALTER TABLE " + tableName + " DROP FOREIGN KEY " + constraint + ";";
+		std::string sqlCommand = "ALTER TABLE " + tableName + " DROP FOREIGN KEY " + constraint + "; ";
 		check_error();
 		connection_query (sqlCommand.c_str());
+		deleteConstraint(tableName, constraint);
 		std::cout << "deleted the foreign key on the Field " + constraint << std::endl;
 
 	}
