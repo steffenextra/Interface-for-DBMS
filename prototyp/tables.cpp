@@ -57,6 +57,22 @@
 
 	}
 
+	void setColumnWithPrimary(std::string tableName, std::string ColumnName, std::string datatype, bool autoinc){
+
+		if (autoinc == true){
+			std::string sqlCommand =" ALTER TABLE " + tableName + " ADD " + ColumnName +  " " + datatype + " PRIMARY KEY AUTO_INCREMENT";
+			check_error();
+			connection_query(sqlCommand.c_str());
+
+		}else{
+			std::string sqlCommand =" ALTER TABLE " + tableName + " ADD " + ColumnName +  " " + datatype + " PRIMARY KEY";
+                        check_error();
+                        connection_query(sqlCommand.c_str());
+		}
+
+	}
+
+
 	void modifierColumnName(std::string tableName, std::string oldColumnName, std::string newColumnName,std::string datatype){
 
 		std::string sqlCommand= "ALTER TABLE " + tableName + " CHANGE " + oldColumnName + " " + newColumnName + " " + datatype;

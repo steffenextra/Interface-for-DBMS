@@ -45,7 +45,8 @@ int main (int argc, char *argv[]) {
 //	setSecondaryKey("tabelle3", "ID", "tabelle2", "ID", "Person_ID");
 //        deleteSecondaryKey("tabelle3", "Person_ID");
 //	setPrimaryKey("tabelle3", "ID");
-	deletePrimaryKey("tabelle3");
+	setColumnWithPrimary("tabelle2", "ID", "int", true);
+//	deletePrimaryKey("tabelle3");
 	disconnect();
 
 }

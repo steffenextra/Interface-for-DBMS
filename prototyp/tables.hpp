@@ -14,6 +14,7 @@ void createTable (bool primary_key, std::string tableName,std::vector<std::strin
 void showTable (std::string tableName);
 void deleteTable (std::string tableName);
 void setColumn(std::string tableName, std::string ColumnName,std::string datatype);
+void setColumnWithPrimary(std::string tableName, std::string ColumnName, std::string datatype, bool autoinc);
 void modifierColumnName(std::string tableName, std::string oldColumnName, std::string newColumnName,std::string datatype);
 void changeTheDatatype(std::string tableName, std::string columnName, std::string datatype);
 void getAllColumn(std::string tableName);
