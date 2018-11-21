@@ -18,6 +18,7 @@ void setColumnWithPrimary(std::string tableName, std::string ColumnName, std::st
 void modifierColumnName(std::string tableName, std::string oldColumnName, std::string newColumnName,std::string datatype);
 void changeTheDatatype(std::string tableName, std::string columnName, std::string datatype);
 void getAllColumn(std::string tableName);
+void countDatasets(std::string tableName);
 void showColumnTyp(std::string tableName,std::string datatype);
 void deleteColumn(std::string tableName, std::string columnName);
 void setSecondaryKey(std::string tableNameSecondary, std::string foreignKey, std::string tableNamePrimary, std::string primaryKey, std::string constraint);

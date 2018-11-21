@@ -46,11 +46,12 @@
 
 	}
 
-	void deleteEntry(std::string tableName, std::string columnName, std::string primaryKey){
+	void deleteEntry(std::string tableName, std::string columnName, std::string condition){
 
-		std::string sqlCommand = "DELETE FROM " + tableName + " WHERE " + columnName + " = " + "'" + primaryKey + "'";
+		std::string sqlCommand = "DELETE FROM " + tableName + " WHERE " + columnName + " = " + "'" + condition + "'";
 		check_error();
 		connection_query(sqlCommand.c_str());
-		std::cout << "Data at Primary Key "+  primaryKey + " successfully deleted" << std::endl;
+		std::cout << "Dataset at Column "+  columnName + " with condition: " + condition + " successfully deleted" << std::endl;
 
 	}
+

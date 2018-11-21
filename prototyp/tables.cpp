@@ -124,7 +124,9 @@
 
 	}
 
+
 	void setSecondaryKey(std::string tableNameSecondary, std::string foreignKey, std::string tableNamePrimary, std::string primaryKey, std::string constraint){
+
 
 		std::string sqlCommand ="ALTER TABLE " + tableNameSecondary + " ADD CONSTRAINT "+ constraint + " FOREIGN KEY (" + foreignKey + ") REFERENCES " + tableNamePrimary + " (" + primaryKey + ");";
 		check_error();

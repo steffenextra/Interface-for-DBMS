@@ -50,6 +50,7 @@ void setColumnWithPrimary(std::string tableName, std::string ColumnName, std::st
 void modifierColumnName(std::string tableName, std::string oldColumnName, std::string newColumnName,std::string datatype);
 void changeTheDatatype(std::string tableName, std::string columnName, std::string datatype);
 void getAllColumn(std::string tableName);
+void countDatasets(std::string tableName);
 void showColumnTyp(std::string tableName,std::string datatype);
 void deleteColumn(std::string tableName, std::string columnName);
 void setSecondaryKey(std::string tableNameSecondary, std::string foreignKey, std::string tableNamePrimary, std::string primaryKey, std::string constraint);
@@ -61,8 +62,10 @@ void deletePrimaryKey (std::string tableName);
 void setEntry(std::string tableName, std::string columnName, std::string entry);
 void modifierEntry(std::string tableName, std::string columnName, std::string oldEntry,std::string newEntry);
 void setAllEntry(std::string tableName,std::vector<std::string> row);
-void deleteEntry(std::string tableName, std::string columnName, std::string entry);
+void deleteEntry(std::string tableName, std::string columnName, std::string condition);
 
 //---selectionRequest---
 void selectOneColumn(std::string tableName,std::string ColumnName,std::string selected_at);
 void sortTable(std::string tableName,std::string ColumnName,std::string sort_by);
+void averageSum(std::string tableName, std::string columnName);
+void sum(std::string tableName, std::string columnName, std::string alias);

@@ -43,11 +43,14 @@ int main (int argc, char *argv[]) {
         row.push_back("'Heinrich'");
 
 //	setSecondaryKey("tabelle3", "ID", "tabelle2", "ID", "Person_ID");
-//        deleteSecondaryKey("tabelle3", "Person_ID");
+//      deleteSecondaryKey("tabelle3", "Person_ID");
 //	setPrimaryKey("tabelle3", "ID");
-	setColumnWithPrimary("tabelle2", "ID", "int", true);
+//	setColumnWithPrimary("tabelle2", "ID", "int", true);
 //	deletePrimaryKey("tabelle3");
-	disconnect();
+//	averageSum("tabelle2", "ID");
+//	sum("Lohn", "Lohn", "Gesamt");
 
+
+	disconnect();
 }
 

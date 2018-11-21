@@ -26,3 +26,19 @@
 			check_error();
 		}
 	}
+
+	void averageSum(std::string tableName, std::string columnName){
+
+		std::string sqlCommand = "SELECT AVG(" + columnName + ") FROM " + tableName;
+		check_error();
+		connection_feedback(sqlCommand.c_str());
+
+	}
+
+	void sum(std::string tableName, std::string columnName, std::string alias){
+
+		std::string sqlCommand = "SELECT SUM(" + columnName + ") AS " + alias + " FROM " + tableName;
+		check_error();
+		connection_feedbackAll(sqlCommand.c_str());
+
+	}
