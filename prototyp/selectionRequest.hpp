@@ -14,3 +14,4 @@ void selectOneColumn(std::string tableName,std::string ColumnName,std::string se
 void sortTable(std::string tableName,std::string ColumnName,std::string sort_by);
 void averageSum(std::string tableName, std::string columnName);
 void sum(std::string tableName, std::string columnName, std::string alias);
+void unionSelect(std::vector <std::string> tableName, std::vector <std::string> columnName);

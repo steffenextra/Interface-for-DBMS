@@ -42,3 +42,31 @@
 		connection_feedbackAll(sqlCommand.c_str());
 
 	}
+
+/*	void join(std::vector <string> tables, std::string condition){
+
+
+
+	}*/
+
+	void unionSelect(std::vector <std::string> tableName, std::vector <std::string> columnName){
+
+		std::string sqlCommand;
+
+		for(int i = 0; i< tableName.size(); i++){
+
+			if(i == tableName.size()-1 && i== columnName.size()-1){
+
+                                sqlCommand += " SELECT " + columnName.at(i) + " FROM " + tableName.at(i) + " ";
+
+                        }else {
+
+			sqlCommand  += "SELECT " + columnName.at(i) + " FROM " + tableName.at(i) + " UNION ";
+
+			}
+		}
+
+		check_error();
+		connection_feedbackAll(sqlCommand.c_str());
+
+	}

@@ -42,6 +42,26 @@ int main (int argc, char *argv[]) {
         row.push_back("Zwischennamen");
         row.push_back("'Heinrich'");
 
+
+		std::vector <std::string> tableName;
+
+		tableName.push_back("tabelle2");
+		tableName.push_back("tabelle3");
+		tableName.push_back("Lohn");
+
+
+		std::vector <std::string> columnName;
+
+		columnName.push_back("Nachname");
+		columnName.push_back("Name");
+		columnName.push_back("Lohn");
+
+		for (int i =0; i<columnName.size(); i++){
+
+		std::cout << columnName.at(i) << std::endl;
+		}
+
+	unionSelect(tableName, columnName);
 //	setSecondaryKey("tabelle3", "ID", "tabelle2", "ID", "Person_ID");
 //      deleteSecondaryKey("tabelle3", "Person_ID");
 //	setPrimaryKey("tabelle3", "ID");
