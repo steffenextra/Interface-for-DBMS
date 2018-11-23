@@ -65,8 +65,11 @@ void setAllEntry(std::string tableName,std::vector<std::string> row);
 void deleteEntry(std::string tableName, std::string columnName, std::string condition);
 
 //---selectionRequest---
-void selectOneColumn(std::string tableName,std::string ColumnName,std::string selected_at);
-void sortTable(std::string tableName,std::string ColumnName,std::string sort_by);
+void sqlCommand(std::string sqlCommand,std::string commandType);
+void selectOneColumn(std::string tableName,std::string columnName,std::string selected_at);
+void selectWhere(std::string tableName,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns);
+void selectWhereWithSort(std::string tableName,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns,std::string toSortcolumnName,std::string sort_by);
+void sortTable(std::string tableName,std::string columnName,std::string sort_by);
 void averageSum(std::string tableName, std::string columnName);
 void sum(std::string tableName, std::string columnName, std::string alias);
 void unionSelect(std::vector <std::string> tableName, std::vector <std::string> columnName);

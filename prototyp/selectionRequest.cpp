@@ -1,24 +1,98 @@
 #include "selectionRequest.hpp"
 
+	void sqlCommand(std::string sqlCommand,std::string commandType){
+		/*
+		3 CommandType 
+		 query, simple Query
+		 feedback, shows the contents of a Column
+		 feedbackAll, shows the whole table with Columns
+		*/
 
-	void selectOneColumn(std::string tableName,std::string ColumnName,std::string selected_at){
+		if(commandType=="query"){
+			check_error();
+			connection_query(sqlCommand.c_str());
+		}
 
-		std::string sqlCommand ="SELECT * FROM " + tableName + " WHERE " + ColumnName + " = " + "'" + selected_at + "';";
+		if(commandType=="feedback"){
+			check_error();
+			connection_feedback(sqlCommand.c_str());
+		}
+
+		if(commandType=="feedbackAll"){
+			check_error();
+			connection_feedbackAll(sqlCommand.c_str());
+		}
+
+		else{
+			check_error();
+		}
+	}
+
+	void selectOneColumn(std::string tableName,std::string columnName,std::string selected_at){
+
+		std::string sqlCommand ="SELECT * FROM " + tableName + " WHERE " + columnName + " = " + "'" + selected_at + "';";
 		check_error();
 		connection_feedback(sqlCommand.c_str());
 	}
 
-	void sortTable(std::string tableName,std::string ColumnName,std::string sort_by){
+	void selectWhere(std::string tableName,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns){
+				//The vector columns contains the Columns that should be displayed
+		std::string allColumnString;
+		for(int i=0; i< columns.size();i++)
+		{
+			allColumnString += columns.at(i);
+			if (i != columns.size()-1){
+					allColumnString += ", ";
+			}
+		}
+
+		std::string sqlCommand ="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "';";
+		check_error();
+		connection_feedbackAll(sqlCommand.c_str());		
+	}
+
+	void selectWhereWithSort(std::string tableName,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns,std::string toSortcolumnName,std::string sort_by){
+		//The vector columns contains the Columns that should be displayed
+		
+		std::string allColumnString;
+
+		for(int i=0; i< columns.size();i++)
+		{
+			allColumnString += columns.at(i);
+			if (i != columns.size()-1){
+					allColumnString += ", ";
+			}
+		}
+		std::cout << allColumnString << std::endl;
 
 		if(sort_by == "ASC" || sort_by=="asc"){
-			std::string sqlCommand = "SELECT * FROM " + tableName + " ORDER BY " + ColumnName  + " ASC;";
+			std::string sqlCommand ="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "'" + " ORDER BY " + toSortcolumnName  + " ASC;";
+			check_error();
+			connection_feedbackAll(sqlCommand.c_str());	
+		}
+
+		if(sort_by== "DESC" ||  sort_by=="desc"){
+			std::string sqlCommand ="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "'" + " ORDER BY " + toSortcolumnName  + " DESC;";
+			check_error();
+			connection_feedbackAll(sqlCommand.c_str());	
+		}
+
+		else{
+			check_error();
+		}
+	}
+
+	void sortTable(std::string tableName,std::string toSortColumnName,std::string sort_by){
+
+		if(sort_by == "ASC" || sort_by=="asc"){
+			std::string sqlCommand = "SELECT * FROM " + tableName + " ORDER BY " + toSortColumnName  + " ASC;";
 			check_error();
 			connection_feedback(sqlCommand.c_str());
 
 	}
 
 		else if(sort_by== "DESC" ||  sort_by=="desc"){
-			std::string sqlCommand = "SELECT * FROM " + tableName + " ORDER BY " + ColumnName  + " DESC;";
+			std::string sqlCommand = "SELECT * FROM " + tableName + " ORDER BY " + toSortColumnName + " DESC;";
 			check_error();
 			connection_feedback(sqlCommand.c_str());
 		}

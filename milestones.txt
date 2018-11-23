@@ -1,25 +1,44 @@
 12.11.18 - 26.11.18
 
-SELECT requests (ASC/DESC) GROUP BY // done
-
-fix the showTables method // done
-
-PRIMARY KEY ->  NEW SET // done
-
-SECONDARY KEY // done
-
-
-
-More SELECT requests --> in progress
-
-(JOIN and UNION Statements)
---------------------------
-
+Wichtig: Die Funktionsweise der Methoden und die Handhabung der 
+         Vektoren sollen A. in der Methode erklärt werden und B. in der Doku 
+---------------------------------------------------------------------------
 PROJEKTMANAGEMENT STUFF
+    Gliederung der Doku
+    MTA's
+---------------------------------------------------------------------------
+More SELECT requests --> in progress
+finish Methods
+{
+    -SELECT requests (ASC/DESC) GROUP BY // done
+    -fix the showTables method // done
+    -PRIMARY KEY ->  NEW SET // done
+    -SECONDARY KEY // done
+    -"WHERE" Method that displayed all Columns // done
+    -"WHERE" Method that displayed all Columuns with an Order (DESC,ASC) //done
+    -"Your own SQL Command Method" // done 
+}
 
-Gliederung der Doku
+Missing Methods
+{
+    method table rename 
+    mehtod database rename
+    SELECT TOP
+    ORDER BY OFFSET
+    SELECT DISTINCT
+    SELECT MIN and MAX
+    SELECT COUNT and AVG
+    The Where with AND, OR, NOT
+    WHERE BETWEEN
+    WHERE in
+    WHERE in
+    WHERE is NULL
+    GROUP BY
+    HAVING
+    ALIAS
+    JOIN , LEFT JOIN, RIGHT JOIN, FULL JOIN, SELF JOIN
+}
 
-MTA's
 
 
 

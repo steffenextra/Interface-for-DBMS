@@ -6,7 +6,7 @@ int main (int argc, char *argv[]) {
 
         const char* host ="localhost";
         const char* user ="root";
-        const char* passwort ="root";
+        const char* passwort ="";
         const char* db = "DatabaseNumberOne1";
         unsigned int port=3306;
         unsigned int client_flag=0;
@@ -56,12 +56,12 @@ int main (int argc, char *argv[]) {
 		columnName.push_back("Name");
 		columnName.push_back("Lohn");
 
-		for (int i =0; i<columnName.size(); i++){
+	/*	for (int i =0; i<columnName.size(); i++){
 
 		std::cout << columnName.at(i) << std::endl;
 		}
-
-	unionSelect(tableName, columnName);
+        */
+//	unionSelect(tableName, columnName);
 //	setSecondaryKey("tabelle3", "ID", "tabelle2", "ID", "Person_ID");
 //      deleteSecondaryKey("tabelle3", "Person_ID");
 //	setPrimaryKey("tabelle3", "ID");
@@ -69,8 +69,25 @@ int main (int argc, char *argv[]) {
 //	deletePrimaryKey("tabelle3");
 //	averageSum("tabelle2", "ID");
 //	sum("Lohn", "Lohn", "Gesamt");
+//      selectWhere("tableNumberOne","Name","Markus",columnsss);
+//      std::string myCommand="SELECT * FROM tableNumberOne";
+//      sqlCommand(myCommand,"feedbackAll");
 
 
+void selectWhereWithSort(std::string tableName,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns,std::string toSortcolumnName,std::string sort_by);
+
+std::vector<std::string> columnsss;
+
+        columnsss.push_back("Name");
+        columnsss.push_back("Nachname");
+        columnsss.push_back("PLZ");
+        columnsss.push_back("Adresse");
+        columnsss.push_back("Zwischennamen");
+
+
+
+
+selectWhereWithSort("tableNumberOne","Name","Dieter",columnsss,"Name","ASC");
 	disconnect();
 }
 
