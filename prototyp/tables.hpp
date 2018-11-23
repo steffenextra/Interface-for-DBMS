@@ -12,6 +12,7 @@
 
 void createTable (bool primary_key, std::string tableName,std::vector<std::string> columns);
 void showTable (std::string tableName);
+void renameTable(std::string tablename, std::string newTableName);
 void deleteTable (std::string tableName);
 void setColumn(std::string tableName, std::string ColumnName,std::string datatype);
 void setColumnWithPrimary(std::string tableName, std::string ColumnName, std::string datatype, bool autoinc);
