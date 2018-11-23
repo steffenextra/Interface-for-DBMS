@@ -37,6 +37,7 @@ void disconnect();
 
 void createDatabase (std::string databaseName);
 void showDatabases();
+void renameDatabase(std::string databaseName, std::string newDatabaseName);
 void deleteDatabase (std::string databaseName);
 
 

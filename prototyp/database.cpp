@@ -18,6 +18,13 @@
 
 	}
 
+	void renameDatabase(std::string databaseName, std::string newDatabaseName){
+		//need to fix
+		std::string sqlCommand ="ALTER DATABASE " + databaseName + " MODIFY NAME = " + newDatabaseName + ";";
+		check_error();
+		connection_query(sqlCommand.c_str());
+	}
+
 	void deleteDatabase(std::string databaseName){
 
 		std::string sqlCommand = "DROP DATABASE " + databaseName;
