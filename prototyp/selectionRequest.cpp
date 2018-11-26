@@ -28,8 +28,7 @@
 		}
 	}
 
-	void selectTop(std::string tableName,std::string EntryNumber,std::vector<std::string> columns,std::string toSortColumnName,std::string sort_by)
-	{
+	void selectLimitWhere(std::string tableName,std::string entryNumber,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns,std::string toSortColumnName,std::string sort_by){
 		//The vector columns contains the Columns that should be displayed
 		std::string allColumnString;
 		for(int i=0; i< columns.size();i++)
@@ -39,17 +38,17 @@
 					allColumnString += ", ";
 			}
 		}
-
 		std::cout<<allColumnString << std::endl;
 
-	/*	if(sort_by == "ASC" || sort_by=="asc"){
-			std::string sqlCommand ="SELECT TOP " + EntryNumber + " " + allColumnString + " FROM " + tableName + " ORDER BY " + " ASC;";
+			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth+ "'" + /*" LIMIT " + entryNumber +*/ "  ORDER BY " + " ASC;";
 			check_error();
-			connection_feedbackAll(sqlCommand.c_str());	
+			connection_feedback(sqlCommand.c_str());	
+		
+	/*	if(sort_by == "ASC" || sort_by=="asc"){
 		}
 
 		if(sort_by== "DESC" ||  sort_by=="desc"){
-			std::string sqlCommand ="SELECT TOP  " + EntryNumber + " " + allColumnString + " FROM " + tableName + " ORDER BY " + " DESC;";
+			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth+ "'" " LIMIT " + entryNumber + "  ORDER BY " + " DESC;";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());	
 		}
@@ -68,7 +67,7 @@
 	}
 
 	void selectWhere(std::string tableName,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns){
-				//The vector columns contains the Columns that should be displayed
+		//The vector columns contains the Columns that should be displayed
 		std::string allColumnString;
 		for(int i=0; i< columns.size();i++)
 		{

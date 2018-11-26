@@ -68,7 +68,7 @@ void deleteEntry(std::string tableName, std::string columnName, std::string cond
 
 //---selectionRequest---
 void sqlCommand(std::string sqlCommand,std::string commandType);
-void selectTop(std::string tableName,std::string EntryNumber,std::vector<std::string> columns,std::string toSortColumnName,std::string sort_by);
+void selectLimitWhere(std::string tableName,std::string entryNumber,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns,std::string toSortColumnName,std::string sort_by);
 void selectOneColumn(std::string tableName,std::string columnName,std::string selected_at);
 void selectWhere(std::string tableName,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns);
 void selectWhereWithSort(std::string tableName,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns,std::string toSortcolumnName,std::string sort_by);
