@@ -212,3 +212,24 @@
 		connection_feedbackAll(sqlCommand.c_str());
 
 	}
+
+
+	void selectBetween(std::string conditionString, std::string conditionStringTwo, std::string tableName, std::string conditionColumn, std::string conditionColumnTwo, std::string condition, std::string conditionTwo){
+
+		std::string first = "SELECT * ";
+		std::string sqlCommand = first + " FROM " + tableName + " WHERE " + conditionColumn + " " + conditionString + " " + condition
+                                             + " AND " + conditionColumnTwo + " " + conditionString + " " + conditionTwo;
+		check_error();
+		connection_feedbackAll(sqlCommand.c_str());
+
+	}
+
+
+	void selectNull(std::string tableName, std::string columnName){
+
+		std::string first = "SELECT * ";
+		std::string sqlCommand = first + " FROM " + tableName + " WHERE " + columnName + " IS NULL" + " OR ' '; ";
+		check_error();
+		connection_feedbackAll(sqlCommand.c_str());
+
+	}

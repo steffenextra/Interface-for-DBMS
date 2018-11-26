@@ -78,3 +78,5 @@ void sortTable(std::string tableName,std::string columnName,std::string sort_by)
 void averageSum(std::string tableName, std::string columnName);
 void sum(std::string tableName, std::string columnName, std::string alias);
 void unionSelect(std::vector <std::string> tableName, std::vector <std::string> columnName);
+void selectBetween(std::string conditionString, std::string conditionStringTwo, std::string tableName, std::string conditionColumn, std::string conditionColumnTwo, std::string condition, std::string conditionTwo);
+void selectNull(std::string tableName, std::string columnName);

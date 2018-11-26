@@ -6,7 +6,7 @@ int main (int argc, char *argv[]) {
 
         const char* host ="localhost";
         const char* user ="root";
-        const char* passwort ="";
+        const char* passwort ="root";
         const char* db = "DatabaseNumberOne1";
         unsigned int port=3306;
         unsigned int client_flag=0;
@@ -86,7 +86,14 @@ std::vector<std::string> columnsss;
 //void selectMinOrMax(std::string tableName,std::string minOrMax,std::string minOrMaxColumn,std::string asColumn);
 
    //     selectMinOrMax("tableNumberOne","MIN","Name","MAXIMALE");
-        selectMinOrMaxWithWhere("tableNumberOne","MIN","Name","MAXIMALE","Name","Dieter");
+//        selectMinOrMaxWithWhere("tableNumberOne","MIN","Name","MAXIMALE","Name","Dieter");
+
+
+	selectBetween (">=", "<=", "Lohn", "Lohn", "Lohn", "500", "1000");
+	selectNull("tabelle2", "Name");
+
+
+
 	disconnect();
 }
 
