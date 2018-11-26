@@ -28,8 +28,43 @@
 		}
 	}
 
-	void selectMinOrMax(std::string tableName,std::string minOrMax,std::vector<std::string> columns, std::string newColumn){
+	void selectMinOrMax(std::string tableName,std::string minOrMax,std::string minOrMaxColumn,std::string asColumn){
 
+		if(minOrMax == "min" || minOrMax=="MIN"){
+			std::string sqlCommand="SELECT MIN(" + minOrMaxColumn +")" + " AS " + asColumn + " FROM " +  tableName + ";";
+			check_error();
+			connection_feedbackAll(sqlCommand.c_str());	
+		}
+
+		if(minOrMax == "MAX" || minOrMax=="MAX"){
+			std::string sqlCommand="SELECT MAX(" + minOrMaxColumn +")" + " AS " + asColumn + " FROM " +  tableName + ";";
+			check_error();
+			connection_feedbackAll(sqlCommand.c_str());	
+		}
+
+		else{
+			check_error();
+		}
+
+	}
+
+	void selectMinOrMaxWithWhere(std::string tableName, std::string minOrMax,std::string minOrMaxColumn,std::string asColumn,std::string comparisonColumn,std::string comparativeWorth){
+		
+		if(minOrMax == "min" || minOrMax=="MIN"){
+			std::string sqlCommand="SELECT MIN(" + minOrMaxColumn +")" +" AS " + asColumn + " FROM " +  tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "'" + ";";
+			check_error();
+			connection_feedbackAll(sqlCommand.c_str());	
+		}
+
+		if(minOrMax == "MAX" || minOrMax=="MAX"){
+			std::string sqlCommand="SELECT MAX(" + minOrMaxColumn +")" +" AS " + asColumn + " FROM " +  tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "'" + ";";
+			check_error();
+			connection_feedbackAll(sqlCommand.c_str());	
+		}
+
+		else{
+			check_error();
+		}
 	}
 
 	void selectLimitWhere(std::string tableName,std::string entryNumber,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns,std::string toSortColumnName,std::string sort_by){
@@ -42,9 +77,7 @@
 					allColumnString += ", ";
 			}
 		}
-		std::cout<<allColumnString << std::endl;
 
-		
 		if(sort_by == "ASC" || sort_by=="asc"){
 			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth+ "'" + "  ORDER BY " + toSortColumnName + " ASC " + " LIMIT " + entryNumber + ";";
 			check_error();

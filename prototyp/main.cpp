@@ -73,6 +73,8 @@ int main (int argc, char *argv[]) {
 //      std::string myCommand="SELECT * FROM tableNumberOne";
 //      sqlCommand(myCommand,"feedbackAll");
 //      renameDatabase("DatabaseNumberOne1","DatabaseNumberOne");
+//      selectWhereWithSort("tableNumberOne","Name","Dieter",columnsss,"Name","ASC");
+//      selectLimitWhere("tableNumberOne","2","Name","Dieter",columnsss,"Name","DESC");
     
 std::vector<std::string> columnsss;
 
@@ -81,10 +83,10 @@ std::vector<std::string> columnsss;
         columnsss.push_back("PLZ");
         columnsss.push_back("Adresse");
         columnsss.push_back("Zwischennamen");
+//void selectMinOrMax(std::string tableName,std::string minOrMax,std::string minOrMaxColumn,std::string asColumn);
 
-
-     // selectWhereWithSort("tableNumberOne","Name","Dieter",columnsss,"Name","ASC");
-       selectLimitWhere("tableNumberOne","2","Name","Dieter",columnsss,"Name","DESC");
+   //     selectMinOrMax("tableNumberOne","MIN","Name","MAXIMALE");
+        selectMinOrMaxWithWhere("tableNumberOne","MIN","Name","MAXIMALE","Name","Dieter");
 	disconnect();
 }
 
