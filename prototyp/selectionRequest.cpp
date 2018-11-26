@@ -40,22 +40,22 @@
 		}
 		std::cout<<allColumnString << std::endl;
 
-			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth+ "'" + /*" LIMIT " + entryNumber +*/ "  ORDER BY " + " ASC;";
-			check_error();
-			connection_feedback(sqlCommand.c_str());	
 		
-	/*	if(sort_by == "ASC" || sort_by=="asc"){
+		if(sort_by == "ASC" || sort_by=="asc"){
+			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth+ "'" + "  ORDER BY " + toSortColumnName + " ASC " + " LIMIT " + entryNumber + ";";
+			check_error();
+			connection_feedbackAll(sqlCommand.c_str());	
 		}
 
 		if(sort_by== "DESC" ||  sort_by=="desc"){
-			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth+ "'" " LIMIT " + entryNumber + "  ORDER BY " + " DESC;";
+			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth+ "'" + "  ORDER BY " + toSortColumnName + " ASC " + " LIMIT " + entryNumber + ";";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());	
 		}
 
 		else{
 			check_error();
-		}*/
+		}
 	}
 
 
