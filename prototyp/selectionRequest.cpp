@@ -28,6 +28,10 @@
 		}
 	}
 
+	void selectMinOrMax(std::string tableName,std::string minOrMax,std::vector<std::string> columns, std::string newColumn){
+
+	}
+
 	void selectLimitWhere(std::string tableName,std::string entryNumber,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns,std::string toSortColumnName,std::string sort_by){
 		//The vector columns contains the Columns that should be displayed
 		std::string allColumnString;

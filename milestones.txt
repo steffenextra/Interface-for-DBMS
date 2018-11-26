@@ -17,17 +17,17 @@ finish Methods
     -"WHERE" Method that displayed all Columns // done
     -"WHERE" Method that displayed all Columuns with an Order (DESC,ASC) //done
     -"Your own SQL Command Method" // done 
+    -method table rename 
+    -method database rename //done
+    -SELECT Limit          //done
 }
 
 Missing Methods
 {
-    method table rename 
-    mehtod database rename
-    SELECT TOP
     ORDER BY OFFSET
     SELECT DISTINCT
     SELECT MIN and MAX
-    SELECT COUNT and AVG
+    SELECT COUNT 
     The Where with AND, OR, NOT
     WHERE BETWEEN
     WHERE in
@@ -37,10 +37,8 @@ Missing Methods
     HAVING
     ALIAS
     JOIN , LEFT JOIN, RIGHT JOIN, FULL JOIN, SELF JOIN
-    GROUP BY 
 }
 
 
 
 
-nächster termin 13:30 - 10.12
