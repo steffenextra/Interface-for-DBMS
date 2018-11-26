@@ -11,8 +11,10 @@
 #include <vector>
 
 void sqlCommand(std::string sqlCommand,std::string commandType);
+void selectTop(std::string tableName,std::string EntryNumber,std::vector<std::string> columns,std::string toSortColumnName,std::string sort_by);
 void selectOneColumn(std::string tableName,std::string columnName,std::string selected_at);
 void selectWhere(std::string tableName,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns);
+void selectWhereWithSort(std::string tableName,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns,std::string toSortcolumnName,std::string sort_by);
 void sortTable(std::string tableName,std::string columnName,std::string sort_by);
 void averageSum(std::string tableName, std::string columnName);
 void sum(std::string tableName, std::string columnName, std::string alias);

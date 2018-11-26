@@ -41,6 +41,12 @@
 
 	}
 
+	void renameTable(std::string tablename, std::string newTableName){
+		std::string sqlCommand ="ALTER TABLE " + tablename + " RENAME TO " + newTableName+ ";" ;
+		check_error();
+		connection_query(sqlCommand.c_str());
+	}
+
 	void deleteTable (std::string tableName){
 
 		std::string sqlCommand = "DROP TABLE " + tableName ;

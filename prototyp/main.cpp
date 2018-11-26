@@ -72,10 +72,9 @@ int main (int argc, char *argv[]) {
 //      selectWhere("tableNumberOne","Name","Markus",columnsss);
 //      std::string myCommand="SELECT * FROM tableNumberOne";
 //      sqlCommand(myCommand,"feedbackAll");
-//     
-
-void selectWhereWithSort(std::string tableName,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns,std::string toSortcolumnName,std::string sort_by);
-
+//      renameDatabase("DatabaseNumberOne1","DatabaseNumberOne");
+//      selectWhereWithSort("tableNumberOne","Name","Dieter",columnsss,"Name","ASC");
+    
 std::vector<std::string> columnsss;
 
         columnsss.push_back("Name");
@@ -84,10 +83,9 @@ std::vector<std::string> columnsss;
         columnsss.push_back("Adresse");
         columnsss.push_back("Zwischennamen");
 
+//	void selectTop(std::string tableName,std::string EntryNumber,std::vector<std::string> columns,std::string toSortColumnName,std::string sort_by)
 
-renameDatabase("DatabaseNumberOne1","DatabaseNumberOne");
-
-//selectWhereWithSort("tableNumberOne","Name","Dieter",columnsss,"Name","ASC");
+        selectTop("tableNumberOne","2",columnsss,"Name","DESC");
 	disconnect();
 }
 

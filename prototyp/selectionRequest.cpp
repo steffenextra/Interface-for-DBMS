@@ -28,6 +28,38 @@
 		}
 	}
 
+	void selectTop(std::string tableName,std::string EntryNumber,std::vector<std::string> columns,std::string toSortColumnName,std::string sort_by)
+	{
+		//The vector columns contains the Columns that should be displayed
+		std::string allColumnString;
+		for(int i=0; i< columns.size();i++)
+		{
+			allColumnString += columns.at(i);
+			if (i != columns.size()-1){
+					allColumnString += ", ";
+			}
+		}
+
+		std::cout<<allColumnString << std::endl;
+
+	/*	if(sort_by == "ASC" || sort_by=="asc"){
+			std::string sqlCommand ="SELECT TOP " + EntryNumber + " " + allColumnString + " FROM " + tableName + " ORDER BY " + " ASC;";
+			check_error();
+			connection_feedbackAll(sqlCommand.c_str());	
+		}
+
+		if(sort_by== "DESC" ||  sort_by=="desc"){
+			std::string sqlCommand ="SELECT TOP  " + EntryNumber + " " + allColumnString + " FROM " + tableName + " ORDER BY " + " DESC;";
+			check_error();
+			connection_feedbackAll(sqlCommand.c_str());	
+		}
+
+		else{
+			check_error();
+		}*/
+	}
+
+
 	void selectOneColumn(std::string tableName,std::string columnName,std::string selected_at){
 
 		std::string sqlCommand ="SELECT * FROM " + tableName + " WHERE " + columnName + " = " + "'" + selected_at + "';";
