@@ -37,8 +37,10 @@ Missing Methods
     HAVING
     ALIAS
     JOIN , LEFT JOIN, RIGHT JOIN, FULL JOIN, SELF JOIN
+    GROUP BY 
 }
 
 
 
 
+nächster termin 13:30 - 10.12
