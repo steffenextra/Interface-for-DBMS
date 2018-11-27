@@ -6,7 +6,7 @@ int main (int argc, char *argv[]) {
 
         const char* host ="localhost";
         const char* user ="root";
-        const char* passwort ="root";
+        const char* passwort ="";
         const char* db = "DatabaseNumberOne1";
         unsigned int port=3306;
         unsigned int client_flag=0;
@@ -75,23 +75,27 @@ int main (int argc, char *argv[]) {
 //      renameDatabase("DatabaseNumberOne1","DatabaseNumberOne");
 //      selectWhereWithSort("tableNumberOne","Name","Dieter",columnsss,"Name","ASC");
 //      selectLimitWhere("tableNumberOne","2","Name","Dieter",columnsss,"Name","DESC");
+//      selectMinOrMax("tableNumberOne","MIN","Name","MAXIMALE");
+//      selectMinOrMaxWithWhere("tableNumberOne","MIN","Name","MAXIMALE","Name","Dieter");
+//	selectBetween (">=", "<=", "Lohn", "Lohn", "Lohn", "500", "1000");
+//	selectNull("tabelle2", "Name");
+//      selectCountDistinct("tableNumberOne","Name");
+//      selectCount("tableNumberOne","Name","Namensanzahl");
     
 std::vector<std::string> columnsss;
 
         columnsss.push_back("Name");
+        columnsss.push_back("Vornamen");
         columnsss.push_back("Nachname");
+        columnsss.push_back("Nachname2");
         columnsss.push_back("PLZ");
+        columnsss.push_back("Postleitzahl");
         columnsss.push_back("Adresse");
+        columnsss.push_back("Adresse2");
         columnsss.push_back("Zwischennamen");
-//void selectMinOrMax(std::string tableName,std::string minOrMax,std::string minOrMaxColumn,std::string asColumn);
+        columnName.push_back("Zwischennamen2");
 
-   //     selectMinOrMax("tableNumberOne","MIN","Name","MAXIMALE");
-//        selectMinOrMaxWithWhere("tableNumberOne","MIN","Name","MAXIMALE","Name","Dieter");
-
-
-	selectBetween (">=", "<=", "Lohn", "Lohn", "Lohn", "500", "1000");
-	selectNull("tabelle2", "Name");
-
+        selectAliasesColumn("tableName",columnsss);
 
 
 	disconnect();

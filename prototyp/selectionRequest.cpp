@@ -131,7 +131,6 @@
 					allColumnString += ", ";
 			}
 		}
-		std::cout << allColumnString << std::endl;
 
 		if(sort_by == "ASC" || sort_by=="asc"){
 			std::string sqlCommand ="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "'" + " ORDER BY " + toSortcolumnName  + " ASC;";
@@ -167,6 +166,35 @@
 		else{
 			check_error();
 		}
+	}
+
+	void selectCount(std::string tableName,std::string countColumn,std::string asColumnName){
+		std::string sqlCommand = "SELECT COUNT(" + countColumn + ") AS " + asColumnName + " FROM " + tableName + ";";
+		check_error();
+		connection_feedbackAll(sqlCommand.c_str());
+	}
+
+	void selectDistinct(std::string tableName,std::vector<std::string> columns){
+		std::string allColumnString;
+
+		for(int i=0; i< columns.size();i++)
+		{
+			allColumnString += columns.at(i);
+			if (i != columns.size()-1){
+					allColumnString += ", ";
+			}
+		}
+
+		std::string sqlCommand = "SELECT DISTINCT " + allColumnString + " FROM " + tableName + ";";
+		check_error();
+		connection_feedbackAll(sqlCommand.c_str());
+	}
+
+	void selectCountDistinct(std::string tableName,std::string countColumn){
+
+		std::string sqlCommand = "SELECT COUNT(DISTINCT " + countColumn + ") FROM " + tableName + ";";
+		check_error();
+		connection_feedback(sqlCommand.c_str());
 	}
 
 	void averageSum(std::string tableName, std::string columnName){
@@ -223,7 +251,34 @@
 		connection_feedbackAll(sqlCommand.c_str());
 
 	}
+	 
+	void selectAliasesColumn(std::string tableName,std::vector<std::string>columns){
+		//jede gerade stelle -> der Spaltennamen
+		//jede ungerade stelle -> der Alias der vorherigen Spalte
+		//letzter Eintrag falsch
 
+		std::string columnAlias;
+		int i =0;
+
+		std::cout<< "hallo" << std::endl;
+
+		while(i<columns.size()){
+			if (i != columns.size()-1){
+				columnAlias +=  columns.at(i) + " AS " + columns.at(i+1) + ", ";
+			}
+			else{
+				columnAlias +=  columns.at(i) + " AS " + columns.at(columns.size()-1) + " ";
+			}
+		//	std::cout<< columnAlias << std::endl;
+
+			i+=2;
+		}
+
+
+		std::string sqlCommand ="SELECT " + columnAlias + " FROM " + tableName + ";";
+		check_error();
+		connection_feedbackAll(sqlCommand.c_str());
+	}
 
 	void selectNull(std::string tableName, std::string columnName){
 
@@ -233,3 +288,5 @@
 		connection_feedbackAll(sqlCommand.c_str());
 
 	}
+
+
