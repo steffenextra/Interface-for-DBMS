@@ -20,22 +20,22 @@ finish Methods
     -method table rename 
     -method database rename //done
     -SELECT Limit          //done
-    -SELECT DISTINCT
-    -SELECT COUNT DISTINCT
-    -SELECT COUNT 
-    -SELECT MIN and MAX
-    -WHERE BETWEEN
-    -WHERE IN
-    -WHERE is NULL
+    -SELECT DISTINCT        //done
+    -SELECT COUNT DISTINCT     //done
+    -SELECT COUNT //done
+    -SELECT MIN and MAX //done
+    -WHERE BETWEEN  //done
+    -WHERE IN       //done
+    -WHERE is NULL  //done
+    -Like       //done
+    -Not like//done
 }
 
 Missing Methods
 {
     The Where with AND, OR, NOT
-    Like
     GROUP BY
     HAVING
-    ALIAS
     JOIN , LEFT JOIN, RIGHT JOIN, FULL JOIN, SELF JOIN
 }
 
