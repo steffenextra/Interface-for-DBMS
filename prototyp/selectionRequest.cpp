@@ -213,6 +213,37 @@
 		connection_feedbackAll(sqlCommand.c_str());		
 	}
 
+	void selectWhereAndOrNot(std::string tableName,std::vector<std::string> columns, std::vector<std::string>conditions,std::vector<std::string> operators,std::vector<std::string>conditions2){
+			
+			int i=0;
+			std::string allColumns;
+			std::string conditionOperatorString;
+			
+			while(i<columns.size()){
+				if (i != columns.size()-1){
+					allColumns +=  columns.at(i) + ", ";
+				}
+				else{
+					allColumns +=  columns.at(i) + " ";
+				}
+				i++;
+			}
+
+			i=0;
+
+			/*while(i<conditions.size()){
+				if (i != conditions.size()-1){
+					conditionOperatorString += conditions.at(i) + "='" + conditions.at(i+1) + "'" + operators.at(i) + conditions.at(i) + "='" + conditions2.at(i+1) + "';";
+				}
+				else{
+					conditionOperatorString += conditions.at(i) + "='" + conditions.at(conditions.size()-1) + "'" + operators.at(i) + conditions.at(i) + "='" + conditions2.at(conditions2.size()-1) + "'" ;
+				}
+				i++;
+			}*/
+
+			std::cout<< conditionOperatorString << std::endl;
+	}
+
 	void selectWhereWithSort(std::string tableName,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns,std::string toSortcolumnName,std::string sort_by){
 		//The vector columns contains the Columns that should be displayed
 		

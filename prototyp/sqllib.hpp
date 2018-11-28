@@ -75,6 +75,7 @@ void selectMinOrMaxWithWhere(std::string tableName, std::string minOrMax,std::st
 void selectLimitWhere(std::string tableName,std::string entryNumber,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns,std::string toSortColumnName,std::string sort_by);
 void selectOneColumn(std::string tableName,std::string columnName,std::string selected_at);
 void selectWhere(std::string tableName,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns);
+void selectWhereAndOrNot(std::string tableName,std::vector<std::string> columns, std::vector<std::string>conditions,std::vector<std::string> operators,std::vector<std::string>conditions2);
 void selectWhereWithSort(std::string tableName,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns,std::string toSortcolumnName,std::string sort_by);
 void sortTable(std::string tableName,std::string columnName,std::string sort_by);
 void selectCount(std::string tableName,std::string countColumn,std::string asColumnName);

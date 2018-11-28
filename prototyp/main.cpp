@@ -88,23 +88,34 @@ int main (int argc, char *argv[]) {
     
 std::vector<std::string> columnsss;
 std::vector<std::string> aliasss;
-std::vector<std::string> values;
+std::vector<std::string> conditions;
+std::vector<std::string> conditions2;
+std::vector<std::string> operators;
 
-values.push_back("Dieter");
-values.push_back("Wolfgang");
-values.push_back("Markus");
+        conditions.push_back("Name");
+        conditions.push_back("Dieter");
+        conditions.push_back("Nachname");
+        conditions.push_back("GanzLaaaaaaaaaangerNachname");
+       
+       
+        conditions2.push_back("Zwischennamen");
+        conditions2.push_back("Heinrich");
+        conditions2.push_back("PLZ");
+        conditions2.push_back("26817");
+
+        operators.push_back("AND");
+        operators.push_back("AND");
+
 
         columnsss.push_back("Name");
-        aliasss.push_back("Vornamen");
         columnsss.push_back("Nachname");
-        aliasss.push_back("Nachname2");
         columnsss.push_back("PLZ");
-        aliasss.push_back("Postleitzahl");
         columnsss.push_back("Adresse");
-        aliasss.push_back("Adresse2");
         columnsss.push_back("Zwischennamen");
-        aliasss.push_back("Zwischennamen2");
 
+
+//void selectWhereAndOrNot(std::string tableName,std::vector<std::string> columns, std::vector<std::string>conditions,std::vector<std::string> operators);
+selectWhereAndOrNot("tableNumberOne",columnsss,conditions,operators,conditions2);
 	disconnect();
 }
 
