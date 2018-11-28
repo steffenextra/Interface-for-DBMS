@@ -81,21 +81,23 @@ int main (int argc, char *argv[]) {
 //	selectNull("tabelle2", "Name");
 //      selectCountDistinct("tableNumberOne","Name");
 //      selectCount("tableNumberOne","Name","Namensanzahl");
+//       selectAlias("tableNumberOne",columnsss,aliasss);
     
 std::vector<std::string> columnsss;
+std::vector<std::string> aliasss;
 
         columnsss.push_back("Name");
-        columnsss.push_back("Vornamen");
+        aliasss.push_back("Vornamen");
         columnsss.push_back("Nachname");
-        columnsss.push_back("Nachname2");
+        aliasss.push_back("Nachname2");
         columnsss.push_back("PLZ");
-        columnsss.push_back("Postleitzahl");
+        aliasss.push_back("Postleitzahl");
         columnsss.push_back("Adresse");
-        columnsss.push_back("Adresse2");
+        aliasss.push_back("Adresse2");
         columnsss.push_back("Zwischennamen");
-        columnName.push_back("Zwischennamen2");
+        aliasss.push_back("Zwischennamen2");
 
-        selectAliasesColumn("tableName",columnsss);
+//        selectTableAlias("tableNumberOne","tableNumberTwo", columnsss);
 
 
 	disconnect();

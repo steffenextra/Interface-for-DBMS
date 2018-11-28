@@ -82,5 +82,6 @@ void averageSum(std::string tableName, std::string columnName);
 void sum(std::string tableName, std::string columnName, std::string alias);
 void unionSelect(std::vector <std::string> tableName, std::vector <std::string> columnName);
 void selectBetween(std::string conditionString, std::string conditionStringTwo, std::string tableName, std::string conditionColumn, std::string conditionColumnTwo, std::string condition, std::string conditionTwo);
-void selectAliasesColumn(std::string tableName,std::vector<std::string>columns);
+void selectColumnAlias(std::string tableName,std::vector<std::string>columns,std::vector<std::string>aliases);
+void selectTableAlias(std::string tableName,std::string aliasTableName,std::vector<std::string>columns);
 void selectNull(std::string tableName, std::string columnName);

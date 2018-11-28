@@ -251,35 +251,46 @@
 		connection_feedbackAll(sqlCommand.c_str());
 
 	}
-	 
-	void selectAliasesColumn(std::string tableName,std::vector<std::string>columns){
-		//jede gerade stelle -> der Spaltennamen
-		//jede ungerade stelle -> der Alias der vorherigen Spalte
-		//letzter Eintrag falsch
 
+	void selectColumnsAlias(std::string tableName,std::vector<std::string>columns,std::vector<std::string>aliases){
+		//Entry i of the alias vector is the Alias for the Entry i of the columns vector 
+		
 		std::string columnAlias;
 		int i =0;
 
-		std::cout<< "hallo" << std::endl;
-
 		while(i<columns.size()){
 			if (i != columns.size()-1){
-				columnAlias +=  columns.at(i) + " AS " + columns.at(i+1) + ", ";
+				columnAlias +=  columns.at(i) + " AS " + aliases.at(i) + ", ";
 			}
 			else{
-				columnAlias +=  columns.at(i) + " AS " + columns.at(columns.size()-1) + " ";
+				columnAlias +=  columns.at(i) + " AS " + aliases.at(i) + " ";
 			}
-		//	std::cout<< columnAlias << std::endl;
-
 			i+=2;
 		}
-
 
 		std::string sqlCommand ="SELECT " + columnAlias + " FROM " + tableName + ";";
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
 	}
+	void selectTableAlias(std::string tableName,std::string aliasTableName,std::vector<std::string>columns){
+		std::string columnAlias;
+		int i =0;
 
+		while(i<columns.size()){
+			if (i != columns.size()-1){
+				columnAlias +=  columns.at(i) + ", ";
+			}
+			else{
+				columnAlias +=  columns.at(i) + " ";
+			}
+			i++;
+		}
+	
+		std::string sqlCommand ="SELECT " + columnAlias + " FROM " + tableName + " AS " + aliasTableName +";";
+		check_error();
+		connection_feedbackAll(sqlCommand.c_str());
+	}
+	
 	void selectNull(std::string tableName, std::string columnName){
 
 		std::string first = "SELECT * ";
