@@ -82,9 +82,16 @@ int main (int argc, char *argv[]) {
 //      selectCountDistinct("tableNumberOne","Name");
 //      selectCount("tableNumberOne","Name","Namensanzahl");
 //       selectAlias("tableNumberOne",columnsss,aliasss);
+//        selectTableAlias("tableNumberOne","tableNumberTwo", columnsss);
+//       selectIn("tableNumberOne",columnsss,"Name",values);
     
 std::vector<std::string> columnsss;
 std::vector<std::string> aliasss;
+std::vector<std::string> values;
+
+values.push_back("Dieter");
+values.push_back("Wolfgang");
+values.push_back("Markus");
 
         columnsss.push_back("Name");
         aliasss.push_back("Vornamen");
@@ -96,8 +103,6 @@ std::vector<std::string> aliasss;
         aliasss.push_back("Adresse2");
         columnsss.push_back("Zwischennamen");
         aliasss.push_back("Zwischennamen2");
-
-//        selectTableAlias("tableNumberOne","tableNumberTwo", columnsss);
 
 
 	disconnect();

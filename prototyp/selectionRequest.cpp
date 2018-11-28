@@ -241,6 +241,38 @@
 
 	}
 
+	void selectIn(std::string tableName,std::vector<std::string>columns,std::string searchInColumn,std::vector<std::string>comparativValues){
+		
+		int i=0;
+		std::string column;
+		std::string comparativValue;
+
+		while(i<columns.size()){
+			if (i != columns.size()-1){
+				column +=  columns.at(i) + ", ";
+			}
+			else{
+				column +=  columns.at(i) + " ";
+			}
+			i++;
+		}
+		
+		i=0;
+
+		while(i<comparativValues.size()){
+			if (i != comparativValues.size()-1){
+				comparativValue +=  "'" + comparativValues.at(i) + "'" + ", ";
+			}
+			else{
+				comparativValue += "'" + comparativValues.at(i) + "'" + " ";
+			}
+			i++;
+		}
+
+		std::string sqlCommand = "SELECT " + column + " FROM " + tableName + " WHERE " + searchInColumn + " IN " + " (" + comparativValue + ");";
+		check_error();
+		connection_feedbackAll(sqlCommand.c_str()); 
+	}
 
 	void selectBetween(std::string conditionString, std::string conditionStringTwo, std::string tableName, std::string conditionColumn, std::string conditionColumnTwo, std::string condition, std::string conditionTwo){
 
@@ -272,6 +304,7 @@
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
 	}
+
 	void selectTableAlias(std::string tableName,std::string aliasTableName,std::vector<std::string>columns){
 		std::string columnAlias;
 		int i =0;
@@ -290,7 +323,7 @@
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
 	}
-	
+
 	void selectNull(std::string tableName, std::string columnName){
 
 		std::string first = "SELECT * ";

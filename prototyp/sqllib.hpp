@@ -81,6 +81,7 @@ void selectCountDistinct(std::string tableName,std::string countColumn);
 void averageSum(std::string tableName, std::string columnName);
 void sum(std::string tableName, std::string columnName, std::string alias);
 void unionSelect(std::vector <std::string> tableName, std::vector <std::string> columnName);
+void selectIn(std::string tableName,std::vector<std::string>columns,std::string searchInColumn,std::vector<std::string>comparativValues);
 void selectBetween(std::string conditionString, std::string conditionStringTwo, std::string tableName, std::string conditionColumn, std::string conditionColumnTwo, std::string condition, std::string conditionTwo);
 void selectColumnAlias(std::string tableName,std::vector<std::string>columns,std::vector<std::string>aliases);
 void selectTableAlias(std::string tableName,std::string aliasTableName,std::vector<std::string>columns);
