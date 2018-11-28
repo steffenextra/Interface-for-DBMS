@@ -84,7 +84,7 @@ int main (int argc, char *argv[]) {
 //       selectAlias("tableNumberOne",columnsss,aliasss);
 //        selectTableAlias("tableNumberOne","tableNumberTwo", columnsss);
 //       selectIn("tableNumberOne",columnsss,"Name",values);
-//        selectLike("tableNumberOne",columnsss,"Name","startandEnd","wg");
+//        selectNotLike("tableNumberOne",columnsss,"Name","startandEnd","dr");
     
 std::vector<std::string> columnsss;
 std::vector<std::string> aliasss;

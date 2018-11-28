@@ -75,6 +75,53 @@
 		}
 	}
 
+		void selectNotLike(std::string tableName,std::vector<std::string>columns,std::string toSearchColumn,std::string pattern,std::string toSearch){
+		
+		std::string allColumnString;
+		for(int i=0; i< columns.size();i++)
+		{
+			if (i != columns.size()-1){
+					allColumnString += " " + columns.at(i) + ",";
+			}
+			else{
+					allColumnString += " " + columns.at(i) + " ";
+			}
+		}
+
+		if(pattern=="start"){
+			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + toSearchColumn + " NOT LIKE " + "'" + toSearch + "%';";
+			check_error();
+			connection_feedbackAll(sqlCommand.c_str());
+		}
+
+		if(pattern=="end"){
+			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + toSearchColumn + " NOT LIKE " + "'%" + toSearch + "';";
+			check_error();
+			connection_feedbackAll(sqlCommand.c_str());
+		}
+
+		if(pattern=="anyPosition"){
+			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + toSearchColumn + " NOT LIKE " + "'%" + toSearch + "%';";
+			check_error();
+			connection_feedbackAll(sqlCommand.c_str());
+		}
+
+		if(pattern=="secondPosition"){
+			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + toSearchColumn + " NOT LIKE " + "'_" + toSearch + "%';";
+			check_error();
+			connection_feedbackAll(sqlCommand.c_str());
+		}
+
+		if(pattern=="startandEnd"){
+			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + toSearchColumn + " NOT LIKE " + "'" + toSearch.at(0) + "%" + toSearch.at(1) + "';";
+			check_error();
+			connection_feedbackAll(sqlCommand.c_str());
+		}
+		else{
+			//exception handling
+		}
+	}
+
 	void selectMinOrMax(std::string tableName,std::string minOrMax,std::string minOrMaxColumn,std::string asColumn){
 
 		if(minOrMax == "min" || minOrMax=="MIN"){
