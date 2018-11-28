@@ -20,19 +20,19 @@ finish Methods
     -method table rename 
     -method database rename //done
     -SELECT Limit          //done
+    -SELECT DISTINCT
+    -SELECT COUNT DISTINCT
+    -SELECT COUNT 
+    -SELECT MIN and MAX
+    -WHERE BETWEEN
+    -WHERE IN
+    -WHERE is NULL
 }
 
 Missing Methods
 {
-    ORDER BY OFFSET
-    SELECT DISTINCT
-    SELECT MIN and MAX
-    SELECT COUNT 
     The Where with AND, OR, NOT
-    WHERE BETWEEN
-    WHERE in
-    WHERE in
-    WHERE is NULL
+    Like
     GROUP BY
     HAVING
     ALIAS
