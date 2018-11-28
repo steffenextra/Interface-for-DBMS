@@ -11,6 +11,7 @@
 #include <vector>
 
 void sqlCommand(std::string sqlCommand,std::string commandType);
+void selectLike(std::string tableName,std::vector<std::string>columns,std::string toSearchColumn,std::string pattern,std::string toSearch);
 void selectMinOrMax(std::string tableName,std::string minOrMax,std::string minOrMaxColumn,std::string asColumn);
 void selectMinOrMaxWithWhere(std::string tableName, std::string minOrMax,std::string minOrMaxColumn,std::string asColumn,std::string comparisonColumn,std::string comparativeWorth);
 void selectLimitWhere(std::string tableName,std::string entryNumber,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns,std::string toSortColumnName,std::string sort_by);
@@ -24,4 +25,6 @@ void selectCountDistinct(std::string tableName,std::string countColumn);
 void averageSum(std::string tableName, std::string columnName);
 void sum(std::string tableName, std::string columnName, std::string alias);
 void unionSelect(std::vector <std::string> tableName, std::vector <std::string> columnName);
-void selectAliasesColumn(std::string tableName,std::string columnName,std::string aliasColumnName);
+void selectIn(std::string tableName,std::vector<std::string>columns,std::string searchInColumn,std::vector<std::string>comparativValues);
+void selectColumnAlias(std::string tableName,std::vector<std::string>columns,std::vector<std::string>aliases);
+void selectTableAlias(std::string tableName,std::string aliasTableName,std::vector<std::string>columns);

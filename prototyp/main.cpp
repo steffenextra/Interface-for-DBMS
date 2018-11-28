@@ -84,6 +84,7 @@ int main (int argc, char *argv[]) {
 //       selectAlias("tableNumberOne",columnsss,aliasss);
 //        selectTableAlias("tableNumberOne","tableNumberTwo", columnsss);
 //       selectIn("tableNumberOne",columnsss,"Name",values);
+//        selectLike("tableNumberOne",columnsss,"Name","startandEnd","wg");
     
 std::vector<std::string> columnsss;
 std::vector<std::string> aliasss;
@@ -103,7 +104,6 @@ values.push_back("Markus");
         aliasss.push_back("Adresse2");
         columnsss.push_back("Zwischennamen");
         aliasss.push_back("Zwischennamen2");
-
 
 	disconnect();
 }
