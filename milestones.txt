@@ -29,13 +29,14 @@ finish Methods
     -WHERE is NULL  //done
     -Like       //done
     -Not like//done
+    The Where with AND, OR, NOT
+    GROUP BY
+    GROUP BY with Order BY
 }
 
 Missing Methods
 {
-    The Where with AND, OR, NOT
-    GROUP BY
-    HAVING
+    GROUP BY with Count
     JOIN , LEFT JOIN, RIGHT JOIN, FULL JOIN, SELF JOIN
 }
 
