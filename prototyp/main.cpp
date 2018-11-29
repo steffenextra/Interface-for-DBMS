@@ -88,12 +88,17 @@ int main (int argc, char *argv[]) {
 //  selectWhereAnd("tableNumberOne",columnsss,conditions,conditionValue,conditions2,conditionValue2,operators);
     
 std::vector<std::string> columnsss;
+std::vector<std::string> groupByvector;
 
+        groupByvector.push_back("Name");
         columnsss.push_back("Name");
         columnsss.push_back("Nachname");
         columnsss.push_back("PLZ");
         columnsss.push_back("Adresse");
         columnsss.push_back("Zwischennamen");
+
+ //void groupBy(std::string tableName, std::vector<std::string>columns,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string>groupByColumns);
+        selectGroupBy("tableNumberOne",columnsss,"Name","Dieter",groupByvector);
 
 
 	disconnect();

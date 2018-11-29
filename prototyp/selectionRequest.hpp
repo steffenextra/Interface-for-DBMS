@@ -30,3 +30,4 @@ void unionSelect(std::vector <std::string> tableName, std::vector <std::string> 
 void selectIn(std::string tableName,std::vector<std::string>columns,std::string searchInColumn,std::vector<std::string>comparativValues);
 void selectColumnAlias(std::string tableName,std::vector<std::string>columns,std::vector<std::string>aliases);
 void selectTableAlias(std::string tableName,std::string aliasTableName,std::vector<std::string>columns);
+void selectGroupBy(std::string tableName, std::vector<std::string>columns,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string>groupByColumns);

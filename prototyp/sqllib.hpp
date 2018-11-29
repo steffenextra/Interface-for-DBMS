@@ -88,4 +88,5 @@ void selectIn(std::string tableName,std::vector<std::string>columns,std::string 
 void selectBetween(std::string conditionString, std::string conditionStringTwo, std::string tableName, std::string conditionColumn, std::string conditionColumnTwo, std::string condition, std::string conditionTwo);
 void selectColumnAlias(std::string tableName,std::vector<std::string>columns,std::vector<std::string>aliases);
 void selectTableAlias(std::string tableName,std::string aliasTableName,std::vector<std::string>columns);
+void selectGroupBy(std::string tableName, std::vector<std::string>columns,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string>groupByColumns);
 void selectNull(std::string tableName, std::string columnName);

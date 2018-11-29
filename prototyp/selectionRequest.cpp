@@ -474,6 +474,37 @@
 		connection_feedbackAll(sqlCommand.c_str());
 	}
 
+	void selectGroupBy(std::string tableName, std::vector<std::string>columns,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string>groupByColumns){
+		int i=0;
+		std::string allColumns;
+		std::string allGroupByColumns;
+		while(i<columns.size()){
+			
+			if (i != columns.size()-1){
+				allColumns +=  columns.at(i) + ", ";
+			}
+			else{
+				allColumns +=  columns.at(i) + " ";
+			}
+			i++;
+		}
+		i=0;
+		
+		while(i<groupByColumns.size()){
+			if (i != columns.size()-1){
+				allGroupByColumns +=  groupByColumns.at(i) + ", ";
+			}
+			else{
+				allGroupByColumns +=  groupByColumns.at(i) + " ";
+			}
+			i++;
+		}
+
+		std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "' GROUP BY " + allGroupByColumns + ";";
+		check_error(); 
+		connection_feedbackAll(sqlCommand.c_str());
+	}
+
 	void selectNull(std::string tableName, std::string columnName){
 
 		std::string first = "SELECT * ";
