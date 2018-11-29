@@ -29,17 +29,19 @@ finish Methods
     -WHERE is NULL  //done
     -Like       //done
     -Not like//done
-    The Where with AND, OR, NOT
-    GROUP BY
-    GROUP BY with Order BY
+    -The Where with AND, OR, NOT//done
+    -GROUP BY//done
+    -GROUP BY with Order BY//done
+    -GROUP BY with Count//done
 }
 
 Missing Methods
 {
-    GROUP BY with Count
     JOIN , LEFT JOIN, RIGHT JOIN, FULL JOIN, SELF JOIN
 }
-
-
-
+------------------------------------------------------------------
+to-Do
+-schleifen fixen bei vectoren mit einem eintrag!!
+-Exception-Handling
+-Code vereinheitlichen
 
