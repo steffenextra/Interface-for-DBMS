@@ -91,4 +91,5 @@ void selectTableAlias(std::string tableName,std::string aliasTableName,std::vect
 void selectGroupBy(std::string tableName, std::vector<std::string>columns,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string>groupByColumns);
 void selectGroupByWithOrderBy(std::string tableName, std::vector<std::string>columns,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string>groupByColumns,std::string toSortcolumnName,std::string sort_by);
 void selectGroupBy(std::string tableName, std::vector<std::string>columns,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string>groupByColumns,std::string toSortcolumnName,std::string sort_by);
+void selectGroupByWithOrderBy(std::string tableName, std::string countColumn,std::vector<std::string>columns,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string>groupByColumns,std::string sort_by);
 void selectNull(std::string tableName, std::string columnName);

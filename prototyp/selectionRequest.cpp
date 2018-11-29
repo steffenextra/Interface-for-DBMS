@@ -505,7 +505,7 @@
 		connection_feedbackAll(sqlCommand.c_str());
 	}
 
-	void selectGroupBy(std::string tableName, std::vector<std::string>columns,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string>groupByColumns,std::string toSortcolumnName,std::string sort_by){
+	void selectGroupByWithOrderBy(std::string tableName, std::vector<std::string>columns,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string>groupByColumns,std::string toSortcolumnName,std::string sort_by){
 		int i=0;
 		std::string allColumns;
 		std::string allGroupByColumns;
@@ -539,6 +539,48 @@
 
 		if(sort_by=="DESC" || sort_by=="desc"){
 			std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "' GROUP BY " + allGroupByColumns + " ORDER BY " + toSortcolumnName  + " DESC;";
+			check_error(); 
+			connection_feedbackAll(sqlCommand.c_str());
+		}
+		else{
+			//exception Handling
+		}
+	}
+	void selectGroupByWithOrderBy(std::string tableName, std::string countColumn,std::vector<std::string>columns,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string>groupByColumns,std::string sort_by){
+		int i=0;
+		std::string allColumns;
+		std::string allGroupByColumns;
+		while(i<columns.size()){
+			
+			if (i != columns.size()-1){
+				allColumns +=  columns.at(i) + ", ";
+			}
+			else{
+				allColumns +=  columns.at(i) + " ";
+			}
+			i++;
+		}
+		i=0;
+		
+		while(i<groupByColumns.size()){
+			if (i != columns.size()-1){
+				allGroupByColumns +=  groupByColumns.at(i) + " ";
+			}
+			else{
+				allGroupByColumns +=  groupByColumns.at(i) + " ";
+			}
+			i++;
+		}
+
+
+		if(sort_by=="ASC" || sort_by=="asc"){
+			std::string sqlCommand ="SELECT COUNT(" + countColumn +")," + allColumns + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "' GROUP BY " + allGroupByColumns +  " ORDER BY COUNT(" + countColumn +") ASC;";
+			check_error(); 
+			connection_feedbackAll(sqlCommand.c_str());
+		}
+
+		if(sort_by=="DESC" || sort_by=="desc"){
+			std::string sqlCommand ="SELECT COUNT(" + countColumn +")," + allColumns + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "' GROUP BY " + allGroupByColumns +  " ORDER BY COUNT(" + countColumn +") DESC;";
 			check_error(); 
 			connection_feedbackAll(sqlCommand.c_str());
 		}

@@ -85,8 +85,10 @@ int main (int argc, char *argv[]) {
 //        selectTableAlias("tableNumberOne","tableNumberTwo", columnsss);
 //       selectIn("tableNumberOne",columnsss,"Name",values);
 //        selectNotLike("tableNumberOne",columnsss,"Name","startandEnd","dr");
-//  selectWhereAnd("tableNumberOne",columnsss,conditions,conditionValue,conditions2,conditionValue2,operators);
- //void groupBy(std::string tableName, std::vector<std::string>columns,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string>groupByColumns);
+//      selectWhereAnd("tableNumberOne",columnsss,conditions,conditionValue,conditions2,conditionValue2,operators);
+//      void groupBy(std::string tableName, std::vector<std::string>columns,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string>groupByColumns);
+//      selectGroupBy("tableNumberOne",columnsss,"Name","Dieter",groupByvector);
+//      selectGroupByWithOrderBy("tableNumberOne",columnsss,"Name","Dieter",groupByvector,"Name","ASC");
     
 std::vector<std::string> columnsss;
 std::vector<std::string> groupByvector;
@@ -98,9 +100,7 @@ std::vector<std::string> groupByvector;
         columnsss.push_back("Adresse");
         columnsss.push_back("Zwischennamen");
 
-       // selectGroupBy("tableNumberOne",columnsss,"Name","Dieter",groupByvector);
-        selectGroupBy("tableNumberOne",columnsss,"Name","Dieter",groupByvector,"Name","ASC");
-        
+        selectGroupByWithOrderBy("tableNumberOne","Name",columnsss,"Name","Dieter",groupByvector,"ASC");
 	disconnect();
 }
 
