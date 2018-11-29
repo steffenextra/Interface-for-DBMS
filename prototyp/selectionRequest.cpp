@@ -523,7 +523,7 @@
 		
 		while(i<groupByColumns.size()){
 			if (i != columns.size()-1){
-				allGroupByColumns +=  groupByColumns.at(i) + " ";
+				allGroupByColumns +=  groupByColumns.at(i) + ", ";
 			}
 			else{
 				allGroupByColumns +=  groupByColumns.at(i) + " ";
@@ -564,7 +564,7 @@
 		
 		while(i<groupByColumns.size()){
 			if (i != columns.size()-1){
-				allGroupByColumns +=  groupByColumns.at(i) + " ";
+				allGroupByColumns +=  groupByColumns.at(i) + ", ";
 			}
 			else{
 				allGroupByColumns +=  groupByColumns.at(i) + " ";
