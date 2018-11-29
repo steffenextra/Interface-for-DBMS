@@ -213,7 +213,7 @@
 		connection_feedbackAll(sqlCommand.c_str());		
 	}
 
-	void selectWhereAndOrNot(std::string tableName,std::vector<std::string> columns, std::vector<std::string>conditions,std::vector<std::string> operators,std::vector<std::string>conditions2){
+	void selectWhereAndOr(std::string tableName,std::vector<std::string> columns, std::vector<std::string>conditions,std::vector<std::string>conditionValue,std::vector<std::string> conditions2,std::vector<std::string>conditionValue2,std::vector<std::string>operators){
 			
 			int i=0;
 			std::string allColumns;
@@ -228,20 +228,45 @@
 				}
 				i++;
 			}
-
 			i=0;
 
-			/*while(i<conditions.size()){
-				if (i != conditions.size()-1){
-					conditionOperatorString += conditions.at(i) + "='" + conditions.at(i+1) + "'" + operators.at(i) + conditions.at(i) + "='" + conditions2.at(i+1) + "';";
+			while(i<conditions.size()){
+				if(i != conditions.size()-1){
+					if(conditionValue.at(i).at(0)<=60  && conditionValue2.at(i).at(0)<=60){
+						conditionOperatorString += " " + conditions.at(i) +  "=" + conditionValue.at(i) + " " + operators.at(i) + " " + conditions2.at(i) +  "=" + conditionValue2.at(i) + " " + operators.at(i+1);
+					}
+
+					if(conditionValue.at(i).at(0)<=60){
+						conditionOperatorString += " " + conditions.at(i) +  "=" + conditionValue.at(i) + " " + operators.at(i) + " " + conditions2.at(i) +  "='" + conditionValue2.at(i) + "' "  + operators.at(i+1);
+					}
+					if(conditionValue2.at(i).at(0)<=60){
+						conditionOperatorString += " " + conditions.at(i) +  "='" + conditionValue.at(i) + "' " + operators.at(i) + " " + conditions2.at(i) +  "=" + conditionValue2.at(i) + " "  + operators.at(i+1);
+					}
+					else{
+						conditionOperatorString += " " + conditions.at(i) +  "='" + conditionValue.at(i) + "' " + operators.at(i) + " " + conditions2.at(i) +  "='" + conditionValue2.at(i) + "' "  + operators.at(i+1);
+					}
 				}
 				else{
-					conditionOperatorString += conditions.at(i) + "='" + conditions.at(conditions.size()-1) + "'" + operators.at(i) + conditions.at(i) + "='" + conditions2.at(conditions2.size()-1) + "'" ;
+					if(conditionValue.at(i).at(0)<=60  && conditionValue2.at(i).at(0)<=60){
+						conditionOperatorString += " " + conditions.at(i) +  "=" + conditionValue.at(i) + " " + operators.at(i) + " " + conditions2.at(i) +  "=" + conditionValue2.at(i) + " ";
+					}
+
+					if(conditionValue.at(i).at(0)<=60){
+						conditionOperatorString += " " + conditions.at(i) +  "=" + conditionValue.at(i) + " " + operators.at(i) + " " + conditions2.at(i) +  "='" + conditionValue2.at(i) + "' ";
+					}
+					if(conditionValue2.at(i).at(0)<=60){
+						conditionOperatorString += " " + conditions.at(i) +  "='" + conditionValue.at(i) + "' " + operators.at(i) + " " + conditions2.at(i) +  "=" + conditionValue2.at(i) + " ";
+					}
+					else{
+						conditionOperatorString += " " + conditions.at(i) +  "='" + conditionValue.at(i) + "' " + operators.at(i) + " " + conditions2.at(i) +  "='" + conditionValue2.at(i) + "' ";
+					}
 				}
 				i++;
-			}*/
-
-			std::cout<< conditionOperatorString << std::endl;
+			}
+			
+			std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE "  + conditionOperatorString + ";";
+			check_error();
+			connection_feedbackAll(sqlCommand.c_str()); 	
 	}
 
 	void selectWhereWithSort(std::string tableName,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns,std::string toSortcolumnName,std::string sort_by){

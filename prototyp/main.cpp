@@ -85,27 +85,9 @@ int main (int argc, char *argv[]) {
 //        selectTableAlias("tableNumberOne","tableNumberTwo", columnsss);
 //       selectIn("tableNumberOne",columnsss,"Name",values);
 //        selectNotLike("tableNumberOne",columnsss,"Name","startandEnd","dr");
+//  selectWhereAnd("tableNumberOne",columnsss,conditions,conditionValue,conditions2,conditionValue2,operators);
     
 std::vector<std::string> columnsss;
-std::vector<std::string> aliasss;
-std::vector<std::string> conditions;
-std::vector<std::string> conditions2;
-std::vector<std::string> operators;
-
-        conditions.push_back("Name");
-        conditions.push_back("Dieter");
-        conditions.push_back("Nachname");
-        conditions.push_back("GanzLaaaaaaaaaangerNachname");
-       
-       
-        conditions2.push_back("Zwischennamen");
-        conditions2.push_back("Heinrich");
-        conditions2.push_back("PLZ");
-        conditions2.push_back("26817");
-
-        operators.push_back("AND");
-        operators.push_back("AND");
-
 
         columnsss.push_back("Name");
         columnsss.push_back("Nachname");
@@ -114,8 +96,6 @@ std::vector<std::string> operators;
         columnsss.push_back("Zwischennamen");
 
 
-//void selectWhereAndOrNot(std::string tableName,std::vector<std::string> columns, std::vector<std::string>conditions,std::vector<std::string> operators);
-selectWhereAndOrNot("tableNumberOne",columnsss,conditions,operators,conditions2);
 	disconnect();
 }
 
