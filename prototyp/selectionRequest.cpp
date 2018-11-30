@@ -1,5 +1,25 @@
 #include "selectionRequest.hpp"
 
+
+/*
+* Die Methode "sqlCommand" gibt einen vom Nutzer eingegebenen String(SQL Befehl) direkt weiter zum SQL Server,
+* zu dem wird der Befehlstyp unterschieden. Es wird zwischen 3 Befehlstypen unterschieden: 
+*	-Query -> simple Abfrage an den SQL Server
+*	-feedback-> zeigt den Inhalt einer Spalte an
+*	-feedbackAll-> zeigt die komplette Tabelle mit Spaltenbezeichnugen an
+*	
+*@param 
+*	-sqlCommand-> enthält dem vom Nutzer eingegebenen String der später als SQL Befehl fungiert
+*	-commandType-> enhält dem vom Nutzer gewählten Befehlstyp
+*	
+*@return 
+*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+*
+* @author Martin Meyer
+*
+* @version 1.0
+*/
+	
 	void sqlCommand(std::string sqlCommand,std::string commandType){
 		/*
 		3 CommandType 
@@ -27,6 +47,34 @@
 			check_error();
 		}
 	}
+
+	/*
+	* Die Methode "selectLike" ermöglicht eine Suche auf der Grundlage eines vorher definierten regulären Musters.
+	*Muster:
+	*	Findet einen Datzensatz der z.B mit einem "a" beginnt.
+	*	Findet einen Datzensatz der z.B mit einem "a" endet.
+	*	Findet einen Datensatz der z.b ein "or" an beliebiger Positon enhält. 
+	*	Findet einen Datensatz der z.B ein "r" an der zweiten Position enthält.
+	*	Findet einen Datensatz der z.B mit einem "a" beginnt und einem O anfängt. 
+	*		->(Bedingung nur bei zwei Buchstaben erfüllt -> Fehlermeldung bei mehr als zwei Buchstaben)
+	*	
+	*Die Struktur des SQL Befehl:
+	*	SELECT Spaltenname(n) FROM Tabellenname WHERE Spaltenname LIKE 'MUSTER'
+	*	
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-columns-> Enhält die Liste der angezeigten Spalten
+	*	-toSearchColumn > Enhält die zu suchende Spalte
+	*	-pattern-> enhält das ausgewählte Muster
+	*	-toSearch-> enhält das zu suchende Element
+	*		
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
 
 	void selectLike(std::string tableName,std::vector<std::string>columns,std::string toSearchColumn,std::string pattern,std::string toSearch){
 		int i=0;
@@ -81,9 +129,38 @@
 		}
 	}
 
+		/*
+	* Die Methode "selectNotLike" ermöglicht eine Suche auf der Grundlage eines vorher definierten regulären Musters.
+	*Muster:
+	*	Findet einen Datzensatz der z.B nicht mit einem "a" beginnt.
+	*	Findet einen Datzensatz der z.B nicht mit einem "a" endet.
+	*	Findet einen Datensatz der z.b nicht ein "or" an beliebiger Positon enhält. 
+	*	Findet einen Datensatz der z.B nicht ein "r" an der zweiten Position enthält.
+	*	Findet einen Datensatz der z.B nicht mit einem "a" beginnt und einem O anfängt. 
+	*		->(Bedingung nur bei zwei Buchstaben erfüllt -> Fehlermeldung bei mehr als zwei Buchstaben)
+	*	
+	*Die Struktur des SQL Befehl:
+	*	SELECT Spaltenname(n) FROM Tabellenname WHERE Spaltenname NOT LIKE 'MUSTER'
+	*	
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-columns-> Enhält die Liste der angezeigten Spalten
+	*	-toSearchColumn > Enhält die zu suchende Spalte
+	*	-pattern-> enhält das ausgewählte Muster
+	*	-toSearch-> enhält das zu suchende Element
+	*		
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
+
 	void selectNotLike(std::string tableName,std::vector<std::string>columns,std::string toSearchColumn,std::string pattern,std::string toSearch){
 		int i=0;
 		std::string allColumns;
+
 		while(i<columns.size()){
 			if(columns.size()==1){
 				allColumns +=  columns.at(i) + " ";
