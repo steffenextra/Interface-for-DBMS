@@ -73,7 +73,6 @@ int main (int argc, char *argv[]) {
 //      std::string myCommand="SELECT * FROM tableNumberOne";
 //      sqlCommand(myCommand,"feedbackAll");
 //      renameDatabase("DatabaseNumberOne1","DatabaseNumberOne");
-//      selectWhereWithSort("tableNumberOne","Name","Dieter",columnsss,"Name","ASC");
 //      selectLimitWhere("tableNumberOne","2","Name","Dieter",columnsss,"Name","DESC");
 //      selectMinOrMax("tableNumberOne","MIN","Name","MAXIMALE");
 //      selectMinOrMaxWithWhere("tableNumberOne","MIN","Name","MAXIMALE","Name","Dieter");
@@ -89,18 +88,21 @@ int main (int argc, char *argv[]) {
 //      void groupBy(std::string tableName, std::vector<std::string>columns,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string>groupByColumns);
 //      selectGroupBy("tableNumberOne",columnsss,"Name","Dieter",groupByvector);
 //      selectGroupByWithOrderBy("tableNumberOne",columnsss,"Name","Dieter",groupByvector,"Name","ASC");
+//        selectGroupByWithOrderBy("tableNumberOne","Name",columnsss,"Name","Dieter",groupByvector,"ASC");
     
 std::vector<std::string> columnsss;
-std::vector<std::string> groupByvector;
+//std::vector<std::string> groupByvector;
 
-        groupByvector.push_back("Name");
+//        groupByvector.push_back("Name");
         columnsss.push_back("Name");
         columnsss.push_back("Nachname");
         columnsss.push_back("PLZ");
         columnsss.push_back("Adresse");
         columnsss.push_back("Zwischennamen");
 
-        selectGroupByWithOrderBy("tableNumberOne","Name",columnsss,"Name","Dieter",groupByvector,"ASC");
+
+      selectWhereWithSort("tableNumberOne","Name","Dieter",columnsss,"Name","ASC");
+
 	disconnect();
 }
 

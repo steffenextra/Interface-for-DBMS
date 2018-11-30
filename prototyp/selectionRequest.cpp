@@ -29,44 +29,50 @@
 	}
 
 	void selectLike(std::string tableName,std::vector<std::string>columns,std::string toSearchColumn,std::string pattern,std::string toSearch){
-		
-		std::string allColumnString;
-		for(int i=0; i< columns.size();i++)
-		{
-			if (i != columns.size()-1){
-					allColumnString += " " + columns.at(i) + ",";
+		int i=0;
+		std::string allColumns;
+
+		while(i<columns.size()){
+			if(columns.size()==1){
+				allColumns +=  columns.at(i) + " ";
 			}
 			else{
-					allColumnString += " " + columns.at(i) + " ";
+				if (i != columns.size()-1){
+					allColumns +=  columns.at(i) + ", ";
+				}
+				else{
+					allColumns +=  columns.at(i) + " ";
+				}
 			}
+			i++;
 		}
 
 		if(pattern=="start"){
-			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + toSearchColumn + "  LIKE " + "'" + toSearch + "%';";
+			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + toSearchColumn + "  LIKE " + "'" + toSearch + "%';";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());
 		}
 
 		if(pattern=="end"){
-			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + toSearchColumn + "  LIKE " + "'%" + toSearch + "';";
+			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + toSearchColumn + "  LIKE " + "'%" + toSearch + "';";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());
 		}
 
 		if(pattern=="anyPosition"){
-			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + toSearchColumn + "  LIKE " + "'%" + toSearch + "%';";
+			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + toSearchColumn + "  LIKE " + "'%" + toSearch + "%';";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());
 		}
 
 		if(pattern=="secondPosition"){
-			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + toSearchColumn + "  LIKE " + "'_" + toSearch + "%';";
+			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + toSearchColumn + "  LIKE " + "'_" + toSearch + "%';";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());
 		}
 
 		if(pattern=="startandEnd"){
-			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + toSearchColumn + "  LIKE " + "'" + toSearch.at(0) + "%" + toSearch.at(1) + "';";
+			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + toSearchColumn + "  LIKE " + "'" + toSearch.at(0) + "%" + toSearch.at(1) + "';";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());
 		}
@@ -75,45 +81,50 @@
 		}
 	}
 
-		void selectNotLike(std::string tableName,std::vector<std::string>columns,std::string toSearchColumn,std::string pattern,std::string toSearch){
-		
-		std::string allColumnString;
-		for(int i=0; i< columns.size();i++)
-		{
-			if (i != columns.size()-1){
-					allColumnString += " " + columns.at(i) + ",";
+	void selectNotLike(std::string tableName,std::vector<std::string>columns,std::string toSearchColumn,std::string pattern,std::string toSearch){
+		int i=0;
+		std::string allColumns;
+		while(i<columns.size()){
+			if(columns.size()==1){
+				allColumns +=  columns.at(i) + " ";
 			}
 			else{
-					allColumnString += " " + columns.at(i) + " ";
+				if (i != columns.size()-1){
+					allColumns +=  columns.at(i) + ", ";
+				}
+				else{
+					allColumns +=  columns.at(i) + " ";
+				}
 			}
+			i++;
 		}
 
 		if(pattern=="start"){
-			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + toSearchColumn + " NOT LIKE " + "'" + toSearch + "%';";
+			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + toSearchColumn + " NOT LIKE " + "'" + toSearch + "%';";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());
 		}
 
 		if(pattern=="end"){
-			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + toSearchColumn + " NOT LIKE " + "'%" + toSearch + "';";
+			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + toSearchColumn + " NOT LIKE " + "'%" + toSearch + "';";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());
 		}
 
 		if(pattern=="anyPosition"){
-			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + toSearchColumn + " NOT LIKE " + "'%" + toSearch + "%';";
+			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + toSearchColumn + " NOT LIKE " + "'%" + toSearch + "%';";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());
 		}
 
 		if(pattern=="secondPosition"){
-			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + toSearchColumn + " NOT LIKE " + "'_" + toSearch + "%';";
+			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + toSearchColumn + " NOT LIKE " + "'_" + toSearch + "%';";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());
 		}
 
 		if(pattern=="startandEnd"){
-			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + toSearchColumn + " NOT LIKE " + "'" + toSearch.at(0) + "%" + toSearch.at(1) + "';";
+			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + toSearchColumn + " NOT LIKE " + "'" + toSearch.at(0) + "%" + toSearch.at(1) + "';";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());
 		}
@@ -163,23 +174,32 @@
 
 	void selectLimitWhere(std::string tableName,std::string entryNumber,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns,std::string toSortColumnName,std::string sort_by){
 		//The vector columns contains the Columns that should be displayed
-		std::string allColumnString;
-		for(int i=0; i< columns.size();i++)
-		{
-			allColumnString += columns.at(i);
-			if (i != columns.size()-1){
-					allColumnString += ", ";
+		int i=0;
+		std::string allColumns;
+		
+		while(i<columns.size()){
+			if(columns.size()==1){
+				allColumns +=  columns.at(i) + " ";
 			}
+			else{
+				if (i != columns.size()-1){
+					allColumns +=  columns.at(i) + ", ";
+				}
+				else{
+					allColumns +=  columns.at(i) + " ";
+				}
+			}
+			i++;
 		}
 
 		if(sort_by == "ASC" || sort_by=="asc"){
-			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth+ "'" + "  ORDER BY " + toSortColumnName + " ASC " + " LIMIT " + entryNumber + ";";
+			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth+ "'" + "  ORDER BY " + toSortColumnName + " ASC " + " LIMIT " + entryNumber + ";";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());	
 		}
 
 		if(sort_by== "DESC" ||  sort_by=="desc"){
-			std::string sqlCommand="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth+ "'" + "  ORDER BY " + toSortColumnName + " ASC " + " LIMIT " + entryNumber + ";";
+			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth+ "'" + "  ORDER BY " + toSortColumnName + " ASC " + " LIMIT " + entryNumber + ";";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());	
 		}
@@ -199,16 +219,25 @@
 
 	void selectWhere(std::string tableName,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns){
 		//The vector columns contains the Columns that should be displayed
-		std::string allColumnString;
-		for(int i=0; i< columns.size();i++)
-		{
-			allColumnString += columns.at(i);
-			if (i != columns.size()-1){
-					allColumnString += ", ";
+		int i =0;
+		std::string allColumns;
+		
+		while(i<columns.size()){
+			if(columns.size()==1){
+				allColumns +=  columns.at(i) + " ";
 			}
+			else{
+				if (i != columns.size()-1){
+					allColumns +=  columns.at(i) + ", ";
+				}
+				else{
+					allColumns +=  columns.at(i) + " ";
+				}
+			}
+			i++;
 		}
 
-		std::string sqlCommand ="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "';";
+		std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "';";
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());		
 	}
@@ -219,15 +248,20 @@
 			std::string allColumns;
 			std::string conditionOperatorString;
 			
-			while(i<columns.size()){
+		while(i<columns.size()){
+			if(columns.size()==1){
+				allColumns +=  columns.at(i) + " ";
+			}
+			else{
 				if (i != columns.size()-1){
 					allColumns +=  columns.at(i) + ", ";
 				}
 				else{
 					allColumns +=  columns.at(i) + " ";
 				}
-				i++;
 			}
+			i++;
+		}
 			i=0;
 
 			while(i<conditions.size()){
@@ -271,25 +305,32 @@
 
 	void selectWhereWithSort(std::string tableName,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns,std::string toSortcolumnName,std::string sort_by){
 		//The vector columns contains the Columns that should be displayed
-		
-		std::string allColumnString;
+		int i =0;
+		std::string allColumns;
 
-		for(int i=0; i< columns.size();i++)
-		{
-			allColumnString += columns.at(i);
-			if (i != columns.size()-1){
-					allColumnString += ", ";
+		while(i<columns.size()){
+			if(columns.size()==1){
+				allColumns +=  columns.at(i) + " ";
 			}
+			else{
+				if (i != columns.size()-1){
+					allColumns +=  columns.at(i) + ", ";
+				}
+				else{
+					allColumns +=  columns.at(i) + " ";
+				}
+			}
+			i++;
 		}
 
 		if(sort_by == "ASC" || sort_by=="asc"){
-			std::string sqlCommand ="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "'" + " ORDER BY " + toSortcolumnName  + " ASC;";
+			std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "'" + " ORDER BY " + toSortcolumnName  + " ASC;";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());	
 		}
 
 		if(sort_by== "DESC" ||  sort_by=="desc"){
-			std::string sqlCommand ="SELECT " + allColumnString + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "'" + " ORDER BY " + toSortcolumnName  + " DESC;";
+			std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "'" + " ORDER BY " + toSortcolumnName  + " DESC;";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());	
 		}
@@ -325,17 +366,26 @@
 	}
 
 	void selectDistinct(std::string tableName,std::vector<std::string> columns){
-		std::string allColumnString;
+		int i =0;
+		std::string allColumns;
 
-		for(int i=0; i< columns.size();i++)
-		{
-			allColumnString += columns.at(i);
-			if (i != columns.size()-1){
-					allColumnString += ", ";
+
+		while(i<columns.size()){
+			if(columns.size()==1){
+				allColumns +=  columns.at(i) + " ";
 			}
+			else{
+				if (i != columns.size()-1){
+					allColumns +=  columns.at(i) + ", ";
+				}
+				else{
+					allColumns +=  columns.at(i) + " ";
+				}
+			}
+			i++;
 		}
 
-		std::string sqlCommand = "SELECT DISTINCT " + allColumnString + " FROM " + tableName + ";";
+		std::string sqlCommand = "SELECT DISTINCT " + allColumns + " FROM " + tableName + ";";
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
 	}
@@ -377,12 +427,10 @@
 
 			if(i == tableName.size()-1 && i== columnName.size()-1){
 
-                                sqlCommand += " SELECT " + columnName.at(i) + " FROM " + tableName.at(i) + " ";
-
-                        }else {
-
-			sqlCommand  += "SELECT " + columnName.at(i) + " FROM " + tableName.at(i) + " UNION ";
-
+                sqlCommand += " SELECT " + columnName.at(i) + " FROM " + tableName.at(i) + " ";
+			}
+			else{
+				sqlCommand  += "SELECT " + columnName.at(i) + " FROM " + tableName.at(i) + " UNION ";
 			}
 		}
 
@@ -394,15 +442,20 @@
 	void selectIn(std::string tableName,std::vector<std::string>columns,std::string searchInColumn,std::vector<std::string>comparativValues){
 		
 		int i=0;
-		std::string column;
+		std::string allColumns;
 		std::string comparativValue;
 
 		while(i<columns.size()){
-			if (i != columns.size()-1){
-				column +=  columns.at(i) + ", ";
+			if(columns.size()==1){
+				allColumns +=  columns.at(i) + " ";
 			}
 			else{
-				column +=  columns.at(i) + " ";
+				if (i != columns.size()-1){
+					allColumns +=  columns.at(i) + ", ";
+				}
+				else{
+					allColumns +=  columns.at(i) + " ";
+				}
 			}
 			i++;
 		}
@@ -410,16 +463,21 @@
 		i=0;
 
 		while(i<comparativValues.size()){
-			if (i != comparativValues.size()-1){
-				comparativValue +=  "'" + comparativValues.at(i) + "'" + ", ";
+			if(comparativValues.size()==1){
+				comparativValue += "'" + comparativValues.at(i) + "'" + " ";
 			}
 			else{
-				comparativValue += "'" + comparativValues.at(i) + "'" + " ";
+				if (i != comparativValues.size()-1){
+					comparativValue +=  "'" + comparativValues.at(i) + "'" + ", ";
+				}
+				else{
+					comparativValue += "'" + comparativValues.at(i) + "'" + " ";
+				}
 			}
 			i++;
 		}
 
-		std::string sqlCommand = "SELECT " + column + " FROM " + tableName + " WHERE " + searchInColumn + " IN " + " (" + comparativValue + ");";
+		std::string sqlCommand = "SELECT " + allColumns + " FROM " + tableName + " WHERE " + searchInColumn + " IN " + " (" + comparativValue + ");";
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str()); 
 	}
@@ -441,11 +499,16 @@
 		int i =0;
 
 		while(i<columns.size()){
-			if (i != columns.size()-1){
-				columnAlias +=  columns.at(i) + " AS " + aliases.at(i) + ", ";
+			if(columns.size()==1){
+				columnAlias +=  columns.at(i) + " AS " + aliases.at(i) + " ";
 			}
 			else{
-				columnAlias +=  columns.at(i) + " AS " + aliases.at(i) + " ";
+				if (i != columns.size()-1){
+					columnAlias +=  columns.at(i) + " AS " + aliases.at(i) + ", ";
+				}
+				else{
+					columnAlias +=  columns.at(i) + " AS " + aliases.at(i) + " ";
+				}
 			}
 			i+=2;
 		}
@@ -460,11 +523,16 @@
 		int i =0;
 
 		while(i<columns.size()){
-			if (i != columns.size()-1){
-				columnAlias +=  columns.at(i) + ", ";
+			if(columns.size()==1){
+				columnAlias +=  columns.at(i) + " ";
 			}
 			else{
-				columnAlias +=  columns.at(i) + " ";
+				if (i != columns.size()-1){
+					columnAlias +=  columns.at(i) + ", ";
+				}
+				else{
+					columnAlias +=  columns.at(i) + " ";
+				}
 			}
 			i++;
 		}
@@ -478,24 +546,35 @@
 		int i=0;
 		std::string allColumns;
 		std::string allGroupByColumns;
+		
 		while(i<columns.size()){
-			
-			if (i != columns.size()-1){
-				allColumns +=  columns.at(i) + ", ";
+			if(columns.size()==1){
+				allColumns +=  columns.at(i) + " ";
 			}
 			else{
-				allColumns +=  columns.at(i) + " ";
+				if (i != columns.size()-1){
+					allColumns +=  columns.at(i) + ", ";
+				}
+				else{
+					allColumns +=  columns.at(i) + " ";
+				}
 			}
 			i++;
 		}
 		i=0;
 		
 		while(i<groupByColumns.size()){
-			if (i != columns.size()-1){
-				allGroupByColumns +=  groupByColumns.at(i) + ", ";
+			if(groupByColumns.size()==1){
+				allGroupByColumns +=  groupByColumns.at(i) + " ";
 			}
 			else{
-				allGroupByColumns +=  groupByColumns.at(i) + " ";
+				if (i != columns.size()-1){
+					allGroupByColumns +=  groupByColumns.at(i) + ", ";
+				}
+				else{
+					allGroupByColumns +=  groupByColumns.at(i) + " ";
+				}
+
 			}
 			i++;
 		}
@@ -509,24 +588,35 @@
 		int i=0;
 		std::string allColumns;
 		std::string allGroupByColumns;
+		
 		while(i<columns.size()){
-			
-			if (i != columns.size()-1){
-				allColumns +=  columns.at(i) + ", ";
+			if(columns.size()==1){
+				allColumns +=  columns.at(i) + " ";
 			}
 			else{
-				allColumns +=  columns.at(i) + " ";
+				if (i != columns.size()-1){
+					allColumns +=  columns.at(i) + ", ";
+				}
+				else{
+					allColumns +=  columns.at(i) + " ";
+				}
 			}
 			i++;
 		}
 		i=0;
 		
 		while(i<groupByColumns.size()){
-			if (i != columns.size()-1){
-				allGroupByColumns +=  groupByColumns.at(i) + ", ";
+			if(groupByColumns.size()==1){
+				allGroupByColumns +=  groupByColumns.at(i) + " ";
 			}
 			else{
-				allGroupByColumns +=  groupByColumns.at(i) + " ";
+				if (i != columns.size()-1){
+					allGroupByColumns +=  groupByColumns.at(i) + ", ";
+				}
+				else{
+					allGroupByColumns +=  groupByColumns.at(i) + " ";
+				}
+
 			}
 			i++;
 		}
@@ -551,23 +641,34 @@
 		std::string allColumns;
 		std::string allGroupByColumns;
 		while(i<columns.size()){
-			
-			if (i != columns.size()-1){
-				allColumns +=  columns.at(i) + ", ";
+			if(columns.size()==1){
+				allColumns +=  columns.at(i) + " ";
 			}
 			else{
-				allColumns +=  columns.at(i) + " ";
+				if (i != columns.size()-1){
+					allColumns +=  columns.at(i) + ", ";
+				}
+				else{
+					allColumns +=  columns.at(i) + " ";
+				}
 			}
 			i++;
 		}
+
 		i=0;
 		
 		while(i<groupByColumns.size()){
-			if (i != columns.size()-1){
-				allGroupByColumns +=  groupByColumns.at(i) + ", ";
+			if(groupByColumns.size()==1){
+				allGroupByColumns +=  groupByColumns.at(i) + " ";
 			}
 			else{
-				allGroupByColumns +=  groupByColumns.at(i) + " ";
+				if (i != columns.size()-1){
+					allGroupByColumns +=  groupByColumns.at(i) + " ";
+				}
+				else{
+					allGroupByColumns +=  groupByColumns.at(i) + ", ";
+				}
+
 			}
 			i++;
 		}
