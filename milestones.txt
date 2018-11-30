@@ -40,8 +40,14 @@ Missing Methods
     JOIN , LEFT JOIN, RIGHT JOIN, FULL JOIN, SELF JOIN
 }
 ------------------------------------------------------------------
-to-Do
--schleifen fixen bei vectoren mit einem eintrag!!
--Exception-Handling
--Code vereinheitlichen
+Done
+-schleifen fixen bei vectoren mit einem eintrag!!//done bei selectionRequest -> bei der Methode whereAndOr noch hinzufügen
+-Code vereinheitlichen//done bei selectionRequest
 
+
+
+to-Do
+-Exception-Handling
+-TestDatenbank erstellen!
+-Code vollständig kommentieren
+-Code vollständig vereinheitlichen 

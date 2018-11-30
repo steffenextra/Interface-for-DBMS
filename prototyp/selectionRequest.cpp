@@ -250,7 +250,29 @@
 
 	}
 
-	
+	/*
+	* Die Methode "selectMinOrMaxWhere" ermittelt den höchsten bzw. niedrigsten Wert 
+	* einer Tabellenspalte verknüpft mit einer Bedigungs Klausel und liefert die Aliasspalte zurück.
+	*	
+	*Die Struktur der beiden SQL Befehlen:	
+	*	SELECT MIN(Spaltenname(n)) AS Aliasspaltennamen FROM Tabellennamen WHERE Bedingungsspalte ='Bedingungswert'; 
+	*	SELECT MAX(Spaltenname(n)) AS Aliasspaltennamen FROM Tabellennamen WHERE Bedingungsspalte ='Bedingungswert';
+	*	
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-minOrMax-> Gibt an welcher Befehl ausgeführt werden soll.
+	*	-minOrMaxColumn > Gibt die Spalte an, die den Min/Max Wert enthalten soll
+	*	-asColumn-> Enhält den gewählten Aliasnamen für die Min/Max Spalte
+	*	-Enhält die Bedingungsspalte
+	*	-Enhält den Bedigungswert
+	*		
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
 
 	void selectMinOrMaxWhere(std::string tableName, std::string minOrMax,std::string minOrMaxColumn,std::string aliasColumn,std::string conditionColumn,std::string conditionValue){
 		
@@ -271,7 +293,32 @@
 		}
 	}
 
-	void selectLimitWhere(std::string tableName,std::vector<std::string> columns,std::string limitNumber,std::string conditionColumn,std::string conditionValue,std::string toSortColumnName,std::string sortBy){
+	/*
+	* Die Methode "selectLimitWhere" dient dazu eine maximale Anzahl an Ergebnissen festlegen verknüpft mit einer Bedingung Klausel. 
+	* Zudem wird es Aufsteigend bzw. Absteigend sotiert
+	*	
+	*Die Struktur der beiden SQL Befehlen:	
+	*	SELECT Spaltenname(n) FROM Tabellennamen WHERE Bedigungsspalte = 'Bedingungswert' ORDER BY Sotierendespalte ASC;
+	*	SELECT Spaltenname(n) FROM Tabellennamen WHERE Bedigungsspalte = 'Bedingungswert' ORDER BY Sotierendespalte DESC;
+	*
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-columns-> Enhält die Liste der angezeigten Spalten
+	*	-limitNumber-> Anzahl der angezeigten Datensätze
+	*	-conditionColumn->Enhält die Bedingungsspalte
+	*	-conditionValue->Enhält den Bedigungswert
+	*	-toSortColumnName-> Enhält die Spalte zu der sotiert werden soll
+	*	-SortBy-> Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
+	*		
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
+
+	void selectLimitWhereOrderBy(std::string tableName,std::vector<std::string> columns,std::string limitNumber,std::string conditionColumn,std::string conditionValue,std::string toSortColumnName,std::string sortBy){
 		
 		int i=0;
 		std::string allColumns;
