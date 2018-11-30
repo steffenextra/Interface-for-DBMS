@@ -129,7 +129,7 @@
 		}
 	}
 
-		/*
+	/*
 	* Die Methode "selectNotLike" ermöglicht eine Suche auf der Grundlage eines vorher definierten regulären Musters.
 	*Muster:
 	*	Findet einen Datzensatz der z.B nicht mit einem "a" beginnt.
@@ -209,17 +209,37 @@
 			//exception handling
 		}
 	}
-
-	void selectMinOrMax(std::string tableName,std::string minOrMax,std::string minOrMaxColumn,std::string asColumn){
+	/*
+	* Die Methode "selectMinOrMax" ermittelt den höchsten bzw. niedrigsten Wert 
+	* einer Tabellenspalte und liefert die Spalte mit einem Aliasnamen zurück.
+	*	
+	*Die Struktur der beiden SQL Befehlen:	
+	*	SELECT MIN(Spaltenname1) AS Aliasspalte FROM Tabellenname 
+	*	SELECT MAX(Spaltenname1) AS Aliasspalte FROM Tabellenname 
+	*	
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-minOrMax-> Gibt an welcher Befehl ausgeführt werden soll.
+	*	-minOrMaxColumn > Gibt die Spalte an, die den Min/Max Wert enthalten soll
+	*	-asColumn-> Enhält den gewählten Aliasnamen für die Min/Max Spalte
+	*		
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
+	void selectMinOrMax(std::string tableName,std::string minOrMax,std::string minOrMaxColumn,std::string aliasColumn){
 
 		if(minOrMax == "min" || minOrMax=="MIN"){
-			std::string sqlCommand="SELECT MIN(" + minOrMaxColumn +")" + " AS " + asColumn + " FROM " +  tableName + ";";
+			std::string sqlCommand="SELECT MIN(" + minOrMaxColumn +")" + " AS " + aliasColumn + " FROM " +  tableName + ";";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());	
 		}
 
 		if(minOrMax == "MAX" || minOrMax=="MAX"){
-			std::string sqlCommand="SELECT MAX(" + minOrMaxColumn +")" + " AS " + asColumn + " FROM " +  tableName + ";";
+			std::string sqlCommand="SELECT MAX(" + minOrMaxColumn +")" + " AS " + aliasColumn + " FROM " +  tableName + ";";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());	
 		}
@@ -230,16 +250,18 @@
 
 	}
 
-	void selectMinOrMaxWithWhere(std::string tableName, std::string minOrMax,std::string minOrMaxColumn,std::string asColumn,std::string comparisonColumn,std::string comparativeWorth){
+	
+
+	void selectMinOrMaxWhere(std::string tableName, std::string minOrMax,std::string minOrMaxColumn,std::string aliasColumn,std::string conditionColumn,std::string conditionValue){
 		
 		if(minOrMax == "min" || minOrMax=="MIN"){
-			std::string sqlCommand="SELECT MIN(" + minOrMaxColumn +")" +" AS " + asColumn + " FROM " +  tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "'" + ";";
+			std::string sqlCommand="SELECT MIN(" + minOrMaxColumn +")" +" AS " + aliasColumn + " FROM " +  tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "'" + ";";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());	
 		}
 
 		if(minOrMax == "MAX" || minOrMax=="MAX"){
-			std::string sqlCommand="SELECT MAX(" + minOrMaxColumn +")" +" AS " + asColumn + " FROM " +  tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "'" + ";";
+			std::string sqlCommand="SELECT MAX(" + minOrMaxColumn +")" +" AS " + aliasColumn + " FROM " +  tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "'" + ";";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());	
 		}
@@ -249,8 +271,8 @@
 		}
 	}
 
-	void selectLimitWhere(std::string tableName,std::string entryNumber,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns,std::string toSortColumnName,std::string sort_by){
-		//The vector columns contains the Columns that should be displayed
+	void selectLimitWhere(std::string tableName,std::vector<std::string> columns,std::string limitNumber,std::string conditionColumn,std::string conditionValue,std::string toSortColumnName,std::string sortBy){
+		
 		int i=0;
 		std::string allColumns;
 		
@@ -269,20 +291,20 @@
 			i++;
 		}
 
-		if(sort_by == "ASC" || sort_by=="asc"){
-			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth+ "'" + "  ORDER BY " + toSortColumnName + " ASC " + " LIMIT " + entryNumber + ";";
+		if(sortBy == "ASC" || sortBy=="asc"){
+			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "'" + "  ORDER BY " + toSortColumnName + " ASC " + " LIMIT " + limitNumber + ";";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());	
 		}
 
-		if(sort_by== "DESC" ||  sort_by=="desc"){
-			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth+ "'" + "  ORDER BY " + toSortColumnName + " ASC " + " LIMIT " + entryNumber + ";";
+		if(sortBy== "DESC" ||  sortBy=="desc"){
+			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "'" + "  ORDER BY " + toSortColumnName + " ASC " + " LIMIT " + limitNumber + ";";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());	
 		}
 
 		else{
-			check_error();
+			//Exception-Handling
 		}
 	}
 
@@ -294,8 +316,8 @@
 		connection_feedback(sqlCommand.c_str());
 	}
 
-	void selectWhere(std::string tableName,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns){
-		//The vector columns contains the Columns that should be displayed
+	void selectWhere(std::string tableName,std::vector<std::string> columns,std::string conditionColumn,std::string conditionValue){
+	
 		int i =0;
 		std::string allColumns;
 		
@@ -314,7 +336,7 @@
 			i++;
 		}
 
-		std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "';";
+		std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "';";
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());		
 	}
@@ -380,8 +402,8 @@
 			connection_feedbackAll(sqlCommand.c_str()); 	
 	}
 
-	void selectWhereWithSort(std::string tableName,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string> columns,std::string toSortcolumnName,std::string sort_by){
-		//The vector columns contains the Columns that should be displayed
+	void selectWhereOrderBy(std::string tableName,std::vector<std::string> columns,std::string conditionColumn,std::string conditionValue,std::string toSortcolumnName,std::string sortBy){
+
 		int i =0;
 		std::string allColumns;
 
@@ -400,33 +422,33 @@
 			i++;
 		}
 
-		if(sort_by == "ASC" || sort_by=="asc"){
-			std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "'" + " ORDER BY " + toSortcolumnName  + " ASC;";
+		if(sortBy == "ASC" || sortBy=="asc"){
+			std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "'" + " ORDER BY " + toSortcolumnName  + " ASC;";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());	
 		}
 
-		if(sort_by== "DESC" ||  sort_by=="desc"){
-			std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "'" + " ORDER BY " + toSortcolumnName  + " DESC;";
+		if(sortBy== "DESC" ||  sortBy=="desc"){
+			std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "'" + " ORDER BY " + toSortcolumnName  + " DESC;";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());	
 		}
 
 		else{
-			check_error();
+			//Exception_Handling
 		}
 	}
 
-	void sortTable(std::string tableName,std::string toSortColumnName,std::string sort_by){
+	void selectSortTable(std::string tableName,std::string toSortColumnName,std::string sortBy){
 
-		if(sort_by == "ASC" || sort_by=="asc"){
+		if(sortBy == "ASC" || sortBy=="asc"){
 			std::string sqlCommand = "SELECT * FROM " + tableName + " ORDER BY " + toSortColumnName  + " ASC;";
 			check_error();
 			connection_feedback(sqlCommand.c_str());
 
 	}
 
-		else if(sort_by== "DESC" ||  sort_by=="desc"){
+		else if(sortBy== "DESC" ||  sortBy=="desc"){
 			std::string sqlCommand = "SELECT * FROM " + tableName + " ORDER BY " + toSortColumnName + " DESC;";
 			check_error();
 			connection_feedback(sqlCommand.c_str());
@@ -436,8 +458,8 @@
 		}
 	}
 
-	void selectCount(std::string tableName,std::string countColumn,std::string asColumnName){
-		std::string sqlCommand = "SELECT COUNT(" + countColumn + ") AS " + asColumnName + " FROM " + tableName + ";";
+	void selectCount(std::string tableName,std::string countColumn,std::string aliasColumnName){
+		std::string sqlCommand = "SELECT COUNT(" + countColumn + ") AS " + aliasColumnName + " FROM " + tableName + ";";
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
 	}
@@ -474,7 +496,7 @@
 		connection_feedback(sqlCommand.c_str());
 	}
 
-	void averageSum(std::string tableName, std::string columnName){
+	void selectAverageSum(std::string tableName, std::string columnName){
 
 		std::string sqlCommand = "SELECT AVG(" + columnName + ") FROM " + tableName;
 		check_error();
@@ -482,9 +504,9 @@
 
 	}
 
-	void sum(std::string tableName, std::string columnName, std::string alias){
+	void selectSum(std::string tableName, std::string columnName, std::string aliasColumnName){
 
-		std::string sqlCommand = "SELECT SUM(" + columnName + ") AS " + alias + " FROM " + tableName;
+		std::string sqlCommand = "SELECT SUM(" + columnName + ") AS " + aliasColumnName+ " FROM " + tableName;
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
 
@@ -516,11 +538,11 @@
 
 	}
 
-	void selectIn(std::string tableName,std::vector<std::string>columns,std::string searchInColumn,std::vector<std::string>comparativValues){
+	void selectIn(std::string tableName,std::vector<std::string>columns,std::string searchInColumn,std::vector<std::string>conditionValue){
 		
 		int i=0;
 		std::string allColumns;
-		std::string comparativValue;
+		std::string comparativValues;
 
 		while(i<columns.size()){
 			if(columns.size()==1){
@@ -539,22 +561,22 @@
 		
 		i=0;
 
-		while(i<comparativValues.size()){
+		while(i<conditionValue.size()){
 			if(comparativValues.size()==1){
-				comparativValue += "'" + comparativValues.at(i) + "'" + " ";
+				comparativValues += "'" + conditionValue.at(i) + "'" + " ";
 			}
 			else{
 				if (i != comparativValues.size()-1){
-					comparativValue +=  "'" + comparativValues.at(i) + "'" + ", ";
+					comparativValues +=  "'" + conditionValue.at(i) + "'" + ", ";
 				}
 				else{
-					comparativValue += "'" + comparativValues.at(i) + "'" + " ";
+					comparativValues += "'" + conditionValue.at(i) + "'" + " ";
 				}
 			}
 			i++;
 		}
 
-		std::string sqlCommand = "SELECT " + allColumns + " FROM " + tableName + " WHERE " + searchInColumn + " IN " + " (" + comparativValue + ");";
+		std::string sqlCommand = "SELECT " + allColumns + " FROM " + tableName + " WHERE " + searchInColumn + " IN " + " (" + comparativValues + ");";
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str()); 
 	}
@@ -595,7 +617,7 @@
 		connection_feedbackAll(sqlCommand.c_str());
 	}
 
-	void selectTableAlias(std::string tableName,std::string aliasTableName,std::vector<std::string>columns){
+	void selectTableAlias(std::string tableName,std::vector<std::string>columns,std::string aliasTableName){
 		std::string columnAlias;
 		int i =0;
 
@@ -619,7 +641,7 @@
 		connection_feedbackAll(sqlCommand.c_str());
 	}
 
-	void selectGroupBy(std::string tableName, std::vector<std::string>columns,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string>groupByColumns){
+	void selectGroupBy(std::string tableName, std::vector<std::string>columns,std::string conditionColumn,std::string conditionValue,std::vector<std::string>groupByColumns){
 		int i=0;
 		std::string allColumns;
 		std::string allGroupByColumns;
@@ -656,12 +678,12 @@
 			i++;
 		}
 
-		std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "' GROUP BY " + allGroupByColumns + ";";
+		std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns + ";";
 		check_error(); 
 		connection_feedbackAll(sqlCommand.c_str());
 	}
 
-	void selectGroupByWithOrderBy(std::string tableName, std::vector<std::string>columns,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string>groupByColumns,std::string toSortcolumnName,std::string sort_by){
+	void selectGroupByOrderBy(std::string tableName, std::vector<std::string>columns,std::string conditionColumn,std::string conditionValue,std::vector<std::string>groupByColumns,std::string toSortcolumnName,std::string sortBy){
 		int i=0;
 		std::string allColumns;
 		std::string allGroupByColumns;
@@ -698,14 +720,14 @@
 			i++;
 		}
 
-		if(sort_by=="ASC" || sort_by=="asc"){
-			std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "' GROUP BY " + allGroupByColumns +  " ORDER BY " + toSortcolumnName  + " ASC;";
+		if(sortBy=="ASC" || sortBy=="asc"){
+			std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns +  " ORDER BY " + toSortcolumnName  + " ASC;";
 			check_error(); 
 			connection_feedbackAll(sqlCommand.c_str());
 		}
 
-		if(sort_by=="DESC" || sort_by=="desc"){
-			std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "' GROUP BY " + allGroupByColumns + " ORDER BY " + toSortcolumnName  + " DESC;";
+		if(sortBy=="DESC" || sortBy=="desc"){
+			std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns + " ORDER BY " + toSortcolumnName  + " DESC;";
 			check_error(); 
 			connection_feedbackAll(sqlCommand.c_str());
 		}
@@ -713,7 +735,7 @@
 			//exception Handling
 		}
 	}
-	void selectGroupByWithOrderBy(std::string tableName, std::string countColumn,std::vector<std::string>columns,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string>groupByColumns,std::string sort_by){
+	void selectCountGroupByOrderBy(std::string tableName, std::string countColumn,std::vector<std::string>columns,std::string conditionColumn,std::string conditionValue,std::vector<std::string>groupByColumns,std::string sortBy){
 		int i=0;
 		std::string allColumns;
 		std::string allGroupByColumns;
@@ -751,14 +773,14 @@
 		}
 
 
-		if(sort_by=="ASC" || sort_by=="asc"){
-			std::string sqlCommand ="SELECT COUNT(" + countColumn +")," + allColumns + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "' GROUP BY " + allGroupByColumns +  " ORDER BY COUNT(" + countColumn +") ASC;";
+		if(sortBy=="ASC" || sortBy=="asc"){
+			std::string sqlCommand ="SELECT COUNT(" + countColumn +")," + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns +  " ORDER BY COUNT(" + countColumn +") ASC;";
 			check_error(); 
 			connection_feedbackAll(sqlCommand.c_str());
 		}
 
-		if(sort_by=="DESC" || sort_by=="desc"){
-			std::string sqlCommand ="SELECT COUNT(" + countColumn +")," + allColumns + " FROM " + tableName + " WHERE " + comparisonColumn  + " = '" + comparativeWorth + "' GROUP BY " + allGroupByColumns +  " ORDER BY COUNT(" + countColumn +") DESC;";
+		if(sortBy=="DESC" || sortBy=="desc"){
+			std::string sqlCommand ="SELECT COUNT(" + countColumn +")," + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns +  " ORDER BY COUNT(" + countColumn +") DESC;";
 			check_error(); 
 			connection_feedbackAll(sqlCommand.c_str());
 		}

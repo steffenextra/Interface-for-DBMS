@@ -67,33 +67,17 @@ int main (int argc, char *argv[]) {
 //	setPrimaryKey("tabelle3", "ID");
 //	setColumnWithPrimary("tabelle2", "ID", "int", true);
 //	deletePrimaryKey("tabelle3");
-//	averageSum("tabelle2", "ID");
-//	sum("Lohn", "Lohn", "Gesamt");
-//      selectWhere("tableNumberOne","Name","Markus",columnsss);
+
 //      std::string myCommand="SELECT * FROM tableNumberOne";
 //      sqlCommand(myCommand,"feedbackAll");
 //      renameDatabase("DatabaseNumberOne1","DatabaseNumberOne");
-//      selectLimitWhere("tableNumberOne","2","Name","Dieter",columnsss,"Name","DESC");
-//      selectMinOrMax("tableNumberOne","MIN","Name","MAXIMALE");
-//      selectMinOrMaxWithWhere("tableNumberOne","MIN","Name","MAXIMALE","Name","Dieter");
-//	selectBetween (">=", "<=", "Lohn", "Lohn", "Lohn", "500", "1000");
-//	selectNull("tabelle2", "Name");
-//      selectCountDistinct("tableNumberOne","Name");
-//      selectCount("tableNumberOne","Name","Namensanzahl");
-//       selectAlias("tableNumberOne",columnsss,aliasss);
-//        selectTableAlias("tableNumberOne","tableNumberTwo", columnsss);
-//       selectIn("tableNumberOne",columnsss,"Name",values);
-//        selectNotLike("tableNumberOne",columnsss,"Name","startandEnd","dr");
-//      selectWhereAnd("tableNumberOne",columnsss,conditions,conditionValue,conditions2,conditionValue2,operators);
-//      void groupBy(std::string tableName, std::vector<std::string>columns,std::string comparisonColumn,std::string comparativeWorth,std::vector<std::string>groupByColumns);
-//      selectGroupBy("tableNumberOne",columnsss,"Name","Dieter",groupByvector);
-//      selectGroupByWithOrderBy("tableNumberOne",columnsss,"Name","Dieter",groupByvector,"Name","ASC");
-//        selectGroupByWithOrderBy("tableNumberOne","Name",columnsss,"Name","Dieter",groupByvector,"ASC");
-    
-std::vector<std::string> columnsss;
-//std::vector<std::string> groupByvector;
+//      selectWhereOrderBy("tableNumberOne",columnsss,"Name","Dieter","Name","ASC");
 
-//        groupByvector.push_back("Name");
+
+
+
+std::vector<std::string> columnsss;
+
         columnsss.push_back("Name");
         columnsss.push_back("Nachname");
         columnsss.push_back("PLZ");
@@ -101,7 +85,6 @@ std::vector<std::string> columnsss;
         columnsss.push_back("Zwischennamen");
 
 
-      selectWhereWithSort("tableNumberOne","Name","Dieter",columnsss,"Name","ASC");
 
 	disconnect();
 }
