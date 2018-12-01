@@ -252,7 +252,7 @@
 
 	/*
 	* Die Methode "selectMinOrMaxWhere" ermittelt den höchsten bzw. niedrigsten Wert 
-	* einer Tabellenspalte verknüpft mit einer Bedigungs Klausel und liefert die Aliasspalte zurück.
+	* einer Tabellenspalte verknüpft mit einer Bedigungs Klausel und liefert die Alias-Spalte zurück.
 	*	
 	*Die Struktur der beiden SQL Befehlen:	
 	*	SELECT MIN(Spaltenname(n)) AS Aliasspaltennamen FROM Tabellennamen WHERE Bedingungsspalte ='Bedingungswert'; 
@@ -262,7 +262,7 @@
 	*	-tableName-> Enhält den Tabellennamen
 	*	-minOrMax-> Gibt an welcher Befehl ausgeführt werden soll.
 	*	-minOrMaxColumn > Gibt die Spalte an, die den Min/Max Wert enthalten soll
-	*	-asColumn-> Enhält den gewählten Aliasnamen für die Min/Max Spalte
+	*	-aliasColumn-> Enhält den gewählten Aliasnamen für die Min/Max Spalte
 	*	-conditionColumn->Enhält den Namen der Bedingungsspalte
 	*	-conditionValue->Enhält den Bedigungswert
 	*		
@@ -297,7 +297,7 @@
 	* Die Methode "selectLimitWhere" dient dazu eine vom Nutzer festgelegte Anzahl an Datensätzen abzufragen, verknüpft mit einer Bedingungs Klausel. 
 	* Zudem wird es Aufsteigend bzw. Absteigend sotiert
 	*	
-	*Die Struktur der beiden SQL Befehlen:	
+	*Die Struktur des SQL Befehl:	
 	*	SELECT Spaltenname(n) FROM Tabellennamen WHERE Bedigungsspalte = 'Bedingungswert' ORDER BY Sotierendespalte ASC;
 	*	SELECT Spaltenname(n) FROM Tabellennamen WHERE Bedigungsspalte = 'Bedingungswert' ORDER BY Sotierendespalte DESC;
 	*
@@ -359,7 +359,7 @@
 	* Mithilfe der "selectOneColumn" Methode werden die SQL Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt. 
 	* Es wird nur die Spalte angzeigt, wo der Datensatz verglichen worden ist.
 	*	
-	*Die Struktur der beiden SQL Befehlen:	
+	*Die Struktur des SQL Befehl:	
 	*SELECT * FROM Tabellennamen WHERE Bedigungsspalte ='Bedingungswert';
 	*
 	*
@@ -388,7 +388,7 @@
 	* Mithilfe der "selectWhere" Methode werden die SQL Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt.
 	* Es werden die Spalten angezeigt, die der Nutzer in dem Vektor übergeben hat.
 	*	
-	*Die Struktur der beiden SQL Befehlen:	
+	*Die Struktur des SQL Befehl:	
 	*SELECT Spaltenname(n) FROM Tabellennamen WHERE Bedigungsspalte ='Bedingungswert';
 	*
 	*
@@ -439,7 +439,7 @@
 	* Die beiden Conditionsvektoren müssen gleich groß sein.
 	* Es werden die Spalten angezeigt, die der Nutzer in dem Vektor übergeben hat.
 	*	
-	*Die Struktur der beiden SQL Befehlen:	
+	*Die Struktur des SQL Befehl:	
 	*SELECT Spaltenname(n) FROM Tabellennamen WHERE Bedigungsspalte ='Bedingungswert' boolischer Operator(And,Or,Xor) Bedingungsspalte2 ='Bedingungswert2'...;
 	*
 	*
@@ -520,6 +520,30 @@
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str()); 	
 	}
+	/*
+	* Mithilfe der "selectWhereOrderBy" Methode werden die SQL Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt.
+	* Es werden die Spalten angezeigt, die der Nutzer in dem Vektor übergeben hat. Zudem wird es Aufsteigend oder Absteigend sortiert.
+	*	
+	*Die Struktur der beiden SQL Befehlen:	
+	*SELECT Spaltenname(n) FROM Tabellennamen WHERE Bedigungsspalte ='Bedingungswert' ORDER BY ASC;
+	*SELECT Spaltenname(n) FROM Tabellennamen WHERE Bedigungsspalte ='Bedingungswert' ORDER BY DESC;
+	*
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-columns-> Enhält die Liste der angezeigten Spalten
+	*	-conditionColumn->Enhält den Namen der Bedingungsspalte
+	*	-conditionValue->Enhält den Bedingungswert
+	*	-toSortColumnName-> Enhält die Spalte zu der sotiert werden soll
+	*	-SortBy-> Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
+	*
+	*		
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
 
 	void selectWhereOrderBy(std::string tableName,std::vector<std::string> columns,std::string conditionColumn,std::string conditionValue,std::string toSortcolumnName,std::string sortBy){
 
@@ -558,6 +582,28 @@
 		}
 	}
 
+		/*
+	* Mithilfe der "selectSortTable" Methode wird eine angebene Tabelle nach einer angebenen Spalte auf- bzw. -Absteigend sortiert.
+	* Die ganze Tabelle wird ausgebenen.
+	*	
+	*Die Struktur der beiden SQL Befehlen:	
+	*SELECT Spaltenname(n) FROM Tabellennamen ORDER BY ASC;
+	*SELECT Spaltenname(n) FROM Tabellennamen ORDER BY DESC;
+	*
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-toSortColumnName-> Enhält die Spalte zu der sotiert werden soll
+	*	-SortBy-> Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
+	*
+	*		
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
+
 	void selectSortTable(std::string tableName,std::string toSortColumnName,std::string sortBy){
 
 		if(sortBy == "ASC" || sortBy=="asc"){
@@ -576,12 +622,53 @@
 			check_error();
 		}
 	}
+		/*
+	* Die selectCount Methode zählt(COUNT) die Anzahl von ausgewählten Datensätzen.
+	* Es werden alle Datensätze gezählt, deren Wert nicht NULL ist. 
+	* Zudem wird die zurück gegebene Spalte mit einem vom Nutzer bestimmten Aliasnamen versehen.
+	*	
+	*Die Struktur des SQL Befehl:	
+	* SELECT COUNT(Spaltenname) AS Alias-Spaltennamen FROM Tabellennamen;
+	*
+	*
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-countColumn-> Enhält die zu zählende Spalte
+	*	-aliasColumn-> Enhält den gewählten Aliasnamen für die zurückgegebene Spalte
+	*		
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
 
 	void selectCount(std::string tableName,std::string countColumn,std::string aliasColumnName){
 		std::string sqlCommand = "SELECT COUNT(" + countColumn + ") AS " + aliasColumnName + " FROM " + tableName + ";";
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
 	}
+
+	/*
+	* Mithilfe der "selectDistinct" Methode werden Redundanzen, die in einer Tabellen auftreten können, 
+	* eliminiert und die Werte werden jeweils nur einmal angezeigt.
+	*	
+	*Die Struktur des SQL Befehl:	
+	* SELECT DISTINCT Spaltenname(n) FROM Tabellenname
+	*
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-columns-> Enhält die Liste der angezeigten Spalten
+	*
+	*		
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
 
 	void selectDistinct(std::string tableName,std::vector<std::string> columns){
 		int i =0;
@@ -607,6 +694,26 @@
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
 	}
+	/*
+	* Mithilfe der "selectCountDistinct" Methode werden Redundanzen, die in einer Tabellen auftreten können, 
+	* eliminiert und die Werte werden jeweils nur einmal angezeigt und anschließend werden diese Datensätze gezählt.
+	*	
+	*Die Struktur des SQL Befehls:	
+	* SELECT Count(DISTINCT Spaltenname) FROM Tabellenname;
+	*
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-countColumn-> Enhält die zu zählende Spalte
+	*
+	*		
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
+	
 
 	void selectCountDistinct(std::string tableName,std::string countColumn){
 
@@ -614,6 +721,25 @@
 		check_error();
 		connection_feedback(sqlCommand.c_str());
 	}
+	/*
+	* Die "selectAverageSum" Methode berechnet den Durchschnittswert aller Werte, 
+	* die in einer Spalte mittels einer Select-Abfrage ermitteln wurden.
+	*	
+	*Die Struktur des SQL Befehl:	
+	* SELECT AVG(Spaltenname) FROM Tabellennamen
+	*
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-columnName-> Enhält den Spaltennamen von der, der Durchschnitt berechnet werden soll
+	*
+	*		
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
 
 	void selectAverageSum(std::string tableName, std::string columnName){
 
@@ -622,6 +748,27 @@
 		connection_feedback(sqlCommand.c_str());
 
 	}
+	/*
+	* Die "selectSum" Methode summiert die Werte einer Tabellenspalte und liefert sie zurück. 
+	* Zudem wird die zurück gegebene Spalte mit einem vom Nutzer bestimmten Aliasnamen versehen.
+	* 
+	*	
+	*Die Struktur des SQL Befehl:	
+	* SELECT SUM(Spaltenname) AS Alias-Spaltennamen FROM Tabellennamen
+	*
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-columnName-> Enhält den Spaltennamen von der, die Summe berechnet werden soll
+	*	-aliasColumnName-> Enhält den Aliasnamen
+	*
+	*		
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
 
 	void selectSum(std::string tableName, std::string columnName, std::string aliasColumnName){
 
@@ -630,12 +777,27 @@
 		connection_feedbackAll(sqlCommand.c_str());
 
 	}
-
-/*	void join(std::vector <string> tables, std::string condition){
-
-
-
-	}*/
+	/*
+	* Die "unionSelect" Methode vereinigt die Ergebnisse zweier Abfragen. 
+	* 
+	* 
+	*	
+	*Die Struktur des SQL Befehl:	
+	* SELECT Spaltenname(n) FROM Tabellenname(n) UNION...
+	*
+	*@param 
+	*	-tableName-> Enhält die Liste der Tabellennamen
+	*	-columnName-> Enhält die Liste der Spaltennamen
+	*
+	*
+	*		
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
 
 	void unionSelect(std::vector <std::string> tableName, std::vector <std::string> columnName){
 
@@ -656,6 +818,30 @@
 		connection_feedbackAll(sqlCommand.c_str());
 
 	}
+		/*
+	* Die "selectIn" Methode kann mehrere Abfrageergebnisse in einer SQL-Anweisung zu bündeln. 
+	* Damit kann der IN Operator leicht mehrere OR Operatoren ersetzen und vereinfacht damit die Struktur von komplexen OR-Bedingungen.
+	* 
+	* 
+	*	
+	*Die Struktur des SQL Befehl:	
+	* SELECT Spaltenname(n) FROM Tabellenname WHERE Spaltenname IN ('Wert1','Wert2')
+	*
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-columns-> Enhält die Liste der angezeigten Spalten
+	*	-searchInColumn-> Enhält den Spaltennamen in der die Werte vergleicht werden
+	-	-Enhält eine Liste der zu vergleichenden Werten
+	*
+	*
+	*		
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
 
 	void selectIn(std::string tableName,std::vector<std::string>columns,std::string searchInColumn,std::vector<std::string>conditionValue){
 		
@@ -699,6 +885,32 @@
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str()); 
 	}
+	/*
+	* Die "selectBetween" Methode behinhlatet die SQL-Where Bedingungen mit einem eingeschränkten bestimmten Bereich eines Abfrageergebnisses.
+	* 
+	* 
+	*	
+	*Die Struktur des SQL Befehl:	
+	* SELECT Spaltenname FROM Tabellenname WHERE Spaltenname BETWEEN 'DATUM1' AND 'DATUM2'
+	*
+	*@param 
+	*	conditionString->
+	*	conditionStringTwo->
+	*	tablenName->Enhält die ausgewählte Tabelle
+	*	conditionColumn->
+	*	conditionColumn2->
+	*	contition->
+	*	condition2->
+	*
+	*
+	*		
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
 
 	void selectBetween(std::string conditionString, std::string conditionStringTwo, std::string tableName, std::string conditionColumn, std::string conditionColumnTwo, std::string condition, std::string conditionTwo){
 
@@ -709,9 +921,29 @@
 		connection_feedbackAll(sqlCommand.c_str());
 
 	}
+	/*
+	* Die "selectColumnsAlias" Methode kann für übergebene Spalte(n) einen ausgwählten Alias-Spaltenname(n) hinzufügen
+	*	Zuordnung: Spaltenname(i) = Alias-Spaltennamen(i)
+	* 
+	* 
+	*	
+	*Die Struktur des SQL Befehl:	
+	* SELECT Spaltennamen AS AliasSpaltennamen FROM Tabellennamen;
+	*
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-columns-> Enhält die Liste der zu anzeigenen & zu unbennenen Spalten
+	*	-aliases-> Enhält die Liste mit den Aliasnamen 
+	*	
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
 
 	void selectColumnsAlias(std::string tableName,std::vector<std::string>columns,std::vector<std::string>aliases){
-		//Entry i of the alias vector is the Alias for the Entry i of the columns vector 
 		
 		std::string columnAlias;
 		int i =0;
@@ -735,6 +967,26 @@
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
 	}
+	/*
+	* Die "selectTableAlias" Methode kann der übergebnenen Tabelle einen Alias-Tabellennamen zuweisen.
+	* 
+	* 
+	*	
+	*Die Struktur des SQL Befehl:	
+	* SELECT Spaltennamen AS AliasSpaltennamen FROM Tabellennamen AS Alias-Tabellennamen;
+	*
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-columns-> Enhält die Liste der zu anzeigenen Spalten
+	*	-aliasTabellennamen-> Enhält den Alias-Tabellennamen 
+	*	
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
 
 	void selectTableAlias(std::string tableName,std::vector<std::string>columns,std::string aliasTableName){
 		std::string columnAlias;
@@ -759,6 +1011,30 @@
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
 	}
+
+	 /*
+	* Mithilfe der "selectGroupBy" Methode ist es möglich eine Ergebnismenge zu gruppieren
+	* 
+	* 
+	*	
+	*Die Struktur des SQL Befehl:	
+	* SELECT Spaltenname(n) FROM Tabellenname [WHERE Bedingung] GROUP BY Spaltenname;
+	*
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-columns-> Enhält die Liste der zu anzeigenen & zu unbennenen Spalten
+	*	-conditionColumn->Enhält den Namen der Bedingungsspalte
+	*	-conditionValue->Enhält den Bedingungswert
+	*	-groupByColumns-> Enhält die Liste der zu gruppierenden Spaltennamen
+	*	
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
+	
 
 	void selectGroupBy(std::string tableName, std::vector<std::string>columns,std::string conditionColumn,std::string conditionValue,std::vector<std::string>groupByColumns){
 		int i=0;
@@ -801,7 +1077,31 @@
 		check_error(); 
 		connection_feedbackAll(sqlCommand.c_str());
 	}
-
+	 /*
+	* Mithilfe der "selectGroupByOrderBy" Methode ist es möglich eine Ergebnismenge zu gruppieren und diese auf- bzw. Absteigend zu sotieren.
+	* 
+	* 
+	*	
+	*Die Struktur der beiden SQL Befehle:	
+	* SELECT Spaltenname(n) FROM Tabellenname [WHERE Bedingung] GROUP BY Spaltenname ORDER BY ASC;
+	* SELECT Spaltenname(n) FROM Tabellenname [WHERE Bedingung] GROUP BY Spaltenname ORDER BY DESC;
+	*
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-columns-> Enhält die Liste der zu anzeigenen & zu unbennenen Spalten
+	*	-conditionColumn->Enhält den Namen der Bedingungsspalte
+	*	-conditionValue->Enhält den Bedingungswert
+	*	-groupByColumns-> Enhält die Liste der zu gruppierenden Spaltennamen
+	*	-toSortColumnName-> Enhält die Spalte zu der sotiert werden soll
+	*	-SortBy-> Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
+	*	
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
 	void selectGroupByOrderBy(std::string tableName, std::vector<std::string>columns,std::string conditionColumn,std::string conditionValue,std::vector<std::string>groupByColumns,std::string toSortcolumnName,std::string sortBy){
 		int i=0;
 		std::string allColumns;
@@ -854,6 +1154,33 @@
 			//exception Handling
 		}
 	}
+	 /*
+	* Mithilfe der "selectCountGroupByOrderBy" Methode ist es möglich die Ergebnismenge zu gruppieren. 
+	* Das Count zählt die Anzahl der gruppierten Ergebnismengen. Es werden alle Datensätze gezählt, deren Wert nicht NULL ist
+	* Zudem kann der Datensatz anschließend auf- bzw. Absteigend zu sotieren werden
+	* 
+	*	
+	*Die Struktur der beiden SQL Befehle:	
+	* SELECT COUNT(zu zählende Spalte) Spaltenname(n) FROM Tabellenname [WHERE Bedingung] GROUP BY Spaltenname ORDER BY ASC;
+	* SELECT COUNT(zu zählende Spalte) Spaltenname(n) FROM Tabellenname [WHERE Bedingung] GROUP BY Spaltenname ORDER BY DESC;
+	*
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-countColumn-> Enhält die zu zählende Spalte
+	*	-columns-> Enhält die Liste der zu anzeigenen & zu unbennenen Spalten
+	*	-conditionColumn->Enhält den Namen der Bedingungsspalte
+	*	-conditionValue->Enhält den Bedingungswert
+	*	-groupByColumns-> Enhält die Liste der zu gruppierenden Spaltennamen
+	*	-toSortColumnName-> Enhält die Spalte zu der sotiert werden soll
+	*	-SortBy-> Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
+	*	
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
 	void selectCountGroupByOrderBy(std::string tableName, std::string countColumn,std::vector<std::string>columns,std::string conditionColumn,std::string conditionValue,std::vector<std::string>groupByColumns,std::string sortBy){
 		int i=0;
 		std::string allColumns;
@@ -907,6 +1234,25 @@
 			//exception Handling
 		}
 	}
+		 /*
+	* Die selectNull Methode prüft eine Spalte auf den Wert NULL
+	* 
+	*	
+	* Die Struktur des SQL Befehl:	
+	* SELECT * FROM Tabellennamen WHERE Spaltenname IS NULL OR ' ';
+	* 
+	*
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-ColumnName->Enhält den Namen der Bedingungsspalte
+	*	
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
 
 	void selectNull(std::string tableName, std::string columnName){
 
