@@ -41,8 +41,9 @@ Missing Methods
 }
 ------------------------------------------------------------------
 Done
--schleifen fixen bei vectoren mit einem eintrag!!//done bei selectionRequest -> bei der Methode whereAndOr noch hinzufügen
--Code vereinheitlichen//done bei selectionRequest
+-schleifen fixen bei vectoren mit einem eintrag!!//done bei selectionRequest
+-Code vereinheitlichen//done für dieselectionRequest.cpp
+-Code vollständig kommentiert für die selectionRequest.cpp
 
 
 
@@ -51,3 +52,4 @@ to-Do
 -TestDatenbank erstellen!
 -Code vollständig kommentieren
 -Code vollständig vereinheitlichen 
+Comments für die BETWEEN Methode
