@@ -220,7 +220,7 @@
 	*@param 
 	*	-tableName-> Enhält den Tabellennamen
 	*	-minOrMax-> Gibt an welcher Befehl ausgeführt werden soll.
-	*	-minOrMaxColumn > Gibt die Spalte an, die den Min/Max Wert enthalten soll
+	*	-minOrMaxColumn -> Gibt die Spalte an, die den Min/Max Wert enthalten soll
 	*	-asColumn-> Enhält den gewählten Aliasnamen für die Min/Max Spalte
 	*		
 	*@return 
@@ -263,8 +263,8 @@
 	*	-minOrMax-> Gibt an welcher Befehl ausgeführt werden soll.
 	*	-minOrMaxColumn > Gibt die Spalte an, die den Min/Max Wert enthalten soll
 	*	-asColumn-> Enhält den gewählten Aliasnamen für die Min/Max Spalte
-	*	-Enhält die Bedingungsspalte
-	*	-Enhält den Bedigungswert
+	*	-conditionColumn->Enhält den Namen der Bedingungsspalte
+	*	-conditionValue->Enhält den Bedigungswert
 	*		
 	*@return 
 	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
@@ -294,7 +294,7 @@
 	}
 
 	/*
-	* Die Methode "selectLimitWhere" dient dazu eine maximale Anzahl an Ergebnissen festlegen verknüpft mit einer Bedingung Klausel. 
+	* Die Methode "selectLimitWhere" dient dazu eine vom Nutzer festgelegte Anzahl an Datensätzen abzufragen, verknüpft mit einer Bedingungs Klausel. 
 	* Zudem wird es Aufsteigend bzw. Absteigend sotiert
 	*	
 	*Die Struktur der beiden SQL Befehlen:	
@@ -305,7 +305,7 @@
 	*	-tableName-> Enhält den Tabellennamen
 	*	-columns-> Enhält die Liste der angezeigten Spalten
 	*	-limitNumber-> Anzahl der angezeigten Datensätze
-	*	-conditionColumn->Enhält die Bedingungsspalte
+	*	-conditionColumn->Enhält den Namen der Bedingungsspalte
 	*	-conditionValue->Enhält den Bedigungswert
 	*	-toSortColumnName-> Enhält die Spalte zu der sotiert werden soll
 	*	-SortBy-> Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
@@ -355,13 +355,57 @@
 		}
 	}
 
+	/*
+	* Mithilfe der "selectOneColumn" Methode werden die SQL Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt. 
+	* Es wird nur die Spalte angzeigt, wo der Datensatz verglichen worden ist.
+	*	
+	*Die Struktur der beiden SQL Befehlen:	
+	*SELECT * FROM Tabellennamen WHERE Bedigungsspalte ='Bedingungswert';
+	*
+	*
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-conditionColumn->Enhält den Namen der Bedingungsspalte
+	*	-conditionValue->Enhält den Bedingungswert
+	*
+	*		
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
 
-	void selectOneColumn(std::string tableName,std::string columnName,std::string selected_at){
-
-		std::string sqlCommand ="SELECT * FROM " + tableName + " WHERE " + columnName + " = " + "'" + selected_at + "';";
+	void selectWhereOneColumn(std::string tableName,std::string conditionColumn,std::string conditionValue){
+		
+		std::string sqlCommand ="SELECT * FROM " + tableName + " WHERE " + conditionColumn + " = " + "'" + conditionValue + "';";
 		check_error();
 		connection_feedback(sqlCommand.c_str());
 	}
+
+	/*
+	* Mithilfe der "selectWhere" Methode werden die SQL Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt.
+	* Es werden die Spalten angezeigt, die der Nutzer in dem Vektor übergeben hat.
+	*	
+	*Die Struktur der beiden SQL Befehlen:	
+	*SELECT Spaltenname(n) FROM Tabellennamen WHERE Bedigungsspalte ='Bedingungswert';
+	*
+	*
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-columns-> Enhält die Liste der angezeigten Spalten
+	*	-conditionColumn->Enhält den Namen der Bedingungsspalte
+	*	-conditionValue->Enhält den Bedingungswert
+	*
+	*		
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
 
 	void selectWhere(std::string tableName,std::vector<std::string> columns,std::string conditionColumn,std::string conditionValue){
 	
@@ -387,8 +431,36 @@
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());		
 	}
-
-	void selectWhereAndOr(std::string tableName,std::vector<std::string> columns, std::vector<std::string>conditions,std::vector<std::string>conditionValue,std::vector<std::string> conditions2,std::vector<std::string>conditionValue2,std::vector<std::string>operators){
+	/*
+	* Mithilfe der "selectBool" Methode werden die SQL Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt.
+	* Zudem kann man ,dank der Funktion mit mehrere Bool-Bedingungen verknüpfen. 
+	* Es werden zwei Bedignungsspalten Vektoren, zwei BedingungswertVektoren sowieo ein Vektor der die Operationen enhält übergeben.  
+	* Ein Schleifendurchlauf holt sich die zwei Namen der Bedingungsspalten sowie die beiden Bedingungswerte dazu wird dann der boolische Operator hinzugefügt.
+	* Die beiden Conditionsvektoren müssen gleich groß sein.
+	* Es werden die Spalten angezeigt, die der Nutzer in dem Vektor übergeben hat.
+	*	
+	*Die Struktur der beiden SQL Befehlen:	
+	*SELECT Spaltenname(n) FROM Tabellennamen WHERE Bedigungsspalte ='Bedingungswert' boolischer Operator(And,Or,Xor) Bedingungsspalte2 ='Bedingungswert2'...;
+	*
+	*
+	*@param 
+	*	-tableName-> Enhält den Tabellennamen
+	*	-columns-> Enhält die Liste der angezeigten Spalten
+	*	-conditionColumn->Enhält den Namen der Bedingungsspalte
+	*	-conditionValue->Enhält den Bedingungswert
+	*	-conditionColumn2->Enhält den Namen der zweiten zu vergleichnen Bedingungsspalte
+	*	-conditionValue2->Enhält den zweiten zu vergleichnenen Bedingungswert
+	*	-operators-> Enhält die Liste der boolischen Ausdrücke
+	*
+	*		
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
+	void selectBool(std::string tableName,std::vector<std::string> columns, std::vector<std::string>conditions,std::vector<std::string>conditionValue,std::vector<std::string> conditions2,std::vector<std::string>conditionValue2,std::vector<std::string>operators){
 			
 			int i=0;
 			std::string allColumns;

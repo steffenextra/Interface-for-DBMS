@@ -73,9 +73,9 @@ void selectNotLike(std::string tableName,std::vector<std::string>columns,std::st
 void selectMinOrMax(std::string tableName,std::string minOrMax,std::string minOrMaxColumn,std::string aliasColumn);
 void selectMinOrMaxWhere(std::string tableName, std::string minOrMax,std::string minOrMaxColumn,std::string aliasColumn,std::string conditionColumn,std::string conditionValue);
 void selectLimitWhereOrderBy(std::string tableName,std::vector<std::string> columns,std::string limitNumber,std::string conditionColumn,std::string conditionValue,std::string toSortColumnName,std::string sortBy);
-void selectOneColumn(std::string tableName,std::string columnName,std::string selected_at);
+void selectWhereOneColumn(std::string tableName,std::string conditionColumn,std::string conditionValue);
 void selectWhere(std::string tableName,std::vector<std::string> columns,std::string conditionColumn,std::string conditionValue);
-void selectWhereAndOr(std::string tableName,std::vector<std::string> columns, std::vector<std::string>conditions,std::vector<std::string>conditionValue,std::vector<std::string> conditions2,std::vector<std::string>conditionValue2,std::vector<std::string>operators);
+void selectWhereBool(std::string tableName,std::vector<std::string> columns, std::vector<std::string>conditions,std::vector<std::string>conditionValue,std::vector<std::string> conditions2,std::vector<std::string>conditionValue2,std::vector<std::string>operators);
 void selectWhereOrderBy(std::string tableName,std::vector<std::string> columns,std::string conditionColumn,std::string conditionValue,std::string toSortcolumnName,std::string sortBy);
 void selectSortTable(std::string tableName,std::string toSortColumnName,std::string sortBy);
 void selectCount(std::string tableName,std::string countColumn,std::string aliasColumnName);
