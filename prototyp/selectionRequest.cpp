@@ -1266,7 +1266,7 @@
 	* durch Kombinieren von Spaltenwerten von zwei Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat. 
 	* Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen. 
 	* Wenn das Join-Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.
-	* 
+	* Das Schlüsselwort INNER JOIN wählt Datensätze mit übereinstimmenden Werten in beiden Tabellen aus.
 	*	
 	* Die Struktur des SQL Befehl:	
 	* select <Auswahl> FROM TabelleA INNER JOIN TabelleB B ON A.ID = B.ID	 
@@ -1317,5 +1317,174 @@
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
 	}
+	/*Mithilfe der "selectLeftJoin" Methode wird eine neue Ergebnistabelle erstellt
+	* durch Kombinieren von Spaltenwerten von zwei Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat. 
+	* Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen. 
+	* Wenn das Join-Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.
+	* Das Schlüsselwort LEFT JOIN gibt alle Datensätze der linken Tabelle (firstTable) und die übereinstimmenden Datensätze der rechten Tabelle (secondTable) zurück. 
+	* Das Ergebnis ist NULL von rechts, wenn keine Übereinstimmung vorliegt.
+	*	
+	* Die Struktur des SQL Befehl:	
+	* select <Auswahl> FROM TabelleA LEFT JOIN TabelleB B ON A.ID = B.ID	 
+	*
+	*@param 
+	*	-fristTableName-> Enhält den Tabellennamen der ersten Tabelle
+	*	-columnIDTableOne-> enhält die zu vergleichene Spalte der ersten Tabelle
+	*	-columnsTableOne-> enhält die Liste der Spalten die aus der ersten Tabelle angezeigt werden sollen
+	*	-secondTableName-> Enhält den Tabellennamen der zweiten Tabelle
+	*	-columnsTableTwo-> enhält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen
+	*	
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
+	void selectLeftJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo){
+		int i=0;
+		std::string allColumns;
+
+		while(i<columnsTableOne.size()){
+			allColumns +=  firstTableName + "." + columnsTableOne.at(i) + ", ";
+			i++;
+			}
+		
+		i=0;
+
+		while(i<columnsTableTwo.size()){
+			if(columnsTableTwo.size()==1){
+				allColumns +=  columnsTableTwo.at(i) + " ";
+			}
+			else{
+				if (i != columnsTableTwo.size()-1){
+					allColumns += secondTableName + "." + columnsTableOne.at(i) + ", ";
+				}
+				else{
+					allColumns +=  secondTableName + "." + columnsTableTwo.at(i) + " ";
+				}
+			}
+			i++;
+		}
+
+		std::string sqlCommand = "SELECT " + allColumns + " FROM " + firstTableName + " LEFT JOIN " + secondTableName + " ON " + firstTableName + "."  + columnIDTableOne + "=" + secondTableName + "." + columnIDTableOne + ";"; 	 
+		std::cout << sqlCommand << std::endl;
+		check_error();
+		connection_feedbackAll(sqlCommand.c_str());
+	}
+
+	/*Mithilfe der "selectRightJoin" Methode wird eine neue Ergebnistabelle erstellt
+	* durch Kombinieren von Spaltenwerten von zwei Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat. 
+	* Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen. 
+	* Wenn das Join-Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.
+	* Das Schlüsselwort RIGHT JOIN gibt alle Datensätze der rechten Tabelle (secondTable) und die übereinstimmenden Datensätze der linken Tabelle (firstTable) zurück. 
+	* Das Ergebnis ist NULL von links, wenn keine Übereinstimmung vorliegt.
+	*	
+	* Die Struktur des SQL Befehl:	
+	* select <Auswahl> FROM TabelleA LEFT JOIN TabelleB B ON A.ID = B.ID	 
+	*
+	*@param 
+	*	-fristTableName-> Enhält den Tabellennamen der ersten Tabelle
+	*	-columnIDTableOne-> enhält die zu vergleichene Spalte der ersten Tabelle
+	*	-columnsTableOne-> enhält die Liste der Spalten die aus der ersten Tabelle angezeigt werden sollen
+	*	-secondTableName-> Enhält den Tabellennamen der zweiten Tabelle
+	*	-columnsTableTwo-> enhält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen
+	*	
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
+
+	void selectRightJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo){
+		int i=0;
+		std::string allColumns;
+
+		while(i<columnsTableOne.size()){
+			allColumns +=  firstTableName + "." + columnsTableOne.at(i) + ", ";
+			i++;
+			}
+		
+		i=0;
+
+		while(i<columnsTableTwo.size()){
+			if(columnsTableTwo.size()==1){
+				allColumns +=  columnsTableTwo.at(i) + " ";
+			}
+			else{
+				if (i != columnsTableTwo.size()-1){
+					allColumns += secondTableName + "." + columnsTableOne.at(i) + ", ";
+				}
+				else{
+					allColumns +=  secondTableName + "." + columnsTableTwo.at(i) + " ";
+				}
+			}
+			i++;
+		}
+
+		std::string sqlCommand = "SELECT " + allColumns + " FROM " + secondTableName + " RIGHT JOIN " + secondTableName + " ON " + firstTableName + "."  + columnIDTableOne + "=" + secondTableName + "." + columnIDTableOne + ";"; 	 
+		std::cout << sqlCommand << std::endl;
+		check_error();
+		connection_feedbackAll(sqlCommand.c_str());
+	}	
+	/*Mithilfe der "selectFullJoin" Methode wird eine neue Ergebnistabelle erstellt
+	* durch Kombinieren von Spaltenwerten von zwei Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat. 
+	* Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen. 
+	* Wenn das Join-Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.
+	* Das Schlüsselwort FULL OUTER JOIN gibt alle Datensätze zurück, 
+	* wenn eine Übereinstimmung in den Datensätzen der linken (firstTable) oder der rechten (secondTable) Tabelle vorliegt.
+	*	
+	* Die Struktur des SQL Befehl:	
+	* select <Auswahl> FROM TabelleA FULL OUTER JOIN TabelleB B ON A.ID = B.ID	 
+	*
+	*@param 
+	*	-fristTableName-> Enhält den Tabellennamen der ersten Tabelle
+	*	-columnIDTableOne-> enhält die zu vergleichene Spalte der ersten Tabelle
+	*	-columnsTableOne-> enhält die Liste der Spalten die aus der ersten Tabelle angezeigt werden sollen
+	*	-secondTableName-> Enhält den Tabellennamen der zweiten Tabelle
+	*	-columnsTableTwo-> enhält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen
+	*	
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
+	
+	void selectFullJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo){
+		int i=0;
+		std::string allColumns;
+
+		while(i<columnsTableOne.size()){
+			allColumns +=  firstTableName + "." + columnsTableOne.at(i) + ", ";
+			i++;
+			}
+		
+		i=0;
+
+		while(i<columnsTableTwo.size()){
+			if(columnsTableTwo.size()==1){
+				allColumns +=  columnsTableTwo.at(i) + " ";
+			}
+			else{
+				if (i != columnsTableTwo.size()-1){
+					allColumns += secondTableName + "." + columnsTableOne.at(i) + ", ";
+				}
+				else{
+					allColumns +=  secondTableName + "." + columnsTableTwo.at(i) + " ";
+				}
+			}
+			i++;
+		}
+
+		std::string sqlCommand = "SELECT " + allColumns + " FROM " + firstTableName + " FULL OUTER JOIN " + secondTableName + " ON " + firstTableName + "."  + columnIDTableOne + "=" + secondTableName + "." + columnIDTableOne + ";"; 	 
+		std::cout << sqlCommand << std::endl;
+		check_error();
+		connection_feedbackAll(sqlCommand.c_str());
+	}
+
 
 

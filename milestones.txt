@@ -33,11 +33,12 @@ finish Methods
     -GROUP BY//done
     -GROUP BY with Order BY//done
     -GROUP BY with Count//done
+    -JOIN , LEFT JOIN, RIGHT JOIN, FULL JOIN
 }
 
 Missing Methods
 {
-    JOIN , LEFT JOIN, RIGHT JOIN, FULL JOIN, SELF JOIN
+    -
 }
 ------------------------------------------------------------------
 Done
@@ -49,7 +50,8 @@ Done
 
 to-Do
 -Exception-Handling
--TestDatenbank erstellen!
+-größere TestDatenbank erstellen!
+-Testen der Join Methode
 -Code vollständig kommentieren
 -Code vollständig vereinheitlichen 
 Comments für die BETWEEN Methode
