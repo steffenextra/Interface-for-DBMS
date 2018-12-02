@@ -52,6 +52,6 @@ to-Do
 -Exception-Handling
 -größere TestDatenbank erstellen!
 -Testen der Join Methode
--Code vollständig kommentieren
+-table.cpp kommentieren
 -Code vollständig vereinheitlichen 
 Comments für die BETWEEN Methode

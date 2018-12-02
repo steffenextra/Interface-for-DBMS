@@ -1,25 +1,24 @@
 #include "selectionRequest.hpp"
 
 
-/*
-* Die Methode "sqlCommand" gibt einen vom Nutzer eingegebenen String(SQL Befehl) direkt weiter zum SQL Server,
-* zu dem wird der Befehlstyp unterschieden. Es wird zwischen 3 Befehlstypen unterschieden: 
-*	-Query -> simple Abfrage an den SQL Server
-*	-feedback-> zeigt den Inhalt einer Spalte an
-*	-feedbackAll-> zeigt die komplette Tabelle mit Spaltenbezeichnugen an
-*	
-*@param 
-*	-sqlCommand-> enthält dem vom Nutzer eingegebenen String der später als SQL Befehl fungiert
-*	-commandType-> enhält dem vom Nutzer gewählten Befehlstyp
-*	
-*@return 
-*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-*
-* @author Martin Meyer
-*
-* @version 1.0
-*/
-	
+	/*
+	* Die Methode "sqlCommand" gibt einen vom Nutzer eingegebenen String(SQL Befehl) direkt weiter zum SQL Server,
+	* zu dem wird der Befehlstyp unterschieden. Es wird zwischen 3 Befehlstypen unterschieden: 
+	*	-Query -> simple Abfrage an den SQL Server
+	*	-feedback-> zeigt den Inhalt einer Spalte an
+	*	-feedbackAll-> zeigt die komplette Tabelle mit Spaltenbezeichnugen an
+	*	
+	*@param 
+	*	-sqlCommand-> enthält dem vom Nutzer eingegebenen String der später als SQL Befehl fungiert
+	*	-commandType-> enhält dem vom Nutzer gewählten Befehlstyp
+	*	
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
 	void sqlCommand(std::string sqlCommand,std::string commandType){
 		/*
 		3 CommandType 

@@ -197,9 +197,8 @@ MYSQL_FIELD *field;
 * @version 1.0
 */
 	void disconnect(){
-
+		
 		mysql_close(mysql);
-
 	}
 
 
