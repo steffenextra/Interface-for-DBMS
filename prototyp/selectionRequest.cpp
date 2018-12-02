@@ -1262,5 +1262,60 @@
 		connection_feedbackAll(sqlCommand.c_str());
 
 	}
+	/*Mithilfe der "selectInnerJoin" Methode wird eine neue Ergebnistabelle erstellt
+	* durch Kombinieren von Spaltenwerten von zwei Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat. 
+	* Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen. 
+	* Wenn das Join-Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.
+	* 
+	*	
+	* Die Struktur des SQL Befehl:	
+	* select <Auswahl> FROM TabelleA INNER JOIN TabelleB B ON A.ID = B.ID	 
+	*
+	*@param 
+	*	-fristTableName-> Enhält den Tabellennamen der ersten Tabelle
+	*	-columnIDTableOne-> enhält die zu vergleichene Spalte der ersten Tabelle
+	*	-columnsTableOne-> enhält die Liste der Spalten die aus der ersten Tabelle angezeigt werden sollen
+	*	-secondTableName-> Enhält den Tabellennamen der zweiten Tabelle
+	*	-columnsTableTwo-> enhält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen
+	*	
+	*@return 
+	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	*
+	* @author Martin Meyer
+	*
+	* @version 1.0
+	*/
+
+	void selectInnerJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo){
+		int i=0;
+		std::string allColumns;
+
+		while(i<columnsTableOne.size()){
+			allColumns +=  firstTableName + "." + columnsTableOne.at(i) + ", ";
+			i++;
+			}
+		
+		i=0;
+
+		while(i<columnsTableTwo.size()){
+			if(columnsTableTwo.size()==1){
+				allColumns +=  columnsTableTwo.at(i) + " ";
+			}
+			else{
+				if (i != columnsTableTwo.size()-1){
+					allColumns += secondTableName + "." + columnsTableOne.at(i) + ", ";
+				}
+				else{
+					allColumns +=  secondTableName + "." + columnsTableTwo.at(i) + " ";
+				}
+			}
+			i++;
+		}
+
+		std::string sqlCommand = "SELECT " + allColumns + " FROM " + firstTableName + " INNER JOIN " + secondTableName + " ON " + secondTableName + "."  + columnIDTableOne + "=" + firstTableName + "." + columnIDTableOne + ";"; 	 
+		std::cout << sqlCommand << std::endl;
+		check_error();
+		connection_feedbackAll(sqlCommand.c_str());
+	}
 
 

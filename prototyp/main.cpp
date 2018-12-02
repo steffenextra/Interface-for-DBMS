@@ -72,18 +72,23 @@ int main (int argc, char *argv[]) {
 //      sqlCommand(myCommand,"feedbackAll");
 //      renameDatabase("DatabaseNumberOne1","DatabaseNumberOne");
 //      selectWhereOrderBy("tableNumberOne",columnsss,"Name","Dieter","Name","ASC");
+//      selectInnerJoin("Tabelle1","Tabelle1ID",columnsss,"Tabelle2",tabelle2spalten);
 
 
 
 
 std::vector<std::string> columnsss;
+std::vector<std::string> tabelle2spalten;
+
+        
+        tabelle2spalten.push_back("Abteilung");
+       tabelle2spalten.push_back("Gehalt");
 
         columnsss.push_back("Name");
         columnsss.push_back("Nachname");
         columnsss.push_back("PLZ");
         columnsss.push_back("Adresse");
         columnsss.push_back("Zwischennamen");
-
 
 
 	disconnect();
