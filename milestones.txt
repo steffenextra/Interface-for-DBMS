@@ -36,14 +36,10 @@ finish Methods
     -JOIN , LEFT JOIN, RIGHT JOIN, FULL JOIN
 }
 
-Missing Methods
-{
-    -
-}
 ------------------------------------------------------------------
 Done
 -schleifen fixen bei vectoren mit einem eintrag!!//done bei selectionRequest
--Code vereinheitlichen//done für dieselectionRequest.cpp
+-Code vereinheitlichen//done für die selectionRequest.cpp
 -Code vollständig kommentiert für die selectionRequest.cpp
 
 
@@ -55,3 +51,17 @@ to-Do
 -table.cpp kommentieren
 -Code vollständig vereinheitlichen 
 Comments für die BETWEEN Methode
+
+
+----------------------------
+
+
+User-Interface
+
+- flags for FLTK include for an extra comp.sh // done
+
+- Rework all void methods for a char * or String return
+	- there is a special need for our output (feeedback in our GUI)
+
+- Mockups
+
