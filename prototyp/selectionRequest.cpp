@@ -956,25 +956,24 @@
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
 	}
-	/*
-	* Die "selectTableAlias" Methode kann der übergebnenen Tabelle einen Alias-Tabellennamen zuweisen.
-	* 
-	* 
-	*	
-	*Die Struktur des SQL Befehl:	
-	* SELECT Spaltennamen AS AliasSpaltennamen FROM Tabellennamen AS Alias-Tabellennamen;
-	*
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-columns-> Enhält die Liste der zu anzeigenen Spalten
-	*	-aliasTabellennamen-> Enhält den Alias-Tabellennamen 
-	*	
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+
+	/**
+
+	@brief Zuweisung eines Alias
+
+	Die "selectTableAlias" Methode kann der übergebnenen Tabelle einen Alias-Tabellennamen zuweisen.
+
+	SQL-Befehl: "SELECT " + columnAlias + " FROM " + tableName + " AS " + aliasTableName +";"
+
+	@param tableName = Name der Tabelle
+	@param columns = Enthält die Liste der zu anzeigenen Spalten
+	@param aliasTabellennamen = Enthält den Alias-Tabellennamen
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 
 	void selectTableAlias(std::string tableName,std::vector<std::string>columns,std::string aliasTableName){
@@ -995,41 +994,38 @@
 			}
 			i++;
 		}
-	
+
 		std::string sqlCommand ="SELECT " + columnAlias + " FROM " + tableName + " AS " + aliasTableName +";";
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
 	}
 
-	 /*
-	* Mithilfe der "selectGroupBy" Methode ist es möglich eine Ergebnismenge zu gruppieren
-	* 
-	* 
-	*	
-	*Die Struktur des SQL Befehl:	
-	* SELECT Spaltenname(n) FROM Tabellenname [WHERE Bedingung] GROUP BY Spaltenname;
-	*
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-columns-> Enhält die Liste der zu anzeigenen & zu unbennenen Spalten
-	*	-conditionColumn->Enhält den Namen der Bedingungsspalte
-	*	-conditionValue->Enhält den Bedingungswert
-	*	-groupByColumns-> Enhält die Liste der zu gruppierenden Spaltennamen
-	*	
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+	/**
+
+	@brief Gruppieren von Ergebnismengen
+
+	Mithilfe der "selectGroupBy" Methode ist es möglich eine Ergebnismenge zu gruppieren.<br>
+
+	SQL-Befehl: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns + ";"
+
+	@param tableName-> Name der Tabelle
+	@param columns = Enthält die Liste der zu anzeigenen & zu unbennenen Spalten
+	@param conditionColumn = Enthält den Namen der Bedingungsspalte
+	@param conditionValue = Enthält den Bedingungswert
+	@param groupByColumns = Enhält die Liste der zu gruppierenden Spaltennamen
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
-	
 
 	void selectGroupBy(std::string tableName, std::vector<std::string>columns,std::string conditionColumn,std::string conditionValue,std::vector<std::string>groupByColumns){
 		int i=0;
 		std::string allColumns;
 		std::string allGroupByColumns;
-		
+
 		while(i<columns.size()){
 			if(columns.size()==1){
 				allColumns +=  columns.at(i) + " ";
@@ -1045,7 +1041,7 @@
 			i++;
 		}
 		i=0;
-		
+
 		while(i<groupByColumns.size()){
 			if(groupByColumns.size()==1){
 				allGroupByColumns +=  groupByColumns.at(i) + " ";
@@ -1063,39 +1059,39 @@
 		}
 
 		std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns + ";";
-		check_error(); 
+		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
 	}
-	 /*
-	* Mithilfe der "selectGroupByOrderBy" Methode ist es möglich eine Ergebnismenge zu gruppieren und diese auf- bzw. Absteigend zu sotieren.
-	* 
-	* 
-	*	
-	*Die Struktur der beiden SQL Befehle:	
-	* SELECT Spaltenname(n) FROM Tabellenname [WHERE Bedingung] GROUP BY Spaltenname ORDER BY ASC;
-	* SELECT Spaltenname(n) FROM Tabellenname [WHERE Bedingung] GROUP BY Spaltenname ORDER BY DESC;
-	*
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-columns-> Enhält die Liste der zu anzeigenen & zu unbennenen Spalten
-	*	-conditionColumn->Enhält den Namen der Bedingungsspalte
-	*	-conditionValue->Enhält den Bedingungswert
-	*	-groupByColumns-> Enhält die Liste der zu gruppierenden Spaltennamen
-	*	-toSortColumnName-> Enhält die Spalte zu der sotiert werden soll
-	*	-SortBy-> Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
-	*	
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+
+	/**
+
+	@brief Ergebnismengen + sortieren
+
+	Mithilfe der "selectGroupByOrderBy" Methode ist es möglich eine Ergebnismenge zu gruppieren und diese auf- bzw. Absteigend zu sortieren.<br>
+
+	SQL-Befehl für ASC: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns +  " ORDER BY " + toSortcolumnName  + " ASC;"
+	SQL-Befehl für DESC: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns +  " ORDER BY " + toSortcolumnName  + " DESC;"
+
+	@param tableName = Name der Tabelle
+	@param columns = Enhält die Liste der zu anzeigenen & zu unbennenen Spalten
+	@param conditionColumn = Enthält den Namen der Bedingungsspalte
+	@param conditionValue = Enthält den Bedingungswert
+	@param groupByColumns = Enthält die Liste der zu gruppierenden Spaltennamen
+	@param toSortColumnName = Enthält die Spalte zu der sotiert werden soll
+	@param SortBy = Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
+
 	void selectGroupByOrderBy(std::string tableName, std::vector<std::string>columns,std::string conditionColumn,std::string conditionValue,std::vector<std::string>groupByColumns,std::string toSortcolumnName,std::string sortBy){
 		int i=0;
 		std::string allColumns;
 		std::string allGroupByColumns;
-		
+
 		while(i<columns.size()){
 			if(columns.size()==1){
 				allColumns +=  columns.at(i) + " ";
@@ -1111,7 +1107,7 @@
 			i++;
 		}
 		i=0;
-		
+
 		while(i<groupByColumns.size()){
 			if(groupByColumns.size()==1){
 				allGroupByColumns +=  groupByColumns.at(i) + " ";
@@ -1143,33 +1139,33 @@
 			//exception Handling
 		}
 	}
-	 /*
-	* Mithilfe der "selectCountGroupByOrderBy" Methode ist es möglich die Ergebnismenge zu gruppieren. 
-	* Das Count zählt die Anzahl der gruppierten Ergebnismengen. Es werden alle Datensätze gezählt, deren Wert nicht NULL ist
-	* Zudem kann der Datensatz anschließend auf- bzw. Absteigend zu sotieren werden
-	* 
-	*	
-	*Die Struktur der beiden SQL Befehle:	
-	* SELECT COUNT(zu zählende Spalte) Spaltenname(n) FROM Tabellenname [WHERE Bedingung] GROUP BY Spaltenname ORDER BY ASC;
-	* SELECT COUNT(zu zählende Spalte) Spaltenname(n) FROM Tabellenname [WHERE Bedingung] GROUP BY Spaltenname ORDER BY DESC;
-	*
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-countColumn-> Enhält die zu zählende Spalte
-	*	-columns-> Enhält die Liste der zu anzeigenen & zu unbennenen Spalten
-	*	-conditionColumn->Enhält den Namen der Bedingungsspalte
-	*	-conditionValue->Enhält den Bedingungswert
-	*	-groupByColumns-> Enhält die Liste der zu gruppierenden Spaltennamen
-	*	-toSortColumnName-> Enhält die Spalte zu der sotiert werden soll
-	*	-SortBy-> Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
-	*	
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+	/**
+
+	@brief Ergebnismengen gruppieren + zählen der Datensätze + Sortierung
+
+	Mithilfe der "selectCountGroupByOrderBy" Methode ist es möglich die Ergebnismenge zu gruppieren. <br>
+	Das Count zählt die Anzahl der gruppierten Ergebnismengen. Es werden alle Datensätze gezählt, deren Wert nicht NULL ist
+	Zudem kann der Datensatz anschließend auf- bzw. Absteigend zu sotieren werden
+
+	SQL-Befehl ASC: std::string sqlCommand ="SELECT COUNT(" + countColumn +")," + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns +  " ORDER BY COUNT(" + countColumn +") ASC;"
+	SQL-Befehl DESC: std::string sqlCommand ="SELECT COUNT(" + countColumn +")," + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns +  " ORDER BY COUNT(" + countColumn +") DESC;"
+
+	@param tableName = Name der Tabelle
+	@para, countColumn = Enthält die zu zählende Spalte
+	@param columns = Enthält die Liste der zu anzeigenen & zu unbennenen Spalten
+	@param conditionColumn = Enthält den Namen der Bedingungsspalte
+	@param conditionValue = Enthält den Bedingungswert
+	@param groupByColumns = Enthält die Liste der zu gruppierenden Spaltennamen
+	@param toSortColumnName = Enthält die Spalte zu der sotiert werden soll
+	@param SortBy = Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
+
 	void selectCountGroupByOrderBy(std::string tableName, std::string countColumn,std::vector<std::string>columns,std::string conditionColumn,std::string conditionValue,std::vector<std::string>groupByColumns,std::string sortBy){
 		int i=0;
 		std::string allColumns;
@@ -1190,7 +1186,7 @@
 		}
 
 		i=0;
-		
+
 		while(i<groupByColumns.size()){
 			if(groupByColumns.size()==1){
 				allGroupByColumns +=  groupByColumns.at(i) + " ";
@@ -1223,24 +1219,23 @@
 			//exception Handling
 		}
 	}
-		 /*
-	* Die selectNull Methode prüft eine Spalte auf den Wert NULL
-	* 
-	*	
-	* Die Struktur des SQL Befehl:	
-	* SELECT * FROM Tabellennamen WHERE Spaltenname IS NULL OR ' ';
-	* 
-	*
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-ColumnName->Enhält den Namen der Bedingungsspalte
-	*	
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+
+	/**
+
+	@brief NULL Werte
+
+	Die selectNull Methode prüft eine Spalte auf den Wert NULL
+
+	SQL-Befehl: "SELECT * " + " FROM " + tableName + " WHERE " + columnName + " IS NULL" + " OR ' '; "
+
+	@param tableName = Name der Tabelle
+	@param ColumnName = Enhält den Namen der Bedingungsspalte
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 
 	void selectNull(std::string tableName, std::string columnName){
@@ -1251,28 +1246,30 @@
 		connection_feedbackAll(sqlCommand.c_str());
 
 	}
-	/*Mithilfe der "selectInnerJoin" Methode wird eine neue Ergebnistabelle erstellt
-	* durch Kombinieren von Spaltenwerten von zwei Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat. 
-	* Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen. 
-	* Wenn das Join-Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.
-	* Das Schlüsselwort INNER JOIN wählt Datensätze mit übereinstimmenden Werten in beiden Tabellen aus.
-	*	
-	* Die Struktur des SQL Befehl:	
-	* select <Auswahl> FROM TabelleA INNER JOIN TabelleB B ON A.ID = B.ID	 
-	*
-	*@param 
-	*	-fristTableName-> Enhält den Tabellennamen der ersten Tabelle
-	*	-columnIDTableOne-> enhält die zu vergleichene Spalte der ersten Tabelle
-	*	-columnsTableOne-> enhält die Liste der Spalten die aus der ersten Tabelle angezeigt werden sollen
-	*	-secondTableName-> Enhält den Tabellennamen der zweiten Tabelle
-	*	-columnsTableTwo-> enhält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen
-	*	
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+
+	/**
+
+	@brief InnerJoin-Befehl
+
+	Mithilfe der "selectInnerJoin" Methode wird eine neue Ergebnistabelle erstellt.<br>
+	Durch Kombinieren von Spaltenwerten von zwei Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat.
+	Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen.<br>
+	Wenn das Join-Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.<br>
+	Das Schlüsselwort INNER JOIN wählt Datensätze mit übereinstimmenden Werten in beiden Tabellen aus.<br>
+
+	SQL-Befehl: select <Auswahl> FROM TabelleA INNER JOIN TabelleB B ON A.ID = B.ID
+
+	@param firstTableName = Name der ersten Tabelle
+	@param columnIDTableOne = Enthält die zu vergleichene Spalte der ersten Tabelle
+	@param columnsTableOne = Enthält die Liste der Spalten die aus der ersten Tabelle angezeigt werden sollen
+	@param secondTableName = Enthält den Tabellennamen der zweiten Tabelle
+	@param columnsTableTwo = Enthält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 
 	void selectInnerJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo){
@@ -1283,7 +1280,7 @@
 			allColumns +=  firstTableName + "." + columnsTableOne.at(i) + ", ";
 			i++;
 			}
-		
+
 		i=0;
 
 		while(i<columnsTableTwo.size()){
@@ -1306,30 +1303,33 @@
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
 	}
-	/*Mithilfe der "selectLeftJoin" Methode wird eine neue Ergebnistabelle erstellt
-	* durch Kombinieren von Spaltenwerten von zwei Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat. 
-	* Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen. 
-	* Wenn das Join-Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.
-	* Das Schlüsselwort LEFT JOIN gibt alle Datensätze der linken Tabelle (firstTable) und die übereinstimmenden Datensätze der rechten Tabelle (secondTable) zurück. 
-	* Das Ergebnis ist NULL von rechts, wenn keine Übereinstimmung vorliegt.
-	*	
-	* Die Struktur des SQL Befehl:	
-	* select <Auswahl> FROM TabelleA LEFT JOIN TabelleB B ON A.ID = B.ID	 
-	*
-	*@param 
-	*	-fristTableName-> Enhält den Tabellennamen der ersten Tabelle
-	*	-columnIDTableOne-> enhält die zu vergleichene Spalte der ersten Tabelle
-	*	-columnsTableOne-> enhält die Liste der Spalten die aus der ersten Tabelle angezeigt werden sollen
-	*	-secondTableName-> Enhält den Tabellennamen der zweiten Tabelle
-	*	-columnsTableTwo-> enhält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen
-	*	
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+
+	/**
+
+	@brief LeftJoin Methode
+
+	Mithilfe der "selectLeftJoin" Methode wird eine neue Ergebnistabelle erstellt.<br>
+	Durch Kombinieren von Spaltenwerten von zwei Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat.<br>
+	Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen.<br>
+	Wenn das Join-Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.<br>
+	Das Schlüsselwort LEFT JOIN gibt alle Datensätze der linken Tabelle (firstTable) und die übereinstimmenden Datensätze der rechten Tabelle (secondTable) zurück.<br>
+	Das Ergebnis ist NULL von rechts, wenn keine Übereinstimmung vorliegt.<br>
+
+	SQL-Befehl: select <Auswahl> FROM TabelleA LEFT JOIN TabelleB B ON A.ID = B.ID
+
+	@param firstTableName = Name der ersten Tabelle
+	@param columnIDTableOne = Enthält die zu vergleichene Spalte der ersten Tabelle
+	@param columnsTableOne = Enthält die Liste der Spalten die aus der ersten Tabelle angezeigt werden sollen
+	@param secondTableName =Enthält den Tabellennamen der zweiten Tabelle
+	@param columnsTableTwo = Enthält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
+
 	void selectLeftJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo){
 		int i=0;
 		std::string allColumns;
@@ -1338,7 +1338,7 @@
 			allColumns +=  firstTableName + "." + columnsTableOne.at(i) + ", ";
 			i++;
 			}
-		
+
 		i=0;
 
 		while(i<columnsTableTwo.size()){
@@ -1362,29 +1362,28 @@
 		connection_feedbackAll(sqlCommand.c_str());
 	}
 
-	/*Mithilfe der "selectRightJoin" Methode wird eine neue Ergebnistabelle erstellt
-	* durch Kombinieren von Spaltenwerten von zwei Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat. 
-	* Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen. 
-	* Wenn das Join-Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.
-	* Das Schlüsselwort RIGHT JOIN gibt alle Datensätze der rechten Tabelle (secondTable) und die übereinstimmenden Datensätze der linken Tabelle (firstTable) zurück. 
-	* Das Ergebnis ist NULL von links, wenn keine Übereinstimmung vorliegt.
-	*	
-	* Die Struktur des SQL Befehl:	
-	* select <Auswahl> FROM TabelleA LEFT JOIN TabelleB B ON A.ID = B.ID	 
-	*
-	*@param 
-	*	-fristTableName-> Enhält den Tabellennamen der ersten Tabelle
-	*	-columnIDTableOne-> enhält die zu vergleichene Spalte der ersten Tabelle
-	*	-columnsTableOne-> enhält die Liste der Spalten die aus der ersten Tabelle angezeigt werden sollen
-	*	-secondTableName-> Enhält den Tabellennamen der zweiten Tabelle
-	*	-columnsTableTwo-> enhält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen
-	*	
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+	/**
+
+	Mithilfe der "selectRightJoin" Methode wird eine neue Ergebnistabelle erstellt.<br>
+	Durch Kombinieren von Spaltenwerten von zwei Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat. <br>
+	Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen. <br>
+	Wenn das Join-Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.<br>
+	Das Schlüsselwort RIGHT JOIN gibt alle Datensätze der rechten Tabelle (secondTable) und die übereinstimmenden Datensätze der linken Tabelle (firstTable) zurück. <br>
+	Das Ergebnis ist NULL von links, wenn keine Übereinstimmung vorliegt.<br>
+
+	SQL-Befehl: select <Auswahl> FROM TabelleA LEFT JOIN TabelleB B ON A.ID = B.ID
+
+	@param firstTableName = Name der ersten Tabelle
+	@paramcolumnIDTableOne = Enthält die zu vergleichene Spalte der ersten Tabelle
+	@param columnsTableOne = Enthält die Liste der Spalten die aus der ersten Tabelle angezeigt werden sollen
+	@param secondTableName = Name der zweiten Tabelle
+	@param columnsTableTwo = Enthält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 
 	void selectRightJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo){
@@ -1395,7 +1394,7 @@
 			allColumns +=  firstTableName + "." + columnsTableOne.at(i) + ", ";
 			i++;
 			}
-		
+
 		i=0;
 
 		while(i<columnsTableTwo.size()){
@@ -1417,32 +1416,34 @@
 		std::cout << sqlCommand << std::endl;
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
-	}	
-	/*Mithilfe der "selectFullJoin" Methode wird eine neue Ergebnistabelle erstellt
-	* durch Kombinieren von Spaltenwerten von zwei Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat. 
-	* Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen. 
-	* Wenn das Join-Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.
-	* Das Schlüsselwort FULL OUTER JOIN gibt alle Datensätze zurück, 
-	* wenn eine Übereinstimmung in den Datensätzen der linken (firstTable) oder der rechten (secondTable) Tabelle vorliegt.
-	*	
-	* Die Struktur des SQL Befehl:	
-	* select <Auswahl> FROM TabelleA FULL OUTER JOIN TabelleB B ON A.ID = B.ID	 
-	*
-	*@param 
-	*	-fristTableName-> Enhält den Tabellennamen der ersten Tabelle
-	*	-columnIDTableOne-> enhält die zu vergleichene Spalte der ersten Tabelle
-	*	-columnsTableOne-> enhält die Liste der Spalten die aus der ersten Tabelle angezeigt werden sollen
-	*	-secondTableName-> Enhält den Tabellennamen der zweiten Tabelle
-	*	-columnsTableTwo-> enhält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen
-	*	
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+	}
+
+	/**
+
+	@brief FullJoin Methode
+
+	Mithilfe der "selectFullJoin" Methode wird eine neue Ergebnistabelle erstellt.<br>
+	Durch Kombinieren von Spaltenwerten von zwei Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat.<br>
+	Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen.<br>
+	Wenn das Join-Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.<br>
+	Das Schlüsselwort FULL OUTER JOIN gibt alle Datensätze zurück,
+	wenn eine Übereinstimmung in den Datensätzen der linken (firstTable) oder der rechten (secondTable) Tabelle vorliegt.<br>
+
+	SQL-Befehl select <Auswahl> FROM TabelleA FULL OUTER JOIN TabelleB B ON A.ID = B.ID
+
+	@param firstTableName = Name der ersten Tabelle
+	@param columnIDTableOne = Enthält die zu vergleichene Spalte der ersten Tabelle
+	@param columnsTableOne = Enthält die Liste der Spalten die aus der ersten Tabelle angezeigt werden sollen
+	@param secondTableName = Name der zweiten Tabelle 
+	@param columnsTableTwo = Enthält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
-	
+
 	void selectFullJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo){
 		int i=0;
 		std::string allColumns;
@@ -1451,7 +1452,7 @@
 			allColumns +=  firstTableName + "." + columnsTableOne.at(i) + ", ";
 			i++;
 			}
-		
+
 		i=0;
 
 		while(i<columnsTableTwo.size()){

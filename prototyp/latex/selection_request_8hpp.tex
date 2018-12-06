@@ -37,35 +37,35 @@ void \textbf{ select\+Distinct} (std\+::string table\+Name, std\+::vector$<$ std
 void \textbf{ select\+Count\+Distinct} (std\+::string table\+Name, std\+::string count\+Column)
 \begin{DoxyCompactList}\small\item\em Keine Redundanzen / Datensätze werden gezählt. \end{DoxyCompactList}\item 
 void \textbf{ select\+Average\+Sum} (std\+::string table\+Name, std\+::string column\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Durchschnittswert. \end{DoxyCompactList}\item 
 void \textbf{ select\+Sum} (std\+::string table\+Name, std\+::string column\+Name, std\+::string alias\+Column\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Summieren von Werten. \end{DoxyCompactList}\item 
 void \textbf{ union\+Select} (std\+::vector$<$ std\+::string $>$ table\+Name, std\+::vector$<$ std\+::string $>$ column\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Vereinigung zweier Abfragen. \end{DoxyCompactList}\item 
 void \textbf{ select\+In} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string search\+In\+Column, std\+::vector$<$ std\+::string $>$condition\+Value)
-\item 
+\begin{DoxyCompactList}\small\item\em Mehrere Abfrageergebnisse bündeln. \end{DoxyCompactList}\item 
 void \textbf{ select\+Between} (std\+::string condition\+String, std\+::string condition\+String\+Two, std\+::string table\+Name, std\+::string condition\+Column, std\+::string condition\+Column\+Two, std\+::string condition, std\+::string condition\+Two)
-\item 
+\begin{DoxyCompactList}\small\item\em Eingeschränkte Abfragen. \end{DoxyCompactList}\item 
 void \textbf{ select\+Columns\+Alias} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::vector$<$ std\+::string $>$aliases)
-\item 
+\begin{DoxyCompactList}\small\item\em Alias-\/\+Spaltennamen. \end{DoxyCompactList}\item 
 void \textbf{ select\+Table\+Alias} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string alias\+Table\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Zuweisung eines Alias. \end{DoxyCompactList}\item 
 void \textbf{ select\+Group\+By} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string condition\+Column, std\+::string condition\+Value, std\+::vector$<$ std\+::string $>$group\+By\+Columns)
-\item 
+\begin{DoxyCompactList}\small\item\em Gruppieren von Ergebnismengen. \end{DoxyCompactList}\item 
 void \textbf{ select\+Group\+By\+Order\+By} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string condition\+Column, std\+::string condition\+Value, std\+::vector$<$ std\+::string $>$group\+By\+Columns, std\+::string to\+Sortcolumn\+Name, std\+::string sort\+By)
-\item 
+\begin{DoxyCompactList}\small\item\em Ergebnismengen + sortieren. \end{DoxyCompactList}\item 
 void \textbf{ select\+Count\+Group\+By\+Order\+By} (std\+::string table\+Name, std\+::string count\+Column, std\+::vector$<$ std\+::string $>$columns, std\+::string condition\+Column, std\+::string condition\+Value, std\+::vector$<$ std\+::string $>$group\+By\+Columns, std\+::string sort\+By)
-\item 
+\begin{DoxyCompactList}\small\item\em Ergebnismengen gruppieren + zählen der Datensätze + Sortierung. \end{DoxyCompactList}\item 
 void \textbf{ select\+Null} (std\+::string table\+Name, std\+::string column\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em N\+U\+LL Werte. \end{DoxyCompactList}\item 
 void \textbf{ select\+Inner\+Join} (std\+::string first\+Table\+Name, std\+::string column\+I\+D\+Table\+One, std\+::vector$<$ std\+::string $>$ columns\+Table\+One, std\+::string second\+Table\+Name, std\+::vector$<$ std\+::string $>$ columns\+Table\+Two)
-\item 
+\begin{DoxyCompactList}\small\item\em Inner\+Join-\/\+Befehl. \end{DoxyCompactList}\item 
 void \textbf{ select\+Left\+Join} (std\+::string first\+Table\+Name, std\+::string column\+I\+D\+Table\+One, std\+::vector$<$ std\+::string $>$ columns\+Table\+One, std\+::string second\+Table\+Name, std\+::vector$<$ std\+::string $>$ columns\+Table\+Two)
-\item 
+\begin{DoxyCompactList}\small\item\em Left\+Join Methode. \end{DoxyCompactList}\item 
 void \textbf{ select\+Right\+Join} (std\+::string first\+Table\+Name, std\+::string column\+I\+D\+Table\+One, std\+::vector$<$ std\+::string $>$ columns\+Table\+One, std\+::string second\+Table\+Name, std\+::vector$<$ std\+::string $>$ columns\+Table\+Two)
 \item 
 void \textbf{ select\+Full\+Join} (std\+::string first\+Table\+Name, std\+::string column\+I\+D\+Table\+One, std\+::vector$<$ std\+::string $>$ columns\+Table\+One, std\+::string second\+Table\+Name, std\+::vector$<$ std\+::string $>$ columns\+Table\+Two)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Full\+Join Methode. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Dokumentation der Funktionen}
@@ -75,18 +75,104 @@ void \textbf{ select\+Full\+Join} (std\+::string first\+Table\+Name, std\+::stri
 \subsubsection{select\+Average\+Sum()}
 {\footnotesize\ttfamily void select\+Average\+Sum (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name }\end{DoxyParamCaption})}
 
+
+
+Durchschnittswert. 
+
+Die \char`\"{}select\+Average\+Sum\char`\"{} Methode berechnet den Durchschnittswert aller Werte, die in einer Spalte mittels einer Select-\/\+Abfrage ermitteln wurden.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T A\+V\+G(\char`\"{} + column\+Name + \char`\"{}) F\+R\+O\+M \char`\"{} + table\+Name;
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em column\+Name} & = Enthält den Spaltennamen von der, der Durchschnitt berechnet werden soll\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{selection_request_8hpp_aaa15591ca7a3ba5d40fa77b7ae6753db}} 
 \index{selection\+Request.\+hpp@{selection\+Request.\+hpp}!select\+Between@{select\+Between}}
 \index{select\+Between@{select\+Between}!selection\+Request.\+hpp@{selection\+Request.\+hpp}}
 \subsubsection{select\+Between()}
 {\footnotesize\ttfamily void select\+Between (\begin{DoxyParamCaption}\item[{std\+::string}]{condition\+String,  }\item[{std\+::string}]{condition\+String\+Two,  }\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Column\+Two,  }\item[{std\+::string}]{condition,  }\item[{std\+::string}]{condition\+Two }\end{DoxyParamCaption})}
 
+
+
+Eingeschränkte Abfragen. 
+
+Die \char`\"{}select\+Between\char`\"{} Methode behinhlatet die S\+Q\+L-\/\+Where Bedingungen mit einem eingeschränkten bestimmten Bereich eines Abfrageergebnisses.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: S\+E\+L\+E\+CT $\ast$ \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} \char`\"{} + condition\+String + \char`\"{} \char`\"{} + condition
+\begin{DoxyItemize}
+\item \char`\"{} A\+N\+D \char`\"{} + condition\+Column\+Two + \char`\"{} \char`\"{} + condition\+String + \char`\"{} \char`\"{} + condition\+Two;
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameter}
+{\em condition\+String} & = Bedingung (Name = ...) \\
+\hline
+{\em condition\+String\+Two} & = Bedingung (Name = ...) \\
+\hline
+{\em tablen\+Name} & = Name der Tabelle \\
+\hline
+{\em condition\+Column} & = Spalte der ersten Bedingung \\
+\hline
+{\em condition\+Column2} & = Spalte der zweiten Bedingung \\
+\hline
+{\em condition} & = Bedingung (... = \textquotesingle{}Hans\textquotesingle{}) \\
+\hline
+{\em condition\+Two} & = Bedingung (... = \char`\"{}\+Hans\char`\"{})\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{selection_request_8hpp_a0bd3f475ec96949ae94bbbbec41f7725}} 
 \index{selection\+Request.\+hpp@{selection\+Request.\+hpp}!select\+Columns\+Alias@{select\+Columns\+Alias}}
 \index{select\+Columns\+Alias@{select\+Columns\+Alias}!selection\+Request.\+hpp@{selection\+Request.\+hpp}}
 \subsubsection{select\+Columns\+Alias()}
 {\footnotesize\ttfamily void select\+Columns\+Alias (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::vector$<$ std\+::string $>$}]{aliases }\end{DoxyParamCaption})}
 
+
+
+Alias-\/\+Spaltennamen. 
+
+Die \char`\"{}select\+Columns\+Alias\char`\"{} Methode kann für übergebene Spalte(n) einen ausgwählten Alias-\/\+Spaltenname(n) hinzufügen.~\newline
+ Zuordnung\+: Spaltenname(i) = Alias-\/\+Spaltennamen(i)~\newline
+
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em columns} & = Enthält die Liste der zu anzeigenen \& zu unbennenen Spalten \\
+\hline
+{\em aliases} & = Enthält die Liste mit den Aliasnamen\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{selection_request_8hpp_a00f071477f164f70927ee9923dd77a39}} 
 \index{selection\+Request.\+hpp@{selection\+Request.\+hpp}!select\+Count@{select\+Count}}
 \index{select\+Count@{select\+Count}!selection\+Request.\+hpp@{selection\+Request.\+hpp}}
@@ -157,6 +243,40 @@ Steffen Extra
 \subsubsection{select\+Count\+Group\+By\+Order\+By()}
 {\footnotesize\ttfamily void select\+Count\+Group\+By\+Order\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{count\+Column,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value,  }\item[{std\+::vector$<$ std\+::string $>$}]{group\+By\+Columns,  }\item[{std\+::string}]{sort\+By }\end{DoxyParamCaption})}
 
+
+
+Ergebnismengen gruppieren + zählen der Datensätze + Sortierung. 
+
+Mithilfe der \char`\"{}select\+Count\+Group\+By\+Order\+By\char`\"{} Methode ist es möglich die Ergebnismenge zu gruppieren. ~\newline
+ Das Count zählt die Anzahl der gruppierten Ergebnismengen. Es werden alle Datensätze gezählt, deren Wert nicht N\+U\+LL ist Zudem kann der Datensatz anschließend auf-\/ bzw. Absteigend zu sotieren werden
+
+S\+Q\+L-\/\+Befehl A\+SC\+: std\+::string sql\+Command =\char`\"{}\+S\+E\+L\+E\+C\+T C\+O\+U\+N\+T(\char`\"{} + count\+Column +\char`\"{}),\char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{} G\+R\+O\+U\+P B\+Y \char`\"{} + all\+Group\+By\+Columns + \char`\"{} O\+R\+D\+E\+R B\+Y C\+O\+U\+N\+T(\char`\"{} + count\+Column +\char`\"{}) A\+S\+C;\char`\"{} S\+Q\+L-\/\+Befehl D\+E\+SC\+: std\+::string sql\+Command =\char`\"{}\+S\+E\+L\+E\+C\+T C\+O\+U\+N\+T(\char`\"{} + count\+Column +\char`\"{}),\char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{} G\+R\+O\+U\+P B\+Y \char`\"{} + all\+Group\+By\+Columns + \char`\"{} O\+R\+D\+E\+R B\+Y C\+O\+U\+N\+T(\char`\"{} + count\+Column +\char`\"{}) D\+E\+S\+C;\char`\"{}
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle , count\+Column = Enthält die zu zählende Spalte \\
+\hline
+{\em columns} & = Enthält die Liste der zu anzeigenen \& zu unbennenen Spalten \\
+\hline
+{\em condition\+Column} & = Enthält den Namen der Bedingungsspalte \\
+\hline
+{\em condition\+Value} & = Enthält den Bedingungswert \\
+\hline
+{\em group\+By\+Columns} & = Enthält die Liste der zu gruppierenden Spaltennamen \\
+\hline
+{\em to\+Sort\+Column\+Name} & = Enthält die Spalte zu der sotiert werden soll \\
+\hline
+{\em Sort\+By} & = Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{selection_request_8hpp_aba13caf613af9f91f2a2f1a8f9d49967}} 
 \index{selection\+Request.\+hpp@{selection\+Request.\+hpp}!select\+Distinct@{select\+Distinct}}
 \index{select\+Distinct@{select\+Distinct}!selection\+Request.\+hpp@{selection\+Request.\+hpp}}
@@ -193,36 +313,231 @@ Steffen Extra
 \subsubsection{select\+Full\+Join()}
 {\footnotesize\ttfamily void select\+Full\+Join (\begin{DoxyParamCaption}\item[{std\+::string}]{first\+Table\+Name,  }\item[{std\+::string}]{column\+I\+D\+Table\+One,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+One,  }\item[{std\+::string}]{second\+Table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+Two }\end{DoxyParamCaption})}
 
+
+
+Full\+Join Methode. 
+
+Mithilfe der \char`\"{}select\+Full\+Join\char`\"{} Methode wird eine neue Ergebnistabelle erstellt.~\newline
+ Durch Kombinieren von Spaltenwerten von zwei Tabellen (first\+Table und second\+Table) basierend auf dem Join-\/\+Prädikat.~\newline
+ Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen.~\newline
+ Wenn das Join-\/\+Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.~\newline
+ Das Schlüsselwort F\+U\+LL O\+U\+T\+ER J\+O\+IN gibt alle Datensätze zurück, wenn eine Übereinstimmung in den Datensätzen der linken (first\+Table) oder der rechten (second\+Table) Tabelle vorliegt.~\newline
+
+
+S\+Q\+L-\/\+Befehl select $<$\+Auswahl$>$ F\+R\+OM TabelleA F\+U\+LL O\+U\+T\+ER J\+O\+IN TabelleB B ON A.\+ID = B.\+ID
+
+
+\begin{DoxyParams}{Parameter}
+{\em first\+Table\+Name} & = Name der ersten Tabelle \\
+\hline
+{\em column\+I\+D\+Table\+One} & = Enthält die zu vergleichene Spalte der ersten Tabelle \\
+\hline
+{\em columns\+Table\+One} & = Enthält die Liste der Spalten die aus der ersten Tabelle angezeigt werden sollen \\
+\hline
+{\em second\+Table\+Name} & = Name der zweiten Tabelle \\
+\hline
+{\em columns\+Table\+Two} & = Enthält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{selection_request_8hpp_a54c70afd3e6ad75085ddf6aff29abe87}} 
 \index{selection\+Request.\+hpp@{selection\+Request.\+hpp}!select\+Group\+By@{select\+Group\+By}}
 \index{select\+Group\+By@{select\+Group\+By}!selection\+Request.\+hpp@{selection\+Request.\+hpp}}
 \subsubsection{select\+Group\+By()}
 {\footnotesize\ttfamily void select\+Group\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value,  }\item[{std\+::vector$<$ std\+::string $>$}]{group\+By\+Columns }\end{DoxyParamCaption})}
 
+
+
+Gruppieren von Ergebnismengen. 
+
+Mithilfe der \char`\"{}select\+Group\+By\char`\"{} Methode ist es möglich eine Ergebnismenge zu gruppieren.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{} G\+R\+O\+U\+P B\+Y \char`\"{} + all\+Group\+By\+Columns + \char`\"{};\char`\"{}
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name-\/$>$} & Name der Tabelle \\
+\hline
+{\em columns} & = Enthält die Liste der zu anzeigenen \& zu unbennenen Spalten \\
+\hline
+{\em condition\+Column} & = Enthält den Namen der Bedingungsspalte \\
+\hline
+{\em condition\+Value} & = Enthält den Bedingungswert \\
+\hline
+{\em group\+By\+Columns} & = Enhält die Liste der zu gruppierenden Spaltennamen\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{selection_request_8hpp_a5e60ce2e53b91725f89c66539e5bd73d}} 
 \index{selection\+Request.\+hpp@{selection\+Request.\+hpp}!select\+Group\+By\+Order\+By@{select\+Group\+By\+Order\+By}}
 \index{select\+Group\+By\+Order\+By@{select\+Group\+By\+Order\+By}!selection\+Request.\+hpp@{selection\+Request.\+hpp}}
 \subsubsection{select\+Group\+By\+Order\+By()}
 {\footnotesize\ttfamily void select\+Group\+By\+Order\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value,  }\item[{std\+::vector$<$ std\+::string $>$}]{group\+By\+Columns,  }\item[{std\+::string}]{to\+Sortcolumn\+Name,  }\item[{std\+::string}]{sort\+By }\end{DoxyParamCaption})}
 
+
+
+Ergebnismengen + sortieren. 
+
+Mithilfe der \char`\"{}select\+Group\+By\+Order\+By\char`\"{} Methode ist es möglich eine Ergebnismenge zu gruppieren und diese auf-\/ bzw. Absteigend zu sortieren.~\newline
+
+
+S\+Q\+L-\/\+Befehl für A\+SC\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{} G\+R\+O\+U\+P B\+Y \char`\"{} + all\+Group\+By\+Columns + \char`\"{} O\+R\+D\+E\+R B\+Y \char`\"{} + to\+Sortcolumn\+Name + \char`\"{} A\+S\+C;\char`\"{} S\+Q\+L-\/\+Befehl für D\+E\+SC\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{} G\+R\+O\+U\+P B\+Y \char`\"{} + all\+Group\+By\+Columns + \char`\"{} O\+R\+D\+E\+R B\+Y \char`\"{} + to\+Sortcolumn\+Name + \char`\"{} D\+E\+S\+C;\char`\"{}
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em columns} & = Enhält die Liste der zu anzeigenen \& zu unbennenen Spalten \\
+\hline
+{\em condition\+Column} & = Enthält den Namen der Bedingungsspalte \\
+\hline
+{\em condition\+Value} & = Enthält den Bedingungswert \\
+\hline
+{\em group\+By\+Columns} & = Enthält die Liste der zu gruppierenden Spaltennamen \\
+\hline
+{\em to\+Sort\+Column\+Name} & = Enthält die Spalte zu der sotiert werden soll \\
+\hline
+{\em Sort\+By} & = Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{selection_request_8hpp_ac3a0a9620e1b5ac8c90104b1daea4f5f}} 
 \index{selection\+Request.\+hpp@{selection\+Request.\+hpp}!select\+In@{select\+In}}
 \index{select\+In@{select\+In}!selection\+Request.\+hpp@{selection\+Request.\+hpp}}
 \subsubsection{select\+In()}
 {\footnotesize\ttfamily void select\+In (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{search\+In\+Column,  }\item[{std\+::vector$<$ std\+::string $>$}]{condition\+Value }\end{DoxyParamCaption})}
 
+
+
+Mehrere Abfrageergebnisse bündeln. 
+
+Die \char`\"{}select\+In\char`\"{} Methode kann mehrere Abfrageergebnisse in einer S\+Q\+L-\/\+Anweisung zu bündeln.~\newline
+ Damit kann der IN Operator leicht mehrere OR Operatoren ersetzen und vereinfacht damit die Struktur von komplexen O\+R-\/\+Bedingungen.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + search\+In\+Column + \char`\"{} I\+N \char`\"{} + \char`\"{} (\char`\"{} + comparativ\+Values + \char`\"{});\char`\"{}
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em columns} & = Enthält die Liste der angezeigten Spalten \\
+\hline
+{\em search\+In\+Column} & = Enthält den Spaltennamen in der die Werte vergleicht werden \\
+\hline
+{\em condition\+Value} & = Enthält eine Liste der zu vergleichenden Werten\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{selection_request_8hpp_aa0d6684a1d4f8e82d699b713e38c9d44}} 
 \index{selection\+Request.\+hpp@{selection\+Request.\+hpp}!select\+Inner\+Join@{select\+Inner\+Join}}
 \index{select\+Inner\+Join@{select\+Inner\+Join}!selection\+Request.\+hpp@{selection\+Request.\+hpp}}
 \subsubsection{select\+Inner\+Join()}
 {\footnotesize\ttfamily void select\+Inner\+Join (\begin{DoxyParamCaption}\item[{std\+::string}]{first\+Table\+Name,  }\item[{std\+::string}]{column\+I\+D\+Table\+One,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+One,  }\item[{std\+::string}]{second\+Table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+Two }\end{DoxyParamCaption})}
 
+
+
+Inner\+Join-\/\+Befehl. 
+
+Mithilfe der \char`\"{}select\+Inner\+Join\char`\"{} Methode wird eine neue Ergebnistabelle erstellt.~\newline
+ Durch Kombinieren von Spaltenwerten von zwei Tabellen (first\+Table und second\+Table) basierend auf dem Join-\/\+Prädikat. Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen.~\newline
+ Wenn das Join-\/\+Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.~\newline
+ Das Schlüsselwort I\+N\+N\+ER J\+O\+IN wählt Datensätze mit übereinstimmenden Werten in beiden Tabellen aus.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: select $<$\+Auswahl$>$ F\+R\+OM TabelleA I\+N\+N\+ER J\+O\+IN TabelleB B ON A.\+ID = B.\+ID
+
+
+\begin{DoxyParams}{Parameter}
+{\em first\+Table\+Name} & = Name der ersten Tabelle \\
+\hline
+{\em column\+I\+D\+Table\+One} & = Enthält die zu vergleichene Spalte der ersten Tabelle \\
+\hline
+{\em columns\+Table\+One} & = Enthält die Liste der Spalten die aus der ersten Tabelle angezeigt werden sollen \\
+\hline
+{\em second\+Table\+Name} & = Enthält den Tabellennamen der zweiten Tabelle \\
+\hline
+{\em columns\+Table\+Two} & = Enthält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{selection_request_8hpp_a85d81ccc1d4c2b8cb7edcfe0a5a585f5}} 
 \index{selection\+Request.\+hpp@{selection\+Request.\+hpp}!select\+Left\+Join@{select\+Left\+Join}}
 \index{select\+Left\+Join@{select\+Left\+Join}!selection\+Request.\+hpp@{selection\+Request.\+hpp}}
 \subsubsection{select\+Left\+Join()}
 {\footnotesize\ttfamily void select\+Left\+Join (\begin{DoxyParamCaption}\item[{std\+::string}]{first\+Table\+Name,  }\item[{std\+::string}]{column\+I\+D\+Table\+One,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+One,  }\item[{std\+::string}]{second\+Table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+Two }\end{DoxyParamCaption})}
 
+
+
+Left\+Join Methode. 
+
+Mithilfe der \char`\"{}select\+Left\+Join\char`\"{} Methode wird eine neue Ergebnistabelle erstellt.~\newline
+ Durch Kombinieren von Spaltenwerten von zwei Tabellen (first\+Table und second\+Table) basierend auf dem Join-\/\+Prädikat.~\newline
+ Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen.~\newline
+ Wenn das Join-\/\+Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.~\newline
+ Das Schlüsselwort L\+E\+FT J\+O\+IN gibt alle Datensätze der linken Tabelle (first\+Table) und die übereinstimmenden Datensätze der rechten Tabelle (second\+Table) zurück.~\newline
+ Das Ergebnis ist N\+U\+LL von rechts, wenn keine Übereinstimmung vorliegt.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: select $<$\+Auswahl$>$ F\+R\+OM TabelleA L\+E\+FT J\+O\+IN TabelleB B ON A.\+ID = B.\+ID
+
+
+\begin{DoxyParams}{Parameter}
+{\em first\+Table\+Name} & = Name der ersten Tabelle \\
+\hline
+{\em column\+I\+D\+Table\+One} & = Enthält die zu vergleichene Spalte der ersten Tabelle \\
+\hline
+{\em columns\+Table\+One} & = Enthält die Liste der Spalten die aus der ersten Tabelle angezeigt werden sollen \\
+\hline
+{\em second\+Table\+Name} & =Enthält den Tabellennamen der zweiten Tabelle \\
+\hline
+{\em columns\+Table\+Two} & = Enthält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{selection_request_8hpp_a80ced4bb0e929e97740616c59374d992}} 
 \index{selection\+Request.\+hpp@{selection\+Request.\+hpp}!select\+Like@{select\+Like}}
 \index{select\+Like@{select\+Like}!selection\+Request.\+hpp@{selection\+Request.\+hpp}}
@@ -427,12 +742,64 @@ Steffen Extra
 \subsubsection{select\+Null()}
 {\footnotesize\ttfamily void select\+Null (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name }\end{DoxyParamCaption})}
 
+
+
+N\+U\+LL Werte. 
+
+Die select\+Null Methode prüft eine Spalte auf den Wert N\+U\+LL
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T $\ast$ \char`\"{} + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + column\+Name + \char`\"{} I\+S N\+U\+L\+L\char`\"{} + \char`\"{} O\+R \textquotesingle{} \textquotesingle{}; \char`\"{}
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em Column\+Name} & = Enhält den Namen der Bedingungsspalte\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{selection_request_8hpp_aff2cca0ae3f40a8b3ec70e85702bb8fc}} 
 \index{selection\+Request.\+hpp@{selection\+Request.\+hpp}!select\+Right\+Join@{select\+Right\+Join}}
 \index{select\+Right\+Join@{select\+Right\+Join}!selection\+Request.\+hpp@{selection\+Request.\+hpp}}
 \subsubsection{select\+Right\+Join()}
 {\footnotesize\ttfamily void select\+Right\+Join (\begin{DoxyParamCaption}\item[{std\+::string}]{first\+Table\+Name,  }\item[{std\+::string}]{column\+I\+D\+Table\+One,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+One,  }\item[{std\+::string}]{second\+Table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+Two }\end{DoxyParamCaption})}
 
+Mithilfe der \char`\"{}select\+Right\+Join\char`\"{} Methode wird eine neue Ergebnistabelle erstellt.~\newline
+ Durch Kombinieren von Spaltenwerten von zwei Tabellen (first\+Table und second\+Table) basierend auf dem Join-\/\+Prädikat. ~\newline
+ Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen. ~\newline
+ Wenn das Join-\/\+Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.~\newline
+ Das Schlüsselwort R\+I\+G\+HT J\+O\+IN gibt alle Datensätze der rechten Tabelle (second\+Table) und die übereinstimmenden Datensätze der linken Tabelle (first\+Table) zurück. ~\newline
+ Das Ergebnis ist N\+U\+LL von links, wenn keine Übereinstimmung vorliegt.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: select $<$\+Auswahl$>$ F\+R\+OM TabelleA L\+E\+FT J\+O\+IN TabelleB B ON A.\+ID = B.\+ID
+
+
+\begin{DoxyParams}{Parameter}
+{\em first\+Table\+Name} & = Name der ersten Tabelle  = Enthält die zu vergleichene Spalte der ersten Tabelle \\
+\hline
+{\em columns\+Table\+One} & = Enthält die Liste der Spalten die aus der ersten Tabelle angezeigt werden sollen \\
+\hline
+{\em second\+Table\+Name} & = Name der zweiten Tabelle \\
+\hline
+{\em columns\+Table\+Two} & = Enthält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{selection_request_8hpp_a6a41ec41130fdce3f2c4dd701438f26a}} 
 \index{selection\+Request.\+hpp@{selection\+Request.\+hpp}!select\+Sort\+Table@{select\+Sort\+Table}}
 \index{select\+Sort\+Table@{select\+Sort\+Table}!selection\+Request.\+hpp@{selection\+Request.\+hpp}}
@@ -472,12 +839,64 @@ Steffen Extra
 \subsubsection{select\+Sum()}
 {\footnotesize\ttfamily void select\+Sum (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name,  }\item[{std\+::string}]{alias\+Column\+Name }\end{DoxyParamCaption})}
 
+
+
+Summieren von Werten. 
+
+Die \char`\"{}select\+Sum\char`\"{} Methode summiert die Werte einer Tabellenspalte und liefert sie zurück.~\newline
+ Zudem wird die zurück gegebene Spalte mit einem vom Nutzer bestimmten Aliasnamen versehen.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T S\+U\+M(\char`\"{} + column\+Name + \char`\"{}) A\+S \char`\"{} + alias\+Column\+Name+ \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name;
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em column\+Name} & = Enthält den Spaltennamen von der, die Summe berechnet werden soll \\
+\hline
+{\em alias\+Column\+Name} & = Enthält den Aliasnamen\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{selection_request_8hpp_a3ac5ebbcfb624dc5178315c85c4b15fa}} 
 \index{selection\+Request.\+hpp@{selection\+Request.\+hpp}!select\+Table\+Alias@{select\+Table\+Alias}}
 \index{select\+Table\+Alias@{select\+Table\+Alias}!selection\+Request.\+hpp@{selection\+Request.\+hpp}}
 \subsubsection{select\+Table\+Alias()}
 {\footnotesize\ttfamily void select\+Table\+Alias (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{alias\+Table\+Name }\end{DoxyParamCaption})}
 
+
+
+Zuweisung eines Alias. 
+
+Die \char`\"{}select\+Table\+Alias\char`\"{} Methode kann der übergebnenen Tabelle einen Alias-\/\+Tabellennamen zuweisen.
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + column\+Alias + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} A\+S \char`\"{} + alias\+Table\+Name +\char`\"{};\char`\"{}
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em columns} & = Enthält die Liste der zu anzeigenen Spalten \\
+\hline
+{\em alias\+Tabellennamen} & = Enthält den Alias-\/\+Tabellennamen\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{selection_request_8hpp_a90eb635de3f1856a45557b42f18eff28}} 
 \index{selection\+Request.\+hpp@{selection\+Request.\+hpp}!select\+Where@{select\+Where}}
 \index{select\+Where@{select\+Where}!selection\+Request.\+hpp@{selection\+Request.\+hpp}}
@@ -621,3 +1040,27 @@ Steffen Extra
 \subsubsection{union\+Select()}
 {\footnotesize\ttfamily void union\+Select (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{column\+Name }\end{DoxyParamCaption})}
 
+
+
+Vereinigung zweier Abfragen. 
+
+Die \char`\"{}union\+Select\char`\"{} Methode vereinigt die Ergebnisse zweier Abfragen.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + column\+Name.\+at(i) + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name.\+at(i) + \char`\"{} U\+N\+I\+O\+N \char`\"{};
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Enthält die Liste der Tabellennamen \\
+\hline
+{\em column\+Name} & = Enthält die Liste der Spaltennamen\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
