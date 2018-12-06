@@ -580,7 +580,9 @@ Steffen Extra </dd></dl>
 
 <p>Ergebnismengen gruppieren + zählen der Datensätze + Sortierung. </p>
 <p>Mithilfe der "selectCountGroupByOrderBy" Methode ist es möglich die Ergebnismenge zu gruppieren. <br />
- Das Count zählt die Anzahl der gruppierten Ergebnismengen. Es werden alle Datensätze gezählt, deren Wert nicht NULL ist Zudem kann der Datensatz anschließend auf- bzw. Absteigend zu sotieren werden</p>
+ Das Count zählt die Anzahl der gruppierten Ergebnismengen. Es werden alle Datensätze gezählt, deren Wert nicht NULL ist. <br />
+ Zudem kann der Datensatz anschließend auf- bzw. Absteigend zu sotieren werden. <br />
+</p>
 <p>SQL-Befehl ASC: std::string sqlCommand ="SELECT COUNT(" + countColumn +")," + allColumns + " FROM " + tableName + " WHERE " + conditionColumn + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns + " ORDER BY COUNT(" + countColumn +") ASC;" SQL-Befehl DESC: std::string sqlCommand ="SELECT COUNT(" + countColumn +")," + allColumns + " FROM " + tableName + " WHERE " + conditionColumn + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns + " ORDER BY COUNT(" + countColumn +") DESC;"</p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
@@ -838,7 +840,9 @@ Steffen Extra </dd></dl>
 <p>Ergebnismengen + sortieren. </p>
 <p>Mithilfe der "selectGroupByOrderBy" Methode ist es möglich eine Ergebnismenge zu gruppieren und diese auf- bzw. Absteigend zu sortieren.<br />
 </p>
-<p>SQL-Befehl für ASC: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns + " ORDER BY " + toSortcolumnName + " ASC;" SQL-Befehl für DESC: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns + " ORDER BY " + toSortcolumnName + " DESC;"</p>
+<p>SQL-Befehl für ASC: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns + " ORDER BY " + toSortcolumnName + " ASC;"<br />
+ SQL-Befehl für DESC: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns + " ORDER BY " + toSortcolumnName + " DESC;"<br />
+</p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
     <tr><td class="paramname">tableName</td><td>= Name der Tabelle </td></tr>
@@ -963,7 +967,8 @@ Steffen Extra </dd></dl>
 
 <p>InnerJoin-Befehl. </p>
 <p>Mithilfe der "selectInnerJoin" Methode wird eine neue Ergebnistabelle erstellt.<br />
- Durch Kombinieren von Spaltenwerten von zwei Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat. Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen.<br />
+ Durch Kombinieren von Spaltenwerten von zwei Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat.<br />
+ Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen.<br />
  Wenn das Join-Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.<br />
  Das Schlüsselwort INNER JOIN wählt Datensätze mit übereinstimmenden Werten in beiden Tabellen aus.<br />
 </p>
@@ -1435,7 +1440,8 @@ Steffen Extra </dd></dl>
 </div><div class="memdoc">
 
 <p>NULL Werte. </p>
-<p>Die selectNull Methode prüft eine Spalte auf den Wert NULL</p>
+<p>Die selectNull Methode prüft eine Spalte auf den Wert NULL.<br />
+</p>
 <p>SQL-Befehl: "SELECT * " + " FROM " + tableName + " WHERE " + columnName + " IS NULL" + " OR ' '; "</p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">

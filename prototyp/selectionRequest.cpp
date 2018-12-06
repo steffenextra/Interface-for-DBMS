@@ -1069,8 +1069,8 @@
 
 	Mithilfe der "selectGroupByOrderBy" Methode ist es möglich eine Ergebnismenge zu gruppieren und diese auf- bzw. Absteigend zu sortieren.<br>
 
-	SQL-Befehl für ASC: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns +  " ORDER BY " + toSortcolumnName  + " ASC;"
-	SQL-Befehl für DESC: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns +  " ORDER BY " + toSortcolumnName  + " DESC;"
+	SQL-Befehl für ASC: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns +  " ORDER BY " + toSortcolumnName  + " ASC;"<br>
+	SQL-Befehl für DESC: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns +  " ORDER BY " + toSortcolumnName  + " DESC;"<br>
 
 	@param tableName = Name der Tabelle
 	@param columns = Enhält die Liste der zu anzeigenen & zu unbennenen Spalten
@@ -1144,8 +1144,8 @@
 	@brief Ergebnismengen gruppieren + zählen der Datensätze + Sortierung
 
 	Mithilfe der "selectCountGroupByOrderBy" Methode ist es möglich die Ergebnismenge zu gruppieren. <br>
-	Das Count zählt die Anzahl der gruppierten Ergebnismengen. Es werden alle Datensätze gezählt, deren Wert nicht NULL ist
-	Zudem kann der Datensatz anschließend auf- bzw. Absteigend zu sotieren werden
+	Das Count zählt die Anzahl der gruppierten Ergebnismengen. Es werden alle Datensätze gezählt, deren Wert nicht NULL ist. <br>
+	Zudem kann der Datensatz anschließend auf- bzw. Absteigend zu sotieren werden. <br>
 
 	SQL-Befehl ASC: std::string sqlCommand ="SELECT COUNT(" + countColumn +")," + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns +  " ORDER BY COUNT(" + countColumn +") ASC;"
 	SQL-Befehl DESC: std::string sqlCommand ="SELECT COUNT(" + countColumn +")," + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns +  " ORDER BY COUNT(" + countColumn +") DESC;"
@@ -1224,7 +1224,7 @@
 
 	@brief NULL Werte
 
-	Die selectNull Methode prüft eine Spalte auf den Wert NULL
+	Die selectNull Methode prüft eine Spalte auf den Wert NULL.<br>
 
 	SQL-Befehl: "SELECT * " + " FROM " + tableName + " WHERE " + columnName + " IS NULL" + " OR ' '; "
 
@@ -1252,7 +1252,7 @@
 	@brief InnerJoin-Befehl
 
 	Mithilfe der "selectInnerJoin" Methode wird eine neue Ergebnistabelle erstellt.<br>
-	Durch Kombinieren von Spaltenwerten von zwei Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat.
+	Durch Kombinieren von Spaltenwerten von zwei Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat.<br>
 	Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen.<br>
 	Wenn das Join-Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.<br>
 	Das Schlüsselwort INNER JOIN wählt Datensätze mit übereinstimmenden Werten in beiden Tabellen aus.<br>

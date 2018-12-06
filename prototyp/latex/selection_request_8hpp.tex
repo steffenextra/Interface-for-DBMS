@@ -289,7 +289,9 @@ Steffen Extra
 Ergebnismengen gruppieren + zählen der Datensätze + Sortierung. 
 
 Mithilfe der \char`\"{}select\+Count\+Group\+By\+Order\+By\char`\"{} Methode ist es möglich die Ergebnismenge zu gruppieren. ~\newline
- Das Count zählt die Anzahl der gruppierten Ergebnismengen. Es werden alle Datensätze gezählt, deren Wert nicht N\+U\+LL ist Zudem kann der Datensatz anschließend auf-\/ bzw. Absteigend zu sotieren werden
+ Das Count zählt die Anzahl der gruppierten Ergebnismengen. Es werden alle Datensätze gezählt, deren Wert nicht N\+U\+LL ist. ~\newline
+ Zudem kann der Datensatz anschließend auf-\/ bzw. Absteigend zu sotieren werden. ~\newline
+
 
 S\+Q\+L-\/\+Befehl A\+SC\+: std\+::string sql\+Command =\char`\"{}\+S\+E\+L\+E\+C\+T C\+O\+U\+N\+T(\char`\"{} + count\+Column +\char`\"{}),\char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{} G\+R\+O\+U\+P B\+Y \char`\"{} + all\+Group\+By\+Columns + \char`\"{} O\+R\+D\+E\+R B\+Y C\+O\+U\+N\+T(\char`\"{} + count\+Column +\char`\"{}) A\+S\+C;\char`\"{} S\+Q\+L-\/\+Befehl D\+E\+SC\+: std\+::string sql\+Command =\char`\"{}\+S\+E\+L\+E\+C\+T C\+O\+U\+N\+T(\char`\"{} + count\+Column +\char`\"{}),\char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{} G\+R\+O\+U\+P B\+Y \char`\"{} + all\+Group\+By\+Columns + \char`\"{} O\+R\+D\+E\+R B\+Y C\+O\+U\+N\+T(\char`\"{} + count\+Column +\char`\"{}) D\+E\+S\+C;\char`\"{}
 
@@ -437,7 +439,9 @@ Ergebnismengen + sortieren.
 Mithilfe der \char`\"{}select\+Group\+By\+Order\+By\char`\"{} Methode ist es möglich eine Ergebnismenge zu gruppieren und diese auf-\/ bzw. Absteigend zu sortieren.~\newline
 
 
-S\+Q\+L-\/\+Befehl für A\+SC\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{} G\+R\+O\+U\+P B\+Y \char`\"{} + all\+Group\+By\+Columns + \char`\"{} O\+R\+D\+E\+R B\+Y \char`\"{} + to\+Sortcolumn\+Name + \char`\"{} A\+S\+C;\char`\"{} S\+Q\+L-\/\+Befehl für D\+E\+SC\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{} G\+R\+O\+U\+P B\+Y \char`\"{} + all\+Group\+By\+Columns + \char`\"{} O\+R\+D\+E\+R B\+Y \char`\"{} + to\+Sortcolumn\+Name + \char`\"{} D\+E\+S\+C;\char`\"{}
+S\+Q\+L-\/\+Befehl für A\+SC\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{} G\+R\+O\+U\+P B\+Y \char`\"{} + all\+Group\+By\+Columns + \char`\"{} O\+R\+D\+E\+R B\+Y \char`\"{} + to\+Sortcolumn\+Name + \char`\"{} A\+S\+C;\char`\"{}~\newline
+ S\+Q\+L-\/\+Befehl für D\+E\+SC\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{} G\+R\+O\+U\+P B\+Y \char`\"{} + all\+Group\+By\+Columns + \char`\"{} O\+R\+D\+E\+R B\+Y \char`\"{} + to\+Sortcolumn\+Name + \char`\"{} D\+E\+S\+C;\char`\"{}~\newline
+
 
 
 \begin{DoxyParams}{Parameter}
@@ -510,7 +514,8 @@ Steffen Extra
 Inner\+Join-\/\+Befehl. 
 
 Mithilfe der \char`\"{}select\+Inner\+Join\char`\"{} Methode wird eine neue Ergebnistabelle erstellt.~\newline
- Durch Kombinieren von Spaltenwerten von zwei Tabellen (first\+Table und second\+Table) basierend auf dem Join-\/\+Prädikat. Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen.~\newline
+ Durch Kombinieren von Spaltenwerten von zwei Tabellen (first\+Table und second\+Table) basierend auf dem Join-\/\+Prädikat.~\newline
+ Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen.~\newline
  Wenn das Join-\/\+Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.~\newline
  Das Schlüsselwort I\+N\+N\+ER J\+O\+IN wählt Datensätze mit übereinstimmenden Werten in beiden Tabellen aus.~\newline
 
@@ -787,7 +792,8 @@ Steffen Extra
 
 N\+U\+LL Werte. 
 
-Die select\+Null Methode prüft eine Spalte auf den Wert N\+U\+LL
+Die select\+Null Methode prüft eine Spalte auf den Wert N\+U\+LL.~\newline
+
 
 S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T $\ast$ \char`\"{} + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + column\+Name + \char`\"{} I\+S N\+U\+L\+L\char`\"{} + \char`\"{} O\+R \textquotesingle{} \textquotesingle{}; \char`\"{}
 

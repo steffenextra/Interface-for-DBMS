@@ -1,4 +1,4 @@
-/*! \YOLOSWAG SCHIE SCHIE
+/**! 
  *
  * \section intro Introduction
  *
