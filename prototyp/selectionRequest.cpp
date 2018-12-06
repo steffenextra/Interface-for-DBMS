@@ -727,24 +727,23 @@
 		check_error();
 		connection_feedback(sqlCommand.c_str());
 	}
-	/*
-	* Die "selectAverageSum" Methode berechnet den Durchschnittswert aller Werte, 
-	* die in einer Spalte mittels einer Select-Abfrage ermitteln wurden.
-	*	
-	*Die Struktur des SQL Befehl:	
-	* SELECT AVG(Spaltenname) FROM Tabellennamen
-	*
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-columnName-> Enhält den Spaltennamen von der, der Durchschnitt berechnet werden soll
-	*
-	*		
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+	/**
+
+	@brief Durchschnittswert
+
+	Die "selectAverageSum" Methode berechnet den Durchschnittswert aller Werte,
+	die in einer Spalte mittels einer Select-Abfrage ermitteln wurden.<br>
+
+	SQL-Befehl: "SELECT AVG(" + columnName + ") FROM " + tableName;
+
+	@param tableName = Name der Tabelle
+	@param columnName = Enthält den Spaltennamen von der, der Durchschnitt berechnet werden soll
+
+	*@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 
 	void selectAverageSum(std::string tableName, std::string columnName){
@@ -754,26 +753,24 @@
 		connection_feedback(sqlCommand.c_str());
 
 	}
-	/*
-	* Die "selectSum" Methode summiert die Werte einer Tabellenspalte und liefert sie zurück. 
-	* Zudem wird die zurück gegebene Spalte mit einem vom Nutzer bestimmten Aliasnamen versehen.
-	* 
-	*	
-	*Die Struktur des SQL Befehl:	
-	* SELECT SUM(Spaltenname) AS Alias-Spaltennamen FROM Tabellennamen
-	*
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-columnName-> Enhält den Spaltennamen von der, die Summe berechnet werden soll
-	*	-aliasColumnName-> Enhält den Aliasnamen
-	*
-	*		
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+	/**
+
+	@brief Summieren von Werten
+
+	Die "selectSum" Methode summiert die Werte einer Tabellenspalte und liefert sie zurück.<br>
+	Zudem wird die zurück gegebene Spalte mit einem vom Nutzer bestimmten Aliasnamen versehen.<br>
+
+	SQL-Befehl: "SELECT SUM(" + columnName + ") AS " + aliasColumnName+ " FROM " + tableName;
+
+	@param tableName = Name der Tabelle
+	@param columnName = Enthält den Spaltennamen von der, die Summe berechnet werden soll
+	@param aliasColumnName = Enthält den Aliasnamen
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 
 	void selectSum(std::string tableName, std::string columnName, std::string aliasColumnName){
@@ -783,26 +780,23 @@
 		connection_feedbackAll(sqlCommand.c_str());
 
 	}
-	/*
-	* Die "unionSelect" Methode vereinigt die Ergebnisse zweier Abfragen. 
-	* 
-	* 
-	*	
-	*Die Struktur des SQL Befehl:	
-	* SELECT Spaltenname(n) FROM Tabellenname(n) UNION...
-	*
-	*@param 
-	*	-tableName-> Enhält die Liste der Tabellennamen
-	*	-columnName-> Enhält die Liste der Spaltennamen
-	*
-	*
-	*		
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+
+	/**
+
+	@brief Vereinigung zweier Abfragen
+
+	Die "unionSelect" Methode vereinigt die Ergebnisse zweier Abfragen.<br>
+
+	SQL-Befehl: "SELECT " + columnName.at(i) + " FROM " + tableName.at(i) + " UNION ";
+
+	@param tableName = Enthält die Liste der Tabellennamen
+	@param columnName = Enthält die Liste der Spaltennamen
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 
 	void unionSelect(std::vector <std::string> tableName, std::vector <std::string> columnName){
@@ -824,33 +818,29 @@
 		connection_feedbackAll(sqlCommand.c_str());
 
 	}
-		/*
-	* Die "selectIn" Methode kann mehrere Abfrageergebnisse in einer SQL-Anweisung zu bündeln. 
-	* Damit kann der IN Operator leicht mehrere OR Operatoren ersetzen und vereinfacht damit die Struktur von komplexen OR-Bedingungen.
-	* 
-	* 
-	*	
-	*Die Struktur des SQL Befehl:	
-	* SELECT Spaltenname(n) FROM Tabellenname WHERE Spaltenname IN ('Wert1','Wert2')
-	*
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-columns-> Enhält die Liste der angezeigten Spalten
-	*	-searchInColumn-> Enhält den Spaltennamen in der die Werte vergleicht werden
-	-	-Enhält eine Liste der zu vergleichenden Werten
-	*
-	*
-	*		
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+	/**
+
+	@brief Mehrere Abfrageergebnisse bündeln
+
+	Die "selectIn" Methode kann mehrere Abfrageergebnisse in einer SQL-Anweisung zu bündeln.<br>
+	Damit kann der IN Operator leicht mehrere OR Operatoren ersetzen und vereinfacht damit die Struktur von komplexen OR-Bedingungen.<br>
+
+	SQL-Befehl: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + searchInColumn + " IN " + " (" + comparativValues + ");"
+
+	@param tableName = Name der Tabelle
+	@param columns = Enthält die Liste der angezeigten Spalten
+	@param searchInColumn = Enthält den Spaltennamen in der die Werte vergleicht werden
+	@param conditionValue = Enthält eine Liste der zu vergleichenden Werten
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 
 	void selectIn(std::string tableName,std::vector<std::string>columns,std::string searchInColumn,std::vector<std::string>conditionValue){
-		
+
 		int i=0;
 		std::string allColumns;
 		std::string comparativValues;
@@ -891,31 +881,28 @@
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str()); 
 	}
-	/*
-	* Die "selectBetween" Methode behinhlatet die SQL-Where Bedingungen mit einem eingeschränkten bestimmten Bereich eines Abfrageergebnisses.
-	* 
-	* 
-	*	
-	*Die Struktur des SQL Befehl:	
-	* SELECT Spaltenname FROM Tabellenname WHERE Spaltenname BETWEEN 'DATUM1' AND 'DATUM2'
-	*
-	*@param 
-	*	conditionString->
-	*	conditionStringTwo->
-	*	tablenName->Enhält die ausgewählte Tabelle
-	*	conditionColumn->
-	*	conditionColumn2->
-	*	contition->
-	*	condition2->
-	*
-	*
-	*		
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+	/**
+
+	@brief Eingeschränkte Abfragen
+
+	Die "selectBetween" Methode behinhlatet die SQL-Where Bedingungen mit einem eingeschränkten bestimmten Bereich eines Abfrageergebnisses.<br>
+
+	SQL-Befehl: SELECT * " FROM " + tableName + " WHERE " + conditionColumn + " " + conditionString + " " + condition
+                                             + " AND " + conditionColumnTwo + " " + conditionString + " " + conditionTwo;
+
+	@param conditionString = Bedingung (Name = ...)
+	@param conditionStringTwo = Bedingung (Name = ...)
+	@param tablenName = Name der Tabelle
+	@param conditionColumn = Spalte der ersten Bedingung
+	@param conditionColumn2 = Spalte der zweiten Bedingung
+	@param condition = Bedingung (... = 'Hans') 
+	@param conditionTwo = Bedingung (... = "Hans")
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 
 	void selectBetween(std::string conditionString, std::string conditionStringTwo, std::string tableName, std::string conditionColumn, std::string conditionColumnTwo, std::string condition, std::string conditionTwo){
@@ -927,30 +914,26 @@
 		connection_feedbackAll(sqlCommand.c_str());
 
 	}
-	/*
-	* Die "selectColumnsAlias" Methode kann für übergebene Spalte(n) einen ausgwählten Alias-Spaltenname(n) hinzufügen
-	*	Zuordnung: Spaltenname(i) = Alias-Spaltennamen(i)
-	* 
-	* 
-	*	
-	*Die Struktur des SQL Befehl:	
-	* SELECT Spaltennamen AS AliasSpaltennamen FROM Tabellennamen;
-	*
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-columns-> Enhält die Liste der zu anzeigenen & zu unbennenen Spalten
-	*	-aliases-> Enhält die Liste mit den Aliasnamen 
-	*	
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+	/**
+
+	@brief Alias-Spaltennamen
+
+	Die "selectColumnsAlias" Methode kann für übergebene Spalte(n) einen ausgwählten Alias-Spaltenname(n) hinzufügen.<br>
+	Zuordnung: Spaltenname(i) = Alias-Spaltennamen(i)<br>
+
+	@param tableName = Name der Tabelle
+	@param columns = Enthält die Liste der zu anzeigenen & zu unbennenen Spalten
+	@param aliases = Enthält die Liste mit den Aliasnamen
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 
 	void selectColumnsAlias(std::string tableName,std::vector<std::string>columns,std::vector<std::string>aliases){
-		
+
 		std::string columnAlias;
 		int i =0;
 
