@@ -1,30 +1,33 @@
 #include "selectionRequest.hpp"
 
 
-	/*
-	* Die Methode "sqlCommand" gibt einen vom Nutzer eingegebenen String(SQL Befehl) direkt weiter zum SQL Server,
-	* zu dem wird der Befehlstyp unterschieden. Es wird zwischen 3 Befehlstypen unterschieden: 
-	*	-Query -> simple Abfrage an den SQL Server
-	*	-feedback-> zeigt den Inhalt einer Spalte an
-	*	-feedbackAll-> zeigt die komplette Tabelle mit Spaltenbezeichnugen an
-	*	
-	*@param 
-	*	-sqlCommand-> enthält dem vom Nutzer eingegebenen String der später als SQL Befehl fungiert
-	*	-commandType-> enhält dem vom Nutzer gewählten Befehlstyp
-	*	
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+	/**
+
+	@brief Benutzereigener SQL-Befehl
+
+	Die Methode "sqlCommand" gibt einen vom Nutzer eingegebenen String(SQL Befehl) direkt weiter zum SQL Server,
+	zu dem wird der Befehlstyp unterschieden. Es wird zwischen 3 Befehlstypen unterschieden: 
+	Query -> simple Abfrage an den SQL Server
+	feedback-> zeigt den Inhalt einer Spalte an
+	feedbackAll-> zeigt die komplette Tabelle mit Spaltenbezeichnugen an
+
+	@param sqlCommand = enthält dem vom Nutzer eingegebenen String der später als SQL Befehl fungiert
+	@param commandType = enhält dem vom Nutzer gewählten Befehlstyp
+
+	@return void
+
+	@toDo Boolean als return
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
+
 	void sqlCommand(std::string sqlCommand,std::string commandType){
 		/*
-		3 CommandType 
-		 query, simple Query
-		 feedback, shows the contents of a Column
-		 feedbackAll, shows the whole table with Columns
+		3 CommandType
+		query, simple Query
+		feedback, shows the contents of a Column
+		feedbackAll, shows the whole table with Columns
 		*/
 
 		if(commandType=="query"){
@@ -47,32 +50,33 @@
 		}
 	}
 
-	/*
-	* Die Methode "selectLike" ermöglicht eine Suche auf der Grundlage eines vorher definierten regulären Musters.
-	*Muster:
-	*	Findet einen Datzensatz der z.B mit einem "a" beginnt.
-	*	Findet einen Datzensatz der z.B mit einem "a" endet.
-	*	Findet einen Datensatz der z.b ein "or" an beliebiger Positon enhält. 
-	*	Findet einen Datensatz der z.B ein "r" an der zweiten Position enthält.
-	*	Findet einen Datensatz der z.B mit einem "a" beginnt und einem O anfängt. 
-	*		->(Bedingung nur bei zwei Buchstaben erfüllt -> Fehlermeldung bei mehr als zwei Buchstaben)
-	*	
-	*Die Struktur des SQL Befehl:
-	*	SELECT Spaltenname(n) FROM Tabellenname WHERE Spaltenname LIKE 'MUSTER'
-	*	
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-columns-> Enhält die Liste der angezeigten Spalten
-	*	-toSearchColumn > Enhält die zu suchende Spalte
-	*	-pattern-> enhält das ausgewählte Muster
-	*	-toSearch-> enhält das zu suchende Element
-	*		
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+	/**
+
+	@brief Suche nach Muster
+
+	Die Methode "selectLike" ermöglicht eine Suche auf der Grundlage eines vorher definierten regulären Musters.<br>
+	Muster:
+		Findet einen Datzensatz der z.B mit einem "a" beginnt.<br>
+		Findet einen Datzensatz der z.B mit einem "a" endet.<br>
+		Findet einen Datensatz der z.b ein "or" an beliebiger Positon enhält. <br>
+		Findet einen Datensatz der z.B ein "r" an der zweiten Position enthält.<br>
+		Findet einen Datensatz der z.B mit einem "a" beginnt und einem O anfängt. <br>
+			->(Bedingung nur bei zwei Buchstaben erfüllt -> Fehlermeldung bei mehr als zwei Buchstaben)<br>
+
+	SQL-Befehl: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + toSearchColumn + "  LIKE " + "'" + toSearch + "%';"
+
+	@param tableName = Name der Tabelle
+	@param columns = Enhält die Liste der angezeigten Spalten
+	@param toSearchColumn = Enhält die zu suchende Spalte
+	@param pattern = enhält das ausgewählte Muster
+	@param toSearch = enhält das zu suchende Element
+
+	@return void
+	@toDo Boolean als Rückgabewert
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 
 	void selectLike(std::string tableName,std::vector<std::string>columns,std::string toSearchColumn,std::string pattern,std::string toSearch){
@@ -128,32 +132,33 @@
 		}
 	}
 
-	/*
-	* Die Methode "selectNotLike" ermöglicht eine Suche auf der Grundlage eines vorher definierten regulären Musters.
-	*Muster:
-	*	Findet einen Datzensatz der z.B nicht mit einem "a" beginnt.
-	*	Findet einen Datzensatz der z.B nicht mit einem "a" endet.
-	*	Findet einen Datensatz der z.b nicht ein "or" an beliebiger Positon enhält. 
-	*	Findet einen Datensatz der z.B nicht ein "r" an der zweiten Position enthält.
-	*	Findet einen Datensatz der z.B nicht mit einem "a" beginnt und einem O anfängt. 
-	*		->(Bedingung nur bei zwei Buchstaben erfüllt -> Fehlermeldung bei mehr als zwei Buchstaben)
-	*	
-	*Die Struktur des SQL Befehl:
-	*	SELECT Spaltenname(n) FROM Tabellenname WHERE Spaltenname NOT LIKE 'MUSTER'
-	*	
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-columns-> Enhält die Liste der angezeigten Spalten
-	*	-toSearchColumn > Enhält die zu suchende Spalte
-	*	-pattern-> enhält das ausgewählte Muster
-	*	-toSearch-> enhält das zu suchende Element
-	*		
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+	/**
+
+	@brief Suche nach Muster
+
+	Die Methode "selectNotLike" ermöglicht eine Suche auf der Grundlage eines vorher definierten regulären Musters.<br>
+	Muster:
+		Findet einen Datzensatz der z.B nicht mit einem "a" beginnt.<br>
+		Findet einen Datzensatz der z.B nicht mit einem "a" endet.<br>
+		Findet einen Datensatz der z.b nicht ein "or" an beliebiger Positon enhält. <br>
+		Findet einen Datensatz der z.B nicht ein "r" an der zweiten Position enthält.<br>
+		Findet einen Datensatz der z.B nicht mit einem "a" beginnt und einem O anfängt.<br>
+			->(Bedingung nur bei zwei Buchstaben erfüllt -> Fehlermeldung bei mehr als zwei Buchstaben)<br>
+
+	SQL-Befehl: 
+
+	@param tableName = Name der Tabelle
+	@param columns = Enthält die Liste der angezeigten Spalten
+	@param toSearchColumn = Enthält die zu suchende Spalte
+	@param pattern = enhält das ausgewählte Muster
+	@param toSearch = enhält das zu suchende Element
+
+	@return void
+	@toDo Boolean als Rückgabewert
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 
 	void selectNotLike(std::string tableName,std::vector<std::string>columns,std::string toSearchColumn,std::string pattern,std::string toSearch){
@@ -208,27 +213,30 @@
 			//exception handling
 		}
 	}
-	/*
-	* Die Methode "selectMinOrMax" ermittelt den höchsten bzw. niedrigsten Wert 
-	* einer Tabellenspalte und liefert die Spalte mit einem Aliasnamen zurück.
-	*	
-	*Die Struktur der beiden SQL Befehlen:	
-	*	SELECT MIN(Spaltenname1) AS Aliasspalte FROM Tabellenname 
-	*	SELECT MAX(Spaltenname1) AS Aliasspalte FROM Tabellenname 
-	*	
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-minOrMax-> Gibt an welcher Befehl ausgeführt werden soll.
-	*	-minOrMaxColumn -> Gibt die Spalte an, die den Min/Max Wert enthalten soll
-	*	-asColumn-> Enhält den gewählten Aliasnamen für die Min/Max Spalte
-	*		
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+
+	/**
+
+	@brief Ermittlung des höchsten / niedrigsten Wertes
+
+	Die Methode "selectMinOrMax" ermittelt den höchsten bzw. niedrigsten Wert
+	einer Tabellenspalte und liefert die Spalte mit einem Aliasnamen zurück.<br>
+
+	SQL-Befehl für das Minimum: "SELECT MIN(" + minOrMaxColumn +")" + " AS " + aliasColumn + " FROM " +  tableName + ";"
+	SQL-Befehl für das Maximum: "SELECT MAX(" + minOrMaxColumn +")" + " AS " + aliasColumn + " FROM " +  tableName + ";"
+
+	@param tableName = Name der Tabelle
+	@param minOrMax = Gibt an welcher Befehl ausgeführt werden soll.
+	@param minOrMaxColumn = Gibt die Spalte an, die den Min/Max Wert enthalten soll
+	@param asColumn = Enhält den gewählten Aliasnamen für die Min/Max Spalte
+
+	@return void
+	@toDo Boolean als Rückgabewert
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
+
 	void selectMinOrMax(std::string tableName,std::string minOrMax,std::string minOrMaxColumn,std::string aliasColumn){
 
 		if(minOrMax == "min" || minOrMax=="MIN"){
@@ -249,28 +257,29 @@
 
 	}
 
-	/*
-	* Die Methode "selectMinOrMaxWhere" ermittelt den höchsten bzw. niedrigsten Wert 
-	* einer Tabellenspalte verknüpft mit einer Bedigungs Klausel und liefert die Alias-Spalte zurück.
-	*	
-	*Die Struktur der beiden SQL Befehlen:	
-	*	SELECT MIN(Spaltenname(n)) AS Aliasspaltennamen FROM Tabellennamen WHERE Bedingungsspalte ='Bedingungswert'; 
-	*	SELECT MAX(Spaltenname(n)) AS Aliasspaltennamen FROM Tabellennamen WHERE Bedingungsspalte ='Bedingungswert';
-	*	
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-minOrMax-> Gibt an welcher Befehl ausgeführt werden soll.
-	*	-minOrMaxColumn > Gibt die Spalte an, die den Min/Max Wert enthalten soll
-	*	-aliasColumn-> Enhält den gewählten Aliasnamen für die Min/Max Spalte
-	*	-conditionColumn->Enhält den Namen der Bedingungsspalte
-	*	-conditionValue->Enhält den Bedigungswert
-	*		
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+	/**
+
+	@brief Höchster / niedrigster Wert mit Bedingung und Alias-Spalte
+
+	Die Methode "selectMinOrMaxWhere" ermittelt den höchsten bzw. niedrigsten Wert 
+	einer Tabellenspalte verknüpft mit einer Bedigungs Klausel und liefert die Alias-Spalte zurück.<br>
+
+	SQL-Befehl für das Minimum = "SELECT MIN(" + minOrMaxColumn +")" +" AS " + aliasColumn + " FROM " +  tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "'" + ";"<br>
+	SQL-Befehl für das Maximum = "SELECT MAX(" + minOrMaxColumn +")" +" AS " + aliasColumn + " FROM " +  tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "'" + ";"
+
+	@param tableName = Enhält den Tabellennamen
+	@param minOrMax = Gibt an welcher Befehl ausgeführt werden soll.
+	@param minOrMaxColumn = Gibt die Spalte an, die den Min/Max Wert enthalten soll
+	@param aliasColumn = Enhält den gewählten Aliasnamen für die Min/Max Spalte
+	@param conditionColumn = Enhält den Namen der Bedingungsspalte
+	@param conditionValue = Enhält den Bedigungswert
+
+	@return void
+	@toDo Boolean als Rückgabewert
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 
 	void selectMinOrMaxWhere(std::string tableName, std::string minOrMax,std::string minOrMaxColumn,std::string aliasColumn,std::string conditionColumn,std::string conditionValue){
@@ -292,36 +301,37 @@
 		}
 	}
 
-	/*
-	* Die Methode "selectLimitWhere" dient dazu eine vom Nutzer festgelegte Anzahl an Datensätzen abzufragen, verknüpft mit einer Bedingungs Klausel. 
-	* Zudem wird es Aufsteigend bzw. Absteigend sotiert
-	*	
-	*Die Struktur des SQL Befehl:	
-	*	SELECT Spaltenname(n) FROM Tabellennamen WHERE Bedigungsspalte = 'Bedingungswert' ORDER BY Sotierendespalte ASC;
-	*	SELECT Spaltenname(n) FROM Tabellennamen WHERE Bedigungsspalte = 'Bedingungswert' ORDER BY Sotierendespalte DESC;
-	*
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-columns-> Enhält die Liste der angezeigten Spalten
-	*	-limitNumber-> Anzahl der angezeigten Datensätze
-	*	-conditionColumn->Enhält den Namen der Bedingungsspalte
-	*	-conditionValue->Enhält den Bedigungswert
-	*	-toSortColumnName-> Enhält die Spalte zu der sotiert werden soll
-	*	-SortBy-> Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
-	*		
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+	/**
+
+	@brief Bestimmte Anzahl von Datensätzen mit Bedingung abfragen
+
+	Die Methode "selectLimitWhere" dient dazu eine vom Nutzer festgelegte Anzahl an Datensätzen abzufragen, verknüpft mit einer Bedingungs Klausel. <br>
+	Zudem wird es Aufsteigend bzw. Absteigend sotiert.<br>
+
+	SQL-Befehl ASC: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "'" + "  ORDER BY " + toSortcolumnName + " ASC " + " LIMIT " + limitNumber + ";";
+	SQL-Befehl DESC: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "'" + "  ORDER BY " + toSortColumnName + " DESC " + " LIMIT " + limitNumber + ";";
+
+	@param tableName = Name der Tabelle
+	@param columns = Enthält die Liste der angezeigten Spalten
+	@param limitNumber = Anzahl der angezeigten Datensätze
+	@param conditionColumn = Enhält den Namen der Bedingungsspalte
+	@param conditionValue = Enhält den Bedigungswert
+	@param toSortColumnName = Enhält die Spalte zu der sotiert werden soll
+	@param SortBy =Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
+
+	@return void
+	@toDo Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 
 	void selectLimitWhereOrderBy(std::string tableName,std::vector<std::string> columns,std::string limitNumber,std::string conditionColumn,std::string conditionValue,std::string toSortColumnName,std::string sortBy){
-		
+
 		int i=0;
 		std::string allColumns;
-		
+
 		while(i<columns.size()){
 			if(columns.size()==1){
 				allColumns +=  columns.at(i) + " ";
@@ -340,13 +350,13 @@
 		if(sortBy == "ASC" || sortBy=="asc"){
 			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "'" + "  ORDER BY " + toSortColumnName + " ASC " + " LIMIT " + limitNumber + ";";
 			check_error();
-			connection_feedbackAll(sqlCommand.c_str());	
+			connection_feedbackAll(sqlCommand.c_str());
 		}
 
 		if(sortBy== "DESC" ||  sortBy=="desc"){
 			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "'" + "  ORDER BY " + toSortColumnName + " ASC " + " LIMIT " + limitNumber + ";";
 			check_error();
-			connection_feedbackAll(sqlCommand.c_str());	
+			connection_feedbackAll(sqlCommand.c_str());
 		}
 
 		else{
@@ -354,63 +364,62 @@
 		}
 	}
 
-	/*
-	* Mithilfe der "selectOneColumn" Methode werden die SQL Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt. 
-	* Es wird nur die Spalte angzeigt, wo der Datensatz verglichen worden ist.
-	*	
-	*Die Struktur des SQL Befehl:	
-	*SELECT * FROM Tabellennamen WHERE Bedigungsspalte ='Bedingungswert';
-	*
-	*
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-conditionColumn->Enhält den Namen der Bedingungsspalte
-	*	-conditionValue->Enhält den Bedingungswert
-	*
-	*		
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+	/**
+
+	@brief Bestimmte Datensätze von bestimmten Spalten abfragen
+
+	Mithilfe der "selectOneColumn" Methode werden die SQL Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt.<br>
+	Es wird nur die Spalte angzeigt, wo der Datensatz verglichen worden ist.
+
+	SQL-Befehl: "SELECT * FROM " + tableName + " WHERE " + conditionColumn + " = " + "'" + conditionValue + "';"
+
+	@param tableName = Name der Tabelle
+	@param conditionColumn = Enthält den Namen der Bedingungsspalte
+	@param conditionValue = Enthält den Bedingungswert
+
+
+	@return void 
+	@toDo Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 
 	void selectWhereOneColumn(std::string tableName,std::string conditionColumn,std::string conditionValue){
-		
+
 		std::string sqlCommand ="SELECT * FROM " + tableName + " WHERE " + conditionColumn + " = " + "'" + conditionValue + "';";
 		check_error();
 		connection_feedback(sqlCommand.c_str());
 	}
 
-	/*
-	* Mithilfe der "selectWhere" Methode werden die SQL Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt.
-	* Es werden die Spalten angezeigt, die der Nutzer in dem Vektor übergeben hat.
-	*	
-	*Die Struktur des SQL Befehl:	
-	*SELECT Spaltenname(n) FROM Tabellennamen WHERE Bedigungsspalte ='Bedingungswert';
-	*
-	*
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-columns-> Enhält die Liste der angezeigten Spalten
-	*	-conditionColumn->Enhält den Namen der Bedingungsspalte
-	*	-conditionValue->Enhält den Bedingungswert
-	*
-	*		
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+	/**
+
+	@brief Anzeigen bestimmter Datensätze mit dem Zusatz der Where-Clause
+
+	Mithilfe der "selectWhere" Methode werden die SQL Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt.<br>
+	Es werden die Spalten angezeigt, die der Nutzer in dem Vektor übergeben hat.<br>
+
+	SQL-Befehl: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "';"
+
+	@param tableName = Name der Tabelle
+	@param columns = Enthält die Liste der angezeigten Spalten
+	@param conditionColumn = Enthält den Namen der Bedingungsspalte
+	@param conditionValue = Enthält den Bedingungswert
+
+	@return void
+	@toDo Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 
 	void selectWhere(std::string tableName,std::vector<std::string> columns,std::string conditionColumn,std::string conditionValue){
-	
+
 		int i =0;
 		std::string allColumns;
-		
+
 		while(i<columns.size()){
 			if(columns.size()==1){
 				allColumns +=  columns.at(i) + " ";
@@ -428,43 +437,43 @@
 
 		std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "';";
 		check_error();
-		connection_feedbackAll(sqlCommand.c_str());		
+		connection_feedbackAll(sqlCommand.c_str());
 	}
-	/*
-	* Mithilfe der "selectBool" Methode werden die SQL Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt.
-	* Zudem kann man ,dank der Funktion mit mehrere Bool-Bedingungen verknüpfen. 
-	* Es werden zwei Bedignungsspalten Vektoren, zwei BedingungswertVektoren sowieo ein Vektor der die Operationen enhält übergeben.  
-	* Ein Schleifendurchlauf holt sich die zwei Namen der Bedingungsspalten sowie die beiden Bedingungswerte dazu wird dann der boolische Operator hinzugefügt.
-	* Die beiden Conditionsvektoren müssen gleich groß sein.
-	* Es werden die Spalten angezeigt, die der Nutzer in dem Vektor übergeben hat.
-	*	
-	*Die Struktur des SQL Befehl:	
-	*SELECT Spaltenname(n) FROM Tabellennamen WHERE Bedigungsspalte ='Bedingungswert' boolischer Operator(And,Or,Xor) Bedingungsspalte2 ='Bedingungswert2'...;
-	*
-	*
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-columns-> Enhält die Liste der angezeigten Spalten
-	*	-conditionColumn->Enhält den Namen der Bedingungsspalte
-	*	-conditionValue->Enhält den Bedingungswert
-	*	-conditionColumn2->Enhält den Namen der zweiten zu vergleichnen Bedingungsspalte
-	*	-conditionValue2->Enhält den zweiten zu vergleichnenen Bedingungswert
-	*	-operators-> Enhält die Liste der boolischen Ausdrücke
-	*
-	*		
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+	/**
+
+	@brief Where-Clause mit mehreren Bedingungen
+
+	Mithilfe der "selectBool" Methode werden die SQL Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt.<br>
+	Zudem kann man ,dank der Funktion mit mehrere Bool-Bedingungen verknüpfen.<br>
+	Es werden zwei Bedignungsspalten Vektoren, zwei BedingungswertVektoren sowieo ein Vektor der die Operationen enhält übergeben.<br>
+	Ein Schleifendurchlauf holt sich die zwei Namen der Bedingungsspalten sowie die beiden Bedingungswerte dazu wird dann der boolische Operator hinzugefügt.<br>
+	Die beiden Conditionsvektoren müssen gleich groß sein.<br>
+	Es werden die Spalten angezeigt, die der Nutzer in dem Vektor übergeben hat.<br>
+
+	SQL-Befehl: "SELECT " + allColumns + " FROM " + tableName + " WHERE "  + conditionOperatorString + ";"
+
+	@param tableName = Name der Tabelle
+	@param columns = Enthält die Liste der angezeigten Spalten
+	@param conditionColumn = Enthält den Namen der Bedingungsspalte
+	@param conditionValue = Enthält den Bedingungswert
+	@param conditionColumn2 = Enthält den Namen der zweiten zu vergleichnen Bedingungsspalte
+	@param conditionValue2 = Enthält den zweiten zu vergleichnenen Bedingungswert
+	@param operators = Enthält die Liste der boolischen Ausdrücke
+
+
+	@return void
+	@toDo Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 	void selectBool(std::string tableName,std::vector<std::string> columns, std::vector<std::string>conditions,std::vector<std::string>conditionValue,std::vector<std::string> conditions2,std::vector<std::string>conditionValue2,std::vector<std::string>operators){
-			
+
 			int i=0;
 			std::string allColumns;
 			std::string conditionOperatorString;
-			
+
 		while(i<columns.size()){
 			if(columns.size()==1){
 				allColumns +=  columns.at(i) + " ";
@@ -514,34 +523,34 @@
 				}
 				i++;
 			}
-			
+
 			std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE "  + conditionOperatorString + ";";
 			check_error();
-			connection_feedbackAll(sqlCommand.c_str()); 	
+			connection_feedbackAll(sqlCommand.c_str());
 	}
-	/*
-	* Mithilfe der "selectWhereOrderBy" Methode werden die SQL Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt.
-	* Es werden die Spalten angezeigt, die der Nutzer in dem Vektor übergeben hat. Zudem wird es Aufsteigend oder Absteigend sortiert.
-	*	
-	*Die Struktur der beiden SQL Befehlen:	
-	*SELECT Spaltenname(n) FROM Tabellennamen WHERE Bedigungsspalte ='Bedingungswert' ORDER BY ASC;
-	*SELECT Spaltenname(n) FROM Tabellennamen WHERE Bedigungsspalte ='Bedingungswert' ORDER BY DESC;
-	*
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-columns-> Enhält die Liste der angezeigten Spalten
-	*	-conditionColumn->Enhält den Namen der Bedingungsspalte
-	*	-conditionValue->Enhält den Bedingungswert
-	*	-toSortColumnName-> Enhält die Spalte zu der sotiert werden soll
-	*	-SortBy-> Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
-	*
-	*		
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+
+	/**
+
+	@brief Abfrage von Spalten mit Sortierung
+
+	Mithilfe der "selectWhereOrderBy" Methode werden die SQL Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt.
+	Es werden die Spalten angezeigt, die der Nutzer in dem Vektor übergeben hat. Zudem wird es Aufsteigend oder Absteigend sortiert.
+
+	SQL-Befehl für ASC: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "'" + " ORDER BY " + toSortcolumnName  + " ASC;"
+	SQL-Befehl für DESC: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "'" + " ORDER BY " + toSortcolumnName  + " DESC;"
+
+	@param tableName = Name der Tabelle
+	@param columns = Enthält die Liste der angezeigten Spalten
+	@param conditionColumn = Enhält den Namen der Bedingungsspalte
+	@param conditionValue =Enhält den Bedingungswert
+	@param toSortColumnName =Enhält die Spalte zu der sotiert werden soll
+	@param SortBy = Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 
 	void selectWhereOrderBy(std::string tableName,std::vector<std::string> columns,std::string conditionColumn,std::string conditionValue,std::string toSortcolumnName,std::string sortBy){
@@ -581,26 +590,25 @@
 		}
 	}
 
-		/*
-	* Mithilfe der "selectSortTable" Methode wird eine angebene Tabelle nach einer angebenen Spalte auf- bzw. -Absteigend sortiert.
-	* Die ganze Tabelle wird ausgebenen.
-	*	
-	*Die Struktur der beiden SQL Befehlen:	
-	*SELECT Spaltenname(n) FROM Tabellennamen ORDER BY ASC;
-	*SELECT Spaltenname(n) FROM Tabellennamen ORDER BY DESC;
-	*
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-toSortColumnName-> Enhält die Spalte zu der sotiert werden soll
-	*	-SortBy-> Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
-	*
-	*		
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+	/**
+
+	@brief Tabelle wird nach Angabe sortiert
+
+	Mithilfe der "selectSortTable" Methode wird eine angebene Tabelle nach einer angebenen Spalte auf- bzw. -Absteigend sortiert.<br>
+	Die ganze Tabelle wird ausgebenen.<br>
+
+	SQL-Befehl für ASC = "SELECT * FROM " + tableName + " ORDER BY " + toSortColumnName  + " ASC;"
+	SQL-Befehl für DESC = "SELECT * FROM " + tableName + " ORDER BY " + toSortColumnName + " DESC;"
+
+	@param tableName = Name der Tabelle
+	@param toSortColumnName = Enhält die Spalte zu der sotiert werden soll
+	@param SortBy = Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
+
+	@return void 
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 
 	void selectSortTable(std::string tableName,std::string toSortColumnName,std::string sortBy){
@@ -621,26 +629,26 @@
 			check_error();
 		}
 	}
-		/*
-	* Die selectCount Methode zählt(COUNT) die Anzahl von ausgewählten Datensätzen.
-	* Es werden alle Datensätze gezählt, deren Wert nicht NULL ist. 
-	* Zudem wird die zurück gegebene Spalte mit einem vom Nutzer bestimmten Aliasnamen versehen.
-	*	
-	*Die Struktur des SQL Befehl:	
-	* SELECT COUNT(Spaltenname) AS Alias-Spaltennamen FROM Tabellennamen;
-	*
-	*
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-countColumn-> Enhält die zu zählende Spalte
-	*	-aliasColumn-> Enhält den gewählten Aliasnamen für die zurückgegebene Spalte
-	*		
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+
+	/**
+
+	@brief Anzahl von ausgewählten Datensätzen
+
+	Die selectCount Methode zählt(COUNT) die Anzahl von ausgewählten Datensätzen.<br>
+	Es werden alle Datensätze gezählt, deren Wert nicht NULL ist. <br>
+	Zudem wird die zurück gegebene Spalte mit einem vom Nutzer bestimmten Aliasnamen versehen.<br>
+
+	SQL-Befehl: "SELECT COUNT(" + countColumn + ") AS " + aliasColumnName + " FROM " + tableName + ";"
+
+	@param tableName = Name der Tabelle
+	@param countColumn = Enthält die zu zählende Spalte
+	@param aliasColumn = Enthält den gewählten Aliasnamen für die zurückgegebene Spalte
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 
 	void selectCount(std::string tableName,std::string countColumn,std::string aliasColumnName){
@@ -649,24 +657,23 @@
 		connection_feedbackAll(sqlCommand.c_str());
 	}
 
-	/*
-	* Mithilfe der "selectDistinct" Methode werden Redundanzen, die in einer Tabellen auftreten können, 
-	* eliminiert und die Werte werden jeweils nur einmal angezeigt.
-	*	
-	*Die Struktur des SQL Befehl:	
-	* SELECT DISTINCT Spaltenname(n) FROM Tabellenname
-	*
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-columns-> Enhält die Liste der angezeigten Spalten
-	*
-	*		
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+	/**
+
+	@brief Redundanzen werden eliminiert und nur einmal angezeigt
+
+	Mithilfe der "selectDistinct" Methode werden Redundanzen, die in einer Tabellen auftreten können,
+	eliminiert und die Werte werden jeweils nur einmal angezeigt.<br>
+
+	SQL-Befehl: "SELECT DISTINCT " + allColumns + " FROM " + tableName + ";"
+
+	@param tableName = Name der Tabelle
+	@param column = Enthält die Liste der angezeigten Spalten
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
 
 	void selectDistinct(std::string tableName,std::vector<std::string> columns){
@@ -693,26 +700,26 @@
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
 	}
-	/*
-	* Mithilfe der "selectCountDistinct" Methode werden Redundanzen, die in einer Tabellen auftreten können, 
-	* eliminiert und die Werte werden jeweils nur einmal angezeigt und anschließend werden diese Datensätze gezählt.
-	*	
-	*Die Struktur des SQL Befehls:	
-	* SELECT Count(DISTINCT Spaltenname) FROM Tabellenname;
-	*
-	*@param 
-	*	-tableName-> Enhält den Tabellennamen
-	*	-countColumn-> Enhält die zu zählende Spalte
-	*
-	*		
-	*@return 
-	*	-Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-	*
-	* @author Martin Meyer
-	*
-	* @version 1.0
+
+	/**
+
+	@brief Keine Redundanzen / Datensätze werden gezählt
+
+	Mithilfe der "selectCountDistinct" Methode werden Redundanzen, die in einer Tabellen auftreten können,
+	eliminiert und die Werte werden jeweils nur einmal angezeigt und anschließend werden diese Datensätze gezählt.<br>
+
+	SQL-Befehl: "SELECT COUNT(DISTINCT " + countColumn + ") FROM " + tableName + ";"
+
+	@param tableName = Name der Tabelle
+	@param countColumn = Enthält die zu zählende Spalte
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
 	*/
-	
+
 
 	void selectCountDistinct(std::string tableName,std::string countColumn){
 

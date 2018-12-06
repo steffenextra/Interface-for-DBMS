@@ -73,33 +73,33 @@ void \textbf{ set\+All\+Entry} (std\+::string table\+Name, std\+::vector$<$ std\
 void \textbf{ delete\+Entry} (std\+::string table\+Name, std\+::string column\+Name, std\+::string condition)
 \begin{DoxyCompactList}\small\item\em Löschen von Einträgen. \end{DoxyCompactList}\item 
 void \textbf{ sql\+Command} (std\+::string sql\+Command, std\+::string command\+Type)
-\item 
+\begin{DoxyCompactList}\small\item\em Benutzereigener S\+Q\+L-\/\+Befehl. \end{DoxyCompactList}\item 
 void \textbf{ select\+Like} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string to\+Search\+Column, std\+::string pattern, std\+::string to\+Search)
-\item 
+\begin{DoxyCompactList}\small\item\em Suche nach Muster. \end{DoxyCompactList}\item 
 void \textbf{ select\+Not\+Like} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string to\+Search\+Column, std\+::string pattern, std\+::string to\+Search)
-\item 
+\begin{DoxyCompactList}\small\item\em Suche nach Muster. \end{DoxyCompactList}\item 
 void \textbf{ select\+Min\+Or\+Max} (std\+::string table\+Name, std\+::string min\+Or\+Max, std\+::string min\+Or\+Max\+Column, std\+::string alias\+Column)
-\item 
+\begin{DoxyCompactList}\small\item\em Ermittlung des höchsten / niedrigsten Wertes. \end{DoxyCompactList}\item 
 void \textbf{ select\+Min\+Or\+Max\+Where} (std\+::string table\+Name, std\+::string min\+Or\+Max, std\+::string min\+Or\+Max\+Column, std\+::string alias\+Column, std\+::string condition\+Column, std\+::string condition\+Value)
-\item 
+\begin{DoxyCompactList}\small\item\em Höchster / niedrigster Wert mit Bedingung und Alias-\/\+Spalte. \end{DoxyCompactList}\item 
 void \textbf{ select\+Limit\+Where\+Order\+By} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns, std\+::string limit\+Number, std\+::string condition\+Column, std\+::string condition\+Value, std\+::string to\+Sort\+Column\+Name, std\+::string sort\+By)
-\item 
+\begin{DoxyCompactList}\small\item\em Bestimmte Anzahl von Datensätzen mit Bedingung abfragen. \end{DoxyCompactList}\item 
 void \textbf{ select\+Where\+One\+Column} (std\+::string table\+Name, std\+::string condition\+Column, std\+::string condition\+Value)
-\item 
+\begin{DoxyCompactList}\small\item\em Bestimmte Datensätze von bestimmten Spalten abfragen. \end{DoxyCompactList}\item 
 void \textbf{ select\+Where} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns, std\+::string condition\+Column, std\+::string condition\+Value)
-\item 
+\begin{DoxyCompactList}\small\item\em Anzeigen bestimmter Datensätze mit dem Zusatz der Where-\/\+Clause. \end{DoxyCompactList}\item 
 void \textbf{ select\+Where\+Bool} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns, std\+::vector$<$ std\+::string $>$conditions, std\+::vector$<$ std\+::string $>$condition\+Value, std\+::vector$<$ std\+::string $>$ conditions2, std\+::vector$<$ std\+::string $>$condition\+Value2, std\+::vector$<$ std\+::string $>$operators)
 \item 
 void \textbf{ select\+Where\+Order\+By} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns, std\+::string condition\+Column, std\+::string condition\+Value, std\+::string to\+Sortcolumn\+Name, std\+::string sort\+By)
-\item 
+\begin{DoxyCompactList}\small\item\em Abfrage von Spalten mit Sortierung. \end{DoxyCompactList}\item 
 void \textbf{ select\+Sort\+Table} (std\+::string table\+Name, std\+::string to\+Sort\+Column\+Name, std\+::string sort\+By)
-\item 
+\begin{DoxyCompactList}\small\item\em Tabelle wird nach Angabe sortiert. \end{DoxyCompactList}\item 
 void \textbf{ select\+Count} (std\+::string table\+Name, std\+::string count\+Column, std\+::string alias\+Column\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Anzahl von ausgewählten Datensätzen. \end{DoxyCompactList}\item 
 void \textbf{ select\+Distinct} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns)
-\item 
+\begin{DoxyCompactList}\small\item\em Redundanzen werden eliminiert und nur einmal angezeigt. \end{DoxyCompactList}\item 
 void \textbf{ select\+Count\+Distinct} (std\+::string table\+Name, std\+::string count\+Column)
-\item 
+\begin{DoxyCompactList}\small\item\em Keine Redundanzen / Datensätze werden gezählt. \end{DoxyCompactList}\item 
 void \textbf{ select\+Average\+Sum} (std\+::string table\+Name, std\+::string column\+Name)
 \item 
 void \textbf{ select\+Sum} (std\+::string table\+Name, std\+::string column\+Name, std\+::string alias\+Column\+Name)
@@ -678,12 +678,64 @@ Steffen Extra
 \subsubsection{select\+Count()}
 {\footnotesize\ttfamily void select\+Count (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{count\+Column,  }\item[{std\+::string}]{alias\+Column\+Name }\end{DoxyParamCaption})}
 
+
+
+Anzahl von ausgewählten Datensätzen. 
+
+Die select\+Count Methode zählt(\+C\+O\+U\+N\+T) die Anzahl von ausgewählten Datensätzen.~\newline
+ Es werden alle Datensätze gezählt, deren Wert nicht N\+U\+LL ist. ~\newline
+ Zudem wird die zurück gegebene Spalte mit einem vom Nutzer bestimmten Aliasnamen versehen.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T C\+O\+U\+N\+T(\char`\"{} + count\+Column + \char`\"{}) A\+S \char`\"{} + alias\+Column\+Name + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{};\char`\"{}
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em count\+Column} & = Enthält die zu zählende Spalte \\
+\hline
+{\em alias\+Column} & = Enthält den gewählten Aliasnamen für die zurückgegebene Spalte\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a8d6f770e3b1eb29fce843172c187ccc6}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Count\+Distinct@{select\+Count\+Distinct}}
 \index{select\+Count\+Distinct@{select\+Count\+Distinct}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{select\+Count\+Distinct()}
 {\footnotesize\ttfamily void select\+Count\+Distinct (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{count\+Column }\end{DoxyParamCaption})}
 
+
+
+Keine Redundanzen / Datensätze werden gezählt. 
+
+Mithilfe der \char`\"{}select\+Count\+Distinct\char`\"{} Methode werden Redundanzen, die in einer Tabellen auftreten können, eliminiert und die Werte werden jeweils nur einmal angezeigt und anschließend werden diese Datensätze gezählt.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T C\+O\+U\+N\+T(\+D\+I\+S\+T\+I\+N\+C\+T \char`\"{} + count\+Column + \char`\"{}) F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{};\char`\"{}
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em count\+Column} & = Enthält die zu zählende Spalte\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a851bc3e6b04b4dfaa359b43534a37cd5}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Count\+Group\+By\+Order\+By@{select\+Count\+Group\+By\+Order\+By}}
 \index{select\+Count\+Group\+By\+Order\+By@{select\+Count\+Group\+By\+Order\+By}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -696,6 +748,30 @@ Steffen Extra
 \subsubsection{select\+Distinct()}
 {\footnotesize\ttfamily void select\+Distinct (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns }\end{DoxyParamCaption})}
 
+
+
+Redundanzen werden eliminiert und nur einmal angezeigt. 
+
+Mithilfe der \char`\"{}select\+Distinct\char`\"{} Methode werden Redundanzen, die in einer Tabellen auftreten können, eliminiert und die Werte werden jeweils nur einmal angezeigt.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T D\+I\+S\+T\+I\+N\+C\+T \char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{};\char`\"{}
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em column} & = Enthält die Liste der angezeigten Spalten\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a41392b97718c999af4867dc0c62ade0c}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Full\+Join@{select\+Full\+Join}}
 \index{select\+Full\+Join@{select\+Full\+Join}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -738,30 +814,198 @@ Steffen Extra
 \subsubsection{select\+Like()}
 {\footnotesize\ttfamily void select\+Like (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{to\+Search\+Column,  }\item[{std\+::string}]{pattern,  }\item[{std\+::string}]{to\+Search }\end{DoxyParamCaption})}
 
+
+
+Suche nach Muster. 
+
+Die Methode \char`\"{}select\+Like\char`\"{} ermöglicht eine Suche auf der Grundlage eines vorher definierten regulären Musters.~\newline
+ Muster\+: Findet einen Datzensatz der z.\+B mit einem \char`\"{}a\char`\"{} beginnt.~\newline
+ Findet einen Datzensatz der z.\+B mit einem \char`\"{}a\char`\"{} endet.~\newline
+ Findet einen Datensatz der z.\+b ein \char`\"{}or\char`\"{} an beliebiger Positon enhält. ~\newline
+ Findet einen Datensatz der z.\+B ein \char`\"{}r\char`\"{} an der zweiten Position enthält.~\newline
+ Findet einen Datensatz der z.\+B mit einem \char`\"{}a\char`\"{} beginnt und einem O anfängt. ~\newline
+ -\/$>$(Bedingung nur bei zwei Buchstaben erfüllt -\/$>$ Fehlermeldung bei mehr als zwei Buchstaben)~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + to\+Search\+Column + \char`\"{}  L\+I\+K\+E \char`\"{} + \char`\"{}\textquotesingle{}\char`\"{} + to\+Search + \char`\"{}\%\textquotesingle{};\char`\"{}
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em columns} & = Enhält die Liste der angezeigten Spalten \\
+\hline
+{\em to\+Search\+Column} & = Enhält die zu suchende Spalte \\
+\hline
+{\em pattern} & = enhält das ausgewählte Muster \\
+\hline
+{\em to\+Search} & = enhält das zu suchende Element\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void  Boolean als Rückgabewert
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a94c57cf58c1b2812e3d1ce9b3837286d}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Limit\+Where\+Order\+By@{select\+Limit\+Where\+Order\+By}}
 \index{select\+Limit\+Where\+Order\+By@{select\+Limit\+Where\+Order\+By}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{select\+Limit\+Where\+Order\+By()}
 {\footnotesize\ttfamily void select\+Limit\+Where\+Order\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{limit\+Number,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value,  }\item[{std\+::string}]{to\+Sort\+Column\+Name,  }\item[{std\+::string}]{sort\+By }\end{DoxyParamCaption})}
 
+
+
+Bestimmte Anzahl von Datensätzen mit Bedingung abfragen. 
+
+Die Methode \char`\"{}select\+Limit\+Where\char`\"{} dient dazu eine vom Nutzer festgelegte Anzahl an Datensätzen abzufragen, verknüpft mit einer Bedingungs Klausel. ~\newline
+ Zudem wird es Aufsteigend bzw. Absteigend sotiert.~\newline
+
+
+S\+Q\+L-\/\+Befehl A\+SC\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{}\char`\"{} + \char`\"{}  O\+R\+D\+E\+R B\+Y \char`\"{} + to\+Sortcolumn\+Name + \char`\"{} A\+S\+C \char`\"{} + \char`\"{} L\+I\+M\+I\+T \char`\"{} + limit\+Number + \char`\"{};\char`\"{}; S\+Q\+L-\/\+Befehl D\+E\+SC\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{}\char`\"{} + \char`\"{}  O\+R\+D\+E\+R B\+Y \char`\"{} + to\+Sort\+Column\+Name + \char`\"{} D\+E\+S\+C \char`\"{} + \char`\"{} L\+I\+M\+I\+T \char`\"{} + limit\+Number + \char`\"{};\char`\"{};
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em columns} & = Enthält die Liste der angezeigten Spalten \\
+\hline
+{\em limit\+Number} & = Anzahl der angezeigten Datensätze \\
+\hline
+{\em condition\+Column} & = Enhält den Namen der Bedingungsspalte \\
+\hline
+{\em condition\+Value} & = Enhält den Bedigungswert \\
+\hline
+{\em to\+Sort\+Column\+Name} & = Enhält die Spalte zu der sotiert werden soll \\
+\hline
+{\em Sort\+By} & =Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void  Die Funktion gibt ein void zurück -\/$>$ to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_ae4c9217024bfe521a229e0b4162e5ef7}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Min\+Or\+Max@{select\+Min\+Or\+Max}}
 \index{select\+Min\+Or\+Max@{select\+Min\+Or\+Max}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{select\+Min\+Or\+Max()}
 {\footnotesize\ttfamily void select\+Min\+Or\+Max (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{min\+Or\+Max,  }\item[{std\+::string}]{min\+Or\+Max\+Column,  }\item[{std\+::string}]{alias\+Column }\end{DoxyParamCaption})}
 
+
+
+Ermittlung des höchsten / niedrigsten Wertes. 
+
+Die Methode \char`\"{}select\+Min\+Or\+Max\char`\"{} ermittelt den höchsten bzw. niedrigsten Wert einer Tabellenspalte und liefert die Spalte mit einem Aliasnamen zurück.~\newline
+
+
+S\+Q\+L-\/\+Befehl für das Minimum\+: \char`\"{}\+S\+E\+L\+E\+C\+T M\+I\+N(\char`\"{} + min\+Or\+Max\+Column +\char`\"{})\char`\"{} + \char`\"{} A\+S \char`\"{} + alias\+Column + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{};\char`\"{} S\+Q\+L-\/\+Befehl für das Maximum\+: \char`\"{}\+S\+E\+L\+E\+C\+T M\+A\+X(\char`\"{} + min\+Or\+Max\+Column +\char`\"{})\char`\"{} + \char`\"{} A\+S \char`\"{} + alias\+Column + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{};\char`\"{}
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em min\+Or\+Max} & = Gibt an welcher Befehl ausgeführt werden soll. \\
+\hline
+{\em min\+Or\+Max\+Column} & = Gibt die Spalte an, die den Min/\+Max Wert enthalten soll \\
+\hline
+{\em as\+Column} & = Enhält den gewählten Aliasnamen für die Min/\+Max Spalte\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void  Boolean als Rückgabewert
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a39f437d3c3c841e8a82b9ad1b514007e}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Min\+Or\+Max\+Where@{select\+Min\+Or\+Max\+Where}}
 \index{select\+Min\+Or\+Max\+Where@{select\+Min\+Or\+Max\+Where}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{select\+Min\+Or\+Max\+Where()}
 {\footnotesize\ttfamily void select\+Min\+Or\+Max\+Where (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{min\+Or\+Max,  }\item[{std\+::string}]{min\+Or\+Max\+Column,  }\item[{std\+::string}]{alias\+Column,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value }\end{DoxyParamCaption})}
 
+
+
+Höchster / niedrigster Wert mit Bedingung und Alias-\/\+Spalte. 
+
+Die Methode \char`\"{}select\+Min\+Or\+Max\+Where\char`\"{} ermittelt den höchsten bzw. niedrigsten Wert einer Tabellenspalte verknüpft mit einer Bedigungs Klausel und liefert die Alias-\/\+Spalte zurück.~\newline
+
+
+S\+Q\+L-\/\+Befehl für das Minimum = \char`\"{}\+S\+E\+L\+E\+C\+T M\+I\+N(\char`\"{} + min\+Or\+Max\+Column +\char`\"{})\char`\"{} +\char`\"{} A\+S \char`\"{} + alias\+Column + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{}\char`\"{} + \char`\"{};\char`\"{}~\newline
+ S\+Q\+L-\/\+Befehl für das Maximum = \char`\"{}\+S\+E\+L\+E\+C\+T M\+A\+X(\char`\"{} + min\+Or\+Max\+Column +\char`\"{})\char`\"{} +\char`\"{} A\+S \char`\"{} + alias\+Column + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{}\char`\"{} + \char`\"{};\char`\"{}
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Enhält den Tabellennamen \\
+\hline
+{\em min\+Or\+Max} & = Gibt an welcher Befehl ausgeführt werden soll. \\
+\hline
+{\em min\+Or\+Max\+Column} & = Gibt die Spalte an, die den Min/\+Max Wert enthalten soll \\
+\hline
+{\em alias\+Column} & = Enhält den gewählten Aliasnamen für die Min/\+Max Spalte \\
+\hline
+{\em condition\+Column} & = Enhält den Namen der Bedingungsspalte \\
+\hline
+{\em condition\+Value} & = Enhält den Bedigungswert\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void  Boolean als Rückgabewert
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_aab8b32ae4ac6aeddc5c05578b4c79ace}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Not\+Like@{select\+Not\+Like}}
 \index{select\+Not\+Like@{select\+Not\+Like}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{select\+Not\+Like()}
 {\footnotesize\ttfamily void select\+Not\+Like (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{to\+Search\+Column,  }\item[{std\+::string}]{pattern,  }\item[{std\+::string}]{to\+Search }\end{DoxyParamCaption})}
 
+
+
+Suche nach Muster. 
+
+Die Methode \char`\"{}select\+Not\+Like\char`\"{} ermöglicht eine Suche auf der Grundlage eines vorher definierten regulären Musters.~\newline
+ Muster\+: Findet einen Datzensatz der z.\+B nicht mit einem \char`\"{}a\char`\"{} beginnt.~\newline
+ Findet einen Datzensatz der z.\+B nicht mit einem \char`\"{}a\char`\"{} endet.~\newline
+ Findet einen Datensatz der z.\+b nicht ein \char`\"{}or\char`\"{} an beliebiger Positon enhält. ~\newline
+ Findet einen Datensatz der z.\+B nicht ein \char`\"{}r\char`\"{} an der zweiten Position enthält.~\newline
+ Findet einen Datensatz der z.\+B nicht mit einem \char`\"{}a\char`\"{} beginnt und einem O anfängt.~\newline
+ -\/$>$(Bedingung nur bei zwei Buchstaben erfüllt -\/$>$ Fehlermeldung bei mehr als zwei Buchstaben)~\newline
+
+
+S\+Q\+L-\/\+Befehl\+:
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em columns} & = Enthält die Liste der angezeigten Spalten \\
+\hline
+{\em to\+Search\+Column} & = Enthält die zu suchende Spalte \\
+\hline
+{\em pattern} & = enhält das ausgewählte Muster \\
+\hline
+{\em to\+Search} & = enhält das zu suchende Element\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void  Boolean als Rückgabewert
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_aedcd1503abb6715de26a92d34714dcce}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Null@{select\+Null}}
 \index{select\+Null@{select\+Null}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -780,6 +1024,33 @@ Steffen Extra
 \subsubsection{select\+Sort\+Table()}
 {\footnotesize\ttfamily void select\+Sort\+Table (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{to\+Sort\+Column\+Name,  }\item[{std\+::string}]{sort\+By }\end{DoxyParamCaption})}
 
+
+
+Tabelle wird nach Angabe sortiert. 
+
+Mithilfe der \char`\"{}select\+Sort\+Table\char`\"{} Methode wird eine angebene Tabelle nach einer angebenen Spalte auf-\/ bzw. -\/\+Absteigend sortiert.~\newline
+ Die ganze Tabelle wird ausgebenen.~\newline
+
+
+S\+Q\+L-\/\+Befehl für A\+SC = \char`\"{}\+S\+E\+L\+E\+C\+T $\ast$ F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} O\+R\+D\+E\+R B\+Y \char`\"{} + to\+Sort\+Column\+Name + \char`\"{} A\+S\+C;\char`\"{} S\+Q\+L-\/\+Befehl für D\+E\+SC = \char`\"{}\+S\+E\+L\+E\+C\+T $\ast$ F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} O\+R\+D\+E\+R B\+Y \char`\"{} + to\+Sort\+Column\+Name + \char`\"{} D\+E\+S\+C;\char`\"{}
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em to\+Sort\+Column\+Name} & = Enhält die Spalte zu der sotiert werden soll \\
+\hline
+{\em Sort\+By} & = Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a9f37b58ba921dc5e6b5d4a5d0fefe28e}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Sum@{select\+Sum}}
 \index{select\+Sum@{select\+Sum}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -798,6 +1069,35 @@ Steffen Extra
 \subsubsection{select\+Where()}
 {\footnotesize\ttfamily void select\+Where (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value }\end{DoxyParamCaption})}
 
+
+
+Anzeigen bestimmter Datensätze mit dem Zusatz der Where-\/\+Clause. 
+
+Mithilfe der \char`\"{}select\+Where\char`\"{} Methode werden die S\+QL Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt.~\newline
+ Es werden die Spalten angezeigt, die der Nutzer in dem Vektor übergeben hat.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{};\char`\"{}
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em columns} & = Enthält die Liste der angezeigten Spalten \\
+\hline
+{\em condition\+Column} & = Enthält den Namen der Bedingungsspalte \\
+\hline
+{\em condition\+Value} & = Enthält den Bedingungswert\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void  Die Funktion gibt ein void zurück -\/$>$ to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a0c986e9aa0e2d7e080ba5eb294a1182e}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Where\+Bool@{select\+Where\+Bool}}
 \index{select\+Where\+Bool@{select\+Where\+Bool}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -810,12 +1110,69 @@ Steffen Extra
 \subsubsection{select\+Where\+One\+Column()}
 {\footnotesize\ttfamily void select\+Where\+One\+Column (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value }\end{DoxyParamCaption})}
 
+
+
+Bestimmte Datensätze von bestimmten Spalten abfragen. 
+
+Mithilfe der \char`\"{}select\+One\+Column\char`\"{} Methode werden die S\+QL Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt.~\newline
+ Es wird nur die Spalte angzeigt, wo der Datensatz verglichen worden ist.
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T $\ast$ F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \char`\"{} + \char`\"{}\textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{};\char`\"{}
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em condition\+Column} & = Enthält den Namen der Bedingungsspalte \\
+\hline
+{\em condition\+Value} & = Enthält den Bedingungswert\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void  Die Funktion gibt ein void zurück -\/$>$ to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a94269766ff6e39ba8a38f5623314c3cd}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Where\+Order\+By@{select\+Where\+Order\+By}}
 \index{select\+Where\+Order\+By@{select\+Where\+Order\+By}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{select\+Where\+Order\+By()}
 {\footnotesize\ttfamily void select\+Where\+Order\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value,  }\item[{std\+::string}]{to\+Sortcolumn\+Name,  }\item[{std\+::string}]{sort\+By }\end{DoxyParamCaption})}
 
+
+
+Abfrage von Spalten mit Sortierung. 
+
+Mithilfe der \char`\"{}select\+Where\+Order\+By\char`\"{} Methode werden die S\+QL Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt. Es werden die Spalten angezeigt, die der Nutzer in dem Vektor übergeben hat. Zudem wird es Aufsteigend oder Absteigend sortiert.
+
+S\+Q\+L-\/\+Befehl für A\+SC\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{}\char`\"{} + \char`\"{} O\+R\+D\+E\+R B\+Y \char`\"{} + to\+Sortcolumn\+Name + \char`\"{} A\+S\+C;\char`\"{} S\+Q\+L-\/\+Befehl für D\+E\+SC\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{}\char`\"{} + \char`\"{} O\+R\+D\+E\+R B\+Y \char`\"{} + to\+Sortcolumn\+Name + \char`\"{} D\+E\+S\+C;\char`\"{}
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em columns} & = Enthält die Liste der angezeigten Spalten \\
+\hline
+{\em condition\+Column} & = Enhält den Namen der Bedingungsspalte \\
+\hline
+{\em condition\+Value} & =Enhält den Bedingungswert \\
+\hline
+{\em to\+Sort\+Column\+Name} & =Enhält die Spalte zu der sotiert werden soll \\
+\hline
+{\em Sort\+By} & = Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_aeb45ccd70b8692b592754a0886c2d109}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!set\+All\+Entry@{set\+All\+Entry}}
 \index{set\+All\+Entry@{set\+All\+Entry}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -1098,6 +1455,27 @@ Steffen Extra
 \subsubsection{sql\+Command()}
 {\footnotesize\ttfamily void sql\+Command (\begin{DoxyParamCaption}\item[{std\+::string}]{sql\+Command,  }\item[{std\+::string}]{command\+Type }\end{DoxyParamCaption})}
 
+
+
+Benutzereigener S\+Q\+L-\/\+Befehl. 
+
+Die Methode \char`\"{}sql\+Command\char`\"{} gibt einen vom Nutzer eingegebenen String(\+S\+Q\+L Befehl) direkt weiter zum S\+QL Server, zu dem wird der Befehlstyp unterschieden. Es wird zwischen 3 Befehlstypen unterschieden\+: Query -\/$>$ simple Abfrage an den S\+QL Server feedback-\/$>$ zeigt den Inhalt einer Spalte an feedback\+All-\/$>$ zeigt die komplette Tabelle mit Spaltenbezeichnugen an
+
+
+\begin{DoxyParams}{Parameter}
+{\em sql\+Command} & = enthält dem vom Nutzer eingegebenen String der später als S\+QL Befehl fungiert \\
+\hline
+{\em command\+Type} & = enhält dem vom Nutzer gewählten Befehlstyp\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+Boolean als return \begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a1bde570da9c90a3d0f6e94bc1b06c5e3}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!union\+Select@{union\+Select}}
 \index{union\+Select@{union\+Select}!sqllib.\+hpp@{sqllib.\+hpp}}
