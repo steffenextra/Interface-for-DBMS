@@ -15,23 +15,23 @@
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ check\+\_\+error} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Fehlermethode. \end{DoxyCompactList}\item 
 void \textbf{ connection\+\_\+feedback} (std\+::string \textbf{ sql\+Command})
-\item 
+\begin{DoxyCompactList}\small\item\em Rückgabe einzelner Ergebnisse. \end{DoxyCompactList}\item 
 void \textbf{ connection\+\_\+query} (std\+::string sqlcommand)
-\item 
+\begin{DoxyCompactList}\small\item\em Sendet eine Abfrage zum S\+Q\+L-\/\+Server. \end{DoxyCompactList}\item 
 void \textbf{ connectionless} (const char $\ast$host, const char $\ast$user, const char $\ast$passwort, const char $\ast$db, unsigned int port, const char $\ast$unix\+\_\+socket, unsigned int client\+\_\+flag)
 \item 
 void \textbf{ disconnect} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Verbindung schließen. \end{DoxyCompactList}\item 
 void \textbf{ create\+Database} (std\+::string database\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Erstellen einer Datenbank. \end{DoxyCompactList}\item 
 void \textbf{ show\+Databases} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Anzeigen der Datenbanken. \end{DoxyCompactList}\item 
 void \textbf{ rename\+Database} (std\+::string database\+Name, std\+::string new\+Database\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Datenbanknamen ändern. \end{DoxyCompactList}\item 
 void \textbf{ delete\+Database} (std\+::string database\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Löschen einer Datenbank. \end{DoxyCompactList}\item 
 void \textbf{ create\+Table} (bool primary\+\_\+key, std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns)
 \item 
 void \textbf{ show\+Table} (std\+::string table\+Name)
@@ -41,37 +41,37 @@ void \textbf{ rename\+Table} (std\+::string tablename, std\+::string new\+Table\
 void \textbf{ delete\+Table} (std\+::string table\+Name)
 \begin{DoxyCompactList}\small\item\em Löschen einer Tabelle. \end{DoxyCompactList}\item 
 void \textbf{ set\+Column} (std\+::string table\+Name, std\+::string Column\+Name, std\+::string datatype)
-\begin{DoxyCompactList}\small\item\em Bearbeiten der Spalten in einer Tabelle. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Bearbeiten der Spalte in einer Tabelle. \end{DoxyCompactList}\item 
 void \textbf{ set\+Column\+With\+Primary} (std\+::string table\+Name, std\+::string Column\+Name, std\+::string datatype, bool autoinc)
 \begin{DoxyCompactList}\small\item\em Setzen des Primärschlüssels. \end{DoxyCompactList}\item 
 void \textbf{ modifier\+Column\+Name} (std\+::string table\+Name, std\+::string old\+Column\+Name, std\+::string new\+Column\+Name, std\+::string datatype)
 \begin{DoxyCompactList}\small\item\em Modifizieren des Spaltennamens. \end{DoxyCompactList}\item 
 void \textbf{ change\+The\+Datatype} (std\+::string table\+Name, std\+::string column\+Name, std\+::string datatype)
-\item 
+\begin{DoxyCompactList}\small\item\em Ändern des Datentyps. \end{DoxyCompactList}\item 
 void \textbf{ get\+All\+Column} (std\+::string table\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Anzeigen von Spalten. \end{DoxyCompactList}\item 
 void \textbf{ count\+Datasets} (std\+::string table\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Zählen der Datensätze. \end{DoxyCompactList}\item 
 void \textbf{ show\+Column\+Typ} (std\+::string table\+Name, std\+::string datatype)
-\item 
+\begin{DoxyCompactList}\small\item\em Datentyp der Spalte anzeigen lassen. \end{DoxyCompactList}\item 
 void \textbf{ delete\+Column} (std\+::string table\+Name, std\+::string column\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Löschen von Spalten. \end{DoxyCompactList}\item 
 void \textbf{ set\+Secondary\+Key} (std\+::string table\+Name\+Secondary, std\+::string foreign\+Key, std\+::string table\+Name\+Primary, std\+::string primary\+Key, std\+::string constraint)
-\item 
+\begin{DoxyCompactList}\small\item\em Setzen des Sekundärschlüssels (Foreign Key) \end{DoxyCompactList}\item 
 void \textbf{ delete\+Secondary\+Key} (std\+::string table\+Name, std\+::string constraint)
-\item 
+\begin{DoxyCompactList}\small\item\em Löschen des Sekundärschlüssels. \end{DoxyCompactList}\item 
 void \textbf{ set\+Primary\+Key} (std\+::string table\+Name, std\+::string primary\+Key)
-\item 
+\begin{DoxyCompactList}\small\item\em Nachträgliches setzen eines Primärschlüssels. \end{DoxyCompactList}\item 
 void \textbf{ delete\+Primary\+Key} (std\+::string table\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Löschen des Primärschlüssels. \end{DoxyCompactList}\item 
 void \textbf{ set\+Entry} (std\+::string table\+Name, std\+::string column\+Name, std\+::string entry)
-\item 
+\begin{DoxyCompactList}\small\item\em Erstellen eines Eintrags. \end{DoxyCompactList}\item 
 void \textbf{ modifier\+Entry} (std\+::string table\+Name, std\+::string column\+Name, std\+::string old\+Entry, std\+::string new\+Entry)
-\item 
+\begin{DoxyCompactList}\small\item\em Einträge modifizieren. \end{DoxyCompactList}\item 
 void \textbf{ set\+All\+Entry} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ \textbf{ row})
-\item 
+\begin{DoxyCompactList}\small\item\em Beliebige Anzahl von Einträgen hinzufügen. \end{DoxyCompactList}\item 
 void \textbf{ delete\+Entry} (std\+::string table\+Name, std\+::string column\+Name, std\+::string condition)
-\item 
+\begin{DoxyCompactList}\small\item\em Löschen von Einträgen. \end{DoxyCompactList}\item 
 void \textbf{ sql\+Command} (std\+::string sql\+Command, std\+::string command\+Type)
 \item 
 void \textbf{ select\+Like} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string to\+Search\+Column, std\+::string pattern, std\+::string to\+Search)
@@ -139,24 +139,109 @@ void \textbf{ select\+Full\+Join} (std\+::string first\+Table\+Name, std\+::stri
 \subsubsection{change\+The\+Datatype()}
 {\footnotesize\ttfamily void change\+The\+Datatype (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name,  }\item[{std\+::string}]{datatype }\end{DoxyParamCaption})}
 
+
+
+Ändern des Datentyps. 
+
+Ändern des Datentyps einer Spalte ohne den Namen der Spalte zu ändern. ~\newline
+ Wenn der Datentyp der Spalte geändert wird, muss darauf geachtet werden, dass die Objekte in der Spalte dem Datentyp entsprechen. ~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+Al\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} M\+O\+D\+I\+F\+Y \char`\"{} + column\+Name + \char`\"{} \char`\"{} + datatype;
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em column\+Name} & = Name der Spalte \\
+\hline
+{\em datatype} & = Neuer Datentyp\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a33fd832a9e1a27bddb7d9837a2dcf2f1}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!check\+\_\+error@{check\+\_\+error}}
 \index{check\+\_\+error@{check\+\_\+error}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{check\+\_\+error()}
 {\footnotesize\ttfamily void check\+\_\+error (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+
+
+Fehlermethode. 
+
+Die Methode \char`\"{}check\+\_\+error\char`\"{} ist verantwortlich für die Ausnahme, die ausgelöst wird, wenn My\+S\+QL einen Fehler zurückgibt.~\newline
+
+
+
+\begin{DoxyParams}{Parameter}
+{\em -\/} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_ab12a404eefae07281e8d1273ca3fc447}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!connection\+\_\+feedback@{connection\+\_\+feedback}}
 \index{connection\+\_\+feedback@{connection\+\_\+feedback}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{connection\+\_\+feedback()}
 {\footnotesize\ttfamily void connection\+\_\+feedback (\begin{DoxyParamCaption}\item[{std\+::string}]{sql\+Command }\end{DoxyParamCaption})}
 
+
+
+Rückgabe einzelner Ergebnisse. 
+
+Die Methode \char`\"{}connection\+\_\+feedback\char`\"{} liefert eine Spalte des aktuellen Datensatzes.~\newline
+ Diese wird benutzt um einzelne Ergebnis zurückzugeben. (Bspw. \doxyref{select\+Count()}{S.}{selection_request_8cpp_a00f071477f164f70927ee9923dd77a39} )
+
+
+\begin{DoxyParams}{Parameter}
+{\em sql\+Command} & = enthält den auszuführenden S\+Q\+L-\/\+Befehl\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a83d389dd4406da88cf16f7736e012537}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!connection\+\_\+query@{connection\+\_\+query}}
 \index{connection\+\_\+query@{connection\+\_\+query}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{connection\+\_\+query()}
-{\footnotesize\ttfamily void connection\+\_\+query (\begin{DoxyParamCaption}\item[{std\+::string}]{sqlcommand }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void connection\+\_\+query (\begin{DoxyParamCaption}\item[{std\+::string}]{sql\+Command }\end{DoxyParamCaption})}
 
+
+
+Sendet eine Abfrage zum S\+Q\+L-\/\+Server. 
+
+Die Methode \char`\"{}connection\+\_\+query\char`\"{} sendet eine eindeutige Abfrage (mehrere Abfragen werden nicht unterstützt) an die derzeit aktive Datenbank auf dem Server, der dem angegebenen Server zugeordnet ist. ~\newline
+
+
+
+\begin{DoxyParams}{Parameter}
+{\em sql\+Command} & = enhält den auszuführenden S\+Q\+L-\/\+Befehl\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a76ac4f4e873cad05bcaa10a8b7e048ce}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!connectionless@{connectionless}}
 \index{connectionless@{connectionless}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -169,12 +254,53 @@ void \textbf{ select\+Full\+Join} (std\+::string first\+Table\+Name, std\+::stri
 \subsubsection{count\+Datasets()}
 {\footnotesize\ttfamily void count\+Datasets (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
 
+
+
+Zählen der Datensätze. 
+
+Alle Datensätze werden gezählt und ausgegeben.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T C\+O\+U\+N\+T ($\ast$) F\+R\+O\+M \char`\"{} + table\+Name;
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle;\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_abf48eb274e662a7de3f5f190d126b765}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!create\+Database@{create\+Database}}
 \index{create\+Database@{create\+Database}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{create\+Database()}
 {\footnotesize\ttfamily void create\+Database (\begin{DoxyParamCaption}\item[{std\+::string}]{database\+Name }\end{DoxyParamCaption})}
 
+
+
+Erstellen einer Datenbank. 
+
+Die Methode \char`\"{}create\+Database\char`\"{} sendet einen Befehl um eine Datenbank zu erstellen an den S\+QL Server
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+C\+R\+E\+A\+T\+E D\+A\+T\+A\+B\+A\+S\+E \char`\"{} + database\+Name;
+
+
+\begin{DoxyParams}{Parameter}
+{\em database\+Name} & = enthält den Namen für die zu erstellende Datenbank\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a018659fc814b4a097c4b4862f42fe554}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!create\+Table@{create\+Table}}
 \index{create\+Table@{create\+Table}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -187,30 +313,141 @@ void \textbf{ select\+Full\+Join} (std\+::string first\+Table\+Name, std\+::stri
 \subsubsection{delete\+Column()}
 {\footnotesize\ttfamily void delete\+Column (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name }\end{DoxyParamCaption})}
 
+
+
+Löschen von Spalten. 
+
+Durch die Angabe des Tabellen/-\/ und Spaltennamens werden einzelne Spalten gelöscht.
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+A\+L\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} D\+R\+O\+P \char`\"{} + column\+Name;
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em column\+Name} & = Name der Spalte\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a1d1fac4a7c1506f81908532050a8e58f}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!delete\+Database@{delete\+Database}}
 \index{delete\+Database@{delete\+Database}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{delete\+Database()}
 {\footnotesize\ttfamily void delete\+Database (\begin{DoxyParamCaption}\item[{std\+::string}]{database\+Name }\end{DoxyParamCaption})}
 
+
+
+Löschen einer Datenbank. 
+
+Die Methode \char`\"{}delete\+Database\char`\"{} senden dem Befehl eine Datenbank zu löschen.~\newline
+ Bis auf die gewählte Datenbank für die Connetionless Methode können alle Datenbanken ugelöscht werden.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+D\+R\+O\+P D\+A\+T\+A\+B\+A\+S\+E \char`\"{} + database\+Name;
+
+
+\begin{DoxyParams}{Parameter}
+{\em database\+Name} & = enthält den Namen für die zu löschende Datenbank\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a1ea4c59c6377c754fd0264b58f476685}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!delete\+Entry@{delete\+Entry}}
 \index{delete\+Entry@{delete\+Entry}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{delete\+Entry()}
 {\footnotesize\ttfamily void delete\+Entry (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name,  }\item[{std\+::string}]{condition }\end{DoxyParamCaption})}
 
+
+
+Löschen von Einträgen. 
+
+Die Methode \char`\"{}delete\+Entry\char`\"{} senden dem Befehl einen Eintrag einer Tabelle zu löschen.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: D\+E\+L\+E\+TE F\+R\+OM \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+RE \char`\"{} + column\+Name + \char`\"{} = \char`\"{} + \char`\"{}\textquotesingle{}\char`\"{} + condition + \char`\"{}\textquotesingle{}";
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em column\+Name} & = Enhält den Spaltennamen in der, der Eintrag gelöscht werden soll  = enhält den Eintrag, der gelöscht werden soll\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a36d0f9bb1b86a8155d7551fcd014b4da}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!delete\+Primary\+Key@{delete\+Primary\+Key}}
 \index{delete\+Primary\+Key@{delete\+Primary\+Key}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{delete\+Primary\+Key()}
 {\footnotesize\ttfamily void delete\+Primary\+Key (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
 
+
+
+Löschen des Primärschlüssels. 
+
+Solange keine Verbindungen zu anderen Tabellen über den Primärschlüssel laufen, kann dieser ohne Probleme gelöscht werden. ~\newline
+ In dieser Methode reicht die Übergabe des Tabellennamens, da der Primärschlüssel nicht mehr als einmal auftauchen kann. ~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+A\+L\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} D\+R\+O\+P P\+R\+I\+M\+A\+R\+Y K\+E\+Y\char`\"{};
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_aee892818f06208ce4b68fb7598a7494c}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!delete\+Secondary\+Key@{delete\+Secondary\+Key}}
 \index{delete\+Secondary\+Key@{delete\+Secondary\+Key}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{delete\+Secondary\+Key()}
 {\footnotesize\ttfamily void delete\+Secondary\+Key (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{constraint }\end{DoxyParamCaption})}
 
+
+
+Löschen des Sekundärschlüssels. 
+
+Der gesetzte Sekundärschlüssel im Bezug auf den gesetzten Primärschlüssel und die Schlüsselgruppe kann mit dieser Methode gelöscht werden.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+A\+L\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} D\+R\+O\+P F\+O\+R\+E\+I\+G\+N K\+E\+Y \char`\"{} + constraint + \char`\"{}; \char`\"{};
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em constraint} & = Name der Schlüsselgruppe\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a9754762b2c19711bf3dcbfceca61d97d}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!delete\+Table@{delete\+Table}}
 \index{delete\+Table@{delete\+Table}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -221,7 +458,10 @@ void \textbf{ select\+Full\+Join} (std\+::string first\+Table\+Name, std\+::stri
 
 Löschen einer Tabelle. 
 
-Durch das Übergeben des Tabellennamens wird die angegebene Tabelle mit dessen Inhalt gelöscht
+Durch das Übergeben des Tabellennamens wird die angegebene Tabelle mit dessen Inhalt gelöscht.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+D\+R\+O\+P T\+A\+B\+L\+E \char`\"{} + table\+Name;
 
 
 \begin{DoxyParams}{Parameter}
@@ -240,12 +480,53 @@ Steffen Extra
 \subsubsection{disconnect()}
 {\footnotesize\ttfamily void disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Verbindung schließen. 
+
+Die Methode \char`\"{}disconnect\char`\"{} setzt alle ausstehenden Transaktionen zurück. ~\newline
+ Anschließend wird die Verbindung zum Verbindungspool freigegeben oder die Verbindung wird geschlossen, wenn das Verbindungspooling deaktiviert ist.~\newline
+
+
+
+\begin{DoxyParams}{Parameter}
+{\em -\/} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_aceb780082d3f7392e485cac394d6c606}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!get\+All\+Column@{get\+All\+Column}}
 \index{get\+All\+Column@{get\+All\+Column}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{get\+All\+Column()}
 {\footnotesize\ttfamily void get\+All\+Column (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
 
+
+
+Anzeigen von Spalten. 
+
+Es werden alle Spalten der Tabelle angezeigt. ~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+H\+O\+W C\+O\+L\+U\+M\+N\+S F\+R\+O\+M \char`\"{} + table\+Name;
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a244b10b3b373f8a174943176101a480f}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!modifier\+Column\+Name@{modifier\+Column\+Name}}
 \index{modifier\+Column\+Name@{modifier\+Column\+Name}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -256,9 +537,22 @@ Steffen Extra
 
 Modifizieren des Spaltennamens. 
 
+Ersetzt den Spaltennamen sowie den Datentyp falls gewünscht. ~\newline
+ Soll der Datentyp nicht geändert werden, wird der Datentyp des Feldes nochmal angegeben.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+A\+L\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} C\+H\+A\+N\+G\+E \char`\"{} + old\+Column\+Name + \char`\"{} \char`\"{} + new\+Column\+Name + \char`\"{} \char`\"{} + datatype; ~\newline
+
+
 
 \begin{DoxyParams}{Parameter}
-{\em table\+Name} & = Name der Tabelle\\
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em old\+Column\+Name} & = Alter Name der Spalte \\
+\hline
+{\em new\+Column\+Name} & = Neuer Name der Spalte \\
+\hline
+{\em datatype} & = Datentyp der Spalte\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
@@ -273,12 +567,65 @@ Steffen Extra
 \subsubsection{modifier\+Entry()}
 {\footnotesize\ttfamily void modifier\+Entry (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name,  }\item[{std\+::string}]{old\+Entry,  }\item[{std\+::string}]{new\+Entry }\end{DoxyParamCaption})}
 
+
+
+Einträge modifizieren. 
+
+Die Methode \char`\"{}modifier\+Entry\char`\"{} senden dem Befehl einen bereits vorhandenen Eintrag einer Tabelle zu modifizieren.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+U\+P\+D\+A\+T\+E \char`\"{} + table\+Name + \char`\"{} S\+E\+T \char`\"{} + column\+Name + \char`\"{} = \char`\"{} + \char`\"{}\textquotesingle{}\char`\"{} + new\+Entry + \char`\"{}\textquotesingle{}\char`\"{} + \char`\"{} W\+H\+E\+R\+E \char`\"{} + column\+Name + \char`\"{}= \char`\"{} + \char`\"{}\textquotesingle{}\char`\"{} + old\+Entry + \char`\"{}\textquotesingle{}\char`\"{};
+
+
+\begin{DoxyParams}{Parameter}
+{\em tablename} & = Name der Tabelle \\
+\hline
+{\em column\+Name} & = Name der Spalte in den der Eintrag getätigt werden soll \\
+\hline
+{\em old\+Entry} & = Alter Eintrag \\
+\hline
+{\em new\+Entry} & = enthält den Eintrag, der den alten Eintrag ersetzen soll.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a0659d93a42f84756e52155eb333c4fec}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!rename\+Database@{rename\+Database}}
 \index{rename\+Database@{rename\+Database}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{rename\+Database()}
 {\footnotesize\ttfamily void rename\+Database (\begin{DoxyParamCaption}\item[{std\+::string}]{database\+Name,  }\item[{std\+::string}]{new\+Database\+Name }\end{DoxyParamCaption})}
 
+
+
+Datenbanknamen ändern. 
+
+Die Methode \char`\"{}rename\+Database\char`\"{} senden dem Befehl eine Datenbank umzubennen an den S\+QL Server.~\newline
+ Bis auf die gewählte Datenbank für die \doxyref{connectionless()}{S.}{connection_8cpp_adda241635377573037e48ec03e645c22} Methode können alle Datenbanken umbenannt werden.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+A\+L\+T\+E\+R D\+A\+T\+A\+B\+A\+S\+E \char`\"{} + database\+Name + \char`\"{} M\+O\+D\+I\+F\+Y N\+A\+M\+E = \char`\"{} + new\+Database\+Name + \char`\"{};\char`\"{}
+
+
+\begin{DoxyParams}{Parameter}
+{\em database\+Name} & = enhält den Namen für die zu unbennene Datenbank \\
+\hline
+{\em new\+Database\+Name} & = enhält den neunen Namen für die Datenbank\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a526b049a888b2a4a1332a10540689afd}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!rename\+Table@{rename\+Table}}
 \index{rename\+Table@{rename\+Table}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -289,7 +636,10 @@ Steffen Extra
 
 Änderung des Tabellennamens. 
 
-Sollte der Fall eintreten, dass Tabellennamen mit ihrem Inhalt nicht mehr übereinstimmen oder eine Umstrukturierung eintritt, kann über diese Methode der Tabellenname innerhalb einer Datenbank geändert werden.
+Sollte der Fall eintreten, dass Tabellennamen mit ihrem Inhalt nicht mehr übereinstimmen oder eine Umstrukturierung eintritt, kann über diese Methode der Tabellenname innerhalb einer Datenbank geändert werden.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: A\+L\+T\+ER T\+A\+B\+LE \char`\"{} + tablename + \char`\"{} R\+E\+N\+A\+ME TO \char`\"{} + new\+Table\+Name+ \char`\"{};" ;
 
 
 \begin{DoxyParams}{Parameter}
@@ -472,6 +822,32 @@ Steffen Extra
 \subsubsection{set\+All\+Entry()}
 {\footnotesize\ttfamily void set\+All\+Entry (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{row }\end{DoxyParamCaption})}
 
+
+
+Beliebige Anzahl von Einträgen hinzufügen. 
+
+Die Methode \char`\"{}set\+All\+Entry\char`\"{} senden dem Befehl eine komplette Zeile mit Einträgen einer Tabelle hinzuzufügen.~\newline
+ Um beliebig viele Einträge zu erstellen, muss der Anwender einen Vektoren anfertigen und diesen übergeben. ~\newline
+ Der Vektor hat für den Insert die Form \+: jede gerade Index der Spaltennamen, Ungerade der Datensatz.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+I\+N\+S\+E\+R\+T I\+N\+T\+O \char`\"{} + table\+Name + \char`\"{}( \char`\"{} + column\+Name + \char`\"{} ) V\+A\+L\+U\+E\+S(\char`\"{} + insert\+Data + \char`\"{});\char`\"{};
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em row} & = Enhält eine Liste, die eine Zeile repräsentieren soll, gefüllt mit Einträgen.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a7c4575b6ed6eb203c2796930c41ed555}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!set\+Column@{set\+Column}}
 \index{set\+Column@{set\+Column}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -480,11 +856,13 @@ Steffen Extra
 
 
 
-Bearbeiten der Spalten in einer Tabelle. 
+Bearbeiten der Spalte in einer Tabelle. 
 
-Über diese Methoden können einzelne Spalten zu einer Tabelle hinzugefügt werden ~\newline
- Zu beachten ist, dass über diese Methode kein Schlüssel gesetzt werden kann ~\newline
+Über diese Methoden kann man einzelne Spalten zu einer Tabelle hinzufügen. ~\newline
+ Zu beachten ist, dass über diese Methode kein Schlüssel gesetzt werden kann.~\newline
 
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+A\+L\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} A\+D\+D \char`\"{} + Column\+Name + \char`\"{} \char`\"{} + datatype;
 
 
 \begin{DoxyParams}{Parameter}
@@ -492,12 +870,15 @@ Bearbeiten der Spalten in einer Tabelle.
 \hline
 {\em Column\+Name} & = Name der Spalte die hinzugefügt werden soll \\
 \hline
-{\em datatype} & = Angabe des Datentyps bezogen auf die Spalte \begin{DoxyVerb}@return void 
-
-@author Steffen Extra\end{DoxyVerb}
- \\
+{\em datatype} & = Angabe des Datentyps bezogen auf die Spalte\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a4605e656585a77253f0940725b97ad04}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!set\+Column\+With\+Primary@{set\+Column\+With\+Primary}}
 \index{set\+Column\+With\+Primary@{set\+Column\+With\+Primary}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -509,7 +890,11 @@ Bearbeiten der Spalten in einer Tabelle.
 Setzen des Primärschlüssels. 
 
 Durch diese Methode kann nachträglich der Primärschlüssel zu einer Spalte hinzugefügt werden. ~\newline
- Zudem kann hier entschieden werden, ob die Spalte mit dem Primärschlüssel direkt die A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+N\+T-\/\+Funktion nutzen soll oder über eigene Werte definiert wird.
+ Zudem kann entschieden werden, ob die Spalte mit dem Primärschlüssel direkt die A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+N\+T-\/\+Funktion nutzen soll oder über eigene Werte definiert wird.~\newline
+
+
+S\+Q\+L-\/\+Befehl für A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT\+: \char`\"{} A\+L\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} A\+D\+D \char`\"{} + Column\+Name + \char`\"{} \char`\"{} + datatype + \char`\"{} P\+R\+I\+M\+A\+R\+Y K\+E\+Y A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+N\+T\char`\"{};~\newline
+ S\+Q\+L-\/\+Befehl ohne A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT\+: \char`\"{} A\+L\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} A\+D\+D \char`\"{} + Column\+Name + \char`\"{} \char`\"{} + datatype + \char`\"{} P\+R\+I\+M\+A\+R\+Y K\+E\+Y\char`\"{};
 
 
 \begin{DoxyParams}{Parameter}
@@ -519,42 +904,168 @@ Durch diese Methode kann nachträglich der Primärschlüssel zu einer Spalte hin
 \hline
 {\em datatype} & = Datentyp der Spalte \\
 \hline
-{\em autoinc} & = Boolean um zwischen A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT und eigener Wertzuweisung zu wechseln \begin{DoxyVerb}@return void
-
-@author Steffen Extra\end{DoxyVerb}
- \\
+{\em autoinc} & = Boolean um zwischen A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT und eigener Wertzuweisung zu wechseln\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a1faab165d9a7dc43808e1a0075e007f9}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!set\+Entry@{set\+Entry}}
 \index{set\+Entry@{set\+Entry}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{set\+Entry()}
 {\footnotesize\ttfamily void set\+Entry (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name,  }\item[{std\+::string}]{entry }\end{DoxyParamCaption})}
 
+
+
+Erstellen eines Eintrags. 
+
+Die Methode \char`\"{}set\+Entry\char`\"{} sendet den Befehl einen neuen Eintrag in die dementsprechende Tabelle einzufügen.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+I\+N\+S\+E\+R\+T I\+N\+T\+O \char`\"{} + table\+Name + \char`\"{} (\char`\"{} + column\+Name + \char`\"{}) V\+A\+L\+U\+E\+S (\char`\"{}+ \char`\"{}\textquotesingle{}\char`\"{} + entry + \char`\"{}\textquotesingle{}\char`\"{} + \char`\"{})\char`\"{} ;
+
+
+\begin{DoxyParams}{Parameter}
+{\em tablename} & = Name der Tabelle \\
+\hline
+{\em Column\+Name} & = Name der Spalte \\
+\hline
+{\em entry} & = enhält den Eintrag, der hinzugefügt werden soll\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_aac2797835afcf68b73ba522e7bb91f5f}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!set\+Primary\+Key@{set\+Primary\+Key}}
 \index{set\+Primary\+Key@{set\+Primary\+Key}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{set\+Primary\+Key()}
 {\footnotesize\ttfamily void set\+Primary\+Key (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{primary\+Key }\end{DoxyParamCaption})}
 
+
+
+Nachträgliches setzen eines Primärschlüssels. 
+
+Durch die Angabe der Spalte für den Primärschlüssels kann dieser gesetzt werden. ~\newline
+ Sollte bereits ein Primärschlüssel in dieser Tabelle vorhanden sein, wird der Fehler abgefangen.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+A\+L\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} A\+D\+D P\+R\+I\+M\+A\+R\+Y K\+E\+Y (\char`\"{} + primary\+Key + \char`\"{});\char`\"{};
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em primary\+Key} & = Name der Spalte für das Setzen des Primärschlüssel\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a4aca01f302c4488d661196653d8f6c28}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!set\+Secondary\+Key@{set\+Secondary\+Key}}
 \index{set\+Secondary\+Key@{set\+Secondary\+Key}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{set\+Secondary\+Key()}
 {\footnotesize\ttfamily void set\+Secondary\+Key (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name\+Secondary,  }\item[{std\+::string}]{foreign\+Key,  }\item[{std\+::string}]{table\+Name\+Primary,  }\item[{std\+::string}]{primary\+Key,  }\item[{std\+::string}]{constraint }\end{DoxyParamCaption})}
 
+
+
+Setzen des Sekundärschlüssels (Foreign Key) 
+
+table\+Name\+Primary und primary\+Key verbinden den Primärschlüssel aus einer Tabelle mit einer vom Programmierer gewünschten Spalte und setzt den Foreign\+Key auf diese.~\newline
+ So können die Abhängigkeiten vom Primärschlüssel im Bezug auf einer anderen Tabelle gelöst werden. ~\newline
+ Zusätzlich kann durch die Angabe des Übergabeparameters constraint eine Schlüsselgruppe definier werden.~\newline
+
+
+S\+Q\+L-\/\+Befehl \char`\"{}\+A\+L\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name\+Secondary + \char`\"{} A\+D\+D C\+O\+N\+S\+T\+R\+A\+I\+N\+T \char`\"{}+ constraint + \char`\"{} F\+O\+R\+E\+I\+G\+N K\+E\+Y (\char`\"{} + foreign\+Key + \char`\"{}) R\+E\+F\+E\+R\+E\+N\+C\+E\+S \char`\"{} + table\+Name\+Primary + \char`\"{} (\char`\"{} + primary\+Key + \char`\"{});\char`\"{};
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name\+Secondary} & = Name der Tabelle für den Sekundärschlüssel \\
+\hline
+{\em foreign\+Key} & = Spaltenname für den Sekundärschlüssel \\
+\hline
+{\em table\+Name\+Primary} & = Name der Tabelle, welche den Primärschlüssel besitzt \\
+\hline
+{\em primary\+Key} & = Spalte des Primärschlüssels \\
+\hline
+{\em constraint} & = Name der Schlüsselgruppe\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_addc31570307c41c7327c3da4886ae7bf}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!show\+Column\+Typ@{show\+Column\+Typ}}
 \index{show\+Column\+Typ@{show\+Column\+Typ}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{show\+Column\+Typ()}
 {\footnotesize\ttfamily void show\+Column\+Typ (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{datatype }\end{DoxyParamCaption})}
 
+
+
+Datentyp der Spalte anzeigen lassen. 
+
+Durch die Methode werden alle Spaltennamen gelistet, welche der Bedingung des Datentyps entsprechen.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+H\+O\+W C\+O\+L\+U\+M\+N\+S F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E T\+Y\+P\+E L\+I\+K\+E \textquotesingle{}\char`\"{} + datatype + \char`\"{}\%\textquotesingle{}\char`\"{};
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle; \\
+\hline
+{\em datatype} & = Datentyp\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a812cc82c697df37c6a8a482f85972b4b}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!show\+Databases@{show\+Databases}}
 \index{show\+Databases@{show\+Databases}!sqllib.\+hpp@{sqllib.\+hpp}}
 \subsubsection{show\+Databases()}
 {\footnotesize\ttfamily void show\+Databases (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Anzeigen der Datenbanken. 
+
+Die Methode \char`\"{}show\+Database\char`\"{} senden dem Befehl alle Datenbanken anzuzeigen an den S\+QL Server. ~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: S\+H\+OW D\+A\+T\+A\+B\+A\+S\+ES;
+
+
+\begin{DoxyParams}{Parameter}
+{\em -\/} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{sqllib_8hpp_a22fbeb7f18a00bafd4864de51a3bca28}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!show\+Table@{show\+Table}}
 \index{show\+Table@{show\+Table}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -565,7 +1076,10 @@ Durch diese Methode kann nachträglich der Primärschlüssel zu einer Spalte hin
 
 Ausgabe der Tabelle. 
 
-Diese Methode dient zur Ausgabe des kompletten Tabelleninhalts innerhalb einer Datenbank.
+Diese Methode dient zur Ausgabe des kompletten Tabelleninhalts innerhalb einer Datenbank.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T $\ast$ F\+R\+O\+M \char`\"{} + table\+Name;
 
 
 \begin{DoxyParams}{Parameter}

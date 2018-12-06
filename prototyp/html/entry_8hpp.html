@@ -102,12 +102,16 @@ $(document).ready(function(){initNavTree('entry_8hpp.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funktionen</h2></td></tr>
 <tr class="memitem:a1faab165d9a7dc43808e1a0075e007f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entry_8hpp.html#a1faab165d9a7dc43808e1a0075e007f9">setEntry</a> (std::string tableName, std::string columnName, std::string entry)</td></tr>
+<tr class="memdesc:a1faab165d9a7dc43808e1a0075e007f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erstellen eines Eintrags.  <a href="#a1faab165d9a7dc43808e1a0075e007f9">Mehr ...</a><br /></td></tr>
 <tr class="separator:a1faab165d9a7dc43808e1a0075e007f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab254b5514a4950c7479bc4d513c438dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entry_8hpp.html#ab254b5514a4950c7479bc4d513c438dc">modifierEntry</a> (std::string tableName, std::string columnName, std::string oldEntry, std::string newEntry)</td></tr>
+<tr class="memdesc:ab254b5514a4950c7479bc4d513c438dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Einträge modifizieren.  <a href="#ab254b5514a4950c7479bc4d513c438dc">Mehr ...</a><br /></td></tr>
 <tr class="separator:ab254b5514a4950c7479bc4d513c438dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb45ccd70b8692b592754a0886c2d109"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entry_8hpp.html#aeb45ccd70b8692b592754a0886c2d109">setAllEntry</a> (std::string tableName, std::vector&lt; std::string &gt; <a class="el" href="connection_8cpp.html#a34269e7c6df16f7d1b6034b9fce28463">row</a>)</td></tr>
+<tr class="memdesc:aeb45ccd70b8692b592754a0886c2d109"><td class="mdescLeft">&#160;</td><td class="mdescRight">Beliebige Anzahl von Einträgen hinzufügen.  <a href="#aeb45ccd70b8692b592754a0886c2d109">Mehr ...</a><br /></td></tr>
 <tr class="separator:aeb45ccd70b8692b592754a0886c2d109"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a490d3fdb8238137f5d9f4a1fecaf2f96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entry_8hpp.html#a490d3fdb8238137f5d9f4a1fecaf2f96">deleteEntry</a> (std::string tableName, std::string columnName, std::string conditiony)</td></tr>
+<tr class="memdesc:a490d3fdb8238137f5d9f4a1fecaf2f96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Löschen von Einträgen.  <a href="#a490d3fdb8238137f5d9f4a1fecaf2f96">Mehr ...</a><br /></td></tr>
 <tr class="separator:a490d3fdb8238137f5d9f4a1fecaf2f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Dokumentation der Funktionen</h2>
@@ -133,7 +137,7 @@ Funktionen</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>conditiony</em>&#160;</td>
+          <td class="paramname"><em>condition</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -142,6 +146,22 @@ Funktionen</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Löschen von Einträgen. </p>
+<p>Die Methode "deleteEntry" senden dem Befehl einen Eintrag einer Tabelle zu löschen.<br />
+</p>
+<p>SQL-Befehl: DELETE FROM " + tableName + " WHERE " + columnName + " = " + "'" + condition + "'";</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tableName</td><td>= Name der Tabelle </td></tr>
+    <tr><td class="paramname">columnName</td><td>= Enhält den Spaltennamen in der, der Eintrag gelöscht werden soll  = enhält den Eintrag, der gelöscht werden soll</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
+<dd>
+Steffen Extra </dd></dl>
 
 </div>
 </div>
@@ -183,6 +203,24 @@ Funktionen</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Einträge modifizieren. </p>
+<p>Die Methode "modifierEntry" senden dem Befehl einen bereits vorhandenen Eintrag einer Tabelle zu modifizieren.<br />
+</p>
+<p>SQL-Befehl: "UPDATE " + tableName + " SET " + columnName + " = " + "'" + newEntry + "'" + " WHERE " + columnName + "= " + "'" + oldEntry + "'";</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tablename</td><td>= Name der Tabelle </td></tr>
+    <tr><td class="paramname">columnName</td><td>= Name der Spalte in den der Eintrag getätigt werden soll </td></tr>
+    <tr><td class="paramname">oldEntry</td><td>= Alter Eintrag </td></tr>
+    <tr><td class="paramname">newEntry</td><td>= enthält den Eintrag, der den alten Eintrag ersetzen soll.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
+<dd>
+Steffen Extra </dd></dl>
+
 </div>
 </div>
 <a id="aeb45ccd70b8692b592754a0886c2d109"></a>
@@ -210,6 +248,24 @@ Funktionen</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Beliebige Anzahl von Einträgen hinzufügen. </p>
+<p>Die Methode "setAllEntry" senden dem Befehl eine komplette Zeile mit Einträgen einer Tabelle hinzuzufügen.<br />
+ Um beliebig viele Einträge zu erstellen, muss der Anwender einen Vektoren anfertigen und diesen übergeben. <br />
+ Der Vektor hat für den Insert die Form : jede gerade Index der Spaltennamen, Ungerade der Datensatz.<br />
+</p>
+<p>SQL-Befehl: "INSERT INTO " + tableName + "( " + columnName + " ) VALUES(" + insertData + ");";</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tableName</td><td>= Name der Tabelle </td></tr>
+    <tr><td class="paramname">row</td><td>= Enhält eine Liste, die eine Zeile repräsentieren soll, gefüllt mit Einträgen.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
+<dd>
+Steffen Extra </dd></dl>
 
 </div>
 </div>
@@ -244,6 +300,23 @@ Funktionen</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Erstellen eines Eintrags. </p>
+<p>Die Methode "setEntry" sendet den Befehl einen neuen Eintrag in die dementsprechende Tabelle einzufügen.<br />
+</p>
+<p>SQL-Befehl: "INSERT INTO " + tableName + " (" + columnName + ") VALUES ("+ "'" + entry + "'" + ")" ;</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tablename</td><td>= Name der Tabelle </td></tr>
+    <tr><td class="paramname">ColumnName</td><td>= Name der Spalte </td></tr>
+    <tr><td class="paramname">entry</td><td>= enhält den Eintrag, der hinzugefügt werden soll</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
+<dd>
+Steffen Extra </dd></dl>
 
 </div>
 </div>

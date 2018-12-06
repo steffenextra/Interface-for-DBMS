@@ -9,13 +9,13 @@
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ create\+Database} (std\+::string database\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Erstellen einer Datenbank. \end{DoxyCompactList}\item 
 void \textbf{ show\+Databases} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Anzeigen der Datenbanken. \end{DoxyCompactList}\item 
 void \textbf{ rename\+Database} (std\+::string database\+Name, std\+::string new\+Database\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Datenbanknamen ändern. \end{DoxyCompactList}\item 
 void \textbf{ delete\+Database} (std\+::string database\+Name)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Löschen einer Datenbank. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Dokumentation der Funktionen}
@@ -25,21 +25,112 @@ void \textbf{ delete\+Database} (std\+::string database\+Name)
 \subsubsection{create\+Database()}
 {\footnotesize\ttfamily void create\+Database (\begin{DoxyParamCaption}\item[{std\+::string}]{database\+Name }\end{DoxyParamCaption})}
 
+
+
+Erstellen einer Datenbank. 
+
+Die Methode \char`\"{}create\+Database\char`\"{} sendet einen Befehl um eine Datenbank zu erstellen an den S\+QL Server
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+C\+R\+E\+A\+T\+E D\+A\+T\+A\+B\+A\+S\+E \char`\"{} + database\+Name;
+
+
+\begin{DoxyParams}{Parameter}
+{\em database\+Name} & = enthält den Namen für die zu erstellende Datenbank\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{database_8hpp_a1d1fac4a7c1506f81908532050a8e58f}} 
 \index{database.\+hpp@{database.\+hpp}!delete\+Database@{delete\+Database}}
 \index{delete\+Database@{delete\+Database}!database.\+hpp@{database.\+hpp}}
 \subsubsection{delete\+Database()}
 {\footnotesize\ttfamily void delete\+Database (\begin{DoxyParamCaption}\item[{std\+::string}]{database\+Name }\end{DoxyParamCaption})}
 
+
+
+Löschen einer Datenbank. 
+
+Die Methode \char`\"{}delete\+Database\char`\"{} senden dem Befehl eine Datenbank zu löschen.~\newline
+ Bis auf die gewählte Datenbank für die Connetionless Methode können alle Datenbanken ugelöscht werden.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+D\+R\+O\+P D\+A\+T\+A\+B\+A\+S\+E \char`\"{} + database\+Name;
+
+
+\begin{DoxyParams}{Parameter}
+{\em database\+Name} & = enthält den Namen für die zu löschende Datenbank\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{database_8hpp_a0659d93a42f84756e52155eb333c4fec}} 
 \index{database.\+hpp@{database.\+hpp}!rename\+Database@{rename\+Database}}
 \index{rename\+Database@{rename\+Database}!database.\+hpp@{database.\+hpp}}
 \subsubsection{rename\+Database()}
 {\footnotesize\ttfamily void rename\+Database (\begin{DoxyParamCaption}\item[{std\+::string}]{database\+Name,  }\item[{std\+::string}]{new\+Database\+Name }\end{DoxyParamCaption})}
 
+
+
+Datenbanknamen ändern. 
+
+Die Methode \char`\"{}rename\+Database\char`\"{} senden dem Befehl eine Datenbank umzubennen an den S\+QL Server.~\newline
+ Bis auf die gewählte Datenbank für die \doxyref{connectionless()}{S.}{connection_8cpp_adda241635377573037e48ec03e645c22} Methode können alle Datenbanken umbenannt werden.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+A\+L\+T\+E\+R D\+A\+T\+A\+B\+A\+S\+E \char`\"{} + database\+Name + \char`\"{} M\+O\+D\+I\+F\+Y N\+A\+M\+E = \char`\"{} + new\+Database\+Name + \char`\"{};\char`\"{}
+
+
+\begin{DoxyParams}{Parameter}
+{\em database\+Name} & = enhält den Namen für die zu unbennene Datenbank \\
+\hline
+{\em new\+Database\+Name} & = enhält den neunen Namen für die Datenbank\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{database_8hpp_a812cc82c697df37c6a8a482f85972b4b}} 
 \index{database.\+hpp@{database.\+hpp}!show\+Databases@{show\+Databases}}
 \index{show\+Databases@{show\+Databases}!database.\+hpp@{database.\+hpp}}
 \subsubsection{show\+Databases()}
 {\footnotesize\ttfamily void show\+Databases (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Anzeigen der Datenbanken. 
+
+Die Methode \char`\"{}show\+Database\char`\"{} senden dem Befehl alle Datenbanken anzuzeigen an den S\+QL Server. ~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: S\+H\+OW D\+A\+T\+A\+B\+A\+S\+ES;
+
+
+\begin{DoxyParams}{Parameter}
+{\em -\/} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}

@@ -13,31 +13,31 @@ void \textbf{ rename\+Table} (std\+::string tablename, std\+::string new\+Table\
 void \textbf{ delete\+Table} (std\+::string table\+Name)
 \begin{DoxyCompactList}\small\item\em Löschen einer Tabelle. \end{DoxyCompactList}\item 
 void \textbf{ set\+Column} (std\+::string table\+Name, std\+::string Column\+Name, std\+::string datatype)
-\begin{DoxyCompactList}\small\item\em Bearbeiten der Spalten in einer Tabelle. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Bearbeiten der Spalte in einer Tabelle. \end{DoxyCompactList}\item 
 void \textbf{ set\+Column\+With\+Primary} (std\+::string table\+Name, std\+::string Column\+Name, std\+::string datatype, bool autoinc)
 \begin{DoxyCompactList}\small\item\em Setzen des Primärschlüssels. \end{DoxyCompactList}\item 
 void \textbf{ modifier\+Column\+Name} (std\+::string table\+Name, std\+::string old\+Column\+Name, std\+::string new\+Column\+Name, std\+::string datatype)
 \begin{DoxyCompactList}\small\item\em Modifizieren des Spaltennamens. \end{DoxyCompactList}\item 
 void \textbf{ change\+The\+Datatype} (std\+::string table\+Name, std\+::string column\+Name, std\+::string datatype)
-\item 
+\begin{DoxyCompactList}\small\item\em Ändern des Datentyps. \end{DoxyCompactList}\item 
 void \textbf{ get\+All\+Column} (std\+::string table\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Anzeigen von Spalten. \end{DoxyCompactList}\item 
 void \textbf{ count\+Datasets} (std\+::string table\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Zählen der Datensätze. \end{DoxyCompactList}\item 
 void \textbf{ show\+Column\+Typ} (std\+::string table\+Name, std\+::string datatype)
-\item 
+\begin{DoxyCompactList}\small\item\em Datentyp der Spalte anzeigen lassen. \end{DoxyCompactList}\item 
 void \textbf{ delete\+Column} (std\+::string table\+Name, std\+::string column\+Name)
-\item 
+\begin{DoxyCompactList}\small\item\em Löschen von Spalten. \end{DoxyCompactList}\item 
 void \textbf{ set\+Secondary\+Key} (std\+::string table\+Name\+Secondary, std\+::string foreign\+Key, std\+::string table\+Name\+Primary, std\+::string primary\+Key, std\+::string constraint)
-\item 
+\begin{DoxyCompactList}\small\item\em Setzen des Sekundärschlüssels (Foreign Key) \end{DoxyCompactList}\item 
 void \textbf{ delete\+Constraint} (std\+::string table\+Name, std\+::string constraint)
-\item 
+\begin{DoxyCompactList}\small\item\em Löschen der Schlüsselgruppe. \end{DoxyCompactList}\item 
 void \textbf{ delete\+Secondary\+Key} (std\+::string table\+Name, std\+::string constraint)
-\item 
+\begin{DoxyCompactList}\small\item\em Löschen des Sekundärschlüssels. \end{DoxyCompactList}\item 
 void \textbf{ set\+Primary\+Key} (std\+::string table\+Name, std\+::string primary\+Key)
-\item 
+\begin{DoxyCompactList}\small\item\em Nachträgliches setzen eines Primärschlüssels. \end{DoxyCompactList}\item 
 void \textbf{ delete\+Primary\+Key} (std\+::string table\+Name)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Löschen des Primärschlüssels. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Dokumentation der Funktionen}
@@ -47,12 +47,57 @@ void \textbf{ delete\+Primary\+Key} (std\+::string table\+Name)
 \subsubsection{change\+The\+Datatype()}
 {\footnotesize\ttfamily void change\+The\+Datatype (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name,  }\item[{std\+::string}]{datatype }\end{DoxyParamCaption})}
 
+
+
+Ändern des Datentyps. 
+
+Ändern des Datentyps einer Spalte ohne den Namen der Spalte zu ändern. ~\newline
+ Wenn der Datentyp der Spalte geändert wird, muss darauf geachtet werden, dass die Objekte in der Spalte dem Datentyp entsprechen. ~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+Al\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} M\+O\+D\+I\+F\+Y \char`\"{} + column\+Name + \char`\"{} \char`\"{} + datatype;
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em column\+Name} & = Name der Spalte \\
+\hline
+{\em datatype} & = Neuer Datentyp\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{tables_8cpp_ad2178bf4577d7eea6caebd8d1c942088}} 
 \index{tables.\+cpp@{tables.\+cpp}!count\+Datasets@{count\+Datasets}}
 \index{count\+Datasets@{count\+Datasets}!tables.\+cpp@{tables.\+cpp}}
 \subsubsection{count\+Datasets()}
 {\footnotesize\ttfamily void count\+Datasets (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
 
+
+
+Zählen der Datensätze. 
+
+Alle Datensätze werden gezählt und ausgegeben.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T C\+O\+U\+N\+T ($\ast$) F\+R\+O\+M \char`\"{} + table\+Name;
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle;\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{tables_8cpp_a6bd46ec08e83f28ae60e1d235d9d2659}} 
 \index{tables.\+cpp@{tables.\+cpp}!create\+Table@{create\+Table}}
 \index{create\+Table@{create\+Table}!tables.\+cpp@{tables.\+cpp}}
@@ -65,6 +110,10 @@ Erstellen einer Tabelle.
 
 Die Methode dient zum erstellen einer Tabelle in einer vorgegebenen Datenbank. ~\newline
  Zu beachten ist hier, dass direkt bei der Übergabe von Parametern der Primärschlüssel, sowie der Sekundärschlüssel gesetzt werden kann. ~\newline
+
+
+S\+Q\+L-\/\+Befehl für den Primärschlüssel\+: \char`\"{}\+C\+R\+E\+A\+T\+E T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} ( I\+D int N\+O\+T N\+U\+L\+L  P\+R\+I\+M\+A\+R\+Y K\+E\+Y A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+N\+T, \char`\"{} + columnnames\+And\+Datatype + \char`\"{} );\char`\"{};~\newline
+ S\+Q\+L-\/\+Befehl ohne Primärschlüssel\+: \char`\"{}\+C\+R\+E\+A\+T\+E T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} ( \char`\"{} + columnnames\+And\+Datatype + \char`\"{} );\char`\"{};~\newline
 
 
 
@@ -90,24 +139,112 @@ Steffen Extra
 \subsubsection{delete\+Column()}
 {\footnotesize\ttfamily void delete\+Column (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name }\end{DoxyParamCaption})}
 
+
+
+Löschen von Spalten. 
+
+Durch die Angabe des Tabellen/-\/ und Spaltennamens werden einzelne Spalten gelöscht.
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+A\+L\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} D\+R\+O\+P \char`\"{} + column\+Name;
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em column\+Name} & = Name der Spalte\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{tables_8cpp_ae62b61e29ea8b6010ae2463f80598460}} 
 \index{tables.\+cpp@{tables.\+cpp}!delete\+Constraint@{delete\+Constraint}}
 \index{delete\+Constraint@{delete\+Constraint}!tables.\+cpp@{tables.\+cpp}}
 \subsubsection{delete\+Constraint()}
 {\footnotesize\ttfamily void delete\+Constraint (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{constraint }\end{DoxyParamCaption})}
 
+
+
+Löschen der Schlüsselgruppe. 
+
+Diese Methode löscht die Schlüsselgruppe. ~\newline
+ Konkreter Aufruf dieser Methode wird vermieden. ~\newline
+ Aufruf dieser Methode in der \doxyref{delete\+Secondary\+Key()}{S.}{tables_8cpp_aee892818f06208ce4b68fb7598a7494c} Methode. ~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+A\+L\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} D\+R\+O\+P I\+N\+D\+E\+X \char`\"{} + constraint;
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em constraint} & = Name der Schlüsselgruppe\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{tables_8cpp_a36d0f9bb1b86a8155d7551fcd014b4da}} 
 \index{tables.\+cpp@{tables.\+cpp}!delete\+Primary\+Key@{delete\+Primary\+Key}}
 \index{delete\+Primary\+Key@{delete\+Primary\+Key}!tables.\+cpp@{tables.\+cpp}}
 \subsubsection{delete\+Primary\+Key()}
 {\footnotesize\ttfamily void delete\+Primary\+Key (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
 
+
+
+Löschen des Primärschlüssels. 
+
+Solange keine Verbindungen zu anderen Tabellen über den Primärschlüssel laufen, kann dieser ohne Probleme gelöscht werden. ~\newline
+ In dieser Methode reicht die Übergabe des Tabellennamens, da der Primärschlüssel nicht mehr als einmal auftauchen kann. ~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+A\+L\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} D\+R\+O\+P P\+R\+I\+M\+A\+R\+Y K\+E\+Y\char`\"{};
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{tables_8cpp_aee892818f06208ce4b68fb7598a7494c}} 
 \index{tables.\+cpp@{tables.\+cpp}!delete\+Secondary\+Key@{delete\+Secondary\+Key}}
 \index{delete\+Secondary\+Key@{delete\+Secondary\+Key}!tables.\+cpp@{tables.\+cpp}}
 \subsubsection{delete\+Secondary\+Key()}
 {\footnotesize\ttfamily void delete\+Secondary\+Key (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{constraint }\end{DoxyParamCaption})}
 
+
+
+Löschen des Sekundärschlüssels. 
+
+Der gesetzte Sekundärschlüssel im Bezug auf den gesetzten Primärschlüssel und die Schlüsselgruppe kann mit dieser Methode gelöscht werden.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+A\+L\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} D\+R\+O\+P F\+O\+R\+E\+I\+G\+N K\+E\+Y \char`\"{} + constraint + \char`\"{}; \char`\"{};
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em constraint} & = Name der Schlüsselgruppe\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{tables_8cpp_a9754762b2c19711bf3dcbfceca61d97d}} 
 \index{tables.\+cpp@{tables.\+cpp}!delete\+Table@{delete\+Table}}
 \index{delete\+Table@{delete\+Table}!tables.\+cpp@{tables.\+cpp}}
@@ -118,7 +255,10 @@ Steffen Extra
 
 Löschen einer Tabelle. 
 
-Durch das Übergeben des Tabellennamens wird die angegebene Tabelle mit dessen Inhalt gelöscht
+Durch das Übergeben des Tabellennamens wird die angegebene Tabelle mit dessen Inhalt gelöscht.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+D\+R\+O\+P T\+A\+B\+L\+E \char`\"{} + table\+Name;
 
 
 \begin{DoxyParams}{Parameter}
@@ -137,6 +277,26 @@ Steffen Extra
 \subsubsection{get\+All\+Column()}
 {\footnotesize\ttfamily void get\+All\+Column (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
 
+
+
+Anzeigen von Spalten. 
+
+Es werden alle Spalten der Tabelle angezeigt. ~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+H\+O\+W C\+O\+L\+U\+M\+N\+S F\+R\+O\+M \char`\"{} + table\+Name;
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{tables_8cpp_a244b10b3b373f8a174943176101a480f}} 
 \index{tables.\+cpp@{tables.\+cpp}!modifier\+Column\+Name@{modifier\+Column\+Name}}
 \index{modifier\+Column\+Name@{modifier\+Column\+Name}!tables.\+cpp@{tables.\+cpp}}
@@ -147,9 +307,22 @@ Steffen Extra
 
 Modifizieren des Spaltennamens. 
 
+Ersetzt den Spaltennamen sowie den Datentyp falls gewünscht. ~\newline
+ Soll der Datentyp nicht geändert werden, wird der Datentyp des Feldes nochmal angegeben.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+A\+L\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} C\+H\+A\+N\+G\+E \char`\"{} + old\+Column\+Name + \char`\"{} \char`\"{} + new\+Column\+Name + \char`\"{} \char`\"{} + datatype; ~\newline
+
+
 
 \begin{DoxyParams}{Parameter}
-{\em table\+Name} & = Name der Tabelle\\
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em old\+Column\+Name} & = Alter Name der Spalte \\
+\hline
+{\em new\+Column\+Name} & = Neuer Name der Spalte \\
+\hline
+{\em datatype} & = Datentyp der Spalte\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
@@ -168,7 +341,10 @@ Steffen Extra
 
 Änderung des Tabellennamens. 
 
-Sollte der Fall eintreten, dass Tabellennamen mit ihrem Inhalt nicht mehr übereinstimmen oder eine Umstrukturierung eintritt, kann über diese Methode der Tabellenname innerhalb einer Datenbank geändert werden.
+Sollte der Fall eintreten, dass Tabellennamen mit ihrem Inhalt nicht mehr übereinstimmen oder eine Umstrukturierung eintritt, kann über diese Methode der Tabellenname innerhalb einer Datenbank geändert werden.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: A\+L\+T\+ER T\+A\+B\+LE \char`\"{} + tablename + \char`\"{} R\+E\+N\+A\+ME TO \char`\"{} + new\+Table\+Name+ \char`\"{};" ;
 
 
 \begin{DoxyParams}{Parameter}
@@ -191,11 +367,13 @@ Steffen Extra
 
 
 
-Bearbeiten der Spalten in einer Tabelle. 
+Bearbeiten der Spalte in einer Tabelle. 
 
-Über diese Methoden können einzelne Spalten zu einer Tabelle hinzugefügt werden ~\newline
- Zu beachten ist, dass über diese Methode kein Schlüssel gesetzt werden kann ~\newline
+Über diese Methoden kann man einzelne Spalten zu einer Tabelle hinzufügen. ~\newline
+ Zu beachten ist, dass über diese Methode kein Schlüssel gesetzt werden kann.~\newline
 
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+A\+L\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} A\+D\+D \char`\"{} + Column\+Name + \char`\"{} \char`\"{} + datatype;
 
 
 \begin{DoxyParams}{Parameter}
@@ -203,12 +381,15 @@ Bearbeiten der Spalten in einer Tabelle.
 \hline
 {\em Column\+Name} & = Name der Spalte die hinzugefügt werden soll \\
 \hline
-{\em datatype} & = Angabe des Datentyps bezogen auf die Spalte \begin{DoxyVerb}@return void 
-
-@author Steffen Extra\end{DoxyVerb}
- \\
+{\em datatype} & = Angabe des Datentyps bezogen auf die Spalte\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{tables_8cpp_a4605e656585a77253f0940725b97ad04}} 
 \index{tables.\+cpp@{tables.\+cpp}!set\+Column\+With\+Primary@{set\+Column\+With\+Primary}}
 \index{set\+Column\+With\+Primary@{set\+Column\+With\+Primary}!tables.\+cpp@{tables.\+cpp}}
@@ -220,7 +401,11 @@ Bearbeiten der Spalten in einer Tabelle.
 Setzen des Primärschlüssels. 
 
 Durch diese Methode kann nachträglich der Primärschlüssel zu einer Spalte hinzugefügt werden. ~\newline
- Zudem kann hier entschieden werden, ob die Spalte mit dem Primärschlüssel direkt die A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+N\+T-\/\+Funktion nutzen soll oder über eigene Werte definiert wird.
+ Zudem kann entschieden werden, ob die Spalte mit dem Primärschlüssel direkt die A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+N\+T-\/\+Funktion nutzen soll oder über eigene Werte definiert wird.~\newline
+
+
+S\+Q\+L-\/\+Befehl für A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT\+: \char`\"{} A\+L\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} A\+D\+D \char`\"{} + Column\+Name + \char`\"{} \char`\"{} + datatype + \char`\"{} P\+R\+I\+M\+A\+R\+Y K\+E\+Y A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+N\+T\char`\"{};~\newline
+ S\+Q\+L-\/\+Befehl ohne A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT\+: \char`\"{} A\+L\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} A\+D\+D \char`\"{} + Column\+Name + \char`\"{} \char`\"{} + datatype + \char`\"{} P\+R\+I\+M\+A\+R\+Y K\+E\+Y\char`\"{};
 
 
 \begin{DoxyParams}{Parameter}
@@ -230,30 +415,108 @@ Durch diese Methode kann nachträglich der Primärschlüssel zu einer Spalte hin
 \hline
 {\em datatype} & = Datentyp der Spalte \\
 \hline
-{\em autoinc} & = Boolean um zwischen A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT und eigener Wertzuweisung zu wechseln \begin{DoxyVerb}@return void
-
-@author Steffen Extra\end{DoxyVerb}
- \\
+{\em autoinc} & = Boolean um zwischen A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT und eigener Wertzuweisung zu wechseln\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{tables_8cpp_aac2797835afcf68b73ba522e7bb91f5f}} 
 \index{tables.\+cpp@{tables.\+cpp}!set\+Primary\+Key@{set\+Primary\+Key}}
 \index{set\+Primary\+Key@{set\+Primary\+Key}!tables.\+cpp@{tables.\+cpp}}
 \subsubsection{set\+Primary\+Key()}
 {\footnotesize\ttfamily void set\+Primary\+Key (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{primary\+Key }\end{DoxyParamCaption})}
 
+
+
+Nachträgliches setzen eines Primärschlüssels. 
+
+Durch die Angabe der Spalte für den Primärschlüssels kann dieser gesetzt werden. ~\newline
+ Sollte bereits ein Primärschlüssel in dieser Tabelle vorhanden sein, wird der Fehler abgefangen.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+A\+L\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name + \char`\"{} A\+D\+D P\+R\+I\+M\+A\+R\+Y K\+E\+Y (\char`\"{} + primary\+Key + \char`\"{});\char`\"{};
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em primary\+Key} & = Name der Spalte für das Setzen des Primärschlüssel\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{tables_8cpp_a4aca01f302c4488d661196653d8f6c28}} 
 \index{tables.\+cpp@{tables.\+cpp}!set\+Secondary\+Key@{set\+Secondary\+Key}}
 \index{set\+Secondary\+Key@{set\+Secondary\+Key}!tables.\+cpp@{tables.\+cpp}}
 \subsubsection{set\+Secondary\+Key()}
 {\footnotesize\ttfamily void set\+Secondary\+Key (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name\+Secondary,  }\item[{std\+::string}]{foreign\+Key,  }\item[{std\+::string}]{table\+Name\+Primary,  }\item[{std\+::string}]{primary\+Key,  }\item[{std\+::string}]{constraint }\end{DoxyParamCaption})}
 
+
+
+Setzen des Sekundärschlüssels (Foreign Key) 
+
+table\+Name\+Primary und primary\+Key verbinden den Primärschlüssel aus einer Tabelle mit einer vom Programmierer gewünschten Spalte und setzt den Foreign\+Key auf diese.~\newline
+ So können die Abhängigkeiten vom Primärschlüssel im Bezug auf einer anderen Tabelle gelöst werden. ~\newline
+ Zusätzlich kann durch die Angabe des Übergabeparameters constraint eine Schlüsselgruppe definier werden.~\newline
+
+
+S\+Q\+L-\/\+Befehl \char`\"{}\+A\+L\+T\+E\+R T\+A\+B\+L\+E \char`\"{} + table\+Name\+Secondary + \char`\"{} A\+D\+D C\+O\+N\+S\+T\+R\+A\+I\+N\+T \char`\"{}+ constraint + \char`\"{} F\+O\+R\+E\+I\+G\+N K\+E\+Y (\char`\"{} + foreign\+Key + \char`\"{}) R\+E\+F\+E\+R\+E\+N\+C\+E\+S \char`\"{} + table\+Name\+Primary + \char`\"{} (\char`\"{} + primary\+Key + \char`\"{});\char`\"{};
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name\+Secondary} & = Name der Tabelle für den Sekundärschlüssel \\
+\hline
+{\em foreign\+Key} & = Spaltenname für den Sekundärschlüssel \\
+\hline
+{\em table\+Name\+Primary} & = Name der Tabelle, welche den Primärschlüssel besitzt \\
+\hline
+{\em primary\+Key} & = Spalte des Primärschlüssels \\
+\hline
+{\em constraint} & = Name der Schlüsselgruppe\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{tables_8cpp_addc31570307c41c7327c3da4886ae7bf}} 
 \index{tables.\+cpp@{tables.\+cpp}!show\+Column\+Typ@{show\+Column\+Typ}}
 \index{show\+Column\+Typ@{show\+Column\+Typ}!tables.\+cpp@{tables.\+cpp}}
 \subsubsection{show\+Column\+Typ()}
 {\footnotesize\ttfamily void show\+Column\+Typ (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{datatype }\end{DoxyParamCaption})}
 
+
+
+Datentyp der Spalte anzeigen lassen. 
+
+Durch die Methode werden alle Spaltennamen gelistet, welche der Bedingung des Datentyps entsprechen.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+H\+O\+W C\+O\+L\+U\+M\+N\+S F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E T\+Y\+P\+E L\+I\+K\+E \textquotesingle{}\char`\"{} + datatype + \char`\"{}\%\textquotesingle{}\char`\"{};
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle; \\
+\hline
+{\em datatype} & = Datentyp\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{tables_8cpp_a22fbeb7f18a00bafd4864de51a3bca28}} 
 \index{tables.\+cpp@{tables.\+cpp}!show\+Table@{show\+Table}}
 \index{show\+Table@{show\+Table}!tables.\+cpp@{tables.\+cpp}}
@@ -264,7 +527,10 @@ Durch diese Methode kann nachträglich der Primärschlüssel zu einer Spalte hin
 
 Ausgabe der Tabelle. 
 
-Diese Methode dient zur Ausgabe des kompletten Tabelleninhalts innerhalb einer Datenbank.
+Diese Methode dient zur Ausgabe des kompletten Tabelleninhalts innerhalb einer Datenbank.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T $\ast$ F\+R\+O\+M \char`\"{} + table\+Name;
 
 
 \begin{DoxyParams}{Parameter}

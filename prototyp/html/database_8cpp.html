@@ -96,12 +96,16 @@ $(document).ready(function(){initNavTree('database_8cpp.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funktionen</h2></td></tr>
 <tr class="memitem:abf48eb274e662a7de3f5f190d126b765"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="database_8cpp.html#abf48eb274e662a7de3f5f190d126b765">createDatabase</a> (std::string databaseName)</td></tr>
+<tr class="memdesc:abf48eb274e662a7de3f5f190d126b765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erstellen einer Datenbank.  <a href="#abf48eb274e662a7de3f5f190d126b765">Mehr ...</a><br /></td></tr>
 <tr class="separator:abf48eb274e662a7de3f5f190d126b765"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a812cc82c697df37c6a8a482f85972b4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="database_8cpp.html#a812cc82c697df37c6a8a482f85972b4b">showDatabases</a> ()</td></tr>
+<tr class="memdesc:a812cc82c697df37c6a8a482f85972b4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Anzeigen der Datenbanken.  <a href="#a812cc82c697df37c6a8a482f85972b4b">Mehr ...</a><br /></td></tr>
 <tr class="separator:a812cc82c697df37c6a8a482f85972b4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0659d93a42f84756e52155eb333c4fec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="database_8cpp.html#a0659d93a42f84756e52155eb333c4fec">renameDatabase</a> (std::string databaseName, std::string newDatabaseName)</td></tr>
+<tr class="memdesc:a0659d93a42f84756e52155eb333c4fec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Datenbanknamen ändern.  <a href="#a0659d93a42f84756e52155eb333c4fec">Mehr ...</a><br /></td></tr>
 <tr class="separator:a0659d93a42f84756e52155eb333c4fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d1fac4a7c1506f81908532050a8e58f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="database_8cpp.html#a1d1fac4a7c1506f81908532050a8e58f">deleteDatabase</a> (std::string databaseName)</td></tr>
+<tr class="memdesc:a1d1fac4a7c1506f81908532050a8e58f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Löschen einer Datenbank.  <a href="#a1d1fac4a7c1506f81908532050a8e58f">Mehr ...</a><br /></td></tr>
 <tr class="separator:a1d1fac4a7c1506f81908532050a8e58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Dokumentation der Funktionen</h2>
@@ -121,6 +125,20 @@ Funktionen</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Erstellen einer Datenbank. </p>
+<p>Die Methode "createDatabase" sendet einen Befehl um eine Datenbank zu erstellen an den SQL Server</p>
+<p>SQL-Befehl: "CREATE DATABASE " + databaseName;</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">databaseName</td><td>= enthält den Namen für die zu erstellende Datenbank</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
+<dd>
+Steffen Extra </dd></dl>
+
 </div>
 </div>
 <a id="a1d1fac4a7c1506f81908532050a8e58f"></a>
@@ -138,6 +156,22 @@ Funktionen</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Löschen einer Datenbank. </p>
+<p>Die Methode "deleteDatabase" senden dem Befehl eine Datenbank zu löschen.<br />
+ Bis auf die gewählte Datenbank für die Connetionless Methode können alle Datenbanken ugelöscht werden.<br />
+</p>
+<p>SQL-Befehl: "DROP DATABASE " + databaseName;</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">databaseName</td><td>= enthält den Namen für die zu löschende Datenbank</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
+<dd>
+Steffen Extra </dd></dl>
 
 </div>
 </div>
@@ -167,6 +201,23 @@ Funktionen</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Datenbanknamen ändern. </p>
+<p>Die Methode "renameDatabase" senden dem Befehl eine Datenbank umzubennen an den SQL Server.<br />
+ Bis auf die gewählte Datenbank für die <a class="el" href="connection_8cpp.html#adda241635377573037e48ec03e645c22" title="Verbindung zur Datenbank auf einem Server. ">connectionless()</a> Methode können alle Datenbanken umbenannt werden.<br />
+</p>
+<p>SQL-Befehl: "ALTER DATABASE " + databaseName + " MODIFY NAME = " + newDatabaseName + ";"</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">databaseName</td><td>= enhält den Namen für die zu unbennene Datenbank </td></tr>
+    <tr><td class="paramname">newDatabaseName</td><td>= enhält den neunen Namen für die Datenbank</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
+<dd>
+Steffen Extra </dd></dl>
+
 </div>
 </div>
 <a id="a812cc82c697df37c6a8a482f85972b4b"></a>
@@ -183,6 +234,21 @@ Funktionen</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Anzeigen der Datenbanken. </p>
+<p>Die Methode "showDatabase" senden dem Befehl alle Datenbanken anzuzeigen an den SQL Server. <br />
+</p>
+<p>SQL-Befehl: SHOW DATABASES;</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">-</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
+<dd>
+Steffen Extra </dd></dl>
 
 </div>
 </div>

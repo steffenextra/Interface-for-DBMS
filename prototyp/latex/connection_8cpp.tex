@@ -5,17 +5,17 @@
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ check\+\_\+error} (void)
-\item 
+\begin{DoxyCompactList}\small\item\em Fehlermethode. \end{DoxyCompactList}\item 
 void \textbf{ connection\+\_\+feedback} (std\+::string \textbf{ sql\+Command})
-\item 
+\begin{DoxyCompactList}\small\item\em Rückgabe einzelner Ergebnisse. \end{DoxyCompactList}\item 
 void \textbf{ connection\+\_\+feedback\+All} (std\+::string \textbf{ sql\+Command})
-\item 
+\begin{DoxyCompactList}\small\item\em Rückgabe aller Datensätze. \end{DoxyCompactList}\item 
 void \textbf{ connection\+\_\+query} (std\+::string \textbf{ sql\+Command})
-\item 
+\begin{DoxyCompactList}\small\item\em Sendet eine Abfrage zum S\+Q\+L-\/\+Server. \end{DoxyCompactList}\item 
 void \textbf{ connectionless} (const char host [$\,$], const char user [$\,$], const char passwort [$\,$], const char db [$\,$], unsigned int port, const char $\ast$mac\+O\+S\+\_\+socket, unsigned int client\+\_\+flag)
-\item 
+\begin{DoxyCompactList}\small\item\em Verbindung zur Datenbank auf einem Server. \end{DoxyCompactList}\item 
 void \textbf{ disconnect} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Verbindung schließen. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variablen}
 \begin{DoxyCompactItemize}
 \item 
@@ -36,36 +36,170 @@ M\+Y\+S\+Q\+L\+\_\+\+F\+I\+E\+LD $\ast$ \textbf{ field}
 \subsubsection{check\+\_\+error()}
 {\footnotesize\ttfamily void check\+\_\+error (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+
+
+Fehlermethode. 
+
+Die Methode \char`\"{}check\+\_\+error\char`\"{} ist verantwortlich für die Ausnahme, die ausgelöst wird, wenn My\+S\+QL einen Fehler zurückgibt.~\newline
+
+
+
+\begin{DoxyParams}{Parameter}
+{\em -\/} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{connection_8cpp_ab12a404eefae07281e8d1273ca3fc447}} 
 \index{connection.\+cpp@{connection.\+cpp}!connection\+\_\+feedback@{connection\+\_\+feedback}}
 \index{connection\+\_\+feedback@{connection\+\_\+feedback}!connection.\+cpp@{connection.\+cpp}}
 \subsubsection{connection\+\_\+feedback()}
 {\footnotesize\ttfamily void connection\+\_\+feedback (\begin{DoxyParamCaption}\item[{std\+::string}]{sql\+Command }\end{DoxyParamCaption})}
 
+
+
+Rückgabe einzelner Ergebnisse. 
+
+Die Methode \char`\"{}connection\+\_\+feedback\char`\"{} liefert eine Spalte des aktuellen Datensatzes.~\newline
+ Diese wird benutzt um einzelne Ergebnis zurückzugeben. (Bspw. \doxyref{select\+Count()}{S.}{selection_request_8cpp_a00f071477f164f70927ee9923dd77a39} )
+
+
+\begin{DoxyParams}{Parameter}
+{\em sql\+Command} & = enthält den auszuführenden S\+Q\+L-\/\+Befehl\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{connection_8cpp_a05a069b8d1bef185dd0ff85424e2e13c}} 
 \index{connection.\+cpp@{connection.\+cpp}!connection\+\_\+feedback\+All@{connection\+\_\+feedback\+All}}
 \index{connection\+\_\+feedback\+All@{connection\+\_\+feedback\+All}!connection.\+cpp@{connection.\+cpp}}
 \subsubsection{connection\+\_\+feedback\+All()}
 {\footnotesize\ttfamily void connection\+\_\+feedback\+All (\begin{DoxyParamCaption}\item[{std\+::string}]{sql\+Command }\end{DoxyParamCaption})}
 
+
+
+Rückgabe aller Datensätze. 
+
+Die Methode \char`\"{}connection\+\_\+feedback\+All\char`\"{} liefert den kompletten Datensatz zurück der Abfrage zurück.
+
+
+\begin{DoxyParams}{Parameter}
+{\em sql\+Command} & = enhält den auszuführenden S\+Q\+L-\/\+Befehl\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{connection_8cpp_af8ead42df91543eb727f4ab7e44e49d5}} 
 \index{connection.\+cpp@{connection.\+cpp}!connection\+\_\+query@{connection\+\_\+query}}
 \index{connection\+\_\+query@{connection\+\_\+query}!connection.\+cpp@{connection.\+cpp}}
 \subsubsection{connection\+\_\+query()}
 {\footnotesize\ttfamily void connection\+\_\+query (\begin{DoxyParamCaption}\item[{std\+::string}]{sql\+Command }\end{DoxyParamCaption})}
 
+
+
+Sendet eine Abfrage zum S\+Q\+L-\/\+Server. 
+
+Die Methode \char`\"{}connection\+\_\+query\char`\"{} sendet eine eindeutige Abfrage (mehrere Abfragen werden nicht unterstützt) an die derzeit aktive Datenbank auf dem Server, der dem angegebenen Server zugeordnet ist. ~\newline
+
+
+
+\begin{DoxyParams}{Parameter}
+{\em sql\+Command} & = enhält den auszuführenden S\+Q\+L-\/\+Befehl\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{connection_8cpp_adda241635377573037e48ec03e645c22}} 
 \index{connection.\+cpp@{connection.\+cpp}!connectionless@{connectionless}}
 \index{connectionless@{connectionless}!connection.\+cpp@{connection.\+cpp}}
 \subsubsection{connectionless()}
 {\footnotesize\ttfamily void connectionless (\begin{DoxyParamCaption}\item[{const char}]{host[$\,$],  }\item[{const char}]{user[$\,$],  }\item[{const char}]{passwort[$\,$],  }\item[{const char}]{db[$\,$],  }\item[{unsigned int}]{port,  }\item[{const char $\ast$}]{mac\+O\+S\+\_\+socket,  }\item[{unsigned int}]{client\+\_\+flag }\end{DoxyParamCaption})}
 
+
+
+Verbindung zur Datenbank auf einem Server. 
+
+Die Methode \char`\"{}connectionless\char`\"{} wird verwendet, um eine Verbindung zu einer Datenbank mit all ihren nötigen Parametern(z.\+B User,Pw usw.) herzustellen.~\newline
+ Um eine Verbindung zu einem lokalen Computer herzustellen, geben Sie \char`\"{}localhost\char`\"{} für den Server an. ~\newline
+ Wenn Sie keinen Server angeben, wird localhost angenommen. ~\newline
+
+
+
+\begin{DoxyParams}{Parameter}
+{\em host} & = Name des Hosts \\
+\hline
+{\em user} & = Name des Users \\
+\hline
+{\em passwort} & = benötigtes Password für den Verbindungsaufbau zum S\+Q\+L-\/\+Server \\
+\hline
+{\em db} & = Name der Datenbank auf die zugegriffen werden soll \\
+\hline
+{\em port} & = Der zu verwendende Port \\
+\hline
+{\em socket} & = Der zu verwendende Socket \\
+\hline
+{\em flag} & = Optional (N\+U\+LL)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{connection_8cpp_a960705de531a20389fb29928d43258c3}} 
 \index{connection.\+cpp@{connection.\+cpp}!disconnect@{disconnect}}
 \index{disconnect@{disconnect}!connection.\+cpp@{connection.\+cpp}}
 \subsubsection{disconnect()}
 {\footnotesize\ttfamily void disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Verbindung schließen. 
+
+Die Methode \char`\"{}disconnect\char`\"{} setzt alle ausstehenden Transaktionen zurück. ~\newline
+ Anschließend wird die Verbindung zum Verbindungspool freigegeben oder die Verbindung wird geschlossen, wenn das Verbindungspooling deaktiviert ist.~\newline
+
+
+
+\begin{DoxyParams}{Parameter}
+{\em -\/} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 
 
 \subsection{Variablen-\/\+Dokumentation}

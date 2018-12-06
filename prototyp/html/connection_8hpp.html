@@ -102,16 +102,21 @@ $(document).ready(function(){initNavTree('connection_8hpp.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funktionen</h2></td></tr>
 <tr class="memitem:a33fd832a9e1a27bddb7d9837a2dcf2f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="connection_8hpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1">check_error</a> (void)</td></tr>
+<tr class="memdesc:a33fd832a9e1a27bddb7d9837a2dcf2f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fehlermethode.  <a href="#a33fd832a9e1a27bddb7d9837a2dcf2f1">Mehr ...</a><br /></td></tr>
 <tr class="separator:a33fd832a9e1a27bddb7d9837a2dcf2f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab12a404eefae07281e8d1273ca3fc447"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="connection_8hpp.html#ab12a404eefae07281e8d1273ca3fc447">connection_feedback</a> (std::string <a class="el" href="sqllib_8hpp.html#a51d8bd3191c8ab6e4acdc8053a05a3f5">sqlCommand</a>)</td></tr>
+<tr class="memdesc:ab12a404eefae07281e8d1273ca3fc447"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rückgabe einzelner Ergebnisse.  <a href="#ab12a404eefae07281e8d1273ca3fc447">Mehr ...</a><br /></td></tr>
 <tr class="separator:ab12a404eefae07281e8d1273ca3fc447"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05a069b8d1bef185dd0ff85424e2e13c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="connection_8hpp.html#a05a069b8d1bef185dd0ff85424e2e13c">connection_feedbackAll</a> (std::string <a class="el" href="sqllib_8hpp.html#a51d8bd3191c8ab6e4acdc8053a05a3f5">sqlCommand</a>)</td></tr>
+<tr class="memdesc:a05a069b8d1bef185dd0ff85424e2e13c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rückgabe aller Datensätze.  <a href="#a05a069b8d1bef185dd0ff85424e2e13c">Mehr ...</a><br /></td></tr>
 <tr class="separator:a05a069b8d1bef185dd0ff85424e2e13c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83d389dd4406da88cf16f7736e012537"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="connection_8hpp.html#a83d389dd4406da88cf16f7736e012537">connection_query</a> (std::string sqlcommand)</td></tr>
+<tr class="memdesc:a83d389dd4406da88cf16f7736e012537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sendet eine Abfrage zum SQL-Server.  <a href="#a83d389dd4406da88cf16f7736e012537">Mehr ...</a><br /></td></tr>
 <tr class="separator:a83d389dd4406da88cf16f7736e012537"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76ac4f4e873cad05bcaa10a8b7e048ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="connection_8hpp.html#a76ac4f4e873cad05bcaa10a8b7e048ce">connectionless</a> (const char *host, const char *user, const char *passwort, const char *db, unsigned int port, const char *unix_socket, unsigned int client_flag)</td></tr>
 <tr class="separator:a76ac4f4e873cad05bcaa10a8b7e048ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a960705de531a20389fb29928d43258c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="connection_8hpp.html#a960705de531a20389fb29928d43258c3">disconnect</a> ()</td></tr>
+<tr class="memdesc:a960705de531a20389fb29928d43258c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verbindung schließen.  <a href="#a960705de531a20389fb29928d43258c3">Mehr ...</a><br /></td></tr>
 <tr class="separator:a960705de531a20389fb29928d43258c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Dokumentation der Funktionen</h2>
@@ -131,6 +136,20 @@ Funktionen</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Fehlermethode. </p>
+<p>Die Methode "check_error" ist verantwortlich für die Ausnahme, die ausgelöst wird, wenn MySQL einen Fehler zurückgibt.<br />
+</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">-</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
+<dd>
+Steffen Extra </dd></dl>
+
 </div>
 </div>
 <a id="ab12a404eefae07281e8d1273ca3fc447"></a>
@@ -148,6 +167,20 @@ Funktionen</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Rückgabe einzelner Ergebnisse. </p>
+<p>Die Methode "connection_feedback" liefert eine Spalte des aktuellen Datensatzes.<br />
+ Diese wird benutzt um einzelne Ergebnis zurückzugeben. (Bspw. <a class="el" href="selection_request_8cpp.html#a00f071477f164f70927ee9923dd77a39">selectCount()</a> )</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sqlCommand</td><td>= enthält den auszuführenden SQL-Befehl</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
+<dd>
+Steffen Extra </dd></dl>
 
 </div>
 </div>
@@ -167,6 +200,19 @@ Funktionen</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Rückgabe aller Datensätze. </p>
+<p>Die Methode "connection_feedbackAll" liefert den kompletten Datensatz zurück der Abfrage zurück.</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sqlCommand</td><td>= enhält den auszuführenden SQL-Befehl</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
+<dd>
+Steffen Extra </dd></dl>
+
 </div>
 </div>
 <a id="a83d389dd4406da88cf16f7736e012537"></a>
@@ -179,11 +225,25 @@ Funktionen</h2></td></tr>
           <td class="memname">void connection_query </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>sqlcommand</em></td><td>)</td>
+          <td class="paramname"><em>sqlCommand</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Sendet eine Abfrage zum SQL-Server. </p>
+<p>Die Methode "connection_query" sendet eine eindeutige Abfrage (mehrere Abfragen werden nicht unterstützt) an die derzeit aktive Datenbank auf dem Server, der dem angegebenen Server zugeordnet ist. <br />
+</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sqlCommand</td><td>= enhält den auszuführenden SQL-Befehl</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
+<dd>
+Steffen Extra </dd></dl>
 
 </div>
 </div>
@@ -259,6 +319,21 @@ Funktionen</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Verbindung schließen. </p>
+<p>Die Methode "disconnect" setzt alle ausstehenden Transaktionen zurück. <br />
+ Anschließend wird die Verbindung zum Verbindungspool freigegeben oder die Verbindung wird geschlossen, wenn das Verbindungspooling deaktiviert ist.<br />
+</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">-</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
+<dd>
+Steffen Extra </dd></dl>
 
 </div>
 </div>

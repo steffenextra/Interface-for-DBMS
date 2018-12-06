@@ -9,13 +9,13 @@
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ set\+Entry} (std\+::string table\+Name, std\+::string column\+Name, std\+::string entry)
-\item 
+\begin{DoxyCompactList}\small\item\em Erstellen eines Eintrags. \end{DoxyCompactList}\item 
 void \textbf{ modifier\+Entry} (std\+::string table\+Name, std\+::string column\+Name, std\+::string old\+Entry, std\+::string new\+Entry)
-\item 
+\begin{DoxyCompactList}\small\item\em Einträge modifizieren. \end{DoxyCompactList}\item 
 void \textbf{ set\+All\+Entry} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ \textbf{ row})
-\item 
+\begin{DoxyCompactList}\small\item\em Beliebige Anzahl von Einträgen hinzufügen. \end{DoxyCompactList}\item 
 void \textbf{ delete\+Entry} (std\+::string table\+Name, std\+::string column\+Name, std\+::string conditiony)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Löschen von Einträgen. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Dokumentation der Funktionen}
@@ -23,23 +23,127 @@ void \textbf{ delete\+Entry} (std\+::string table\+Name, std\+::string column\+N
 \index{entry.\+hpp@{entry.\+hpp}!delete\+Entry@{delete\+Entry}}
 \index{delete\+Entry@{delete\+Entry}!entry.\+hpp@{entry.\+hpp}}
 \subsubsection{delete\+Entry()}
-{\footnotesize\ttfamily void delete\+Entry (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name,  }\item[{std\+::string}]{conditiony }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void delete\+Entry (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name,  }\item[{std\+::string}]{condition }\end{DoxyParamCaption})}
 
+
+
+Löschen von Einträgen. 
+
+Die Methode \char`\"{}delete\+Entry\char`\"{} senden dem Befehl einen Eintrag einer Tabelle zu löschen.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: D\+E\+L\+E\+TE F\+R\+OM \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+RE \char`\"{} + column\+Name + \char`\"{} = \char`\"{} + \char`\"{}\textquotesingle{}\char`\"{} + condition + \char`\"{}\textquotesingle{}";
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em column\+Name} & = Enhält den Spaltennamen in der, der Eintrag gelöscht werden soll  = enhält den Eintrag, der gelöscht werden soll\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{entry_8hpp_ab254b5514a4950c7479bc4d513c438dc}} 
 \index{entry.\+hpp@{entry.\+hpp}!modifier\+Entry@{modifier\+Entry}}
 \index{modifier\+Entry@{modifier\+Entry}!entry.\+hpp@{entry.\+hpp}}
 \subsubsection{modifier\+Entry()}
 {\footnotesize\ttfamily void modifier\+Entry (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name,  }\item[{std\+::string}]{old\+Entry,  }\item[{std\+::string}]{new\+Entry }\end{DoxyParamCaption})}
 
+
+
+Einträge modifizieren. 
+
+Die Methode \char`\"{}modifier\+Entry\char`\"{} senden dem Befehl einen bereits vorhandenen Eintrag einer Tabelle zu modifizieren.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+U\+P\+D\+A\+T\+E \char`\"{} + table\+Name + \char`\"{} S\+E\+T \char`\"{} + column\+Name + \char`\"{} = \char`\"{} + \char`\"{}\textquotesingle{}\char`\"{} + new\+Entry + \char`\"{}\textquotesingle{}\char`\"{} + \char`\"{} W\+H\+E\+R\+E \char`\"{} + column\+Name + \char`\"{}= \char`\"{} + \char`\"{}\textquotesingle{}\char`\"{} + old\+Entry + \char`\"{}\textquotesingle{}\char`\"{};
+
+
+\begin{DoxyParams}{Parameter}
+{\em tablename} & = Name der Tabelle \\
+\hline
+{\em column\+Name} & = Name der Spalte in den der Eintrag getätigt werden soll \\
+\hline
+{\em old\+Entry} & = Alter Eintrag \\
+\hline
+{\em new\+Entry} & = enthält den Eintrag, der den alten Eintrag ersetzen soll.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{entry_8hpp_aeb45ccd70b8692b592754a0886c2d109}} 
 \index{entry.\+hpp@{entry.\+hpp}!set\+All\+Entry@{set\+All\+Entry}}
 \index{set\+All\+Entry@{set\+All\+Entry}!entry.\+hpp@{entry.\+hpp}}
 \subsubsection{set\+All\+Entry()}
 {\footnotesize\ttfamily void set\+All\+Entry (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{row }\end{DoxyParamCaption})}
 
+
+
+Beliebige Anzahl von Einträgen hinzufügen. 
+
+Die Methode \char`\"{}set\+All\+Entry\char`\"{} senden dem Befehl eine komplette Zeile mit Einträgen einer Tabelle hinzuzufügen.~\newline
+ Um beliebig viele Einträge zu erstellen, muss der Anwender einen Vektoren anfertigen und diesen übergeben. ~\newline
+ Der Vektor hat für den Insert die Form \+: jede gerade Index der Spaltennamen, Ungerade der Datensatz.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+I\+N\+S\+E\+R\+T I\+N\+T\+O \char`\"{} + table\+Name + \char`\"{}( \char`\"{} + column\+Name + \char`\"{} ) V\+A\+L\+U\+E\+S(\char`\"{} + insert\+Data + \char`\"{});\char`\"{};
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em row} & = Enhält eine Liste, die eine Zeile repräsentieren soll, gefüllt mit Einträgen.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{entry_8hpp_a1faab165d9a7dc43808e1a0075e007f9}} 
 \index{entry.\+hpp@{entry.\+hpp}!set\+Entry@{set\+Entry}}
 \index{set\+Entry@{set\+Entry}!entry.\+hpp@{entry.\+hpp}}
 \subsubsection{set\+Entry()}
 {\footnotesize\ttfamily void set\+Entry (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name,  }\item[{std\+::string}]{entry }\end{DoxyParamCaption})}
 
+
+
+Erstellen eines Eintrags. 
+
+Die Methode \char`\"{}set\+Entry\char`\"{} sendet den Befehl einen neuen Eintrag in die dementsprechende Tabelle einzufügen.~\newline
+
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+I\+N\+S\+E\+R\+T I\+N\+T\+O \char`\"{} + table\+Name + \char`\"{} (\char`\"{} + column\+Name + \char`\"{}) V\+A\+L\+U\+E\+S (\char`\"{}+ \char`\"{}\textquotesingle{}\char`\"{} + entry + \char`\"{}\textquotesingle{}\char`\"{} + \char`\"{})\char`\"{} ;
+
+
+\begin{DoxyParams}{Parameter}
+{\em tablename} & = Name der Tabelle \\
+\hline
+{\em Column\+Name} & = Name der Spalte \\
+\hline
+{\em entry} & = enhält den Eintrag, der hinzugefügt werden soll\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}

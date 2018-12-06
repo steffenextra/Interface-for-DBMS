@@ -5,19 +5,20 @@ MYSQL_ROW row;
 MYSQL_RES *result;
 MYSQL_FIELD *field;
 
-/*
-* Die Methode "check_error" ist verantwortlich für die Ausnahme, die ausgelöst wird, wenn MySQL einen Fehler zurückgibt.
-*	
-*@param 
-*	-
-*	
-*@return 
-*	-
-*
-* @author Martin Meyer
-*
-* @version 1.0
-*/
+	/**
+
+	@brief Fehlermethode
+
+	Die Methode "check_error" ist verantwortlich für die Ausnahme, die ausgelöst wird, wenn MySQL einen Fehler zurückgibt.<br>
+
+	@param -
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
+	*/
 
 	void check_error(void){
 
@@ -27,20 +28,21 @@ MYSQL_FIELD *field;
 		}
 
 	}
-	/*
-* Die Methode "connection_feedback" liefert eine Spalte des aktuellen Datensatzes.
-*	
-*@param 
-*	-sqlCommand-> enhält den auszuführenden SQL-Befehl
-*
-*	
-*@return 
-*	-
-*
-* @author Martin Meyer
-*
-* @version 1.0
-*/
+	/**
+
+	@brief Rückgabe einzelner Ergebnisse
+
+	Die Methode "connection_feedback" liefert eine Spalte des aktuellen Datensatzes.<br>
+	Diese wird benutzt um einzelne Ergebnis zurückzugeben. (Bspw. selectCount() )
+
+	@param sqlCommand = enthält den auszuführenden SQL-Befehl
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
+	*/
 
 		void connection_feedback(std::string sqlCommand){
 
@@ -59,20 +61,20 @@ MYSQL_FIELD *field;
 		}
 
 
-/*
-* Die Methode "connection_feedbackAll" liefert den kompletten aktuellen Datensatz.
-*	
-*@param 
-*	-sqlCommand-> enhält den auszuführenden SQL-Befehl
-*
-*	
-*@return 
-*	-
-*
-* @author Martin Meyer
-*
-* @version 1.0
-*/
+	/**
+
+	@brief Rückgabe aller Datensätze
+
+	Die Methode "connection_feedbackAll" liefert den kompletten Datensatz zurück der Abfrage zurück.
+
+	@param sqlCommand = enhält den auszuführenden SQL-Befehl
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
+	*/
 
 
 	void connection_feedbackAll(std::string sqlCommand){
@@ -111,21 +113,22 @@ MYSQL_FIELD *field;
 
 		mysql_free_result(result);
 	}
-/*
-* Die Methode "connection_query" sendet eine eindeutige Abfrage (mehrere Abfragen werden nicht unterstützt) 
-* an die derzeit aktive Datenbank auf dem Server, der dem angegebenen Server zugeordnet ist
-*	
-*@param 
-*	-sqlCommand-> enhält den auszuführenden SQL-Befehl
-*
-*	
-*@return 
-*	-
-*
-* @author Martin Meyer
-*
-* @version 1.0
-*/
+
+	/**
+
+	@brief Sendet eine Abfrage zum SQL-Server
+
+	Die Methode "connection_query" sendet eine eindeutige Abfrage (mehrere Abfragen werden nicht unterstützt) 
+	an die derzeit aktive Datenbank auf dem Server, der dem angegebenen Server zugeordnet ist. <br>
+
+	@param sqlCommand = enhält den auszuführenden SQL-Befehl
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
+	*/
 
 	void connection_query(std::string sqlCommand){
 
@@ -137,27 +140,28 @@ MYSQL_FIELD *field;
 		check_error();
 
 	}
-	/*
-* Die Methode "connectionless" wird verwendet, um eine Verbindung zu einer Datenbank mit all ihren nötigen Parametern(z.B User,Pw usw.) herzustellen.
-* Um eine Verbindung zu einem lokalen Computer herzustellen, geben Sie "localhost" für den Server an. 
-* Wenn Sie keinen Server angeben, wird localhost angenommen.
-*	
-*@param 
-*	-host-> Name des Hosts
-*	-user-> Name des Users
-*	-passwort-> benötigtes Password für den Verbindungsaufbau zum SQL-Server
-*	-db-> Name der Datenbank auf die zugegriffen werden soll
-*	-port-> verwendeter Port
-*	-socket-> verwendeter Socket
-*	-flag->
-*	
-*@return 
-*	-
-*
-* @author Martin Meyer
-*
-* @version 1.0
-*/
+	/**
+
+	@brief Verbindung zur Datenbank auf einem Server
+
+	Die Methode "connectionless" wird verwendet, um eine Verbindung zu einer Datenbank mit all ihren nötigen Parametern(z.B User,Pw usw.) herzustellen.<br>
+	Um eine Verbindung zu einem lokalen Computer herzustellen, geben Sie "localhost" für den Server an. <br>
+	Wenn Sie keinen Server angeben, wird localhost angenommen. <br>
+
+	@param host = Name des Hosts
+	@param user = Name des Users
+	@param passwort = benötigtes Password für den Verbindungsaufbau zum SQL-Server
+	@param db = Name der Datenbank auf die zugegriffen werden soll
+	@param port = Der zu verwendende Port
+	@param socket = Der zu verwendende Socket
+	@param flag = Optional (NULL)
+
+	@return void
+
+	@author Martin Meyer
+	@author Steffen Extra
+
+	*/
 
 	void connectionless(const char host [], const char user [], const char passwort [],const char db [], unsigned int port,const char *macOS_socket, unsigned int client_flag){
 
@@ -181,23 +185,25 @@ MYSQL_FIELD *field;
 
 	}
 
-/*
-* Die Methode "disconnect" setzt alle ausstehenden Transaktionen zurück. 
-* Anschließend wird die Verbindung zum Verbindungspool freigegeben oder die Verbindung wird geschlossen, 
-* wenn das Verbindungspooling deaktiviert ist.
-*	
-*@param 
-*	-
-*	
-*@return 
-*	-
-*
-* @author Martin Meyer
-*
-* @version 1.0
-*/
+	/**
+
+	@brief Verbindung schließen
+
+	Die Methode "disconnect" setzt alle ausstehenden Transaktionen zurück. <br>
+	Anschließend wird die Verbindung zum Verbindungspool freigegeben oder die Verbindung wird geschlossen, 
+	wenn das Verbindungspooling deaktiviert ist.<br>
+
+	@param -
+
+	@return void 
+
+	@author Martin Meyer
+	@author Steffen Extra
+
+	*/
+
 	void disconnect(){
-		
+
 		mysql_close(mysql);
 	}
 
