@@ -5,14 +5,28 @@
 {\ttfamily \#include $<$unistd.\+h$>$}\newline
 {\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
+Include-\/\+Abhängigkeitsdiagramm für connection.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{connection_8hpp__incl}
+\end{center}
+\end{figure}
+Dieser Graph zeigt, welche Datei direkt oder indirekt diese Datei enthält\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{connection_8hpp__dep__incl}
+\end{center}
+\end{figure}
 \subsection*{Funktionen}
 \begin{DoxyCompactItemize}
 \item 
 void \textbf{ check\+\_\+error} (void)
 \begin{DoxyCompactList}\small\item\em Fehlermethode. \end{DoxyCompactList}\item 
-void \textbf{ connection\+\_\+feedback} (std\+::string \textbf{ sql\+Command})
+void \textbf{ connection\+\_\+feedback} (std\+::string sql\+Command)
 \begin{DoxyCompactList}\small\item\em Rückgabe einzelner Ergebnisse. \end{DoxyCompactList}\item 
-void \textbf{ connection\+\_\+feedback\+All} (std\+::string \textbf{ sql\+Command})
+void \textbf{ connection\+\_\+feedback\+All} (std\+::string sql\+Command)
 \begin{DoxyCompactList}\small\item\em Rückgabe aller Datensätze. \end{DoxyCompactList}\item 
 void \textbf{ connection\+\_\+query} (std\+::string sqlcommand)
 \begin{DoxyCompactList}\small\item\em Sendet eine Abfrage zum S\+Q\+L-\/\+Server. \end{DoxyCompactList}\item 
@@ -100,6 +114,20 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{connection_8hpp_a05a069b8d1bef185dd0ff85424e2e13c_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{connection_8hpp_a05a069b8d1bef185dd0ff85424e2e13c_icgraph}
+\end{center}
+\end{figure}
 \mbox{\label{connection_8hpp_a83d389dd4406da88cf16f7736e012537}} 
 \index{connection.\+hpp@{connection.\+hpp}!connection\+\_\+query@{connection\+\_\+query}}
 \index{connection\+\_\+query@{connection\+\_\+query}!connection.\+hpp@{connection.\+hpp}}

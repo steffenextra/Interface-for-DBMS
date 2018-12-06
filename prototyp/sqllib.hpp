@@ -1,3 +1,19 @@
+/*! \YOLOSWAG SCHIE SCHIE
+ *
+ * \section intro Introduction
+ *
+ * This is the introduction.
+ *
+ * \section install Installation
+ *
+ * \subsection step1 Step 1: Opening the box
+ *  
+ * etc...
+ */
+
+
+
+
 
 #ifdef __APPLE__
 #include "/usr/local/mysql/include/mysql.h"
@@ -67,7 +83,7 @@ void setAllEntry(std::string tableName,std::vector<std::string> row);
 void deleteEntry(std::string tableName, std::string columnName, std::string condition);
 
 //---selectionRequest---
-void sqlCommand(std::string sqlCommand,std::string commandType);
+void ownCommand(std::string sqlCommand,std::string commandType);
 void selectLike(std::string tableName,std::vector<std::string>columns,std::string toSearchColumn,std::string pattern,std::string toSearch);
 void selectNotLike(std::string tableName,std::vector<std::string>columns,std::string toSearchColumn,std::string pattern,std::string toSearch);
 void selectMinOrMax(std::string tableName,std::string minOrMax,std::string minOrMaxColumn,std::string aliasColumn);

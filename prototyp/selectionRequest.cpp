@@ -22,7 +22,7 @@
 
 	*/
 
-	void sqlCommand(std::string sqlCommand,std::string commandType){
+	void ownCommand(std::string sqlCommand,std::string commandType){
 		/*
 		3 CommandType
 		query, simple Query

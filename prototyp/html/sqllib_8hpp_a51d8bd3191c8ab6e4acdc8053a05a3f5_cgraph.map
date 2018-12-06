@@ -1,0 +1,7 @@
+<map id="sqlCommand" name="sqlCommand">
+<area shape="rect" id="node2" href="$connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="686,68,778,93"/>
+<area shape="rect" id="node3" href="$connection_8cpp.html#af8ead42df91543eb727f4ab7e44e49d5" title="Sendet eine Abfrage zum SQL&#45;Server. " alt="" coords="153,54,280,80"/>
+<area shape="rect" id="node4" href="$selection_request_8cpp.html#a51d8bd3191c8ab6e4acdc8053a05a3f5" title="Benutzereigener SQL&#45;Befehl. " alt="" coords="328,105,428,130"/>
+<area shape="rect" id="node5" href="$connection_8cpp.html#ab12a404eefae07281e8d1273ca3fc447" title="Rückgabe einzelner Ergebnisse. " alt="" coords="483,68,630,93"/>
+<area shape="rect" id="node6" href="$connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="476,169,638,194"/>
+</map>

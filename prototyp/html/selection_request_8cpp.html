@@ -92,12 +92,21 @@ $(document).ready(function(){initNavTree('selection_request_8cpp.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="selection_request_8hpp_source.html">selectionRequest.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include-Abhängigkeitsdiagramm für selectionRequest.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp__incl.png" border="0" usemap="#selection_request_8cpp" alt=""/></div>
+<map name="selection_request_8cpp" id="selection_request_8cpp">
+<area shape="rect" id="node2" href="selection_request_8hpp.html" title="selectionRequest.hpp" alt="" coords="132,79,281,104"/>
+<area shape="rect" id="node5" href="connection_8hpp.html" title="connection.hpp" alt="" coords="150,152,262,177"/>
+</map>
+</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funktionen</h2></td></tr>
-<tr class="memitem:a51d8bd3191c8ab6e4acdc8053a05a3f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="selection_request_8cpp.html#a51d8bd3191c8ab6e4acdc8053a05a3f5">sqlCommand</a> (std::string sqlCommand, std::string commandType)</td></tr>
-<tr class="memdesc:a51d8bd3191c8ab6e4acdc8053a05a3f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Benutzereigener SQL-Befehl.  <a href="#a51d8bd3191c8ab6e4acdc8053a05a3f5">Mehr ...</a><br /></td></tr>
-<tr class="separator:a51d8bd3191c8ab6e4acdc8053a05a3f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1909c1b8666cf6e3d31a014c9a9ad2d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="selection_request_8cpp.html#a1909c1b8666cf6e3d31a014c9a9ad2d7">ownCommand</a> (std::string sqlCommand, std::string commandType)</td></tr>
+<tr class="memdesc:a1909c1b8666cf6e3d31a014c9a9ad2d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Benutzereigener SQL-Befehl.  <a href="#a1909c1b8666cf6e3d31a014c9a9ad2d7">Mehr ...</a><br /></td></tr>
+<tr class="separator:a1909c1b8666cf6e3d31a014c9a9ad2d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80ced4bb0e929e97740616c59374d992"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="selection_request_8cpp.html#a80ced4bb0e929e97740616c59374d992">selectLike</a> (std::string tableName, std::vector&lt; std::string &gt;columns, std::string toSearchColumn, std::string pattern, std::string toSearch)</td></tr>
 <tr class="memdesc:a80ced4bb0e929e97740616c59374d992"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suche nach Muster.  <a href="#a80ced4bb0e929e97740616c59374d992">Mehr ...</a><br /></td></tr>
 <tr class="separator:a80ced4bb0e929e97740616c59374d992"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -183,6 +192,59 @@ Funktionen</h2></td></tr>
 <tr class="separator:a41392b97718c999af4867dc0c62ade0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Dokumentation der Funktionen</h2>
+<a id="a1909c1b8666cf6e3d31a014c9a9ad2d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1909c1b8666cf6e3d31a014c9a9ad2d7">&#9670;&nbsp;</a></span>ownCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ownCommand </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>sqlCommand</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>commandType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Benutzereigener SQL-Befehl. </p>
+<p>Die Methode "sqlCommand" gibt einen vom Nutzer eingegebenen String(SQL Befehl) direkt weiter zum SQL Server, zu dem wird der Befehlstyp unterschieden. Es wird zwischen 3 Befehlstypen unterschieden: Query -&gt; simple Abfrage an den SQL Server feedback-&gt; zeigt den Inhalt einer Spalte an feedbackAll-&gt; zeigt die komplette Tabelle mit Spaltenbezeichnugen an</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sqlCommand</td><td>= enthält dem vom Nutzer eingegebenen String der später als SQL Befehl fungiert </td></tr>
+    <tr><td class="paramname">commandType</td><td>= enhält dem vom Nutzer gewählten Befehlstyp</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
+<p>Boolean als return </p><dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
+<dd>
+Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a1909c1b8666cf6e3d31a014c9a9ad2d7_cgraph.png" border="0" usemap="#selection_request_8cpp_a1909c1b8666cf6e3d31a014c9a9ad2d7_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a1909c1b8666cf6e3d31a014c9a9ad2d7_cgraph" id="selection_request_8cpp_a1909c1b8666cf6e3d31a014c9a9ad2d7_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="371,56,463,82"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#af8ead42df91543eb727f4ab7e44e49d5" title="Sendet eine Abfrage zum SQL&#45;Server. " alt="" coords="178,31,305,56"/>
+<area shape="rect" id="node4" href="connection_8cpp.html#ab12a404eefae07281e8d1273ca3fc447" title="Rückgabe einzelner Ergebnisse. " alt="" coords="168,80,315,106"/>
+<area shape="rect" id="node5" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="161,130,323,155"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a01bd0062142a17ad04b7101bac7b38b6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a01bd0062142a17ad04b7101bac7b38b6">&#9670;&nbsp;</a></span>selectAverageSum()</h2>
 
@@ -224,6 +286,15 @@ Funktionen</h2></td></tr>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a01bd0062142a17ad04b7101bac7b38b6_cgraph.png" border="0" usemap="#selection_request_8cpp_a01bd0062142a17ad04b7101bac7b38b6_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a01bd0062142a17ad04b7101bac7b38b6_cgraph" id="selection_request_8cpp_a01bd0062142a17ad04b7101bac7b38b6_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="382,5,473,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#ab12a404eefae07281e8d1273ca3fc447" title="Rückgabe einzelner Ergebnisse. " alt="" coords="186,31,334,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -305,6 +376,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_aaa15591ca7a3ba5d40fa77b7ae6753db_cgraph.png" border="0" usemap="#selection_request_8cpp_aaa15591ca7a3ba5d40fa77b7ae6753db_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_aaa15591ca7a3ba5d40fa77b7ae6753db_cgraph" id="selection_request_8cpp_aaa15591ca7a3ba5d40fa77b7ae6753db_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="372,5,463,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="161,31,324,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -389,6 +469,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a9ad9be1bbff160a127715440afafb800_cgraph.png" border="0" usemap="#selection_request_8cpp_a9ad9be1bbff160a127715440afafb800_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a9ad9be1bbff160a127715440afafb800_cgraph" id="selection_request_8cpp_a9ad9be1bbff160a127715440afafb800_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="346,5,438,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="136,31,298,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -440,6 +529,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a0bd3f475ec96949ae94bbbbec41f7725_cgraph.png" border="0" usemap="#selection_request_8cpp_a0bd3f475ec96949ae94bbbbec41f7725_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a0bd3f475ec96949ae94bbbbec41f7725_cgraph" id="selection_request_8cpp_a0bd3f475ec96949ae94bbbbec41f7725_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="401,5,493,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="191,31,353,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -493,6 +591,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a00f071477f164f70927ee9923dd77a39_cgraph.png" border="0" usemap="#selection_request_8cpp_a00f071477f164f70927ee9923dd77a39_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a00f071477f164f70927ee9923dd77a39_cgraph" id="selection_request_8cpp_a00f071477f164f70927ee9923dd77a39_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="355,5,447,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="145,31,307,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -537,6 +644,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a8d6f770e3b1eb29fce843172c187ccc6_cgraph.png" border="0" usemap="#selection_request_8cpp_a8d6f770e3b1eb29fce843172c187ccc6_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a8d6f770e3b1eb29fce843172c187ccc6_cgraph" id="selection_request_8cpp_a8d6f770e3b1eb29fce843172c187ccc6_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="384,5,476,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#ab12a404eefae07281e8d1273ca3fc447" title="Rückgabe einzelner Ergebnisse. " alt="" coords="189,31,336,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -616,6 +732,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a851bc3e6b04b4dfaa359b43534a37cd5_cgraph.png" border="0" usemap="#selection_request_8cpp_a851bc3e6b04b4dfaa359b43534a37cd5_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a851bc3e6b04b4dfaa359b43534a37cd5_cgraph" id="selection_request_8cpp_a851bc3e6b04b4dfaa359b43534a37cd5_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="458,5,549,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="247,31,410,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -660,6 +785,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_aba13caf613af9f91f2a2f1a8f9d49967_cgraph.png" border="0" usemap="#selection_request_8cpp_aba13caf613af9f91f2a2f1a8f9d49967_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_aba13caf613af9f91f2a2f1a8f9d49967_cgraph" id="selection_request_8cpp_aba13caf613af9f91f2a2f1a8f9d49967_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="363,5,455,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="153,31,315,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -729,6 +863,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a41392b97718c999af4867dc0c62ade0c_cgraph.png" border="0" usemap="#selection_request_8cpp_a41392b97718c999af4867dc0c62ade0c_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a41392b97718c999af4867dc0c62ade0c_cgraph" id="selection_request_8cpp_a41392b97718c999af4867dc0c62ade0c_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="366,5,457,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="155,31,318,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -794,6 +937,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a54c70afd3e6ad75085ddf6aff29abe87_cgraph.png" border="0" usemap="#selection_request_8cpp_a54c70afd3e6ad75085ddf6aff29abe87_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a54c70afd3e6ad75085ddf6aff29abe87_cgraph" id="selection_request_8cpp_a54c70afd3e6ad75085ddf6aff29abe87_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="372,5,464,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="162,31,324,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -873,6 +1025,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a5e60ce2e53b91725f89c66539e5bd73d_cgraph.png" border="0" usemap="#selection_request_8cpp_a5e60ce2e53b91725f89c66539e5bd73d_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a5e60ce2e53b91725f89c66539e5bd73d_cgraph" id="selection_request_8cpp_a5e60ce2e53b91725f89c66539e5bd73d_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="422,5,514,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="212,31,374,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -932,6 +1093,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_ac3a0a9620e1b5ac8c90104b1daea4f5f_cgraph.png" border="0" usemap="#selection_request_8cpp_ac3a0a9620e1b5ac8c90104b1daea4f5f_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_ac3a0a9620e1b5ac8c90104b1daea4f5f_cgraph" id="selection_request_8cpp_ac3a0a9620e1b5ac8c90104b1daea4f5f_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="331,5,423,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="121,31,283,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1000,6 +1170,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_aa0d6684a1d4f8e82d699b713e38c9d44_cgraph.png" border="0" usemap="#selection_request_8cpp_aa0d6684a1d4f8e82d699b713e38c9d44_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_aa0d6684a1d4f8e82d699b713e38c9d44_cgraph" id="selection_request_8cpp_aa0d6684a1d4f8e82d699b713e38c9d44_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="375,5,466,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="164,31,327,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1070,6 +1249,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a85d81ccc1d4c2b8cb7edcfe0a5a585f5_cgraph.png" border="0" usemap="#selection_request_8cpp_a85d81ccc1d4c2b8cb7edcfe0a5a585f5_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a85d81ccc1d4c2b8cb7edcfe0a5a585f5_cgraph" id="selection_request_8cpp_a85d81ccc1d4c2b8cb7edcfe0a5a585f5_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="366,5,458,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="156,31,318,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1141,6 +1329,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a80ced4bb0e929e97740616c59374d992_cgraph.png" border="0" usemap="#selection_request_8cpp_a80ced4bb0e929e97740616c59374d992_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a80ced4bb0e929e97740616c59374d992_cgraph" id="selection_request_8cpp_a80ced4bb0e929e97740616c59374d992_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="344,5,436,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="134,31,296,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1221,6 +1418,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a94c57cf58c1b2812e3d1ce9b3837286d_cgraph.png" border="0" usemap="#selection_request_8cpp_a94c57cf58c1b2812e3d1ce9b3837286d_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a94c57cf58c1b2812e3d1ce9b3837286d_cgraph" id="selection_request_8cpp_a94c57cf58c1b2812e3d1ce9b3837286d_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="437,5,528,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="227,31,389,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1279,6 +1485,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_ae4c9217024bfe521a229e0b4162e5ef7_cgraph.png" border="0" usemap="#selection_request_8cpp_ae4c9217024bfe521a229e0b4162e5ef7_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_ae4c9217024bfe521a229e0b4162e5ef7_cgraph" id="selection_request_8cpp_ae4c9217024bfe521a229e0b4162e5ef7_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="381,5,473,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="171,31,333,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1352,6 +1567,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a39f437d3c3c841e8a82b9ad1b514007e_cgraph.png" border="0" usemap="#selection_request_8cpp_a39f437d3c3c841e8a82b9ad1b514007e_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a39f437d3c3c841e8a82b9ad1b514007e_cgraph" id="selection_request_8cpp_a39f437d3c3c841e8a82b9ad1b514007e_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="420,5,512,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="210,31,372,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1423,6 +1647,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_aab8b32ae4ac6aeddc5c05578b4c79ace_cgraph.png" border="0" usemap="#selection_request_8cpp_aab8b32ae4ac6aeddc5c05578b4c79ace_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_aab8b32ae4ac6aeddc5c05578b4c79ace_cgraph" id="selection_request_8cpp_aab8b32ae4ac6aeddc5c05578b4c79ace_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="365,5,457,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="155,31,317,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1466,6 +1699,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_aedcd1503abb6715de26a92d34714dcce_cgraph.png" border="0" usemap="#selection_request_8cpp_aedcd1503abb6715de26a92d34714dcce_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_aedcd1503abb6715de26a92d34714dcce_cgraph" id="selection_request_8cpp_aedcd1503abb6715de26a92d34714dcce_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="343,5,434,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="132,31,295,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1533,6 +1775,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_aff2cca0ae3f40a8b3ec70e85702bb8fc_cgraph.png" border="0" usemap="#selection_request_8cpp_aff2cca0ae3f40a8b3ec70e85702bb8fc_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_aff2cca0ae3f40a8b3ec70e85702bb8fc_cgraph" id="selection_request_8cpp_aff2cca0ae3f40a8b3ec70e85702bb8fc_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="375,5,467,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="165,31,327,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1585,6 +1836,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a6a41ec41130fdce3f2c4dd701438f26a_cgraph.png" border="0" usemap="#selection_request_8cpp_a6a41ec41130fdce3f2c4dd701438f26a_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a6a41ec41130fdce3f2c4dd701438f26a_cgraph" id="selection_request_8cpp_a6a41ec41130fdce3f2c4dd701438f26a_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="361,5,453,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#ab12a404eefae07281e8d1273ca3fc447" title="Rückgabe einzelner Ergebnisse. " alt="" coords="166,31,313,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1637,6 +1897,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a9f37b58ba921dc5e6b5d4a5d0fefe28e_cgraph.png" border="0" usemap="#selection_request_8cpp_a9f37b58ba921dc5e6b5d4a5d0fefe28e_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a9f37b58ba921dc5e6b5d4a5d0fefe28e_cgraph" id="selection_request_8cpp_a9f37b58ba921dc5e6b5d4a5d0fefe28e_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="347,5,439,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="137,31,299,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1687,6 +1956,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a3ac5ebbcfb624dc5178315c85c4b15fa_cgraph.png" border="0" usemap="#selection_request_8cpp_a3ac5ebbcfb624dc5178315c85c4b15fa_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a3ac5ebbcfb624dc5178315c85c4b15fa_cgraph" id="selection_request_8cpp_a3ac5ebbcfb624dc5178315c85c4b15fa_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="380,5,472,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="170,31,332,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1746,6 +2024,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a90eb635de3f1856a45557b42f18eff28_cgraph.png" border="0" usemap="#selection_request_8cpp_a90eb635de3f1856a45557b42f18eff28_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a90eb635de3f1856a45557b42f18eff28_cgraph" id="selection_request_8cpp_a90eb635de3f1856a45557b42f18eff28_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="359,5,451,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="149,31,311,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1797,6 +2084,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a519933061d4010c3a8d743b7e9fa9939_cgraph.png" border="0" usemap="#selection_request_8cpp_a519933061d4010c3a8d743b7e9fa9939_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a519933061d4010c3a8d743b7e9fa9939_cgraph" id="selection_request_8cpp_a519933061d4010c3a8d743b7e9fa9939_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="415,5,507,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#ab12a404eefae07281e8d1273ca3fc447" title="Rückgabe einzelner Ergebnisse. " alt="" coords="220,31,367,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1868,48 +2164,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
-
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a94269766ff6e39ba8a38f5623314c3cd_cgraph.png" border="0" usemap="#selection_request_8cpp_a94269766ff6e39ba8a38f5623314c3cd_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a94269766ff6e39ba8a38f5623314c3cd_cgraph" id="selection_request_8cpp_a94269766ff6e39ba8a38f5623314c3cd_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="409,5,500,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="198,31,361,56"/>
+</map>
 </div>
-</div>
-<a id="a51d8bd3191c8ab6e4acdc8053a05a3f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51d8bd3191c8ab6e4acdc8053a05a3f5">&#9670;&nbsp;</a></span>sqlCommand()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void sqlCommand </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>sqlCommand</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>commandType</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Benutzereigener SQL-Befehl. </p>
-<p>Die Methode "sqlCommand" gibt einen vom Nutzer eingegebenen String(SQL Befehl) direkt weiter zum SQL Server, zu dem wird der Befehlstyp unterschieden. Es wird zwischen 3 Befehlstypen unterschieden: Query -&gt; simple Abfrage an den SQL Server feedback-&gt; zeigt den Inhalt einer Spalte an feedbackAll-&gt; zeigt die komplette Tabelle mit Spaltenbezeichnugen an</p>
-<dl class="params"><dt>Parameter</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">sqlCommand</td><td>= enthält dem vom Nutzer eingegebenen String der später als SQL Befehl fungiert </td></tr>
-    <tr><td class="paramname">commandType</td><td>= enhält dem vom Nutzer gewählten Befehlstyp</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
-<p>Boolean als return </p><dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
-<dd>
-Steffen Extra </dd></dl>
 
 </div>
 </div>
@@ -1954,6 +2217,15 @@ Steffen Extra </dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8cpp_a1bde570da9c90a3d0f6e94bc1b06c5e3_cgraph.png" border="0" usemap="#selection_request_8cpp_a1bde570da9c90a3d0f6e94bc1b06c5e3_cgraph" alt=""/></div>
+<map name="selection_request_8cpp_a1bde570da9c90a3d0f6e94bc1b06c5e3_cgraph" id="selection_request_8cpp_a1bde570da9c90a3d0f6e94bc1b06c5e3_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="355,5,446,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="144,31,307,56"/>
+</map>
+</div>
 
 </div>
 </div>

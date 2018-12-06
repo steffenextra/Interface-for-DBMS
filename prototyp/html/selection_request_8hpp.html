@@ -96,14 +96,33 @@ $(document).ready(function(){initNavTree('selection_request_8hpp.html','');});
 <code>#include &quot;<a class="el" href="connection_8hpp_source.html">connection.hpp</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include-Abhängigkeitsdiagramm für selectionRequest.hpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8hpp__incl.png" border="0" usemap="#selection_request_8hpp" alt=""/></div>
+<map name="selection_request_8hpp" id="selection_request_8hpp">
+<area shape="rect" id="node4" href="connection_8hpp.html" title="connection.hpp" alt="" coords="150,79,262,104"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Dieser Graph zeigt, welche Datei direkt oder indirekt diese Datei enthält:</div>
+<div class="dyncontent">
+<div class="center"><img src="selection_request_8hpp__dep__incl.png" border="0" usemap="#selection_request_8hppdep" alt=""/></div>
+<map name="selection_request_8hppdep" id="selection_request_8hppdep">
+<area shape="rect" id="node2" href="sqllib_8hpp.html" title="sqllib.hpp" alt="" coords="45,79,123,104"/>
+<area shape="rect" id="node5" href="selection_request_8cpp.html" title="selectionRequest.cpp" alt="" coords="147,79,296,104"/>
+<area shape="rect" id="node3" href="gui_8cpp.html" title="gui.cpp" alt="" coords="5,152,70,177"/>
+<area shape="rect" id="node4" href="main_8cpp.html" title="main.cpp" alt="" coords="93,152,169,177"/>
+</map>
+</div>
 </div>
 <p><a href="selection_request_8hpp_source.html">gehe zum Quellcode dieser Datei</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Funktionen</h2></td></tr>
-<tr class="memitem:a51d8bd3191c8ab6e4acdc8053a05a3f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="selection_request_8hpp.html#a51d8bd3191c8ab6e4acdc8053a05a3f5">sqlCommand</a> (std::string sqlCommand, std::string commandType)</td></tr>
-<tr class="memdesc:a51d8bd3191c8ab6e4acdc8053a05a3f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Benutzereigener SQL-Befehl.  <a href="#a51d8bd3191c8ab6e4acdc8053a05a3f5">Mehr ...</a><br /></td></tr>
-<tr class="separator:a51d8bd3191c8ab6e4acdc8053a05a3f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1909c1b8666cf6e3d31a014c9a9ad2d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="selection_request_8hpp.html#a1909c1b8666cf6e3d31a014c9a9ad2d7">ownCommand</a> (std::string sqlCommand, std::string commandType)</td></tr>
+<tr class="memdesc:a1909c1b8666cf6e3d31a014c9a9ad2d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Benutzereigener SQL-Befehl.  <a href="#a1909c1b8666cf6e3d31a014c9a9ad2d7">Mehr ...</a><br /></td></tr>
+<tr class="separator:a1909c1b8666cf6e3d31a014c9a9ad2d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80ced4bb0e929e97740616c59374d992"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="selection_request_8hpp.html#a80ced4bb0e929e97740616c59374d992">selectLike</a> (std::string tableName, std::vector&lt; std::string &gt;columns, std::string toSearchColumn, std::string pattern, std::string toSearch)</td></tr>
 <tr class="memdesc:a80ced4bb0e929e97740616c59374d992"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suche nach Muster.  <a href="#a80ced4bb0e929e97740616c59374d992">Mehr ...</a><br /></td></tr>
 <tr class="separator:a80ced4bb0e929e97740616c59374d992"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,6 +207,48 @@ Funktionen</h2></td></tr>
 <tr class="separator:a41392b97718c999af4867dc0c62ade0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Dokumentation der Funktionen</h2>
+<a id="a1909c1b8666cf6e3d31a014c9a9ad2d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1909c1b8666cf6e3d31a014c9a9ad2d7">&#9670;&nbsp;</a></span>ownCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ownCommand </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>sqlCommand</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>commandType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Benutzereigener SQL-Befehl. </p>
+<p>Die Methode "sqlCommand" gibt einen vom Nutzer eingegebenen String(SQL Befehl) direkt weiter zum SQL Server, zu dem wird der Befehlstyp unterschieden. Es wird zwischen 3 Befehlstypen unterschieden: Query -&gt; simple Abfrage an den SQL Server feedback-&gt; zeigt den Inhalt einer Spalte an feedbackAll-&gt; zeigt die komplette Tabelle mit Spaltenbezeichnugen an</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sqlCommand</td><td>= enthält dem vom Nutzer eingegebenen String der später als SQL Befehl fungiert </td></tr>
+    <tr><td class="paramname">commandType</td><td>= enhält dem vom Nutzer gewählten Befehlstyp</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
+<p>Boolean als return </p><dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
+<dd>
+Steffen Extra </dd></dl>
+
+</div>
+</div>
 <a id="a01bd0062142a17ad04b7101bac7b38b6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a01bd0062142a17ad04b7101bac7b38b6">&#9670;&nbsp;</a></span>selectAverageSum()</h2>
 
@@ -1845,48 +1906,6 @@ Steffen Extra </dd></dl>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
-<dd>
-Steffen Extra </dd></dl>
-
-</div>
-</div>
-<a id="a51d8bd3191c8ab6e4acdc8053a05a3f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51d8bd3191c8ab6e4acdc8053a05a3f5">&#9670;&nbsp;</a></span>sqlCommand()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void sqlCommand </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>sqlCommand</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>commandType</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Benutzereigener SQL-Befehl. </p>
-<p>Die Methode "sqlCommand" gibt einen vom Nutzer eingegebenen String(SQL Befehl) direkt weiter zum SQL Server, zu dem wird der Befehlstyp unterschieden. Es wird zwischen 3 Befehlstypen unterschieden: Query -&gt; simple Abfrage an den SQL Server feedback-&gt; zeigt den Inhalt einer Spalte an feedbackAll-&gt; zeigt die komplette Tabelle mit Spaltenbezeichnugen an</p>
-<dl class="params"><dt>Parameter</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">sqlCommand</td><td>= enthält dem vom Nutzer eingegebenen String der später als SQL Befehl fungiert </td></tr>
-    <tr><td class="paramname">commandType</td><td>= enhält dem vom Nutzer gewählten Befehlstyp</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
-<p>Boolean als return </p><dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
 <dd>
 Steffen Extra </dd></dl>
 

@@ -10,7 +10,7 @@
 #include <iostream>
 #include <vector>
 
-void sqlCommand(std::string sqlCommand,std::string commandType);
+void ownCommand(std::string sqlCommand,std::string commandType);
 void selectLike(std::string tableName,std::vector<std::string>columns,std::string toSearchColumn,std::string pattern,std::string toSearch);
 void selectNotLike(std::string tableName,std::vector<std::string>columns,std::string toSearchColumn,std::string pattern,std::string toSearch);
 void selectMinOrMax(std::string tableName,std::string minOrMax,std::string minOrMaxColumn,std::string aliasColumn);

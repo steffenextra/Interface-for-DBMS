@@ -18,6 +18,7 @@ var sqllib_8hpp =
     [ "getAllColumn", "sqllib_8hpp.html#aceb780082d3f7392e485cac394d6c606", null ],
     [ "modifierColumnName", "sqllib_8hpp.html#a244b10b3b373f8a174943176101a480f", null ],
     [ "modifierEntry", "sqllib_8hpp.html#ab254b5514a4950c7479bc4d513c438dc", null ],
+    [ "ownCommand", "sqllib_8hpp.html#a1909c1b8666cf6e3d31a014c9a9ad2d7", null ],
     [ "renameDatabase", "sqllib_8hpp.html#a0659d93a42f84756e52155eb333c4fec", null ],
     [ "renameTable", "sqllib_8hpp.html#a526b049a888b2a4a1332a10540689afd", null ],
     [ "selectAverageSum", "sqllib_8hpp.html#a01bd0062142a17ad04b7101bac7b38b6", null ],
@@ -56,6 +57,5 @@ var sqllib_8hpp =
     [ "showColumnTyp", "sqllib_8hpp.html#addc31570307c41c7327c3da4886ae7bf", null ],
     [ "showDatabases", "sqllib_8hpp.html#a812cc82c697df37c6a8a482f85972b4b", null ],
     [ "showTable", "sqllib_8hpp.html#a22fbeb7f18a00bafd4864de51a3bca28", null ],
-    [ "sqlCommand", "sqllib_8hpp.html#a51d8bd3191c8ab6e4acdc8053a05a3f5", null ],
     [ "unionSelect", "sqllib_8hpp.html#a1bde570da9c90a3d0f6e94bc1b06c5e3", null ]
 ];

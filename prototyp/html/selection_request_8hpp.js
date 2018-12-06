@@ -1,5 +1,6 @@
 var selection_request_8hpp =
 [
+    [ "ownCommand", "selection_request_8hpp.html#a1909c1b8666cf6e3d31a014c9a9ad2d7", null ],
     [ "selectAverageSum", "selection_request_8hpp.html#a01bd0062142a17ad04b7101bac7b38b6", null ],
     [ "selectBetween", "selection_request_8hpp.html#aaa15591ca7a3ba5d40fa77b7ae6753db", null ],
     [ "selectColumnsAlias", "selection_request_8hpp.html#a0bd3f475ec96949ae94bbbbec41f7725", null ],
@@ -27,6 +28,5 @@ var selection_request_8hpp =
     [ "selectWhereBool", "selection_request_8hpp.html#a0c986e9aa0e2d7e080ba5eb294a1182e", null ],
     [ "selectWhereOneColumn", "selection_request_8hpp.html#a519933061d4010c3a8d743b7e9fa9939", null ],
     [ "selectWhereOrderBy", "selection_request_8hpp.html#a94269766ff6e39ba8a38f5623314c3cd", null ],
-    [ "sqlCommand", "selection_request_8hpp.html#a51d8bd3191c8ab6e4acdc8053a05a3f5", null ],
     [ "unionSelect", "selection_request_8hpp.html#a1bde570da9c90a3d0f6e94bc1b06c5e3", null ]
 ];

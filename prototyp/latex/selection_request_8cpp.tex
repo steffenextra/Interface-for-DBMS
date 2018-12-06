@@ -1,10 +1,17 @@
 \section{selection\+Request.\+cpp-\/\+Dateireferenz}
 \label{selection_request_8cpp}\index{selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 {\ttfamily \#include \char`\"{}selection\+Request.\+hpp\char`\"{}}\newline
+Include-\/\+Abhängigkeitsdiagramm für selection\+Request.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp__incl}
+\end{center}
+\end{figure}
 \subsection*{Funktionen}
 \begin{DoxyCompactItemize}
 \item 
-void \textbf{ sql\+Command} (std\+::string sql\+Command, std\+::string command\+Type)
+void \textbf{ own\+Command} (std\+::string sql\+Command, std\+::string command\+Type)
 \begin{DoxyCompactList}\small\item\em Benutzereigener S\+Q\+L-\/\+Befehl. \end{DoxyCompactList}\item 
 void \textbf{ select\+Like} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string to\+Search\+Column, std\+::string pattern, std\+::string to\+Search)
 \begin{DoxyCompactList}\small\item\em Suche nach Muster. \end{DoxyCompactList}\item 
@@ -65,6 +72,40 @@ void \textbf{ select\+Full\+Join} (std\+::string first\+Table\+Name, std\+::stri
 
 
 \subsection{Dokumentation der Funktionen}
+\mbox{\label{selection_request_8cpp_a1909c1b8666cf6e3d31a014c9a9ad2d7}} 
+\index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!own\+Command@{own\+Command}}
+\index{own\+Command@{own\+Command}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
+\subsubsection{own\+Command()}
+{\footnotesize\ttfamily void own\+Command (\begin{DoxyParamCaption}\item[{std\+::string}]{sql\+Command,  }\item[{std\+::string}]{command\+Type }\end{DoxyParamCaption})}
+
+
+
+Benutzereigener S\+Q\+L-\/\+Befehl. 
+
+Die Methode \char`\"{}sql\+Command\char`\"{} gibt einen vom Nutzer eingegebenen String(\+S\+Q\+L Befehl) direkt weiter zum S\+QL Server, zu dem wird der Befehlstyp unterschieden. Es wird zwischen 3 Befehlstypen unterschieden\+: Query -\/$>$ simple Abfrage an den S\+QL Server feedback-\/$>$ zeigt den Inhalt einer Spalte an feedback\+All-\/$>$ zeigt die komplette Tabelle mit Spaltenbezeichnugen an
+
+
+\begin{DoxyParams}{Parameter}
+{\em sql\+Command} & = enthält dem vom Nutzer eingegebenen String der später als S\+QL Befehl fungiert \\
+\hline
+{\em command\+Type} & = enhält dem vom Nutzer gewählten Befehlstyp\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+Boolean als return \begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a1909c1b8666cf6e3d31a014c9a9ad2d7_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_a01bd0062142a17ad04b7101bac7b38b6}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Average\+Sum@{select\+Average\+Sum}}
 \index{select\+Average\+Sum@{select\+Average\+Sum}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -95,6 +136,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a01bd0062142a17ad04b7101bac7b38b6_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_aaa15591ca7a3ba5d40fa77b7ae6753db}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Between@{select\+Between}}
 \index{select\+Between@{select\+Between}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -138,6 +186,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_aaa15591ca7a3ba5d40fa77b7ae6753db_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_a9ad9be1bbff160a127715440afafb800}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Bool@{select\+Bool}}
 \index{select\+Bool@{select\+Bool}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -183,6 +238,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a9ad9be1bbff160a127715440afafb800_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_a0bd3f475ec96949ae94bbbbec41f7725}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Columns\+Alias@{select\+Columns\+Alias}}
 \index{select\+Columns\+Alias@{select\+Columns\+Alias}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -214,6 +276,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a0bd3f475ec96949ae94bbbbec41f7725_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_a00f071477f164f70927ee9923dd77a39}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Count@{select\+Count}}
 \index{select\+Count@{select\+Count}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -248,6 +317,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a00f071477f164f70927ee9923dd77a39_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_a8d6f770e3b1eb29fce843172c187ccc6}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Count\+Distinct@{select\+Count\+Distinct}}
 \index{select\+Count\+Distinct@{select\+Count\+Distinct}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -278,6 +354,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a8d6f770e3b1eb29fce843172c187ccc6_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_a851bc3e6b04b4dfaa359b43534a37cd5}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Count\+Group\+By\+Order\+By@{select\+Count\+Group\+By\+Order\+By}}
 \index{select\+Count\+Group\+By\+Order\+By@{select\+Count\+Group\+By\+Order\+By}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -318,6 +401,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a851bc3e6b04b4dfaa359b43534a37cd5_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_aba13caf613af9f91f2a2f1a8f9d49967}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Distinct@{select\+Distinct}}
 \index{select\+Distinct@{select\+Distinct}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -348,6 +438,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_aba13caf613af9f91f2a2f1a8f9d49967_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_a41392b97718c999af4867dc0c62ade0c}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Full\+Join@{select\+Full\+Join}}
 \index{select\+Full\+Join@{select\+Full\+Join}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -388,6 +485,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a41392b97718c999af4867dc0c62ade0c_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_a54c70afd3e6ad75085ddf6aff29abe87}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Group\+By@{select\+Group\+By}}
 \index{select\+Group\+By@{select\+Group\+By}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -424,6 +528,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a54c70afd3e6ad75085ddf6aff29abe87_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_a5e60ce2e53b91725f89c66539e5bd73d}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Group\+By\+Order\+By@{select\+Group\+By\+Order\+By}}
 \index{select\+Group\+By\+Order\+By@{select\+Group\+By\+Order\+By}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -464,6 +575,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a5e60ce2e53b91725f89c66539e5bd73d_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_ac3a0a9620e1b5ac8c90104b1daea4f5f}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+In@{select\+In}}
 \index{select\+In@{select\+In}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -499,6 +617,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_ac3a0a9620e1b5ac8c90104b1daea4f5f_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_aa0d6684a1d4f8e82d699b713e38c9d44}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Inner\+Join@{select\+Inner\+Join}}
 \index{select\+Inner\+Join@{select\+Inner\+Join}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -538,6 +663,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_aa0d6684a1d4f8e82d699b713e38c9d44_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_a85d81ccc1d4c2b8cb7edcfe0a5a585f5}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Left\+Join@{select\+Left\+Join}}
 \index{select\+Left\+Join@{select\+Left\+Join}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -579,6 +711,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a85d81ccc1d4c2b8cb7edcfe0a5a585f5_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_a80ced4bb0e929e97740616c59374d992}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Like@{select\+Like}}
 \index{select\+Like@{select\+Like}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -621,6 +760,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a80ced4bb0e929e97740616c59374d992_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_a94c57cf58c1b2812e3d1ce9b3837286d}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Limit\+Where\+Order\+By@{select\+Limit\+Where\+Order\+By}}
 \index{select\+Limit\+Where\+Order\+By@{select\+Limit\+Where\+Order\+By}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -662,6 +808,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a94c57cf58c1b2812e3d1ce9b3837286d_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_ae4c9217024bfe521a229e0b4162e5ef7}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Min\+Or\+Max@{select\+Min\+Or\+Max}}
 \index{select\+Min\+Or\+Max@{select\+Min\+Or\+Max}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -696,6 +849,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_ae4c9217024bfe521a229e0b4162e5ef7_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_a39f437d3c3c841e8a82b9ad1b514007e}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Min\+Or\+Max\+Where@{select\+Min\+Or\+Max\+Where}}
 \index{select\+Min\+Or\+Max\+Where@{select\+Min\+Or\+Max\+Where}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -735,6 +895,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a39f437d3c3c841e8a82b9ad1b514007e_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_aab8b32ae4ac6aeddc5c05578b4c79ace}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Not\+Like@{select\+Not\+Like}}
 \index{select\+Not\+Like@{select\+Not\+Like}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -777,6 +944,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_aab8b32ae4ac6aeddc5c05578b4c79ace_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_aedcd1503abb6715de26a92d34714dcce}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Null@{select\+Null}}
 \index{select\+Null@{select\+Null}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -806,6 +980,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_aedcd1503abb6715de26a92d34714dcce_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_aff2cca0ae3f40a8b3ec70e85702bb8fc}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Right\+Join@{select\+Right\+Join}}
 \index{select\+Right\+Join@{select\+Right\+Join}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -841,6 +1022,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_aff2cca0ae3f40a8b3ec70e85702bb8fc_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_a6a41ec41130fdce3f2c4dd701438f26a}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Sort\+Table@{select\+Sort\+Table}}
 \index{select\+Sort\+Table@{select\+Sort\+Table}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -874,6 +1062,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a6a41ec41130fdce3f2c4dd701438f26a_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_a9f37b58ba921dc5e6b5d4a5d0fefe28e}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Sum@{select\+Sum}}
 \index{select\+Sum@{select\+Sum}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -907,6 +1102,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a9f37b58ba921dc5e6b5d4a5d0fefe28e_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_a3ac5ebbcfb624dc5178315c85c4b15fa}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Table\+Alias@{select\+Table\+Alias}}
 \index{select\+Table\+Alias@{select\+Table\+Alias}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -938,6 +1140,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a3ac5ebbcfb624dc5178315c85c4b15fa_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_a90eb635de3f1856a45557b42f18eff28}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Where@{select\+Where}}
 \index{select\+Where@{select\+Where}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -973,6 +1182,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a90eb635de3f1856a45557b42f18eff28_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_a519933061d4010c3a8d743b7e9fa9939}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Where\+One\+Column@{select\+Where\+One\+Column}}
 \index{select\+Where\+One\+Column@{select\+Where\+One\+Column}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -1005,6 +1221,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a519933061d4010c3a8d743b7e9fa9939_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_a94269766ff6e39ba8a38f5623314c3cd}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Where\+Order\+By@{select\+Where\+Order\+By}}
 \index{select\+Where\+Order\+By@{select\+Where\+Order\+By}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -1042,33 +1265,13 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
-\mbox{\label{selection_request_8cpp_a51d8bd3191c8ab6e4acdc8053a05a3f5}} 
-\index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!sql\+Command@{sql\+Command}}
-\index{sql\+Command@{sql\+Command}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
-\subsubsection{sql\+Command()}
-{\footnotesize\ttfamily void sql\+Command (\begin{DoxyParamCaption}\item[{std\+::string}]{sql\+Command,  }\item[{std\+::string}]{command\+Type }\end{DoxyParamCaption})}
-
-
-
-Benutzereigener S\+Q\+L-\/\+Befehl. 
-
-Die Methode \char`\"{}sql\+Command\char`\"{} gibt einen vom Nutzer eingegebenen String(\+S\+Q\+L Befehl) direkt weiter zum S\+QL Server, zu dem wird der Befehlstyp unterschieden. Es wird zwischen 3 Befehlstypen unterschieden\+: Query -\/$>$ simple Abfrage an den S\+QL Server feedback-\/$>$ zeigt den Inhalt einer Spalte an feedback\+All-\/$>$ zeigt die komplette Tabelle mit Spaltenbezeichnugen an
-
-
-\begin{DoxyParams}{Parameter}
-{\em sql\+Command} & = enthält dem vom Nutzer eingegebenen String der später als S\+QL Befehl fungiert \\
-\hline
-{\em command\+Type} & = enhält dem vom Nutzer gewählten Befehlstyp\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Rückgabe}
-void
-\end{DoxyReturn}
-Boolean als return \begin{DoxyAuthor}{Autor}
-Martin Meyer 
-
-Steffen Extra 
-\end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a94269766ff6e39ba8a38f5623314c3cd_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{selection_request_8cpp_a1bde570da9c90a3d0f6e94bc1b06c5e3}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!union\+Select@{union\+Select}}
 \index{union\+Select@{union\+Select}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
@@ -1099,3 +1302,10 @@ Martin Meyer
 
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8cpp_a1bde570da9c90a3d0f6e94bc1b06c5e3_cgraph}
+\end{center}
+\end{figure}

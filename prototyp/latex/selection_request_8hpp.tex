@@ -5,10 +5,24 @@
 {\ttfamily \#include \char`\"{}connection.\+hpp\char`\"{}}\newline
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$vector$>$}\newline
+Include-\/\+Abhängigkeitsdiagramm für selection\+Request.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{selection_request_8hpp__incl}
+\end{center}
+\end{figure}
+Dieser Graph zeigt, welche Datei direkt oder indirekt diese Datei enthält\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{selection_request_8hpp__dep__incl}
+\end{center}
+\end{figure}
 \subsection*{Funktionen}
 \begin{DoxyCompactItemize}
 \item 
-void \textbf{ sql\+Command} (std\+::string sql\+Command, std\+::string command\+Type)
+void \textbf{ own\+Command} (std\+::string sql\+Command, std\+::string command\+Type)
 \begin{DoxyCompactList}\small\item\em Benutzereigener S\+Q\+L-\/\+Befehl. \end{DoxyCompactList}\item 
 void \textbf{ select\+Like} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string to\+Search\+Column, std\+::string pattern, std\+::string to\+Search)
 \begin{DoxyCompactList}\small\item\em Suche nach Muster. \end{DoxyCompactList}\item 
@@ -69,6 +83,33 @@ void \textbf{ select\+Full\+Join} (std\+::string first\+Table\+Name, std\+::stri
 
 
 \subsection{Dokumentation der Funktionen}
+\mbox{\label{selection_request_8hpp_a1909c1b8666cf6e3d31a014c9a9ad2d7}} 
+\index{selection\+Request.\+hpp@{selection\+Request.\+hpp}!own\+Command@{own\+Command}}
+\index{own\+Command@{own\+Command}!selection\+Request.\+hpp@{selection\+Request.\+hpp}}
+\subsubsection{own\+Command()}
+{\footnotesize\ttfamily void own\+Command (\begin{DoxyParamCaption}\item[{std\+::string}]{sql\+Command,  }\item[{std\+::string}]{command\+Type }\end{DoxyParamCaption})}
+
+
+
+Benutzereigener S\+Q\+L-\/\+Befehl. 
+
+Die Methode \char`\"{}sql\+Command\char`\"{} gibt einen vom Nutzer eingegebenen String(\+S\+Q\+L Befehl) direkt weiter zum S\+QL Server, zu dem wird der Befehlstyp unterschieden. Es wird zwischen 3 Befehlstypen unterschieden\+: Query -\/$>$ simple Abfrage an den S\+QL Server feedback-\/$>$ zeigt den Inhalt einer Spalte an feedback\+All-\/$>$ zeigt die komplette Tabelle mit Spaltenbezeichnugen an
+
+
+\begin{DoxyParams}{Parameter}
+{\em sql\+Command} & = enthält dem vom Nutzer eingegebenen String der später als S\+QL Befehl fungiert \\
+\hline
+{\em command\+Type} & = enhält dem vom Nutzer gewählten Befehlstyp\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+Boolean als return \begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
 \mbox{\label{selection_request_8hpp_a01bd0062142a17ad04b7101bac7b38b6}} 
 \index{selection\+Request.\+hpp@{selection\+Request.\+hpp}!select\+Average\+Sum@{select\+Average\+Sum}}
 \index{select\+Average\+Sum@{select\+Average\+Sum}!selection\+Request.\+hpp@{selection\+Request.\+hpp}}
@@ -1003,33 +1044,6 @@ S\+Q\+L-\/\+Befehl für A\+SC\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+
 void
 \end{DoxyReturn}
 \begin{DoxyAuthor}{Autor}
-Martin Meyer 
-
-Steffen Extra 
-\end{DoxyAuthor}
-\mbox{\label{selection_request_8hpp_a51d8bd3191c8ab6e4acdc8053a05a3f5}} 
-\index{selection\+Request.\+hpp@{selection\+Request.\+hpp}!sql\+Command@{sql\+Command}}
-\index{sql\+Command@{sql\+Command}!selection\+Request.\+hpp@{selection\+Request.\+hpp}}
-\subsubsection{sql\+Command()}
-{\footnotesize\ttfamily void sql\+Command (\begin{DoxyParamCaption}\item[{std\+::string}]{sql\+Command,  }\item[{std\+::string}]{command\+Type }\end{DoxyParamCaption})}
-
-
-
-Benutzereigener S\+Q\+L-\/\+Befehl. 
-
-Die Methode \char`\"{}sql\+Command\char`\"{} gibt einen vom Nutzer eingegebenen String(\+S\+Q\+L Befehl) direkt weiter zum S\+QL Server, zu dem wird der Befehlstyp unterschieden. Es wird zwischen 3 Befehlstypen unterschieden\+: Query -\/$>$ simple Abfrage an den S\+QL Server feedback-\/$>$ zeigt den Inhalt einer Spalte an feedback\+All-\/$>$ zeigt die komplette Tabelle mit Spaltenbezeichnugen an
-
-
-\begin{DoxyParams}{Parameter}
-{\em sql\+Command} & = enthält dem vom Nutzer eingegebenen String der später als S\+QL Befehl fungiert \\
-\hline
-{\em command\+Type} & = enhält dem vom Nutzer gewählten Befehlstyp\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Rückgabe}
-void
-\end{DoxyReturn}
-Boolean als return \begin{DoxyAuthor}{Autor}
 Martin Meyer 
 
 Steffen Extra 

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['whenpushed',['whenPushed',['../gui_8cpp.html#aa0976691d9932853389991b8459ebd85',1,'whenPushed(Fl_Widget *w, void *):&#160;gui.cpp'],['../gui_8hpp.html#aa0976691d9932853389991b8459ebd85',1,'whenPushed(Fl_Widget *w, void *):&#160;gui.cpp']]]
+  ['unionselect',['unionSelect',['../selection_request_8cpp.html#a1bde570da9c90a3d0f6e94bc1b06c5e3',1,'unionSelect(std::vector&lt; std::string &gt; tableName, std::vector&lt; std::string &gt; columnName):&#160;selectionRequest.cpp'],['../selection_request_8hpp.html#a1bde570da9c90a3d0f6e94bc1b06c5e3',1,'unionSelect(std::vector&lt; std::string &gt; tableName, std::vector&lt; std::string &gt; columnName):&#160;selectionRequest.cpp'],['../sqllib_8hpp.html#a1bde570da9c90a3d0f6e94bc1b06c5e3',1,'unionSelect(std::vector&lt; std::string &gt; tableName, std::vector&lt; std::string &gt; columnName):&#160;selectionRequest.cpp']]]
 ];
