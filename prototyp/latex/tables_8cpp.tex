@@ -1,0 +1,279 @@
+\section{tables.\+cpp-\/\+Dateireferenz}
+\label{tables_8cpp}\index{tables.\+cpp@{tables.\+cpp}}
+{\ttfamily \#include \char`\"{}tables.\+hpp\char`\"{}}\newline
+\subsection*{Funktionen}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ create\+Table} (bool primary\+\_\+key, bool foreign\+\_\+key, std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns)
+\begin{DoxyCompactList}\small\item\em Erstellen einer Tabelle. \end{DoxyCompactList}\item 
+void \textbf{ show\+Table} (std\+::string table\+Name)
+\begin{DoxyCompactList}\small\item\em Ausgabe der Tabelle. \end{DoxyCompactList}\item 
+void \textbf{ rename\+Table} (std\+::string tablename, std\+::string new\+Table\+Name)
+\begin{DoxyCompactList}\small\item\em Änderung des Tabellennamens. \end{DoxyCompactList}\item 
+void \textbf{ delete\+Table} (std\+::string table\+Name)
+\begin{DoxyCompactList}\small\item\em Löschen einer Tabelle. \end{DoxyCompactList}\item 
+void \textbf{ set\+Column} (std\+::string table\+Name, std\+::string Column\+Name, std\+::string datatype)
+\begin{DoxyCompactList}\small\item\em Bearbeiten der Spalten in einer Tabelle. \end{DoxyCompactList}\item 
+void \textbf{ set\+Column\+With\+Primary} (std\+::string table\+Name, std\+::string Column\+Name, std\+::string datatype, bool autoinc)
+\begin{DoxyCompactList}\small\item\em Setzen des Primärschlüssels. \end{DoxyCompactList}\item 
+void \textbf{ modifier\+Column\+Name} (std\+::string table\+Name, std\+::string old\+Column\+Name, std\+::string new\+Column\+Name, std\+::string datatype)
+\begin{DoxyCompactList}\small\item\em Modifizieren des Spaltennamens. \end{DoxyCompactList}\item 
+void \textbf{ change\+The\+Datatype} (std\+::string table\+Name, std\+::string column\+Name, std\+::string datatype)
+\item 
+void \textbf{ get\+All\+Column} (std\+::string table\+Name)
+\item 
+void \textbf{ count\+Datasets} (std\+::string table\+Name)
+\item 
+void \textbf{ show\+Column\+Typ} (std\+::string table\+Name, std\+::string datatype)
+\item 
+void \textbf{ delete\+Column} (std\+::string table\+Name, std\+::string column\+Name)
+\item 
+void \textbf{ set\+Secondary\+Key} (std\+::string table\+Name\+Secondary, std\+::string foreign\+Key, std\+::string table\+Name\+Primary, std\+::string primary\+Key, std\+::string constraint)
+\item 
+void \textbf{ delete\+Constraint} (std\+::string table\+Name, std\+::string constraint)
+\item 
+void \textbf{ delete\+Secondary\+Key} (std\+::string table\+Name, std\+::string constraint)
+\item 
+void \textbf{ set\+Primary\+Key} (std\+::string table\+Name, std\+::string primary\+Key)
+\item 
+void \textbf{ delete\+Primary\+Key} (std\+::string table\+Name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentation der Funktionen}
+\mbox{\label{tables_8cpp_aef4d6b8ba9c38e5f1b459694421ad9e5}} 
+\index{tables.\+cpp@{tables.\+cpp}!change\+The\+Datatype@{change\+The\+Datatype}}
+\index{change\+The\+Datatype@{change\+The\+Datatype}!tables.\+cpp@{tables.\+cpp}}
+\subsubsection{change\+The\+Datatype()}
+{\footnotesize\ttfamily void change\+The\+Datatype (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name,  }\item[{std\+::string}]{datatype }\end{DoxyParamCaption})}
+
+\mbox{\label{tables_8cpp_ad2178bf4577d7eea6caebd8d1c942088}} 
+\index{tables.\+cpp@{tables.\+cpp}!count\+Datasets@{count\+Datasets}}
+\index{count\+Datasets@{count\+Datasets}!tables.\+cpp@{tables.\+cpp}}
+\subsubsection{count\+Datasets()}
+{\footnotesize\ttfamily void count\+Datasets (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
+
+\mbox{\label{tables_8cpp_a6bd46ec08e83f28ae60e1d235d9d2659}} 
+\index{tables.\+cpp@{tables.\+cpp}!create\+Table@{create\+Table}}
+\index{create\+Table@{create\+Table}!tables.\+cpp@{tables.\+cpp}}
+\subsubsection{create\+Table()}
+{\footnotesize\ttfamily void create\+Table (\begin{DoxyParamCaption}\item[{bool}]{primary\+\_\+key,  }\item[{bool}]{foreign\+\_\+key,  }\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns }\end{DoxyParamCaption})}
+
+
+
+Erstellen einer Tabelle. 
+
+Die Methode dient zum erstellen einer Tabelle in einer vorgegebenen Datenbank. ~\newline
+ Zu beachten ist hier, dass direkt bei der Übergabe von Parametern der Primärschlüssel, sowie der Sekundärschlüssel gesetzt werden kann. ~\newline
+
+
+
+\begin{DoxyParams}{Parameter}
+{\em primary\+\_\+key} & = Lässt das automatische setzten des Primärschlüssels zu \\
+\hline
+{\em foreign\+\_\+key} & = Lässt das automatische setzen des Sekundärschlüssels zu \\
+\hline
+{\em table\+Name} & = Gibt den Namen der zu erstellenden Tabelle an \\
+\hline
+{\em columns} & = Der Programmierer kann über einen Vektor den Namen der Spalten sowie die Anzahl der Spalten bestimmen\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
+\mbox{\label{tables_8cpp_aa3b10ab46a5fb3caa76745e084685e76}} 
+\index{tables.\+cpp@{tables.\+cpp}!delete\+Column@{delete\+Column}}
+\index{delete\+Column@{delete\+Column}!tables.\+cpp@{tables.\+cpp}}
+\subsubsection{delete\+Column()}
+{\footnotesize\ttfamily void delete\+Column (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name }\end{DoxyParamCaption})}
+
+\mbox{\label{tables_8cpp_ae62b61e29ea8b6010ae2463f80598460}} 
+\index{tables.\+cpp@{tables.\+cpp}!delete\+Constraint@{delete\+Constraint}}
+\index{delete\+Constraint@{delete\+Constraint}!tables.\+cpp@{tables.\+cpp}}
+\subsubsection{delete\+Constraint()}
+{\footnotesize\ttfamily void delete\+Constraint (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{constraint }\end{DoxyParamCaption})}
+
+\mbox{\label{tables_8cpp_a36d0f9bb1b86a8155d7551fcd014b4da}} 
+\index{tables.\+cpp@{tables.\+cpp}!delete\+Primary\+Key@{delete\+Primary\+Key}}
+\index{delete\+Primary\+Key@{delete\+Primary\+Key}!tables.\+cpp@{tables.\+cpp}}
+\subsubsection{delete\+Primary\+Key()}
+{\footnotesize\ttfamily void delete\+Primary\+Key (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
+
+\mbox{\label{tables_8cpp_aee892818f06208ce4b68fb7598a7494c}} 
+\index{tables.\+cpp@{tables.\+cpp}!delete\+Secondary\+Key@{delete\+Secondary\+Key}}
+\index{delete\+Secondary\+Key@{delete\+Secondary\+Key}!tables.\+cpp@{tables.\+cpp}}
+\subsubsection{delete\+Secondary\+Key()}
+{\footnotesize\ttfamily void delete\+Secondary\+Key (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{constraint }\end{DoxyParamCaption})}
+
+\mbox{\label{tables_8cpp_a9754762b2c19711bf3dcbfceca61d97d}} 
+\index{tables.\+cpp@{tables.\+cpp}!delete\+Table@{delete\+Table}}
+\index{delete\+Table@{delete\+Table}!tables.\+cpp@{tables.\+cpp}}
+\subsubsection{delete\+Table()}
+{\footnotesize\ttfamily void delete\+Table (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
+
+
+
+Löschen einer Tabelle. 
+
+Durch das Übergeben des Tabellennamens wird die angegebene Tabelle mit dessen Inhalt gelöscht
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
+\mbox{\label{tables_8cpp_aceb780082d3f7392e485cac394d6c606}} 
+\index{tables.\+cpp@{tables.\+cpp}!get\+All\+Column@{get\+All\+Column}}
+\index{get\+All\+Column@{get\+All\+Column}!tables.\+cpp@{tables.\+cpp}}
+\subsubsection{get\+All\+Column()}
+{\footnotesize\ttfamily void get\+All\+Column (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
+
+\mbox{\label{tables_8cpp_a244b10b3b373f8a174943176101a480f}} 
+\index{tables.\+cpp@{tables.\+cpp}!modifier\+Column\+Name@{modifier\+Column\+Name}}
+\index{modifier\+Column\+Name@{modifier\+Column\+Name}!tables.\+cpp@{tables.\+cpp}}
+\subsubsection{modifier\+Column\+Name()}
+{\footnotesize\ttfamily void modifier\+Column\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{old\+Column\+Name,  }\item[{std\+::string}]{new\+Column\+Name,  }\item[{std\+::string}]{datatype }\end{DoxyParamCaption})}
+
+
+
+Modifizieren des Spaltennamens. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
+\mbox{\label{tables_8cpp_a526b049a888b2a4a1332a10540689afd}} 
+\index{tables.\+cpp@{tables.\+cpp}!rename\+Table@{rename\+Table}}
+\index{rename\+Table@{rename\+Table}!tables.\+cpp@{tables.\+cpp}}
+\subsubsection{rename\+Table()}
+{\footnotesize\ttfamily void rename\+Table (\begin{DoxyParamCaption}\item[{std\+::string}]{tablename,  }\item[{std\+::string}]{new\+Table\+Name }\end{DoxyParamCaption})}
+
+
+
+Änderung des Tabellennamens. 
+
+Sollte der Fall eintreten, dass Tabellennamen mit ihrem Inhalt nicht mehr übereinstimmen oder eine Umstrukturierung eintritt, kann über diese Methode der Tabellenname innerhalb einer Datenbank geändert werden.
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Angabe des zu ersetzenden Tabellennamens \\
+\hline
+{\em new\+Table\+Name} & = Angabe des neuen Tabellennamens\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
+\mbox{\label{tables_8cpp_a7c4575b6ed6eb203c2796930c41ed555}} 
+\index{tables.\+cpp@{tables.\+cpp}!set\+Column@{set\+Column}}
+\index{set\+Column@{set\+Column}!tables.\+cpp@{tables.\+cpp}}
+\subsubsection{set\+Column()}
+{\footnotesize\ttfamily void set\+Column (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{Column\+Name,  }\item[{std\+::string}]{datatype }\end{DoxyParamCaption})}
+
+
+
+Bearbeiten der Spalten in einer Tabelle. 
+
+Über diese Methoden können einzelne Spalten zu einer Tabelle hinzugefügt werden ~\newline
+ Zu beachten ist, dass über diese Methode kein Schlüssel gesetzt werden kann ~\newline
+
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em Column\+Name} & = Name der Spalte die hinzugefügt werden soll \\
+\hline
+{\em datatype} & = Angabe des Datentyps bezogen auf die Spalte \begin{DoxyVerb}@return void 
+
+@author Steffen Extra\end{DoxyVerb}
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\label{tables_8cpp_a4605e656585a77253f0940725b97ad04}} 
+\index{tables.\+cpp@{tables.\+cpp}!set\+Column\+With\+Primary@{set\+Column\+With\+Primary}}
+\index{set\+Column\+With\+Primary@{set\+Column\+With\+Primary}!tables.\+cpp@{tables.\+cpp}}
+\subsubsection{set\+Column\+With\+Primary()}
+{\footnotesize\ttfamily void set\+Column\+With\+Primary (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{Column\+Name,  }\item[{std\+::string}]{datatype,  }\item[{bool}]{autoinc }\end{DoxyParamCaption})}
+
+
+
+Setzen des Primärschlüssels. 
+
+Durch diese Methode kann nachträglich der Primärschlüssel zu einer Spalte hinzugefügt werden. ~\newline
+ Zudem kann hier entschieden werden, ob die Spalte mit dem Primärschlüssel direkt die A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+N\+T-\/\+Funktion nutzen soll oder über eigene Werte definiert wird.
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em Column\+Name} & = Name der Spalte \\
+\hline
+{\em datatype} & = Datentyp der Spalte \\
+\hline
+{\em autoinc} & = Boolean um zwischen A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT und eigener Wertzuweisung zu wechseln \begin{DoxyVerb}@return void
+
+@author Steffen Extra\end{DoxyVerb}
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\label{tables_8cpp_aac2797835afcf68b73ba522e7bb91f5f}} 
+\index{tables.\+cpp@{tables.\+cpp}!set\+Primary\+Key@{set\+Primary\+Key}}
+\index{set\+Primary\+Key@{set\+Primary\+Key}!tables.\+cpp@{tables.\+cpp}}
+\subsubsection{set\+Primary\+Key()}
+{\footnotesize\ttfamily void set\+Primary\+Key (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{primary\+Key }\end{DoxyParamCaption})}
+
+\mbox{\label{tables_8cpp_a4aca01f302c4488d661196653d8f6c28}} 
+\index{tables.\+cpp@{tables.\+cpp}!set\+Secondary\+Key@{set\+Secondary\+Key}}
+\index{set\+Secondary\+Key@{set\+Secondary\+Key}!tables.\+cpp@{tables.\+cpp}}
+\subsubsection{set\+Secondary\+Key()}
+{\footnotesize\ttfamily void set\+Secondary\+Key (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name\+Secondary,  }\item[{std\+::string}]{foreign\+Key,  }\item[{std\+::string}]{table\+Name\+Primary,  }\item[{std\+::string}]{primary\+Key,  }\item[{std\+::string}]{constraint }\end{DoxyParamCaption})}
+
+\mbox{\label{tables_8cpp_addc31570307c41c7327c3da4886ae7bf}} 
+\index{tables.\+cpp@{tables.\+cpp}!show\+Column\+Typ@{show\+Column\+Typ}}
+\index{show\+Column\+Typ@{show\+Column\+Typ}!tables.\+cpp@{tables.\+cpp}}
+\subsubsection{show\+Column\+Typ()}
+{\footnotesize\ttfamily void show\+Column\+Typ (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{datatype }\end{DoxyParamCaption})}
+
+\mbox{\label{tables_8cpp_a22fbeb7f18a00bafd4864de51a3bca28}} 
+\index{tables.\+cpp@{tables.\+cpp}!show\+Table@{show\+Table}}
+\index{show\+Table@{show\+Table}!tables.\+cpp@{tables.\+cpp}}
+\subsubsection{show\+Table()}
+{\footnotesize\ttfamily void show\+Table (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
+
+
+
+Ausgabe der Tabelle. 
+
+Diese Methode dient zur Ausgabe des kompletten Tabelleninhalts innerhalb einer Datenbank.
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Übergibt den Namen der auszugebenden Tabelle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}

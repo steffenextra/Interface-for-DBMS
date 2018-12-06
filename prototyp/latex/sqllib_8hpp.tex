@@ -1,0 +1,592 @@
+\section{sqllib.\+hpp-\/\+Dateireferenz}
+\label{sqllib_8hpp}\index{sqllib.\+hpp@{sqllib.\+hpp}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}connection.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}database.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tables.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}entry.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}selection\+Request.\+hpp\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\subsection*{Funktionen}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ check\+\_\+error} (void)
+\item 
+void \textbf{ connection\+\_\+feedback} (std\+::string \textbf{ sql\+Command})
+\item 
+void \textbf{ connection\+\_\+query} (std\+::string sqlcommand)
+\item 
+void \textbf{ connectionless} (const char $\ast$host, const char $\ast$user, const char $\ast$passwort, const char $\ast$db, unsigned int port, const char $\ast$unix\+\_\+socket, unsigned int client\+\_\+flag)
+\item 
+void \textbf{ disconnect} ()
+\item 
+void \textbf{ create\+Database} (std\+::string database\+Name)
+\item 
+void \textbf{ show\+Databases} ()
+\item 
+void \textbf{ rename\+Database} (std\+::string database\+Name, std\+::string new\+Database\+Name)
+\item 
+void \textbf{ delete\+Database} (std\+::string database\+Name)
+\item 
+void \textbf{ create\+Table} (bool primary\+\_\+key, std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns)
+\item 
+void \textbf{ show\+Table} (std\+::string table\+Name)
+\begin{DoxyCompactList}\small\item\em Ausgabe der Tabelle. \end{DoxyCompactList}\item 
+void \textbf{ rename\+Table} (std\+::string tablename, std\+::string new\+Table\+Name)
+\begin{DoxyCompactList}\small\item\em Änderung des Tabellennamens. \end{DoxyCompactList}\item 
+void \textbf{ delete\+Table} (std\+::string table\+Name)
+\begin{DoxyCompactList}\small\item\em Löschen einer Tabelle. \end{DoxyCompactList}\item 
+void \textbf{ set\+Column} (std\+::string table\+Name, std\+::string Column\+Name, std\+::string datatype)
+\begin{DoxyCompactList}\small\item\em Bearbeiten der Spalten in einer Tabelle. \end{DoxyCompactList}\item 
+void \textbf{ set\+Column\+With\+Primary} (std\+::string table\+Name, std\+::string Column\+Name, std\+::string datatype, bool autoinc)
+\begin{DoxyCompactList}\small\item\em Setzen des Primärschlüssels. \end{DoxyCompactList}\item 
+void \textbf{ modifier\+Column\+Name} (std\+::string table\+Name, std\+::string old\+Column\+Name, std\+::string new\+Column\+Name, std\+::string datatype)
+\begin{DoxyCompactList}\small\item\em Modifizieren des Spaltennamens. \end{DoxyCompactList}\item 
+void \textbf{ change\+The\+Datatype} (std\+::string table\+Name, std\+::string column\+Name, std\+::string datatype)
+\item 
+void \textbf{ get\+All\+Column} (std\+::string table\+Name)
+\item 
+void \textbf{ count\+Datasets} (std\+::string table\+Name)
+\item 
+void \textbf{ show\+Column\+Typ} (std\+::string table\+Name, std\+::string datatype)
+\item 
+void \textbf{ delete\+Column} (std\+::string table\+Name, std\+::string column\+Name)
+\item 
+void \textbf{ set\+Secondary\+Key} (std\+::string table\+Name\+Secondary, std\+::string foreign\+Key, std\+::string table\+Name\+Primary, std\+::string primary\+Key, std\+::string constraint)
+\item 
+void \textbf{ delete\+Secondary\+Key} (std\+::string table\+Name, std\+::string constraint)
+\item 
+void \textbf{ set\+Primary\+Key} (std\+::string table\+Name, std\+::string primary\+Key)
+\item 
+void \textbf{ delete\+Primary\+Key} (std\+::string table\+Name)
+\item 
+void \textbf{ set\+Entry} (std\+::string table\+Name, std\+::string column\+Name, std\+::string entry)
+\item 
+void \textbf{ modifier\+Entry} (std\+::string table\+Name, std\+::string column\+Name, std\+::string old\+Entry, std\+::string new\+Entry)
+\item 
+void \textbf{ set\+All\+Entry} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ \textbf{ row})
+\item 
+void \textbf{ delete\+Entry} (std\+::string table\+Name, std\+::string column\+Name, std\+::string condition)
+\item 
+void \textbf{ sql\+Command} (std\+::string sql\+Command, std\+::string command\+Type)
+\item 
+void \textbf{ select\+Like} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string to\+Search\+Column, std\+::string pattern, std\+::string to\+Search)
+\item 
+void \textbf{ select\+Not\+Like} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string to\+Search\+Column, std\+::string pattern, std\+::string to\+Search)
+\item 
+void \textbf{ select\+Min\+Or\+Max} (std\+::string table\+Name, std\+::string min\+Or\+Max, std\+::string min\+Or\+Max\+Column, std\+::string alias\+Column)
+\item 
+void \textbf{ select\+Min\+Or\+Max\+Where} (std\+::string table\+Name, std\+::string min\+Or\+Max, std\+::string min\+Or\+Max\+Column, std\+::string alias\+Column, std\+::string condition\+Column, std\+::string condition\+Value)
+\item 
+void \textbf{ select\+Limit\+Where\+Order\+By} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns, std\+::string limit\+Number, std\+::string condition\+Column, std\+::string condition\+Value, std\+::string to\+Sort\+Column\+Name, std\+::string sort\+By)
+\item 
+void \textbf{ select\+Where\+One\+Column} (std\+::string table\+Name, std\+::string condition\+Column, std\+::string condition\+Value)
+\item 
+void \textbf{ select\+Where} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns, std\+::string condition\+Column, std\+::string condition\+Value)
+\item 
+void \textbf{ select\+Where\+Bool} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns, std\+::vector$<$ std\+::string $>$conditions, std\+::vector$<$ std\+::string $>$condition\+Value, std\+::vector$<$ std\+::string $>$ conditions2, std\+::vector$<$ std\+::string $>$condition\+Value2, std\+::vector$<$ std\+::string $>$operators)
+\item 
+void \textbf{ select\+Where\+Order\+By} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns, std\+::string condition\+Column, std\+::string condition\+Value, std\+::string to\+Sortcolumn\+Name, std\+::string sort\+By)
+\item 
+void \textbf{ select\+Sort\+Table} (std\+::string table\+Name, std\+::string to\+Sort\+Column\+Name, std\+::string sort\+By)
+\item 
+void \textbf{ select\+Count} (std\+::string table\+Name, std\+::string count\+Column, std\+::string alias\+Column\+Name)
+\item 
+void \textbf{ select\+Distinct} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns)
+\item 
+void \textbf{ select\+Count\+Distinct} (std\+::string table\+Name, std\+::string count\+Column)
+\item 
+void \textbf{ select\+Average\+Sum} (std\+::string table\+Name, std\+::string column\+Name)
+\item 
+void \textbf{ select\+Sum} (std\+::string table\+Name, std\+::string column\+Name, std\+::string alias\+Column\+Name)
+\item 
+void \textbf{ union\+Select} (std\+::vector$<$ std\+::string $>$ table\+Name, std\+::vector$<$ std\+::string $>$ column\+Name)
+\item 
+void \textbf{ select\+In} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string search\+In\+Column, std\+::vector$<$ std\+::string $>$condition\+Value)
+\item 
+void \textbf{ select\+Between} (std\+::string condition\+String, std\+::string condition\+String\+Two, std\+::string table\+Name, std\+::string condition\+Column, std\+::string condition\+Column\+Two, std\+::string condition, std\+::string condition\+Two)
+\item 
+void \textbf{ select\+Columns\+Alias} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::vector$<$ std\+::string $>$aliases)
+\item 
+void \textbf{ select\+Table\+Alias} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string alias\+Table\+Name)
+\item 
+void \textbf{ select\+Group\+By} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string condition\+Column, std\+::string condition\+Value, std\+::vector$<$ std\+::string $>$group\+By\+Columns)
+\item 
+void \textbf{ select\+Group\+By\+Order\+By} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string condition\+Column, std\+::string condition\+Value, std\+::vector$<$ std\+::string $>$group\+By\+Columns, std\+::string to\+Sortcolumn\+Name, std\+::string sort\+By)
+\item 
+void \textbf{ select\+Count\+Group\+By\+Order\+By} (std\+::string table\+Name, std\+::string count\+Column, std\+::vector$<$ std\+::string $>$columns, std\+::string condition\+Column, std\+::string condition\+Value, std\+::vector$<$ std\+::string $>$group\+By\+Columns, std\+::string sort\+By)
+\item 
+void \textbf{ select\+Null} (std\+::string table\+Name, std\+::string column\+Name)
+\item 
+void \textbf{ select\+Inner\+Join} (std\+::string first\+Table\+Name, std\+::string column\+I\+D\+Table\+One, std\+::vector$<$ std\+::string $>$ columns\+Table\+One, std\+::string second\+Table\+Name, std\+::vector$<$ std\+::string $>$ columns\+Table\+Two)
+\item 
+void \textbf{ select\+Left\+Join} (std\+::string first\+Table\+Name, std\+::string column\+I\+D\+Table\+One, std\+::vector$<$ std\+::string $>$ columns\+Table\+One, std\+::string second\+Table\+Name, std\+::vector$<$ std\+::string $>$ columns\+Table\+Two)
+\item 
+void \textbf{ select\+Right\+Join} (std\+::string first\+Table\+Name, std\+::string column\+I\+D\+Table\+One, std\+::vector$<$ std\+::string $>$ columns\+Table\+One, std\+::string second\+Table\+Name, std\+::vector$<$ std\+::string $>$ columns\+Table\+Two)
+\item 
+void \textbf{ select\+Full\+Join} (std\+::string first\+Table\+Name, std\+::string column\+I\+D\+Table\+One, std\+::vector$<$ std\+::string $>$ columns\+Table\+One, std\+::string second\+Table\+Name, std\+::vector$<$ std\+::string $>$ columns\+Table\+Two)
+\end{DoxyCompactItemize}
+
+
+\subsection{Dokumentation der Funktionen}
+\mbox{\label{sqllib_8hpp_aef4d6b8ba9c38e5f1b459694421ad9e5}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!change\+The\+Datatype@{change\+The\+Datatype}}
+\index{change\+The\+Datatype@{change\+The\+Datatype}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{change\+The\+Datatype()}
+{\footnotesize\ttfamily void change\+The\+Datatype (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name,  }\item[{std\+::string}]{datatype }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a33fd832a9e1a27bddb7d9837a2dcf2f1}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!check\+\_\+error@{check\+\_\+error}}
+\index{check\+\_\+error@{check\+\_\+error}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{check\+\_\+error()}
+{\footnotesize\ttfamily void check\+\_\+error (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_ab12a404eefae07281e8d1273ca3fc447}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!connection\+\_\+feedback@{connection\+\_\+feedback}}
+\index{connection\+\_\+feedback@{connection\+\_\+feedback}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{connection\+\_\+feedback()}
+{\footnotesize\ttfamily void connection\+\_\+feedback (\begin{DoxyParamCaption}\item[{std\+::string}]{sql\+Command }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a83d389dd4406da88cf16f7736e012537}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!connection\+\_\+query@{connection\+\_\+query}}
+\index{connection\+\_\+query@{connection\+\_\+query}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{connection\+\_\+query()}
+{\footnotesize\ttfamily void connection\+\_\+query (\begin{DoxyParamCaption}\item[{std\+::string}]{sqlcommand }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a76ac4f4e873cad05bcaa10a8b7e048ce}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!connectionless@{connectionless}}
+\index{connectionless@{connectionless}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{connectionless()}
+{\footnotesize\ttfamily void connectionless (\begin{DoxyParamCaption}\item[{const char $\ast$}]{host,  }\item[{const char $\ast$}]{user,  }\item[{const char $\ast$}]{passwort,  }\item[{const char $\ast$}]{db,  }\item[{unsigned int}]{port,  }\item[{const char $\ast$}]{unix\+\_\+socket,  }\item[{unsigned int}]{client\+\_\+flag }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_ad2178bf4577d7eea6caebd8d1c942088}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!count\+Datasets@{count\+Datasets}}
+\index{count\+Datasets@{count\+Datasets}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{count\+Datasets()}
+{\footnotesize\ttfamily void count\+Datasets (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_abf48eb274e662a7de3f5f190d126b765}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!create\+Database@{create\+Database}}
+\index{create\+Database@{create\+Database}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{create\+Database()}
+{\footnotesize\ttfamily void create\+Database (\begin{DoxyParamCaption}\item[{std\+::string}]{database\+Name }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a018659fc814b4a097c4b4862f42fe554}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!create\+Table@{create\+Table}}
+\index{create\+Table@{create\+Table}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{create\+Table()}
+{\footnotesize\ttfamily void create\+Table (\begin{DoxyParamCaption}\item[{bool}]{primary\+\_\+key,  }\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_aa3b10ab46a5fb3caa76745e084685e76}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!delete\+Column@{delete\+Column}}
+\index{delete\+Column@{delete\+Column}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{delete\+Column()}
+{\footnotesize\ttfamily void delete\+Column (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a1d1fac4a7c1506f81908532050a8e58f}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!delete\+Database@{delete\+Database}}
+\index{delete\+Database@{delete\+Database}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{delete\+Database()}
+{\footnotesize\ttfamily void delete\+Database (\begin{DoxyParamCaption}\item[{std\+::string}]{database\+Name }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a1ea4c59c6377c754fd0264b58f476685}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!delete\+Entry@{delete\+Entry}}
+\index{delete\+Entry@{delete\+Entry}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{delete\+Entry()}
+{\footnotesize\ttfamily void delete\+Entry (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name,  }\item[{std\+::string}]{condition }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a36d0f9bb1b86a8155d7551fcd014b4da}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!delete\+Primary\+Key@{delete\+Primary\+Key}}
+\index{delete\+Primary\+Key@{delete\+Primary\+Key}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{delete\+Primary\+Key()}
+{\footnotesize\ttfamily void delete\+Primary\+Key (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_aee892818f06208ce4b68fb7598a7494c}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!delete\+Secondary\+Key@{delete\+Secondary\+Key}}
+\index{delete\+Secondary\+Key@{delete\+Secondary\+Key}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{delete\+Secondary\+Key()}
+{\footnotesize\ttfamily void delete\+Secondary\+Key (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{constraint }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a9754762b2c19711bf3dcbfceca61d97d}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!delete\+Table@{delete\+Table}}
+\index{delete\+Table@{delete\+Table}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{delete\+Table()}
+{\footnotesize\ttfamily void delete\+Table (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
+
+
+
+Löschen einer Tabelle. 
+
+Durch das Übergeben des Tabellennamens wird die angegebene Tabelle mit dessen Inhalt gelöscht
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
+\mbox{\label{sqllib_8hpp_a960705de531a20389fb29928d43258c3}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{disconnect()}
+{\footnotesize\ttfamily void disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_aceb780082d3f7392e485cac394d6c606}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!get\+All\+Column@{get\+All\+Column}}
+\index{get\+All\+Column@{get\+All\+Column}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{get\+All\+Column()}
+{\footnotesize\ttfamily void get\+All\+Column (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a244b10b3b373f8a174943176101a480f}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!modifier\+Column\+Name@{modifier\+Column\+Name}}
+\index{modifier\+Column\+Name@{modifier\+Column\+Name}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{modifier\+Column\+Name()}
+{\footnotesize\ttfamily void modifier\+Column\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{old\+Column\+Name,  }\item[{std\+::string}]{new\+Column\+Name,  }\item[{std\+::string}]{datatype }\end{DoxyParamCaption})}
+
+
+
+Modifizieren des Spaltennamens. 
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
+\mbox{\label{sqllib_8hpp_ab254b5514a4950c7479bc4d513c438dc}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!modifier\+Entry@{modifier\+Entry}}
+\index{modifier\+Entry@{modifier\+Entry}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{modifier\+Entry()}
+{\footnotesize\ttfamily void modifier\+Entry (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name,  }\item[{std\+::string}]{old\+Entry,  }\item[{std\+::string}]{new\+Entry }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a0659d93a42f84756e52155eb333c4fec}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!rename\+Database@{rename\+Database}}
+\index{rename\+Database@{rename\+Database}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{rename\+Database()}
+{\footnotesize\ttfamily void rename\+Database (\begin{DoxyParamCaption}\item[{std\+::string}]{database\+Name,  }\item[{std\+::string}]{new\+Database\+Name }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a526b049a888b2a4a1332a10540689afd}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!rename\+Table@{rename\+Table}}
+\index{rename\+Table@{rename\+Table}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{rename\+Table()}
+{\footnotesize\ttfamily void rename\+Table (\begin{DoxyParamCaption}\item[{std\+::string}]{tablename,  }\item[{std\+::string}]{new\+Table\+Name }\end{DoxyParamCaption})}
+
+
+
+Änderung des Tabellennamens. 
+
+Sollte der Fall eintreten, dass Tabellennamen mit ihrem Inhalt nicht mehr übereinstimmen oder eine Umstrukturierung eintritt, kann über diese Methode der Tabellenname innerhalb einer Datenbank geändert werden.
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Angabe des zu ersetzenden Tabellennamens \\
+\hline
+{\em new\+Table\+Name} & = Angabe des neuen Tabellennamens\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
+\mbox{\label{sqllib_8hpp_a01bd0062142a17ad04b7101bac7b38b6}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Average\+Sum@{select\+Average\+Sum}}
+\index{select\+Average\+Sum@{select\+Average\+Sum}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Average\+Sum()}
+{\footnotesize\ttfamily void select\+Average\+Sum (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_aaa15591ca7a3ba5d40fa77b7ae6753db}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Between@{select\+Between}}
+\index{select\+Between@{select\+Between}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Between()}
+{\footnotesize\ttfamily void select\+Between (\begin{DoxyParamCaption}\item[{std\+::string}]{condition\+String,  }\item[{std\+::string}]{condition\+String\+Two,  }\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Column\+Two,  }\item[{std\+::string}]{condition,  }\item[{std\+::string}]{condition\+Two }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a0bd3f475ec96949ae94bbbbec41f7725}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Columns\+Alias@{select\+Columns\+Alias}}
+\index{select\+Columns\+Alias@{select\+Columns\+Alias}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Columns\+Alias()}
+{\footnotesize\ttfamily void select\+Columns\+Alias (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::vector$<$ std\+::string $>$}]{aliases }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a00f071477f164f70927ee9923dd77a39}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Count@{select\+Count}}
+\index{select\+Count@{select\+Count}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Count()}
+{\footnotesize\ttfamily void select\+Count (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{count\+Column,  }\item[{std\+::string}]{alias\+Column\+Name }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a8d6f770e3b1eb29fce843172c187ccc6}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Count\+Distinct@{select\+Count\+Distinct}}
+\index{select\+Count\+Distinct@{select\+Count\+Distinct}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Count\+Distinct()}
+{\footnotesize\ttfamily void select\+Count\+Distinct (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{count\+Column }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a851bc3e6b04b4dfaa359b43534a37cd5}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Count\+Group\+By\+Order\+By@{select\+Count\+Group\+By\+Order\+By}}
+\index{select\+Count\+Group\+By\+Order\+By@{select\+Count\+Group\+By\+Order\+By}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Count\+Group\+By\+Order\+By()}
+{\footnotesize\ttfamily void select\+Count\+Group\+By\+Order\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{count\+Column,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value,  }\item[{std\+::vector$<$ std\+::string $>$}]{group\+By\+Columns,  }\item[{std\+::string}]{sort\+By }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_aba13caf613af9f91f2a2f1a8f9d49967}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Distinct@{select\+Distinct}}
+\index{select\+Distinct@{select\+Distinct}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Distinct()}
+{\footnotesize\ttfamily void select\+Distinct (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a41392b97718c999af4867dc0c62ade0c}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Full\+Join@{select\+Full\+Join}}
+\index{select\+Full\+Join@{select\+Full\+Join}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Full\+Join()}
+{\footnotesize\ttfamily void select\+Full\+Join (\begin{DoxyParamCaption}\item[{std\+::string}]{first\+Table\+Name,  }\item[{std\+::string}]{column\+I\+D\+Table\+One,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+One,  }\item[{std\+::string}]{second\+Table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+Two }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a54c70afd3e6ad75085ddf6aff29abe87}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Group\+By@{select\+Group\+By}}
+\index{select\+Group\+By@{select\+Group\+By}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Group\+By()}
+{\footnotesize\ttfamily void select\+Group\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value,  }\item[{std\+::vector$<$ std\+::string $>$}]{group\+By\+Columns }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a5e60ce2e53b91725f89c66539e5bd73d}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Group\+By\+Order\+By@{select\+Group\+By\+Order\+By}}
+\index{select\+Group\+By\+Order\+By@{select\+Group\+By\+Order\+By}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Group\+By\+Order\+By()}
+{\footnotesize\ttfamily void select\+Group\+By\+Order\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value,  }\item[{std\+::vector$<$ std\+::string $>$}]{group\+By\+Columns,  }\item[{std\+::string}]{to\+Sortcolumn\+Name,  }\item[{std\+::string}]{sort\+By }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_ac3a0a9620e1b5ac8c90104b1daea4f5f}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+In@{select\+In}}
+\index{select\+In@{select\+In}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+In()}
+{\footnotesize\ttfamily void select\+In (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{search\+In\+Column,  }\item[{std\+::vector$<$ std\+::string $>$}]{condition\+Value }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_aa0d6684a1d4f8e82d699b713e38c9d44}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Inner\+Join@{select\+Inner\+Join}}
+\index{select\+Inner\+Join@{select\+Inner\+Join}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Inner\+Join()}
+{\footnotesize\ttfamily void select\+Inner\+Join (\begin{DoxyParamCaption}\item[{std\+::string}]{first\+Table\+Name,  }\item[{std\+::string}]{column\+I\+D\+Table\+One,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+One,  }\item[{std\+::string}]{second\+Table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+Two }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a85d81ccc1d4c2b8cb7edcfe0a5a585f5}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Left\+Join@{select\+Left\+Join}}
+\index{select\+Left\+Join@{select\+Left\+Join}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Left\+Join()}
+{\footnotesize\ttfamily void select\+Left\+Join (\begin{DoxyParamCaption}\item[{std\+::string}]{first\+Table\+Name,  }\item[{std\+::string}]{column\+I\+D\+Table\+One,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+One,  }\item[{std\+::string}]{second\+Table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+Two }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a80ced4bb0e929e97740616c59374d992}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Like@{select\+Like}}
+\index{select\+Like@{select\+Like}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Like()}
+{\footnotesize\ttfamily void select\+Like (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{to\+Search\+Column,  }\item[{std\+::string}]{pattern,  }\item[{std\+::string}]{to\+Search }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a94c57cf58c1b2812e3d1ce9b3837286d}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Limit\+Where\+Order\+By@{select\+Limit\+Where\+Order\+By}}
+\index{select\+Limit\+Where\+Order\+By@{select\+Limit\+Where\+Order\+By}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Limit\+Where\+Order\+By()}
+{\footnotesize\ttfamily void select\+Limit\+Where\+Order\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{limit\+Number,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value,  }\item[{std\+::string}]{to\+Sort\+Column\+Name,  }\item[{std\+::string}]{sort\+By }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_ae4c9217024bfe521a229e0b4162e5ef7}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Min\+Or\+Max@{select\+Min\+Or\+Max}}
+\index{select\+Min\+Or\+Max@{select\+Min\+Or\+Max}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Min\+Or\+Max()}
+{\footnotesize\ttfamily void select\+Min\+Or\+Max (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{min\+Or\+Max,  }\item[{std\+::string}]{min\+Or\+Max\+Column,  }\item[{std\+::string}]{alias\+Column }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a39f437d3c3c841e8a82b9ad1b514007e}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Min\+Or\+Max\+Where@{select\+Min\+Or\+Max\+Where}}
+\index{select\+Min\+Or\+Max\+Where@{select\+Min\+Or\+Max\+Where}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Min\+Or\+Max\+Where()}
+{\footnotesize\ttfamily void select\+Min\+Or\+Max\+Where (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{min\+Or\+Max,  }\item[{std\+::string}]{min\+Or\+Max\+Column,  }\item[{std\+::string}]{alias\+Column,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_aab8b32ae4ac6aeddc5c05578b4c79ace}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Not\+Like@{select\+Not\+Like}}
+\index{select\+Not\+Like@{select\+Not\+Like}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Not\+Like()}
+{\footnotesize\ttfamily void select\+Not\+Like (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{to\+Search\+Column,  }\item[{std\+::string}]{pattern,  }\item[{std\+::string}]{to\+Search }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_aedcd1503abb6715de26a92d34714dcce}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Null@{select\+Null}}
+\index{select\+Null@{select\+Null}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Null()}
+{\footnotesize\ttfamily void select\+Null (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_aff2cca0ae3f40a8b3ec70e85702bb8fc}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Right\+Join@{select\+Right\+Join}}
+\index{select\+Right\+Join@{select\+Right\+Join}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Right\+Join()}
+{\footnotesize\ttfamily void select\+Right\+Join (\begin{DoxyParamCaption}\item[{std\+::string}]{first\+Table\+Name,  }\item[{std\+::string}]{column\+I\+D\+Table\+One,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+One,  }\item[{std\+::string}]{second\+Table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+Two }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a6a41ec41130fdce3f2c4dd701438f26a}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Sort\+Table@{select\+Sort\+Table}}
+\index{select\+Sort\+Table@{select\+Sort\+Table}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Sort\+Table()}
+{\footnotesize\ttfamily void select\+Sort\+Table (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{to\+Sort\+Column\+Name,  }\item[{std\+::string}]{sort\+By }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a9f37b58ba921dc5e6b5d4a5d0fefe28e}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Sum@{select\+Sum}}
+\index{select\+Sum@{select\+Sum}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Sum()}
+{\footnotesize\ttfamily void select\+Sum (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name,  }\item[{std\+::string}]{alias\+Column\+Name }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a3ac5ebbcfb624dc5178315c85c4b15fa}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Table\+Alias@{select\+Table\+Alias}}
+\index{select\+Table\+Alias@{select\+Table\+Alias}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Table\+Alias()}
+{\footnotesize\ttfamily void select\+Table\+Alias (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{alias\+Table\+Name }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a90eb635de3f1856a45557b42f18eff28}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Where@{select\+Where}}
+\index{select\+Where@{select\+Where}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Where()}
+{\footnotesize\ttfamily void select\+Where (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a0c986e9aa0e2d7e080ba5eb294a1182e}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Where\+Bool@{select\+Where\+Bool}}
+\index{select\+Where\+Bool@{select\+Where\+Bool}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Where\+Bool()}
+{\footnotesize\ttfamily void select\+Where\+Bool (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::vector$<$ std\+::string $>$}]{conditions,  }\item[{std\+::vector$<$ std\+::string $>$}]{condition\+Value,  }\item[{std\+::vector$<$ std\+::string $>$}]{conditions2,  }\item[{std\+::vector$<$ std\+::string $>$}]{condition\+Value2,  }\item[{std\+::vector$<$ std\+::string $>$}]{operators }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a519933061d4010c3a8d743b7e9fa9939}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Where\+One\+Column@{select\+Where\+One\+Column}}
+\index{select\+Where\+One\+Column@{select\+Where\+One\+Column}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Where\+One\+Column()}
+{\footnotesize\ttfamily void select\+Where\+One\+Column (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a94269766ff6e39ba8a38f5623314c3cd}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Where\+Order\+By@{select\+Where\+Order\+By}}
+\index{select\+Where\+Order\+By@{select\+Where\+Order\+By}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{select\+Where\+Order\+By()}
+{\footnotesize\ttfamily void select\+Where\+Order\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value,  }\item[{std\+::string}]{to\+Sortcolumn\+Name,  }\item[{std\+::string}]{sort\+By }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_aeb45ccd70b8692b592754a0886c2d109}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!set\+All\+Entry@{set\+All\+Entry}}
+\index{set\+All\+Entry@{set\+All\+Entry}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{set\+All\+Entry()}
+{\footnotesize\ttfamily void set\+All\+Entry (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{row }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a7c4575b6ed6eb203c2796930c41ed555}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!set\+Column@{set\+Column}}
+\index{set\+Column@{set\+Column}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{set\+Column()}
+{\footnotesize\ttfamily void set\+Column (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{Column\+Name,  }\item[{std\+::string}]{datatype }\end{DoxyParamCaption})}
+
+
+
+Bearbeiten der Spalten in einer Tabelle. 
+
+Über diese Methoden können einzelne Spalten zu einer Tabelle hinzugefügt werden ~\newline
+ Zu beachten ist, dass über diese Methode kein Schlüssel gesetzt werden kann ~\newline
+
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em Column\+Name} & = Name der Spalte die hinzugefügt werden soll \\
+\hline
+{\em datatype} & = Angabe des Datentyps bezogen auf die Spalte \begin{DoxyVerb}@return void 
+
+@author Steffen Extra\end{DoxyVerb}
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\label{sqllib_8hpp_a4605e656585a77253f0940725b97ad04}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!set\+Column\+With\+Primary@{set\+Column\+With\+Primary}}
+\index{set\+Column\+With\+Primary@{set\+Column\+With\+Primary}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{set\+Column\+With\+Primary()}
+{\footnotesize\ttfamily void set\+Column\+With\+Primary (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{Column\+Name,  }\item[{std\+::string}]{datatype,  }\item[{bool}]{autoinc }\end{DoxyParamCaption})}
+
+
+
+Setzen des Primärschlüssels. 
+
+Durch diese Methode kann nachträglich der Primärschlüssel zu einer Spalte hinzugefügt werden. ~\newline
+ Zudem kann hier entschieden werden, ob die Spalte mit dem Primärschlüssel direkt die A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+N\+T-\/\+Funktion nutzen soll oder über eigene Werte definiert wird.
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Name der Tabelle \\
+\hline
+{\em Column\+Name} & = Name der Spalte \\
+\hline
+{\em datatype} & = Datentyp der Spalte \\
+\hline
+{\em autoinc} & = Boolean um zwischen A\+U\+T\+O\+\_\+\+I\+N\+C\+R\+E\+M\+E\+NT und eigener Wertzuweisung zu wechseln \begin{DoxyVerb}@return void
+
+@author Steffen Extra\end{DoxyVerb}
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\label{sqllib_8hpp_a1faab165d9a7dc43808e1a0075e007f9}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!set\+Entry@{set\+Entry}}
+\index{set\+Entry@{set\+Entry}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{set\+Entry()}
+{\footnotesize\ttfamily void set\+Entry (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name,  }\item[{std\+::string}]{entry }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_aac2797835afcf68b73ba522e7bb91f5f}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!set\+Primary\+Key@{set\+Primary\+Key}}
+\index{set\+Primary\+Key@{set\+Primary\+Key}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{set\+Primary\+Key()}
+{\footnotesize\ttfamily void set\+Primary\+Key (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{primary\+Key }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a4aca01f302c4488d661196653d8f6c28}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!set\+Secondary\+Key@{set\+Secondary\+Key}}
+\index{set\+Secondary\+Key@{set\+Secondary\+Key}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{set\+Secondary\+Key()}
+{\footnotesize\ttfamily void set\+Secondary\+Key (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name\+Secondary,  }\item[{std\+::string}]{foreign\+Key,  }\item[{std\+::string}]{table\+Name\+Primary,  }\item[{std\+::string}]{primary\+Key,  }\item[{std\+::string}]{constraint }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_addc31570307c41c7327c3da4886ae7bf}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!show\+Column\+Typ@{show\+Column\+Typ}}
+\index{show\+Column\+Typ@{show\+Column\+Typ}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{show\+Column\+Typ()}
+{\footnotesize\ttfamily void show\+Column\+Typ (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{datatype }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a812cc82c697df37c6a8a482f85972b4b}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!show\+Databases@{show\+Databases}}
+\index{show\+Databases@{show\+Databases}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{show\+Databases()}
+{\footnotesize\ttfamily void show\+Databases (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a22fbeb7f18a00bafd4864de51a3bca28}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!show\+Table@{show\+Table}}
+\index{show\+Table@{show\+Table}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{show\+Table()}
+{\footnotesize\ttfamily void show\+Table (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
+
+
+
+Ausgabe der Tabelle. 
+
+Diese Methode dient zur Ausgabe des kompletten Tabelleninhalts innerhalb einer Datenbank.
+
+
+\begin{DoxyParams}{Parameter}
+{\em table\+Name} & = Übergibt den Namen der auszugebenden Tabelle\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+\end{DoxyAuthor}
+\mbox{\label{sqllib_8hpp_a51d8bd3191c8ab6e4acdc8053a05a3f5}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!sql\+Command@{sql\+Command}}
+\index{sql\+Command@{sql\+Command}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{sql\+Command()}
+{\footnotesize\ttfamily void sql\+Command (\begin{DoxyParamCaption}\item[{std\+::string}]{sql\+Command,  }\item[{std\+::string}]{command\+Type }\end{DoxyParamCaption})}
+
+\mbox{\label{sqllib_8hpp_a1bde570da9c90a3d0f6e94bc1b06c5e3}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!union\+Select@{union\+Select}}
+\index{union\+Select@{union\+Select}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{union\+Select()}
+{\footnotesize\ttfamily void union\+Select (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{column\+Name }\end{DoxyParamCaption})}
+

@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SQL-Library: entry.hpp Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SQL-Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Suchen');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('entry_8hpp_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">entry.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="entry_8hpp.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifdef __APPLE__</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;/usr/local/mysql/include/mysql.h&quot;</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#elif defined __linux__</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;/usr/include/mysql/mysql.h&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="connection_8hpp.html">connection.hpp</a>&quot;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordtype">void</span> <a class="code" href="entry_8hpp.html#a1faab165d9a7dc43808e1a0075e007f9">setEntry</a>(std::string tableName, std::string columnName, std::string entry);</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keywordtype">void</span> <a class="code" href="entry_8hpp.html#ab254b5514a4950c7479bc4d513c438dc">modifierEntry</a>(std::string tableName, std::string columnName, std::string oldEntry,std::string newEntry);</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordtype">void</span> <a class="code" href="entry_8hpp.html#aeb45ccd70b8692b592754a0886c2d109">setAllEntry</a>(std::string tableName,std::vector&lt;std::string&gt; <a class="code" href="connection_8cpp.html#a34269e7c6df16f7d1b6034b9fce28463">row</a>);</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keywordtype">void</span> <a class="code" href="entry_8hpp.html#a490d3fdb8238137f5d9f4a1fecaf2f96">deleteEntry</a>(std::string tableName, std::string columnName, std::string conditiony);</div><div class="ttc" id="entry_8hpp_html_ab254b5514a4950c7479bc4d513c438dc"><div class="ttname"><a href="entry_8hpp.html#ab254b5514a4950c7479bc4d513c438dc">modifierEntry</a></div><div class="ttdeci">void modifierEntry(std::string tableName, std::string columnName, std::string oldEntry, std::string newEntry)</div><div class="ttdef"><b>Definition:</b> entry.cpp:49</div></div>
+<div class="ttc" id="entry_8hpp_html_aeb45ccd70b8692b592754a0886c2d109"><div class="ttname"><a href="entry_8hpp.html#aeb45ccd70b8692b592754a0886c2d109">setAllEntry</a></div><div class="ttdeci">void setAllEntry(std::string tableName, std::vector&lt; std::string &gt; row)</div><div class="ttdef"><b>Definition:</b> entry.cpp:73</div></div>
+<div class="ttc" id="entry_8hpp_html_a1faab165d9a7dc43808e1a0075e007f9"><div class="ttname"><a href="entry_8hpp.html#a1faab165d9a7dc43808e1a0075e007f9">setEntry</a></div><div class="ttdeci">void setEntry(std::string tableName, std::string columnName, std::string entry)</div><div class="ttdef"><b>Definition:</b> entry.cpp:22</div></div>
+<div class="ttc" id="connection_8cpp_html_a34269e7c6df16f7d1b6034b9fce28463"><div class="ttname"><a href="connection_8cpp.html#a34269e7c6df16f7d1b6034b9fce28463">row</a></div><div class="ttdeci">MYSQL_ROW row</div><div class="ttdef"><b>Definition:</b> connection.cpp:4</div></div>
+<div class="ttc" id="entry_8hpp_html_a490d3fdb8238137f5d9f4a1fecaf2f96"><div class="ttname"><a href="entry_8hpp.html#a490d3fdb8238137f5d9f4a1fecaf2f96">deleteEntry</a></div><div class="ttdeci">void deleteEntry(std::string tableName, std::string columnName, std::string conditiony)</div><div class="ttdef"><b>Definition:</b> entry.cpp:116</div></div>
+<div class="ttc" id="connection_8hpp_html"><div class="ttname"><a href="connection_8hpp.html">connection.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="entry_8hpp.html">entry.hpp</a></li>
+    <li class="footer">Erzeugt von
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
+</body>
+</html>
