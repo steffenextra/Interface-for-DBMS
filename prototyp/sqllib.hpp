@@ -1,5 +1,5 @@
-/**! 
- *
+/*! 
+ *  yolo
  * \section intro Introduction
  *
  * This is the introduction.
@@ -10,11 +10,11 @@
  *  
  * etc...
  */
+/**
 
+/def Je nach Betriebssystem wird der Pfad für die mysql-Headerdatei includiert
 
-
-
-
+*/
 #ifdef __APPLE__
 #include "/usr/local/mysql/include/mysql.h"
 #define pathto "/Applications/MAMP/tmp/mysql/mysql.sock"

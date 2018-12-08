@@ -150,7 +150,7 @@ MYSQL_FIELD *field;
 
 	@param host = Name des Hosts
 	@param user = Name des Users
-	@param passwort = benötigtes Password für den Verbindungsaufbau zum SQL-Server
+	@param passwort = benötigtes Passwort für den Verbindungsaufbau zum SQL-Server
 	@param db = Name der Datenbank auf die zugegriffen werden soll
 	@param port = Der zu verwendende Port
 	@param socket = Der zu verwendende Socket

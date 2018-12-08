@@ -28,6 +28,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="logo_home_245x108.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SQL-Library
    </div>
@@ -89,7 +90,19 @@ $(document).ready(function(){initNavTree('index.html','');});
 <div class="title">SQL-Library Dokumentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><p><br />
+ <b> &mdash;Vorwort&mdash; </b></p>
+<p>Selektierung von C++ und der Standard-Bibliothek von MySQL.<br />
+ SQL-Statements können über Methoden und Parameter abgearbeitet werden.<br />
+ Bedienbar entweder über die Konsole und den einfachen Methoden-Aufruf oder über das Interface.<br />
+</p>
+<p><b> &mdash;Install&mdash; </b></p>
+<p>Der Socket für XAMPP auf Linux sowie MAMP auf MacOS wurden bereits implementiert falls diese Bibliothek local genutzt werden soll.<br />
+ Andernfalls muss der Ort an dem der spezifische SQL-Socket clientseitig liegt identifiziert werden um mit dem SQL-Server zu kommunizieren.<br />
+ Für den Verbindungsaufbau wird die connectionless-Methode <a class="el" href="connection_8cpp.html#adda241635377573037e48ec03e645c22" title="Verbindung zur Datenbank auf einem Server. ">connectionless()</a> der connection-Klasse benutzt. <br />
+ <br />
+ </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
