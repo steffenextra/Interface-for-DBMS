@@ -1,8 +1,12 @@
 #include "sqllib.hpp"
 
+/** @brief Variable für die Schnittstelle zum SQL-Server*/
 MYSQL *mysql;
+/** @brief Erhält als Ergebnis einer Reihe von einem Result-Set*/
 MYSQL_ROW row;
+/** @brief Enthält das Ergebnis einer Abfrage vom SQL-Server*/
 MYSQL_RES *result;
+/** @brief Variable für das Aufrufen der Methode mysql_fetch_field() um Datenbankinformationen ausgeben zu lassen */
 MYSQL_FIELD *field;
 
 	/**
@@ -80,26 +84,30 @@ MYSQL_FIELD *field;
 	void connection_feedbackAll(std::string sqlCommand){
 		//printf  substitute -> cout
 		std::cout << std::endl;
-                std::cout <<"\033[1;31m DEBUG : INPUT FOR THE MYSQL_QUERY\033[0m" << std::endl;
-                std::cout << sqlCommand << std::endl;
-                std::cout << std::endl;
+        std::cout <<"\033[1;31m DEBUG : INPUT FOR THE MYSQL_QUERY\033[0m" << std::endl;
+        std::cout << sqlCommand << std::endl;
+        std::cout << std::endl;
+
 		mysql_query(mysql,sqlCommand.c_str());
 		MYSQL_RES *result = mysql_store_result(mysql);
+
 		int num_fields = mysql_num_fields(result);
 
 		if (result == NULL){
 		check_error();
+
 		}
 
-		while ((row = mysql_fetch_row(result))!=NULL)
-		{
-			for(int i = 0; i < num_fields; i++)
-			{
-				if (i == 0)
-				{
-					while(field = mysql_fetch_field(result))
-					{
+		while ((row = mysql_fetch_row(result))!=NULL){
+
+			for(int i = 0; i < num_fields; i++){
+
+				if (i == 0){
+
+					while(field = mysql_fetch_field(result)){
+					
 						printf("%s ", field->name);
+					
 					}
 
 					printf("\n");
@@ -107,10 +115,10 @@ MYSQL_FIELD *field;
 
 				printf("%s  ", row[i] ? row[i] : "NULL");
 			}
+	
 		}
 
 		printf("\n");
-
 		mysql_free_result(result);
 	}
 
@@ -205,6 +213,7 @@ MYSQL_FIELD *field;
 	void disconnect(){
 
 		mysql_close(mysql);
+	
 	}
 
 

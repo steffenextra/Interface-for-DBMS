@@ -1,4 +1,4 @@
-#include "sqllib.hpp"
+#include "selectionRequest.hpp"
 
 
 	/**
@@ -43,11 +43,10 @@
 		if(commandType=="feedbackAll"){
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());
-		}
-
-		else{
+		}else{
 			check_error();
 		}
+	
 	}
 
 	/**
@@ -80,18 +79,17 @@
 	*/
 
 	void selectLike(std::string tableName,std::vector<std::string>columns,std::string toSearchColumn,std::string pattern,std::string toSearch){
+		
 		int i=0;
 		std::string allColumns;
 
 		while(i<columns.size()){
 			if(columns.size()==1){
 				allColumns +=  columns.at(i) + " ";
-			}
-			else{
+			}else{
 				if (i != columns.size()-1){
 					allColumns +=  columns.at(i) + ", ";
-				}
-				else{
+				}else{
 					allColumns +=  columns.at(i) + " ";
 				}
 			}
@@ -126,10 +124,10 @@
 			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + toSearchColumn + "  LIKE " + "'" + toSearch.at(0) + "%" + toSearch.at(1) + "';";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());
-		}
-		else{
+		}else{
 			//exception handling
 		}
+	
 	}
 
 	/**
@@ -162,18 +160,17 @@
 	*/
 
 	void selectNotLike(std::string tableName,std::vector<std::string>columns,std::string toSearchColumn,std::string pattern,std::string toSearch){
+	
 		int i=0;
 		std::string allColumns;
 
 		while(i<columns.size()){
 			if(columns.size()==1){
 				allColumns +=  columns.at(i) + " ";
-			}
-			else{
+			}else{
 				if (i != columns.size()-1){
 					allColumns +=  columns.at(i) + ", ";
-				}
-				else{
+				}else{
 					allColumns +=  columns.at(i) + " ";
 				}
 			}
@@ -208,10 +205,10 @@
 			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + toSearchColumn + " NOT LIKE " + "'" + toSearch.at(0) + "%" + toSearch.at(1) + "';";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());
-		}
-		else{
+		}else{
 			//exception handling
 		}
+	
 	}
 
 	/**
@@ -249,9 +246,7 @@
 			std::string sqlCommand="SELECT MAX(" + minOrMaxColumn +")" + " AS " + aliasColumn + " FROM " +  tableName + ";";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());	
-		}
-
-		else{
+		}else{
 			check_error();
 		}
 
@@ -294,11 +289,10 @@
 			std::string sqlCommand="SELECT MAX(" + minOrMaxColumn +")" +" AS " + aliasColumn + " FROM " +  tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "'" + ";";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());	
-		}
-
-		else{
+		}else{
 			check_error();
 		}
+	
 	}
 
 	/**
@@ -335,12 +329,10 @@
 		while(i<columns.size()){
 			if(columns.size()==1){
 				allColumns +=  columns.at(i) + " ";
-			}
-			else{
+			}else{
 				if (i != columns.size()-1){
 					allColumns +=  columns.at(i) + ", ";
-				}
-				else{
+				}else{
 					allColumns +=  columns.at(i) + " ";
 				}
 			}
@@ -357,11 +349,11 @@
 			std::string sqlCommand="SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "'" + "  ORDER BY " + toSortColumnName + " ASC " + " LIMIT " + limitNumber + ";";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());
-		}
-
-		else{
+	
+		}else{
 			//Exception-Handling
 		}
+	
 	}
 
 	/**
@@ -391,6 +383,7 @@
 		std::string sqlCommand ="SELECT * FROM " + tableName + " WHERE " + conditionColumn + " = " + "'" + conditionValue + "';";
 		check_error();
 		connection_feedback(sqlCommand.c_str());
+	
 	}
 
 	/**
@@ -423,12 +416,10 @@
 		while(i<columns.size()){
 			if(columns.size()==1){
 				allColumns +=  columns.at(i) + " ";
-			}
-			else{
+			}else{
 				if (i != columns.size()-1){
 					allColumns +=  columns.at(i) + ", ";
-				}
-				else{
+				}else{
 					allColumns +=  columns.at(i) + " ";
 				}
 			}
@@ -438,7 +429,9 @@
 		std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "';";
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
+	
 	}
+	
 	/**
 
 	@brief Where-Clause mit mehreren Bedingungen
@@ -477,12 +470,10 @@
 		while(i<columns.size()){
 			if(columns.size()==1){
 				allColumns +=  columns.at(i) + " ";
-			}
-			else{
+			}else{
 				if (i != columns.size()-1){
 					allColumns +=  columns.at(i) + ", ";
-				}
-				else{
+				}else{
 					allColumns +=  columns.at(i) + " ";
 				}
 			}
@@ -501,12 +492,10 @@
 					}
 					if(conditionValue2.at(i).at(0)<=60){
 						conditionOperatorString += " " + conditions.at(i) +  "='" + conditionValue.at(i) + "' " + operators.at(i) + " " + conditions2.at(i) +  "=" + conditionValue2.at(i) + " "  + operators.at(i+1);
-					}
-					else{
+					}else{
 						conditionOperatorString += " " + conditions.at(i) +  "='" + conditionValue.at(i) + "' " + operators.at(i) + " " + conditions2.at(i) +  "='" + conditionValue2.at(i) + "' "  + operators.at(i+1);
 					}
-				}
-				else{
+				}else{
 					if(conditionValue.at(i).at(0)<=60  && conditionValue2.at(i).at(0)<=60){
 						conditionOperatorString += " " + conditions.at(i) +  "=" + conditionValue.at(i) + " " + operators.at(i) + " " + conditions2.at(i) +  "=" + conditionValue2.at(i) + " ";
 					}
@@ -516,8 +505,7 @@
 					}
 					if(conditionValue2.at(i).at(0)<=60){
 						conditionOperatorString += " " + conditions.at(i) +  "='" + conditionValue.at(i) + "' " + operators.at(i) + " " + conditions2.at(i) +  "=" + conditionValue2.at(i) + " ";
-					}
-					else{
+					}else{
 						conditionOperatorString += " " + conditions.at(i) +  "='" + conditionValue.at(i) + "' " + operators.at(i) + " " + conditions2.at(i) +  "='" + conditionValue2.at(i) + "' ";
 					}
 				}
@@ -527,6 +515,7 @@
 			std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE "  + conditionOperatorString + ";";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());
+	
 	}
 
 	/**
@@ -561,12 +550,10 @@
 		while(i<columns.size()){
 			if(columns.size()==1){
 				allColumns +=  columns.at(i) + " ";
-			}
-			else{
+			}else{
 				if (i != columns.size()-1){
 					allColumns +=  columns.at(i) + ", ";
-				}
-				else{
+				}else{
 					allColumns +=  columns.at(i) + " ";
 				}
 			}
@@ -583,11 +570,10 @@
 			std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "'" + " ORDER BY " + toSortcolumnName  + " DESC;";
 			check_error();
 			connection_feedbackAll(sqlCommand.c_str());	
-		}
-
-		else{
+		}else{
 			//Exception_Handling
 		}
+	
 	}
 
 	/**
@@ -618,16 +604,16 @@
 			check_error();
 			connection_feedback(sqlCommand.c_str());
 
-	}
+		}
 
 		else if(sortBy== "DESC" ||  sortBy=="desc"){
 			std::string sqlCommand = "SELECT * FROM " + tableName + " ORDER BY " + toSortColumnName + " DESC;";
 			check_error();
 			connection_feedback(sqlCommand.c_str());
-		}
-		else{
+		}else{
 			check_error();
 		}
+	
 	}
 
 	/**
@@ -652,9 +638,11 @@
 	*/
 
 	void selectCount(std::string tableName,std::string countColumn,std::string aliasColumnName){
+		
 		std::string sqlCommand = "SELECT COUNT(" + countColumn + ") AS " + aliasColumnName + " FROM " + tableName + ";";
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
+	
 	}
 
 	/**
@@ -677,6 +665,7 @@
 	*/
 
 	void selectDistinct(std::string tableName,std::vector<std::string> columns){
+	
 		int i =0;
 		std::string allColumns;
 
@@ -684,12 +673,10 @@
 		while(i<columns.size()){
 			if(columns.size()==1){
 				allColumns +=  columns.at(i) + " ";
-			}
-			else{
+			}else{
 				if (i != columns.size()-1){
 					allColumns +=  columns.at(i) + ", ";
-				}
-				else{
+				}else{
 					allColumns +=  columns.at(i) + " ";
 				}
 			}
@@ -699,6 +686,7 @@
 		std::string sqlCommand = "SELECT DISTINCT " + allColumns + " FROM " + tableName + ";";
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
+	
 	}
 
 	/**
@@ -726,7 +714,9 @@
 		std::string sqlCommand = "SELECT COUNT(DISTINCT " + countColumn + ") FROM " + tableName + ";";
 		check_error();
 		connection_feedback(sqlCommand.c_str());
+	
 	}
+	
 	/**
 
 	@brief Durchschnittswert
@@ -808,8 +798,7 @@
 			if(i == tableName.size()-1 && i== columnName.size()-1){
 
                 sqlCommand += " SELECT " + columnName.at(i) + " FROM " + tableName.at(i) + " ";
-			}
-			else{
+			}else{
 				sqlCommand  += "SELECT " + columnName.at(i) + " FROM " + tableName.at(i) + " UNION ";
 			}
 		}
@@ -848,12 +837,10 @@
 		while(i<columns.size()){
 			if(columns.size()==1){
 				allColumns +=  columns.at(i) + " ";
-			}
-			else{
+			}else{
 				if (i != columns.size()-1){
 					allColumns +=  columns.at(i) + ", ";
-				}
-				else{
+				}else{
 					allColumns +=  columns.at(i) + " ";
 				}
 			}
@@ -865,12 +852,10 @@
 		while(i<conditionValue.size()){
 			if(comparativValues.size()==1){
 				comparativValues += "'" + conditionValue.at(i) + "'" + " ";
-			}
-			else{
+			}else{
 				if (i != comparativValues.size()-1){
 					comparativValues +=  "'" + conditionValue.at(i) + "'" + ", ";
-				}
-				else{
+				}else{
 					comparativValues += "'" + conditionValue.at(i) + "'" + " ";
 				}
 			}
@@ -880,6 +865,7 @@
 		std::string sqlCommand = "SELECT " + allColumns + " FROM " + tableName + " WHERE " + searchInColumn + " IN " + " (" + comparativValues + ");";
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str()); 
+	
 	}
 	/**
 
@@ -940,12 +926,10 @@
 		while(i<columns.size()){
 			if(columns.size()==1){
 				columnAlias +=  columns.at(i) + " AS " + aliases.at(i) + " ";
-			}
-			else{
+			}else{
 				if (i != columns.size()-1){
 					columnAlias +=  columns.at(i) + " AS " + aliases.at(i) + ", ";
-				}
-				else{
+				}else{
 					columnAlias +=  columns.at(i) + " AS " + aliases.at(i) + " ";
 				}
 			}
@@ -955,6 +939,7 @@
 		std::string sqlCommand ="SELECT " + columnAlias + " FROM " + tableName + ";";
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
+	
 	}
 
 	/**
@@ -977,18 +962,17 @@
 	*/
 
 	void selectTableAlias(std::string tableName,std::vector<std::string>columns,std::string aliasTableName){
+	
 		std::string columnAlias;
 		int i =0;
 
 		while(i<columns.size()){
 			if(columns.size()==1){
 				columnAlias +=  columns.at(i) + " ";
-			}
-			else{
+			}else{
 				if (i != columns.size()-1){
 					columnAlias +=  columns.at(i) + ", ";
-				}
-				else{
+				}else{
 					columnAlias +=  columns.at(i) + " ";
 				}
 			}
@@ -998,6 +982,7 @@
 		std::string sqlCommand ="SELECT " + columnAlias + " FROM " + tableName + " AS " + aliasTableName +";";
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
+	
 	}
 
 	/**
@@ -1022,6 +1007,7 @@
 	*/
 
 	void selectGroupBy(std::string tableName, std::vector<std::string>columns,std::string conditionColumn,std::string conditionValue,std::vector<std::string>groupByColumns){
+	
 		int i=0;
 		std::string allColumns;
 		std::string allGroupByColumns;
@@ -1029,12 +1015,10 @@
 		while(i<columns.size()){
 			if(columns.size()==1){
 				allColumns +=  columns.at(i) + " ";
-			}
-			else{
+			}else{
 				if (i != columns.size()-1){
 					allColumns +=  columns.at(i) + ", ";
-				}
-				else{
+				}else{
 					allColumns +=  columns.at(i) + " ";
 				}
 			}
@@ -1045,12 +1029,10 @@
 		while(i<groupByColumns.size()){
 			if(groupByColumns.size()==1){
 				allGroupByColumns +=  groupByColumns.at(i) + " ";
-			}
-			else{
+			}else{
 				if (i != columns.size()-1){
 					allGroupByColumns +=  groupByColumns.at(i) + ", ";
-				}
-				else{
+				}else{
 					allGroupByColumns +=  groupByColumns.at(i) + " ";
 				}
 
@@ -1061,6 +1043,7 @@
 		std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns + ";";
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
+	
 	}
 
 	/**
@@ -1088,6 +1071,7 @@
 	*/
 
 	void selectGroupByOrderBy(std::string tableName, std::vector<std::string>columns,std::string conditionColumn,std::string conditionValue,std::vector<std::string>groupByColumns,std::string toSortcolumnName,std::string sortBy){
+	
 		int i=0;
 		std::string allColumns;
 		std::string allGroupByColumns;
@@ -1095,12 +1079,10 @@
 		while(i<columns.size()){
 			if(columns.size()==1){
 				allColumns +=  columns.at(i) + " ";
-			}
-			else{
+			}else{
 				if (i != columns.size()-1){
 					allColumns +=  columns.at(i) + ", ";
-				}
-				else{
+				}else{
 					allColumns +=  columns.at(i) + " ";
 				}
 			}
@@ -1111,12 +1093,10 @@
 		while(i<groupByColumns.size()){
 			if(groupByColumns.size()==1){
 				allGroupByColumns +=  groupByColumns.at(i) + " ";
-			}
-			else{
+			}else{
 				if (i != columns.size()-1){
 					allGroupByColumns +=  groupByColumns.at(i) + ", ";
-				}
-				else{
+				}else{
 					allGroupByColumns +=  groupByColumns.at(i) + " ";
 				}
 
@@ -1134,10 +1114,10 @@
 			std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns + " ORDER BY " + toSortcolumnName  + " DESC;";
 			check_error(); 
 			connection_feedbackAll(sqlCommand.c_str());
-		}
-		else{
+		}else{
 			//exception Handling
 		}
+
 	}
 	/**
 
@@ -1167,6 +1147,7 @@
 	*/
 
 	void selectCountGroupByOrderBy(std::string tableName, std::string countColumn,std::vector<std::string>columns,std::string conditionColumn,std::string conditionValue,std::vector<std::string>groupByColumns,std::string sortBy){
+	
 		int i=0;
 		std::string allColumns;
 		std::string allGroupByColumns;
@@ -1190,12 +1171,10 @@
 		while(i<groupByColumns.size()){
 			if(groupByColumns.size()==1){
 				allGroupByColumns +=  groupByColumns.at(i) + " ";
-			}
-			else{
+			}else{
 				if (i != columns.size()-1){
 					allGroupByColumns +=  groupByColumns.at(i) + " ";
-				}
-				else{
+				}else{
 					allGroupByColumns +=  groupByColumns.at(i) + ", ";
 				}
 
@@ -1216,8 +1195,9 @@
 			connection_feedbackAll(sqlCommand.c_str());
 		}
 		else{
-			//exception Handling
+			std::cout << "Da ist etwas falsch gelaufen" << std::endl;
 		}
+
 	}
 
 	/**
@@ -1273,6 +1253,7 @@
 	*/
 
 	void selectInnerJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo){
+
 		int i=0;
 		std::string allColumns;
 
@@ -1286,12 +1267,10 @@
 		while(i<columnsTableTwo.size()){
 			if(columnsTableTwo.size()==1){
 				allColumns +=  columnsTableTwo.at(i) + " ";
-			}
-			else{
+			}else{
 				if (i != columnsTableTwo.size()-1){
 					allColumns += secondTableName + "." + columnsTableOne.at(i) + ", ";
-				}
-				else{
+				}else{
 					allColumns +=  secondTableName + "." + columnsTableTwo.at(i) + " ";
 				}
 			}
@@ -1302,6 +1281,7 @@
 		std::cout << sqlCommand << std::endl;
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
+
 	}
 
 	/**
@@ -1331,25 +1311,24 @@
 	*/
 
 	void selectLeftJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo){
+		
 		int i=0;
 		std::string allColumns;
 
 		while(i<columnsTableOne.size()){
 			allColumns +=  firstTableName + "." + columnsTableOne.at(i) + ", ";
 			i++;
-			}
+		}
 
 		i=0;
 
 		while(i<columnsTableTwo.size()){
 			if(columnsTableTwo.size()==1){
 				allColumns +=  columnsTableTwo.at(i) + " ";
-			}
-			else{
+			}else{
 				if (i != columnsTableTwo.size()-1){
 					allColumns += secondTableName + "." + columnsTableOne.at(i) + ", ";
-				}
-				else{
+				}else{
 					allColumns +=  secondTableName + "." + columnsTableTwo.at(i) + " ";
 				}
 			}
@@ -1360,6 +1339,7 @@
 		std::cout << sqlCommand << std::endl;
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
+
 	}
 
 	/**
@@ -1387,6 +1367,7 @@
 	*/
 
 	void selectRightJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo){
+
 		int i=0;
 		std::string allColumns;
 
@@ -1400,12 +1381,10 @@
 		while(i<columnsTableTwo.size()){
 			if(columnsTableTwo.size()==1){
 				allColumns +=  columnsTableTwo.at(i) + " ";
-			}
-			else{
+			}else{
 				if (i != columnsTableTwo.size()-1){
 					allColumns += secondTableName + "." + columnsTableOne.at(i) + ", ";
-				}
-				else{
+				}else{
 					allColumns +=  secondTableName + "." + columnsTableTwo.at(i) + " ";
 				}
 			}
@@ -1416,6 +1395,7 @@
 		std::cout << sqlCommand << std::endl;
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
+	
 	}
 
 	/**
@@ -1445,25 +1425,25 @@
 	*/
 
 	void selectFullJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo){
+
 		int i=0;
 		std::string allColumns;
 
 		while(i<columnsTableOne.size()){
 			allColumns +=  firstTableName + "." + columnsTableOne.at(i) + ", ";
 			i++;
-			}
+		}
 
 		i=0;
 
 		while(i<columnsTableTwo.size()){
 			if(columnsTableTwo.size()==1){
 				allColumns +=  columnsTableTwo.at(i) + " ";
-			}
-			else{
+			}else{
+			
 				if (i != columnsTableTwo.size()-1){
 					allColumns += secondTableName + "." + columnsTableOne.at(i) + ", ";
-				}
-				else{
+				}else{
 					allColumns +=  secondTableName + "." + columnsTableTwo.at(i) + " ";
 				}
 			}
@@ -1474,6 +1454,7 @@
 		std::cout << sqlCommand << std::endl;
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
+	
 	}
 
 

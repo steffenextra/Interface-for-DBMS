@@ -28,8 +28,6 @@
 
 	void createTable (bool primary_key, bool foreign_key, std::string tableName,std::vector<std::string> columns){
 
-
-
 		std::string columnnamesAndDatatype;
 		columnnamesAndDatatype=columns.at(0)+  " " + columns.at(1);
 
@@ -38,11 +36,13 @@
 			std::string sqlCommand = "CREATE TABLE " + tableName + " ( ID int NOT NULL  PRIMARY KEY AUTO_INCREMENT, " + columnnamesAndDatatype + " );";
 			check_error();
 			connection_query(sqlCommand.c_str());
-		}
-		else{
+
+		}else{
+
 			std::string sqlCommand = "CREATE TABLE " + tableName + " ( " + columnnamesAndDatatype  + " );";
 			check_error();
 			connection_query(sqlCommand.c_str());
+
 		}
 
 		//insert the other Columns
@@ -101,9 +101,11 @@
 	*/
 
 	void renameTable(std::string tablename, std::string newTableName){
+		
 		std::string sqlCommand ="ALTER TABLE " + tablename + " RENAME TO " + newTableName+ ";" ;
 		check_error();
 		connection_query(sqlCommand.c_str());
+	
 	}
 
 	/**
@@ -169,7 +171,7 @@
 	SQL-Befehl für AUTO_INCREMENT: " ALTER TABLE " + tableName + " ADD " + ColumnName +  " " + datatype + " PRIMARY KEY AUTO_INCREMENT";<br>
 	SQL-Befehl ohne AUTO_INCREMENT: " ALTER TABLE " + tableName + " ADD " + ColumnName +  " " + datatype + " PRIMARY KEY";
 
-        @param tableName = Name der Tabelle
+    @param tableName = Name der Tabelle
 	@param ColumnName = Name der Spalte
 	@param datatype = Datentyp der Spalte
 	@param autoinc = Boolean um zwischen AUTO_INCREMENT und eigener Wertzuweisung zu wechseln
@@ -373,12 +375,13 @@
 	*/
 
 	void setSecondaryKey(std::string tableNameSecondary, std::string foreignKey, std::string tableNamePrimary, std::string primaryKey, std::string constraint){
+
 		std::string sqlCommand ="ALTER TABLE " + tableNameSecondary + " ADD CONSTRAINT "+ constraint + " FOREIGN KEY (" + foreignKey + ") REFERENCES " + tableNamePrimary + " (" + primaryKey + ");";
 		check_error();
 		connection_query(sqlCommand.c_str());
 		std::cout << "Secondary key set on " + foreignKey  + " with the PrimaryKey " + primaryKey + " on Table: " + tableNamePrimary  << std::endl;
 
-        }
+    }
 
 	/**
 
@@ -401,11 +404,11 @@
 
 	void deleteConstraint(std::string tableName, std::string constraint){
 
-                std::string sqlCommand = "ALTER TABLE " + tableName + " DROP INDEX " + constraint;
-                check_error();
-                connection_query(sqlCommand.c_str());
+    	std::string sqlCommand = "ALTER TABLE " + tableName + " DROP INDEX " + constraint;
+        check_error();
+        connection_query(sqlCommand.c_str());
 
-        }
+    }
 
 	/**
 
@@ -425,6 +428,7 @@
 	*/
 
 	void deleteSecondaryKey(std::string tableName, std::string constraint){
+	
 		std::string sqlCommand = "ALTER TABLE " + tableName + " DROP FOREIGN KEY " + constraint + "; ";
 		check_error();
 		connection_query (sqlCommand.c_str());
