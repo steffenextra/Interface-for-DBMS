@@ -112,8 +112,7 @@ Dieser Graph zeigt, welche Datei direkt oder indirekt diese Datei enthält:</div
 <area shape="rect" id="node3" href="database_8cpp.html" title="database.cpp" alt="" coords="141,79,242,104"/>
 <area shape="rect" id="node4" href="entry_8cpp.html" title="entry.cpp" alt="" coords="266,79,341,104"/>
 <area shape="rect" id="node5" href="main_8cpp.html" title="main.cpp" alt="" coords="364,79,440,104"/>
-<area shape="rect" id="node6" href="selection_request_8cpp.html" title="selectionRequest.cpp" alt="" coords="464,79,613,104"/>
-<area shape="rect" id="node7" href="tables_8cpp.html" title="tables.cpp" alt="" coords="637,79,719,104"/>
+<area shape="rect" id="node6" href="tables_8cpp.html" title="tables.cpp" alt="" coords="464,79,546,104"/>
 </map>
 </div>
 </div>
@@ -1542,7 +1541,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 </div><div class="memdoc">
 
 <p>Eingeschränkte Abfragen. </p>
-<p>Die "selectBetween" Methode behinhlatet die SQL-Where Bedingungen mit einem eingeschränkten bestimmten Bereich eines Abfrageergebnisses.<br />
+<p>Die "selectBetween" Methode beinhält die SQL-Where Bedingungen mit einem eingeschränkten und bestimmten Bereich eines Abfrageergebnisses.<br />
 </p>
 <p>SQL-Befehl: SELECT * " FROM " + tableName + " WHERE " + conditionColumn + " " + conditionString + " " + condition</p><ul>
 <li>" AND " + conditionColumnTwo + " " + conditionString + " " + conditionTwo;</li>
@@ -1609,7 +1608,8 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 
 <p>Alias-Spaltennamen. </p>
 <p>Die "selectColumnsAlias" Methode kann für übergebene Spalte(n) einen ausgwählten Alias-Spaltenname(n) hinzufügen.<br />
- Zuordnung: Spaltenname(i) = Alias-Spaltennamen(i)<br />
+</p>
+<p>Zuordnung: Spaltenname(i) = Alias-Spaltennamen(i)<br />
 </p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
@@ -1809,7 +1809,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 <p>Ergebnismengen gruppieren + zählen der Datensätze + Sortierung. </p>
 <p>Mithilfe der "selectCountGroupByOrderBy" Methode ist es möglich die Ergebnismenge zu gruppieren. <br />
  Das Count zählt die Anzahl der gruppierten Ergebnismengen. Es werden alle Datensätze gezählt, deren Wert nicht NULL ist. <br />
- Zudem kann der Datensatz anschließend auf- bzw. Absteigend zu sotieren werden. <br />
+ Zudem kann der Datensatz anschließend auf- bzw. Absteigend sortiert werden. <br />
 </p>
 <p>SQL-Befehl ASC: std::string sqlCommand ="SELECT COUNT(" + countColumn +")," + allColumns + " FROM " + tableName + " WHERE " + conditionColumn + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns + " ORDER BY COUNT(" + countColumn +") ASC;" SQL-Befehl DESC: std::string sqlCommand ="SELECT COUNT(" + countColumn +")," + allColumns + " FROM " + tableName + " WHERE " + conditionColumn + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns + " ORDER BY COUNT(" + countColumn +") DESC;"</p>
 <dl class="params"><dt>Parameter</dt><dd>
@@ -2102,7 +2102,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 </div><div class="memdoc">
 
 <p>Ergebnismengen + sortieren. </p>
-<p>Mithilfe der "selectGroupByOrderBy" Methode ist es möglich eine Ergebnismenge zu gruppieren und diese auf- bzw. Absteigend zu sortieren.<br />
+<p>Mithilfe der "selectGroupByOrderBy" Methode ist es möglich eine Ergebnismenge zu gruppieren und diese Auf- bzw. Absteigend zu sortieren.<br />
 </p>
 <p>SQL-Befehl für ASC: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns + " ORDER BY " + toSortcolumnName + " ASC;"<br />
  SQL-Befehl für DESC: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns + " ORDER BY " + toSortcolumnName + " DESC;"<br />
@@ -2249,9 +2249,9 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 
 <p>InnerJoin-Befehl. </p>
 <p>Mithilfe der "selectInnerJoin" Methode wird eine neue Ergebnistabelle erstellt.<br />
- Durch Kombinieren von Spaltenwerten von zwei Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat.<br />
- Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen.<br />
- Wenn das Join-Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.<br />
+ Durch Kombinieren von Spaltenwerten zweier Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat.<br />
+ Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2 um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen.<br />
+ Wenn das Join-Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar Zeilen von A und B in einer Ergebniszeile zusammengefasst.<br />
  Das Schlüsselwort INNER JOIN wählt Datensätze mit übereinstimmenden Werten in beiden Tabellen aus.<br />
 </p>
 <p>SQL-Befehl: select &lt;Auswahl&gt; FROM TabelleA INNER JOIN TabelleB B ON A.ID = B.ID</p>
@@ -3042,7 +3042,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 </div><div class="memdoc">
 
 <p>Zuweisung eines Alias. </p>
-<p>Die "selectTableAlias" Methode kann der übergebnenen Tabelle einen Alias-Tabellennamen zuweisen.</p>
+<p>Die "selectTableAlias" Methode kann der übergebenen Tabelle einen Alias-Tabellennamen zuweisen.</p>
 <p>SQL-Befehl: "SELECT " + columnAlias + " FROM " + tableName + " AS " + aliasTableName +";"</p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
@@ -3227,9 +3227,11 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 </div><div class="memdoc">
 
 <p>Bestimmte Datensätze von bestimmten Spalten abfragen. </p>
-<p>Mithilfe der "selectOneColumn" Methode werden die SQL Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt.<br />
- Es wird nur die Spalte angzeigt, wo der Datensatz verglichen worden ist.</p>
-<p>SQL-Befehl: "SELECT * FROM " + tableName + " WHERE " + conditionColumn + " = " + "'" + conditionValue + "';"</p>
+<p>Mithilfe der "selectOneColumn" Methode werden SQL-Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt.<br />
+ Es wird nur die Spalte angzeigt, wo der Datensatz verglichen worden ist.<br />
+</p>
+<p>SQL-Befehl: "SELECT * FROM " + tableName + " WHERE " + conditionColumn + " = " + "'" + conditionValue + "';" <br />
+</p>
 <dl class="params"><dt>Parameter</dt><dd>
   <table class="params">
     <tr><td class="paramname">tableName</td><td>= Name der Tabelle </td></tr>

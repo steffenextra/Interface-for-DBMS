@@ -931,7 +931,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 
 Eingeschränkte Abfragen. 
 
-Die \char`\"{}select\+Between\char`\"{} Methode behinhlatet die S\+Q\+L-\/\+Where Bedingungen mit einem eingeschränkten bestimmten Bereich eines Abfrageergebnisses.~\newline
+Die \char`\"{}select\+Between\char`\"{} Methode beinhält die S\+Q\+L-\/\+Where Bedingungen mit einem eingeschränkten und bestimmten Bereich eines Abfrageergebnisses.~\newline
 
 
 S\+Q\+L-\/\+Befehl\+: S\+E\+L\+E\+CT $\ast$ \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} \char`\"{} + condition\+String + \char`\"{} \char`\"{} + condition
@@ -982,7 +982,9 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 Alias-\/\+Spaltennamen. 
 
 Die \char`\"{}select\+Columns\+Alias\char`\"{} Methode kann für übergebene Spalte(n) einen ausgwählten Alias-\/\+Spaltenname(n) hinzufügen.~\newline
- Zuordnung\+: Spaltenname(i) = Alias-\/\+Spaltennamen(i)~\newline
+
+
+Zuordnung\+: Spaltenname(i) = Alias-\/\+Spaltennamen(i)~\newline
 
 
 
@@ -1099,7 +1101,7 @@ Ergebnismengen gruppieren + zählen der Datensätze + Sortierung.
 
 Mithilfe der \char`\"{}select\+Count\+Group\+By\+Order\+By\char`\"{} Methode ist es möglich die Ergebnismenge zu gruppieren. ~\newline
  Das Count zählt die Anzahl der gruppierten Ergebnismengen. Es werden alle Datensätze gezählt, deren Wert nicht N\+U\+LL ist. ~\newline
- Zudem kann der Datensatz anschließend auf-\/ bzw. Absteigend zu sotieren werden. ~\newline
+ Zudem kann der Datensatz anschließend auf-\/ bzw. Absteigend sortiert werden. ~\newline
 
 
 S\+Q\+L-\/\+Befehl A\+SC\+: std\+::string sql\+Command =\char`\"{}\+S\+E\+L\+E\+C\+T C\+O\+U\+N\+T(\char`\"{} + count\+Column +\char`\"{}),\char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{} G\+R\+O\+U\+P B\+Y \char`\"{} + all\+Group\+By\+Columns + \char`\"{} O\+R\+D\+E\+R B\+Y C\+O\+U\+N\+T(\char`\"{} + count\+Column +\char`\"{}) A\+S\+C;\char`\"{} S\+Q\+L-\/\+Befehl D\+E\+SC\+: std\+::string sql\+Command =\char`\"{}\+S\+E\+L\+E\+C\+T C\+O\+U\+N\+T(\char`\"{} + count\+Column +\char`\"{}),\char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{} G\+R\+O\+U\+P B\+Y \char`\"{} + all\+Group\+By\+Columns + \char`\"{} O\+R\+D\+E\+R B\+Y C\+O\+U\+N\+T(\char`\"{} + count\+Column +\char`\"{}) D\+E\+S\+C;\char`\"{}
@@ -1273,7 +1275,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 
 Ergebnismengen + sortieren. 
 
-Mithilfe der \char`\"{}select\+Group\+By\+Order\+By\char`\"{} Methode ist es möglich eine Ergebnismenge zu gruppieren und diese auf-\/ bzw. Absteigend zu sortieren.~\newline
+Mithilfe der \char`\"{}select\+Group\+By\+Order\+By\char`\"{} Methode ist es möglich eine Ergebnismenge zu gruppieren und diese Auf-\/ bzw. Absteigend zu sortieren.~\newline
 
 
 S\+Q\+L-\/\+Befehl für A\+SC\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{} G\+R\+O\+U\+P B\+Y \char`\"{} + all\+Group\+By\+Columns + \char`\"{} O\+R\+D\+E\+R B\+Y \char`\"{} + to\+Sortcolumn\+Name + \char`\"{} A\+S\+C;\char`\"{}~\newline
@@ -1365,9 +1367,9 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 Inner\+Join-\/\+Befehl. 
 
 Mithilfe der \char`\"{}select\+Inner\+Join\char`\"{} Methode wird eine neue Ergebnistabelle erstellt.~\newline
- Durch Kombinieren von Spaltenwerten von zwei Tabellen (first\+Table und second\+Table) basierend auf dem Join-\/\+Prädikat.~\newline
- Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen.~\newline
- Wenn das Join-\/\+Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.~\newline
+ Durch Kombinieren von Spaltenwerten zweier Tabellen (first\+Table und second\+Table) basierend auf dem Join-\/\+Prädikat.~\newline
+ Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2 um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen.~\newline
+ Wenn das Join-\/\+Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar Zeilen von A und B in einer Ergebniszeile zusammengefasst.~\newline
  Das Schlüsselwort I\+N\+N\+ER J\+O\+IN wählt Datensätze mit übereinstimmenden Werten in beiden Tabellen aus.~\newline
 
 
@@ -1851,7 +1853,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 
 Zuweisung eines Alias. 
 
-Die \char`\"{}select\+Table\+Alias\char`\"{} Methode kann der übergebnenen Tabelle einen Alias-\/\+Tabellennamen zuweisen.
+Die \char`\"{}select\+Table\+Alias\char`\"{} Methode kann der übergebenen Tabelle einen Alias-\/\+Tabellennamen zuweisen.
 
 S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + column\+Alias + \char`\"{} F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} A\+S \char`\"{} + alias\+Table\+Name +\char`\"{};\char`\"{}
 
@@ -1937,10 +1939,12 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 
 Bestimmte Datensätze von bestimmten Spalten abfragen. 
 
-Mithilfe der \char`\"{}select\+One\+Column\char`\"{} Methode werden die S\+QL Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt.~\newline
- Es wird nur die Spalte angzeigt, wo der Datensatz verglichen worden ist.
+Mithilfe der \char`\"{}select\+One\+Column\char`\"{} Methode werden S\+Q\+L-\/\+Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt.~\newline
+ Es wird nur die Spalte angzeigt, wo der Datensatz verglichen worden ist.~\newline
 
-S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T $\ast$ F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \char`\"{} + \char`\"{}\textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{};\char`\"{}
+
+S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T $\ast$ F\+R\+O\+M \char`\"{} + table\+Name + \char`\"{} W\+H\+E\+R\+E \char`\"{} + condition\+Column + \char`\"{} = \char`\"{} + \char`\"{}\textquotesingle{}\char`\"{} + condition\+Value + \char`\"{}\textquotesingle{};\char`\"{} ~\newline
+
 
 
 \begin{DoxyParams}{Parameter}

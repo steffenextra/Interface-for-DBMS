@@ -360,10 +360,10 @@
 
 	@brief Bestimmte Datensätze von bestimmten Spalten abfragen
 
-	Mithilfe der "selectOneColumn" Methode werden die SQL Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt.<br>
-	Es wird nur die Spalte angzeigt, wo der Datensatz verglichen worden ist.
+	Mithilfe der "selectOneColumn" Methode werden SQL-Abfragen nur bestimmter Datensätze in einer bestimmten Spalten abgefragt.<br>
+	Es wird nur die Spalte angzeigt, wo der Datensatz verglichen worden ist.<br>
 
-	SQL-Befehl: "SELECT * FROM " + tableName + " WHERE " + conditionColumn + " = " + "'" + conditionValue + "';"
+	SQL-Befehl: "SELECT * FROM " + tableName + " WHERE " + conditionColumn + " = " + "'" + conditionValue + "';" <br>
 
 	@param tableName = Name der Tabelle
 	@param conditionColumn = Enthält den Namen der Bedingungsspalte
@@ -871,7 +871,7 @@
 
 	@brief Eingeschränkte Abfragen
 
-	Die "selectBetween" Methode behinhlatet die SQL-Where Bedingungen mit einem eingeschränkten bestimmten Bereich eines Abfrageergebnisses.<br>
+	Die "selectBetween" Methode beinhält die SQL-Where Bedingungen mit einem eingeschränkten und bestimmten Bereich eines Abfrageergebnisses.<br>
 
 	SQL-Befehl: SELECT * " FROM " + tableName + " WHERE " + conditionColumn + " " + conditionString + " " + condition
                                              + " AND " + conditionColumnTwo + " " + conditionString + " " + conditionTwo;
@@ -905,6 +905,7 @@
 	@brief Alias-Spaltennamen
 
 	Die "selectColumnsAlias" Methode kann für übergebene Spalte(n) einen ausgwählten Alias-Spaltenname(n) hinzufügen.<br>
+	
 	Zuordnung: Spaltenname(i) = Alias-Spaltennamen(i)<br>
 
 	@param tableName = Name der Tabelle
@@ -946,7 +947,7 @@
 
 	@brief Zuweisung eines Alias
 
-	Die "selectTableAlias" Methode kann der übergebnenen Tabelle einen Alias-Tabellennamen zuweisen.
+	Die "selectTableAlias" Methode kann der übergebenen Tabelle einen Alias-Tabellennamen zuweisen.
 
 	SQL-Befehl: "SELECT " + columnAlias + " FROM " + tableName + " AS " + aliasTableName +";"
 
@@ -1050,7 +1051,7 @@
 
 	@brief Ergebnismengen + sortieren
 
-	Mithilfe der "selectGroupByOrderBy" Methode ist es möglich eine Ergebnismenge zu gruppieren und diese auf- bzw. Absteigend zu sortieren.<br>
+	Mithilfe der "selectGroupByOrderBy" Methode ist es möglich eine Ergebnismenge zu gruppieren und diese Auf- bzw. Absteigend zu sortieren.<br>
 
 	SQL-Befehl für ASC: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns +  " ORDER BY " + toSortcolumnName  + " ASC;"<br>
 	SQL-Befehl für DESC: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns +  " ORDER BY " + toSortcolumnName  + " DESC;"<br>
@@ -1125,7 +1126,7 @@
 
 	Mithilfe der "selectCountGroupByOrderBy" Methode ist es möglich die Ergebnismenge zu gruppieren. <br>
 	Das Count zählt die Anzahl der gruppierten Ergebnismengen. Es werden alle Datensätze gezählt, deren Wert nicht NULL ist. <br>
-	Zudem kann der Datensatz anschließend auf- bzw. Absteigend zu sotieren werden. <br>
+	Zudem kann der Datensatz anschließend auf- bzw. Absteigend  sortiert werden. <br>
 
 	SQL-Befehl ASC: std::string sqlCommand ="SELECT COUNT(" + countColumn +")," + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns +  " ORDER BY COUNT(" + countColumn +") ASC;"
 	SQL-Befehl DESC: std::string sqlCommand ="SELECT COUNT(" + countColumn +")," + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns +  " ORDER BY COUNT(" + countColumn +") DESC;"
@@ -1232,9 +1233,9 @@
 	@brief InnerJoin-Befehl
 
 	Mithilfe der "selectInnerJoin" Methode wird eine neue Ergebnistabelle erstellt.<br>
-	Durch Kombinieren von Spaltenwerten von zwei Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat.<br>
-	Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen.<br>
-	Wenn das Join-Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.<br>
+	Durch Kombinieren von Spaltenwerten zweier Tabellen (firstTable und secondTable) basierend auf dem Join-Prädikat.<br>
+	Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2 um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen.<br>
+	Wenn das Join-Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar Zeilen von A und B in einer Ergebniszeile zusammengefasst.<br>
 	Das Schlüsselwort INNER JOIN wählt Datensätze mit übereinstimmenden Werten in beiden Tabellen aus.<br>
 
 	SQL-Befehl: select <Auswahl> FROM TabelleA INNER JOIN TabelleB B ON A.ID = B.ID
