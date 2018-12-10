@@ -5,11 +5,6 @@
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$unistd.\+h$>$}\newline
-{\ttfamily \#include \char`\"{}connection.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}database.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}tables.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}entry.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}selection\+Request.\+hpp\char`\"{}}\newline
 {\ttfamily \#include $<$vector$>$}\newline
 Include-\/\+Abhängigkeitsdiagramm für sqllib.\+hpp\+:\nopagebreak
 \begin{figure}[H]
@@ -22,7 +17,7 @@ Dieser Graph zeigt, welche Datei direkt oder indirekt diese Datei enthält\+:\no
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=202pt]{sqllib_8hpp__dep__incl}
+\includegraphics[width=350pt]{sqllib_8hpp__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{Funktionen}
@@ -32,6 +27,8 @@ void \textbf{ check\+\_\+error} (void)
 \begin{DoxyCompactList}\small\item\em Fehlermethode. \end{DoxyCompactList}\item 
 void \textbf{ connection\+\_\+feedback} (std\+::string sql\+Command)
 \begin{DoxyCompactList}\small\item\em Rückgabe einzelner Ergebnisse. \end{DoxyCompactList}\item 
+void \textbf{ connection\+\_\+feedback\+All} (std\+::string sql\+Command)
+\begin{DoxyCompactList}\small\item\em Rückgabe aller Datensätze. \end{DoxyCompactList}\item 
 void \textbf{ connection\+\_\+query} (std\+::string sqlcommand)
 \begin{DoxyCompactList}\small\item\em Sendet eine Abfrage zum S\+Q\+L-\/\+Server. \end{DoxyCompactList}\item 
 void \textbf{ connectionless} (const char $\ast$host, const char $\ast$user, const char $\ast$passwort, const char $\ast$db, unsigned int port, const char $\ast$unix\+\_\+socket, unsigned int client\+\_\+flag)
@@ -178,6 +175,13 @@ void
 \begin{DoxyAuthor}{Autor}
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sqllib_8hpp_aef4d6b8ba9c38e5f1b459694421ad9e5_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{sqllib_8hpp_a33fd832a9e1a27bddb7d9837a2dcf2f1}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!check\+\_\+error@{check\+\_\+error}}
 \index{check\+\_\+error@{check\+\_\+error}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -248,6 +252,45 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{sqllib_8hpp_ab12a404eefae07281e8d1273ca3fc447_icgraph}
+\end{center}
+\end{figure}
+\mbox{\label{sqllib_8hpp_a05a069b8d1bef185dd0ff85424e2e13c}} 
+\index{sqllib.\+hpp@{sqllib.\+hpp}!connection\+\_\+feedback\+All@{connection\+\_\+feedback\+All}}
+\index{connection\+\_\+feedback\+All@{connection\+\_\+feedback\+All}!sqllib.\+hpp@{sqllib.\+hpp}}
+\subsubsection{connection\+\_\+feedback\+All()}
+{\footnotesize\ttfamily void connection\+\_\+feedback\+All (\begin{DoxyParamCaption}\item[{std\+::string}]{sql\+Command }\end{DoxyParamCaption})}
+
+
+
+Rückgabe aller Datensätze. 
+
+Die Methode \char`\"{}connection\+\_\+feedback\+All\char`\"{} liefert den kompletten Datensatz zurück der Abfrage zurück.
+
+
+\begin{DoxyParams}{Parameter}
+{\em sql\+Command} & = enhält den auszuführenden S\+Q\+L-\/\+Befehl\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Rückgabe}
+void
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Autor}
+Martin Meyer 
+
+Steffen Extra 
+\end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{sqllib_8hpp_a05a069b8d1bef185dd0ff85424e2e13c_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{sqllib_8hpp_a05a069b8d1bef185dd0ff85424e2e13c_icgraph}
 \end{center}
 \end{figure}
 \mbox{\label{sqllib_8hpp_a83d389dd4406da88cf16f7736e012537}} 
@@ -322,6 +365,13 @@ void
 \begin{DoxyAuthor}{Autor}
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sqllib_8hpp_ad2178bf4577d7eea6caebd8d1c942088_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{sqllib_8hpp_abf48eb274e662a7de3f5f190d126b765}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!create\+Database@{create\+Database}}
 \index{create\+Database@{create\+Database}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -389,6 +439,13 @@ void
 \begin{DoxyAuthor}{Autor}
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sqllib_8hpp_aa3b10ab46a5fb3caa76745e084685e76_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{sqllib_8hpp_a1d1fac4a7c1506f81908532050a8e58f}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!delete\+Database@{delete\+Database}}
 \index{delete\+Database@{delete\+Database}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -489,6 +546,20 @@ void
 \begin{DoxyAuthor}{Autor}
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sqllib_8hpp_a36d0f9bb1b86a8155d7551fcd014b4da_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{sqllib_8hpp_a36d0f9bb1b86a8155d7551fcd014b4da_icgraph}
+\end{center}
+\end{figure}
 \mbox{\label{sqllib_8hpp_aee892818f06208ce4b68fb7598a7494c}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!delete\+Secondary\+Key@{delete\+Secondary\+Key}}
 \index{delete\+Secondary\+Key@{delete\+Secondary\+Key}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -517,6 +588,13 @@ void
 \begin{DoxyAuthor}{Autor}
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sqllib_8hpp_aee892818f06208ce4b68fb7598a7494c_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{sqllib_8hpp_a9754762b2c19711bf3dcbfceca61d97d}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!delete\+Table@{delete\+Table}}
 \index{delete\+Table@{delete\+Table}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -543,6 +621,13 @@ void
 \begin{DoxyAuthor}{Autor}
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sqllib_8hpp_a9754762b2c19711bf3dcbfceca61d97d_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{sqllib_8hpp_a960705de531a20389fb29928d43258c3}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!disconnect@{disconnect}}
 \index{disconnect@{disconnect}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -574,7 +659,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=319pt]{sqllib_8hpp_a960705de531a20389fb29928d43258c3_icgraph}
+\includegraphics[width=217pt]{sqllib_8hpp_a960705de531a20389fb29928d43258c3_icgraph}
 \end{center}
 \end{figure}
 \mbox{\label{sqllib_8hpp_aceb780082d3f7392e485cac394d6c606}} 
@@ -603,6 +688,13 @@ void
 \begin{DoxyAuthor}{Autor}
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sqllib_8hpp_aceb780082d3f7392e485cac394d6c606_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{sqllib_8hpp_a244b10b3b373f8a174943176101a480f}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!modifier\+Column\+Name@{modifier\+Column\+Name}}
 \index{modifier\+Column\+Name@{modifier\+Column\+Name}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -637,6 +729,13 @@ void
 \begin{DoxyAuthor}{Autor}
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sqllib_8hpp_a244b10b3b373f8a174943176101a480f_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{sqllib_8hpp_ab254b5514a4950c7479bc4d513c438dc}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!modifier\+Entry@{modifier\+Entry}}
 \index{modifier\+Entry@{modifier\+Entry}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -778,6 +877,13 @@ void
 \begin{DoxyAuthor}{Autor}
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sqllib_8hpp_a526b049a888b2a4a1332a10540689afd_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{sqllib_8hpp_a01bd0062142a17ad04b7101bac7b38b6}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!select\+Average\+Sum@{select\+Average\+Sum}}
 \index{select\+Average\+Sum@{select\+Average\+Sum}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -1974,6 +2080,20 @@ void
 \begin{DoxyAuthor}{Autor}
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sqllib_8hpp_a7c4575b6ed6eb203c2796930c41ed555_cgraph}
+\end{center}
+\end{figure}
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{sqllib_8hpp_a7c4575b6ed6eb203c2796930c41ed555_icgraph}
+\end{center}
+\end{figure}
 \mbox{\label{sqllib_8hpp_a4605e656585a77253f0940725b97ad04}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!set\+Column\+With\+Primary@{set\+Column\+With\+Primary}}
 \index{set\+Column\+With\+Primary@{set\+Column\+With\+Primary}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -2008,6 +2128,13 @@ void
 \begin{DoxyAuthor}{Autor}
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sqllib_8hpp_a4605e656585a77253f0940725b97ad04_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{sqllib_8hpp_a1faab165d9a7dc43808e1a0075e007f9}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!set\+Entry@{set\+Entry}}
 \index{set\+Entry@{set\+Entry}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -2076,6 +2203,13 @@ void
 \begin{DoxyAuthor}{Autor}
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sqllib_8hpp_aac2797835afcf68b73ba522e7bb91f5f_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{sqllib_8hpp_a4aca01f302c4488d661196653d8f6c28}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!set\+Secondary\+Key@{set\+Secondary\+Key}}
 \index{set\+Secondary\+Key@{set\+Secondary\+Key}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -2112,6 +2246,13 @@ void
 \begin{DoxyAuthor}{Autor}
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sqllib_8hpp_a4aca01f302c4488d661196653d8f6c28_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{sqllib_8hpp_addc31570307c41c7327c3da4886ae7bf}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!show\+Column\+Typ@{show\+Column\+Typ}}
 \index{show\+Column\+Typ@{show\+Column\+Typ}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -2140,6 +2281,13 @@ void
 \begin{DoxyAuthor}{Autor}
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sqllib_8hpp_addc31570307c41c7327c3da4886ae7bf_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{sqllib_8hpp_a812cc82c697df37c6a8a482f85972b4b}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!show\+Databases@{show\+Databases}}
 \index{show\+Databases@{show\+Databases}!sqllib.\+hpp@{sqllib.\+hpp}}
@@ -2201,6 +2349,13 @@ void
 \begin{DoxyAuthor}{Autor}
 Steffen Extra 
 \end{DoxyAuthor}
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sqllib_8hpp_a22fbeb7f18a00bafd4864de51a3bca28_cgraph}
+\end{center}
+\end{figure}
 \mbox{\label{sqllib_8hpp_a1bde570da9c90a3d0f6e94bc1b06c5e3}} 
 \index{sqllib.\+hpp@{sqllib.\+hpp}!union\+Select@{union\+Select}}
 \index{union\+Select@{union\+Select}!sqllib.\+hpp@{sqllib.\+hpp}}

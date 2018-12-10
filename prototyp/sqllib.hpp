@@ -30,12 +30,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-
-#include "connection.hpp"
-#include "database.hpp"
-#include "tables.hpp"
-#include "entry.hpp"
-#include "selectionRequest.hpp"
 #include <vector>
 
 
@@ -44,6 +38,7 @@
 
 void check_error(void);
 void connection_feedback(std::string sqlCommand);
+void connection_feedbackAll(std::string sqlCommand);
 void connection_query(std::string sqlcommand);
 void connectionless(const char *host,const char *user,const char *passwort, const char *db, unsigned int port,const char *unix_socket,unsigned int client_flag);
 void disconnect();

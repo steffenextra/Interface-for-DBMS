@@ -1,4 +1,4 @@
-#include "database.hpp"
+#include "sqllib.hpp"
 
 	/**
 
@@ -72,7 +72,7 @@
 
 	void renameDatabase(std::string databaseName, std::string newDatabaseName){
 		//need to fix
-		std::string sqlCommand ="ALTER DATABASE " + databaseName + " MODIFY NAME = " + newDatabaseName + ";";
+		std::string sqlCommand ="ALTER DATABASE " + databaseName + " TO " + newDatabaseName + ";";
 		check_error();
 		connection_query(sqlCommand.c_str());
 	}

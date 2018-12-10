@@ -1,4 +1,4 @@
-#include "connection.hpp"
+#include "sqllib.hpp"
 
 MYSQL *mysql;
 MYSQL_ROW row;

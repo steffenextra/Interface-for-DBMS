@@ -6,7 +6,7 @@ int main (int argc, char *argv[]) {
 
         const char* host ="localhost";
         const char* user ="root";
-        const char* passwort ="";
+        const char* passwort ="root";
         const char* db = "DatabaseNumberOne1";
         unsigned int port=3306;
         unsigned int client_flag=0;
@@ -66,7 +66,7 @@ int main (int argc, char *argv[]) {
 //      deleteSecondaryKey("tabelle3", "Person_ID");
 //	setPrimaryKey("tabelle3", "ID");
 //	setColumnWithPrimary("tabelle2", "ID", "int", true);
-//	deletePrimaryKey("tabelle3");
+	deletePrimaryKey("tabelle3");
 
 //      std::string myCommand="SELECT * FROM tableNumberOne";
 //      sqlCommand(myCommand,"feedbackAll");
@@ -76,7 +76,7 @@ int main (int argc, char *argv[]) {
 
 
 
-
+/*
 std::vector<std::string> columnsss;
 std::vector<std::string> tabelle2spalten;
 
@@ -90,7 +90,7 @@ std::vector<std::string> tabelle2spalten;
         columnsss.push_back("Adresse");
         columnsss.push_back("Zwischennamen");
 
-
+*/
 	disconnect();
 }
 

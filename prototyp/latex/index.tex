@@ -4,12 +4,28 @@
 Selektierung von C++ und der Standard-\/\+Bibliothek von My\+S\+QL.~\newline
  S\+Q\+L-\/\+Statements können über Methoden und Parameter abgearbeitet werden.~\newline
  Bedienbar entweder über die Konsole und den einfachen Methoden-\/\+Aufruf oder über das Interface.~\newline
+ ~\newline
 
 
-{\bfseries  ---Install--- }
+{\bfseries  ---Einrichtung--- }
 
 Der Socket für X\+A\+M\+PP auf Linux sowie M\+A\+MP auf Mac\+OS wurden bereits implementiert falls diese Bibliothek local genutzt werden soll.~\newline
- Andernfalls muss der Ort an dem der spezifische S\+Q\+L-\/\+Socket clientseitig liegt identifiziert werden um mit dem S\+Q\+L-\/\+Server zu kommunizieren.~\newline
- Für den Verbindungsaufbau wird die connectionless-\/\+Methode \doxyref{connectionless()}{S.}{connection_8cpp_adda241635377573037e48ec03e645c22} der connection-\/\+Klasse benutzt. ~\newline
+ Für die Anwendung ist es außerdem Vorraussetzung den M\+Y\+S\+Q\+L-\/\+Header zu implementieren. ~\newline
+ Durch weitere Präprozessor-\/\+Direktiven in der \doxyref{sqllib.\+hpp}{S.}{sqllib_8hpp} sind die Standardpfade des M\+Y\+S\+Q\+L-\/\+Headers für Linux-\// sowie Mac\+O\+S-\/\+Systeme bereits implementiert. ~\newline
  ~\newline
- 
+ Sollte die Anwendung nicht Lokal genutzt werden, muss der Ort an dem der spezifische S\+Q\+L-\/\+Socket ~\newline
+ clientseitig liegt identifiziert werden um mit dem S\+Q\+L-\/\+Server zu kommunizieren.~\newline
+ Für den Verbindungsaufbau wird die connectionless-\/\+Methode \doxyref{connectionless()}{S.}{connection_8cpp_adda241635377573037e48ec03e645c22} (siehe Übergabe-\/\+Parameter) der connection-\/\+Klasse ~\newline
+ benutzt und baut nach der Build-\/\+Routine bei der Ausführung des Programm\textquotesingle{}s eine Verbindung auf. ~\newline
+
+
+~\newline
+ ~\newline
+ ~\newline
+
+
+\begin{DoxyAuthor}{Autor}
+Steffen Extra 
+
+Martin Meyer 
+\end{DoxyAuthor}

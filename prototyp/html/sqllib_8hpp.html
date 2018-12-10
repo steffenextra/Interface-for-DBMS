@@ -97,31 +97,23 @@ $(document).ready(function(){initNavTree('sqllib_8hpp.html','');});
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="connection_8hpp_source.html">connection.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="database_8hpp_source.html">database.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="tables_8hpp_source.html">tables.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="entry_8hpp_source.html">entry.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="selection_request_8hpp_source.html">selectionRequest.hpp</a>&quot;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include-Abhängigkeitsdiagramm für sqllib.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="sqllib_8hpp__incl.png" border="0" usemap="#sqllib_8hpp" alt=""/></div>
-<map name="sqllib_8hpp" id="sqllib_8hpp">
-<area shape="rect" id="node7" href="connection_8hpp.html" title="connection.hpp" alt="" coords="480,152,592,177"/>
-<area shape="rect" id="node8" href="database_8hpp.html" title="database.hpp" alt="" coords="153,79,255,104"/>
-<area shape="rect" id="node10" href="tables_8hpp.html" title="tables.hpp" alt="" coords="517,79,600,104"/>
-<area shape="rect" id="node12" href="entry_8hpp.html" title="entry.hpp" alt="" coords="724,79,800,104"/>
-<area shape="rect" id="node13" href="selection_request_8hpp.html" title="selectionRequest.hpp" alt="" coords="344,79,493,104"/>
-</map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 Dieser Graph zeigt, welche Datei direkt oder indirekt diese Datei enthält:</div>
 <div class="dyncontent">
 <div class="center"><img src="sqllib_8hpp__dep__incl.png" border="0" usemap="#sqllib_8hppdep" alt=""/></div>
 <map name="sqllib_8hppdep" id="sqllib_8hppdep">
-<area shape="rect" id="node2" href="gui_8cpp.html" title="gui.cpp" alt="" coords="5,79,70,104"/>
-<area shape="rect" id="node3" href="main_8cpp.html" title="main.cpp" alt="" coords="93,79,169,104"/>
+<area shape="rect" id="node2" href="connection_8cpp.html" title="connection.cpp" alt="" coords="5,79,116,104"/>
+<area shape="rect" id="node3" href="database_8cpp.html" title="database.cpp" alt="" coords="141,79,242,104"/>
+<area shape="rect" id="node4" href="entry_8cpp.html" title="entry.cpp" alt="" coords="266,79,341,104"/>
+<area shape="rect" id="node5" href="main_8cpp.html" title="main.cpp" alt="" coords="364,79,440,104"/>
+<area shape="rect" id="node6" href="selection_request_8cpp.html" title="selectionRequest.cpp" alt="" coords="464,79,613,104"/>
+<area shape="rect" id="node7" href="tables_8cpp.html" title="tables.cpp" alt="" coords="637,79,719,104"/>
 </map>
 </div>
 </div>
@@ -135,6 +127,9 @@ Funktionen</h2></td></tr>
 <tr class="memitem:ab12a404eefae07281e8d1273ca3fc447"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sqllib_8hpp.html#ab12a404eefae07281e8d1273ca3fc447">connection_feedback</a> (std::string sqlCommand)</td></tr>
 <tr class="memdesc:ab12a404eefae07281e8d1273ca3fc447"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rückgabe einzelner Ergebnisse.  <a href="#ab12a404eefae07281e8d1273ca3fc447">Mehr ...</a><br /></td></tr>
 <tr class="separator:ab12a404eefae07281e8d1273ca3fc447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05a069b8d1bef185dd0ff85424e2e13c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sqllib_8hpp.html#a05a069b8d1bef185dd0ff85424e2e13c">connection_feedbackAll</a> (std::string sqlCommand)</td></tr>
+<tr class="memdesc:a05a069b8d1bef185dd0ff85424e2e13c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rückgabe aller Datensätze.  <a href="#a05a069b8d1bef185dd0ff85424e2e13c">Mehr ...</a><br /></td></tr>
+<tr class="separator:a05a069b8d1bef185dd0ff85424e2e13c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83d389dd4406da88cf16f7736e012537"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sqllib_8hpp.html#a83d389dd4406da88cf16f7736e012537">connection_query</a> (std::string sqlcommand)</td></tr>
 <tr class="memdesc:a83d389dd4406da88cf16f7736e012537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sendet eine Abfrage zum SQL-Server.  <a href="#a83d389dd4406da88cf16f7736e012537">Mehr ...</a><br /></td></tr>
 <tr class="separator:a83d389dd4406da88cf16f7736e012537"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -348,6 +343,15 @@ Funktionen</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="sqllib_8hpp_aef4d6b8ba9c38e5f1b459694421ad9e5_cgraph.png" border="0" usemap="#sqllib_8hpp_aef4d6b8ba9c38e5f1b459694421ad9e5_cgraph" alt=""/></div>
+<map name="sqllib_8hpp_aef4d6b8ba9c38e5f1b459694421ad9e5_cgraph" id="sqllib_8hpp_aef4d6b8ba9c38e5f1b459694421ad9e5_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="369,5,461,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#af8ead42df91543eb727f4ab7e44e49d5" title="Sendet eine Abfrage zum SQL&#45;Server. " alt="" coords="195,31,321,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -441,8 +445,81 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <area shape="rect" id="node5" href="sqllib_8hpp.html#a6a41ec41130fdce3f2c4dd701438f26a" title="Tabelle wird nach Angabe sortiert. " alt="" coords="228,153,340,179"/>
 <area shape="rect" id="node6" href="sqllib_8hpp.html#a8d6f770e3b1eb29fce843172c187ccc6" title="Keine Redundanzen / Datensätze werden gezählt. " alt="" coords="216,203,352,228"/>
 <area shape="rect" id="node7" href="sqllib_8hpp.html#a01bd0062142a17ad04b7101bac7b38b6" title="Durchschnittswert. " alt="" coords="217,252,350,277"/>
-<area shape="rect" id="node8" href="tables_8hpp.html#aceb780082d3f7392e485cac394d6c606" title="Anzeigen von Spalten. " alt="" coords="234,301,334,327"/>
-<area shape="rect" id="node9" href="tables_8hpp.html#ad2178bf4577d7eea6caebd8d1c942088" title="Zählen der Datensätze. " alt="" coords="231,351,337,376"/>
+<area shape="rect" id="node8" href="tables_8cpp.html#aceb780082d3f7392e485cac394d6c606" title="Anzeigen von Spalten. " alt="" coords="234,301,334,327"/>
+<area shape="rect" id="node9" href="tables_8cpp.html#ad2178bf4577d7eea6caebd8d1c942088" title="Zählen der Datensätze. " alt="" coords="231,351,337,376"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a05a069b8d1bef185dd0ff85424e2e13c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05a069b8d1bef185dd0ff85424e2e13c">&#9670;&nbsp;</a></span>connection_feedbackAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void connection_feedbackAll </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>sqlCommand</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rückgabe aller Datensätze. </p>
+<p>Die Methode "connection_feedbackAll" liefert den kompletten Datensatz zurück der Abfrage zurück.</p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sqlCommand</td><td>= enhält den auszuführenden SQL-Befehl</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
+<dl class="section author"><dt>Autor</dt><dd>Martin Meyer </dd>
+<dd>
+Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="sqllib_8hpp_a05a069b8d1bef185dd0ff85424e2e13c_cgraph.png" border="0" usemap="#sqllib_8hpp_a05a069b8d1bef185dd0ff85424e2e13c_cgraph" alt=""/></div>
+<map name="sqllib_8hpp_a05a069b8d1bef185dd0ff85424e2e13c_cgraph" id="sqllib_8hpp_a05a069b8d1bef185dd0ff85424e2e13c_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="216,5,307,31"/>
+</map>
+</div>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="sqllib_8hpp_a05a069b8d1bef185dd0ff85424e2e13c_icgraph.png" border="0" usemap="#sqllib_8hpp_a05a069b8d1bef185dd0ff85424e2e13c_icgraph" alt=""/></div>
+<map name="sqllib_8hpp_a05a069b8d1bef185dd0ff85424e2e13c_icgraph" id="sqllib_8hpp_a05a069b8d1bef185dd0ff85424e2e13c_icgraph">
+<area shape="rect" id="node2" href="sqllib_8hpp.html#a1909c1b8666cf6e3d31a014c9a9ad2d7" title="Benutzereigener SQL&#45;Befehl. " alt="" coords="259,5,366,31"/>
+<area shape="rect" id="node3" href="sqllib_8hpp.html#a80ced4bb0e929e97740616c59374d992" title="Suche nach Muster. " alt="" coords="272,55,353,80"/>
+<area shape="rect" id="node4" href="sqllib_8hpp.html#aab8b32ae4ac6aeddc5c05578b4c79ace" title="Suche nach Muster. " alt="" coords="262,104,363,129"/>
+<area shape="rect" id="node5" href="sqllib_8hpp.html#ae4c9217024bfe521a229e0b4162e5ef7" title="Ermittlung des höchsten / niedrigsten Wertes. " alt="" coords="254,153,371,179"/>
+<area shape="rect" id="node6" href="sqllib_8hpp.html#a39f437d3c3c841e8a82b9ad1b514007e" title="Höchster / niedrigster Wert mit Bedingung und Alias&#45;Spalte. " alt="" coords="234,203,391,228"/>
+<area shape="rect" id="node7" href="sqllib_8hpp.html#a94c57cf58c1b2812e3d1ce9b3837286d" title="Bestimmte Anzahl von Datensätzen mit Bedingung abfragen. " alt="" coords="226,252,399,277"/>
+<area shape="rect" id="node8" href="sqllib_8hpp.html#a90eb635de3f1856a45557b42f18eff28" title="Anzeigen bestimmter Datensätze mit dem Zusatz der Where&#45;Clause. " alt="" coords="265,301,360,327"/>
+<area shape="rect" id="node9" href="selection_request_8cpp.html#a9ad9be1bbff160a127715440afafb800" title="Where&#45;Clause mit mehreren Bedingungen. " alt="" coords="271,351,354,376"/>
+<area shape="rect" id="node10" href="sqllib_8hpp.html#a94269766ff6e39ba8a38f5623314c3cd" title="Abfrage von Spalten mit Sortierung. " alt="" coords="240,400,385,425"/>
+<area shape="rect" id="node11" href="sqllib_8hpp.html#a00f071477f164f70927ee9923dd77a39" title="Anzahl von ausgewählten Datensätzen. " alt="" coords="267,449,358,475"/>
+<area shape="rect" id="node12" href="sqllib_8hpp.html#aba13caf613af9f91f2a2f1a8f9d49967" title="Redundanzen werden eliminiert und nur einmal angezeigt. " alt="" coords="263,499,362,524"/>
+<area shape="rect" id="node13" href="sqllib_8hpp.html#a9f37b58ba921dc5e6b5d4a5d0fefe28e" title="Summieren von Werten. " alt="" coords="271,548,354,573"/>
+<area shape="rect" id="node14" href="sqllib_8hpp.html#a1bde570da9c90a3d0f6e94bc1b06c5e3" title="Vereinigung zweier Abfragen. " alt="" coords="267,597,358,623"/>
+<area shape="rect" id="node15" href="sqllib_8hpp.html#ac3a0a9620e1b5ac8c90104b1daea4f5f" title="Mehrere Abfrageergebnisse bündeln. " alt="" coords="279,647,346,672"/>
+<area shape="rect" id="node16" href="sqllib_8hpp.html#aaa15591ca7a3ba5d40fa77b7ae6753db" title="Eingeschränkte Abfragen. " alt="" coords="258,696,367,721"/>
+<area shape="rect" id="node17" href="sqllib_8hpp.html#a0bd3f475ec96949ae94bbbbec41f7725" title="Alias&#45;Spaltennamen. " alt="" coords="244,745,381,771"/>
+<area shape="rect" id="node18" href="sqllib_8hpp.html#a3ac5ebbcfb624dc5178315c85c4b15fa" title="Zuweisung eines Alias. " alt="" coords="254,795,371,820"/>
+<area shape="rect" id="node19" href="sqllib_8hpp.html#a54c70afd3e6ad75085ddf6aff29abe87" title="Gruppieren von Ergebnismengen. " alt="" coords="258,844,367,869"/>
+<area shape="rect" id="node20" href="sqllib_8hpp.html#a5e60ce2e53b91725f89c66539e5bd73d" title="Ergebnismengen + sortieren. " alt="" coords="233,893,392,919"/>
+<area shape="rect" id="node21" href="sqllib_8hpp.html#a851bc3e6b04b4dfaa359b43534a37cd5" title="Ergebnismengen gruppieren + zählen der Datensätze + Sortierung. " alt="" coords="216,943,410,968"/>
+<area shape="rect" id="node22" href="sqllib_8hpp.html#aedcd1503abb6715de26a92d34714dcce" title="NULL Werte. " alt="" coords="273,992,352,1017"/>
+<area shape="rect" id="node23" href="sqllib_8hpp.html#aa0d6684a1d4f8e82d699b713e38c9d44" title="InnerJoin&#45;Befehl. " alt="" coords="257,1041,368,1067"/>
+<area shape="rect" id="node24" href="sqllib_8hpp.html#a85d81ccc1d4c2b8cb7edcfe0a5a585f5" title="LeftJoin Methode. " alt="" coords="261,1091,364,1116"/>
+<area shape="rect" id="node25" href="sqllib_8hpp.html#aff2cca0ae3f40a8b3ec70e85702bb8fc" title="selectRightJoin" alt="" coords="257,1140,368,1165"/>
+<area shape="rect" id="node26" href="sqllib_8hpp.html#a41392b97718c999af4867dc0c62ade0c" title="FullJoin Methode. " alt="" coords="261,1189,364,1215"/>
+<area shape="rect" id="node27" href="tables_8cpp.html#a22fbeb7f18a00bafd4864de51a3bca28" title="Ausgabe der Tabelle. " alt="" coords="270,1239,355,1264"/>
+<area shape="rect" id="node28" href="tables_8cpp.html#addc31570307c41c7327c3da4886ae7bf" title="Datentyp der Spalte anzeigen lassen. " alt="" coords="253,1288,372,1313"/>
 </map>
 </div>
 
@@ -499,18 +576,19 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <area shape="rect" id="node8" href="sqllib_8hpp.html#a1ea4c59c6377c754fd0264b58f476685" title="Löschen von Einträgen. " alt="" coords="214,301,303,327"/>
 <area shape="rect" id="node9" href="sqllib_8hpp.html#a1909c1b8666cf6e3d31a014c9a9ad2d7" title="Benutzereigener SQL&#45;Befehl. " alt="" coords="205,351,312,376"/>
 <area shape="rect" id="node10" href="tables_8cpp.html#a6bd46ec08e83f28ae60e1d235d9d2659" title="Erstellen einer Tabelle. " alt="" coords="413,476,503,501"/>
-<area shape="rect" id="node11" href="tables_8hpp.html#a526b049a888b2a4a1332a10540689afd" title="Änderung des Tabellennamens. " alt="" coords="210,452,308,477"/>
-<area shape="rect" id="node12" href="tables_8hpp.html#a9754762b2c19711bf3dcbfceca61d97d" title="Löschen einer Tabelle. " alt="" coords="214,501,304,527"/>
-<area shape="rect" id="node13" href="tables_8hpp.html#a7c4575b6ed6eb203c2796930c41ed555" title="Bearbeiten der Spalte in einer Tabelle. " alt="" coords="216,551,301,576"/>
-<area shape="rect" id="node14" href="tables_8hpp.html#a4605e656585a77253f0940725b97ad04" title="Setzen des Primärschlüssels. " alt="" coords="180,600,338,625"/>
-<area shape="rect" id="node15" href="tables_8hpp.html#a244b10b3b373f8a174943176101a480f" title="Modifizieren des Spaltennamens. " alt="" coords="184,649,334,675"/>
-<area shape="rect" id="node16" href="tables_8hpp.html#aef4d6b8ba9c38e5f1b459694421ad9e5" title="Ändern des Datentyps. " alt="" coords="188,699,329,724"/>
-<area shape="rect" id="node17" href="tables_8hpp.html#aa3b10ab46a5fb3caa76745e084685e76" title="Löschen von Spalten. " alt="" coords="207,748,311,773"/>
-<area shape="rect" id="node18" href="tables_8hpp.html#a4aca01f302c4488d661196653d8f6c28" title="Setzen des Sekundärschlüssels (Foreign Key) " alt="" coords="196,797,322,823"/>
+<area shape="rect" id="node11" href="tables_8cpp.html#a526b049a888b2a4a1332a10540689afd" title="Änderung des Tabellennamens. " alt="" coords="210,452,308,477"/>
+<area shape="rect" id="node12" href="tables_8cpp.html#a9754762b2c19711bf3dcbfceca61d97d" title="Löschen einer Tabelle. " alt="" coords="214,501,304,527"/>
+<area shape="rect" id="node13" href="tables_8cpp.html#a7c4575b6ed6eb203c2796930c41ed555" title="Bearbeiten der Spalte in einer Tabelle. " alt="" coords="216,551,301,576"/>
+<area shape="rect" id="node14" href="tables_8cpp.html#a4605e656585a77253f0940725b97ad04" title="Setzen des Primärschlüssels. " alt="" coords="180,600,338,625"/>
+<area shape="rect" id="node15" href="tables_8cpp.html#a244b10b3b373f8a174943176101a480f" title="Modifizieren des Spaltennamens. " alt="" coords="184,649,334,675"/>
+<area shape="rect" id="node16" href="tables_8cpp.html#aef4d6b8ba9c38e5f1b459694421ad9e5" title="Ändern des Datentyps. " alt="" coords="188,699,329,724"/>
+<area shape="rect" id="node17" href="tables_8cpp.html#aa3b10ab46a5fb3caa76745e084685e76" title="Löschen von Spalten. " alt="" coords="207,748,311,773"/>
+<area shape="rect" id="node18" href="tables_8cpp.html#a4aca01f302c4488d661196653d8f6c28" title="Setzen des Sekundärschlüssels (Foreign Key) " alt="" coords="196,797,322,823"/>
 <area shape="rect" id="node19" href="tables_8cpp.html#ae62b61e29ea8b6010ae2463f80598460" title="Löschen der Schlüsselgruppe. " alt="" coords="200,847,318,872"/>
-<area shape="rect" id="node20" href="tables_8hpp.html#aee892818f06208ce4b68fb7598a7494c" title="Löschen des Sekundärschlüssels. " alt="" coords="386,872,530,897"/>
-<area shape="rect" id="node21" href="tables_8hpp.html#aac2797835afcf68b73ba522e7bb91f5f" title="Nachträgliches setzen eines Primärschlüssels. " alt="" coords="205,948,313,973"/>
-<area shape="rect" id="node22" href="tables_8hpp.html#a36d0f9bb1b86a8155d7551fcd014b4da" title="Löschen des Primärschlüssels. " alt="" coords="195,997,322,1023"/>
+<area shape="rect" id="node20" href="tables_8cpp.html#aee892818f06208ce4b68fb7598a7494c" title="Löschen des Sekundärschlüssels. " alt="" coords="386,872,530,897"/>
+<area shape="rect" id="node21" href="tables_8cpp.html#aac2797835afcf68b73ba522e7bb91f5f" title="Nachträgliches setzen eines Primärschlüssels. " alt="" coords="205,948,313,973"/>
+<area shape="rect" id="node22" href="tables_8cpp.html#a36d0f9bb1b86a8155d7551fcd014b4da" title="Löschen des Primärschlüssels. " alt="" coords="195,997,322,1023"/>
+<area shape="rect" id="node23" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="433,997,483,1023"/>
 </map>
 </div>
 
@@ -602,6 +680,15 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="sqllib_8hpp_ad2178bf4577d7eea6caebd8d1c942088_cgraph.png" border="0" usemap="#sqllib_8hpp_ad2178bf4577d7eea6caebd8d1c942088_cgraph" alt=""/></div>
+<map name="sqllib_8hpp_ad2178bf4577d7eea6caebd8d1c942088_cgraph" id="sqllib_8hpp_ad2178bf4577d7eea6caebd8d1c942088_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="355,5,447,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#ab12a404eefae07281e8d1273ca3fc447" title="Rückgabe einzelner Ergebnisse. " alt="" coords="160,31,307,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -718,6 +805,15 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="sqllib_8hpp_aa3b10ab46a5fb3caa76745e084685e76_cgraph.png" border="0" usemap="#sqllib_8hpp_aa3b10ab46a5fb3caa76745e084685e76_cgraph" alt=""/></div>
+<map name="sqllib_8hpp_aa3b10ab46a5fb3caa76745e084685e76_cgraph" id="sqllib_8hpp_aa3b10ab46a5fb3caa76745e084685e76_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="332,5,423,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#af8ead42df91543eb727f4ab7e44e49d5" title="Sendet eine Abfrage zum SQL&#45;Server. " alt="" coords="157,31,284,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -852,6 +948,23 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="sqllib_8hpp_a36d0f9bb1b86a8155d7551fcd014b4da_cgraph.png" border="0" usemap="#sqllib_8hpp_a36d0f9bb1b86a8155d7551fcd014b4da_cgraph" alt=""/></div>
+<map name="sqllib_8hpp_a36d0f9bb1b86a8155d7551fcd014b4da_cgraph" id="sqllib_8hpp_a36d0f9bb1b86a8155d7551fcd014b4da_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="354,5,446,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#af8ead42df91543eb727f4ab7e44e49d5" title="Sendet eine Abfrage zum SQL&#45;Server. " alt="" coords="180,31,306,56"/>
+</map>
+</div>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="sqllib_8hpp_a36d0f9bb1b86a8155d7551fcd014b4da_icgraph.png" border="0" usemap="#sqllib_8hpp_a36d0f9bb1b86a8155d7551fcd014b4da_icgraph" alt=""/></div>
+<map name="sqllib_8hpp_a36d0f9bb1b86a8155d7551fcd014b4da_icgraph" id="sqllib_8hpp_a36d0f9bb1b86a8155d7551fcd014b4da_icgraph">
+<area shape="rect" id="node2" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="180,5,230,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -894,6 +1007,16 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="sqllib_8hpp_aee892818f06208ce4b68fb7598a7494c_cgraph.png" border="0" usemap="#sqllib_8hpp_aee892818f06208ce4b68fb7598a7494c_cgraph" alt=""/></div>
+<map name="sqllib_8hpp_aee892818f06208ce4b68fb7598a7494c_cgraph" id="sqllib_8hpp_aee892818f06208ce4b68fb7598a7494c_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="539,25,630,50"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#af8ead42df91543eb727f4ab7e44e49d5" title="Sendet eine Abfrage zum SQL&#45;Server. " alt="" coords="364,25,491,50"/>
+<area shape="rect" id="node4" href="tables_8cpp.html#ae62b61e29ea8b6010ae2463f80598460" title="Löschen der Schlüsselgruppe. " alt="" coords="198,76,316,101"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -925,6 +1048,15 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="sqllib_8hpp_a9754762b2c19711bf3dcbfceca61d97d_cgraph.png" border="0" usemap="#sqllib_8hpp_a9754762b2c19711bf3dcbfceca61d97d_cgraph" alt=""/></div>
+<map name="sqllib_8hpp_a9754762b2c19711bf3dcbfceca61d97d_cgraph" id="sqllib_8hpp_a9754762b2c19711bf3dcbfceca61d97d_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="317,5,409,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#af8ead42df91543eb727f4ab7e44e49d5" title="Sendet eine Abfrage zum SQL&#45;Server. " alt="" coords="143,31,269,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -962,9 +1094,7 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 <div class="dyncontent">
 <div class="center"><img src="sqllib_8hpp_a960705de531a20389fb29928d43258c3_icgraph.png" border="0" usemap="#sqllib_8hpp_a960705de531a20389fb29928d43258c3_icgraph" alt=""/></div>
 <map name="sqllib_8hpp_a960705de531a20389fb29928d43258c3_icgraph" id="sqllib_8hpp_a960705de531a20389fb29928d43258c3_icgraph">
-<area shape="rect" id="node2" href="gui_8hpp.html#aa0976691d9932853389991b8459ebd85" title="whenPushed" alt="" coords="138,5,237,31"/>
-<area shape="rect" id="node4" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="163,55,213,80"/>
-<area shape="rect" id="node3" href="gui_8hpp.html#ace0698412b74cdbc0571809a0d903b49" title="gui" alt="" coords="285,5,324,31"/>
+<area shape="rect" id="node2" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="138,5,189,31"/>
 </map>
 </div>
 
@@ -998,6 +1128,15 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="sqllib_8hpp_aceb780082d3f7392e485cac394d6c606_cgraph.png" border="0" usemap="#sqllib_8hpp_aceb780082d3f7392e485cac394d6c606_cgraph" alt=""/></div>
+<map name="sqllib_8hpp_aceb780082d3f7392e485cac394d6c606_cgraph" id="sqllib_8hpp_aceb780082d3f7392e485cac394d6c606_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="349,5,441,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#ab12a404eefae07281e8d1273ca3fc447" title="Rückgabe einzelner Ergebnisse. " alt="" coords="154,31,301,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1056,6 +1195,15 @@ Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="sqllib_8hpp_a244b10b3b373f8a174943176101a480f_cgraph.png" border="0" usemap="#sqllib_8hpp_a244b10b3b373f8a174943176101a480f_cgraph" alt=""/></div>
+<map name="sqllib_8hpp_a244b10b3b373f8a174943176101a480f_cgraph" id="sqllib_8hpp_a244b10b3b373f8a174943176101a480f_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="378,5,470,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#af8ead42df91543eb727f4ab7e44e49d5" title="Sendet eine Abfrage zum SQL&#45;Server. " alt="" coords="204,31,330,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1272,6 +1420,15 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="sqllib_8hpp_a526b049a888b2a4a1332a10540689afd_cgraph.png" border="0" usemap="#sqllib_8hpp_a526b049a888b2a4a1332a10540689afd_cgraph" alt=""/></div>
+<map name="sqllib_8hpp_a526b049a888b2a4a1332a10540689afd_cgraph" id="sqllib_8hpp_a526b049a888b2a4a1332a10540689afd_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="326,5,418,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#af8ead42df91543eb727f4ab7e44e49d5" title="Sendet eine Abfrage zum SQL&#45;Server. " alt="" coords="152,31,278,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -3279,6 +3436,23 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="sqllib_8hpp_a7c4575b6ed6eb203c2796930c41ed555_cgraph.png" border="0" usemap="#sqllib_8hpp_a7c4575b6ed6eb203c2796930c41ed555_cgraph" alt=""/></div>
+<map name="sqllib_8hpp_a7c4575b6ed6eb203c2796930c41ed555_cgraph" id="sqllib_8hpp_a7c4575b6ed6eb203c2796930c41ed555_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="313,5,405,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#af8ead42df91543eb727f4ab7e44e49d5" title="Sendet eine Abfrage zum SQL&#45;Server. " alt="" coords="138,31,265,56"/>
+</map>
+</div>
+<div class="dynheader">
+Hier ist ein Graph der zeigt, wo diese Funktion aufgerufen wird:</div>
+<div class="dyncontent">
+<div class="center"><img src="sqllib_8hpp_a7c4575b6ed6eb203c2796930c41ed555_icgraph.png" border="0" usemap="#sqllib_8hpp_a7c4575b6ed6eb203c2796930c41ed555_icgraph" alt=""/></div>
+<map name="sqllib_8hpp_a7c4575b6ed6eb203c2796930c41ed555_icgraph" id="sqllib_8hpp_a7c4575b6ed6eb203c2796930c41ed555_icgraph">
+<area shape="rect" id="node2" href="tables_8cpp.html#a6bd46ec08e83f28ae60e1d235d9d2659" title="Erstellen einer Tabelle. " alt="" coords="138,5,229,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -3337,6 +3511,15 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="sqllib_8hpp_a4605e656585a77253f0940725b97ad04_cgraph.png" border="0" usemap="#sqllib_8hpp_a4605e656585a77253f0940725b97ad04_cgraph" alt=""/></div>
+<map name="sqllib_8hpp_a4605e656585a77253f0940725b97ad04_cgraph" id="sqllib_8hpp_a4605e656585a77253f0940725b97ad04_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="386,5,477,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#af8ead42df91543eb727f4ab7e44e49d5" title="Sendet eine Abfrage zum SQL&#45;Server. " alt="" coords="211,31,338,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -3440,6 +3623,15 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="sqllib_8hpp_aac2797835afcf68b73ba522e7bb91f5f_cgraph.png" border="0" usemap="#sqllib_8hpp_aac2797835afcf68b73ba522e7bb91f5f_cgraph" alt=""/></div>
+<map name="sqllib_8hpp_aac2797835afcf68b73ba522e7bb91f5f_cgraph" id="sqllib_8hpp_aac2797835afcf68b73ba522e7bb91f5f_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="336,5,428,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#af8ead42df91543eb727f4ab7e44e49d5" title="Sendet eine Abfrage zum SQL&#45;Server. " alt="" coords="161,31,288,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -3505,6 +3697,15 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="sqllib_8hpp_a4aca01f302c4488d661196653d8f6c28_cgraph.png" border="0" usemap="#sqllib_8hpp_a4aca01f302c4488d661196653d8f6c28_cgraph" alt=""/></div>
+<map name="sqllib_8hpp_a4aca01f302c4488d661196653d8f6c28_cgraph" id="sqllib_8hpp_a4aca01f302c4488d661196653d8f6c28_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="354,5,445,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#af8ead42df91543eb727f4ab7e44e49d5" title="Sendet eine Abfrage zum SQL&#45;Server. " alt="" coords="179,31,306,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -3547,6 +3748,15 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="sqllib_8hpp_addc31570307c41c7327c3da4886ae7bf_cgraph.png" border="0" usemap="#sqllib_8hpp_addc31570307c41c7327c3da4886ae7bf_cgraph" alt=""/></div>
+<map name="sqllib_8hpp_addc31570307c41c7327c3da4886ae7bf_cgraph" id="sqllib_8hpp_addc31570307c41c7327c3da4886ae7bf_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="383,5,475,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="173,31,335,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -3619,6 +3829,15 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
 </dl>
 <dl class="section return"><dt>Rückgabe</dt><dd>void</dd></dl>
 <dl class="section author"><dt>Autor</dt><dd>Steffen Extra </dd></dl>
+<div class="dynheader">
+Hier ist ein Graph, der zeigt, was diese Funktion aufruft:</div>
+<div class="dyncontent">
+<div class="center"><img src="sqllib_8hpp_a22fbeb7f18a00bafd4864de51a3bca28_cgraph.png" border="0" usemap="#sqllib_8hpp_a22fbeb7f18a00bafd4864de51a3bca28_cgraph" alt=""/></div>
+<map name="sqllib_8hpp_a22fbeb7f18a00bafd4864de51a3bca28_cgraph" id="sqllib_8hpp_a22fbeb7f18a00bafd4864de51a3bca28_cgraph">
+<area shape="rect" id="node2" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="348,5,440,31"/>
+<area shape="rect" id="node3" href="connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="138,31,300,56"/>
+</map>
+</div>
 
 </div>
 </div>

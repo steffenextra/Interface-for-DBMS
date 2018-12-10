@@ -1,4 +1,8 @@
 <map id="sqllib.hpp" name="sqllib.hpp">
-<area shape="rect" id="node2" href="$gui_8cpp.html" title="gui.cpp" alt="" coords="5,79,70,104"/>
-<area shape="rect" id="node3" href="$main_8cpp.html" title="main.cpp" alt="" coords="93,79,169,104"/>
+<area shape="rect" id="node2" href="$connection_8cpp.html" title="connection.cpp" alt="" coords="5,79,116,104"/>
+<area shape="rect" id="node3" href="$database_8cpp.html" title="database.cpp" alt="" coords="141,79,242,104"/>
+<area shape="rect" id="node4" href="$entry_8cpp.html" title="entry.cpp" alt="" coords="266,79,341,104"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="main.cpp" alt="" coords="364,79,440,104"/>
+<area shape="rect" id="node6" href="$selection_request_8cpp.html" title="selectionRequest.cpp" alt="" coords="464,79,613,104"/>
+<area shape="rect" id="node7" href="$tables_8cpp.html" title="tables.cpp" alt="" coords="637,79,719,104"/>
 </map>
