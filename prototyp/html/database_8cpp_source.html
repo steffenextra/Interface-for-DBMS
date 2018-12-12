@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SQL-Library: database.cpp Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="Hochschule-Emden-Leer-Logo.jpg"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">SQL-Library
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Suchen');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('database_8cpp_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">database.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="database_8cpp.html">gehe zur Dokumentation dieser Datei</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sqllib_8hpp.html">sqllib.hpp</a>&quot;</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="sqllib_8hpp.html#abf48eb274e662a7de3f5f190d126b765">   20</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="database_8cpp.html#abf48eb274e662a7de3f5f190d126b765">createDatabase</a> (std::string databaseName){</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        std::string sqlCommand = <span class="stringliteral">&quot;CREATE DATABASE &quot;</span> + databaseName;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1">check_error</a>();</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="connection_8cpp.html#af8ead42df91543eb727f4ab7e44e49d5">connection_query</a>(sqlCommand.c_str());</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        std::cout &lt;&lt; databaseName + <span class="stringliteral">&quot; successfully deleted&quot;</span> &lt;&lt; std::endl;;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="sqllib_8hpp.html#a812cc82c697df37c6a8a482f85972b4b">   46</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="database_8cpp.html#a812cc82c697df37c6a8a482f85972b4b">showDatabases</a>(){</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        std::string sqlCommand = <span class="stringliteral">&quot;SHOW DATABASES;&quot;</span> ;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1">check_error</a>();</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="connection_8cpp.html#ab12a404eefae07281e8d1273ca3fc447">connection_feedback</a>(sqlCommand.c_str());</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="sqllib_8hpp.html#a0659d93a42f84756e52155eb333c4fec">   73</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="database_8cpp.html#a0659d93a42f84756e52155eb333c4fec">renameDatabase</a>(std::string databaseName, std::string newDatabaseName){</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">//need to fix</span></div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        std::string sqlCommand =<span class="stringliteral">&quot;ALTER DATABASE &quot;</span> + databaseName + <span class="stringliteral">&quot; TO &quot;</span> + newDatabaseName + <span class="stringliteral">&quot;;&quot;</span>;</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1">check_error</a>();</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="connection_8cpp.html#af8ead42df91543eb727f4ab7e44e49d5">connection_query</a>(sqlCommand.c_str());</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div><div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="sqllib_8hpp.html#a1d1fac4a7c1506f81908532050a8e58f">   98</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="database_8cpp.html#a1d1fac4a7c1506f81908532050a8e58f">deleteDatabase</a>(std::string databaseName){</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        std::string sqlCommand = <span class="stringliteral">&quot;DROP DATABASE &quot;</span> + databaseName;</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1">check_error</a>();</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="connection_8cpp.html#af8ead42df91543eb727f4ab7e44e49d5">connection_query</a>(sqlCommand.c_str());</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        std::cout &lt;&lt; databaseName + <span class="stringliteral">&quot; successfully deleted&quot;</span> &lt;&lt; std::endl;</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div><div class="ttc" id="database_8cpp_html_a1d1fac4a7c1506f81908532050a8e58f"><div class="ttname"><a href="database_8cpp.html#a1d1fac4a7c1506f81908532050a8e58f">deleteDatabase</a></div><div class="ttdeci">void deleteDatabase(std::string databaseName)</div><div class="ttdoc">Löschen einer Datenbank. </div><div class="ttdef"><b>Definition:</b> <a href="database_8cpp_source.html#l00098">database.cpp:98</a></div></div>
+<div class="ttc" id="database_8cpp_html_a0659d93a42f84756e52155eb333c4fec"><div class="ttname"><a href="database_8cpp.html#a0659d93a42f84756e52155eb333c4fec">renameDatabase</a></div><div class="ttdeci">void renameDatabase(std::string databaseName, std::string newDatabaseName)</div><div class="ttdoc">Datenbanknamen ändern. </div><div class="ttdef"><b>Definition:</b> <a href="database_8cpp_source.html#l00073">database.cpp:73</a></div></div>
+<div class="ttc" id="connection_8cpp_html_a33fd832a9e1a27bddb7d9837a2dcf2f1"><div class="ttname"><a href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1">check_error</a></div><div class="ttdeci">void check_error(void)</div><div class="ttdoc">Fehlermethode. </div><div class="ttdef"><b>Definition:</b> <a href="connection_8cpp_source.html#l00027">connection.cpp:27</a></div></div>
+<div class="ttc" id="database_8cpp_html_abf48eb274e662a7de3f5f190d126b765"><div class="ttname"><a href="database_8cpp.html#abf48eb274e662a7de3f5f190d126b765">createDatabase</a></div><div class="ttdeci">void createDatabase(std::string databaseName)</div><div class="ttdoc">Erstellen einer Datenbank. </div><div class="ttdef"><b>Definition:</b> <a href="database_8cpp_source.html#l00020">database.cpp:20</a></div></div>
+<div class="ttc" id="connection_8cpp_html_ab12a404eefae07281e8d1273ca3fc447"><div class="ttname"><a href="connection_8cpp.html#ab12a404eefae07281e8d1273ca3fc447">connection_feedback</a></div><div class="ttdeci">void connection_feedback(std::string sqlCommand)</div><div class="ttdoc">Rückgabe einzelner Ergebnisse. </div><div class="ttdef"><b>Definition:</b> <a href="connection_8cpp_source.html#l00051">connection.cpp:51</a></div></div>
+<div class="ttc" id="sqllib_8hpp_html"><div class="ttname"><a href="sqllib_8hpp.html">sqllib.hpp</a></div></div>
+<div class="ttc" id="database_8cpp_html_a812cc82c697df37c6a8a482f85972b4b"><div class="ttname"><a href="database_8cpp.html#a812cc82c697df37c6a8a482f85972b4b">showDatabases</a></div><div class="ttdeci">void showDatabases()</div><div class="ttdoc">Anzeigen der Datenbanken. </div><div class="ttdef"><b>Definition:</b> <a href="database_8cpp_source.html#l00046">database.cpp:46</a></div></div>
+<div class="ttc" id="connection_8cpp_html_af8ead42df91543eb727f4ab7e44e49d5"><div class="ttname"><a href="connection_8cpp.html#af8ead42df91543eb727f4ab7e44e49d5">connection_query</a></div><div class="ttdeci">void connection_query(std::string sqlCommand)</div><div class="ttdoc">Sendet eine Abfrage zum SQL-Server. </div><div class="ttdef"><b>Definition:</b> <a href="connection_8cpp_source.html#l00141">connection.cpp:141</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="database_8cpp.html">database.cpp</a></li>
+    <li class="footer">Erzeugt von
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
+</body>
+</html>
