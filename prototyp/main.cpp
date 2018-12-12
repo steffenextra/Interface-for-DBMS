@@ -66,7 +66,7 @@ int main (int argc, char *argv[]) {
 //      deleteSecondaryKey("tabelle3", "Person_ID");
 //	setPrimaryKey("tabelle3", "ID");
 //	setColumnWithPrimary("tabelle2", "ID", "int", true);
-	deletePrimaryKey("tabelle3");
+//	deletePrimaryKey("tabelle3");
 
 //      std::string myCommand="SELECT * FROM tableNumberOne";
 //      sqlCommand(myCommand,"feedbackAll");
@@ -76,21 +76,29 @@ int main (int argc, char *argv[]) {
 
 
 
-/*
-std::vector<std::string> columnsss;
+
+
 std::vector<std::string> tabelle2spalten;
+std::vector<std::string> tabelle3spalten;
+
+tabelle3spalten.push_back("Name");
+
 
         
-        tabelle2spalten.push_back("Abteilung");
-       tabelle2spalten.push_back("Gehalt");
+        tabelle2spalten.push_back("Name");
 
-        columnsss.push_back("Name");
+/*        columnsss.push_back("Name");
         columnsss.push_back("Nachname");
         columnsss.push_back("PLZ");
         columnsss.push_back("Adresse");
         columnsss.push_back("Zwischennamen");
-
 */
+
+
+
+selectFullJoin("tabelle2", "Name", tabelle2spalten, "tabelle3",tabelle3spalten);
+
+
 	disconnect();
 }
 

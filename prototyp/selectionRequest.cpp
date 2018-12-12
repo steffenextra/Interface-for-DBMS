@@ -1318,6 +1318,7 @@
 
 		while(i<columnsTableOne.size()){
 			allColumns +=  firstTableName + "." + columnsTableOne.at(i) + ", ";
+			std::cout << allColumns << std::endl;
 			i++;
 		}
 
@@ -1325,7 +1326,7 @@
 
 		while(i<columnsTableTwo.size()){
 			if(columnsTableTwo.size()==1){
-				allColumns +=  columnsTableTwo.at(i) + " ";
+				allColumns +=  secondTableName + "." + columnsTableTwo.at(i) + " ";
 			}else{
 				if (i != columnsTableTwo.size()-1){
 					allColumns += secondTableName + "." + columnsTableOne.at(i) + ", ";
@@ -1334,6 +1335,7 @@
 				}
 			}
 			i++;
+		std::cout << allColumns << std::endl;
 		}
 
 		std::string sqlCommand = "SELECT " + allColumns + " FROM " + firstTableName + " LEFT JOIN " + secondTableName + " ON " + firstTableName + "."  + columnIDTableOne + "=" + secondTableName + "." + columnIDTableOne + ";"; 	 
@@ -1381,7 +1383,7 @@
 
 		while(i<columnsTableTwo.size()){
 			if(columnsTableTwo.size()==1){
-				allColumns +=  columnsTableTwo.at(i) + " ";
+				allColumns +=  secondTableName + "." + columnsTableTwo.at(i) + " ";
 			}else{
 				if (i != columnsTableTwo.size()-1){
 					allColumns += secondTableName + "." + columnsTableOne.at(i) + ", ";
@@ -1392,7 +1394,7 @@
 			i++;
 		}
 
-		std::string sqlCommand = "SELECT " + allColumns + " FROM " + secondTableName + " RIGHT JOIN " + secondTableName + " ON " + firstTableName + "."  + columnIDTableOne + "=" + secondTableName + "." + columnIDTableOne + ";"; 	 
+		std::string sqlCommand = "SELECT " + allColumns + " FROM " + secondTableName + " RIGHT JOIN " + firstTableName + " ON " + secondTableName + "."  + columnIDTableOne + "=" + secondTableName + "." + columnIDTableOne + ";"; 	 
 		std::cout << sqlCommand << std::endl;
 		check_error();
 		connection_feedbackAll(sqlCommand.c_str());
@@ -1426,7 +1428,8 @@
 	*/
 
 	void selectFullJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo){
-
+   // FULL JOIN wird nicht supported LEFT JOIN UNION RIGHT JOIN benutzen 
+	// https://stackoverflow.com/questions/7978663/mysql-full-join
 		int i=0;
 		std::string allColumns;
 
@@ -1439,7 +1442,7 @@
 
 		while(i<columnsTableTwo.size()){
 			if(columnsTableTwo.size()==1){
-				allColumns +=  columnsTableTwo.at(i) + " ";
+				allColumns +=  secondTableName + "." + columnsTableTwo.at(i) + " ";
 			}else{
 			
 				if (i != columnsTableTwo.size()-1){
