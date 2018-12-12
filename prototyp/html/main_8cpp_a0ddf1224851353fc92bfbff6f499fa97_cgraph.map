@@ -1,7 +1,7 @@
 <map id="main" name="main">
-<area shape="rect" id="node2" href="$connection_8cpp.html#adda241635377573037e48ec03e645c22" title="Verbindung zur Datenbank auf einem Server. " alt="" coords="287,5,396,31"/>
-<area shape="rect" id="node4" href="$sqllib_8hpp.html#a36d0f9bb1b86a8155d7551fcd014b4da" title="Löschen des Primärschlüssels. " alt="" coords="104,56,230,81"/>
-<area shape="rect" id="node6" href="$connection_8cpp.html#a960705de531a20389fb29928d43258c3" title="Verbindung schließen. " alt="" coords="124,105,209,131"/>
-<area shape="rect" id="node3" href="$connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="453,56,544,81"/>
-<area shape="rect" id="node5" href="$connection_8cpp.html#af8ead42df91543eb727f4ab7e44e49d5" title="Sendet eine Abfrage zum SQL&#45;Server. " alt="" coords="278,107,405,132"/>
+<area shape="rect" id="node2" href="$connection_8cpp.html#adda241635377573037e48ec03e645c22" title="Verbindung zur Datenbank auf einem Server. " alt="" coords="280,5,390,31"/>
+<area shape="rect" id="node4" href="$selection_request_8cpp.html#a41392b97718c999af4867dc0c62ade0c" title="FullJoin Methode. " alt="" coords="104,56,206,81"/>
+<area shape="rect" id="node6" href="$connection_8cpp.html#a960705de531a20389fb29928d43258c3" title="Verbindung schließen. " alt="" coords="112,105,197,131"/>
+<area shape="rect" id="node3" href="$connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. " alt="" coords="464,56,556,81"/>
+<area shape="rect" id="node5" href="$connection_8cpp.html#a05a069b8d1bef185dd0ff85424e2e13c" title="Rückgabe aller Datensätze. " alt="" coords="254,107,416,132"/>
 </map>
