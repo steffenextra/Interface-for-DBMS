@@ -201,12 +201,12 @@
 
         @brief Modifizieren des Spaltennamens
 
-	Ersetzt den Spaltennamen sowie den Datentyp falls gewünscht. <br>
-	Soll der Datentyp nicht geändert werden, wird der Datentyp des Feldes nochmal angegeben.<br>
+	Ersetzt den Spaltennamen sowie den Datentypen. <br>
+	Sollte der  Fall eintreten, dass der Datentyp nicht geändert wird, kann der Datentyp des Feldes nochmal angegeben werden.<br>
 
 	SQL-Befehl: "ALTER TABLE " + tableName + " CHANGE " + oldColumnName + " " + newColumnName + " " + datatype; <br>
 
-        @param tableName = Name der Tabelle
+    @param tableName = Name der Tabelle
 	@param oldColumnName = Alter Name der Spalte
 	@param newColumnName = Neuer Name der Spalte
 	@param datatype = Datentyp der Spalte
@@ -235,7 +235,7 @@
 
 	SQL-Befehl: "AlTER TABLE " + tableName + " MODIFY " + columnName + " " + datatype;
 
-        @param tableName = Name der Tabelle
+    @param tableName = Name der Tabelle
 	@param columnName = Name der Spalte
 	@param datatype = Neuer Datentyp 
 
@@ -357,9 +357,9 @@
 
 	@brief Setzen des Sekundärschlüssels (Foreign Key)
 
-	tableNamePrimary  und primaryKey  verbinden den Primärschlüssel aus einer Tabelle mit einer vom Programmierer gewünschten Spalte und setzt den ForeignKey auf diese.<br>
+	tableNamePrimary  und primaryKey  verbinden den Primärschlüssel aus einer Tabelle mit einer gewünschten Spalte und setzt den ForeignKey auf diese.<br>
 	So können die Abhängigkeiten vom Primärschlüssel im Bezug auf einer anderen Tabelle gelöst werden. <br>
-	Zusätzlich kann durch die Angabe des Übergabeparameters constraint eine Schlüsselgruppe  definier werden.<br>
+	Zusätzlich kann durch die Angabe des Übergabeparameters constraint eine Schlüsselgruppe  definiert werden.<br>
 
 	SQL-Befehl  "ALTER TABLE " + tableNameSecondary + " ADD CONSTRAINT "+ constraint + " FOREIGN KEY (" + foreignKey + ") REFERENCES " + tableNamePrimary + " (" + primaryKey + ");";
 
@@ -388,7 +388,8 @@
 	@brief Löschen der Schlüsselgruppe
 
 	Diese Methode löscht die Schlüsselgruppe. <br>
-	Konkreter Aufruf dieser Methode wird vermieden. <br>
+	Konkreter Aufruf dieser Methode findet nicht statt. <br> 
+	<br>
 	Aufruf dieser Methode in der deleteSecondaryKey() Methode. <br>
 
 	SQL-Befehl: "ALTER TABLE " + tableName + " DROP INDEX " + constraint;
@@ -414,7 +415,7 @@
 
 	@brief Löschen des Sekundärschlüssels
 
-	Der gesetzte Sekundärschlüssel im Bezug auf den gesetzten Primärschlüssel und die Schlüsselgruppe kann mit dieser Methode gelöscht werden.<br>
+	Der gesetzte Sekundärschlüssel im Bezug auf den gesetzten Primärschlüssel und die Schlüsselgruppe für den Sekundärschlüssel kann mit dieser Methode gelöscht werden.<br>
 
 	SQL-Befehl: "ALTER TABLE " + tableName + " DROP FOREIGN KEY " + constraint + "; ";
 

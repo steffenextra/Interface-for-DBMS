@@ -28,7 +28,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="Hochschule-Emden-Leer-Logo.jpg"/></td>
+  <td id="projectlogo"><img alt="Logo" src="logo_home_245x108.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SQL-Library
    </div>
@@ -95,20 +95,37 @@ $(document).ready(function(){initNavTree('index.html','');});
 <p>Selektierung von C++ und der Standard-Bibliothek von MySQL.<br />
  SQL-Statements können über Methoden und Parameter abgearbeitet werden.<br />
  Bedienbar entweder über die Konsole und den einfachen Methoden-Aufruf oder über das Interface.<br />
- <br />
+</p>
+<p><br />
 </p>
 <p><b> &mdash;Einrichtung&mdash; </b></p>
 <p>Der Socket für XAMPP auf Linux sowie MAMP auf MacOS wurden bereits implementiert falls diese Bibliothek local genutzt werden soll.<br />
- Für die Anwendung ist es außerdem Vorraussetzung den MYSQL-Header zu implementieren. <br />
- Durch weitere Präprozessor-Direktiven in der <a class="el" href="sqllib_8hpp.html">sqllib.hpp</a> sind die Standardpfade des MYSQL-Headers für Linux-/ sowie MacOS-Systeme bereits implementiert. <br />
- <br />
- Sollte die Anwendung nicht Lokal genutzt werden, muss der Ort an dem der spezifische SQL-Socket <br />
+</p>
+<p>Sollte die Anwendung nicht Lokal genutzt werden, muss der Ort an dem der spezifische SQL-Socket <br />
  clientseitig liegt identifiziert werden um mit dem SQL-Server zu kommunizieren.<br />
  Für den Verbindungsaufbau wird die connectionless-Methode <a class="el" href="connection_8cpp.html#adda241635377573037e48ec03e645c22" title="Verbindung zur Datenbank auf einem Server. ">connectionless()</a> (siehe Übergabe-Parameter) der connection-Klasse <br />
- benutzt und baut nach der Build-Routine bei der Ausführung des Programm's eine Verbindung auf. <br />
+ benutzt, diese baut nach der Build-Routine bei der Ausführung des Programm's eine Verbindung auf.<br />
 </p>
-<p><br />
+<p>Durch vorgefertigte Präprozessor-Direktiven wird für MacOS-/ sowie Linuxbetriebssysteme der zu benötigende MySQL-Header beim kompilieren direkt rausgesucht. <br />
  <br />
+ In der Regel sollte der MySQL-Header im Standardpfad des dementsprechenden Betriebssystems liegen. <br />
+ Sollte dies nicht der Fall sein, muss die Variable in der <a class="el" href="connection_8cpp.html#adda241635377573037e48ec03e645c22" title="Verbindung zur Datenbank auf einem Server. ">connectionless()</a> Methode gelöscht und durch eine eigene Variable (String des Pfads + mysql.h) ersetzt werden.<br />
+</p>
+<p>Für das Ausführen des Programms ohne Benutzeroberfläche wird das erstellte Shellscript mit den dementsprechenden Umgebungsvariablen benutzt.<br />
+ Sollte, wie vorher beschrieben der Pfad für den MySQL-Header nicht im Standardpfad liegen, muss ebenfalls das Shellscript angepasst werden. <br />
+ Die Bedingung im Shellscript sieht vor, dass je nach Pfad für die mysql.h andere Compiler-Optionen vorgenommen werden. <br />
+ Hier muss lediglich der Pfad mit inbegriffender Header-Datei eingebunden werden um das Shellscript lauffähig zu bekommen. <br />
+ Für die Ausführung des User-Interfaces steht ein eigens entwickeltes Shellscript zur verfügung. <br />
+</p>
+<p>!Kein Support für Microsoft-Betriebssysteme!</p>
+<p><br />
+</p>
+<p><b> &mdash;Nice to know&mdash; </b></p>
+<p>Da in diesem Projekt ausschließlich mit der MySQL-Standardbibliothek gearbeitet wurde, passiert die Fehlerausgabe über die <a class="el" href="connection_8cpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1" title="Fehlermethode. ">check_error()</a> Methode.<br />
+ Diese fängt jegliche Fehlerausgaben des MySQL-Servers ab und printed diese aus. <br />
+ <br />
+ Sollte dieses Programm über die Konsole genutzt werden, müssen jegliche Übergabeparameter (ausgeschlossen Integer) in einen String gepackt werden. (" ")<br />
+ Durch die Benutzung des Interfaces kann diese Anweisung jedoch ignoriert werden. <br />
  <br />
 </p>
 <dl class="section author"><dt>Autor</dt><dd>Steffen Extra </dd>

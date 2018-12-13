@@ -7,7 +7,9 @@ PROJEKTMANAGEMENT STUFF
     Gliederung der Doku
     MTA's
 ---------------------------------------------------------------------------
-More SELECT requests --> in progress
+Everything Done !
+
+
 finish Methods
 {
     -SELECT requests (ASC/DESC) GROUP BY // done
@@ -59,9 +61,6 @@ Comments für die BETWEEN Methode
 User-Interface
 
 - flags for FLTK include for an extra comp.sh // done
-
-- Rework all void methods for a char * or String return
-	- there is a special need for our output (feeedback in our GUI)
 
 - Mockups
 

@@ -153,8 +153,8 @@ MYSQL_FIELD *field;
 	@brief Verbindung zur Datenbank auf einem Server
 
 	Die Methode "connectionless" wird verwendet, um eine Verbindung zu einer Datenbank mit all ihren nötigen Parametern(z.B User,Pw usw.) herzustellen.<br>
-	Um eine Verbindung zu einem lokalen Computer herzustellen, geben Sie "localhost" für den Server an. <br>
-	Wenn Sie keinen Server angeben, wird localhost angenommen. <br>
+	Um eine Verbindung zu einem lokalen Computer herzustellen, geben Sie "localhost" oder die lokale IP-Adresse für den Server an. <br>
+	
 
 	@param host = Name des Hosts
 	@param user = Name des Users
