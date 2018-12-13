@@ -4,14 +4,11 @@
 #include <FL/Fl_Output.H>
 #include <FL/Fl_Input.H>
 #include <FL/Fl_Button.H>
-#include "/Users/steffenextra/projekt/projektarbeit/prototyp/sqllib.hpp"
 #include <stdio.h>
 
 	void whenPushed(Fl_Widget* w, void*){
 
 		if ( ((Fl_Button*) w)->value()){
-			disconnect();
-			std::cout << "test" << std::endl;
 		}else{
 			printf("Ahhh!\n");
 		}

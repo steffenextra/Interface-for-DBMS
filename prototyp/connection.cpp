@@ -171,7 +171,7 @@ MYSQL_FIELD *field;
 
 	*/
 
-	void connectionless(const char host [], const char user [], const char passwort [],const char db [], unsigned int port,const char *macOS_socket, unsigned int client_flag){
+	bool connectionless(const char host [], const char user [], const char passwort [],const char db [], unsigned int port,const char *macOS_socket, unsigned int client_flag){
 
 		mysql=mysql_init(mysql);
 		check_error();
@@ -186,9 +186,11 @@ MYSQL_FIELD *field;
 			macOS_socket,				/* Angesprochener Socket (je nach Betriebssystem) */
 			0               )  == NULL) {		/* keine Flags */
 		fprintf(stderr, "Fehler mysql_real_connect():" "%u (%s)\n", mysql_errno (mysql), mysql_error (mysql));
+		return false;
 		}
 		else{
 			printf("Erfolgreich mit dem MySQL-Server auf %s%s",  host, " verbunden\n");
+			return true;
 		}
 
 	}
