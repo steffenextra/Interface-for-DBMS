@@ -7,6 +7,6 @@
 
 	elif [ -d /usr/include/openssl ];
 	then
-			clang++ -std=c++11 -w -I -L/usr/include/openssl  -I -L/usr/include/mysql  -lmysqlclient -lssl -lcrypto *.cpp *.hpp
+			clang++ -std=c++11 -w -I -L/usr/include/openssl  -I -L/usr/include/mysql  -lmysqlclient -lssl -lcrypto -L/usr/local/lib -lfltk -lXext -lX11 -lm *.cpp *.hpp
 			rm -rf *.hpp.gch
 	fi
