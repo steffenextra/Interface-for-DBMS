@@ -1,66 +1,20 @@
 12.11.18 - 26.11.18
 
-Wichtig: Die Funktionsweise der Methoden und die Handhabung der 
-         Vektoren sollen A. in der Methode erklärt werden und B. in der Doku 
----------------------------------------------------------------------------
 PROJEKTMANAGEMENT STUFF
     Gliederung der Doku
-    MTA's
 ---------------------------------------------------------------------------
-Everything Done !
-
-
-finish Methods
-{
-    -SELECT requests (ASC/DESC) GROUP BY // done
-    -fix the showTables method // done
-    -PRIMARY KEY ->  NEW SET // done
-    -SECONDARY KEY // done
-    -"WHERE" Method that displayed all Columns // done
-    -"WHERE" Method that displayed all Columuns with an Order (DESC,ASC) //done
-    -"Your own SQL Command Method" // done 
-    -method table rename 
-    -method database rename //done
-    -SELECT Limit          //done
-    -SELECT DISTINCT        //done
-    -SELECT COUNT DISTINCT     //done
-    -SELECT COUNT //done
-    -SELECT MIN and MAX //done
-    -WHERE BETWEEN  //done
-    -WHERE IN       //done
-    -WHERE is NULL  //done
-    -Like       //done
-    -Not like//done
-    -The Where with AND, OR, NOT//done
-    -GROUP BY//done
-    -GROUP BY with Order BY//done
-    -GROUP BY with Count//done
-    -JOIN , LEFT JOIN, RIGHT JOIN, FULL JOIN
-}
 
 ------------------------------------------------------------------
-Done
--schleifen fixen bei vectoren mit einem eintrag!!//done bei selectionRequest
--Code vereinheitlichen//done für die selectionRequest.cpp
--Code vollständig kommentiert für die selectionRequest.cpp
-
 
 
 to-Do
--Exception-Handling
--größere TestDatenbank erstellen!
--Testen der Join Methode
--table.cpp kommentieren
--Code vollständig vereinheitlichen 
-Comments für die BETWEEN Methode
+- größere TestDatenbank erstellen!
+- check_error-Methode auf Rückgabetyp String umschreiben 
+- Grundstruktur der Oberfläche 
+- Gliederung des Handbuchs 
+- Funktionen in Oberfläche implementieren
 
 
-----------------------------
 
 
-User-Interface
-
-- flags for FLTK include for an extra comp.sh // done
-
-- Mockups
 
