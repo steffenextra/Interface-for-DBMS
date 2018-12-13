@@ -5,10 +5,7 @@
 #include <FL/Fl_Input.H>
 #include <FL/Fl_Button.H>
 #include <stdio.h>
+#include <FL/Fl_Choice.H>
 
 
-
-
-
-void whenPushed(Fl_Widget* w, void*);
-void window();
+void catWindow();

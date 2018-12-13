@@ -1,9 +1,9 @@
 #include "connectionWindow.hpp"
-
+#include "catWindow.hpp"
 
 int main (int argc, char *argv[]) {
 
-window();
+connectionWindow a = new connectionWindow(200,200,100,100, "a");
 
 
 

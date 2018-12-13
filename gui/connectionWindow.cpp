@@ -1,10 +1,10 @@
 #include "connectionWindow.hpp"
-
+#include "catWindow"
 	void whenPushed(Fl_Widget* w, void*){
 
 		if ( ((Fl_Button*) w)->value()){
 		}else{
-			printf("Ahhh!\n");
+			catWindow();
 		}
 	}
 
