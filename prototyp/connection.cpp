@@ -63,7 +63,7 @@ MYSQL_FIELD *field;
 			while((row=mysql_fetch_row(result))!=NULL){
 				std::cout<< *row << std::endl;
 			}
-				std::cout << std::endl;
+				std::cout << std::endl; // schleifimeifi rekursivi ? 
 		}
 
 
@@ -122,7 +122,7 @@ MYSQL_FIELD *field;
 
 		printf("\n");
 		mysql_free_result(result);
-	}
+	}// schleifimeifi rekursivi ? 
 
 	/**
 
@@ -140,7 +140,7 @@ MYSQL_FIELD *field;
 
 	*/
 
-	void connection_query(std::string sqlCommand){
+	std::string connection_query(std::string sqlCommand){
 
 		std::cout << std::endl;
 		std::cout <<"\033[1;31m DEBUG : INPUT FOR THE MYSQL_QUERY\033[0m" << std::endl;
@@ -148,6 +148,8 @@ MYSQL_FIELD *field;
 		std::cout << std::endl;
 		mysql_query (mysql, sqlCommand.c_str());
 		check_error();
+		std::string statement = sqlCommand;
+	return statement.c_str();
 	}
 	/**
 

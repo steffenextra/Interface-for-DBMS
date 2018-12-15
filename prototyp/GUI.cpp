@@ -43,10 +43,15 @@ Fl_Output *connectoutput;
 		else {
 			int port1 = atoi(port->value());
 			if(!(port==0)){
-				connectionless(host->value(),name->value(),pwd->value(),database->value(),port1,pathto,0);
-				//connectoutput->value(connectionless());
+				
+				if (connectionless(host->value(),name->value(),pwd->value(),database->value(),port1,pathto,0)==1){
 				connectionWindow->hide();
 				categoryWindow = new CategoryWindow();
+				}else {
+					connectoutput->value("Verbindung fehlgeschlagen");
+
+				}
+
 			}
 			else{
 				//Exception
@@ -60,8 +65,7 @@ Fl_Output *connectoutput;
 		if ( ((Fl_Button*) w)->value()){
 		} 
 		else {
-			//statementWindow->end();
-			categoryWindow->~CategoryWindow();
+			categoryWindow->hide();
 			connectionWindow->visible();
 			disconnect();
 		}
@@ -195,7 +199,8 @@ Fl_Output *connectoutput;
 				connection_query(sqlStatement->value());
 				std::string errormsg = check_error();
  				messageerror->value(errormsg.c_str());
- 				//feedback->value(connection_feedbackAll(sqlStatement->value())); PROBLEM, kein Feedback in Gui momentan Möglich -> rework 
+ 				std::string msg = connection_query(sqlStatement->value()); // Unterscheiden zwischen den einzelnen typen der query und Problemlösung für feedbackall 
+ 				feedback->value(msg.c_str()); 
 			}
 
 
@@ -219,8 +224,9 @@ ConnectionWindow::ConnectionWindow() : Fl_Window(600,400,560,310,"SQL-Interface"
 		port = new Fl_Input (220,180,100,30, "Port");
 		connect = new Fl_Button(220,220,100,30, "Connect");
 		connect->callback((Fl_Callback*) whenPushedConnect);
-		connectoutput = new Fl_Output(180,260,250,30, "Meldung");
+		connectoutput = new Fl_Output(170,260,200,30, "Meldung"); // Eventuelle Ausgabe des spezifischen Fehlers
 		connectoutput->callback((Fl_Callback*)whenPushedConnect);
+        
         end();
         show();
     }
