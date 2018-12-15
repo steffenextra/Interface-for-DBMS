@@ -6,7 +6,7 @@
 
 	Die Methode "createDatabase" sendet einen Befehl um eine Datenbank zu erstellen an den SQL Server
 
-	SQL-Befehl: "CREATE DATABASE " + databaseName;
+	SQL-Befehl: "CREATE DATABASE " + databaseName;"
 
 	@param databaseName = enthält den Namen für die zu erstellende Datenbank
 
@@ -22,8 +22,6 @@
 		std::string sqlCommand = "CREATE DATABASE " + databaseName;
 		check_error();
 		connection_query(sqlCommand.c_str());
-		std::cout << databaseName + " successfully deleted" << std::endl;;
-
 	}
 
 	/**
