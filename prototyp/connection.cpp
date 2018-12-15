@@ -24,12 +24,14 @@ MYSQL_FIELD *field;
 
 	*/
 
-	void check_error(void){
+	std::string check_error(void){
 
 		if (mysql_errno(mysql) != 0) {
 			fprintf(stderr, "Fehler: %s\n", mysql_error(mysql));
-			exit(EXIT_FAILURE);
+			//exit(EXIT_FAILURE); 
 		}
+		std::string message = mysql_error(mysql);
+		return message.c_str();
 
 	}
 	/**
@@ -146,7 +148,6 @@ MYSQL_FIELD *field;
 		std::cout << std::endl;
 		mysql_query (mysql, sqlCommand.c_str());
 		check_error();
-
 	}
 	/**
 

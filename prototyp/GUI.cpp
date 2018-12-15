@@ -28,8 +28,12 @@ ShowTable *showTableWindow;
 EntryWindow *entryWindow;
 EntryCommand *entryCommandWindow;
 ShowEntry *showEntryWindow;
-
-
+StatementWindow *statementWindow;
+StatementWindow *showStatementWindow;
+Fl_Input *sqlStatement;
+Fl_Output *messageerror;
+Fl_Output *feedback;
+Fl_Output *connectoutput;
 //Destruktoren fehlen
 
      void whenPushedConnect(Fl_Widget* w, void*){
@@ -40,6 +44,7 @@ ShowEntry *showEntryWindow;
 			int port1 = atoi(port->value());
 			if(!(port==0)){
 				connectionless(host->value(),name->value(),pwd->value(),database->value(),port1,pathto,0);
+				//connectoutput->value(connectionless());
 				connectionWindow->hide();
 				categoryWindow = new CategoryWindow();
 			}
@@ -55,7 +60,8 @@ ShowEntry *showEntryWindow;
 		if ( ((Fl_Button*) w)->value()){
 		} 
 		else {
-			categoryWindow->hide();
+			//statementWindow->end();
+			categoryWindow->~CategoryWindow();
 			connectionWindow->visible();
 			disconnect();
 		}
@@ -89,9 +95,8 @@ ShowEntry *showEntryWindow;
 		else {
 				databaseCommandWindow->hide();
 				showDatabaseWindow = new ShowDatabase();
-
+				//NUR AUSSERHALB VON DATENBANKEN NUTZBAR 
 				if(databasesCommands->value()=="create Database"){
-					//sqlCommand->insert("CREATE DATABASE databaseName;"); falscher befehl?
 					createDatabase(databasename->value());
 				}
 		}
@@ -174,15 +179,35 @@ ShowEntry *showEntryWindow;
 		
 	}
 
-	GUI::GUI(){
-	//	 connectionWindow = new ConnectionWindow();
-		 categoryWindow = new CategoryWindow();
-	//	dbw = new DatabaseWindow();
-	//tableWindow = new TableWindow();
+
+	void whenPushedSelf(Fl_Widget* w, void*){
+		if (((Fl_Button*) w) ->value()){}
+			else {
+				categoryWindow->hide();
+				showStatementWindow = new StatementWindow();
+			}
+	
+	}
+
+	void whenPushedSend(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else {
+				connection_query(sqlStatement->value());
+				std::string errormsg = check_error();
+ 				messageerror->value(errormsg.c_str());
+ 				//feedback->value(connection_feedbackAll(sqlStatement->value())); PROBLEM, kein Feedback in Gui momentan Möglich -> rework 
+			}
+
+
 
 	}
 
-  ConnectionWindow::ConnectionWindow() : Fl_Window(600,400,560,310,"SQL-Interface"){
+	GUI::GUI(){
+		 connectionWindow = new ConnectionWindow();
+
+	}
+
+ConnectionWindow::ConnectionWindow() : Fl_Window(600,400,560,310,"SQL-Interface"){
         color(FL_WHITE);
         begin();
 
@@ -194,12 +219,41 @@ ShowEntry *showEntryWindow;
 		port = new Fl_Input (220,180,100,30, "Port");
 		connect = new Fl_Button(220,220,100,30, "Connect");
 		connect->callback((Fl_Callback*) whenPushedConnect);
+		connectoutput = new Fl_Output(180,260,250,30, "Meldung");
+		connectoutput->callback((Fl_Callback*)whenPushedConnect);
         end();
         show();
     }
 ConnectionWindow::~ConnectionWindow() {
 		
     }
+
+
+ StatementWindow::StatementWindow() : Fl_Window(600,400,560,310, "SQL-Interface"){
+ 	color(FL_WHITE);
+ 	begin();
+
+ 	Fl_Button *disconnectButton = new Fl_Button(370,0,95,25, "Disconnect");
+ 	Fl_Button *sending = new Fl_Button(465,0,95,25,"Senden");
+ 	disconnectButton->color((Fl_Color)31);
+ 	sqlStatement = new Fl_Input(100,50,400,50,"Eingabe:");
+ 	sending->callback((Fl_Callback*) whenPushedSend); //Nach einem Befehl in Schleife
+ 	feedback = new Fl_Output (100,100,400,100, "Ausgabe:");
+ 	messageerror = new Fl_Output(100,200,400,50,"Fehlermeldung:"); // Kein Automatischer Zeilenumbruch 
+ 	disconnectButton->callback((Fl_Callback*) whenPushedDisconnect); // Absturz durch alloc 
+	backButton = new Fl_Button(95, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+    end();
+    show();
+
+ }
+
+StatementWindow::~StatementWindow(){
+
+    }
+
+
+
   CategoryWindow::CategoryWindow() : Fl_Window(600,400,560,310,"SQL-Interface"){
     color(FL_WHITE);
     begin();
@@ -224,8 +278,14 @@ ConnectionWindow::~ConnectionWindow() {
 	databaseButton->callback((Fl_Callback*) whenPushedDatabaseWindow);
 	tableButton->callback((Fl_Callback*) whenPushedTableWindow);
     entryButton->callback((Fl_Callback*) whenPushedEntryWindow);
+    selfButton->callback((Fl_Callback*) whenPushedSelf);
+    disconnectButton->callback((Fl_Callback*) whenPushedDisconnect);
 	end();
     show();
+ }
+
+ CategoryWindow::~CategoryWindow(){
+
  }
 
 //Databases

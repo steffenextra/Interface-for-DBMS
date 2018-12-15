@@ -25,7 +25,7 @@
 
 //---Connection---
 
-void check_error(void);
+std::string check_error(void);
 void connection_feedback(std::string sqlCommand);
 void connection_feedbackAll(std::string sqlCommand);
 void connection_query(std::string sqlcommand);
