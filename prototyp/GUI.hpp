@@ -85,3 +85,22 @@ class ShowEntry : public Fl_Window{
     ShowEntry();
     ~ ShowEntry(){}
 };
+
+//--Select-Request
+class SelectRequestWindow : public Fl_Window{
+    public:
+    SelectRequestWindow ();
+    ~SelectRequestWindow (){}
+};
+
+class SelectRequestCommand : public Fl_Window{
+    public:
+   SelectRequestCommand();
+    ~SelectRequestCommand(){}
+};
+
+class ShowSelectRequest : public Fl_Window{
+    public:
+    ShowSelectRequest();
+    ~ ShowSelectRequest(){}
+};
