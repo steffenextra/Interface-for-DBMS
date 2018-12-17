@@ -8,6 +8,7 @@
 #include <FL/Fl_Input_Choice.H>
 #include <FL/Fl_Text_Display.H>
 #include <FL/Fl_Text_Editor.H>
+#include <FL/Fl_Check_Button.H>
 #include <stdio.h>
 #include <stdlib.h>
 #include "sqllib.hpp"
@@ -154,3 +155,83 @@ class DeleteEntry : public Fl_Window{
 };
 
 //Table-Windows
+class CreateTable : public Fl_Window{
+    public:
+    CreateTable();
+    ~CreateTable(){}
+};
+class ShowTableCommand : public Fl_Window{
+    public:
+   ShowTableCommand();
+    ~ShowTableCommand(){}
+};
+class RenameTable : public Fl_Window{
+    public:
+    RenameTable();
+    ~RenameTable(){}
+};
+class DeleteTable: public Fl_Window{
+    public:
+    DeleteTable();
+    ~DeleteTable(){}
+};
+class SetColumn : public Fl_Window{
+    public:
+   SetColumn();
+    ~SetColumn(){}
+};
+class setColumnWithPrimary : public Fl_Window{
+    public:
+    setColumnWithPrimary();
+    ~setColumnWithPrimary(){}
+};
+class ModifierColumnName : public Fl_Window{
+    public:
+    ModifierColumnName();
+    ~ModifierColumnName(){}
+};
+class ChangeDatatype : public Fl_Window{
+    public:
+    ChangeDatatype();
+    ~ChangeDatatype(){}
+};
+class GetAllColumn : public Fl_Window{
+    public:
+    GetAllColumn();
+    ~GetAllColumn(){}
+};
+class CountDatasets: public Fl_Window{
+    public:
+    CountDatasets();
+    ~CountDatasets(){}
+};
+class ShowColumnTyp: public Fl_Window{
+    public:
+    ShowColumnTyp();
+    ~ShowColumnTyp(){}
+};
+class DeleteColumn : public Fl_Window{
+    public:
+    DeleteColumn();
+    ~DeleteColumn(){}
+};
+class SetSecondaryKey : public Fl_Window{
+    public:
+     SetSecondaryKey();
+    ~ SetSecondaryKey(){}
+};
+class DeleteSecondaryKey: public Fl_Window{
+    public:
+    DeleteSecondaryKey();
+    ~DeleteSecondaryKey(){}
+};
+class SetPrimaryKey : public Fl_Window{
+    public:
+    SetPrimaryKey();
+    ~SetPrimaryKey(){}
+};
+class DeletePrimaryKey : public Fl_Window{
+    public:
+   DeletePrimaryKey();
+    ~DeletePrimaryKey(){}
+};

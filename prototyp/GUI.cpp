@@ -51,8 +51,16 @@ DeleteDatabase *deleteDatabaseWindow;
 
 SetEntry *setEntryWindow;
 SetAllEntry *setAllEntryWindow;
-ModifierEntry *ModifierEntryWindow;
+ModifierEntry *modifierEntryWindow;
 DeleteEntry *deleteEntryWindow;
+
+Fl_Input *tableName;
+Fl_Check_Button *primaryKey;
+Fl_Input * columnName;
+Fl_Input *columns;
+Fl_Input *oldTableName;
+Fl_Input *newTableName;
+Fl_Input_Choice *datatype;
 
 Fl_Input *sqlStatement;
 Fl_Output *sqlCommand;
@@ -108,12 +116,10 @@ Fl_Output *connectoutput;
 		
 	}
 	void whenPushedNextDatabaseCommand(Fl_Widget* w, void*){
-		//unbedingt anschauen
+		//unbedingt anschauen ... Für jedes neue Klasse muss das Fenster wieder geschlossen werden also erhalten alle Klassen wie cerate Database noch die die back methode
 		if ( ((Fl_Button*) w)->value()){
 		} 
 		else {
-				std:: cout << databasesCommands->value() << std::endl;
-				
 				if((strcmp(databasesCommands->value(),"create Database"))==0){
 					databaseWindow->hide();
 					createDatabaseWindow=new CreateDatabase();
@@ -254,23 +260,25 @@ Fl_Output *connectoutput;
 		if ( ((Fl_Button*) w)->value()){
 		} 
 		else {
-				entryWindow->hide();
-				entryCommandWindow = new EntryCommand();
-
-
-				std:: cout << entryCommands->value() << std::endl;
-				
 				if((strcmp(entryCommands->value(),"setEntry"))==0){
+					entryWindow->hide();
+					setEntryWindow = new SetEntry();
 					sqlCommand->value("INSERT INTO tableName (columnName) VALUES ('entry');"); 
 				}
 
 				if((strcmp(entryCommands->value(),"modifierEntry"))==0){
+					entryWindow->hide();
+					modifierEntryWindow = new ModifierEntry();
 					sqlCommand->value("UPDATE tableName SET columnName='newEntry' WHERE columnName='oldEntry';"); 
 				}
 				if((strcmp(entryCommands->value(),"deleteEntry"))==0){
+					entryWindow->hide();
+					deleteEntryWindow = new DeleteEntry();
 					sqlCommand->value("DELETE FROM tableName WHERE columnName='condition';"); 
 				}
 				if((strcmp(entryCommands->value(),"setAllEntry"))==0){
+					entryWindow->hide();
+					setAllEntryWindow = new SetAllEntry();
 					sqlCommand->value("INSERT INTO tableName (columnName) VALUES(insertData);"); 
 				}
 			/*	else{
@@ -422,7 +430,8 @@ Fl_Output *connectoutput;
 
 	GUI::GUI(){
 		// connectionWindow = new ConnectionWindow();
-		categoryWindow = new CategoryWindow();
+	//	categoryWindow = new CategoryWindow();
+		SetColumn *s1 = new SetColumn();
 		
 
 	}
@@ -932,6 +941,120 @@ DeleteEntry::DeleteEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){
     tablename = new Fl_Input(120, 86, 140, 24, "Tablename:");
 	columnname = new Fl_Input(120, 111, 140, 24, "Columnname:");
 	condition = new Fl_Input(120, 136, 140, 24, "Condition:");
+
+	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+
+	end();
+	show();
+}
+
+//Table-Window
+CreateTable::CreateTable() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+		
+	color(FL_WHITE);
+	begin();
+
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    Fl_Button *helpButton = new Fl_Button(0, 0, 95, 25, "Help");
+    helpButton->color((Fl_Color)31);
+     backButton = new Fl_Button(95, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+    tableName = new Fl_Input(95, 86, 140, 24, "Tablename:");
+    
+    primaryKey = new Fl_Check_Button(275, 90, 105, 15, "PrimaryKey");
+    primaryKey->down_box(FL_DOWN_BOX);
+    columns = new Fl_Input(95, 111, 455, 24, "Columns:");
+
+	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+
+	end();
+	show();
+}
+
+ShowTableCommand::ShowTableCommand() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+		
+	color(FL_WHITE);
+	begin();
+
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    Fl_Button *helpButton = new Fl_Button(0, 0, 95, 25, "Help");
+    helpButton->color((Fl_Color)31);
+     backButton = new Fl_Button(95, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+    tableName = new Fl_Input(95, 86, 140, 24, "Tablename:");
+    
+
+	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+
+	end();
+	show();
+}
+
+RenameTable::RenameTable() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+		
+	color(FL_WHITE);
+	begin();
+
+	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+
+    Fl_Button *helpButton = new Fl_Button(0, 0, 95, 25, "Help");
+    helpButton->color((Fl_Color)31);
+
+    backButton = new Fl_Button(95, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+    executeButton = new Fl_Button(525, 0, 95, 25, "Execute");
+    executeButton->color((Fl_Color)31);
+    oldTableName= new Fl_Input(130, 86, 140, 24, "Old Tablename:");
+    newTableName =new Fl_Input(130, 111, 140, 24, "New Tablename:");
+
+
+	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+
+	end();
+	show();
+}
+DeleteTable::DeleteTable() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+	color(FL_WHITE);
+	begin();
+
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    Fl_Button *helpButton = new Fl_Button(0, 0, 95, 25, "Help");
+    helpButton->color((Fl_Color)31);
+     backButton = new Fl_Button(95, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+    tableName = new Fl_Input(95, 86, 140, 24, "Tablename:");
+    
+
+	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+
+	end();
+	show();	
+
+}
+SetColumn::SetColumn() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+		
+	color(FL_WHITE);
+	begin();
+
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    Fl_Button *helpButton = new Fl_Button(0, 0, 95, 25, "Help");
+    helpButton->color((Fl_Color)31);
+     backButton = new Fl_Button(95, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+    tableName = new Fl_Input(95, 86, 140, 24, "Tablename:");
+    datatype = new Fl_Input_Choice(340, 87, 140, 24, "Datatype:");
 
 	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
 
