@@ -112,5 +112,45 @@ class StatementWindow : public Fl_Window{
     StatementWindow ();
     ~StatementWindow (){}
 };
+//Databases Windows
+class CreateDatabase : public Fl_Window{
+    public:
+    CreateDatabase();
+    ~CreateDatabase(){}
+};
+class ShowDatabases : public Fl_Window{
+    public:
+    ShowDatabases();
+    ~ShowDatabases(){}
+};
+class DeleteDatabase : public Fl_Window{
+    public:
+    DeleteDatabase();
+    ~DeleteDatabase(){}
+};
 
+//Entry Windows
 
+class SetEntry : public Fl_Window{
+    public:
+    SetEntry();
+    ~SetEntry(){}
+};
+class ModifierEntry : public Fl_Window{
+    public:
+    ModifierEntry();
+    ~ModifierEntry(){}
+};
+class SetAllEntry : public Fl_Window{
+    public:
+    SetAllEntry();
+    ~SetAllEntry(){}
+};
+
+class DeleteEntry : public Fl_Window{
+    public:
+   DeleteEntry();
+    ~DeleteEntry(){}
+};
+
+//Table-Windows

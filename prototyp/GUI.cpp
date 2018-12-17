@@ -18,8 +18,15 @@ Fl_Input_Choice *tableCommands;
 Fl_Input_Choice *entryCommands;
 Fl_Input_Choice *selectRequestCommands;
 
-
 Fl_Input *databasename;
+Fl_Input *tablename;
+Fl_Input *columnname;
+Fl_Input *entry;
+Fl_Input *condition;
+Fl_Input *oldEntry;
+Fl_Input *newEntry; 
+Fl_Input *rowEntry; 
+
 
 ConnectionWindow *connectionWindow;
 CategoryWindow *categoryWindow;
@@ -413,7 +420,8 @@ Fl_Output *connectoutput;
 
 	GUI::GUI(){
 		// connectionWindow = new ConnectionWindow();
-		categoryWindow = new CategoryWindow();
+		//categoryWindow = new CategoryWindow();
+		SetAllEntry *setAllEntry = new SetAllEntry();
 
 	}
 
@@ -667,7 +675,7 @@ Fl_Output *connectoutput;
     show();
 }
 
-	ShowEntry::ShowEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+ShowEntry::ShowEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -758,3 +766,165 @@ SelectRequestWindow::SelectRequestWindow() : Fl_Window(600,400,560,310,"SQL-Inte
 }
 
 
+//Windows of the individual Commands(Database,Table,Entry,SelectRequest)
+
+//Database
+
+CreateDatabase::CreateDatabase() : Fl_Window(600,400,560,310,"SQL-Interface"){
+ 
+  	color(FL_WHITE);
+    begin();
+
+    executeButton = new Fl_Button(465, 0, 95, 25, "Show");
+    executeButton->color((Fl_Color)31);
+    Fl_Button* helpButton = new Fl_Button(0, 0, 95, 25, "Help");
+    helpButton->color((Fl_Color)31);
+    backButton = new Fl_Button(95, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+   	sqlCommand = new Fl_Output(0, 40, 560, 30, "SQL-Command");
+	databasename = new Fl_Input(120, 76, 140, 24, "Databasename:");
+
+	executeButton->callback((Fl_Callback*) whenPushedDatabaseShowButton);
+	backButton->callback((Fl_Callback*) whenPushedBackDatabaseCommand);
+
+	end();
+    show();
+}
+
+ShowDatabases::ShowDatabases() : Fl_Window(600,400,560,310,"SQL-Interface"){
+ 
+  	color(FL_WHITE);
+    begin();
+
+    executeButton = new Fl_Button(465, 0, 95, 25, "Show");
+    executeButton->color((Fl_Color)31);
+    Fl_Button* helpButton = new Fl_Button(0, 0, 95, 25, "Help");
+    helpButton->color((Fl_Color)31);
+    backButton = new Fl_Button(95, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+   	sqlCommand = new Fl_Output(0, 40, 560, 30, "SQL-Command");
+
+	executeButton->callback((Fl_Callback*) whenPushedDatabaseShowButton);
+	backButton->callback((Fl_Callback*) whenPushedBackDatabaseCommand);
+
+	end();
+    show();
+}
+
+DeleteDatabase::DeleteDatabase() : Fl_Window(600,400,560,310,"SQL-Interface"){
+ 
+  	color(FL_WHITE);
+    begin();
+
+    executeButton = new Fl_Button(465, 0, 95, 25, "Show");
+    executeButton->color((Fl_Color)31);
+    Fl_Button* helpButton = new Fl_Button(0, 0, 95, 25, "Help");
+    helpButton->color((Fl_Color)31);
+    backButton = new Fl_Button(95, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+   	sqlCommand = new Fl_Output(0, 40, 560, 30, "SQL-Command");
+	databasename = new Fl_Input(120, 76, 140, 24, "Databasename:");
+
+	executeButton->callback((Fl_Callback*) whenPushedDatabaseShowButton);
+	backButton->callback((Fl_Callback*) whenPushedBackDatabaseCommand);
+
+	end();
+    show();
+}
+
+//Entry
+
+
+SetEntry::SetEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+		
+	color(FL_WHITE);
+	begin();
+
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    Fl_Button* helpButton = new Fl_Button(0, 0, 95, 25, "Help");
+    helpButton->color((Fl_Color)31);
+
+    backButton = new Fl_Button(95, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+    executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+
+    tablename = new Fl_Input(120, 86, 140, 24, "Tablename:");
+	columnname = new Fl_Input(120, 111, 140, 24, "Columnname:");
+    entry = new Fl_Input(120, 136, 140, 24, "Entry:");
+
+	end();
+	show();
+}
+
+ModifierEntry::ModifierEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+		
+	color(FL_WHITE);
+	begin();
+
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    Fl_Button* helpButton = new Fl_Button(0, 0, 95, 25, "Help");
+    helpButton->color((Fl_Color)31);
+
+    backButton = new Fl_Button(95, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+    executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+
+    tablename = new Fl_Input(120, 86, 140, 24, "Tablename:");
+	columnname = new Fl_Input(120, 111, 140, 24, "Columnname:");
+	oldEntry = new Fl_Input(120, 136, 140, 24, "OldEntry:");
+	newEntry = new Fl_Input(120, 161, 140, 24, "NewEntry:");
+
+	end();
+	show();
+
+}
+
+ SetAllEntry:: SetAllEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+		
+	color(FL_WHITE);
+	begin();
+
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    Fl_Button* helpButton = new Fl_Button(0, 0, 95, 25, "Help");
+    helpButton->color((Fl_Color)31);
+
+    backButton = new Fl_Button(95, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+    executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+
+    tablename = new Fl_Input(95, 86, 140, 24, "Tablename:");
+	rowEntry = new Fl_Input(95, 116, 450, 24, "RowEntry");
+
+	end();
+	show();
+
+}
+
+DeleteEntry::DeleteEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+		
+	color(FL_WHITE);
+	begin();
+
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    Fl_Button* helpButton = new Fl_Button(0, 0, 95, 25, "Help");
+    helpButton->color((Fl_Color)31);
+
+    backButton = new Fl_Button(95, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+    executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+
+    tablename = new Fl_Input(120, 86, 140, 24, "Tablename:");
+	columnname = new Fl_Input(120, 111, 140, 24, "Columnname:");
+	condition = new Fl_Input(120, 136, 140, 24, "Condition:");
+
+	end();
+	show();
+}
