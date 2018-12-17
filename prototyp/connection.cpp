@@ -50,7 +50,7 @@ MYSQL_FIELD *field;
 
 	*/
 
-		void connection_feedback(std::string sqlCommand){
+		std::string connection_feedback(std::string sqlCommand){
 
                 std::cout << std::endl;
                 std::cout <<"\033[1;31m DEBUG : INPUT FOR THE MYSQL_QUERY\033[0m" << std::endl;
@@ -59,11 +59,18 @@ MYSQL_FIELD *field;
                 mysql_query(mysql, sqlCommand.c_str());
                 check_error();
                 result=mysql_use_result(mysql);
-
+                std::vector <std::string> rowvec;
 			while((row=mysql_fetch_row(result))!=NULL){
 				std::cout<< *row << std::endl;
+				 rowvec.push_back(*row);
 			}
-				std::cout << std::endl; // schleifimeifi rekursivi ? 
+			std::string rowvecst;
+			for(int i=0;i<rowvec.size();i++){
+				rowvecst += rowvec[i]; 
+				rowvecst += "\n";
+			}
+			std::cout << rowvecst << std::endl;
+			return rowvecst.c_str();
 		}
 
 
@@ -83,12 +90,14 @@ MYSQL_FIELD *field;
 	*/
 
 
-	void connection_feedbackAll(std::string sqlCommand){
+	std::string connection_feedbackAll(std::string sqlCommand){
 		//printf  substitute -> cout
 		std::cout << std::endl;
         std::cout <<"\033[1;31m DEBUG : INPUT FOR THE MYSQL_QUERY\033[0m" << std::endl;
         std::cout << sqlCommand << std::endl;
         std::cout << std::endl;
+        std::string rowvecst;
+        std::vector<std::vector<std::string> > vect;
 
 		mysql_query(mysql,sqlCommand.c_str());
 		MYSQL_RES *result = mysql_store_result(mysql);
@@ -109,7 +118,8 @@ MYSQL_FIELD *field;
 					while(field = mysql_fetch_field(result)){
 					
 						printf("%s ", field->name);
-					
+
+						}
 					}
 
 					printf("\n");
@@ -122,6 +132,7 @@ MYSQL_FIELD *field;
 
 		printf("\n");
 		mysql_free_result(result);
+		return std::string rowvecst;
 	}// schleifimeifi rekursivi ? 
 
 	/**
