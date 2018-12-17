@@ -3,6 +3,7 @@
 #include <FL/Fl_Box.H>
 #include <FL/Fl_Output.H>
 #include <FL/Fl_Input.H>
+#include <FL/Fl_Output.H>
 #include <FL/Fl_Button.H>
 #include <FL/Fl_Input_Choice.H>
 #include <FL/Fl_Text_Display.H>
@@ -27,7 +28,7 @@ class ConnectionWindow : public Fl_Window{
 class CategoryWindow : public Fl_Window{
     public:
     CategoryWindow();
-    ~CategoryWindow(){}
+    ~CategoryWindow();
 
 };
 //-- Databases
@@ -83,6 +84,7 @@ class EntryCommand : public Fl_Window{
 class ShowEntry : public Fl_Window{
     public:
     ShowEntry();
+<<<<<<< HEAD
     ~ ShowEntry(){}
 };
 
@@ -103,4 +105,13 @@ class ShowSelectRequest : public Fl_Window{
     public:
     ShowSelectRequest();
     ~ ShowSelectRequest(){}
+=======
+    ~ShowEntry(){}
+};
+
+class StatementWindow : public Fl_Window{
+    public:
+        StatementWindow();
+            ~StatementWindow();
+>>>>>>> 16c54bc187836b66a27532ea8c175a9773bfcffc
 };

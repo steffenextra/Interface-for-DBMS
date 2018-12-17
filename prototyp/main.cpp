@@ -15,6 +15,6 @@ int main (int argc, char *argv[]) {
 
         GUI *gui1 =  new GUI();
                 Fl::run();
-	disconnect();
+	//disconnect();
 }
 

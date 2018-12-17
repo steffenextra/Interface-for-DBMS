@@ -33,12 +33,21 @@ ShowTable *showTableWindow;
 EntryWindow *entryWindow;
 EntryCommand *entryCommandWindow;
 ShowEntry *showEntryWindow;
+<<<<<<< HEAD
 SelectRequestWindow *selectRequestWindow;
 SelectRequestCommand *selectRequestCommandWindow;
 ShowSelectRequest *showSelectRequestWindow;
 
 
 
+=======
+StatementWindow *statementWindow;
+StatementWindow *showStatementWindow;
+Fl_Input *sqlStatement;
+Fl_Output *messageerror;
+Fl_Output *feedback;
+Fl_Output *connectoutput;
+>>>>>>> 16c54bc187836b66a27532ea8c175a9773bfcffc
 //Destruktoren fehlen
 
      void whenPushedConnect(Fl_Widget* w, void*){
@@ -48,9 +57,15 @@ ShowSelectRequest *showSelectRequestWindow;
 		else {
 			int port1 = atoi(port->value());
 			if(!(port==0)){
-				connectionless(host->value(),name->value(),pwd->value(),database->value(),port1,pathto,0);
+				
+				if (connectionless(host->value(),name->value(),pwd->value(),database->value(),port1,pathto,0)==1){
 				connectionWindow->hide();
 				categoryWindow = new CategoryWindow();
+				}else {
+					connectoutput->value("Verbindung fehlgeschlagen");
+
+				}
+
 			}
 			else{
 				//Exception
@@ -65,7 +80,7 @@ ShowSelectRequest *showSelectRequestWindow;
 		} 
 		else {
 			categoryWindow->hide();
-			connectionWindow->visible();
+			connectionWindow->show();
 			disconnect();
 		}
 		
@@ -98,9 +113,12 @@ ShowSelectRequest *showSelectRequestWindow;
 		else {
 				databaseCommandWindow->hide();
 				showDatabaseWindow = new ShowDatabase();
-
+				//NUR AUSSERHALB VON DATENBANKEN NUTZBAR 
 				if(databasesCommands->value()=="create Database"){
+<<<<<<< HEAD
 					sqlCommand->value("CREATE DATABASE databaseName;"); 
+=======
+>>>>>>> 16c54bc187836b66a27532ea8c175a9773bfcffc
 					createDatabase(databasename->value());
 				}
 		}
@@ -215,16 +233,98 @@ ShowSelectRequest *showSelectRequestWindow;
 		
 	}
 
+
+	void whenPushedSelf(Fl_Widget* w, void*){
+		if (((Fl_Button*) w) ->value()){}
+			else {
+				categoryWindow->hide();
+				statementWindow = new StatementWindow();
+			}
+	}
+
+	void whenPushedSend(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else {
+				connection_query(sqlStatement->value());
+				std::string errormsg = check_error();
+ 				messageerror->value(errormsg.c_str());
+ 				std::string msg = connection_query(sqlStatement->value()); // Unterscheiden zwischen den einzelnen typen der query und Problemlösung für feedbackall 
+ 				feedback->value(msg.c_str()); 
+			}
+	}
+
+	void whenPushedBackDatabase(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else {
+				databaseWindow->hide();
+				categoryWindow->show();
+			}
+	}
+
+	void whenPushedBackTable(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else {
+				tableWindow->hide();
+				categoryWindow->show();
+			}
+	}
+
+	void whenPushedBackSelf(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else {
+				statementWindow->hide();
+				categoryWindow->show();
+			}
+	}
+
+	void whenPushedBackTableCommand(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else {
+				tableCommandWindow->hide();
+				tableWindow->show();
+			}
+	}
+
+	void whenPushedBackEntry(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else {
+				entryWindow->hide();
+				categoryWindow->show();
+			}
+	}
+
+	void whenPushedBackEntryCommand(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else {
+				entryCommandWindow->hide();
+				entryWindow->show();
+			}
+	}
+
+	
+
+	void whenPushedBackDatabaseCommand(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else {
+				databaseCommandWindow->hide();
+				databaseWindow->show();
+			}
+	}
+
 	GUI::GUI(){
+<<<<<<< HEAD
 	//	 connectionWindow = new ConnectionWindow();
 		 categoryWindow = new CategoryWindow();
 	//	dbw = new DatabaseWindow();
 	//tableWindow = new TableWindow();
 	//selectRequestWindow = new SelectRequestWindow();
+=======
+		 connectionWindow = new ConnectionWindow();
+>>>>>>> 16c54bc187836b66a27532ea8c175a9773bfcffc
 
 	}
 
-  ConnectionWindow::ConnectionWindow() : Fl_Window(600,400,560,310,"SQL-Interface"){
+	ConnectionWindow::ConnectionWindow() : Fl_Window(600,400,560,310,"SQL-Interface"){
         color(FL_WHITE);
         begin();
 
@@ -236,12 +336,44 @@ ShowSelectRequest *showSelectRequestWindow;
 		port = new Fl_Input (220,180,100,30, "Port");
 		connect = new Fl_Button(220,220,100,30, "Connect");
 		connect->callback((Fl_Callback*) whenPushedConnect);
+		connectoutput = new Fl_Output(170,260,200,30, "Meldung"); // Eventuelle Ausgabe des spezifischen Fehlers
+		connectoutput->callback((Fl_Callback*)whenPushedConnect);
+        
         end();
         show();
     }
-ConnectionWindow::~ConnectionWindow() {
+
+    ConnectionWindow::~ConnectionWindow() {
 		
     }
+
+
+ StatementWindow::StatementWindow() : Fl_Window(600,400,560,310, "SQL-Interface"){
+ 	color(FL_WHITE);
+ 	begin();
+
+ 	Fl_Button *disconnectButton = new Fl_Button(370,0,95,25, "Disconnect");
+ 	Fl_Button *sending = new Fl_Button(465,0,95,25,"Senden");
+ 	disconnectButton->color((Fl_Color)31);
+ 	sqlStatement = new Fl_Input(100,50,400,50,"Eingabe:");
+ 	sending->callback((Fl_Callback*) whenPushedSend); //Nach einem Befehl in Schleife
+ 	feedback = new Fl_Output (100,100,400,100, "Ausgabe:");
+ 	messageerror = new Fl_Output(100,200,400,50,"Fehlermeldung:"); // Kein Automatischer Zeilenumbruch 
+ 	disconnectButton->callback((Fl_Callback*) whenPushedDisconnect); // Absturz durch alloc 
+	backButton = new Fl_Button(95, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*)whenPushedBackSelf);
+    end();
+    show();
+
+ }
+
+StatementWindow::~StatementWindow(){
+
+    }
+
+
+
   CategoryWindow::CategoryWindow() : Fl_Window(600,400,560,310,"SQL-Interface"){
     color(FL_WHITE);
     begin();
@@ -266,8 +398,14 @@ ConnectionWindow::~ConnectionWindow() {
 	databaseButton->callback((Fl_Callback*) whenPushedDatabaseWindow);
 	tableButton->callback((Fl_Callback*) whenPushedTableWindow);
     entryButton->callback((Fl_Callback*) whenPushedEntryWindow);
+    selfButton->callback((Fl_Callback*) whenPushedSelf);
+    disconnectButton->callback((Fl_Callback*) whenPushedDisconnect);
 	end();
     show();
+ }
+
+ CategoryWindow::~CategoryWindow(){
+
  }
 
 //Databases
@@ -285,6 +423,7 @@ ConnectionWindow::~ConnectionWindow() {
     nextButton->color((Fl_Color)31);
     Fl_Button* backButton = new Fl_Button(95, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*)whenPushedBackDatabase);
 
 	nextButton->callback((Fl_Callback*) whenPushedNextDatabaseCommand);
 
@@ -307,6 +446,7 @@ ConnectionWindow::~ConnectionWindow() {
 	databasename = new Fl_Input(120, 76, 140, 24, "Databasename:");
 
 	executeButton->callback((Fl_Callback*) whenPushedDatabaseShowButton);
+	backButton->callback((Fl_Callback*) whenPushedBackDatabaseCommand);
 
 	end();
     show();
@@ -355,6 +495,7 @@ ConnectionWindow::~ConnectionWindow() {
     backButton->color((Fl_Color)31);
 
 	nextButton->callback((Fl_Callback*) whenPushedNextTableCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackTable);
 
 	end();
     show();
@@ -375,6 +516,7 @@ ConnectionWindow::~ConnectionWindow() {
 	databasename = new Fl_Input(120, 76, 140, 24, "Databasename:");
 
 	executeButton->callback((Fl_Callback*) whenPushedTableShowButton);
+	backButton->callback((Fl_Callback*) whenPushedBackTableCommand);
 
 	end();
     show();
@@ -411,7 +553,7 @@ ConnectionWindow::~ConnectionWindow() {
     backButton->color((Fl_Color)31);
 
 	nextButton->callback((Fl_Callback*) whenPushedNextEntryCommand);
-
+	backButton->callback((Fl_Callback*) whenPushedBackEntry);
 	end();
     show();
     }
@@ -430,6 +572,7 @@ ConnectionWindow::~ConnectionWindow() {
    	sqlCommand = new Fl_Text_Display(0, 40, 560, 30, "SQL-Command");
 
 	executeButton->callback((Fl_Callback*) whenPushedEntryShowButton);
+	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
 
 	end();
     show();
