@@ -64,7 +64,7 @@
 
 	Diese Methode dient zur Ausgabe des kompletten Tabelleninhalts innerhalb einer Datenbank.<br>
 
-	SQL-Befehl: "SELECT * FROM " + tableName;
+	SQL-Befehl: "SELECT * FROM " + tableName;"
 
 	@param tableName = Übergibt den Namen der auszugebenden  Tabelle
 

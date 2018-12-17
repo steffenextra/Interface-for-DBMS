@@ -37,6 +37,7 @@ SelectRequestCommand *selectRequestCommandWindow;
 ShowSelectRequest *showSelectRequestWindow;
 StatementWindow *statementWindow;
 StatementWindow *showStatementWindow;
+
 Fl_Input *sqlStatement;
 Fl_Output *sqlCommand;
 Fl_Output *messageerror;
@@ -99,6 +100,23 @@ Fl_Output *connectoutput;
 		else {
 				databaseWindow->hide();
 				databaseCommandWindow = new DatabaseCommand();
+
+				std:: cout << databasesCommands->value() << std::endl;
+				
+				if((strcmp(databasesCommands->value(),"create Database"))==0){
+					sqlCommand->value("CREATE DATABASE  + databaseName;"); 
+				}
+
+				if((strcmp(databasesCommands->value(),"show Databases"))==0){
+					sqlCommand->value("SHOW DATABASES;"); 
+				}
+				if((strcmp(databasesCommands->value(),"delete Databases"))==0){
+					sqlCommand->value("DROP DATABASE  + databaseName;"); 
+				}
+
+			/*	else{
+					sqlCommand->value("Unknown SQL-Command"); 
+				}*/
 		}
 		
 	}
@@ -110,10 +128,6 @@ Fl_Output *connectoutput;
 				databaseCommandWindow->hide();
 				showDatabaseWindow = new ShowDatabase();
 				//NUR AUSSERHALB VON DATENBANKEN NUTZBAR 
-				if(databasesCommands->value()=="create Database"){
-					sqlCommand->value("CREATE DATABASE databaseName;"); 
-					createDatabase(databasename->value());
-				}
 		}
 		
 	}
@@ -138,6 +152,62 @@ Fl_Output *connectoutput;
 		else {
 				tableWindow->hide();
 				tableCommandWindow = new TableCommand();
+
+				std:: cout << tableCommands->value() << std::endl;
+				
+				if((strcmp(tableCommands->value(),"createTable"))==0){
+					sqlCommand->value("CREATE TABLE tableName( ID int NOT NULL PRIMARY KEY AUTO_INCREMENT, columnnamesAndDatatype);"); 
+				}
+
+				if((strcmp(tableCommands->value(),"showTable"))==0){
+					sqlCommand->value("SELECT * FROM tableName;"); 
+				}
+				if((strcmp(tableCommands->value(),"renameTable"))==0){
+					sqlCommand->value("ALTER TABLE tablename RENAME TO newTableName;"); 
+				}
+				if((strcmp(tableCommands->value(),"deleteTable"))==0){
+					sqlCommand->value("DROP TABLE  tableName;"); 
+				}
+				if((strcmp(tableCommands->value(),"setColumn"))==0){
+					sqlCommand->value("ALTER TABLE tableName  ADD  ColumnName  datatype;"); 
+				}
+				if((strcmp(tableCommands->value(),"modifierColumnName"))==0){
+					sqlCommand->value("ALTER TABLE tableName CHANGE oldColumnName  newColumnName datatype"); 
+				}
+				if((strcmp(tableCommands->value(),"setColumnWithPrimary"))==0){
+					sqlCommand->value("ALTER TABLE tableName ADD ColumnName datatype PRIMARY KEY AUTO_INCREMENT;"); 
+				}
+				if((strcmp(tableCommands->value(),"changeTheDatatype"))==0){
+					sqlCommand->value("ALTER TABLE tableName ADD  ColumnName datatype"); 
+				}
+				if((strcmp(tableCommands->value(),"getAllColumn"))==0){
+					sqlCommand->value("SHOW COLUMNS FROM tableName;"); 
+				}
+				if((strcmp(tableCommands->value(),"countDatasets"))==0){
+					sqlCommand->value("SELECT COUNT (*) FROM tableName;"); 
+				}
+				if((strcmp(tableCommands->value(),"showColumnTyp"))==0){
+					sqlCommand->value("SHOW COLUMNS FROM tableName WHERE TYPE LIKE 'datatype%';"); 
+				}
+				if((strcmp(tableCommands->value(),"deleteColumn"))==0){
+					sqlCommand->value("ALTER TABLE tableName DROP columnName;"); 
+				}
+				if((strcmp(tableCommands->value(),"setSecondaryKey"))==0){
+					sqlCommand->value("ALTER TABLE tableNameSecondary ADD CONSTRAINT constraint FOREIGN KEY (foreignKey) REFERENCES tableNamePrimary primaryKey);"); 
+				}
+				if((strcmp(tableCommands->value(),"deleteSecondaryKey"))==0){
+					sqlCommand->value("ALTER TABLE tableName DROP FOREIGN KEY constraint;"); 
+				}
+				if((strcmp(tableCommands->value(),"setPrimaryKey"))==0){
+					sqlCommand->value("ALTER TABLE tableName ADD PRIMARY KEY (primaryKey);"); 
+				}
+				if((strcmp(tableCommands->value(),"deletePrimaryKey"))==0){
+					sqlCommand->value("ALTER TABLE tableName DROP PRIMARY KEY"); 
+				}
+
+			/*	else{
+					sqlCommand->value("Unknown SQL-Command"); 
+				}*/
 		}
 		
 	}
@@ -175,6 +245,27 @@ Fl_Output *connectoutput;
 		else {
 				entryWindow->hide();
 				entryCommandWindow = new EntryCommand();
+
+
+				std:: cout << entryCommands->value() << std::endl;
+				
+				if((strcmp(entryCommands->value(),"setEntry"))==0){
+					sqlCommand->value("INSERT INTO tableName (columnName) VALUES ('entry');"); 
+				}
+
+				if((strcmp(entryCommands->value(),"modifierEntry"))==0){
+					sqlCommand->value("UPDATE tableName SET columnName='newEntry' WHERE columnName='oldEntry';"); 
+				}
+				if((strcmp(entryCommands->value(),"deleteEntry"))==0){
+					sqlCommand->value("DELETE FROM tableName WHERE columnName='condition';"); 
+				}
+				if((strcmp(entryCommands->value(),"setAllEntry"))==0){
+					sqlCommand->value("INSERT INTO tableName (columnName) VALUES(insertData);"); 
+				}
+			/*	else{
+					sqlCommand->value("Unknown SQL-Command"); 
+				}*/
+
 		}
 	}
 	
@@ -294,6 +385,22 @@ Fl_Output *connectoutput;
 			}
 	}
 
+	void whenPushedBackSelectRequest(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else {
+				selectRequestWindow->hide();
+				categoryWindow->show();
+			}
+	}
+
+	void whenPushedBackSelectRequestCommand(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else {
+				selectRequestCommandWindow->hide();
+				selectRequestWindow->show();
+			}
+	}
+
 	
 
 	void whenPushedBackDatabaseCommand(Fl_Widget* w, void*){
@@ -305,7 +412,8 @@ Fl_Output *connectoutput;
 	}
 
 	GUI::GUI(){
-		 connectionWindow = new ConnectionWindow();
+		// connectionWindow = new ConnectionWindow();
+		categoryWindow = new CategoryWindow();
 
 	}
 
@@ -456,17 +564,17 @@ Fl_Output *connectoutput;
 	tableCommands->add("renameTable");
 	tableCommands->add("deleteTable");
 	tableCommands->add("setColumn");
-	tableCommands->add("modifierColumnName");
-	tableCommands->add("setColumnWithPrimary");
-	tableCommands->add("changeTheDatatype");
 	tableCommands->add("getAllColumn");
-	tableCommands->add("countDatasets");
 	tableCommands->add("showColumnTyp");
 	tableCommands->add("deleteColumn");
-	tableCommands->add("setSecondaryKey");
-	tableCommands->add("deleteSecondaryKey");
+	tableCommands->add("modifierColumnName");
+	tableCommands->add("setColumnWithPrimary");
 	tableCommands->add("setPrimaryKey");
 	tableCommands->add("deletePrimaryKey");
+	tableCommands->add("setSecondaryKey");
+	tableCommands->add("deleteSecondaryKey");
+	tableCommands->add("changeTheDatatype");
+	tableCommands->add("countDatasets");
 
     Fl_Button* helpButton = new Fl_Button(0, 0, 95, 25, "Help");
     helpButton->color((Fl_Color)31);
@@ -493,7 +601,7 @@ Fl_Output *connectoutput;
     helpButton->color((Fl_Color)31);
     backButton = new Fl_Button(95, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
-   	//sqlCommand = new Fl_Text_Display(0, 40, 560, 30, "SQL-Command");
+   	sqlCommand = new Fl_Output(0, 40, 560, 30, "SQL-Command");
 	databasename = new Fl_Input(120, 76, 140, 24, "Databasename:");
 
 	executeButton->callback((Fl_Callback*) whenPushedTableShowButton);
@@ -520,10 +628,10 @@ Fl_Output *connectoutput;
 	color(FL_WHITE);
 	begin();
   
-   	entryCommands = new Fl_Input_Choice(180, 42, 370, 23, "Table-Commands:");
+   	entryCommands = new Fl_Input_Choice(180, 42, 370, 23, "Entry-Commands:");
 	entryCommands->add("setEntry");
-	entryCommands->add("modifierEntry");
 	entryCommands->add("setAllEntry");
+	entryCommands->add("modifierEntry");
 	entryCommands->add("deleteEntry");
 
     Fl_Button* helpButton = new Fl_Button(0, 0, 95, 25, "Help");
@@ -550,7 +658,7 @@ Fl_Output *connectoutput;
     helpButton->color((Fl_Color)31);
     backButton = new Fl_Button(95, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
-   //	sqlCommand = new Fl_Text_Display(0, 40, 560, 30, "SQL-Command");
+   	sqlCommand = new Fl_Output(0, 40, 560, 30, "SQL-Command");
 
 	executeButton->callback((Fl_Callback*) whenPushedEntryShowButton);
 	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
@@ -576,10 +684,33 @@ SelectRequestWindow::SelectRequestWindow() : Fl_Window(600,400,560,310,"SQL-Inte
 	begin();
   
    	selectRequestCommands = new Fl_Input_Choice(210, 42, 320, 23, "Select-Request-Commands:");
-	selectRequestCommands->add("setEntry");
-	selectRequestCommands->add("modifierEntry");
-	selectRequestCommands->add("setAllEntry");
-	selectRequestCommands->add("deleteEntry");
+	selectRequestCommands->add("selectCount");
+	selectRequestCommands->add("selectIn");
+	selectRequestCommands->add("selectDistinct");
+	selectRequestCommands->add("selechtCountDistinct");
+	selectRequestCommands->add("selectLike");
+	selectRequestCommands->add("selectNotLike");
+	selectRequestCommands->add("selectSum");
+	selectRequestCommands->add("selectAverageSum");
+	selectRequestCommands->add("selectSortTable");
+	selectRequestCommands->add("selectBetween");
+	selectRequestCommands->add("selectMinOrMax");
+	selectRequestCommands->add("selectMinOrMaxWhere");
+	selectRequestCommands->add("selectWhere");
+	selectRequestCommands->add("selectWhereOrderBy");
+	selectRequestCommands->add("selectWhereOneColumn");
+	selectRequestCommands->add("selectWhereBool");
+	selectRequestCommands->add("selectLimitWhereOrderBy");
+	selectRequestCommands->add("selectUnion");
+	selectRequestCommands->add("selectColumnAlias");
+	selectRequestCommands->add("selectTableAlias");
+	selectRequestCommands->add("selectGroupBy");
+	selectRequestCommands->add("selectGroupByOrderBy");
+	selectRequestCommands->add("selectInnerJoin");
+	selectRequestCommands->add("selectLeftJoin");
+	selectRequestCommands->add("selectRightJoin");
+	selectRequestCommands->add("selectFullJoin");
+	selectRequestCommands->add("selectNull");
 
     Fl_Button* helpButton = new Fl_Button(0, 0, 95, 25, "Help");
     helpButton->color((Fl_Color)31);
@@ -589,6 +720,7 @@ SelectRequestWindow::SelectRequestWindow() : Fl_Window(600,400,560,310,"SQL-Inte
     backButton->color((Fl_Color)31);
 
 	nextButton->callback((Fl_Callback*) whenPushedNextselectRequestCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackSelectRequest);
 
 	end();
     show();
@@ -605,9 +737,10 @@ SelectRequestWindow::SelectRequestWindow() : Fl_Window(600,400,560,310,"SQL-Inte
     helpButton->color((Fl_Color)31);
     backButton = new Fl_Button(95, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
-   	//sqlCommand = new Fl_Text_Display(0, 40, 560, 30, "SQL-Command");
+   	sqlCommand = new Fl_Output(0, 40, 560, 30, "SQL-Command");
 
 	executeButton->callback((Fl_Callback*) whenPushedSelectRequestShowButton);
+	backButton->callback((Fl_Callback*) whenPushedBackSelectRequestCommand);
 
 	end();
     show();
