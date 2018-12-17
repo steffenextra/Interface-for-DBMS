@@ -84,7 +84,6 @@ class EntryCommand : public Fl_Window{
 class ShowEntry : public Fl_Window{
     public:
     ShowEntry();
-<<<<<<< HEAD
     ~ ShowEntry(){}
 };
 
@@ -105,13 +104,13 @@ class ShowSelectRequest : public Fl_Window{
     public:
     ShowSelectRequest();
     ~ ShowSelectRequest(){}
-=======
-    ~ShowEntry(){}
 };
+//statement
 
 class StatementWindow : public Fl_Window{
     public:
-        StatementWindow();
-            ~StatementWindow();
->>>>>>> 16c54bc187836b66a27532ea8c175a9773bfcffc
+    StatementWindow ();
+    ~StatementWindow (){}
 };
+
+

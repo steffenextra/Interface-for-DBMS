@@ -21,7 +21,6 @@ Fl_Input_Choice *selectRequestCommands;
 
 Fl_Input *databasename;
 
-Fl_Output *sqlCommand;
 ConnectionWindow *connectionWindow;
 CategoryWindow *categoryWindow;
 DatabaseWindow *databaseWindow;
@@ -33,21 +32,18 @@ ShowTable *showTableWindow;
 EntryWindow *entryWindow;
 EntryCommand *entryCommandWindow;
 ShowEntry *showEntryWindow;
-<<<<<<< HEAD
 SelectRequestWindow *selectRequestWindow;
 SelectRequestCommand *selectRequestCommandWindow;
 ShowSelectRequest *showSelectRequestWindow;
-
-
-
-=======
 StatementWindow *statementWindow;
 StatementWindow *showStatementWindow;
 Fl_Input *sqlStatement;
+Fl_Output *sqlCommand;
 Fl_Output *messageerror;
 Fl_Output *feedback;
 Fl_Output *connectoutput;
->>>>>>> 16c54bc187836b66a27532ea8c175a9773bfcffc
+
+
 //Destruktoren fehlen
 
      void whenPushedConnect(Fl_Widget* w, void*){
@@ -115,10 +111,7 @@ Fl_Output *connectoutput;
 				showDatabaseWindow = new ShowDatabase();
 				//NUR AUSSERHALB VON DATENBANKEN NUTZBAR 
 				if(databasesCommands->value()=="create Database"){
-<<<<<<< HEAD
 					sqlCommand->value("CREATE DATABASE databaseName;"); 
-=======
->>>>>>> 16c54bc187836b66a27532ea8c175a9773bfcffc
 					createDatabase(databasename->value());
 				}
 		}
@@ -312,15 +305,7 @@ Fl_Output *connectoutput;
 	}
 
 	GUI::GUI(){
-<<<<<<< HEAD
-	//	 connectionWindow = new ConnectionWindow();
-		 categoryWindow = new CategoryWindow();
-	//	dbw = new DatabaseWindow();
-	//tableWindow = new TableWindow();
-	//selectRequestWindow = new SelectRequestWindow();
-=======
 		 connectionWindow = new ConnectionWindow();
->>>>>>> 16c54bc187836b66a27532ea8c175a9773bfcffc
 
 	}
 
@@ -367,13 +352,7 @@ Fl_Output *connectoutput;
     show();
 
  }
-
-StatementWindow::~StatementWindow(){
-
-    }
-
-
-
+//CategoryWindow
   CategoryWindow::CategoryWindow() : Fl_Window(600,400,560,310,"SQL-Interface"){
     color(FL_WHITE);
     begin();
@@ -389,16 +368,18 @@ StatementWindow::~StatementWindow(){
     tableButton->color((Fl_Color)31);
     Fl_Button* entryButton = new Fl_Button(0, 170, 280, 140, "Entry-Commands");
     entryButton->color((Fl_Color)31);
-    Fl_Button* selectionButton = new Fl_Button(280, 170, 280, 140, "Selection-Commands");
-	selectionButton->color((Fl_Color)31);
+    selectRequestButton = new Fl_Button(280, 170, 280, 140, "Selection-Commands");
+	selectRequestButton->color((Fl_Color)31);
     Fl_Button* helpButton = new Fl_Button(0, 0, 95, 25, "Help");
     helpButton->color((Fl_Color)31);
 
 
 	databaseButton->callback((Fl_Callback*) whenPushedDatabaseWindow);
 	tableButton->callback((Fl_Callback*) whenPushedTableWindow);
-    entryButton->callback((Fl_Callback*) whenPushedEntryWindow);
-    selfButton->callback((Fl_Callback*) whenPushedSelf);
+    selectRequestButton->callback((Fl_Callback*) whenPushedSelectRequestWindow);
+	entryButton->callback((Fl_Callback*) whenPushedEntryWindow);
+
+	selfButton->callback((Fl_Callback*) whenPushedSelf);
     disconnectButton->callback((Fl_Callback*) whenPushedDisconnect);
 	end();
     show();
@@ -512,7 +493,7 @@ StatementWindow::~StatementWindow(){
     helpButton->color((Fl_Color)31);
     backButton = new Fl_Button(95, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
-   	sqlCommand = new Fl_Text_Display(0, 40, 560, 30, "SQL-Command");
+   	//sqlCommand = new Fl_Text_Display(0, 40, 560, 30, "SQL-Command");
 	databasename = new Fl_Input(120, 76, 140, 24, "Databasename:");
 
 	executeButton->callback((Fl_Callback*) whenPushedTableShowButton);
@@ -569,7 +550,7 @@ StatementWindow::~StatementWindow(){
     helpButton->color((Fl_Color)31);
     backButton = new Fl_Button(95, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
-   	sqlCommand = new Fl_Text_Display(0, 40, 560, 30, "SQL-Command");
+   //	sqlCommand = new Fl_Text_Display(0, 40, 560, 30, "SQL-Command");
 
 	executeButton->callback((Fl_Callback*) whenPushedEntryShowButton);
 	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
@@ -590,9 +571,7 @@ StatementWindow::~StatementWindow(){
 	show();
 }
 
-//Select-Request
-
- SelectRequestWindow::SelectRequestWindow() : Fl_Window(600,400,560,310,"SQL-Interface"){
+SelectRequestWindow::SelectRequestWindow() : Fl_Window(600,400,560,310,"SQL-Interface"){
 	color(FL_WHITE);
 	begin();
   
@@ -626,7 +605,7 @@ StatementWindow::~StatementWindow(){
     helpButton->color((Fl_Color)31);
     backButton = new Fl_Button(95, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
-   	sqlCommand = new Fl_Text_Display(0, 40, 560, 30, "SQL-Command");
+   	//sqlCommand = new Fl_Text_Display(0, 40, 560, 30, "SQL-Command");
 
 	executeButton->callback((Fl_Callback*) whenPushedSelectRequestShowButton);
 
@@ -644,3 +623,5 @@ StatementWindow::~StatementWindow(){
 	end();
 	show();	
 }
+
+
