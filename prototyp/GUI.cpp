@@ -45,6 +45,15 @@ ShowSelectRequest *showSelectRequestWindow;
 StatementWindow *statementWindow;
 StatementWindow *showStatementWindow;
 
+CreateDatabase *createDatabaseWindow;
+ShowDatabases *showDatabasesWindow;
+DeleteDatabase *deleteDatabaseWindow;
+
+SetEntry *setEntryWindow;
+SetAllEntry *setAllEntryWindow;
+ModifierEntry *ModifierEntryWindow;
+DeleteEntry *deleteEntryWindow;
+
 Fl_Input *sqlStatement;
 Fl_Output *sqlCommand;
 Fl_Output *messageerror;
@@ -79,7 +88,6 @@ Fl_Output *connectoutput;
 	}
 
 	void whenPushedDisconnect(Fl_Widget* w, void*){
-		//need to Fix
 		if ( ((Fl_Button*) w)->value()){
 		} 
 		else {
@@ -91,7 +99,6 @@ Fl_Output *connectoutput;
 	}
 
 	void whenPushedDatabaseWindow(Fl_Widget* w, void*){
-		//need to Fix
 		if ( ((Fl_Button*) w)->value()){
 		} 
 		else {
@@ -101,23 +108,26 @@ Fl_Output *connectoutput;
 		
 	}
 	void whenPushedNextDatabaseCommand(Fl_Widget* w, void*){
-		//need to Fix
+		//unbedingt anschauen
 		if ( ((Fl_Button*) w)->value()){
 		} 
 		else {
-				databaseWindow->hide();
-				databaseCommandWindow = new DatabaseCommand();
-
 				std:: cout << databasesCommands->value() << std::endl;
 				
 				if((strcmp(databasesCommands->value(),"create Database"))==0){
+					databaseWindow->hide();
+					createDatabaseWindow=new CreateDatabase();
 					sqlCommand->value("CREATE DATABASE  + databaseName;"); 
 				}
 
 				if((strcmp(databasesCommands->value(),"show Databases"))==0){
+					databaseWindow->hide();
+					showDatabasesWindow=new ShowDatabases();
 					sqlCommand->value("SHOW DATABASES;"); 
 				}
 				if((strcmp(databasesCommands->value(),"delete Databases"))==0){
+					databaseWindow->hide();
+					deleteDatabaseWindow=new DeleteDatabase();
 					sqlCommand->value("DROP DATABASE  + databaseName;"); 
 				}
 
@@ -128,7 +138,6 @@ Fl_Output *connectoutput;
 		
 	}
 	void whenPushedDatabaseShowButton(Fl_Widget* w, void*){
-		//need to Fix
 		if ( ((Fl_Button*) w)->value()){
 		} 
 		else {
@@ -140,7 +149,6 @@ Fl_Output *connectoutput;
 	}
 
 	void whenPushedTableWindow(Fl_Widget* w, void*){
-		//need to Fix
 		if ( ((Fl_Button*) w)->value()){
 		} 
 		else {
@@ -153,7 +161,6 @@ Fl_Output *connectoutput;
 
 
 	void whenPushedNextTableCommand(Fl_Widget* w, void*){
-		//need to Fix
 		if ( ((Fl_Button*) w)->value()){
 		} 
 		else {
@@ -220,7 +227,6 @@ Fl_Output *connectoutput;
 	}
 
 		void whenPushedTableShowButton(Fl_Widget* w, void*){
-		//need to Fix
 		if ( ((Fl_Button*) w)->value()){
 		} 
 		else {
@@ -236,7 +242,6 @@ Fl_Output *connectoutput;
 		
 //Methods Entry
 	void whenPushedEntryWindow(Fl_Widget* w, void*){
-		//need to Fix
 		if ( ((Fl_Button*) w)->value()){
 		} 
 		else {
@@ -246,7 +251,6 @@ Fl_Output *connectoutput;
 		
 	}
 	void whenPushedNextEntryCommand(Fl_Widget* w, void*){
-		//need to Fix
 		if ( ((Fl_Button*) w)->value()){
 		} 
 		else {
@@ -289,7 +293,6 @@ Fl_Output *connectoutput;
 //Methods SelectRequest
 
 	void whenPushedSelectRequestWindow(Fl_Widget* w, void*){
-		//need to Fix
 		if ( ((Fl_Button*) w)->value()){
 		} 
 		else {
@@ -302,7 +305,6 @@ Fl_Output *connectoutput;
 
 
 	void whenPushedNextselectRequestCommand(Fl_Widget* w, void*){
-		//need to Fix
 		if ( ((Fl_Button*) w)->value()){
 		} 
 		else {
@@ -420,8 +422,8 @@ Fl_Output *connectoutput;
 
 	GUI::GUI(){
 		// connectionWindow = new ConnectionWindow();
-		//categoryWindow = new CategoryWindow();
-		SetAllEntry *setAllEntry = new SetAllEntry();
+		categoryWindow = new CategoryWindow();
+		
 
 	}
 
@@ -854,6 +856,8 @@ SetEntry::SetEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 	columnname = new Fl_Input(120, 111, 140, 24, "Columnname:");
     entry = new Fl_Input(120, 136, 140, 24, "Entry:");
 
+	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+
 	end();
 	show();
 }
@@ -878,6 +882,8 @@ ModifierEntry::ModifierEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 	oldEntry = new Fl_Input(120, 136, 140, 24, "OldEntry:");
 	newEntry = new Fl_Input(120, 161, 140, 24, "NewEntry:");
 
+	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+
 	end();
 	show();
 
@@ -900,6 +906,8 @@ ModifierEntry::ModifierEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 
     tablename = new Fl_Input(95, 86, 140, 24, "Tablename:");
 	rowEntry = new Fl_Input(95, 116, 450, 24, "RowEntry");
+
+	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
 
 	end();
 	show();
@@ -924,6 +932,8 @@ DeleteEntry::DeleteEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){
     tablename = new Fl_Input(120, 86, 140, 24, "Tablename:");
 	columnname = new Fl_Input(120, 111, 140, 24, "Columnname:");
 	condition = new Fl_Input(120, 136, 140, 24, "Condition:");
+
+	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
 
 	end();
 	show();
