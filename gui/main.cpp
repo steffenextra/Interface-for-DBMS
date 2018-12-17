@@ -1,10 +1,13 @@
 #include "connectionWindow.hpp"
-#include "catWindow.hpp"
+
 
 int main (int argc, char *argv[]) {
+    connectionWindow *c1 = new connectionWindow();
+    c1->end();
+    c1->show();
+    Fl::run;
 
-connectionWindow a = new connectionWindow(200,200,100,100, "a");
-
+    delete c1;
 
 
 }
