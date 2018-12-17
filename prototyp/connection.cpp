@@ -91,24 +91,27 @@ MYSQL_FIELD *field;
 
 
 	std::string connection_feedbackAll(std::string sqlCommand){
-		//printf  substitute -> cout
 		std::cout << std::endl;
         std::cout <<"\033[1;31m DEBUG : INPUT FOR THE MYSQL_QUERY\033[0m" << std::endl;
         std::cout << sqlCommand << std::endl;
         std::cout << std::endl;
-        std::string rowvecst;
-        std::vector<std::vector<std::string> > vect;
-
+        std::string output;
+        std::vector<std::string> rowvec;
+        std::vector<std::string> colvec;
+	   // std::vector<std::vector<std::string> > insgesamt;
 		mysql_query(mysql,sqlCommand.c_str());
 		MYSQL_RES *result = mysql_store_result(mysql);
-
+		
+		int rowresult = mysql_num_rows(result);
 		int num_fields = mysql_num_fields(result);
-
+		int insg = rowresult * num_fields;
+		
 		if (result == NULL){
 		check_error();
 
 		}
 
+		std::cout << rowresult << std::endl;
 		while ((row = mysql_fetch_row(result))!=NULL){
 
 			for(int i = 0; i < num_fields; i++){
@@ -116,24 +119,44 @@ MYSQL_FIELD *field;
 				if (i == 0){
 
 					while(field = mysql_fetch_field(result)){
-					
-						printf("%s ", field->name);
-
-						}
+						printf("%s", field->name);
+						colvec.push_back(field->name);
 					}
 
 					printf("\n");
 				}
 
 				printf("%s  ", row[i] ? row[i] : "NULL");
+				rowvec.push_back(row[i]);
+				
 			}
 	
 		}
 
+		for(int i = 0; i<num_fields;i++){
+		
+			output+=colvec[i] + " ";
+		
+		}	
+		
+		for(int i =0; i<(num_fields*rowresult);i++){
+		
+			if(i%6==0|| i == 0){
+		
+				output+= "\n" + rowvec[i] + " ";
+		
+			}else{
+		
+			output+=rowvec[i]+ " ";
+		
+			}
+		
+		}
+		std::cout << output << std::endl;
 		printf("\n");
 		mysql_free_result(result);
-		return std::string rowvecst;
-	}// schleifimeifi rekursivi ? 
+		return output;
+	}
 
 	/**
 

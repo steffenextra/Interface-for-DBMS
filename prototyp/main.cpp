@@ -12,7 +12,7 @@ int main (int argc, char *argv[]) {
         unsigned int port=3306;
         unsigned int client_flag=0;
 	connectionless(host, user, passwort, db, port,pathto, client_flag);
-        getAllColumn("tabelle2");
+        showTable("tabelle2");
 
 /*        GUI *gui1 =  new GUI();
                 Fl::run();
