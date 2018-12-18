@@ -485,6 +485,43 @@ Fl_Output *connectoutput;
 			}
 	}
 
+	void whenPushedBackSetEntry(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				setEntryWindow->hide();
+				entryWindow->show();
+			}
+	}
+
+	void whenPushedBackModfierEntry(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				modifierEntryWindow->hide();
+				entryWindow->show();
+			}
+	}
+
+	void whenPushedBacksetAllEntry(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				setAllEntryWindow->hide();
+				entryWindow->show();
+			}
+	}
+
+		void whenPushedBackDeleteEntry(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				deleteEntryWindow->hide();
+				entryWindow->show();
+			}
+	}
+
+
+
+
+
+
 	GUI::GUI(){
 	//	 connectionWindow = new ConnectionWindow();
 		categoryWindow = new CategoryWindow();
@@ -921,7 +958,7 @@ SetEntry::SetEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 	columnname = new Fl_Input(120, 111, 140, 24, "Columnname:");
     entry = new Fl_Input(120, 136, 140, 24, "Entry:");
 
-	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackSetEntry);
 
 	end();
 	show();
@@ -947,14 +984,14 @@ ModifierEntry::ModifierEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 	oldEntry = new Fl_Input(120, 136, 140, 24, "OldEntry:");
 	newEntry = new Fl_Input(120, 161, 140, 24, "NewEntry:");
 
-	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackModfierEntry);
 
 	end();
 	show();
 
 }
 
- SetAllEntry:: SetAllEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+ SetAllEntry::SetAllEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -972,7 +1009,7 @@ ModifierEntry::ModifierEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){
     tablename = new Fl_Input(95, 86, 140, 24, "Tablename:");
 	rowEntry = new Fl_Input(95, 116, 450, 24, "RowEntry");
 
-	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+	backButton->callback((Fl_Callback*) whenPushedBacksetAllEntry);
 
 	end();
 	show();
@@ -998,7 +1035,7 @@ DeleteEntry::DeleteEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 	columnname = new Fl_Input(120, 111, 140, 24, "Columnname:");
 	condition = new Fl_Input(120, 136, 140, 24, "Condition:");
 
-	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackDeleteEntry);
 
 	end();
 	show();
