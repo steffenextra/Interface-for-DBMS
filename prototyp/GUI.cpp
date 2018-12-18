@@ -640,7 +640,7 @@ Fl_Output *connectoutput;
 	tableCommands->add("deleteTable");
 	tableCommands->add("setColumn");
 	tableCommands->add("getAllColumn");
-	tableCommands->add("showColumnTyp");
+	tableCommands->add("showColumnType");
 	tableCommands->add("deleteColumn");
 	tableCommands->add("modifierColumnName");
 	tableCommands->add("setColumnWithPrimary");
@@ -1133,6 +1133,16 @@ SetColumn::SetColumn() : Fl_Window(1280,400,620,310,"SQL-Interface"){
     executeButton->color((Fl_Color)31);
     tableName = new Fl_Input(95, 86, 140, 24, "Tablename:");
     datatype = new Fl_Input_Choice(340, 86, 140, 24, "Datatype:");
+	datatype->add("integer");
+	datatype->add("float");
+	datatype->add("char");
+	datatype->add("varchar");
+	datatype->add("date");
+	datatype->add("time");
+	datatype->add("datatime");
+	datatype->add("text");
+	datatype->add("blob");
+
 
 	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
 
@@ -1155,6 +1165,15 @@ SetColumnWithPrimary::SetColumnWithPrimary() : Fl_Window(1280,400,620,310,"SQL-I
     tableName = new Fl_Input(110, 86, 140, 24, "Tablename:");
     columnName = new Fl_Input(110, 111, 140, 24, "Columnname:");
     datatype = new Fl_Input_Choice(340, 111, 160, 24, "Datatype:");
+	datatype->add("integer");
+	datatype->add("float");
+	datatype->add("char");
+	datatype->add("varchar");
+	datatype->add("date");
+	datatype->add("time");
+	datatype->add("datatime");
+	datatype->add("text");
+	datatype->add("blob");
 	autoIncrement = new Fl_Check_Button(340, 85, 70, 15, "Auto Increment");
 
 	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
@@ -1180,6 +1199,15 @@ SetColumnWithPrimary::SetColumnWithPrimary() : Fl_Window(1280,400,620,310,"SQL-I
     oldColumnName= new Fl_Input(140, 111, 140, 24, "Old Columnname:");
     newColumnName =new Fl_Input(140, 136, 140, 24, "New Columnname:");
     datatype = new Fl_Input_Choice(375, 136, 160, 24, "Datatype:");
+	datatype->add("integer");
+	datatype->add("float");
+	datatype->add("char");
+	datatype->add("varchar");
+	datatype->add("date");
+	datatype->add("time");
+	datatype->add("datatime");
+	datatype->add("text");
+	datatype->add("blob");
 
 	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
 
@@ -1203,6 +1231,15 @@ SetColumnWithPrimary::SetColumnWithPrimary() : Fl_Window(1280,400,620,310,"SQL-I
     tableName= new Fl_Input(140, 86, 140, 24, "Tablename:");
     columnName = new Fl_Input(140, 116, 140, 24, "Columnname:");
 	datatype = new Fl_Input_Choice(375, 116, 160, 24, "Datatype:");
+	datatype->add("integer");
+	datatype->add("float");
+	datatype->add("char");
+	datatype->add("varchar");
+	datatype->add("date");
+	datatype->add("time");
+	datatype->add("datatime");
+	datatype->add("text");
+	datatype->add("blob");
 
 	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
 
@@ -1245,7 +1282,15 @@ ShowColumnType::ShowColumnType() : Fl_Window(1280,400,620,310,"SQL-Interface"){
     executeButton->color((Fl_Color)31);
     tableName = new Fl_Input(95, 86, 140, 24, "Tablename:");
     datatype = new Fl_Input_Choice(340, 86, 140, 24, "Datatype:");
-
+	datatype->add("integer");
+	datatype->add("float");
+	datatype->add("char");
+	datatype->add("varchar");
+	datatype->add("date");
+	datatype->add("time");
+	datatype->add("datatime");
+	datatype->add("text");
+	datatype->add("blob");
 	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
 
 	end();
