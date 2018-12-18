@@ -21,26 +21,49 @@ Fl_Input_Choice *selectRequestCommands;
 ConnectionWindow *connectionWindow;
 CategoryWindow *categoryWindow;
 DatabaseWindow *databaseWindow;
+CreateDatabase *createDatabaseWindow;       
+ShowDatabases *showDatabasesWindow;
+DeleteDatabase *deleteDatabaseWindow;
 DatabaseCommand *databaseCommandWindow;
 ShowDatabase *showDatabaseWindow;
+
 TableWindow *tableWindow;
 TableCommand *tableCommandWindow;
 ShowTable *showTableWindow;
+CreateTable *createTableWindow;
+ShowTableCommand *showTableCommandWindow;
+RenameTable *renameTableWindow;
+DeleteTable *deleteTableWindow;
+SetColumn *setColumnWindow;
+SetColumnWithPrimary *setColumnWithPrimaryWindow;
+ModifierColumnName *modifierColumnNameWindow;
+ChangeDatatype *changeDatatypeWindow;
+GetAllColumns *getAllColumnsWindow;
+CountDatasets *countDatasetsWindow;
+ShowColumnType *showColumnTypeWindow;
+DeleteColumn *deleteColumnWindow;
+SetSecondaryKey *setSecondaryKeyWindow;
+DeleteSecondaryKey *deleteSecondaryKeyWindow;
+SetPrimaryKey *setPrimaryKeyWindow;
+DeletePrimaryKey *deletePrimaryKeyWindow;
+
+
+
+
 EntryWindow *entryWindow;
 EntryCommand *entryCommandWindow;
 ShowEntry *showEntryWindow;
+SetEntry *setEntryWindow;
+SetAllEntry *setAllEntryWindow;
+DeleteEntry *deleteEntryWindow;
+ModifierEntry *modifierEntryWindow;
+
+
 SelectRequestWindow *selectRequestWindow;
 SelectRequestCommand *selectRequestCommandWindow;
 ShowSelectRequest *showSelectRequestWindow;
 StatementWindow *statementWindow;
 StatementWindow *showStatementWindow;
-CreateDatabase *createDatabaseWindow;
-ShowDatabases *showDatabasesWindow;
-DeleteDatabase *deleteDatabaseWindow;
-SetEntry *setEntryWindow;
-SetAllEntry *setAllEntryWindow;
-ModifierEntry *modifierEntryWindow;
-DeleteEntry *deleteEntryWindow;
 
 Fl_Input *databasename;
 
@@ -176,58 +199,86 @@ Fl_Output *connectoutput;
 		if ( ((Fl_Button*) w)->value()){
 		} 
 		else {
-				tableWindow->hide();
-				tableCommandWindow = new TableCommand();
-
-				std:: cout << tableCommands->value() << std::endl;
-				
 				if((strcmp(tableCommands->value(),"createTable"))==0){
+					tableWindow->hide();
+					createTableWindow=new CreateTable();
 					sqlCommand->value("CREATE TABLE tableName( ID int NOT NULL PRIMARY KEY AUTO_INCREMENT, columnnamesAndDatatype);"); 
 				}
 
 				if((strcmp(tableCommands->value(),"showTable"))==0){
+					tableWindow->hide();
+					showTableCommandWindow=new ShowTableCommand();
 					sqlCommand->value("SELECT * FROM tableName;"); 
 				}
 				if((strcmp(tableCommands->value(),"renameTable"))==0){
+					tableWindow->hide();
+					renameTableWindow = new RenameTable();
 					sqlCommand->value("ALTER TABLE tablename RENAME TO newTableName;"); 
 				}
 				if((strcmp(tableCommands->value(),"deleteTable"))==0){
+					tableWindow->hide();
+
+					deleteTableWindow = new DeleteTable();
 					sqlCommand->value("DROP TABLE  tableName;"); 
 				}
 				if((strcmp(tableCommands->value(),"setColumn"))==0){
+					tableWindow->hide();
+					setColumnWindow = new SetColumn();
 					sqlCommand->value("ALTER TABLE tableName  ADD  ColumnName  datatype;"); 
 				}
 				if((strcmp(tableCommands->value(),"modifierColumnName"))==0){
+					tableWindow->hide();
+					modifierColumnNameWindow = new ModifierColumnName();
 					sqlCommand->value("ALTER TABLE tableName CHANGE oldColumnName  newColumnName datatype"); 
 				}
 				if((strcmp(tableCommands->value(),"setColumnWithPrimary"))==0){
+					tableWindow->hide();
+					setColumnWithPrimaryWindow = new SetColumnWithPrimary();
 					sqlCommand->value("ALTER TABLE tableName ADD ColumnName datatype PRIMARY KEY AUTO_INCREMENT;"); 
 				}
 				if((strcmp(tableCommands->value(),"changeTheDatatype"))==0){
+					tableWindow->hide();
+					changeDatatypeWindow = new ChangeDatatype();
 					sqlCommand->value("ALTER TABLE tableName ADD  ColumnName datatype"); 
 				}
 				if((strcmp(tableCommands->value(),"getAllColumn"))==0){
+					tableWindow->hide();
+					getAllColumnsWindow = new GetAllColumns();
 					sqlCommand->value("SHOW COLUMNS FROM tableName;"); 
 				}
 				if((strcmp(tableCommands->value(),"countDatasets"))==0){
+					tableWindow->hide();
+					countDatasetsWindow = new CountDatasets();
 					sqlCommand->value("SELECT COUNT (*) FROM tableName;"); 
 				}
-				if((strcmp(tableCommands->value(),"showColumnTyp"))==0){
+				if((strcmp(tableCommands->value(),"showColumnType"))==0){
+					tableWindow->hide();
+					showColumnTypeWindow = new ShowColumnType();
 					sqlCommand->value("SHOW COLUMNS FROM tableName WHERE TYPE LIKE 'datatype%';"); 
 				}
 				if((strcmp(tableCommands->value(),"deleteColumn"))==0){
+					tableWindow->hide();
+					deleteColumnWindow = new DeleteColumn();
 					sqlCommand->value("ALTER TABLE tableName DROP columnName;"); 
 				}
 				if((strcmp(tableCommands->value(),"setSecondaryKey"))==0){
+					tableWindow->hide();
+					setSecondaryKeyWindow = new SetSecondaryKey();
 					sqlCommand->value("ALTER TABLE tableNameSecondary ADD CONSTRAINT constraint FOREIGN KEY (foreignKey) REFERENCES tableNamePrimary primaryKey);"); 
 				}
 				if((strcmp(tableCommands->value(),"deleteSecondaryKey"))==0){
+					tableWindow->hide();
+					deleteSecondaryKeyWindow = new DeleteSecondaryKey();
 					sqlCommand->value("ALTER TABLE tableName DROP FOREIGN KEY constraint;"); 
 				}
 				if((strcmp(tableCommands->value(),"setPrimaryKey"))==0){
+					tableWindow->hide();
+					setPrimaryKeyWindow = new SetPrimaryKey();
 					sqlCommand->value("ALTER TABLE tableName ADD PRIMARY KEY (primaryKey);"); 
 				}
 				if((strcmp(tableCommands->value(),"deletePrimaryKey"))==0){
+					tableWindow->hide();
+					deletePrimaryKeyWindow = new DeletePrimaryKey();
 					sqlCommand->value("ALTER TABLE tableName DROP PRIMARY KEY"); 
 				}
 
@@ -436,8 +487,7 @@ Fl_Output *connectoutput;
 
 	GUI::GUI(){
 	//	 connectionWindow = new ConnectionWindow();
-	//	categoryWindow = new CategoryWindow();
-		DeletePrimaryKey *ct = new DeletePrimaryKey();
+		categoryWindow = new CategoryWindow();
 		
 
 	}
@@ -981,6 +1031,28 @@ CreateTable::CreateTable() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 }
 
 ShowTableCommand::ShowTableCommand() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+		
+	color(FL_WHITE);
+	begin();
+
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    Fl_Button *helpButton = new Fl_Button(0, 0, 95, 25, "Help");
+    helpButton->color((Fl_Color)31);
+     backButton = new Fl_Button(95, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+    tableName = new Fl_Input(95, 86, 140, 24, "Tablename:");
+    
+
+	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+
+	end();
+	show();
+}
+
+CountDatasets::CountDatasets() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
