@@ -509,13 +509,167 @@ Fl_Output *connectoutput;
 			}
 	}
 
-		void whenPushedBackDeleteEntry(Fl_Widget* w, void*){
+	/*	void whenPushedBackDeleteEntry(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
 				deleteEntryWindow->hide();
 				entryWindow->show();
 			}
+	}*/
+
+	void whenPushedBackCreateTable(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				createTableWindow->hide();
+				tableWindow->show();
+			}
 	}
+
+		void whenPushedBackShowTable(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				showTableCommandWindow->hide();
+				tableWindow->show();
+			}
+	}
+
+	void whenPushedBackRenameTable(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				renameTableWindow->hide();
+				tableWindow->show();
+			}
+	}
+
+		void whenPushedBackDeleteEntry(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				deleteEntryWindow->hide();
+				tableWindow->show();
+			}
+	}
+		void whenPushedBackSetColumn(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				setColumnWindow->hide();
+				tableWindow->show();
+			}
+	}
+		void whenPushedBackGetAllColumn(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				getAllColumnsWindow->hide();
+				tableWindow->show();
+			}
+	}
+
+		void whenPushedBackShowColumnType(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				showColumnTypeWindow->hide();
+				tableWindow->show();
+			}
+	}
+
+		void whenPushedBackDeleteColumn(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				deleteColumnWindow->hide();
+				tableWindow->show();
+			}
+	}
+		void whenPushedBackModifierColumnName(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				modifierColumnNameWindow->hide();
+				tableWindow->show();
+			}
+	}
+
+		void whenPushedBackSetColumnWithPrimary(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				setColumnWithPrimaryWindow->hide();
+				tableWindow->show();
+			}
+	}
+
+		void whenPushedBackSetPrimaryKey(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				setPrimaryKeyWindow->hide();
+				tableWindow->show();
+			}
+	}
+
+	void whenPushedBackDeletePrimaryKey(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				deletePrimaryKeyWindow->hide();
+				tableWindow->show();
+			}
+	}
+
+		void whenPushedBackSetSecondaryKey(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				setSecondaryKeyWindow->hide();
+				tableWindow->show();
+			}
+	}
+
+		void whenPushedBackDeleteSecondaryKey(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				deleteSecondaryKeyWindow->hide();
+				tableWindow->show();
+			}
+	}
+
+		void whenPushedBackChangeDatatype(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				changeDatatypeWindow->hide();
+				tableWindow->show();
+			}
+	}
+
+		void whenPushedBackCountDatases(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				countDatasetsWindow->hide();
+				tableWindow->show();
+			}
+	}
+
+	void whenPushedBackDeleteTable(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				deleteTableWindow->hide();
+				tableWindow->show();
+			}
+	} 
+
+	void whenPushedBackGetAllColumns(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				getAllColumnsWindow->hide();
+				tableWindow->show();
+			}
+	} 
+
+	
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1061,7 +1215,7 @@ CreateTable::CreateTable() : Fl_Window(1280,400,620,310,"SQL-Interface"){
     primaryKeyCheck->down_box(FL_DOWN_BOX);
     columns = new Fl_Input(95, 111, 455, 24, "Columns:");
 
-	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackCreateTable);
 
 	end();
 	show();
@@ -1083,7 +1237,7 @@ ShowTableCommand::ShowTableCommand() : Fl_Window(1280,400,620,310,"SQL-Interface
     tableName = new Fl_Input(95, 86, 140, 24, "Tablename:");
     
 
-	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackShowTable);
 
 	end();
 	show();
@@ -1105,7 +1259,7 @@ CountDatasets::CountDatasets() : Fl_Window(1280,400,620,310,"SQL-Interface"){
     tableName = new Fl_Input(95, 86, 140, 24, "Tablename:");
     
 
-	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackCountDatases);
 
 	end();
 	show();
@@ -1129,7 +1283,7 @@ RenameTable::RenameTable() : Fl_Window(1280,400,620,310,"SQL-Interface"){
     newTableName =new Fl_Input(130, 111, 140, 24, "New Tablename:");
 
 
-	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackRenameTable);
 
 	end();
 	show();
@@ -1149,7 +1303,7 @@ DeleteTable::DeleteTable() : Fl_Window(1280,400,620,310,"SQL-Interface"){
     tableName = new Fl_Input(95, 86, 140, 24, "Tablename:");
     
 
-	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackDeleteTable);
 
 	end();
 	show();	
@@ -1181,7 +1335,7 @@ SetColumn::SetColumn() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 	datatype->add("blob");
 
 
-	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackSetColumn);
 
 	end();
 	show();
@@ -1213,7 +1367,7 @@ SetColumnWithPrimary::SetColumnWithPrimary() : Fl_Window(1280,400,620,310,"SQL-I
 	datatype->add("blob");
 	autoIncrement = new Fl_Check_Button(340, 85, 70, 15, "Auto Increment");
 
-	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackSetColumnWithPrimary);
 
 	end();
 	show();
@@ -1246,7 +1400,7 @@ SetColumnWithPrimary::SetColumnWithPrimary() : Fl_Window(1280,400,620,310,"SQL-I
 	datatype->add("text");
 	datatype->add("blob");
 
-	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackModifierColumnName);
 
 	end();
 	show();
@@ -1278,7 +1432,7 @@ SetColumnWithPrimary::SetColumnWithPrimary() : Fl_Window(1280,400,620,310,"SQL-I
 	datatype->add("text");
 	datatype->add("blob");
 
-	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackChangeDatatype);
 
 	end();
 	show();
@@ -1299,7 +1453,7 @@ SetColumnWithPrimary::SetColumnWithPrimary() : Fl_Window(1280,400,620,310,"SQL-I
     executeButton->color((Fl_Color)31);
     tableName=new Fl_Input(105, 86, 140, 24, "Tablename:");
 
-	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackGetAllColumns);
 
 	end();
 	show();
@@ -1328,7 +1482,7 @@ ShowColumnType::ShowColumnType() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 	datatype->add("datatime");
 	datatype->add("text");
 	datatype->add("blob");
-	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackShowColumnType);
 
 	end();
 	show();
@@ -1351,7 +1505,7 @@ DeleteColumn::DeleteColumn() : Fl_Window(1280,400,620,310,"SQL-Interface"){
     columnName =new Fl_Input(140, 116, 140, 24, "Columnname:");
 
 
-	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackDeleteColumn);
 
 	end();
 	show();
@@ -1376,7 +1530,7 @@ SetSecondaryKey::SetSecondaryKey() : Fl_Window(1280,400,620,310,"SQL-Interface")
     constraint = new Fl_Input(175, 146, 140, 24, "Constraint");
 
 
-	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackSetSecondaryKey);
 
 	end();
 	show();
@@ -1399,7 +1553,7 @@ DeleteSecondaryKey::DeleteSecondaryKey() : Fl_Window(1280,400,620,310,"SQL-Inter
     constraint = new Fl_Input(100, 116, 140, 24, "Constraint");
 
 
-	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackDeleteSecondaryKey);
 
 	end();
 	show();
@@ -1422,7 +1576,7 @@ SetPrimaryKey::SetPrimaryKey() : Fl_Window(1280,400,620,310,"SQL-Interface"){
     primaryKey = new Fl_Input(100, 121, 140, 24, "Primary Key:");
 
 
-	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackSetPrimaryKey);
 
 	end();
 	show();
@@ -1443,7 +1597,7 @@ DeletePrimaryKey::DeletePrimaryKey() : Fl_Window(1280,400,620,310,"SQL-Interface
    	tableName = new Fl_Input(100, 91, 140, 24, "Tablename:");
 
 
-	backButton->callback((Fl_Callback*) whenPushedBackEntryCommand);
+	backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
 
 	end();
 	show();
