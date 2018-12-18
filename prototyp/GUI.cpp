@@ -65,6 +65,36 @@ ShowSelectRequest *showSelectRequestWindow;
 StatementWindow *statementWindow;
 StatementWindow *showStatementWindow;
 
+SelectLike *selectLikeWindow;
+SelectNotLike *selectNotLikeWindow;
+SelectMinOrMax *selectMinOrMaxWindow;
+SelectMinOrMaxWhere *selectMinOrMaxWhereWindow;
+SelectLimitWhereOrderBy *selectLimitWhereOrderByWindow;
+SelectWhereOneColumn *selectWhereOneColumnWindow;
+SelectWhere *selectWhereWindow;
+SelectWhereBool *selectWhereBoolWindow;
+SelectWhereOrderBy *selectWhereOrderByWindow;
+SelectSortTable *selectSortTableWindow;
+SelectCount *selecCountWindow;
+SelectDistinct *selectDistinctWindow;
+SelectCountDistinct *selectCountDistinctWindow;
+SelectAverageSum *selectAverageSumWindow;
+SelectSum *selectSumWindow;
+SelectUnion *selectUnionWindow;
+SelectIn *selectInWindow;
+SelectBetween *selectBetweenWindow;
+SelectColumnsAlias *selecColumnsAliasWindow;
+SelectTableAlias *selecTableAliasWindow;
+SelectGroupBy *selectGroupByWindow;
+SelectGroupByOrderBy *selectGroupByOrderByWindow;
+SelectCountGroupByOrderBy *selectCountGroupByOrderByWindow;
+SelectNull *selectNullWindow;
+SelectInnerJoin *selectInnerJoinWindow; 
+SelectLeftJoin *selectLeftJoinWindow;
+SelectRightJoin *selectRightJoinWindow;
+
+
+
 Fl_Input *databasename;
 
 Fl_Input *tablename;
@@ -90,6 +120,31 @@ Fl_Input *foreignKey;
 Fl_Input *tableNamePrimary ;
 Fl_Input *primaryKey;
 Fl_Input *constraint;
+Fl_Input *toSearchColumn;
+Fl_Input *pattern; 
+Fl_Input *search; 
+Fl_Input *minMaxColumn; 
+Fl_Input *minMaxValue;
+Fl_Input *aliasColumn;
+Fl_Input *aliasTable;
+Fl_Input *conditionColumn;
+Fl_Input *conditionValue;
+Fl_Input *conditionColumn2;
+Fl_Input *conditionValue2;
+Fl_Input * operators;
+Fl_Input_Choice *sortBy;
+Fl_Input *sortColumn;
+Fl_Input *countColumn;
+Fl_Input *averageSumColumn;
+Fl_Input *sumColumn;
+Fl_Input * aliasColumns;
+Fl_Input *groupByColumns;
+Fl_Input *firstTable;
+Fl_Input *firstTableIDColumn;
+Fl_Input *firstTableColumns;
+Fl_Input *secondTable;
+Fl_Input *secondTableColumns;
+
 
 Fl_Input *sqlStatement;
 Fl_Output *sqlCommand;
@@ -829,8 +884,9 @@ void whenPushedCountDatasetsExecute(Fl_Widget* w, void*){
 
 
 	GUI::GUI(){
-		 connectionWindow = new ConnectionWindow();
-	//	categoryWindow = new CategoryWindow();
+	//	 connectionWindow = new ConnectionWindow();
+	//	categoryWindow = new Category1Window();
+	SelectInnerJoin *s1 = new SelectInnerJoin();
 		
 
 	}
@@ -1695,4 +1751,604 @@ DeletePrimaryKey::DeletePrimaryKey() : Fl_Window(1280,400,620,310,"SQL-Interface
 
 	end();
 	show();
+}
+
+SelectLike::SelectLike() :  Fl_Window(1280,400,620,310,"SQL-Interface"){	 
+		
+    color(FL_WHITE);
+    begin();
+  
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+
+	tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
+   
+    columns= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
+  
+    toSearchColumn = new Fl_Input(150, 151, 185, 24, "ToSearchColumn:");
+  
+    pattern =new Fl_Input(150, 181, 185, 24, "Pattern:");
+  
+    search = new Fl_Input(150, 211, 185, 24, "Search");
+
+    
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+
+     end();
+     show();
+}
+SelectNotLike::SelectNotLike() :  Fl_Window(1280,400,620,310,"SQL-Interface"){	 
+		
+    color(FL_WHITE);
+    begin();
+  
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+
+	tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
+   
+    columns= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
+  
+    toSearchColumn = new Fl_Input(150, 151, 185, 24, "ToSearchColumn:");
+  
+    pattern =new Fl_Input(150, 181, 185, 24, "Pattern:");
+  
+    search = new Fl_Input(150, 211, 185, 24, "Search");
+
+    
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+
+     end();
+     show();
+}
+
+SelectMinOrMax::SelectMinOrMax() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+
+    tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
+   
+    columns= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
+  
+    minMaxColumn = new Fl_Input(150, 151, 185, 24, "Min/Max Value:");
+  
+  	minMaxValue =new Fl_Input(150, 181, 185, 24, "Min/Max Value:");
+  
+    aliasColumn = new Fl_Input(150, 211, 185, 24, "AliasColumn");
+
+   
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+SelectMinOrMaxWhere::SelectMinOrMaxWhere() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+
+    tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
+   
+    columns= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
+  
+    minMaxColumn = new Fl_Input(150, 151, 185, 24, "Min/Max Column:");
+  
+    minMaxValue =new Fl_Input(150, 181, 185, 24, "Min/Max Value:");
+  
+    conditionColumn =  new Fl_Input(150, 211, 185, 24, "Condition Column:");
+
+    conditionValue =  new Fl_Input(150, 241, 185, 24, "Condition Value:");
+
+   
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+SelectWhereOneColumn::SelectWhereOneColumn() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+
+    tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
+   
+    conditionColumn= new Fl_Input(150, 121, 185, 24, "Condition Column:");
+  
+    conditionValue  =  new Fl_Input(150, 151, 185, 24, "Condition Value:");
+
+   
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+
+SelectWhere::SelectWhere()  : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+
+    tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
+   
+   columns= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
+  
+    minMaxColumn = new Fl_Input(150, 151, 185, 24, "Min/Max Column:");
+  
+    conditionColumn =  new Fl_Input(150, 181, 185, 24, "Conditon Column:");
+
+    conditionValue =  new Fl_Input(150, 211, 185, 24, "Condition Value:");
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+
+   
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+
+SelectWhereBool::SelectWhereBool() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+
+
+    tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
+   
+    columns= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
+  
+    conditionColumn =  new Fl_Input(155, 151, 350, 24, "1.Conditon Columns:");
+  
+    conditionValue =  new Fl_Input(155, 181, 350, 24, "1.Condition Values:");
+
+    conditionColumn2 =  new Fl_Input(155, 211, 350, 24, "2.Conditon Columns:");
+    conditionValue2 =  new Fl_Input(155, 241, 350, 24, "2.Condition Values:");
+    operators =   new Fl_Input(155, 271, 350, 24, "Operators:");
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+
+SelectWhereOrderBy::SelectWhereOrderBy() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+
+    tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
+   
+    columns= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
+  
+    conditionColumn =  new Fl_Input(150, 151, 185, 24, "Conditon Column:");
+  
+    conditionValue =  new Fl_Input(150, 181, 185, 24, "Condition Value:");
+
+    sortColumn =  new Fl_Input(150, 211, 185, 24, "Sort Column");
+    sortBy =  new Fl_Input_Choice(430, 211, 75, 24, "Sort by:");
+	sortBy->add("ASC");
+	sortBy->add("DESC");
+   
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+
+SelectSortTable::SelectSortTable() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+
+    Fl_Input *tableName = new Fl_Input(150, 91, 185, 24, "Tablename:");
+   
+    Fl_Input *sortColumn =  new Fl_Input(150, 121, 185, 24, "Sort Column");
+	sortBy = new Fl_Input_Choice(435, 121, 75, 24, "Sort by:");
+
+
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+
+SelectCount::SelectCount() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+
+    tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
+   
+    countColumn= new Fl_Input(150, 122, 185, 23, "Count Column:");
+  
+    aliasColumn =  new Fl_Input(150, 151, 185, 24, "Alias Column:");  
+
+
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+
+SelectDistinct::SelectDistinct() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+    tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
+   
+    columns= new Fl_Input(150, 122, 345, 23, "Displayed Columns:");
+
+
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+
+SelectCountDistinct::SelectCountDistinct() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+    tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
+    countColumn= new Fl_Input(150, 122, 185, 23, "Count Column:"); 
+
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+
+SelectAverageSum::SelectAverageSum()  : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+
+    tableName =new Fl_Input(170, 91, 185, 24, "Tablename:");
+   
+    averageSumColumn= new Fl_Input(170, 117, 185, 23, "AverageSum Column");
+
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+
+SelectSum::SelectSum()  : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+
+   	tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
+    sumColumn= new Fl_Input(150, 122, 185, 23, "Sum Column:");
+    aliasColumn =   new Fl_Input(150, 151, 185, 24, "Alias Column:");
+
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+
+
+SelectIn::SelectIn()   : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+	
+    tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
+    columns= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
+    toSearchColumn =  new Fl_Input(150, 151, 185, 24, "Search Column:");
+	conditionValue =  new Fl_Input(150, 181, 185, 24, "Condition Value:");
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+
+SelectBetween::SelectBetween()  : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+	
+    tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
+    columns= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
+    conditionValue =  new Fl_Input(150, 211, 185, 24, "Condition Value 1:");
+    conditionValue2 =   new Fl_Input(150, 241, 185, 24, "Condition Value 2:");
+	conditionColumn =    new Fl_Input(150, 151, 185, 24, "Condition Column 1:");
+    conditionColumn2 =    new Fl_Input(150, 181, 185, 24, "Condition Column 2:");
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+
+SelectColumnsAlias::SelectColumnsAlias() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+	tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
+    columns= new Fl_Input(150, 122, 350, 23, "Columns:");
+    aliasColumns =   new Fl_Input(150, 151, 350, 24, "Alias Columns:");
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+
+SelectTableAlias::SelectTableAlias() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+    tableName = new Fl_Input(150, 91, 185, 24, "Tablename:");
+    columns= new Fl_Input(150, 152, 350, 23, "Displayed Columns:");
+    aliasTable =   new Fl_Input(150, 121, 185, 24, "Alias Table");
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+
+SelectGroupBy::SelectGroupBy() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+    tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
+   
+    columns= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
+  
+    conditionColumn =  new Fl_Input(150, 151, 185, 24, "Conditon Column:");
+
+    conditionValue =  new Fl_Input(150, 181, 185, 24, "Condition Value:");
+  
+    groupByColumns =new Fl_Input(150, 211, 350, 24, "GroupBy Columns:");
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+
+SelectGroupByOrderBy::SelectGroupByOrderBy(): Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+    tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
+   
+    columns= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
+  
+    conditionColumn =  new Fl_Input(150, 151, 185, 24, "Conditon Column:");
+
+    conditionValue =  new Fl_Input(150, 181, 185, 24, "Condition Value:");
+  	sortColumn =  new Fl_Input(150, 241, 185, 24, "Sort Column");
+    sortBy = new Fl_Input_Choice(425, 241, 75, 24, "Sort by:");
+	sortBy->add("ASC");
+	sortBy->add("DESC");
+    groupByColumns = new Fl_Input(150, 212, 350, 23, "GroupBy Columns:");
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+
+SelectCountGroupByOrderBy::SelectCountGroupByOrderBy(): Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+    tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
+   
+    columns= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
+  
+    conditionColumn =  new Fl_Input(150, 151, 185, 24, "Conditon Column:");
+
+    conditionValue =  new Fl_Input(150, 181, 185, 24, "Condition Value:");
+  	sortColumn =  new Fl_Input(150, 241, 185, 24, "Sort Column");
+    sortBy = new Fl_Input_Choice(425, 241, 75, 24, "Sort by:");
+	sortBy->add("ASC");
+	sortBy->add("DESC");
+    groupByColumns = new Fl_Input(150, 212, 350, 23, "GroupBy Columns:");
+	countColumn = new Fl_Input(150, 146, 185, 24, "Count Column:");
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+
+SelectNull::SelectNull(): Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+    tableName =  new Fl_Input(150, 91, 185, 24, "Tablename:");
+   
+    columns=  new Fl_Input(150, 121, 185, 24, "Column:");;
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+
+SelectInnerJoin::SelectInnerJoin() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+    firstTable =new Fl_Input(175, 86, 185, 24, "First Table:");
+    firstTableIDColumn=  new Fl_Input(175, 146, 185, 24, "First Table ID Column");
+    firstTableColumns =  new Fl_Input(175, 176, 355, 24, "First Table Columns:");
+    secondTable =  new Fl_Input(175, 116, 185, 24, "Second Table:");
+    secondTableColumns =   new Fl_Input(175, 206, 355, 24, "Second Table Columns:");
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+SelectRightJoin::SelectRightJoin() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+    firstTable =new Fl_Input(175, 86, 185, 24, "First Table:");
+    firstTableIDColumn=  new Fl_Input(175, 146, 185, 24, "First Table ID Column");
+    firstTableColumns =  new Fl_Input(175, 176, 355, 24, "First Table Columns:");
+    secondTable =  new Fl_Input(175, 116, 185, 24, "Second Table:");
+    secondTableColumns =   new Fl_Input(175, 206, 355, 24, "Second Table Columns:");
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
+}
+SelectLeftJoin::SelectLeftJoin(): Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+    firstTable =new Fl_Input(175, 86, 185, 24, "First Table:");
+    firstTableIDColumn=  new Fl_Input(175, 146, 185, 24, "First Table ID Column");
+    firstTableColumns =  new Fl_Input(175, 176, 355, 24, "First Table Columns:");
+    secondTable =  new Fl_Input(175, 116, 185, 24, "Second Table:");
+    secondTableColumns =   new Fl_Input(175, 206, 355, 24, "Second Table Columns:");
+
+  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
+     end();
+     show();
 }

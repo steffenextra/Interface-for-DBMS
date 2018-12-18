@@ -237,3 +237,140 @@ class DeletePrimaryKey : public Fl_Window{
 };
 
 //Selection-Request Windows
+class SelectLike : public Fl_Window{
+    public:
+    SelectLike();
+    ~SelectLike(){}
+};
+class SelectNotLike : public Fl_Window{
+    public:
+    SelectNotLike();
+    ~SelectNotLike(){}
+};
+class SelectMinOrMax : public Fl_Window{
+    public:
+    SelectMinOrMax();
+    ~SelectMinOrMax(){}
+};
+class SelectMinOrMaxWhere : public Fl_Window{
+    public:
+   SelectMinOrMaxWhere();
+    ~SelectMinOrMaxWhere(){}
+};
+class SelectLimitWhereOrderBy : public Fl_Window{
+    public:
+    SelectLimitWhereOrderBy();
+    ~SelectLimitWhereOrderBy(){}
+};
+class SelectWhereOneColumn : public Fl_Window{
+    public:
+    SelectWhereOneColumn();
+    ~SelectWhereOneColumn(){}
+};
+class SelectWhere : public Fl_Window{
+    public:
+   SelectWhere();
+    ~SelectWhere(){}
+};
+class SelectWhereBool : public Fl_Window{
+    public:
+    SelectWhereBool();
+    ~SelectWhereBool(){}
+};
+class SelectWhereOrderBy : public Fl_Window{
+    public:
+    SelectWhereOrderBy();
+    ~SelectWhereOrderBy(){}
+};
+class SelectSortTable : public Fl_Window{
+    public:
+    SelectSortTable();
+    ~SelectSortTable(){}
+};
+class SelectCount : public Fl_Window{
+    public:
+    SelectCount();
+    ~SelectCount(){}
+};
+class SelectDistinct : public Fl_Window{
+    public:
+    SelectDistinct();
+    ~SelectDistinct(){}
+};
+class SelectCountDistinct : public Fl_Window{
+    public:
+    SelectCountDistinct();
+    ~SelectCountDistinct(){}
+};
+class SelectAverageSum : public Fl_Window{
+    public:
+    SelectAverageSum();
+    ~SelectAverageSum(){}
+};
+class SelectSum : public Fl_Window{
+    public:
+    SelectSum();
+    ~SelectSum(){}
+};
+class SelectUnion : public Fl_Window{
+    public:
+    SelectUnion();
+    ~SelectUnion(){}
+};
+class SelectIn : public Fl_Window{
+    public:
+    SelectIn();
+    ~SelectIn(){}
+};
+class SelectBetween : public Fl_Window{
+    public:
+    SelectBetween();
+    ~SelectBetween(){}
+};
+class SelectColumnsAlias : public Fl_Window{
+    public:
+    SelectColumnsAlias();
+    ~SelectColumnsAlias(){}
+};
+class SelectTableAlias : public Fl_Window{
+    public:
+    SelectTableAlias();
+    ~SelectTableAlias(){}
+};
+class SelectGroupBy : public Fl_Window{
+    public:
+    SelectGroupBy();
+    ~SelectGroupBy(){}
+};
+class SelectGroupByOrderBy : public Fl_Window{
+    public:
+    SelectGroupByOrderBy();
+    ~SelectGroupByOrderBy(){}
+};
+class SelectCountGroupByOrderBy : public Fl_Window{
+    public:
+   SelectCountGroupByOrderBy();
+    ~SelectCountGroupByOrderBy(){}
+};
+class SelectNull : public Fl_Window{
+    public:
+    SelectNull();
+    ~SelectNull(){}
+};
+class SelectInnerJoin : public Fl_Window{
+    public:
+    SelectInnerJoin();
+    ~SelectInnerJoin(){}
+};
+class SelectLeftJoin : public Fl_Window{
+    public:
+    SelectLeftJoin();
+    ~SelectLeftJoin(){}
+};
+class SelectRightJoin : public Fl_Window{
+    public:
+    SelectRightJoin();
+    ~SelectRightJoin(){}
+};
+
+
