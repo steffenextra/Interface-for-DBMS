@@ -719,12 +719,25 @@ Fl_Output *connectoutput;
 	void whenPushedDeleteTableExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-
 				deleteTable(tableName->value());
-
 		}	
-
 	}
+
+	void whenPushedSetColumnExecute(Fl_Widget* w, void*){
+			if(((Fl_Button*)w) -> value()){}
+			else{
+				setColumn(tableName->value(), columnName ->value(), datatype->value());
+		}	
+	}
+
+	void whenPushedGetAllColumnsExecute(Fl_Widget* w, void*){
+			if(((Fl_Button*)w) -> value()){}
+			else{
+				getAllColumn(tableName->value());
+		}	
+	}
+
+
 
 
 
@@ -1327,10 +1340,12 @@ SetColumn::SetColumn() : Fl_Window(1280,400,620,310,"SQL-Interface"){
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
      backButton = new Fl_Button(95, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
-
+    columnName = new Fl_Input(95,130,140,24,"ColumnName");
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
+    executeButton -> callback((Fl_Callback*)whenPushedSetColumnExecute);
     tableName = new Fl_Input(95, 86, 140, 24, "Tablename:");
+
     datatype = new Fl_Input_Choice(340, 86, 140, 24, "Datatype:");
 	datatype->add("integer");
 	datatype->add("float");
@@ -1446,11 +1461,12 @@ SetColumnWithPrimary::SetColumnWithPrimary() : Fl_Window(1280,400,620,310,"SQL-I
 	begin();
 
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
-     backButton = new Fl_Button(95, 0, 95, 25, "Back");
+    backButton = new Fl_Button(95, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
+    executeButton->callback((Fl_Callback*) whenPushedGetAllColumnsExecute);
     tableName=new Fl_Input(105, 86, 140, 24, "Tablename:");
 
 	backButton->callback((Fl_Callback*) whenPushedBackGetAllColumns);
