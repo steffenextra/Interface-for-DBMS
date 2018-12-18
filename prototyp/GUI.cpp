@@ -1,5 +1,6 @@
 #include "GUI.hpp"
 
+
 Fl_Box *box1;
 Fl_Input *host;
 Fl_Input *name;
@@ -427,8 +428,166 @@ Fl_Output *connectoutput;
 		if ( ((Fl_Button*) w)->value()){
 		} 
 		else {
+				
+				if((strcmp(selectRequestCommands->value(),"selectCount"))==0){
+					selectRequestWindow->hide();
+					selectCountDistinctWindow= new SelectCountDistinct();
+					sqlCommand->value("SELECT COUNT( countColumn AS aliasColumnName FROM tableName + ;");
+				}
+
+				if((strcmp(selectRequestCommands->value(),"selectIn"))==0){
 				selectRequestWindow->hide();
-				selectRequestCommandWindow = new SelectRequestCommand();
+				selectInWindow= new SelectIn();
+				sqlCommand->value("SELECT allColumns FROM tableName WHERE  searchInColumn IN (comperativValues);");
+				}
+				if((strcmp(selectRequestCommands->value(),"selectDistinct"))==0){
+				selectRequestWindow->hide();
+				selectDistinctWindow= new SelectDistinct();
+				sqlCommand->value("SELECT DISTINCT allColumns FROM tableName;");
+				}
+				if((strcmp(selectRequestCommands->value(),"selectCountDistinct"))==0){
+				selectRequestWindow->hide();
+				selectCountDistinctWindow = new SelectCountDistinct();
+				sqlCommand->value("SELECT COUNT(DISTINCT countColumn FROM tableName ");
+				}
+				if((strcmp(selectRequestCommands->value(),"selectLike"))==0){
+				selectRequestWindow->hide();
+				selectLikeWindow= new SelectLike();
+				sqlCommand->value("SELECT allColumns  FROM tableName WHERE toSearchColumn  LIKE'toSearch %' ");
+				}
+				if((strcmp(selectRequestCommands->value(),"selectNotLike"))==0){
+				selectRequestWindow->hide();
+				selectNotLikeWindow= new SelectNotLike();
+				sqlCommand->value("SELECT allColumns  FROM tableName WHERE toSearchColumn  LIKE'toSearch %'");
+				}
+				if((strcmp(selectRequestCommands->value(),"selectSum"))==0){
+				selectRequestWindow->hide();
+				selectSumWindow= new SelectSum();
+				sqlCommand->value("SELECT SUM( columnName )AS aliasColumnName FROM tableName");
+				}
+				if((strcmp(selectRequestCommands->value(),"selectAverageSum"))==0){
+				selectRequestWindow->hide();
+				selectAverageSumWindow= new SelectAverageSum();
+				sqlCommand->value("SELECT AVG(columnName + FROM tableName");
+				}
+//				cock
+
+
+
+				if((strcmp(selectRequestCommands->value(),"selectSortTable"))==0){
+				selectRequestWindow->hide();
+				selectSortTableWindow= new SelectSortTable();
+				sqlCommand->value("SELECT * FROM tableName ORDER BY toSortColumnName ASC");
+				}
+
+				if((strcmp(selectRequestCommands->value(),"selectBetween"))==0){
+				selectRequestWindow->hide();
+				selectBetweenWindow= new SelectBetween();
+				sqlCommand->value("SELECT * FROM tableName WHERE conditionColumn conditionString condition AND conditionColumnTwo conditionString conditionTwo;");
+				}
+
+				if((strcmp(selectRequestCommands->value(),"selectMinOrMax"))==0){
+				selectRequestWindow->hide();
+				selectMinOrMaxWindow = new SelectMinOrMax();
+				sqlCommand->value("SELECT MIN(minOrMaxColumn)AS aliasColumn FROM tableName");
+				}
+
+				if((strcmp(selectRequestCommands->value(),"selectMinOrMaxWhere"))==0){
+				selectRequestWindow->hide();
+				selectMinOrMaxWhereWindow= new SelectMinOrMaxWhere();
+				sqlCommand->value("SELECT MAX( minOrMaxColumn ) AS aliasColumn FROM tableName WHERE conditionColumn =' conditionValue '");
+				}
+
+				if((strcmp(selectRequestCommands->value(),"selectWhere"))==0){
+				selectRequestWindow->hide();
+				selectWhereWindow= new SelectWhere();
+				sqlCommand->value("SELECT allColumns FROM tableName WHERE conditionColumn 'conditionValue '");
+				}
+
+				if((strcmp(selectRequestCommands->value(),"selectWhereOrderBy"))==0){
+				selectRequestWindow->hide();
+				selectWhereOrderByWindow= new SelectWhereOrderBy();
+				sqlCommand->value("SELECT allColumns FROM tableName WHERE conditionColumn 'conditionValue 'ORDER BY toSortcolumnName ASC");
+				}
+				if((strcmp(selectRequestCommands->value(),"selectWhereOneColumn"))==0){
+				selectRequestWindow->hide();
+				selectWhereOneColumnWindow= new SelectWhereOneColumn();
+				sqlCommand->value("SELECT * FROM tableName WHERE conditionColumn = 'conditionValue'");
+				}
+
+
+
+				if((strcmp(selectRequestCommands->value(),"selectWhereBool"))==0){
+				selectRequestWindow->hide();
+				selectWhereBoolWindow= new SelectWhereBool();
+				sqlCommand->value(" SELECT allColumns FROM tableName WHERE conditionOperatorString ");
+				}
+
+				/*if((strcmp(selectRequestCommands->value(),"selectLimitWhereOrderBy"))){
+				selectRequestWindow->hide();
+				selectLimitWhereOrderByWindow = new SelectLimitWhereOrderBy();
+				sqlCommand->value("SELECT allColumns FROM tableName WHERE conditionColumn 'conditionValue 'ORDER BY toSortcolumnName ASC LIMIT limitNumber");
+				}*/
+
+			/*	if((strcmp(selectRequestCommands->value(),"selectUnion"))){
+				selectRequestWindow->hide();
+				selectUnionWindow= new SelectUnion();
+				sqlCommand->value("SELECT columnName.at(i) FROMtableName.at(i)UNION SELECT columnName.at(i) FROM tableName.at(i) ");
+				}*/
+				if((strcmp(selectRequestCommands->value(),"selectColumnAlias"))==0){
+				selectRequestWindow->hide();
+				selecColumnsAliasWindow = new SelectColumnsAlias();
+				sqlCommand->value("SELECT columnAlias FROM tableName");
+				}
+
+
+
+
+				if((strcmp(selectRequestCommands->value(),"selectTableAlias"))==0){
+				selectRequestWindow->hide();
+				//selectTableAliass = new selectTableAlias(); // fix
+				sqlCommand->value("SELECT columnAlias FROM tableName AS aliasTableName");
+				}
+
+				if((strcmp(selectRequestCommands->value(),"selectGroupBy"))==0){
+				selectRequestWindow->hide();
+				selectGroupByWindow = new SelectGroupBy();
+				sqlCommand->value("SELECT allColumns FROM tableName WHERE conditionColumn ' conditionValue ' GROUP BY allGroupByColumns ");
+				}
+
+				if((strcmp(selectRequestCommands->value(),"selectGroupByOrderBy"))==0){
+				selectRequestWindow->hide();
+				selectGroupByOrderByWindow= new SelectGroupByOrderBy();
+				sqlCommand->value("SELECT allColumns FROM tableName WHERE conditionColumn = 'conditionValue ' GROUP BY allGroupByColumns ORDER BY  toSortcolumnName ASC");
+				}
+				if((strcmp(selectRequestCommands->value(),"selectInnerJoin"))==0){
+				selectRequestWindow->hide();
+				selectInnerJoinWindow = new SelectInnerJoin();
+				sqlCommand->value("select <Auswahl> FROM TabelleA INNER JOIN TabelleB B ON A.ID = B.ID");
+				}
+
+				if((strcmp(selectRequestCommands->value(),"selectLeftJoin"))==0){
+				selectRequestWindow->hide();
+				selectLeftJoinWindow = new SelectLeftJoin(); 
+				sqlCommand->value("select <Auswahl> FROM TabelleA LEFT JOIN TabelleB B ON A.ID = B.ID");
+				}
+
+				if((strcmp(selectRequestCommands->value(),"selectRightJoin"))==0){
+				selectRequestWindow->hide();
+				selectRightJoinWindow= new SelectRightJoin();
+				sqlCommand->value("select <Auswahl> FROM TabelleA LEFT JOIN TabelleB B ON A.ID = B.ID");
+				}
+
+				if((strcmp(selectRequestCommands->value(),"selectFullJoin"))==0){
+				selectRequestWindow->hide();
+				//selectFullJoinW= new selectFullJoin(); -> fix 
+				sqlCommand->value("select <Auswahl> FROM TabelleA FULL OUTER JOIN TabelleB B ON A.ID = B.ID");
+				}
+				if((strcmp(selectRequestCommands->value(),"selectNull"))==0){
+				selectRequestWindow->hide();
+				selectNullWindow= new SelectNull();
+				sqlCommand->value("SELECT *  FROM tableName WHERE columnName IS NULL OR ' '");
+				}
 		}
 	}
 		
@@ -870,6 +1029,7 @@ void whenPushedCountDatasetsExecute(Fl_Widget* w, void*){
 	}	
 
 
+
 	
 
 
@@ -884,9 +1044,9 @@ void whenPushedCountDatasetsExecute(Fl_Widget* w, void*){
 
 
 	GUI::GUI(){
-	//	 connectionWindow = new ConnectionWindow();
-	//	categoryWindow = new Category1Window();
-	SelectInnerJoin *s1 = new SelectInnerJoin();
+	connectionWindow = new ConnectionWindow();
+	//categoryWindow = new Category1Window();
+	//SelectInnerJoin *s1 = new SelectInnerJoin();
 		
 
 	}

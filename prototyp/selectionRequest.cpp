@@ -143,7 +143,7 @@
 		Findet einen Datensatz der z.B nicht mit einem "a" beginnt und einem O anfängt.<br>
 			->(Bedingung nur bei zwei Buchstaben erfüllt -> Fehlermeldung bei mehr als zwei Buchstaben)<br>
 
-	SQL-Befehl: 
+	SQL-Befehl: "SELECT " + allColumns + " FROM " + tableName + " WHERE " + toSearchColumn + " NOT LIKE " + "'" + toSearch + "%';"
 
 	@param tableName = Name der Tabelle
 	@param columns = Enthält die Liste der angezeigten Spalten
