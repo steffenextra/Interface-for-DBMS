@@ -758,6 +758,65 @@ Fl_Output *connectoutput;
 		}	
 	}	
 
+	void whenPushedsetColumnWithPrimaryExecute(Fl_Widget* w, void*){
+
+	if(((Fl_Button*)w) -> value()){}
+		else{
+			setColumnWithPrimary(tableName->value(), columnName->value(), datatype->value(),autoIncrement->value());
+		}	
+	}	
+
+	void whenPushedsetPrimaryKeyExecute(Fl_Widget* w, void*){
+
+	if(((Fl_Button*)w) -> value()){}
+		else{
+			setPrimaryKey(tableName->value(), primaryKey->value());
+		}	
+	}	
+
+	void whenPushedDeletePrimaryKeyExecute(Fl_Widget* w, void*){
+
+	if(((Fl_Button*)w) -> value()){}
+		else{
+			deletePrimaryKey(tableName->value());
+		}	
+	}	
+
+	void whenPushedSetSecondaryKeyExecute(Fl_Widget* w, void*){
+
+	if(((Fl_Button*)w) -> value()){}
+		else{
+			setSecondaryKey(tableNameSecondary->value(), foreignKey->value(),tableNamePrimary->value(),primaryKey->value(),constraint->value());
+		}	
+	}	
+
+	void whenPushedDeleteSecondaryKeyExecute(Fl_Widget* w, void*){
+
+	if(((Fl_Button*)w) -> value()){}
+		else{
+			deleteSecondaryKey(tableName->value(), constraint->value());
+		}	
+	}	
+
+	void whenPushedChangeTheDatatypeExecute(Fl_Widget* w, void*){
+
+	if(((Fl_Button*)w) -> value()){}
+		else{
+			changeTheDatatype(tableName->value(), columnName->value(), datatype->value());
+		}	
+	}	
+
+void whenPushedCountDatasetsExecute(Fl_Widget* w, void*){
+
+	if(((Fl_Button*)w) -> value()){}
+		else{
+			countDatasets(tableName->value());
+		}	
+	}	
+
+
+	
+
 
 
 
@@ -1303,6 +1362,7 @@ CountDatasets::CountDatasets() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
+    executeButton->callback((Fl_Callback*)whenPushedCountDatasetsExecute);
     tableName = new Fl_Input(95, 86, 140, 24, "Tablename:");
     
 
@@ -1394,6 +1454,7 @@ SetColumnWithPrimary::SetColumnWithPrimary() : Fl_Window(1280,400,620,310,"SQL-I
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
+    executeButton->callback((Fl_Callback*) whenPushedsetColumnWithPrimaryExecute);
     tableName = new Fl_Input(110, 86, 140, 24, "Tablename:");
     columnName = new Fl_Input(110, 111, 140, 24, "Columnname:");
     datatype = new Fl_Input_Choice(340, 111, 160, 24, "Datatype:");
@@ -1457,6 +1518,7 @@ SetColumnWithPrimary::SetColumnWithPrimary() : Fl_Window(1280,400,620,310,"SQL-I
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
+    executeButton->callback((Fl_Callback*) whenPushedChangeTheDatatypeExecute);
     tableName= new Fl_Input(140, 86, 140, 24, "Tablename:");
     columnName = new Fl_Input(140, 116, 140, 24, "Columnname:");
 	datatype = new Fl_Input_Choice(375, 116, 160, 24, "Datatype:");
@@ -1556,6 +1618,8 @@ SetSecondaryKey::SetSecondaryKey() : Fl_Window(1280,400,620,310,"SQL-Interface")
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
+    executeButton->callback((Fl_Callback*)whenPushedSetSecondaryKeyExecute);
+
     tableNameSecondary = new Fl_Input(175, 86, 140, 24, "Tablename Secondary:");
     foreignKey = new Fl_Input(410, 86, 140, 24, "Foreign Key:");
     tableNamePrimary =new Fl_Input(175, 116, 140, 24, "Tablename Primary");
@@ -1575,11 +1639,12 @@ DeleteSecondaryKey::DeleteSecondaryKey() : Fl_Window(1280,400,620,310,"SQL-Inter
 	begin();
 
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
-     backButton = new Fl_Button(95, 0, 95, 25, "Back");
+    backButton = new Fl_Button(95, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
+    executeButton->callback((Fl_Callback*) whenPushedDeleteSecondaryKeyExecute);
   	tableName =new Fl_Input(100, 91, 140, 24, "Tablename:");
     constraint = new Fl_Input(100, 116, 140, 24, "Constraint");
 
@@ -1601,6 +1666,7 @@ SetPrimaryKey::SetPrimaryKey() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
+    executeButton->callback((Fl_Callback*)whenPushedsetPrimaryKeyExecute);
    	tableName = new Fl_Input(100, 91, 140, 24, "Tablename:");
     primaryKey = new Fl_Input(100, 121, 140, 24, "Primary Key:");
 
@@ -1621,6 +1687,7 @@ DeletePrimaryKey::DeletePrimaryKey() : Fl_Window(1280,400,620,310,"SQL-Interface
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
+    executeButton->callback((Fl_Callback*) whenPushedDeletePrimaryKeyExecute);
    	tableName = new Fl_Input(100, 91, 140, 24, "Tablename:");
 
 

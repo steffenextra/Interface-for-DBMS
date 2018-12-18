@@ -26,7 +26,7 @@
         */
 
 
-	void createTable (bool primary_key, bool foreign_key, std::string tableName,std::vector<std::string> columns){
+	void createTable (bool primary_key, std::string tableName,std::vector<std::string> columns){
 
 		std::string columnnamesAndDatatype;
 		columnnamesAndDatatype=columns.at(0)+  " " + columns.at(1);
