@@ -180,10 +180,10 @@ class SetColumn : public Fl_Window{
    SetColumn();
     ~SetColumn(){}
 };
-class setColumnWithPrimary : public Fl_Window{
+class SetColumnWithPrimary : public Fl_Window{
     public:
-    setColumnWithPrimary();
-    ~setColumnWithPrimary(){}
+    SetColumnWithPrimary();
+    ~SetColumnWithPrimary(){}
 };
 class ModifierColumnName : public Fl_Window{
     public:
@@ -195,20 +195,20 @@ class ChangeDatatype : public Fl_Window{
     ChangeDatatype();
     ~ChangeDatatype(){}
 };
-class GetAllColumn : public Fl_Window{
+class GetAllColumns : public Fl_Window{
     public:
-    GetAllColumn();
-    ~GetAllColumn(){}
+    GetAllColumns();
+    ~GetAllColumns(){}
 };
 class CountDatasets: public Fl_Window{
     public:
     CountDatasets();
     ~CountDatasets(){}
 };
-class ShowColumnTyp: public Fl_Window{
+class ShowColumnType: public Fl_Window{
     public:
-    ShowColumnTyp();
-    ~ShowColumnTyp(){}
+    ShowColumnType();
+    ~ShowColumnType(){}
 };
 class DeleteColumn : public Fl_Window{
     public:
