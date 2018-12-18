@@ -737,6 +737,26 @@ Fl_Output *connectoutput;
 		}	
 	}
 
+	void whenPushedShowColumnTypeExecute(Fl_Widget* w, void*){
+			if(((Fl_Button*)w) -> value()){}
+			else{
+				showColumnTyp(tableName->value(), datatype->value());//exceptionhandling
+		}	
+	}	
+
+	void whenPushedDeleteColumnExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				deleteColumn(tableName->value(), columnName->value());
+		}	
+	}	
+
+	void whenPushedModifierColumnNameExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				modifierColumnName(tableName->value(), oldColumnName->value(), newColumnName->value(), datatype->value());
+		}	
+	}	
 
 
 
@@ -1404,6 +1424,7 @@ SetColumnWithPrimary::SetColumnWithPrimary() : Fl_Window(1280,400,620,310,"SQL-I
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
+    executeButton->callback((Fl_Callback*)whenPushedModifierColumnNameExecute);
   	tableName= new Fl_Input(140, 86, 140, 24, "Tablename:");
     
     oldColumnName= new Fl_Input(140, 111, 140, 24, "Old Columnname:");
@@ -1485,6 +1506,7 @@ ShowColumnType::ShowColumnType() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
+    executeButton->callback((Fl_Callback*) whenPushedShowColumnTypeExecute);
     tableName = new Fl_Input(95, 86, 140, 24, "Tablename:");
     datatype = new Fl_Input_Choice(340, 86, 140, 24, "Datatype:");
 	datatype->add("integer");
@@ -1512,6 +1534,7 @@ DeleteColumn::DeleteColumn() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
+    executeButton->callback((Fl_Callback*) whenPushedDeleteColumnExecute);
     tableName= new Fl_Input(140, 86, 140, 24, "Tablename:");
 
     columnName =new Fl_Input(140, 116, 140, 24, "Columnname:");
