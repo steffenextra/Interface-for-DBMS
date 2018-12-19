@@ -14,6 +14,7 @@ Fl_Button *entryButton;
 Fl_Button *selectRequestButton;
 Fl_Button *backButton;
 Fl_Button *executeButton;
+Fl_Button *destroyWindow;
 Fl_Input_Choice *databasesCommands;
 Fl_Input_Choice *tableCommands;
 Fl_Input_Choice *entryCommands;
@@ -184,6 +185,24 @@ Fl_Check_Button *queryM;
 			}
 		}
 		
+	}
+
+	std::vector<std::string> charToVec(const char* value){
+
+		std::vector<std::string> strvec;
+		const char *val = columns->value(); 
+		char delimiter[]= ", ";
+
+		char *tempval = std::strtok(strdup(val), delimiter);
+
+		while(tempval != NULL) {
+			strvec.push_back(tempval);
+			std::cout << tempval << std::endl;
+			tempval = std::strtok(NULL, delimiter);
+		}
+
+		return strvec;
+
 	}
 
 	void whenPushedDisconnect(Fl_Widget* w, void*){
@@ -594,6 +613,7 @@ Fl_Check_Button *queryM;
 		}
 	}
 		
+
 
 
 	void whenPushedSelectRequestShowButton(Fl_Widget* w, void*){
@@ -1321,7 +1341,7 @@ Fl_Check_Button *queryM;
 
 
 
-	/*void whenPushedSelectCountExecute(Fl_Widget* w, void*){
+	void whenPushedSelectCountExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
 
@@ -1332,21 +1352,26 @@ Fl_Check_Button *queryM;
 
 	void whenPushedSelectInExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
+	
 			else{
-
-				selectIn(tableName->value(),columns->value(), searchInColumn->value(),conditionValue->value());
+					std::vector<std::string> col = charToVec(columns->value());
+					std::vector<std::string> conditionVal = charToVec(conditionValue->value());
+				
+					selectIn(tableName->value(),col,toSearchColumn->value(),conditionVal);
+				}
 
 			}
-	}
+		
 
 	void whenPushedSelectDistinctExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectDistinct(tableName->value(),columns->value());
+				std::vector<std::string> col = charToVec(columns->value());
+				selectDistinct(tableName->value(),col);
 
 			}
 	}
-
+/*
 	void whenPushedSelectCountDistinctExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
@@ -1593,8 +1618,6 @@ void whenPushedSelectNullExecute(Fl_Widget* w, void*){
 	backButton = new Fl_Button(95, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
     backButton->callback((Fl_Callback*)whenPushedBackSelf);
-	
-
 
 	feedbackM = new Fl_Check_Button(50,270,105,15, "feedback-Aufruf"); 
 	feedbackAllM = new Fl_Check_Button(200,270,105,15, "feedbackAll-Aufruf");
@@ -1625,7 +1648,6 @@ void whenPushedSelectNullExecute(Fl_Widget* w, void*){
     entryButton->color((Fl_Color)31);
     selectRequestButton = new Fl_Button(280, 170, 280, 140, "Selection-Commands");
 	selectRequestButton->color((Fl_Color)31);
-
 
 	databaseButton->callback((Fl_Callback*) whenPushedDatabaseWindow);
 	tableButton->callback((Fl_Callback*) whenPushedTableWindow);
@@ -2342,7 +2364,7 @@ SetSecondaryKey::SetSecondaryKey() : Fl_Window(1280,400,620,310,"SQL-Interface")
 	begin();
 
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
-     backButton = new Fl_Button(95, 0, 95, 25, "Back");
+    backButton = new Fl_Button(95, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
@@ -2775,6 +2797,7 @@ SelectIn::SelectIn()   : Fl_Window(1280,400,620,310,"SQL-Interface"){
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
+    executeButton->callback((Fl_Callback*)whenPushedSelectInExecute);
 	
     tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
     columns= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
@@ -3016,10 +3039,6 @@ OutputWindow::OutputWindow(): Fl_Window(1280,400,620,310,"SQL-Interface"){
     begin();
 
     tableOutput = new Fl_Output(0,0,620,310,"");
-
-
-
-
 
 }
 
