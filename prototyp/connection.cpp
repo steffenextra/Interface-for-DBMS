@@ -53,9 +53,9 @@ MYSQL_FIELD *field;
 		std::string connection_feedback(std::string sqlCommand){
 
                 std::cout << std::endl;
-                std::cout <<"\033[1;31m DEBUG : INPUT FOR THE MYSQL_QUERY\033[0m" << std::endl;
+             /*   std::cout <<"\033[1;31m DEBUG : INPUT FOR THE MYSQL_QUERY\033[0m" << std::endl;
                 std::cout << sqlCommand << std::endl;
-                std::cout << std::endl;
+                std::cout << std::endl;*/
                 mysql_query(mysql, sqlCommand.c_str());
                 check_error();
                 result=mysql_use_result(mysql);
@@ -69,7 +69,8 @@ MYSQL_FIELD *field;
 				rowvecst += rowvec[i]; 
 				rowvecst += "\n";
 			}
-			std::cout << rowvecst << std::endl;
+		
+			mysql_free_result(result);
 			return rowvecst.c_str();
 		}
 
@@ -92,9 +93,9 @@ MYSQL_FIELD *field;
 
 	std::string connection_feedbackAll(std::string sqlCommand){
 		std::cout << std::endl;
-        std::cout <<"\033[1;31m DEBUG : INPUT FOR THE MYSQL_QUERY\033[0m" << std::endl;
+       /* std::cout <<"\033[1;31m DEBUG : INPUT FOR THE MYSQL_QUERY\033[0m" << std::endl;
         std::cout << sqlCommand << std::endl;
-        std::cout << std::endl;
+        std::cout << std::endl;*/
         std::string output;
         std::vector<std::string> rowvec;
         std::vector<std::string> colvec;
@@ -152,7 +153,6 @@ MYSQL_FIELD *field;
 			}
 		
 		}
-		std::cout << output << std::endl;
 		printf("\n");
 		mysql_free_result(result);
 		return output;

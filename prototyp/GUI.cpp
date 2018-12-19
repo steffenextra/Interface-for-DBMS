@@ -153,6 +153,9 @@ Fl_Output *messageerror;
 Fl_Output *feedback;
 Fl_Output *connectoutput;
 
+Fl_Check_Button *feedbackM;
+Fl_Check_Button *feedbackAllM;
+Fl_Check_Button *queryM;
 
 //Destruktoren fehlen
 
@@ -624,12 +627,45 @@ Fl_Output *connectoutput;
 	void whenPushedSend(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else {
-				connection_query(sqlStatement->value());
-				std::string errormsg = check_error();
- 				messageerror->value(errormsg.c_str());
- 				std::string msg = connection_query(sqlStatement->value()); // Unterscheiden zwischen den einzelnen typen der query und Problemlösung für feedbackall 
- 				feedback->value(msg.c_str()); 
+				
+				messageerror->value(" ");
+
+				if(queryM->value()==true){
+					connection_query(sqlStatement->value());
+					std::string errormsg = check_error();
+ 					messageerror->value(errormsg.c_str());
+ 					std::string msg = sqlStatement->value(); 
+ 					feedback->value(msg.c_str()); 
+
+				}
+
+				 else if(feedbackM->value()==true){
+					connection_feedback(sqlStatement->value());
+					std::string errormsg = check_error();
+ 					messageerror->value(errormsg.c_str());
+ 					std::string msg = sqlStatement->value(); 
+ 					feedback->value(msg.c_str()); 
+
+				}
+
+				else if (feedbackAllM->value()==true){
+					connection_feedbackAll(sqlStatement->value());
+					std::string errormsg = check_error();
+ 					messageerror->value(errormsg.c_str());
+ 					std::string msg = sqlStatement->value();
+ 					feedback->value(msg.c_str()); 
+
+				}
+
+				else {
+
+					messageerror->value("Bitte den Methodenaufruf ankreuzen");
+
+				}
+
+			
 			}
+
 	}
 
 	void whenPushedBackDatabase(Fl_Widget* w, void*){
@@ -1084,12 +1120,22 @@ void whenPushedCountDatasetsExecute(Fl_Widget* w, void*){
  	disconnectButton->color((Fl_Color)31);
  	sqlStatement = new Fl_Input(100,50,400,50,"Eingabe:");
  	sending->callback((Fl_Callback*) whenPushedSend); //Nach einem Befehl in Schleife
- 	feedback = new Fl_Output (100,100,400,100, "Ausgabe:");
+ 	feedback = new Fl_Output (100,100,400,100, "SQL-Befehl:");
  	messageerror = new Fl_Output(100,200,400,50,"Fehlermeldung:"); // Kein Automatischer Zeilenumbruch 
  	disconnectButton->callback((Fl_Callback*) whenPushedSelfDisconnect); // Absturz durch alloc 
 	backButton = new Fl_Button(95, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
     backButton->callback((Fl_Callback*)whenPushedBackSelf);
+	
+
+
+	feedbackM = new Fl_Check_Button(50,270,105,15, "feedback-Aufruf"); 
+	feedbackAllM = new Fl_Check_Button(200,270,105,15, "feedbackAll-Aufruf");
+	queryM = new Fl_Check_Button(350,270,105,15, "Query-Aufruf");
+
+	Fl_Check_Button(275, 90, 105, 15, "PrimaryKey");
+
+
     end();
     show();
 
