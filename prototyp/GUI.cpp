@@ -1465,11 +1465,11 @@ Fl_Check_Button *queryM;
 				selectWhereOrderBy(tableName->value(),col,conditionColumn->value(),conditionValue->value(), toSortColumnName->value(),sortBy->value());
 			}
 	}
-/*
+
 	void whenPushedSelectWhereOneColumnExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectWhereOneColumn(tableName->value(),columns->value(),conditions->value(),conditionValue->value(),condition2->value(),conditionValue2->value(),operators->value();
+				selectWhereOneColumn(tableName->value(),conditionColumn->value(),conditionValue->value());
 
 			}
 	}
@@ -1481,7 +1481,7 @@ Fl_Check_Button *queryM;
 
 			}
 	}
-
+/*
 	void whenPushedSelectLimitWhereOrderByExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
