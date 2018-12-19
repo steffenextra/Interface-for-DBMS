@@ -1371,7 +1371,7 @@ Fl_Check_Button *queryM;
 
 			}
 	}
-/*
+
 	void whenPushedSelectCountDistinctExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
@@ -1383,15 +1383,18 @@ Fl_Check_Button *queryM;
 	void whenPushedSelectLikeExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectLike(tableName->value(),columns->value(),toSearchColumn->value(),pattern->value(),toSearch->value());
-
+			std::vector<std::string> col = charToVec(columns->value());				
+			selectLike(tableName->value(),col,toSearchColumn->value(),pattern->value(),toSearch->value());
+			
 			}
+
 	}
 
 	void whenPushedSelectNotLikeExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectNotLike(tableName->value(),columns->value(),toSearchColumn->value(),pattern->value(),toSearch->value());
+				std::vector<std::string> col = charToVec(columns->value());
+				selectNotLike(tableName->value(),col ,toSearchColumn->value(),pattern->value(),toSearch->value());
 
 			}
 	}
@@ -1403,6 +1406,7 @@ Fl_Check_Button *queryM;
 
 			}
 	}
+
 	void whenPushedSelectAverageSumExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
@@ -1410,8 +1414,6 @@ Fl_Check_Button *queryM;
 
 			}
 	}
-
-	// FIRST BREAK
 
 	void whenPushedSelectSortTableExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
@@ -1427,6 +1429,7 @@ Fl_Check_Button *queryM;
 				selectBetween(tableName->value(),columnName->value(),conditionValue->value(), conditionValueTwo->value(), conditionColumn->value(), conditionColumnTwo->value();
 
 			}
+
 	}
 
 	void whenPushedSelectMinOrMaxExecute(Fl_Widget* w, void*){
@@ -1436,6 +1439,8 @@ Fl_Check_Button *queryM;
 
 			}
 	}
+
+
 	void whenPushedSelectMinOrMaxWhereExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
@@ -1443,6 +1448,8 @@ Fl_Check_Button *queryM;
 
 			}
 	}
+
+
 	void whenPushedSelectWhereExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
@@ -1454,11 +1461,11 @@ Fl_Check_Button *queryM;
 	void whenPushedSelectWhereOrderByExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectWhereOrderBy(tableName->value(),columns->value(),conditionColumn->value(),conditionValue->value(), toSortColumnName->value(),sortBy->value());
-
+				std::vector<std::string> col = charToVec(columns->value());
+				selectWhereOrderBy(tableName->value(),col,conditionColumn->value(),conditionValue->value(), toSortColumnName->value(),sortBy->value());
 			}
 	}
-
+/*
 	void whenPushedSelectWhereOneColumnExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
