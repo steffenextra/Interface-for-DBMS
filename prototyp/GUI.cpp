@@ -132,8 +132,8 @@ Fl_Input *aliasColumn;
 Fl_Input *aliasTable;
 Fl_Input *conditionColumn;
 Fl_Input *conditionValue;
-Fl_Input *conditionColumn2;
-Fl_Input *conditionValue2;
+Fl_Input *conditionColumnTwo;
+Fl_Input *conditionValueTwo;
 Fl_Input * operators;
 Fl_Input_Choice *sortBy;
 Fl_Input *sortColumn;
@@ -437,7 +437,7 @@ Fl_Check_Button *queryM;
 				
 				if((strcmp(selectRequestCommands->value(),"selectCount"))==0){
 					selectRequestWindow->hide();
-					selectCountDistinctWindow= new SelectCountDistinct();
+					selectCountWindow= new SelectCount();
 					sqlCommand->value("SELECT COUNT( countColumn AS aliasColumnName FROM tableName + ;");
 				}
 
@@ -476,9 +476,6 @@ Fl_Check_Button *queryM;
 				selectAverageSumWindow= new SelectAverageSum();
 				sqlCommand->value("SELECT AVG(columnName + FROM tableName");
 				}
-//				cock
-
-
 
 				if((strcmp(selectRequestCommands->value(),"selectSortTable"))==0){
 				selectRequestWindow->hide();
@@ -1319,23 +1316,235 @@ Fl_Check_Button *queryM;
 	}
 
 
+// Execute Methoden für die SelectionRequest-Anweisungen
 
 
 
 
+	/*void whenPushedSelectCountExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
 
+				selectCount(tableName->value(),countColumn->value(),aliasColumn->value());
+			
+			}
+	}
 
+	void whenPushedSelectInExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
 
+				selectIn(tableName->value(),columns->value(), searchInColumn->value(),conditionValue->value());
 
+			}
+	}
 
+	void whenPushedSelectDistinctExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectDistinct(tableName->value(),columns->value());
 
+			}
+	}
 
+	void whenPushedSelectCountDistinctExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectCountDistinct(tableName->value(),countColumn->value());
 
+			}
+	}
 
+	void whenPushedSelectLikeExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectLike(tableName->value(),columns->value(),toSearchColumn->value(),pattern->value(),toSearch->value());
 
+			}
+	}
 
+	void whenPushedSelectNotLikeExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectNotLike(tableName->value(),columns->value(),toSearchColumn->value(),pattern->value(),toSearch->value());
 
+			}
+	}
 
+	void whenPushedSelectSumExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectSum(tableName->value(), columnName->value(), aliasColumnName->value());
+
+			}
+	}
+	void whenPushedSelectAverageSumExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectAverageSum(tableName->value(),columnName->value());
+
+			}
+	}
+
+	// FIRST BREAK
+
+	void whenPushedSelectSortTableExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectSortTable(tableName->value(),toSortcolumnName->value(), sortBy->value());
+
+			}
+	}
+
+	void whenPushedSelectBetweenExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectBetween(tableName->value(),columnName->value(),conditionValue->value(), conditionValueTwo->value(), conditionColumn->value(), conditionColumnTwo->value();
+
+			}
+	}
+
+	void whenPushedSelectMinOrMaxExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				SelectMinOrMax(tableName->value(),minOrMax->value(),minOrMaxColumn->value(),aliasColumn->value());
+
+			}
+	}
+	void whenPushedSelectMinOrMaxWhereExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectAverageSum(tableName->value(),minOrMax->value(), minOrMaxColumn->value(),aliasColumn->value(),condtionColumn->value(),conditionValue->value());
+
+			}
+	}
+	void whenPushedSelectWhereExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectWhere(tableName->value(),columns->value(),conditionColumn->value(),conditionValue->value());
+
+			}
+	}
+
+	void whenPushedSelectWhereOrderByExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectWhereOrderBy(tableName->value(),columns->value(),conditionColumn->value(),conditionValue->value(), toSortColumnName->value(),sortBy->value());
+
+			}
+	}
+
+	void whenPushedSelectWhereOneColumnExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectWhereOneColumn(tableName->value(),columns->value(),conditions->value(),conditionValue->value(),condition2->value(),conditionValue2->value(),operators->value();
+
+			}
+	}
+
+	void whenPushedSelectWhereBoolExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectWhereBool(tableName->value(),conditionColumn->value(),conditionValue->value());
+
+			}
+	}
+
+	void whenPushedSelectLimitWhereOrderByExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectLimitWhereOrderBy(tableName->value(),columns->value(),limitNumber->value(), conditionColumn->value(), conditionValue->value(),toSortcolumnName->value(),sortyBy->value());
+
+			}
+	}
+
+void whenPushedSelectLimitWhereOrderByExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectLimitWhereOrderBy(tableName->value(),columns->value(),limitNumber->value(), conditionColumn->value(), conditionValue->value(),toSortcolumnName->value(),sortyBy->value());
+
+			}
+	}
+
+void whenPushedSelectUnionExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectUnion(tableName->value(), columnName->value());
+
+			}
+	}
+
+void whenPushedSelectColumnAliasExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectColumnAlias(tableName->value(),columns->value(),aliases->values());
+
+			}
+	}
+
+void whenPushedSelectTableAliasExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectColumnAlias(tableName->value(),columns->value(),aliases->values());
+
+			}
+	}
+
+void whenPushedSelectGroupByExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectGroupBy(tableName->value(),columns->value(),conditionColumn->value(),conditionValue->value(),groupByColumns->value());
+
+			}
+	}
+
+void whenPushedSelectGroupByOrderByExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectGroupByOrderBy(tableName->value(),columns->value(),conditionColumn->value(),conditionValue->value(),groupByColumns->value(), toSortcolumnName->value(), sortBy->value());
+			}
+	}
+
+void whenPushedSelectInnerJoinExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectInnerJoin(firstTableName->value(),columnIDTableOne->value(),columnsTableOne->values(), secondTableName->value(),columnsTableTwo->value());
+
+			}
+	}
+
+void whenPushedSelectLeftJoinExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectLeftJoin(firstTableName->value(),columnIDTableOne->value(),columnsTableOne->values(), secondTableName->value(),columnsTableTwo->value());
+
+			}
+	}
+
+void whenPushedSelectRightJoinExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectRightJoin(firstTableName->value(),columnIDTableOne->value(),columnsTableOne->values(), secondTableName->value(),columnsTableTwo->value());
+
+			}
+	}
+
+void whenPushedSelectFullJoinExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectFullJoin(firstTableName->value(),columnIDTableOne->value(),columnsTableOne->values(), secondTableName->value(),columnsTableTwo->value());
+
+			}
+	}
+
+void whenPushedSelectNullExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectNull(tableName->value(), columnName->value());
+			}
+	}
+
+*/
 
 	GUI::GUI(){
 	connectionWindow = new ConnectionWindow();
@@ -2394,9 +2603,9 @@ SelectWhereBool::SelectWhereBool() : Fl_Window(1280,400,620,310,"SQL-Interface")
   
     conditionValue =  new Fl_Input(155, 181, 350, 24, "1.Condition Values:");
 
-    conditionColumn2 =  new Fl_Input(155, 211, 350, 24, "2.Conditon Columns:");
-    conditionValue2 =  new Fl_Input(155, 241, 350, 24, "2.Condition Values:");
-    operators =   new Fl_Input(155, 271, 350, 24, "Operators:");
+    conditionColumnTwo =  new Fl_Input(155, 211, 350, 24, "2.Conditon Columns:");
+    conditionValueTwo =  new Fl_Input(155, 241, 350, 24, "2.Condition Values:");
+    operators = new Fl_Input(155, 271, 350, 24, "Operators:");
 
     end();
     show();
@@ -2471,6 +2680,8 @@ SelectCount::SelectCount() : Fl_Window(1280,400,620,310,"SQL-Interface"){
     countColumn= new Fl_Input(150, 122, 185, 23, "Count Column:");
   
     aliasColumn =  new Fl_Input(150, 151, 185, 24, "Alias Column:");  
+
+
 
     end();
     show();
@@ -2587,11 +2798,11 @@ SelectBetween::SelectBetween()  : Fl_Window(1280,400,620,310,"SQL-Interface"){
     executeButton->color((Fl_Color)31);
 	
     tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
-    columns= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
+    columnName= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
     conditionValue =  new Fl_Input(150, 211, 185, 24, "Condition Value 1:");
-    conditionValue2 =   new Fl_Input(150, 241, 185, 24, "Condition Value 2:");
+    conditionValueTwo =   new Fl_Input(150, 241, 185, 24, "Condition Value 2:");
 	conditionColumn =    new Fl_Input(150, 151, 185, 24, "Condition Column 1:");
-    conditionColumn2 =    new Fl_Input(150, 181, 185, 24, "Condition Column 2:");
+    conditionColumnTwo =    new Fl_Input(150, 181, 185, 24, "Condition Column 2:");
 
     end();
     show();
