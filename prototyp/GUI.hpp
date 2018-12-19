@@ -373,4 +373,9 @@ class SelectRightJoin : public Fl_Window{
     ~SelectRightJoin(){}
 };
 
+class OutputWindow : public Fl_Window{
+    public:
+    OutputWindow();
+    ~OutputWindow(){}
+};
 

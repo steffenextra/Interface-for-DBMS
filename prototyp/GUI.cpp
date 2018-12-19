@@ -51,6 +51,7 @@ DeletePrimaryKey *deletePrimaryKeyWindow;
 
 
 
+
 EntryWindow *entryWindow;
 EntryCommand *entryCommandWindow;
 ShowEntry *showEntryWindow;
@@ -76,7 +77,7 @@ SelectWhere *selectWhereWindow;
 SelectWhereBool *selectWhereBoolWindow;
 SelectWhereOrderBy *selectWhereOrderByWindow;
 SelectSortTable *selectSortTableWindow;
-SelectCount *selecCountWindow;
+SelectCount *selectCountWindow;
 SelectDistinct *selectDistinctWindow;
 SelectCountDistinct *selectCountDistinctWindow;
 SelectAverageSum *selectAverageSumWindow;
@@ -84,7 +85,7 @@ SelectSum *selectSumWindow;
 SelectUnion *selectUnionWindow;
 SelectIn *selectInWindow;
 SelectBetween *selectBetweenWindow;
-SelectColumnsAlias *selecColumnsAliasWindow;
+SelectColumnsAlias *selectColumnsAliasWindow;
 SelectTableAlias *selecTableAliasWindow;
 SelectGroupBy *selectGroupByWindow;
 SelectGroupByOrderBy *selectGroupByOrderByWindow;
@@ -93,6 +94,7 @@ SelectNull *selectNullWindow;
 SelectInnerJoin *selectInnerJoinWindow; 
 SelectLeftJoin *selectLeftJoinWindow;
 SelectRightJoin *selectRightJoinWindow;
+OutputWindow *outputWindow;
 
 
 
@@ -152,6 +154,7 @@ Fl_Output *sqlCommand;
 Fl_Output *messageerror;
 Fl_Output *feedback;
 Fl_Output *connectoutput;
+Fl_Output *tableOutput;
 
 Fl_Check_Button *feedbackM;
 Fl_Check_Button *feedbackAllM;
@@ -539,7 +542,7 @@ Fl_Check_Button *queryM;
 				}*/
 				if((strcmp(selectRequestCommands->value(),"selectColumnAlias"))==0){
 				selectRequestWindow->hide();
-				selecColumnsAliasWindow = new SelectColumnsAlias();
+				selectColumnsAliasWindow = new SelectColumnsAlias();
 				sqlCommand->value("SELECT columnAlias FROM tableName");
 				}
 
@@ -626,7 +629,8 @@ Fl_Check_Button *queryM;
 
 	void whenPushedSend(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
-			else {
+			else {	
+				std::string outputvalue ="";
 				
 				messageerror->value(" ");
 
@@ -641,11 +645,14 @@ Fl_Check_Button *queryM;
 
 				 else if(feedbackM->value()==true){
 					connection_feedback(sqlStatement->value());
+					
 					std::string errormsg = check_error();
  					messageerror->value(errormsg.c_str());
  					std::string msg = sqlStatement->value(); 
  					feedback->value(msg.c_str()); 
-
+ 					outputWindow = new OutputWindow();
+ 					outputWindow ->show();
+ 					tableOutput->value();
 				}
 
 				else if (feedbackAllM->value()==true){
@@ -1056,7 +1063,7 @@ Fl_Check_Button *queryM;
 		}	
 	}	
 
-void whenPushedCountDatasetsExecute(Fl_Widget* w, void*){
+	void whenPushedCountDatasetsExecute(Fl_Widget* w, void*){
 
 	if(((Fl_Button*)w) -> value()){}
 		else{
@@ -1065,8 +1072,259 @@ void whenPushedCountDatasetsExecute(Fl_Widget* w, void*){
 	}	
 
 
+	void whenPushedBackSelectCount(Fl_Widget* w, void*){
 
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectCountWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+	void whenPushedBackSelectIn(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectInWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
 	
+	void whenPushedBackSelectDistinct(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectDistinctWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+	void whenPushedBackSelectCountDistinct(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectCountDistinctWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+
+
+	void whenPushedBackSelectLike(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectLikeWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}	
+
+	void whenPushedBackSelectNotLike(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectNotLikeWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}	
+
+	void whenPushedBackSelectSum(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectSumWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}	
+
+	void whenPushedBackSelectAverageSum(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectAverageSumWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}	
+
+	void whenPushedBackSelectSortTable(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectSortTableWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+	void whenPushedBackSelectBetween(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectBetweenWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+	void whenPushedBackSelectMinOrMax(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectMinOrMaxWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+	void whenPushedBackSelectMinOrMaxWhere(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectMinOrMaxWhereWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+	void whenPushedBackSelectWhere(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectWhereWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+	void whenPushedBackSelectWhereOrderBy(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectWhereOrderByWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+	void whenPushedBackSelectWhereOneColumn(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectWhereOneColumnWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+	void whenPushedBackSelectWhereBool(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectWhereBoolWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+	void whenPushedBackSelectWhereLimitOrderBy(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectLimitWhereOrderByWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+	void whenPushedBackSelectUnion(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectUnionWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+	void whenPushedBackSelectColumnsAlias(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectColumnsAliasWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+
+	void whenPushedBackSelectTableAlias(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selecTableAliasWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+	void whenPushedBackSelectGroupBy(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectGroupByWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+	void whenPushedBackSelectGroupByOrderBy(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectGroupByOrderByWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+	void whenPushedBackSelectInnerJoin(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectInnerJoinWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+	void whenPushedBackSelectLeftJoin(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectLeftJoinWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+	void whenPushedBackSelectRightJoin(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectRightJoinWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+	/*void whenPushedBackSelectFullJoin(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectFullJoinW->hide();
+				selectRequestWindow->show();
+		}	
+	}*/
+
+	void whenPushedBackSelectNull(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectNullWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}
+
+
+
+
+
+
+
+
 
 
 
@@ -1967,7 +2225,7 @@ SelectLike::SelectLike() :  Fl_Window(1280,400,620,310,"SQL-Interface"){
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
-
+    backButton-> callback((Fl_Callback*)whenPushedBackSelectLike);
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
 
@@ -1981,13 +2239,10 @@ SelectLike::SelectLike() :  Fl_Window(1280,400,620,310,"SQL-Interface"){
   
     search = new Fl_Input(150, 211, 185, 24, "Search");
 
-    
-
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-
-     end();
-     show();
+    end();
+    show();
 }
+
 SelectNotLike::SelectNotLike() :  Fl_Window(1280,400,620,310,"SQL-Interface"){	 
 		
     color(FL_WHITE);
@@ -1996,6 +2251,7 @@ SelectNotLike::SelectNotLike() :  Fl_Window(1280,400,620,310,"SQL-Interface"){
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton-> callback((Fl_Callback*) whenPushedBackSelectNotLike);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2010,12 +2266,8 @@ SelectNotLike::SelectNotLike() :  Fl_Window(1280,400,620,310,"SQL-Interface"){
   
     search = new Fl_Input(150, 211, 185, 24, "Search");
 
-    
-
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-
-     end();
-     show();
+    end();
+    show();
 }
 
 SelectMinOrMax::SelectMinOrMax() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
@@ -2025,6 +2277,7 @@ SelectMinOrMax::SelectMinOrMax() : Fl_Window(1280,400,620,310,"SQL-Interface"){
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectMinOrMax);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2039,11 +2292,10 @@ SelectMinOrMax::SelectMinOrMax() : Fl_Window(1280,400,620,310,"SQL-Interface"){
   
     aliasColumn = new Fl_Input(150, 211, 185, 24, "AliasColumn");
 
-   
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
+
 SelectMinOrMaxWhere::SelectMinOrMaxWhere() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
@@ -2051,6 +2303,7 @@ SelectMinOrMaxWhere::SelectMinOrMaxWhere() : Fl_Window(1280,400,620,310,"SQL-Int
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectMinOrMaxWhere);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2067,11 +2320,10 @@ SelectMinOrMaxWhere::SelectMinOrMaxWhere() : Fl_Window(1280,400,620,310,"SQL-Int
 
     conditionValue =  new Fl_Input(150, 241, 185, 24, "Condition Value:");
 
-   
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
+
 SelectWhereOneColumn::SelectWhereOneColumn() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
@@ -2079,6 +2331,7 @@ SelectWhereOneColumn::SelectWhereOneColumn() : Fl_Window(1280,400,620,310,"SQL-I
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectWhereOneColumn);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2089,10 +2342,8 @@ SelectWhereOneColumn::SelectWhereOneColumn() : Fl_Window(1280,400,620,310,"SQL-I
   
     conditionValue  =  new Fl_Input(150, 151, 185, 24, "Condition Value:");
 
-   
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
 
 SelectWhere::SelectWhere()  : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
@@ -2102,6 +2353,7 @@ SelectWhere::SelectWhere()  : Fl_Window(1280,400,620,310,"SQL-Interface"){
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectWhere);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2116,14 +2368,9 @@ SelectWhere::SelectWhere()  : Fl_Window(1280,400,620,310,"SQL-Interface"){
 
     conditionValue =  new Fl_Input(150, 211, 185, 24, "Condition Value:");
 
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 
-   
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
 }
 
 SelectWhereBool::SelectWhereBool() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
@@ -2133,6 +2380,7 @@ SelectWhereBool::SelectWhereBool() : Fl_Window(1280,400,620,310,"SQL-Interface")
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectWhereBool);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2150,9 +2398,8 @@ SelectWhereBool::SelectWhereBool() : Fl_Window(1280,400,620,310,"SQL-Interface")
     conditionValue2 =  new Fl_Input(155, 241, 350, 24, "2.Condition Values:");
     operators =   new Fl_Input(155, 271, 350, 24, "Operators:");
 
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
 
 SelectWhereOrderBy::SelectWhereOrderBy() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
@@ -2162,6 +2409,7 @@ SelectWhereOrderBy::SelectWhereOrderBy() : Fl_Window(1280,400,620,310,"SQL-Inter
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectWhereOrderBy);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2180,9 +2428,9 @@ SelectWhereOrderBy::SelectWhereOrderBy() : Fl_Window(1280,400,620,310,"SQL-Inter
 	sortBy->add("DESC");
    
 
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+
+    end();
+    show();
 }
 
 SelectSortTable::SelectSortTable() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
@@ -2192,6 +2440,7 @@ SelectSortTable::SelectSortTable() : Fl_Window(1280,400,620,310,"SQL-Interface")
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectSortTable);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2201,11 +2450,8 @@ SelectSortTable::SelectSortTable() : Fl_Window(1280,400,620,310,"SQL-Interface")
     Fl_Input *sortColumn =  new Fl_Input(150, 121, 185, 24, "Sort Column");
 	sortBy = new Fl_Input_Choice(435, 121, 75, 24, "Sort by:");
 
-
-
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
 
 SelectCount::SelectCount() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
@@ -2215,6 +2461,7 @@ SelectCount::SelectCount() : Fl_Window(1280,400,620,310,"SQL-Interface"){
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectCount);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2225,11 +2472,8 @@ SelectCount::SelectCount() : Fl_Window(1280,400,620,310,"SQL-Interface"){
   
     aliasColumn =  new Fl_Input(150, 151, 185, 24, "Alias Column:");  
 
-
-
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
 
 SelectDistinct::SelectDistinct() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
@@ -2239,6 +2483,7 @@ SelectDistinct::SelectDistinct() : Fl_Window(1280,400,620,310,"SQL-Interface"){
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectDistinct);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2246,11 +2491,8 @@ SelectDistinct::SelectDistinct() : Fl_Window(1280,400,620,310,"SQL-Interface"){
    
     columns= new Fl_Input(150, 122, 345, 23, "Displayed Columns:");
 
-
-
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
 
 SelectCountDistinct::SelectCountDistinct() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
@@ -2260,16 +2502,15 @@ SelectCountDistinct::SelectCountDistinct() : Fl_Window(1280,400,620,310,"SQL-Int
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
-
+    backButton->callback((Fl_Callback*) whenPushedBackSelectCountDistinct);
+	
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
     tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
     countColumn= new Fl_Input(150, 122, 185, 23, "Count Column:"); 
 
-
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
 
 SelectAverageSum::SelectAverageSum()  : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
@@ -2279,6 +2520,7 @@ SelectAverageSum::SelectAverageSum()  : Fl_Window(1280,400,620,310,"SQL-Interfac
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectAverageSum);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2287,10 +2529,8 @@ SelectAverageSum::SelectAverageSum()  : Fl_Window(1280,400,620,310,"SQL-Interfac
    
     averageSumColumn= new Fl_Input(170, 117, 185, 23, "AverageSum Column");
 
-
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
 
 SelectSum::SelectSum()  : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
@@ -2300,6 +2540,7 @@ SelectSum::SelectSum()  : Fl_Window(1280,400,620,310,"SQL-Interface"){
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectSum);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2308,12 +2549,9 @@ SelectSum::SelectSum()  : Fl_Window(1280,400,620,310,"SQL-Interface"){
     sumColumn= new Fl_Input(150, 122, 185, 23, "Sum Column:");
     aliasColumn =   new Fl_Input(150, 151, 185, 24, "Alias Column:");
 
-
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
-
 
 SelectIn::SelectIn()   : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
 		
@@ -2322,6 +2560,7 @@ SelectIn::SelectIn()   : Fl_Window(1280,400,620,310,"SQL-Interface"){
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectIn);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2331,9 +2570,8 @@ SelectIn::SelectIn()   : Fl_Window(1280,400,620,310,"SQL-Interface"){
     toSearchColumn =  new Fl_Input(150, 151, 185, 24, "Search Column:");
 	conditionValue =  new Fl_Input(150, 181, 185, 24, "Condition Value:");
 
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
 
 SelectBetween::SelectBetween()  : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
@@ -2343,6 +2581,7 @@ SelectBetween::SelectBetween()  : Fl_Window(1280,400,620,310,"SQL-Interface"){
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectBetween);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2354,9 +2593,8 @@ SelectBetween::SelectBetween()  : Fl_Window(1280,400,620,310,"SQL-Interface"){
 	conditionColumn =    new Fl_Input(150, 151, 185, 24, "Condition Column 1:");
     conditionColumn2 =    new Fl_Input(150, 181, 185, 24, "Condition Column 2:");
 
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
 
 SelectColumnsAlias::SelectColumnsAlias() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
@@ -2366,6 +2604,7 @@ SelectColumnsAlias::SelectColumnsAlias() : Fl_Window(1280,400,620,310,"SQL-Inter
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectColumnsAlias);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2373,9 +2612,8 @@ SelectColumnsAlias::SelectColumnsAlias() : Fl_Window(1280,400,620,310,"SQL-Inter
     columns= new Fl_Input(150, 122, 350, 23, "Columns:");
     aliasColumns =   new Fl_Input(150, 151, 350, 24, "Alias Columns:");
 
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
 
 SelectTableAlias::SelectTableAlias() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
@@ -2385,6 +2623,7 @@ SelectTableAlias::SelectTableAlias() : Fl_Window(1280,400,620,310,"SQL-Interface
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectTableAlias);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2392,9 +2631,8 @@ SelectTableAlias::SelectTableAlias() : Fl_Window(1280,400,620,310,"SQL-Interface
     columns= new Fl_Input(150, 152, 350, 23, "Displayed Columns:");
     aliasTable =   new Fl_Input(150, 121, 185, 24, "Alias Table");
 
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
 
 SelectGroupBy::SelectGroupBy() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
@@ -2404,6 +2642,7 @@ SelectGroupBy::SelectGroupBy() : Fl_Window(1280,400,620,310,"SQL-Interface"){
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectGroupBy);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2417,9 +2656,8 @@ SelectGroupBy::SelectGroupBy() : Fl_Window(1280,400,620,310,"SQL-Interface"){
   
     groupByColumns =new Fl_Input(150, 211, 350, 24, "GroupBy Columns:");
 
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
 
 SelectGroupByOrderBy::SelectGroupByOrderBy(): Fl_Window(1280,400,620,310,"SQL-Interface"){ 
@@ -2429,6 +2667,7 @@ SelectGroupByOrderBy::SelectGroupByOrderBy(): Fl_Window(1280,400,620,310,"SQL-In
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectGroupByOrderBy);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2445,9 +2684,8 @@ SelectGroupByOrderBy::SelectGroupByOrderBy(): Fl_Window(1280,400,620,310,"SQL-In
 	sortBy->add("DESC");
     groupByColumns = new Fl_Input(150, 212, 350, 23, "GroupBy Columns:");
 
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
 
 SelectCountGroupByOrderBy::SelectCountGroupByOrderBy(): Fl_Window(1280,400,620,310,"SQL-Interface"){ 
@@ -2457,6 +2695,7 @@ SelectCountGroupByOrderBy::SelectCountGroupByOrderBy(): Fl_Window(1280,400,620,3
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectGroupByOrderBy);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2474,9 +2713,8 @@ SelectCountGroupByOrderBy::SelectCountGroupByOrderBy(): Fl_Window(1280,400,620,3
     groupByColumns = new Fl_Input(150, 212, 350, 23, "GroupBy Columns:");
 	countColumn = new Fl_Input(150, 146, 185, 24, "Count Column:");
 
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
 
 SelectNull::SelectNull(): Fl_Window(1280,400,620,310,"SQL-Interface"){ 
@@ -2486,6 +2724,7 @@ SelectNull::SelectNull(): Fl_Window(1280,400,620,310,"SQL-Interface"){
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectNull);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2493,9 +2732,8 @@ SelectNull::SelectNull(): Fl_Window(1280,400,620,310,"SQL-Interface"){
    
     columns=  new Fl_Input(150, 121, 185, 24, "Column:");;
 
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
 
 SelectInnerJoin::SelectInnerJoin() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
@@ -2505,6 +2743,7 @@ SelectInnerJoin::SelectInnerJoin() : Fl_Window(1280,400,620,310,"SQL-Interface")
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectInnerJoin);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2514,10 +2753,10 @@ SelectInnerJoin::SelectInnerJoin() : Fl_Window(1280,400,620,310,"SQL-Interface")
     secondTable =  new Fl_Input(175, 116, 185, 24, "Second Table:");
     secondTableColumns =   new Fl_Input(175, 206, 355, 24, "Second Table Columns:");
 
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
+
 SelectRightJoin::SelectRightJoin() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
@@ -2525,6 +2764,7 @@ SelectRightJoin::SelectRightJoin() : Fl_Window(1280,400,620,310,"SQL-Interface")
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectRightJoin);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2534,10 +2774,10 @@ SelectRightJoin::SelectRightJoin() : Fl_Window(1280,400,620,310,"SQL-Interface")
     secondTable =  new Fl_Input(175, 116, 185, 24, "Second Table:");
     secondTableColumns =   new Fl_Input(175, 206, 355, 24, "Second Table Columns:");
 
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
+
 SelectLeftJoin::SelectLeftJoin(): Fl_Window(1280,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
@@ -2545,6 +2785,7 @@ SelectLeftJoin::SelectLeftJoin(): Fl_Window(1280,400,620,310,"SQL-Interface"){
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectLeftJoin);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
@@ -2554,7 +2795,26 @@ SelectLeftJoin::SelectLeftJoin(): Fl_Window(1280,400,620,310,"SQL-Interface"){
     secondTable =  new Fl_Input(175, 116, 185, 24, "Second Table:");
     secondTableColumns =   new Fl_Input(175, 206, 355, 24, "Second Table Columns:");
 
-  //backButton->callback((Fl_Callback*) whenPushedBackDeletePrimaryKey);
-     end();
-     show();
+    end();
+    show();
 }
+
+OutputWindow::OutputWindow(): Fl_Window(1280,400,620,310,"SQL-Interface"){
+	
+	color(FL_WHITE);
+    begin();
+
+    tableOutput = new Fl_Output(0,0,620,310,"");
+
+
+
+
+
+}
+
+
+
+
+
+
+

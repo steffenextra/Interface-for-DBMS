@@ -100,6 +100,7 @@ MYSQL_FIELD *field;
         std::vector<std::string> rowvec;
         std::vector<std::string> colvec;
 	   // std::vector<std::vector<std::string> > insgesamt;
+        check_error();
 		mysql_query(mysql,sqlCommand.c_str());
 		MYSQL_RES *result = mysql_store_result(mysql);
 		
@@ -155,7 +156,7 @@ MYSQL_FIELD *field;
 		}
 		printf("\n");
 		mysql_free_result(result);
-		return output;
+		return output.c_str();
 	}
 
 	/**
@@ -180,6 +181,7 @@ MYSQL_FIELD *field;
 		std::cout <<"\033[1;31m DEBUG : INPUT FOR THE MYSQL_QUERY\033[0m" << std::endl;
 		std::cout << sqlCommand << std::endl;
 		std::cout << std::endl;
+		check_error();
 		mysql_query (mysql, sqlCommand.c_str());
 		check_error();
 		std::string statement = sqlCommand;
