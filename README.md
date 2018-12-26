@@ -5,6 +5,9 @@
  SQL-Statements können über Methoden und Parameter abgearbeitet werden.<br>
  Bedienbar entweder über die Konsole und den einfachen Methoden-Aufruf oder über das Interface.<br>
 
+ Der Code für das Interface wurde nicht dokumentiert <br>
+
+
 <br>
 
 <b>	---Einrichtung---	</b>
@@ -35,7 +38,7 @@
 <b> ---Nice to know--- </b>
 
 Da in diesem Projekt ausschließlich mit der MySQL-Standardbibliothek gearbeitet wurde, passiert die Fehlerausgabe über die check_error() Methode.<br>
-Diese fängt jegliche Fehlerausgaben des MySQL-Servers ab und printed diese aus. <br>
+Diese fängt jegliche Fehlerausgaben des MySQL-Servers ab und zeigt diese an. <br>
 <br>
 Sollte dieses Programm über die Konsole genutzt werden, müssen jegliche Übergabeparameter (ausgeschlossen Integer) in einen String gepackt werden. (" ")<br>
 Durch die Benutzung des Interfaces kann diese Anweisung jedoch ignoriert werden. <br>
