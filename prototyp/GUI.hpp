@@ -378,4 +378,3 @@ class OutputWindow : public Fl_Window{
     OutputWindow();
     ~OutputWindow(){}
 };
-
