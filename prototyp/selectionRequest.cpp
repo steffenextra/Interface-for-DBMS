@@ -789,7 +789,7 @@
 
 	*/
 
-	void unionSelect(std::vector <std::string> tableName, std::vector <std::string> columnName){
+	void selectUnion(std::vector <std::string> tableName, std::vector <std::string> columnName){
 
 		std::string sqlCommand;
 

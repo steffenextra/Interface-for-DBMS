@@ -135,6 +135,7 @@ Fl_Input *conditionColumn;
 Fl_Input *conditionValue;
 Fl_Input *conditionColumnTwo;
 Fl_Input *conditionValueTwo;
+Fl_Input *conditionTwo;
 Fl_Input * operators;
 Fl_Input_Choice *sortBy;
 Fl_Input *sortColumn;
@@ -1384,7 +1385,7 @@ Fl_Check_Button *queryM;
 		if(((Fl_Button*)w) -> value()){}
 			else{
 			std::vector<std::string> col = charToVec(columns->value());				
-			selectLike(tableName->value(),col,toSearchColumn->value(),pattern->value(),toSearch->value());
+			selectLike(tableName->value(),col,toSearchColumn->value(),pattern->value(),search->value());
 			
 			}
 
@@ -1394,7 +1395,7 @@ Fl_Check_Button *queryM;
 		if(((Fl_Button*)w) -> value()){}
 			else{
 				std::vector<std::string> col = charToVec(columns->value());
-				selectNotLike(tableName->value(),col ,toSearchColumn->value(),pattern->value(),toSearch->value());
+				selectNotLike(tableName->value(),col ,toSearchColumn->value(),pattern->value(),search->value());
 
 			}
 	}
@@ -1402,7 +1403,7 @@ Fl_Check_Button *queryM;
 	void whenPushedSelectSumExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectSum(tableName->value(), columnName->value(), aliasColumnName->value());
+				selectSum(tableName->value(),  sumColumn->value(), aliasColumn->value());
 
 			}
 	}
@@ -1410,7 +1411,7 @@ Fl_Check_Button *queryM;
 	void whenPushedSelectAverageSumExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectAverageSum(tableName->value(),columnName->value());
+				selectAverageSum(tableName->value(),averageSumColumn->value());
 
 			}
 	}
@@ -1418,7 +1419,7 @@ Fl_Check_Button *queryM;
 	void whenPushedSelectSortTableExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectSortTable(tableName->value(),toSortcolumnName->value(), sortBy->value());
+				selectSortTable(tableName->value(),sortColumn->value(), sortBy->value());
 
 			}
 	}
@@ -1426,7 +1427,7 @@ Fl_Check_Button *queryM;
 	void whenPushedSelectBetweenExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectBetween(tableName->value(),columnName->value(),conditionValue->value(), conditionValueTwo->value(), conditionColumn->value(), conditionColumnTwo->value();
+				selectBetween(conditionValue->value(),conditionValueTwo->value(),tableName->value(),conditionColumn->value(),conditionColumnTwo->value(), condition->value(),conditionTwo->value());
 
 			}
 
@@ -1435,16 +1436,15 @@ Fl_Check_Button *queryM;
 	void whenPushedSelectMinOrMaxExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				SelectMinOrMax(tableName->value(),minOrMax->value(),minOrMaxColumn->value(),aliasColumn->value());
+				selectMinOrMax(tableName->value(),minMaxValue->value(),minMaxColumn->value(),aliasColumn->value());
 
 			}
 	}
 
-
 	void whenPushedSelectMinOrMaxWhereExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectAverageSum(tableName->value(),minOrMax->value(), minOrMaxColumn->value(),aliasColumn->value(),condtionColumn->value(),conditionValue->value());
+				selectMinOrMaxWhere(tableName->value(),minMaxValue->value(), minMaxColumn->value(),aliasColumn->value(),conditionColumn->value(),conditionValue->value());
 
 			}
 	}
@@ -1453,7 +1453,10 @@ Fl_Check_Button *queryM;
 	void whenPushedSelectWhereExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectWhere(tableName->value(),columns->value(),conditionColumn->value(),conditionValue->value());
+
+				std::vector<std::string> colum = charToVec(columns->value());
+
+				selectWhere(tableName->value(),colum,conditionColumn->value(),conditionValue->value());
 
 			}
 	}
@@ -1462,9 +1465,10 @@ Fl_Check_Button *queryM;
 		if(((Fl_Button*)w) -> value()){}
 			else{
 				std::vector<std::string> col = charToVec(columns->value());
-				selectWhereOrderBy(tableName->value(),col,conditionColumn->value(),conditionValue->value(), toSortColumnName->value(),sortBy->value());
+				selectWhereOrderBy(tableName->value(),col,conditionColumn->value(),conditionValue->value(), sortColumn->value(),sortBy->value());
 			}
 	}
+
 
 	void whenPushedSelectWhereOneColumnExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
@@ -1477,55 +1481,64 @@ Fl_Check_Button *queryM;
 	void whenPushedSelectWhereBoolExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectWhereBool(tableName->value(),conditionColumn->value(),conditionValue->value());
+
+				std::vector<std::string> col = charToVec(columns->value());
+				std::vector<std::string> con = charToVec(conditionColumn->value());
+				std::vector<std::string> conVal = charToVec(conditionValue->value());
+				std::vector<std::string> conTwo = charToVec(conditionValueTwo->value());
+				std::vector<std::string> conValTwo = charToVec(conditionValueTwo->value());
+				std::vector<std::string> op = charToVec(operators -> value());
+
+				selectBool(tableName->value(), col, con, conVal, conTwo, conValTwo, op);
 
 			}
 	}
-/*
-	void whenPushedSelectLimitWhereOrderByExecute(Fl_Widget* w, void*){
+
+	/*void whenPushedSelectLimitWhereOrderByExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
 				selectLimitWhereOrderBy(tableName->value(),columns->value(),limitNumber->value(), conditionColumn->value(), conditionValue->value(),toSortcolumnName->value(),sortyBy->value());
 
 			}
 	}
+*/
 
-void whenPushedSelectLimitWhereOrderByExecute(Fl_Widget* w, void*){
-		if(((Fl_Button*)w) -> value()){}
-			else{
-				selectLimitWhereOrderBy(tableName->value(),columns->value(),limitNumber->value(), conditionColumn->value(), conditionValue->value(),toSortcolumnName->value(),sortyBy->value());
-
-			}
-	}
 
 void whenPushedSelectUnionExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectUnion(tableName->value(), columnName->value());
 
+				std::vector<std::string> tabNam = charToVec(tableName->value());
+				std::vector<std::string> colNam = charToVec(columnName->value());
 			}
 	}
 
-void whenPushedSelectColumnAliasExecute(Fl_Widget* w, void*){
+/*void whenPushedSelectColumnAliasExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
 				selectColumnAlias(tableName->value(),columns->value(),aliases->values());
 
 			}
-	}
+	}*/
+
 
 void whenPushedSelectTableAliasExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectColumnAlias(tableName->value(),columns->value(),aliases->values());
+				std::vector<std::string> col = charToVec(columns->value());
+
+				selectTableAlias(tableName->value(), col, aliasTable->value());
 
 			}
-	}
+ 	} 
 
 void whenPushedSelectGroupByExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectGroupBy(tableName->value(),columns->value(),conditionColumn->value(),conditionValue->value(),groupByColumns->value());
+				std::vector<std::string> col = charToVec(columns->value());
+				std::vector<std::string> groupColumns = charToVec(groupByColumns->value());
+
+				selectGroupBy(tableName->value(),col,conditionColumn->value(),conditionValue->value(),groupColumns);
 
 			}
 	}
@@ -1533,14 +1546,20 @@ void whenPushedSelectGroupByExecute(Fl_Widget* w, void*){
 void whenPushedSelectGroupByOrderByExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectGroupByOrderBy(tableName->value(),columns->value(),conditionColumn->value(),conditionValue->value(),groupByColumns->value(), toSortcolumnName->value(), sortBy->value());
+				std::vector<std::string> col = charToVec(columns->value());
+				std::vector<std::string> groupColum = charToVec(groupByColumns->value());
+
+				selectGroupByOrderBy(tableName->value(),col,conditionColumn->value(),conditionValue->value(),groupColum, sortColumn->value(), sortBy->value());
 			}
 	}
 
 void whenPushedSelectInnerJoinExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectInnerJoin(firstTableName->value(),columnIDTableOne->value(),columnsTableOne->values(), secondTableName->value(),columnsTableTwo->value());
+				std::vector<std::string> colTableOne = charToVec(firstTableColumns->value());
+				std::vector<std::string> colTabTwo = charToVec(secondTableColumns->value());
+
+				selectInnerJoin(firstTable->value(),firstTableIDColumn->value(),colTableOne, secondTable->value(),colTabTwo);
 
 			}
 	}
@@ -1548,7 +1567,10 @@ void whenPushedSelectInnerJoinExecute(Fl_Widget* w, void*){
 void whenPushedSelectLeftJoinExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectLeftJoin(firstTableName->value(),columnIDTableOne->value(),columnsTableOne->values(), secondTableName->value(),columnsTableTwo->value());
+				std::vector<std::string> colTableOne = charToVec(firstTableColumns->value());
+				std::vector<std::string> colTableTwo = charToVec(secondTableColumns->value());
+
+				selectLeftJoin(firstTable->value(),firstTableIDColumn->value(),colTableOne, secondTable->value(),colTableTwo);
 
 			}
 	}
@@ -1556,18 +1578,25 @@ void whenPushedSelectLeftJoinExecute(Fl_Widget* w, void*){
 void whenPushedSelectRightJoinExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectRightJoin(firstTableName->value(),columnIDTableOne->value(),columnsTableOne->values(), secondTableName->value(),columnsTableTwo->value());
+				std::vector<std::string> colTableOne = charToVec(firstTableColumns->value());
+				std::vector<std::string> colTableTwo = charToVec(secondTableColumns->value());
+
+				selectRightJoin(firstTable->value(),firstTableIDColumn->value(),colTableOne, secondTable->value(),colTableTwo);
 
 			}
 	}
 
-void whenPushedSelectFullJoinExecute(Fl_Widget* w, void*){
+
+
+/*void whenPushedSelectFullJoinExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
 				selectFullJoin(firstTableName->value(),columnIDTableOne->value(),columnsTableOne->values(), secondTableName->value(),columnsTableTwo->value());
 
 			}
 	}
+*/
+
 
 void whenPushedSelectNullExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
@@ -1576,7 +1605,7 @@ void whenPushedSelectNullExecute(Fl_Widget* w, void*){
 			}
 	}
 
-*/
+
 
 	GUI::GUI(){
 	connectionWindow = new ConnectionWindow();
@@ -2521,8 +2550,6 @@ SelectMinOrMax::SelectMinOrMax() : Fl_Window(1280,400,620,310,"SQL-Interface"){
     executeButton->color((Fl_Color)31);
 
     tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
-   
-    columns= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
   
     minMaxColumn = new Fl_Input(150, 151, 185, 24, "Min/Max Value:");
   
@@ -2548,7 +2575,7 @@ SelectMinOrMaxWhere::SelectMinOrMaxWhere() : Fl_Window(1280,400,620,310,"SQL-Int
 
     tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
    
-    columns= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
+    aliasColumn= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
   
     minMaxColumn = new Fl_Input(150, 151, 185, 24, "Min/Max Column:");
   
@@ -2596,15 +2623,13 @@ SelectWhere::SelectWhere()  : Fl_Window(1280,400,620,310,"SQL-Interface"){
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
 
-    tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
+    tableName = new Fl_Input(150, 91, 185, 24, "Tablename:");
    
-   columns= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
+   columns = new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
   
-    minMaxColumn = new Fl_Input(150, 151, 185, 24, "Min/Max Column:");
+    conditionColumn  = new Fl_Input(150, 151, 185, 24, "Min/Max Column:");
   
-    conditionColumn =  new Fl_Input(150, 181, 185, 24, "Conditon Column:");
-
-    conditionValue =  new Fl_Input(150, 211, 185, 24, "Condition Value:");
+    conditionValue =  new Fl_Input(150, 181, 185, 24, "Conditon Column:");
 
     end();
     show();
@@ -2827,12 +2852,13 @@ SelectBetween::SelectBetween()  : Fl_Window(1280,400,620,310,"SQL-Interface"){
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
 	
-    tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
-    columnName= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");
-    conditionValue =  new Fl_Input(150, 211, 185, 24, "Condition Value 1:");
-    conditionValueTwo =   new Fl_Input(150, 241, 185, 24, "Condition Value 2:");
-	conditionColumn =    new Fl_Input(150, 151, 185, 24, "Condition Column 1:");
-    conditionColumnTwo =    new Fl_Input(150, 181, 185, 24, "Condition Column 2:");
+    tableName =new Fl_Input(150, 91, 185, 24, "Tablename: ");
+    condition= new Fl_Input(150, 122, 350, 23, "Condition 1: ");
+    conditionTwo = new Fl_Input(150,151,350,23, "Condition 2: ");
+    conditionValue =  new Fl_Input(150, 241, 185, 24, "Condition Value 1: ");
+    conditionValueTwo =   new Fl_Input(150, 271, 185, 24, "Condition Value 2: ");
+	conditionColumn =    new Fl_Input(150, 181, 185, 24, "Condition Column 1: ");
+    conditionColumnTwo =    new Fl_Input(150, 211, 185, 24, "Condition Column 2: ");
 
     end();
     show();
