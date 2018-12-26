@@ -12,8 +12,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -36,8 +34,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -63,8 +59,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -88,8 +82,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 

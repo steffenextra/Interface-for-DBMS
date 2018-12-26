@@ -1,11 +1,11 @@
 var sqllib_8hpp =
 [
     [ "changeTheDatatype", "sqllib_8hpp.html#aef4d6b8ba9c38e5f1b459694421ad9e5", null ],
-    [ "check_error", "sqllib_8hpp.html#a33fd832a9e1a27bddb7d9837a2dcf2f1", null ],
-    [ "connection_feedback", "sqllib_8hpp.html#ab12a404eefae07281e8d1273ca3fc447", null ],
-    [ "connection_feedbackAll", "sqllib_8hpp.html#a05a069b8d1bef185dd0ff85424e2e13c", null ],
-    [ "connection_query", "sqllib_8hpp.html#a83d389dd4406da88cf16f7736e012537", null ],
-    [ "connectionless", "sqllib_8hpp.html#a76ac4f4e873cad05bcaa10a8b7e048ce", null ],
+    [ "check_error", "sqllib_8hpp.html#a88c581f1a3f4e5319ab41c2cc8ef67af", null ],
+    [ "connection_feedback", "sqllib_8hpp.html#ad03c38dd32272758034b10850a948786", null ],
+    [ "connection_feedbackAll", "sqllib_8hpp.html#a15d37939fd8d5feac068848fb0e17359", null ],
+    [ "connection_query", "sqllib_8hpp.html#ac79d03d5b5d92da2230f12e6b509ef9d", null ],
+    [ "connectionless", "sqllib_8hpp.html#a966f396dfb5eb84fe35fa86f8c833c98", null ],
     [ "countDatasets", "sqllib_8hpp.html#ad2178bf4577d7eea6caebd8d1c942088", null ],
     [ "createDatabase", "sqllib_8hpp.html#abf48eb274e662a7de3f5f190d126b765", null ],
     [ "createTable", "sqllib_8hpp.html#a018659fc814b4a097c4b4862f42fe554", null ],
@@ -24,6 +24,7 @@ var sqllib_8hpp =
     [ "renameTable", "sqllib_8hpp.html#a526b049a888b2a4a1332a10540689afd", null ],
     [ "selectAverageSum", "sqllib_8hpp.html#a01bd0062142a17ad04b7101bac7b38b6", null ],
     [ "selectBetween", "sqllib_8hpp.html#aaa15591ca7a3ba5d40fa77b7ae6753db", null ],
+    [ "selectBool", "sqllib_8hpp.html#a9ad9be1bbff160a127715440afafb800", null ],
     [ "selectColumnsAlias", "sqllib_8hpp.html#a0bd3f475ec96949ae94bbbbec41f7725", null ],
     [ "selectCount", "sqllib_8hpp.html#a00f071477f164f70927ee9923dd77a39", null ],
     [ "selectCountDistinct", "sqllib_8hpp.html#a8d6f770e3b1eb29fce843172c187ccc6", null ],
@@ -45,8 +46,8 @@ var sqllib_8hpp =
     [ "selectSortTable", "sqllib_8hpp.html#a6a41ec41130fdce3f2c4dd701438f26a", null ],
     [ "selectSum", "sqllib_8hpp.html#a9f37b58ba921dc5e6b5d4a5d0fefe28e", null ],
     [ "selectTableAlias", "sqllib_8hpp.html#a3ac5ebbcfb624dc5178315c85c4b15fa", null ],
+    [ "selectUnion", "sqllib_8hpp.html#a4ad130f751f8d14f3f13cbb70b1559c5", null ],
     [ "selectWhere", "sqllib_8hpp.html#a90eb635de3f1856a45557b42f18eff28", null ],
-    [ "selectWhereBool", "sqllib_8hpp.html#a0c986e9aa0e2d7e080ba5eb294a1182e", null ],
     [ "selectWhereOneColumn", "sqllib_8hpp.html#a519933061d4010c3a8d743b7e9fa9939", null ],
     [ "selectWhereOrderBy", "sqllib_8hpp.html#a94269766ff6e39ba8a38f5623314c3cd", null ],
     [ "setAllEntry", "sqllib_8hpp.html#aeb45ccd70b8692b592754a0886c2d109", null ],
@@ -57,6 +58,5 @@ var sqllib_8hpp =
     [ "setSecondaryKey", "sqllib_8hpp.html#a4aca01f302c4488d661196653d8f6c28", null ],
     [ "showColumnTyp", "sqllib_8hpp.html#addc31570307c41c7327c3da4886ae7bf", null ],
     [ "showDatabases", "sqllib_8hpp.html#a812cc82c697df37c6a8a482f85972b4b", null ],
-    [ "showTable", "sqllib_8hpp.html#a22fbeb7f18a00bafd4864de51a3bca28", null ],
-    [ "unionSelect", "sqllib_8hpp.html#a1bde570da9c90a3d0f6e94bc1b06c5e3", null ]
+    [ "showTable", "sqllib_8hpp.html#a22fbeb7f18a00bafd4864de51a3bca28", null ]
 ];

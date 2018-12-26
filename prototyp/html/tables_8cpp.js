@@ -2,7 +2,7 @@ var tables_8cpp =
 [
     [ "changeTheDatatype", "tables_8cpp.html#aef4d6b8ba9c38e5f1b459694421ad9e5", null ],
     [ "countDatasets", "tables_8cpp.html#ad2178bf4577d7eea6caebd8d1c942088", null ],
-    [ "createTable", "tables_8cpp.html#a6bd46ec08e83f28ae60e1d235d9d2659", null ],
+    [ "createTable", "tables_8cpp.html#a018659fc814b4a097c4b4862f42fe554", null ],
     [ "deleteColumn", "tables_8cpp.html#aa3b10ab46a5fb3caa76745e084685e76", null ],
     [ "deleteConstraint", "tables_8cpp.html#ae62b61e29ea8b6010ae2463f80598460", null ],
     [ "deletePrimaryKey", "tables_8cpp.html#a36d0f9bb1b86a8155d7551fcd014b4da", null ],

@@ -14,8 +14,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -42,8 +40,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -70,12 +66,11 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
 	void setAllEntry(std::string tableName,std::vector<std::string> row){
+		
 		std::string columnName;
 		std::string insertData;
 
@@ -114,8 +109,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 

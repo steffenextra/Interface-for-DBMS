@@ -16,14 +16,14 @@ Der Socket für X\+A\+M\+PP auf Linux sowie M\+A\+MP auf Mac\+OS wurden bereits 
 
 Sollte die Anwendung nicht Lokal genutzt werden, muss der Ort an dem der spezifische S\+Q\+L-\/\+Socket ~\newline
  clientseitig liegt identifiziert werden um mit dem S\+Q\+L-\/\+Server zu kommunizieren.~\newline
- Für den Verbindungsaufbau wird die connectionless-\/\+Methode \doxyref{connectionless()}{S.}{connection_8cpp_adda241635377573037e48ec03e645c22} (siehe Übergabe-\/\+Parameter) der connection-\/\+Klasse ~\newline
+ Für den Verbindungsaufbau wird die connectionless-\/\+Methode \doxyref{connectionless()}{S.}{connection_8cpp_a4ec2c49f65ab04fdddbdb7e81e6aab18} (siehe Übergabe-\/\+Parameter) der connection-\/\+Klasse ~\newline
  benutzt, diese baut nach der Build-\/\+Routine bei der Ausführung des Programm\textquotesingle{}s eine Verbindung auf.~\newline
 
 
 Durch vorgefertigte Präprozessor-\/\+Direktiven wird für Mac\+O\+S-\// sowie Linuxbetriebssysteme der zu benötigende My\+S\+Q\+L-\/\+Header beim kompilieren direkt rausgesucht. ~\newline
  ~\newline
  In der Regel sollte der My\+S\+Q\+L-\/\+Header im Standardpfad des dementsprechenden Betriebssystems liegen. ~\newline
- Sollte dies nicht der Fall sein, muss die Variable in der \doxyref{connectionless()}{S.}{connection_8cpp_adda241635377573037e48ec03e645c22} Methode gelöscht und durch eine eigene Variable (String des Pfads + mysql.\+h) ersetzt werden.~\newline
+ Sollte dies nicht der Fall sein, muss die Variable in der \doxyref{connectionless()}{S.}{connection_8cpp_a4ec2c49f65ab04fdddbdb7e81e6aab18} Methode gelöscht und durch eine eigene Variable (String des Pfads + mysql.\+h) ersetzt werden.~\newline
 
 
 Für das Ausführen des Programms ohne Benutzeroberfläche wird das erstellte Shellscript mit den dementsprechenden Umgebungsvariablen benutzt.~\newline
@@ -40,7 +40,7 @@ Für das Ausführen des Programms ohne Benutzeroberfläche wird das erstellte Sh
 
 {\bfseries  ---Nice to know--- }
 
-Da in diesem Projekt ausschließlich mit der My\+S\+Q\+L-\/\+Standardbibliothek gearbeitet wurde, passiert die Fehlerausgabe über die \doxyref{check\+\_\+error()}{S.}{connection_8cpp_a33fd832a9e1a27bddb7d9837a2dcf2f1} Methode.~\newline
+Da in diesem Projekt ausschließlich mit der My\+S\+Q\+L-\/\+Standardbibliothek gearbeitet wurde, passiert die Fehlerausgabe über die \doxyref{check\+\_\+error()}{S.}{connection_8cpp_a88c581f1a3f4e5319ab41c2cc8ef67af} Methode.~\newline
  Diese fängt jegliche Fehlerausgaben des My\+S\+Q\+L-\/\+Servers ab und printed diese aus. ~\newline
  ~\newline
  Sollte dieses Programm über die Konsole genutzt werden, müssen jegliche Übergabeparameter (ausgeschlossen Integer) in einen String gepackt werden. (\char`\"{} \char`\"{})~\newline

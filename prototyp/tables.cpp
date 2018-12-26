@@ -7,24 +7,22 @@
 
 	@brief Erstellen einer Tabelle
 
-        Die Methode dient zum erstellen einer Tabelle in einer vorgegebenen Datenbank. <br>
-        Zu beachten ist hier, dass direkt bei der Übergabe von
-        Parametern der Primärschlüssel, sowie der Sekundärschlüssel gesetzt werden kann. <br>
+    Die Methode dient zum erstellen einer Tabelle in einer vorgegebenen Datenbank. <br>
+    Zu beachten ist hier, dass direkt bei der Übergabe von
+    Parametern der Primärschlüssel, sowie der Sekundärschlüssel gesetzt werden kann. <br>
 
 	SQL-Befehl für den Primärschlüssel: "CREATE TABLE " + tableName + " ( ID int NOT NULL  PRIMARY KEY AUTO_INCREMENT, " + columnnamesAndDatatype + " );";<br>
 	SQL-Befehl ohne Primärschlüssel:  "CREATE TABLE " + tableName + " ( " + columnnamesAndDatatype  + " );";<br>
 
-        @param primary_key = Lässt das automatische setzten des Primärschlüssels zu
-        @param foreign_key =  Lässt das automatische setzen des Sekundärschlüssels zu
-        @param tableName = Gibt den Namen der zu erstellenden Tabelle an
-        @param columns = Der Programmierer kann über einen Vektor den Namen der Spalten sowie die Anzahl der Spalten bestimmen
+    @param primary_key = Lässt das automatische setzten des Primärschlüssels zu
+    @param foreign_key =  Lässt das automatische setzen des Sekundärschlüssels zu
+    @param tableName = Gibt den Namen der zu erstellenden Tabelle an
+    @param columns = Der Programmierer kann über einen Vektor den Namen der Spalten sowie die Anzahl der Spalten bestimmen
 
 	@return void 
 
-	@author Steffen Extra
-
-        */
-
+        
+    */
 
 	void createTable (bool primary_key, std::string tableName,std::vector<std::string> columns){
 
@@ -47,7 +45,7 @@
 
 		//insert the other Columns
 
-		for(int i=2; i<columns.size()-1; i++){ //i=2 because the first column and datatype are already added
+		for(int i=2; i<columns.size()-1; i++){ //i=2 because the first column / datatype are already added
 
 			if(i%2==0){
 				setColumn(tableName,columns.at(i),columns.at(i+1));
@@ -70,7 +68,6 @@
 
 	@return void
 
-	@author Steffen Extra
 
 	*/
 
@@ -96,7 +93,6 @@
 
 	@return void
 
-	@author Steffen Extra
 
 	*/
 
@@ -120,7 +116,6 @@
 
 	@return void
 
-	@author Steffen Extra
 
 	*/
 
@@ -137,18 +132,17 @@
 
 	@brief Bearbeiten der Spalte in einer Tabelle
 
-        Über diese Methoden kann man einzelne Spalten zu einer Tabelle hinzufügen.  <br>
-        Zu beachten ist, dass über diese Methode kein Schlüssel gesetzt werden kann.<br>
+    Über diese Methoden kann man einzelne Spalten zu einer Tabelle hinzufügen.  <br>
+    Zu beachten ist, dass über diese Methode kein Schlüssel gesetzt werden kann.<br>
 
-        SQL-Befehl: "ALTER TABLE " + tableName + " ADD " + ColumnName +  " " + datatype;
+    SQL-Befehl: "ALTER TABLE " + tableName + " ADD " + ColumnName +  " " + datatype;
 
-        @param tableName = Name der Tabelle
-        @param ColumnName = Name der Spalte die hinzugefügt werden soll
-        @param datatype = Angabe des Datentyps bezogen auf die Spalte
+    @param tableName = Name der Tabelle
+    @param ColumnName = Name der Spalte die hinzugefügt werden soll
+    @param datatype = Angabe des Datentyps bezogen auf die Spalte
 
 	@return void 
 
-	@author Steffen Extra
 
 	*/
 
@@ -160,9 +154,9 @@
 
 	}
 
-        /**
+    /**
 
-        @brief Setzen des Primärschlüssels
+    @brief Setzen des Primärschlüssels
 
 	Durch diese Methode kann nachträglich der Primärschlüssel zu einer Spalte hinzugefügt werden. <br>
 	Zudem kann entschieden werden, ob die Spalte mit dem Primärschlüssel direkt die AUTO_INCREMENT-Funktion nutzen soll 
@@ -178,9 +172,8 @@
 
 	@return void
 
-	@author Steffen Extra
 
-        */
+    */
 
 	void setColumnWithPrimary(std::string tableName, std::string ColumnName, std::string datatype, bool autoinc){
 
@@ -197,9 +190,9 @@
 
 	}
 
-        /**
+    /**
 
-        @brief Modifizieren des Spaltennamens
+    @brief Modifizieren des Spaltennamens
 
 	Ersetzt den Spaltennamen sowie den Datentypen. <br>
 	Sollte der  Fall eintreten, dass der Datentyp nicht geändert wird, kann der Datentyp des Feldes nochmal angegeben werden.<br>
@@ -213,9 +206,8 @@
 
 	@return void 
 
-	@author Steffen Extra
 
-        */
+    */
 
 	void modifierColumnName(std::string tableName, std::string oldColumnName, std::string newColumnName,std::string datatype){
 
@@ -227,7 +219,7 @@
 
 	/**
 
-        @brief Ändern des Datentyps
+    @brief Ändern des Datentyps
 
 	Ändern des Datentyps einer Spalte ohne den Namen der Spalte zu ändern. <br>
 	Wenn der Datentyp der Spalte geändert wird, muss darauf geachtet werden, dass
@@ -241,9 +233,8 @@
 
 	@return void 
 
-	@author Steffen Extra
 
-        */
+    */
 
 
 	void changeTheDatatype(std::string tableName, std::string columnName, std::string datatype){
@@ -266,7 +257,6 @@
 
 	@return void 
 
-	@author Steffen Extra
 
 	*/
 
@@ -290,7 +280,6 @@
 
 	@return void
 
-	@author Steffen Extra
 
 	*/
 
@@ -315,7 +304,6 @@
 
 	@return void 
 
-	@author Steffen Extra
 
 	*/
 
@@ -340,7 +328,6 @@
 
 	@return void 
 
-	@author Steffen Extra
 
 	*/
 
@@ -371,7 +358,7 @@
 
 	@return void 
 
-	@author Steffen Extra 
+ 
 	*/
 
 	void setSecondaryKey(std::string tableNameSecondary, std::string foreignKey, std::string tableNamePrimary, std::string primaryKey, std::string constraint){
@@ -399,7 +386,6 @@
 
 	@return void 
 
-	@author Steffen Extra
 
 	*/
 
@@ -424,7 +410,6 @@
 
 	@return void 
 
-	@author Steffen Extra
 
 	*/
 
@@ -452,7 +437,6 @@
 
 	@return void 
 
-	@author Steffen Extra
 
 	*/
 
@@ -477,7 +461,6 @@
 
 	@return void 
 
-	@author Steffen Extra
 
 	*/
 

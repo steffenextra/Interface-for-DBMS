@@ -25,8 +25,8 @@ var selection_request_8cpp =
     [ "selectSortTable", "selection_request_8cpp.html#a6a41ec41130fdce3f2c4dd701438f26a", null ],
     [ "selectSum", "selection_request_8cpp.html#a9f37b58ba921dc5e6b5d4a5d0fefe28e", null ],
     [ "selectTableAlias", "selection_request_8cpp.html#a3ac5ebbcfb624dc5178315c85c4b15fa", null ],
+    [ "selectUnion", "selection_request_8cpp.html#a4ad130f751f8d14f3f13cbb70b1559c5", null ],
     [ "selectWhere", "selection_request_8cpp.html#a90eb635de3f1856a45557b42f18eff28", null ],
     [ "selectWhereOneColumn", "selection_request_8cpp.html#a519933061d4010c3a8d743b7e9fa9939", null ],
-    [ "selectWhereOrderBy", "selection_request_8cpp.html#a94269766ff6e39ba8a38f5623314c3cd", null ],
-    [ "unionSelect", "selection_request_8cpp.html#a1bde570da9c90a3d0f6e94bc1b06c5e3", null ]
+    [ "selectWhereOrderBy", "selection_request_8cpp.html#a94269766ff6e39ba8a38f5623314c3cd", null ]
 ];

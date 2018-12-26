@@ -16,10 +16,6 @@
 
 	@return void
 
-	@toDo Boolean als return
-	@author Martin Meyer
-	@author Steffen Extra
-
 	*/
 
 	void ownCommand(std::string sqlCommand,std::string commandType){
@@ -72,9 +68,6 @@
 
 	@return void
 	@toDo Boolean als Rückgabewert
-
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -154,9 +147,6 @@
 	@return void
 	@toDo Boolean als Rückgabewert
 
-	@author Martin Meyer
-	@author Steffen Extra
-
 	*/
 
 	void selectNotLike(std::string tableName,std::vector<std::string>columns,std::string toSearchColumn,std::string pattern,std::string toSearch){
@@ -229,8 +219,7 @@
 	@return void
 	@toDo Boolean als Rückgabewert
 
-	@author Martin Meyer
-	@author Steffen Extra
+
 
 	*/
 
@@ -272,8 +261,6 @@
 	@return void
 	@toDo Boolean als Rückgabewert
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -315,9 +302,6 @@
 
 	@return void
 	@toDo Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -373,9 +357,6 @@
 	@return void 
 	@toDo Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
 
-	@author Martin Meyer
-	@author Steffen Extra
-
 	*/
 
 	void selectWhereOneColumn(std::string tableName,std::string conditionColumn,std::string conditionValue){
@@ -402,9 +383,6 @@
 
 	@return void
 	@toDo Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -456,9 +434,6 @@
 
 	@return void
 	@toDo Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
-
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 	void selectBool(std::string tableName,std::vector<std::string> columns, std::vector<std::string>conditions,std::vector<std::string>conditionValue,std::vector<std::string> conditions2,std::vector<std::string>conditionValue2,std::vector<std::string>operators){
@@ -537,9 +512,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
-
 	*/
 
 	void selectWhereOrderBy(std::string tableName,std::vector<std::string> columns,std::string conditionColumn,std::string conditionValue,std::string toSortcolumnName,std::string sortBy){
@@ -592,9 +564,6 @@
 
 	@return void 
 
-	@author Martin Meyer
-	@author Steffen Extra
-
 	*/
 
 	void selectSortTable(std::string tableName,std::string toSortColumnName,std::string sortBy){
@@ -632,9 +601,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
-
 	*/
 
 	void selectCount(std::string tableName,std::string countColumn,std::string aliasColumnName){
@@ -659,8 +625,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -703,9 +667,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
-
 	*/
 
 
@@ -729,10 +690,8 @@
 	@param tableName = Name der Tabelle
 	@param columnName = Enthält den Spaltennamen von der, der Durchschnitt berechnet werden soll
 
-	*@return void
+	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -758,8 +717,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -784,8 +741,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -807,6 +762,7 @@
 		connection_feedbackAll(sqlCommand.c_str());
 
 	}
+	
 	/**
 
 	@brief Mehrere Abfrageergebnisse bündeln
@@ -823,8 +779,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -886,8 +840,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -914,8 +866,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -957,8 +907,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -1002,8 +950,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -1066,8 +1012,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -1142,8 +1086,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -1214,8 +1156,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -1248,8 +1188,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -1306,8 +1244,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -1364,8 +1300,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -1422,8 +1356,6 @@
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 

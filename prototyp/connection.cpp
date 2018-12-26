@@ -19,9 +19,6 @@ MYSQL_FIELD *field;
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
-
 	*/
 
 	std::string check_error(void){
@@ -44,9 +41,6 @@ MYSQL_FIELD *field;
 	@param sqlCommand = enthält den auszuführenden SQL-Befehl
 
 	@return void
-
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -85,8 +79,6 @@ MYSQL_FIELD *field;
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -170,9 +162,6 @@ MYSQL_FIELD *field;
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
-
 	*/
 
 	std::string connection_query(std::string sqlCommand){
@@ -205,8 +194,6 @@ MYSQL_FIELD *field;
 
 	@return void
 
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
@@ -245,9 +232,6 @@ MYSQL_FIELD *field;
 	@param -
 
 	@return void 
-
-	@author Martin Meyer
-	@author Steffen Extra
 
 	*/
 
