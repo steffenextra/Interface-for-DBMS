@@ -548,32 +548,29 @@ Fl_Check_Button *queryM;
 				}
 
 
-
 				if((strcmp(selectRequestCommands->value(),"selectWhereBool"))==0){
 				selectRequestWindow->hide();
 				selectWhereBoolWindow= new SelectWhereBool();
 				sqlCommand->value(" SELECT allColumns FROM tableName WHERE conditionOperatorString ");
 				}
 
-				if((strcmp(selectRequestCommands->value(),"selectLimitWhereOrderBy"))){
+				if((strcmp(selectRequestCommands->value(),"selectLimitWhereOrderBy"))==0){
 				selectRequestWindow->hide();
 				selectLimitWhereOrderByWindow = new SelectLimitWhereOrderBy();
 				sqlCommand->value("SELECT allColumns FROM tableName WHERE conditionColumn 'conditionValue 'ORDER BY toSortcolumnName ASC LIMIT limitNumber");
 				}
 
-			/*	if((strcmp(selectRequestCommands->value(),"selectUnion"))){
+				if((strcmp(selectRequestCommands->value(),"selectUnion"))==0){
 				selectRequestWindow->hide();
 				selectUnionWindow= new SelectUnion();
-				sqlCommand->value("SELECT columnName.at(i) FROMtableName.at(i)UNION SELECT columnName.at(i) FROM tableName.at(i) ");
-				}*/
+				sqlCommand->value("SELECT columnName.at(i) FROM tableName.at(i)UNION SELECT columnName.at(i) FROM tableName.at(i) ");
+				}
+
 				if((strcmp(selectRequestCommands->value(),"selectColumnAlias"))==0){
 				selectRequestWindow->hide();
 				selectColumnsAliasWindow = new SelectColumnsAlias();
 				sqlCommand->value("SELECT columnAlias FROM tableName");
 				}
-
-
-
 
 				if((strcmp(selectRequestCommands->value(),"selectTableAlias"))==0){
 				selectRequestWindow->hide();
@@ -1568,9 +1565,11 @@ Fl_Check_Button *queryM;
 void whenPushedSelectUnionExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-
 				std::vector<std::string> tabNam = charToVec(tableName->value());
 				std::vector<std::string> colNam = charToVec(columnName->value());
+				
+				selectUnion(tabNam,colNam);
+
 			}
 	}
 
@@ -1934,7 +1933,7 @@ SelectRequestWindow::SelectRequestWindow() : Fl_Window(600,400,560,310,"SQL-Inte
 	selectRequestCommands->add("selectCount");
 	selectRequestCommands->add("selectIn");
 	selectRequestCommands->add("selectDistinct");
-	selectRequestCommands->add("selechtCountDistinct");
+	selectRequestCommands->add("selectCountDistinct");
 	selectRequestCommands->add("selectLike");
 	selectRequestCommands->add("selectNotLike");
 	selectRequestCommands->add("selectSum");
@@ -3144,10 +3143,11 @@ SelectLimitWhereOrderBy::SelectLimitWhereOrderBy(): Fl_Window(1280,400,620,310,"
    	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
     backButton = new Fl_Button(0, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
-    backButton->callback((Fl_Callback*) whenPushedBackSelectLeftJoin);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectWhereLimitOrderBy);
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
+    executeButton->callback((Fl_Callback*)whenPushedSelectLimitWhereOrderByExecute);
     tableName =new Fl_Input(175, 86, 185, 24, "Tablename: ");
     columns=  new Fl_Input(175, 116, 185, 24, "Columns: ");
     limitNumber =  new Fl_Input(175, 146, 355, 24, "LimitNumber: ");
@@ -3157,6 +3157,27 @@ SelectLimitWhereOrderBy::SelectLimitWhereOrderBy(): Fl_Window(1280,400,620,310,"
     end();
     show();
 }
+
+SelectUnion::SelectUnion(): Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+		
+    color(FL_WHITE);
+    begin();
+   	sqlCommand = new Fl_Output(110, 40, 500, 30, "SQL-Command");
+    backButton = new Fl_Button(0, 0, 95, 25, "Back");
+    backButton->color((Fl_Color)31);
+    backButton->callback((Fl_Callback*) whenPushedBackSelectUnion);
+
+	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
+    executeButton->color((Fl_Color)31);
+    executeButton->callback((Fl_Callback*)whenPushedSelectUnionExecute);
+
+    tableName =new Fl_Input(175, 86, 185, 24, "Tablename(s): ");
+    columns=  new Fl_Input(175, 116, 185, 24, "Column(s): ");
+ 	
+    end();
+    show();
+}
+
 
 
 
