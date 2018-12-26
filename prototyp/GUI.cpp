@@ -791,14 +791,6 @@ Fl_Check_Button *queryM;
 			}
 	}
 
-	/*	void whenPushedBackDeleteEntry(Fl_Widget* w, void*){
-		if(((Fl_Button*)w) -> value()){}
-			else{
-				deleteEntryWindow->hide();
-				entryWindow->show();
-			}
-	}*/
-
 	void whenPushedBackCreateTable(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
@@ -964,20 +956,80 @@ Fl_Check_Button *queryM;
 			}
 	} 
 
+	//database execute
 
-	void whenPushedDeleteDatabase(Fl_Widget* w, void*){
+	void whenPushedCreateDatabaseExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				createDatabase(databasename->value());
+			}
+	
+	}
+
+	void whenPushedShowDatabasesExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				showDatabases();
+			}
+
+	}
+
+	void whenPushedDeleteDatabasesExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
 				deleteDatabase(databasename->value());
-
 			}
 
 	}	
 
+	//rename database fehlt ! ! ! 
+
+
+	//entry execute
+
+	void whenPushedSetEntryExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				setEntry(tablename->value(),columnname->value(),entry->value());
+
+			}
+	
+	}
+
+	void whenPushedSetAllEntryExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				std::vector<std::string> rows = charToVec(rowEntry->value());
+				setAllEntry(tablename->value(),rows);
+
+			}
+	
+	}
+
+	void whenPushedModifierEntryExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				modifierEntry(tablename->value(), columnname->value(), oldEntry->value(), newEntry->value());
+
+			}
+	
+	}
+
+	void whenPushedDeleteEntryExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				deleteEntry(tablename->value(), columnname->value(),condition->value());
+
+			}
+	
+	}
+
+
 	void whenPushedCreateTableExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				//createTable(NULL, tableName->value(), );   // need to rework 
+				std::vector<std::string> col = charToVec(columns->value());
+				createTable(primaryKeyCheck->value(), tableName->value(), col);
 
 			}
 
@@ -1953,7 +2005,7 @@ CreateDatabase::CreateDatabase() : Fl_Window(600,400,560,310,"SQL-Interface"){
    	sqlCommand = new Fl_Output(0, 40, 560, 30, "SQL-Command");
 	databasename = new Fl_Input(120, 76, 140, 24, "Databasename:");
 
-	executeButton->callback((Fl_Callback*) whenPushedTableShowButton);
+	executeButton->callback((Fl_Callback*) whenPushedCreateDatabaseExecute);
 	backButton->callback((Fl_Callback*) whenPushedBackCreateDatabase);
 
 	end();
@@ -1971,7 +2023,7 @@ ShowDatabases::ShowDatabases() : Fl_Window(600,400,560,310,"SQL-Interface"){
     backButton->color((Fl_Color)31);
    	sqlCommand = new Fl_Output(0, 40, 560, 30, "SQL-Command");
 
-	//executeButton->callback((Fl_Callback*) whenPushedBackShowDatabases);
+	executeButton->callback((Fl_Callback*) whenPushedShowDatabasesExecute);
 	backButton->callback((Fl_Callback*) whenPushedBackShowDatabases);
 
 	end();
@@ -1990,7 +2042,7 @@ DeleteDatabase::DeleteDatabase() : Fl_Window(600,400,560,310,"SQL-Interface"){
    	sqlCommand = new Fl_Output(0, 40, 560, 30, "SQL-Command");
 	databasename = new Fl_Input(120, 76, 140, 24, "Databasename:");
 
-	executeButton->callback((Fl_Callback*) whenPushedDeleteDatabase);
+	executeButton->callback((Fl_Callback*) whenPushedDeleteDatabasesExecute);
 	backButton->callback((Fl_Callback*) whenPushedBackDeleteDatabase);
 
 	end();
@@ -2011,6 +2063,7 @@ SetEntry::SetEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 
     executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
+    executeButton->callback((Fl_Callback*) whenPushedSetEntryExecute);
 
     tablename = new Fl_Input(120, 86, 140, 24, "Tablename:");
 	columnname = new Fl_Input(120, 111, 140, 24, "Columnname:");
@@ -2033,6 +2086,8 @@ ModifierEntry::ModifierEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 
     executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
+    executeButton->callback((Fl_Callback*)whenPushedModifierEntryExecute);
+
 
     tablename = new Fl_Input(120, 86, 140, 24, "Tablename:");
 	columnname = new Fl_Input(120, 111, 140, 24, "Columnname:");
@@ -2057,6 +2112,8 @@ ModifierEntry::ModifierEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 
     executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
+    executeButton->callback((Fl_Callback*) whenPushedSetAllEntryExecute);
+
 
     tablename = new Fl_Input(95, 86, 140, 24, "Tablename:");
 	rowEntry = new Fl_Input(95, 116, 450, 24, "RowEntry");
@@ -2079,6 +2136,8 @@ DeleteEntry::DeleteEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 
     executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
+    executeButton->callback((Fl_Callback*)whenPushedDeleteEntryExecute);
+
 
     tablename = new Fl_Input(120, 86, 140, 24, "Tablename:");
 	columnname = new Fl_Input(120, 111, 140, 24, "Columnname:");
