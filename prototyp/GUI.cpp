@@ -607,11 +607,6 @@ Fl_Check_Button *queryM;
 				sqlCommand->value("select <Auswahl> FROM TabelleA LEFT JOIN TabelleB B ON A.ID = B.ID");
 				}
 
-				if((strcmp(selectRequestCommands->value(),"selectFullJoin"))==0){
-				selectRequestWindow->hide();
-				//selectFullJoinW= new selectFullJoin(); -> fix 
-				sqlCommand->value("select <Auswahl> FROM TabelleA FULL OUTER JOIN TabelleB B ON A.ID = B.ID");
-				}
 				if((strcmp(selectRequestCommands->value(),"selectNull"))==0){
 				selectRequestWindow->hide();
 				selectNullWindow= new SelectNull();
@@ -1376,14 +1371,6 @@ Fl_Check_Button *queryM;
 		}	
 	}
 
-	/*void whenPushedBackSelectFullJoin(Fl_Widget* w, void*){
-
-		if(((Fl_Button*)w) -> value()){}
-			else{
-				selectFullJoinW->hide();
-				selectRequestWindow->show();
-		}	
-	}*/
 
 	void whenPushedBackSelectNull(Fl_Widget* w, void*){
 
@@ -1649,17 +1636,6 @@ void whenPushedSelectRightJoinExecute(Fl_Widget* w, void*){
 	}
 
 
-
-/*void whenPushedSelectFullJoinExecute(Fl_Widget* w, void*){
-		if(((Fl_Button*)w) -> value()){}
-			else{
-				selectFullJoin(firstTableName->value(),columnIDTableOne->value(),columnsTableOne->values(), secondTableName->value(),columnsTableTwo->value());
-
-			}
-	}
-*/
-
-
 void whenPushedSelectNullExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
@@ -1671,8 +1647,6 @@ void whenPushedSelectNullExecute(Fl_Widget* w, void*){
 
 	GUI::GUI(){
 	connectionWindow = new ConnectionWindow();
-	//categoryWindow = new Category1Window();
-	//SelectInnerJoin *s1 = new SelectInnerJoin();
 		
 
 	}
@@ -1689,7 +1663,7 @@ void whenPushedSelectNullExecute(Fl_Widget* w, void*){
 		port = new Fl_Input (220,180,100,30, "Port");
 		connect = new Fl_Button(220,220,100,30, "Connect");
 		connect->callback((Fl_Callback*) whenPushedConnect);
-		connectoutput = new Fl_Output(170,260,200,30, "Meldung"); // Eventuelle Ausgabe des spezifischen Fehlers
+		connectoutput = new Fl_Output(170,260,200,30, "Meldung"); 
 		connectoutput->callback((Fl_Callback*)whenPushedConnect);
         
         end();
@@ -1709,10 +1683,10 @@ void whenPushedSelectNullExecute(Fl_Widget* w, void*){
  	Fl_Button *sending = new Fl_Button(465,0,95,25,"Senden");
  	disconnectButton->color((Fl_Color)31);
  	sqlStatement = new Fl_Input(100,50,400,50,"Eingabe:");
- 	sending->callback((Fl_Callback*) whenPushedSend); //Nach einem Befehl in Schleife
+ 	sending->callback((Fl_Callback*) whenPushedSend); 
  	feedback = new Fl_Output (100,100,400,100, "SQL-Befehl:");
  	messageerror = new Fl_Output(100,200,400,50,"Fehlermeldung:"); // Kein Automatischer Zeilenumbruch 
- 	disconnectButton->callback((Fl_Callback*) whenPushedSelfDisconnect); // Absturz durch alloc 
+ 	disconnectButton->callback((Fl_Callback*) whenPushedSelfDisconnect); 
 	backButton = new Fl_Button(95, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
     backButton->callback((Fl_Callback*)whenPushedBackSelf);
@@ -1955,7 +1929,6 @@ SelectRequestWindow::SelectRequestWindow() : Fl_Window(600,400,560,310,"SQL-Inte
 	selectRequestCommands->add("selectInnerJoin");
 	selectRequestCommands->add("selectLeftJoin");
 	selectRequestCommands->add("selectRightJoin");
-	selectRequestCommands->add("selectFullJoin");
 	selectRequestCommands->add("selectNull");
 
 
@@ -3187,6 +3160,7 @@ OutputWindow::OutputWindow(): Fl_Window(1280,400,620,310,"SQL-Interface"){
     begin();
 
     tableOutput = new Fl_Output(0,0,620,310,"");
+
 
 }
 
