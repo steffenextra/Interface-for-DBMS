@@ -9,6 +9,7 @@
 #include <FL/Fl_Text_Display.H>
 #include <FL/Fl_Text_Editor.H>
 #include <FL/Fl_Check_Button.H>
+#include <FL/Fl_Multiline_Output.H>
 #include <stdio.h>
 #include <stdlib.h>
 #include "sqllib.hpp"

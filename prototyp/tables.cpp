@@ -71,12 +71,12 @@
 
 	*/
 
-	void showTable (std::string tableName){
+	std::string showTable (std::string tableName){
 
 		std::string sqlCommand ="SELECT * FROM " + tableName;
 		check_error();
-		connection_feedbackAll(sqlCommand.c_str());
-
+		std::string tables = connection_feedbackAll(sqlCommand.c_str());
+		return tables;
 	}
 
 	/**
@@ -260,12 +260,12 @@
 
 	*/
 
-	void getAllColumn(std::string tableName){
+	std::string getAllColumn(std::string tableName){
 
 		std::string sqlCommand ="SHOW COLUMNS FROM " + tableName;
 		check_error();
-		connection_feedback(sqlCommand.c_str());
-
+		std::string allcolumns = connection_feedback(sqlCommand.c_str());
+		return allcolumns;
 	}
 
 	/**
@@ -283,12 +283,12 @@
 
 	*/
 
-	void countDatasets(std::string tableName){
+	std::string countDatasets(std::string tableName){
 
-		std::string sqlCommand = "SELECT COUNT (*) FROM " + tableName;
+		std::string sqlCommand = "SELECT COUNT(*) FROM " + tableName;
 		check_error();
-		connection_feedback(sqlCommand.c_str());
-
+		std::string datasets = connection_feedback(sqlCommand.c_str());
+		return datasets;
 	}
 
 	/**
@@ -307,12 +307,12 @@
 
 	*/
 
-	void showColumnTyp(std::string tableName,std::string datatype){
+	std::string showColumnTyp(std::string tableName,std::string datatype){
 
 		std::string sqlCommand="SHOW COLUMNS FROM " + tableName + " WHERE TYPE LIKE '" + datatype + "%'";
 		check_error();
-		connection_feedbackAll(sqlCommand.c_str());
-
+		std::string columntyps =connection_feedback(sqlCommand.c_str());
+		return columntyps;
 	}
 
 	/**

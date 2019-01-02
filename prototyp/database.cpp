@@ -37,12 +37,12 @@
 
 	*/
 
-	void showDatabases(){
+	std::string showDatabases(){
 
 		std::string sqlCommand = "SHOW DATABASES;" ;
 		check_error();
-		connection_feedback(sqlCommand.c_str());
-
+		std::string database = connection_feedback(sqlCommand.c_str());
+		return database; 
 	}
 
 	/**

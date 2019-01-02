@@ -31,7 +31,6 @@ ShowDatabase *showDatabaseWindow;
 
 TableWindow *tableWindow;
 TableCommand *tableCommandWindow;
-ShowTable *showTableWindow;
 CreateTable *createTableWindow;
 ShowTableCommand *showTableCommandWindow;
 RenameTable *renameTableWindow;
@@ -159,7 +158,7 @@ Fl_Output *sqlCommand;
 Fl_Output *messageerror;
 Fl_Output *feedback;
 Fl_Output *connectoutput;
-Fl_Output *tableOutput;
+Fl_Multiline_Output *tableOutput;
 
 Fl_Check_Button *feedbackM;
 Fl_Check_Button *feedbackAllM;
@@ -379,19 +378,18 @@ Fl_Check_Button *queryM;
 		
 	}
 
-		void whenPushedTableShowButton(Fl_Widget* w, void*){
+		void whenPushedShowTableExecute(Fl_Widget* w, void*){
 		if ( ((Fl_Button*) w)->value()){
 		} 
 		else {
-				//createDatabaseWindow->hide();
-				//showTableWindow = new ShowTable();
-				createDatabase(databasename->value());
-				if(databasesCommands->value()=="create Database"){
-					//sqlCommand->insert("CREATE DATABASE databaseName;"); falscher befehl?
-					createDatabase(databasename->value());
-				}
+				std::string table = showTable(tableName->value());
+				outputWindow = new OutputWindow();
+ 				outputWindow->show();
+ 				tableOutput->value(table.c_str());
+			}
+
 		}
-	}
+	
 		
 //Methods Entry
 	void whenPushedEntryWindow(Fl_Widget* w, void*){
@@ -663,24 +661,34 @@ Fl_Check_Button *queryM;
 				}
 
 				 else if(feedbackM->value()==true){
-					connection_feedback(sqlStatement->value());
+					
+					std::string feedbackStringM = connection_feedback(sqlStatement->value());
 					
 					std::string errormsg = check_error();
  					messageerror->value(errormsg.c_str());
+ 					
  					std::string msg = sqlStatement->value(); 
  					feedback->value(msg.c_str()); 
+ 					
  					outputWindow = new OutputWindow();
  					outputWindow ->show();
- 					tableOutput->value();
+
+ 					tableOutput->value(feedbackStringM.c_str());
 				}
 
 				else if (feedbackAllM->value()==true){
-					connection_feedbackAll(sqlStatement->value());
+					std::string feedbackStringAllM = connection_feedbackAll(sqlStatement->value());
+					
 					std::string errormsg = check_error();
  					messageerror->value(errormsg.c_str());
+
  					std::string msg = sqlStatement->value();
  					feedback->value(msg.c_str()); 
 
+ 					outputWindow = new OutputWindow();
+ 					outputWindow ->show();
+
+ 					tableOutput->value(feedbackStringAllM.c_str());
 				}
 
 				else {
@@ -970,7 +978,10 @@ Fl_Check_Button *queryM;
 	void whenPushedShowDatabasesExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				showDatabases();
+				std::string database = showDatabases();
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(database.c_str());
 			}
 
 	}
@@ -1061,14 +1072,21 @@ Fl_Check_Button *queryM;
 	void whenPushedGetAllColumnsExecute(Fl_Widget* w, void*){
 			if(((Fl_Button*)w) -> value()){}
 			else{
-				getAllColumn(tableName->value());
+				std::string allcolumns = getAllColumn(tableName->value());
+				outputWindow = new OutputWindow();
+ 				outputWindow->show();
+ 				tableOutput->value(allcolumns.c_str());
+				
 		}	
 	}
 
 	void whenPushedShowColumnTypeExecute(Fl_Widget* w, void*){
 			if(((Fl_Button*)w) -> value()){}
 			else{
-				showColumnTyp(tableName->value(), datatype->value());//exceptionhandling
+				std::string columntype = showColumnTyp(tableName->value(), datatype->value());
+				outputWindow = new OutputWindow();
+ 				outputWindow->show();
+ 				tableOutput->value(columntype.c_str());
 		}	
 	}	
 
@@ -1138,7 +1156,10 @@ Fl_Check_Button *queryM;
 
 	if(((Fl_Button*)w) -> value()){}
 		else{
-			countDatasets(tableName->value());
+			std::string datasets = countDatasets(tableName->value());
+			outputWindow = new OutputWindow();
+ 			outputWindow->show();
+ 			tableOutput->value(datasets.c_str());
 		}	
 	}	
 
@@ -1832,23 +1853,15 @@ void whenPushedSelectNullExecute(Fl_Widget* w, void*){
     backButton = new Fl_Button(95, 0, 95, 25, "Back");
     backButton->color((Fl_Color)31);
    	sqlCommand = new Fl_Output(0, 40, 560, 30, "SQL-Command");
-	databasename = new Fl_Input(120, 76, 140, 24, "Databasename:");
+	tableName = new Fl_Input(120, 76, 140, 24, "Databasename:");
 
-	executeButton->callback((Fl_Callback*) whenPushedTableShowButton);
+	executeButton->callback((Fl_Callback*) whenPushedShowTableExecute);
 	backButton->callback((Fl_Callback*) whenPushedBackTableCommand);
 
 	end();
     show();
 }
 
-	ShowTable::ShowTable() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
-		
-	color(FL_WHITE);
-	begin();
-
-	end();
-	show();
-}
 //Entry 
 
   EntryWindow::EntryWindow() : Fl_Window(600,400,560,310,"SQL-Interface"){
@@ -2173,7 +2186,7 @@ ShowTableCommand::ShowTableCommand() : Fl_Window(1280,400,620,310,"SQL-Interface
     executeButton->color((Fl_Color)31);
     tableName = new Fl_Input(95, 86, 140, 24, "Tablename:");
     
-
+    executeButton ->callback((Fl_Callback*) whenPushedShowTableExecute);
 	backButton->callback((Fl_Callback*) whenPushedBackShowTable);
 
 	end();
@@ -2397,10 +2410,9 @@ ShowColumnType::ShowColumnType() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
-    executeButton->callback((Fl_Callback*) whenPushedShowColumnTypeExecute);
     tableName = new Fl_Input(95, 86, 140, 24, "Tablename:");
     datatype = new Fl_Input_Choice(340, 86, 140, 24, "Datatype:");
-	datatype->add("integer");
+	datatype->add("int");
 	datatype->add("float");
 	datatype->add("char");
 	datatype->add("varchar");
@@ -2410,6 +2422,7 @@ ShowColumnType::ShowColumnType() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 	datatype->add("text");
 	datatype->add("blob");
 	backButton->callback((Fl_Callback*) whenPushedBackShowColumnType);
+	executeButton->callback((Fl_Callback*) whenPushedShowColumnTypeExecute);
 
 	end();
 	show();
@@ -3154,12 +3167,12 @@ SelectUnion::SelectUnion(): Fl_Window(1280,400,620,310,"SQL-Interface"){
 
 
 
-OutputWindow::OutputWindow(): Fl_Window(1280,400,620,310,"SQL-Interface"){
+OutputWindow::OutputWindow(): Fl_Window(1280,400,800,400,"SQL-Interface"){
 	
 	color(FL_WHITE);
     begin();
 
-    tableOutput = new Fl_Output(0,0,620,310,"");
+    tableOutput = new Fl_Multiline_Output(0,0,800,400,"");
 
 
 }

@@ -37,7 +37,7 @@ void disconnect();
 //---database---
 
 void createDatabase (std::string databaseName);
-void showDatabases();
+std::string showDatabases();
 void renameDatabase(std::string databaseName, std::string newDatabaseName);
 void deleteDatabase (std::string databaseName);
 
@@ -45,16 +45,16 @@ void deleteDatabase (std::string databaseName);
 //---table---
 
 void createTable (bool primary_key, std::string tableName,std::vector<std::string> columns);
-void showTable (std::string tableName);
+std::string showTable (std::string tableName);
 void renameTable(std::string tablename, std::string newTableName);
 void deleteTable (std::string tableName);
 void setColumn(std::string tableName, std::string ColumnName,std::string datatype);
 void setColumnWithPrimary(std::string tableName, std::string ColumnName, std::string datatype, bool autoinc);
 void modifierColumnName(std::string tableName, std::string oldColumnName, std::string newColumnName,std::string datatype);
 void changeTheDatatype(std::string tableName, std::string columnName, std::string datatype);
-void getAllColumn(std::string tableName);
-void countDatasets(std::string tableName);
-void showColumnTyp(std::string tableName,std::string datatype);
+std::string getAllColumn(std::string tableName);
+std::string countDatasets(std::string tableName);
+std::string showColumnTyp(std::string tableName,std::string datatype);
 void deleteColumn(std::string tableName, std::string columnName);
 void setSecondaryKey(std::string tableNameSecondary, std::string foreignKey, std::string tableNamePrimary, std::string primaryKey, std::string constraint);
 void deleteSecondaryKey(std::string tableName, std::string constraint);

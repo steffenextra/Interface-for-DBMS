@@ -47,9 +47,9 @@ MYSQL_FIELD *field;
 		std::string connection_feedback(std::string sqlCommand){
 
                 std::cout << std::endl;
-             /*   std::cout <<"\033[1;31m DEBUG : INPUT FOR THE MYSQL_QUERY\033[0m" << std::endl;
+                std::cout <<"\033[1;31m DEBUG : INPUT FOR THE MYSQL_QUERY\033[0m" << std::endl;
                 std::cout << sqlCommand << std::endl;
-                std::cout << std::endl;*/
+                std::cout << std::endl;
                 mysql_query(mysql, sqlCommand.c_str());
                 check_error();
                 result=mysql_use_result(mysql);
@@ -61,7 +61,7 @@ MYSQL_FIELD *field;
 			std::string rowvecst;
 			for(int i=0;i<rowvec.size();i++){
 				rowvecst += rowvec[i]; 
-				rowvecst += "\n";
+				rowvecst += '\n';
 			}
 		
 			mysql_free_result(result);
@@ -137,11 +137,11 @@ MYSQL_FIELD *field;
 		
 			if(i%6==0|| i == 0){
 		
-				output+= "\n" + rowvec[i] + " ";
+				output+= '\n' + rowvec[i] + " " + '\n' ;
 		
 			}else{
 		
-			output+=rowvec[i]+ " ";
+			output+=rowvec[i]+ " " + '\n';
 		
 			}
 		
