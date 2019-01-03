@@ -196,7 +196,7 @@ Fl_Check_Button *queryM;
 		const char *val = columns->value(); 
 		char delimiter[]= ", ";
 
-		char *tempval = std::strtok(strdup(val), delimiter);
+		char *tempval = strtok(strdup(val), delimiter);
 
 		while(tempval != NULL) {
 			strvec.push_back(tempval);
