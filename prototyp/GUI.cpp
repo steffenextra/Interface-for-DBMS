@@ -1365,6 +1365,15 @@ Fl_Check_Button *queryM;
 		}	
 	}
 
+		void whenPushedBackSelectCountGroupByOrderBy(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				selectCountGroupByOrderByWindow->hide();
+				selectRequestWindow->show();
+		}	
+	}	
+
 	void whenPushedBackSelectInnerJoin(Fl_Widget* w, void*){
 
 		if(((Fl_Button*)w) -> value()){}
@@ -1513,7 +1522,7 @@ Fl_Check_Button *queryM;
 	void whenPushedSelectBetweenExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				std::string selectsselectBetween(conditionValue->value(),conditionValueTwo->value(),tableName->value(),conditionColumn->value(),conditionColumnTwo->value(), condition->value(),conditionTwo->value());
+				std::string selects = selectBetween(conditionValue->value(),conditionValueTwo->value(),tableName->value(),conditionColumn->value(),conditionColumnTwo->value(), condition->value(),conditionTwo->value());
 				outputWindow = new OutputWindow();
  				outputWindow ->show();
  				tableOutput -> value(selects.c_str());
@@ -1671,14 +1680,28 @@ void whenPushedSelectGroupByOrderByExecute(Fl_Widget* w, void*){
 			}
 	}
 
+void whenPushedSelectCountGroupByOrderByExecute(Fl_Widget* w, void*){
+		if(((Fl_Button*)w) -> value()){}
+			else{
+				std::vector<std::string> col = charToVec(columns->value());
+				std::vector<std::string> groupByCol = charToVec(groupByColumns->value());
+				std::string selects = selectCountGroupByOrderBy(tableName->value(),countColumn->value(),col,conditionColumn->value(), conditionValue->value(),groupByCol, sortBy->value());
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
+}
+}
+
 void whenPushedSelectInnerJoinExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
 				std::vector<std::string> colTableOne = charToVec(firstTableColumns->value());
 				std::vector<std::string> colTabTwo = charToVec(secondTableColumns->value());
 
-				selectInnerJoin(firstTable->value(),firstTableIDColumn->value(),colTableOne, secondTable->value(),colTabTwo);
-
+				std::string selects = selectInnerJoin(firstTable->value(),firstTableIDColumn->value(),colTableOne, secondTable->value(),colTabTwo);
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
@@ -1688,8 +1711,10 @@ void whenPushedSelectLeftJoinExecute(Fl_Widget* w, void*){
 				std::vector<std::string> colTableOne = charToVec(firstTableColumns->value());
 				std::vector<std::string> colTableTwo = charToVec(secondTableColumns->value());
 
-				selectLeftJoin(firstTable->value(),firstTableIDColumn->value(),colTableOne, secondTable->value(),colTableTwo);
-
+				std::string selects = selectLeftJoin(firstTable->value(),firstTableIDColumn->value(),colTableOne, secondTable->value(),colTableTwo);
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
@@ -1699,8 +1724,10 @@ void whenPushedSelectRightJoinExecute(Fl_Widget* w, void*){
 				std::vector<std::string> colTableOne = charToVec(firstTableColumns->value());
 				std::vector<std::string> colTableTwo = charToVec(secondTableColumns->value());
 
-				selectRightJoin(firstTable->value(),firstTableIDColumn->value(),colTableOne, secondTable->value(),colTableTwo);
-
+				std::string selects = selectRightJoin(firstTable->value(),firstTableIDColumn->value(),colTableOne, secondTable->value(),colTableTwo);
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
@@ -1708,7 +1735,10 @@ void whenPushedSelectRightJoinExecute(Fl_Widget* w, void*){
 void whenPushedSelectNullExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectNull(tableName->value(), columnName->value());
+				std::string selects = selectNull(tableName->value(), columnName->value());
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
@@ -1987,6 +2017,7 @@ SelectRequestWindow::SelectRequestWindow() : Fl_Window(600,400,560,310,"SQL-Inte
 	selectRequestCommands->add("selectTableAlias");
 	selectRequestCommands->add("selectGroupBy");
 	selectRequestCommands->add("selectGroupByOrderBy");
+	selectRequestCommands->add("selectCountGroupByOrderBy");
 	selectRequestCommands->add("selectInnerJoin");
 	selectRequestCommands->add("selectLeftJoin");
 	selectRequestCommands->add("selectRightJoin");
@@ -3070,6 +3101,7 @@ SelectCountGroupByOrderBy::SelectCountGroupByOrderBy(): Fl_Window(1280,400,620,3
 
 	executeButton = new Fl_Button(525, 0, 95, 25, "execute");
     executeButton->color((Fl_Color)31);
+    executeButton->callback((Fl_Callback*) whenPushedSelectCountGroupByOrderByExecute);
     tableName =new Fl_Input(150, 91, 185, 24, "Tablename:");
    
     columns= new Fl_Input(150, 122, 350, 23, "Displayed Columns:");

@@ -1,10 +1,11 @@
 <map id="connection_feedback" name="connection_feedback">
-<area shape="rect" id="node2" href="$sqllib_8hpp.html#a812cc82c697df37c6a8a482f85972b4b" title="Anzeigen der Datenbanken. " alt="" coords="226,5,342,31"/>
+<area shape="rect" id="node2" href="$sqllib_8hpp.html#a7a817804965bb8abfbeaee58fff003d7" title="Anzeigen der Datenbanken. " alt="" coords="226,5,342,31"/>
 <area shape="rect" id="node3" href="$sqllib_8hpp.html#a1909c1b8666cf6e3d31a014c9a9ad2d7" title="Benutzereigener SQL&#45;Befehl. " alt="" coords="230,55,338,80"/>
-<area shape="rect" id="node4" href="$sqllib_8hpp.html#a519933061d4010c3a8d743b7e9fa9939" title="Bestimmte Datensätze von bestimmten Spalten abfragen. " alt="" coords="201,104,367,129"/>
-<area shape="rect" id="node5" href="$sqllib_8hpp.html#a6a41ec41130fdce3f2c4dd701438f26a" title="Tabelle wird nach Angabe sortiert. " alt="" coords="228,153,340,179"/>
-<area shape="rect" id="node6" href="$sqllib_8hpp.html#a8d6f770e3b1eb29fce843172c187ccc6" title="Keine Redundanzen / Datensätze werden gezählt. " alt="" coords="216,203,352,228"/>
-<area shape="rect" id="node7" href="$sqllib_8hpp.html#a01bd0062142a17ad04b7101bac7b38b6" title="Durchschnittswert. " alt="" coords="217,252,350,277"/>
-<area shape="rect" id="node8" href="$tables_8cpp.html#aceb780082d3f7392e485cac394d6c606" title="Anzeigen von Spalten. " alt="" coords="234,301,334,327"/>
-<area shape="rect" id="node9" href="$tables_8cpp.html#ad2178bf4577d7eea6caebd8d1c942088" title="Zählen der Datensätze. " alt="" coords="231,351,337,376"/>
+<area shape="rect" id="node4" href="$sqllib_8hpp.html#ade3cc06b3d1ac3dc344ec9f606290468" title="Bestimmte Datensätze von bestimmten Spalten abfragen. " alt="" coords="201,104,367,129"/>
+<area shape="rect" id="node5" href="$sqllib_8hpp.html#a171b9c43b31e26dd2c30acb9344d2da8" title="Tabelle wird nach Angabe sortiert. " alt="" coords="228,153,340,179"/>
+<area shape="rect" id="node6" href="$sqllib_8hpp.html#a118df4625d0eec25ad2215f028520f72" title="Keine Redundanzen / Datensätze werden gezählt. " alt="" coords="216,203,352,228"/>
+<area shape="rect" id="node7" href="$sqllib_8hpp.html#a0c0b74ea6569aa25068b80d57061e864" title="Durchschnittswert. " alt="" coords="217,252,350,277"/>
+<area shape="rect" id="node8" href="$tables_8cpp.html#a96bdfe7120502a30fdae84c0f6588a7f" title="Anzeigen von Spalten. " alt="" coords="234,301,334,327"/>
+<area shape="rect" id="node9" href="$tables_8cpp.html#a4e62be1037109b753ff7f5a291b5b31c" title="Zählen der Datensätze. " alt="" coords="231,351,337,376"/>
+<area shape="rect" id="node10" href="$tables_8cpp.html#a8427554ae56596f846166ee15a18ca9a" title="Datentyp der Spalte anzeigen lassen. " alt="" coords="224,400,344,425"/>
 </map>

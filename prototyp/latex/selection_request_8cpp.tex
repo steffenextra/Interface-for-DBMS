@@ -13,62 +13,60 @@ Include-\/\+Abhängigkeitsdiagramm für selection\+Request.\+cpp\+:\nopagebreak
 \item 
 void \textbf{ own\+Command} (std\+::string sql\+Command, std\+::string command\+Type)
 \begin{DoxyCompactList}\small\item\em Benutzereigener S\+Q\+L-\/\+Befehl. \end{DoxyCompactList}\item 
-void \textbf{ select\+Like} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string to\+Search\+Column, std\+::string pattern, std\+::string to\+Search)
+std\+::string \textbf{ select\+Like} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string to\+Search\+Column, std\+::string pattern, std\+::string to\+Search)
 \begin{DoxyCompactList}\small\item\em Suche nach Muster. \end{DoxyCompactList}\item 
-void \textbf{ select\+Not\+Like} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string to\+Search\+Column, std\+::string pattern, std\+::string to\+Search)
+std\+::string \textbf{ select\+Not\+Like} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string to\+Search\+Column, std\+::string pattern, std\+::string to\+Search)
 \begin{DoxyCompactList}\small\item\em Suche nach Muster. \end{DoxyCompactList}\item 
-void \textbf{ select\+Min\+Or\+Max} (std\+::string table\+Name, std\+::string min\+Or\+Max, std\+::string min\+Or\+Max\+Column, std\+::string alias\+Column)
+std\+::string \textbf{ select\+Min\+Or\+Max} (std\+::string table\+Name, std\+::string min\+Or\+Max, std\+::string min\+Or\+Max\+Column, std\+::string alias\+Column)
 \begin{DoxyCompactList}\small\item\em Ermittlung des höchsten / niedrigsten Wertes. \end{DoxyCompactList}\item 
-void \textbf{ select\+Min\+Or\+Max\+Where} (std\+::string table\+Name, std\+::string min\+Or\+Max, std\+::string min\+Or\+Max\+Column, std\+::string alias\+Column, std\+::string condition\+Column, std\+::string condition\+Value)
+std\+::string \textbf{ select\+Min\+Or\+Max\+Where} (std\+::string table\+Name, std\+::string min\+Or\+Max, std\+::string min\+Or\+Max\+Column, std\+::string alias\+Column, std\+::string condition\+Column, std\+::string condition\+Value)
 \begin{DoxyCompactList}\small\item\em Höchster / niedrigster Wert mit Bedingung und Alias-\/\+Spalte. \end{DoxyCompactList}\item 
-void \textbf{ select\+Limit\+Where\+Order\+By} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns, std\+::string limit\+Number, std\+::string condition\+Column, std\+::string condition\+Value, std\+::string to\+Sort\+Column\+Name, std\+::string sort\+By)
+std\+::string \textbf{ select\+Limit\+Where\+Order\+By} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns, std\+::string limit\+Number, std\+::string condition\+Column, std\+::string condition\+Value, std\+::string to\+Sort\+Column\+Name, std\+::string sort\+By)
 \begin{DoxyCompactList}\small\item\em Bestimmte Anzahl von Datensätzen mit Bedingung abfragen. \end{DoxyCompactList}\item 
-void \textbf{ select\+Where\+One\+Column} (std\+::string table\+Name, std\+::string condition\+Column, std\+::string condition\+Value)
+std\+::string \textbf{ select\+Where\+One\+Column} (std\+::string table\+Name, std\+::string condition\+Column, std\+::string condition\+Value)
 \begin{DoxyCompactList}\small\item\em Bestimmte Datensätze von bestimmten Spalten abfragen. \end{DoxyCompactList}\item 
-void \textbf{ select\+Where} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns, std\+::string condition\+Column, std\+::string condition\+Value)
+std\+::string \textbf{ select\+Where} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns, std\+::string condition\+Column, std\+::string condition\+Value)
 \begin{DoxyCompactList}\small\item\em Anzeigen bestimmter Datensätze mit dem Zusatz der Where-\/\+Clause. \end{DoxyCompactList}\item 
-void \textbf{ select\+Bool} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns, std\+::vector$<$ std\+::string $>$conditions, std\+::vector$<$ std\+::string $>$condition\+Value, std\+::vector$<$ std\+::string $>$ conditions2, std\+::vector$<$ std\+::string $>$condition\+Value2, std\+::vector$<$ std\+::string $>$operators)
+std\+::string \textbf{ select\+Bool} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns, std\+::vector$<$ std\+::string $>$conditions, std\+::vector$<$ std\+::string $>$condition\+Value, std\+::vector$<$ std\+::string $>$ conditions2, std\+::vector$<$ std\+::string $>$condition\+Value2, std\+::vector$<$ std\+::string $>$operators)
 \begin{DoxyCompactList}\small\item\em Where-\/\+Clause mit mehreren Bedingungen. \end{DoxyCompactList}\item 
-void \textbf{ select\+Where\+Order\+By} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns, std\+::string condition\+Column, std\+::string condition\+Value, std\+::string to\+Sortcolumn\+Name, std\+::string sort\+By)
+std\+::string \textbf{ select\+Where\+Order\+By} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns, std\+::string condition\+Column, std\+::string condition\+Value, std\+::string to\+Sortcolumn\+Name, std\+::string sort\+By)
 \begin{DoxyCompactList}\small\item\em Abfrage von Spalten mit Sortierung. \end{DoxyCompactList}\item 
-void \textbf{ select\+Sort\+Table} (std\+::string table\+Name, std\+::string to\+Sort\+Column\+Name, std\+::string sort\+By)
+std\+::string \textbf{ select\+Sort\+Table} (std\+::string table\+Name, std\+::string to\+Sort\+Column\+Name, std\+::string sort\+By)
 \begin{DoxyCompactList}\small\item\em Tabelle wird nach Angabe sortiert. \end{DoxyCompactList}\item 
-void \textbf{ select\+Count} (std\+::string table\+Name, std\+::string count\+Column, std\+::string alias\+Column\+Name)
+std\+::string \textbf{ select\+Count} (std\+::string table\+Name, std\+::string count\+Column, std\+::string alias\+Column\+Name)
 \begin{DoxyCompactList}\small\item\em Anzahl von ausgewählten Datensätzen. \end{DoxyCompactList}\item 
-void \textbf{ select\+Distinct} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns)
+std\+::string \textbf{ select\+Distinct} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns)
 \begin{DoxyCompactList}\small\item\em Redundanzen werden eliminiert und nur einmal angezeigt. \end{DoxyCompactList}\item 
-void \textbf{ select\+Count\+Distinct} (std\+::string table\+Name, std\+::string count\+Column)
+std\+::string \textbf{ select\+Count\+Distinct} (std\+::string table\+Name, std\+::string count\+Column)
 \begin{DoxyCompactList}\small\item\em Keine Redundanzen / Datensätze werden gezählt. \end{DoxyCompactList}\item 
-void \textbf{ select\+Average\+Sum} (std\+::string table\+Name, std\+::string column\+Name)
+std\+::string \textbf{ select\+Average\+Sum} (std\+::string table\+Name, std\+::string column\+Name)
 \begin{DoxyCompactList}\small\item\em Durchschnittswert. \end{DoxyCompactList}\item 
-void \textbf{ select\+Sum} (std\+::string table\+Name, std\+::string column\+Name, std\+::string alias\+Column\+Name)
+std\+::string \textbf{ select\+Sum} (std\+::string table\+Name, std\+::string column\+Name, std\+::string alias\+Column\+Name)
 \begin{DoxyCompactList}\small\item\em Summieren von Werten. \end{DoxyCompactList}\item 
-void \textbf{ select\+Union} (std\+::vector$<$ std\+::string $>$ table\+Name, std\+::vector$<$ std\+::string $>$ column\+Name)
+std\+::string \textbf{ select\+Union} (std\+::vector$<$ std\+::string $>$ table\+Name, std\+::vector$<$ std\+::string $>$ column\+Name)
 \begin{DoxyCompactList}\small\item\em Vereinigung zweier Abfragen. \end{DoxyCompactList}\item 
-void \textbf{ select\+In} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string search\+In\+Column, std\+::vector$<$ std\+::string $>$condition\+Value)
+std\+::string \textbf{ select\+In} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string search\+In\+Column, std\+::vector$<$ std\+::string $>$condition\+Value)
 \begin{DoxyCompactList}\small\item\em Mehrere Abfrageergebnisse bündeln. \end{DoxyCompactList}\item 
-void \textbf{ select\+Between} (std\+::string condition\+String, std\+::string condition\+String\+Two, std\+::string table\+Name, std\+::string condition\+Column, std\+::string condition\+Column\+Two, std\+::string condition, std\+::string condition\+Two)
+std\+::string \textbf{ select\+Between} (std\+::string condition\+String, std\+::string condition\+String\+Two, std\+::string table\+Name, std\+::string condition\+Column, std\+::string condition\+Column\+Two, std\+::string condition, std\+::string condition\+Two)
 \begin{DoxyCompactList}\small\item\em Eingeschränkte Abfragen. \end{DoxyCompactList}\item 
-void \textbf{ select\+Columns\+Alias} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::vector$<$ std\+::string $>$aliases)
+std\+::string \textbf{ select\+Columns\+Alias} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::vector$<$ std\+::string $>$aliases)
 \begin{DoxyCompactList}\small\item\em Alias-\/\+Spaltennamen. \end{DoxyCompactList}\item 
-void \textbf{ select\+Table\+Alias} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string alias\+Table\+Name)
+std\+::string \textbf{ select\+Table\+Alias} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string alias\+Table\+Name)
 \begin{DoxyCompactList}\small\item\em Zuweisung eines Alias. \end{DoxyCompactList}\item 
-void \textbf{ select\+Group\+By} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string condition\+Column, std\+::string condition\+Value, std\+::vector$<$ std\+::string $>$group\+By\+Columns)
+std\+::string \textbf{ select\+Group\+By} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string condition\+Column, std\+::string condition\+Value, std\+::vector$<$ std\+::string $>$group\+By\+Columns)
 \begin{DoxyCompactList}\small\item\em Gruppieren von Ergebnismengen. \end{DoxyCompactList}\item 
-void \textbf{ select\+Group\+By\+Order\+By} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string condition\+Column, std\+::string condition\+Value, std\+::vector$<$ std\+::string $>$group\+By\+Columns, std\+::string to\+Sortcolumn\+Name, std\+::string sort\+By)
+std\+::string \textbf{ select\+Group\+By\+Order\+By} (std\+::string table\+Name, std\+::vector$<$ std\+::string $>$columns, std\+::string condition\+Column, std\+::string condition\+Value, std\+::vector$<$ std\+::string $>$group\+By\+Columns, std\+::string to\+Sortcolumn\+Name, std\+::string sort\+By)
 \begin{DoxyCompactList}\small\item\em Ergebnismengen + sortieren. \end{DoxyCompactList}\item 
-void \textbf{ select\+Count\+Group\+By\+Order\+By} (std\+::string table\+Name, std\+::string count\+Column, std\+::vector$<$ std\+::string $>$columns, std\+::string condition\+Column, std\+::string condition\+Value, std\+::vector$<$ std\+::string $>$group\+By\+Columns, std\+::string sort\+By)
+std\+::string \textbf{ select\+Count\+Group\+By\+Order\+By} (std\+::string table\+Name, std\+::string count\+Column, std\+::vector$<$ std\+::string $>$columns, std\+::string condition\+Column, std\+::string condition\+Value, std\+::vector$<$ std\+::string $>$group\+By\+Columns, std\+::string sort\+By)
 \begin{DoxyCompactList}\small\item\em Ergebnismengen gruppieren + zählen der Datensätze + Sortierung. \end{DoxyCompactList}\item 
-void \textbf{ select\+Null} (std\+::string table\+Name, std\+::string column\+Name)
+std\+::string \textbf{ select\+Null} (std\+::string table\+Name, std\+::string column\+Name)
 \begin{DoxyCompactList}\small\item\em N\+U\+LL Werte. \end{DoxyCompactList}\item 
-void \textbf{ select\+Inner\+Join} (std\+::string first\+Table\+Name, std\+::string column\+I\+D\+Table\+One, std\+::vector$<$ std\+::string $>$ columns\+Table\+One, std\+::string second\+Table\+Name, std\+::vector$<$ std\+::string $>$ columns\+Table\+Two)
+std\+::string \textbf{ select\+Inner\+Join} (std\+::string first\+Table\+Name, std\+::string column\+I\+D\+Table\+One, std\+::vector$<$ std\+::string $>$ columns\+Table\+One, std\+::string second\+Table\+Name, std\+::vector$<$ std\+::string $>$ columns\+Table\+Two)
 \begin{DoxyCompactList}\small\item\em Inner\+Join-\/\+Befehl. \end{DoxyCompactList}\item 
-void \textbf{ select\+Left\+Join} (std\+::string first\+Table\+Name, std\+::string column\+I\+D\+Table\+One, std\+::vector$<$ std\+::string $>$ columns\+Table\+One, std\+::string second\+Table\+Name, std\+::vector$<$ std\+::string $>$ columns\+Table\+Two)
+std\+::string \textbf{ select\+Left\+Join} (std\+::string first\+Table\+Name, std\+::string column\+I\+D\+Table\+One, std\+::vector$<$ std\+::string $>$ columns\+Table\+One, std\+::string second\+Table\+Name, std\+::vector$<$ std\+::string $>$ columns\+Table\+Two)
 \begin{DoxyCompactList}\small\item\em Left\+Join Methode. \end{DoxyCompactList}\item 
-void \textbf{ select\+Right\+Join} (std\+::string first\+Table\+Name, std\+::string column\+I\+D\+Table\+One, std\+::vector$<$ std\+::string $>$ columns\+Table\+One, std\+::string second\+Table\+Name, std\+::vector$<$ std\+::string $>$ columns\+Table\+Two)
-\item 
-void \textbf{ select\+Full\+Join} (std\+::string first\+Table\+Name, std\+::string column\+I\+D\+Table\+One, std\+::vector$<$ std\+::string $>$ columns\+Table\+One, std\+::string second\+Table\+Name, std\+::vector$<$ std\+::string $>$ columns\+Table\+Two)
-\begin{DoxyCompactList}\small\item\em Full\+Join Methode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+std\+::string \textbf{ select\+Right\+Join} (std\+::string first\+Table\+Name, std\+::string column\+I\+D\+Table\+One, std\+::vector$<$ std\+::string $>$ columns\+Table\+One, std\+::string second\+Table\+Name, std\+::vector$<$ std\+::string $>$ columns\+Table\+Two)
+\end{DoxyCompactItemize}
 
 
 \subsection{Dokumentation der Funktionen}
@@ -101,11 +99,11 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \includegraphics[width=350pt]{selection_request_8cpp_a1909c1b8666cf6e3d31a014c9a9ad2d7_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_a01bd0062142a17ad04b7101bac7b38b6}} 
+\mbox{\label{selection_request_8cpp_a0c0b74ea6569aa25068b80d57061e864}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Average\+Sum@{select\+Average\+Sum}}
 \index{select\+Average\+Sum@{select\+Average\+Sum}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Average\+Sum()}
-{\footnotesize\ttfamily void select\+Average\+Sum (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Average\+Sum (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name }\end{DoxyParamCaption})}
 
 
 
@@ -124,20 +122,20 @@ S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T A\+V\+G(\char`\"{} + column\+
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_a01bd0062142a17ad04b7101bac7b38b6_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_a0c0b74ea6569aa25068b80d57061e864_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_aaa15591ca7a3ba5d40fa77b7ae6753db}} 
+\mbox{\label{selection_request_8cpp_a5497ea7a5b36b35ae8f08ce374790858}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Between@{select\+Between}}
 \index{select\+Between@{select\+Between}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Between()}
-{\footnotesize\ttfamily void select\+Between (\begin{DoxyParamCaption}\item[{std\+::string}]{condition\+String,  }\item[{std\+::string}]{condition\+String\+Two,  }\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Column\+Two,  }\item[{std\+::string}]{condition,  }\item[{std\+::string}]{condition\+Two }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Between (\begin{DoxyParamCaption}\item[{std\+::string}]{condition\+String,  }\item[{std\+::string}]{condition\+String\+Two,  }\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Column\+Two,  }\item[{std\+::string}]{condition,  }\item[{std\+::string}]{condition\+Two }\end{DoxyParamCaption})}
 
 
 
@@ -169,20 +167,20 @@ S\+Q\+L-\/\+Befehl\+: S\+E\+L\+E\+CT $\ast$ \char`\"{} F\+R\+O\+M \char`\"{} + t
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_aaa15591ca7a3ba5d40fa77b7ae6753db_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_a5497ea7a5b36b35ae8f08ce374790858_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_a9ad9be1bbff160a127715440afafb800}} 
+\mbox{\label{selection_request_8cpp_a8c1eb741cc480c74a0042e9689c04a94}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Bool@{select\+Bool}}
 \index{select\+Bool@{select\+Bool}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Bool()}
-{\footnotesize\ttfamily void select\+Bool (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::vector$<$ std\+::string $>$}]{conditions,  }\item[{std\+::vector$<$ std\+::string $>$}]{condition\+Value,  }\item[{std\+::vector$<$ std\+::string $>$}]{conditions2,  }\item[{std\+::vector$<$ std\+::string $>$}]{condition\+Value2,  }\item[{std\+::vector$<$ std\+::string $>$}]{operators }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Bool (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::vector$<$ std\+::string $>$}]{conditions,  }\item[{std\+::vector$<$ std\+::string $>$}]{condition\+Value,  }\item[{std\+::vector$<$ std\+::string $>$}]{conditions2,  }\item[{std\+::vector$<$ std\+::string $>$}]{condition\+Value2,  }\item[{std\+::vector$<$ std\+::string $>$}]{operators }\end{DoxyParamCaption})}
 
 
 
@@ -216,20 +214,20 @@ S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void  Die Funktion gibt ein void zurück -\/$>$ to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde. 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_a9ad9be1bbff160a127715440afafb800_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_a8c1eb741cc480c74a0042e9689c04a94_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_a0bd3f475ec96949ae94bbbbec41f7725}} 
+\mbox{\label{selection_request_8cpp_a3eea3cd04977d9873801490d0fbec14a}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Columns\+Alias@{select\+Columns\+Alias}}
 \index{select\+Columns\+Alias@{select\+Columns\+Alias}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Columns\+Alias()}
-{\footnotesize\ttfamily void select\+Columns\+Alias (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::vector$<$ std\+::string $>$}]{aliases }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Columns\+Alias (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::vector$<$ std\+::string $>$}]{aliases }\end{DoxyParamCaption})}
 
 
 
@@ -251,20 +249,20 @@ Zuordnung\+: Spaltenname(i) = Alias-\/\+Spaltennamen(i)~\newline
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_a0bd3f475ec96949ae94bbbbec41f7725_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_a3eea3cd04977d9873801490d0fbec14a_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_a00f071477f164f70927ee9923dd77a39}} 
+\mbox{\label{selection_request_8cpp_aca36da6198b8c35ba721a68a51cd8898}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Count@{select\+Count}}
 \index{select\+Count@{select\+Count}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Count()}
-{\footnotesize\ttfamily void select\+Count (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{count\+Column,  }\item[{std\+::string}]{alias\+Column\+Name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Count (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{count\+Column,  }\item[{std\+::string}]{alias\+Column\+Name }\end{DoxyParamCaption})}
 
 
 
@@ -287,20 +285,20 @@ S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T C\+O\+U\+N\+T(\char`\"{} + co
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_a00f071477f164f70927ee9923dd77a39_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_aca36da6198b8c35ba721a68a51cd8898_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_a8d6f770e3b1eb29fce843172c187ccc6}} 
+\mbox{\label{selection_request_8cpp_a118df4625d0eec25ad2215f028520f72}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Count\+Distinct@{select\+Count\+Distinct}}
 \index{select\+Count\+Distinct@{select\+Count\+Distinct}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Count\+Distinct()}
-{\footnotesize\ttfamily void select\+Count\+Distinct (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{count\+Column }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Count\+Distinct (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{count\+Column }\end{DoxyParamCaption})}
 
 
 
@@ -319,20 +317,20 @@ S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T C\+O\+U\+N\+T(\+D\+I\+S\+T\+I
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_a8d6f770e3b1eb29fce843172c187ccc6_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_a118df4625d0eec25ad2215f028520f72_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_a851bc3e6b04b4dfaa359b43534a37cd5}} 
+\mbox{\label{selection_request_8cpp_ab115e996b276802329fb8d2899c6d44d}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Count\+Group\+By\+Order\+By@{select\+Count\+Group\+By\+Order\+By}}
 \index{select\+Count\+Group\+By\+Order\+By@{select\+Count\+Group\+By\+Order\+By}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Count\+Group\+By\+Order\+By()}
-{\footnotesize\ttfamily void select\+Count\+Group\+By\+Order\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{count\+Column,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value,  }\item[{std\+::vector$<$ std\+::string $>$}]{group\+By\+Columns,  }\item[{std\+::string}]{sort\+By }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Count\+Group\+By\+Order\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{count\+Column,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value,  }\item[{std\+::vector$<$ std\+::string $>$}]{group\+By\+Columns,  }\item[{std\+::string}]{sort\+By }\end{DoxyParamCaption})}
 
 
 
@@ -363,20 +361,20 @@ S\+Q\+L-\/\+Befehl A\+SC\+: std\+::string sql\+Command =\char`\"{}\+S\+E\+L\+E\+
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_a851bc3e6b04b4dfaa359b43534a37cd5_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_ab115e996b276802329fb8d2899c6d44d_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_aba13caf613af9f91f2a2f1a8f9d49967}} 
+\mbox{\label{selection_request_8cpp_aaad6e80fc6076afccfdccd194889aa92}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Distinct@{select\+Distinct}}
 \index{select\+Distinct@{select\+Distinct}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Distinct()}
-{\footnotesize\ttfamily void select\+Distinct (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Distinct (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns }\end{DoxyParamCaption})}
 
 
 
@@ -395,62 +393,20 @@ S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T D\+I\+S\+T\+I\+N\+C\+T \char`
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_aba13caf613af9f91f2a2f1a8f9d49967_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_aaad6e80fc6076afccfdccd194889aa92_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_a41392b97718c999af4867dc0c62ade0c}} 
-\index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Full\+Join@{select\+Full\+Join}}
-\index{select\+Full\+Join@{select\+Full\+Join}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
-\subsubsection{select\+Full\+Join()}
-{\footnotesize\ttfamily void select\+Full\+Join (\begin{DoxyParamCaption}\item[{std\+::string}]{first\+Table\+Name,  }\item[{std\+::string}]{column\+I\+D\+Table\+One,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+One,  }\item[{std\+::string}]{second\+Table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+Two }\end{DoxyParamCaption})}
-
-
-
-Full\+Join Methode. 
-
-Mithilfe der \char`\"{}select\+Full\+Join\char`\"{} Methode wird eine neue Ergebnistabelle erstellt.~\newline
- Durch Kombinieren von Spaltenwerten von zwei Tabellen (first\+Table und second\+Table) basierend auf dem Join-\/\+Prädikat.~\newline
- Die Abfrage vergleicht jede Zeile von table1 mit jeder Zeile von table2, um alle Zeilenpaare zu finden, die das Verknüpfungsprädikat erfüllen.~\newline
- Wenn das Join-\/\+Prädikat erfüllt ist, werden Spaltenwerte für jedes übereinstimmende Paar von Zeilen von A und B in einer Ergebniszeile zusammengefasst.~\newline
- Das Schlüsselwort F\+U\+LL O\+U\+T\+ER J\+O\+IN gibt alle Datensätze zurück, wenn eine Übereinstimmung in den Datensätzen der linken (first\+Table) oder der rechten (second\+Table) Tabelle vorliegt.~\newline
-
-
-S\+Q\+L-\/\+Befehl select $<$\+Auswahl$>$ F\+R\+OM TabelleA F\+U\+LL O\+U\+T\+ER J\+O\+IN TabelleB B ON A.\+ID = B.\+ID
-
-
-\begin{DoxyParams}{Parameter}
-{\em first\+Table\+Name} & = Name der ersten Tabelle \\
-\hline
-{\em column\+I\+D\+Table\+One} & = Enthält die zu vergleichene Spalte der ersten Tabelle \\
-\hline
-{\em columns\+Table\+One} & = Enthält die Liste der Spalten die aus der ersten Tabelle angezeigt werden sollen \\
-\hline
-{\em second\+Table\+Name} & = Name der zweiten Tabelle \\
-\hline
-{\em columns\+Table\+Two} & = Enthält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Rückgabe}
-void 
-\end{DoxyReturn}
-Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_a41392b97718c999af4867dc0c62ade0c_cgraph}
-\end{center}
-\end{figure}
-\mbox{\label{selection_request_8cpp_a54c70afd3e6ad75085ddf6aff29abe87}} 
+\mbox{\label{selection_request_8cpp_a70f6716adfb73ac0b427b3f264b6d848}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Group\+By@{select\+Group\+By}}
 \index{select\+Group\+By@{select\+Group\+By}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Group\+By()}
-{\footnotesize\ttfamily void select\+Group\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value,  }\item[{std\+::vector$<$ std\+::string $>$}]{group\+By\+Columns }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Group\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value,  }\item[{std\+::vector$<$ std\+::string $>$}]{group\+By\+Columns }\end{DoxyParamCaption})}
 
 
 
@@ -475,20 +431,20 @@ S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_a54c70afd3e6ad75085ddf6aff29abe87_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_a70f6716adfb73ac0b427b3f264b6d848_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_a5e60ce2e53b91725f89c66539e5bd73d}} 
+\mbox{\label{selection_request_8cpp_a4626b3e4c6a6a456371f2cddc13ffb7a}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Group\+By\+Order\+By@{select\+Group\+By\+Order\+By}}
 \index{select\+Group\+By\+Order\+By@{select\+Group\+By\+Order\+By}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Group\+By\+Order\+By()}
-{\footnotesize\ttfamily void select\+Group\+By\+Order\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value,  }\item[{std\+::vector$<$ std\+::string $>$}]{group\+By\+Columns,  }\item[{std\+::string}]{to\+Sortcolumn\+Name,  }\item[{std\+::string}]{sort\+By }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Group\+By\+Order\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value,  }\item[{std\+::vector$<$ std\+::string $>$}]{group\+By\+Columns,  }\item[{std\+::string}]{to\+Sortcolumn\+Name,  }\item[{std\+::string}]{sort\+By }\end{DoxyParamCaption})}
 
 
 
@@ -519,20 +475,20 @@ S\+Q\+L-\/\+Befehl für A\+SC\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_a5e60ce2e53b91725f89c66539e5bd73d_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_a4626b3e4c6a6a456371f2cddc13ffb7a_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_ac3a0a9620e1b5ac8c90104b1daea4f5f}} 
+\mbox{\label{selection_request_8cpp_a56add7eeed983b8439e87e7814474dff}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+In@{select\+In}}
 \index{select\+In@{select\+In}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+In()}
-{\footnotesize\ttfamily void select\+In (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{search\+In\+Column,  }\item[{std\+::vector$<$ std\+::string $>$}]{condition\+Value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+In (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{search\+In\+Column,  }\item[{std\+::vector$<$ std\+::string $>$}]{condition\+Value }\end{DoxyParamCaption})}
 
 
 
@@ -556,20 +512,20 @@ S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_ac3a0a9620e1b5ac8c90104b1daea4f5f_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_a56add7eeed983b8439e87e7814474dff_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_aa0d6684a1d4f8e82d699b713e38c9d44}} 
+\mbox{\label{selection_request_8cpp_a36f7b6465f35b2f96f04c33dec10afa2}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Inner\+Join@{select\+Inner\+Join}}
 \index{select\+Inner\+Join@{select\+Inner\+Join}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Inner\+Join()}
-{\footnotesize\ttfamily void select\+Inner\+Join (\begin{DoxyParamCaption}\item[{std\+::string}]{first\+Table\+Name,  }\item[{std\+::string}]{column\+I\+D\+Table\+One,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+One,  }\item[{std\+::string}]{second\+Table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+Two }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Inner\+Join (\begin{DoxyParamCaption}\item[{std\+::string}]{first\+Table\+Name,  }\item[{std\+::string}]{column\+I\+D\+Table\+One,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+One,  }\item[{std\+::string}]{second\+Table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+Two }\end{DoxyParamCaption})}
 
 
 
@@ -598,20 +554,20 @@ S\+Q\+L-\/\+Befehl\+: select $<$\+Auswahl$>$ F\+R\+OM TabelleA I\+N\+N\+ER J\+O\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_aa0d6684a1d4f8e82d699b713e38c9d44_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_a36f7b6465f35b2f96f04c33dec10afa2_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_a85d81ccc1d4c2b8cb7edcfe0a5a585f5}} 
+\mbox{\label{selection_request_8cpp_ac2063212201f14978b1abb0c9b94a460}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Left\+Join@{select\+Left\+Join}}
 \index{select\+Left\+Join@{select\+Left\+Join}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Left\+Join()}
-{\footnotesize\ttfamily void select\+Left\+Join (\begin{DoxyParamCaption}\item[{std\+::string}]{first\+Table\+Name,  }\item[{std\+::string}]{column\+I\+D\+Table\+One,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+One,  }\item[{std\+::string}]{second\+Table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+Two }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Left\+Join (\begin{DoxyParamCaption}\item[{std\+::string}]{first\+Table\+Name,  }\item[{std\+::string}]{column\+I\+D\+Table\+One,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+One,  }\item[{std\+::string}]{second\+Table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+Two }\end{DoxyParamCaption})}
 
 
 
@@ -641,20 +597,20 @@ S\+Q\+L-\/\+Befehl\+: select $<$\+Auswahl$>$ F\+R\+OM TabelleA L\+E\+FT J\+O\+IN
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_a85d81ccc1d4c2b8cb7edcfe0a5a585f5_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_ac2063212201f14978b1abb0c9b94a460_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_a80ced4bb0e929e97740616c59374d992}} 
+\mbox{\label{selection_request_8cpp_a9b72023da3a86c491cef2d340bede35e}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Like@{select\+Like}}
 \index{select\+Like@{select\+Like}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Like()}
-{\footnotesize\ttfamily void select\+Like (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{to\+Search\+Column,  }\item[{std\+::string}]{pattern,  }\item[{std\+::string}]{to\+Search }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Like (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{to\+Search\+Column,  }\item[{std\+::string}]{pattern,  }\item[{std\+::string}]{to\+Search }\end{DoxyParamCaption})}
 
 
 
@@ -685,20 +641,20 @@ S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void  Boolean als Rückgabewert 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_a80ced4bb0e929e97740616c59374d992_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_a9b72023da3a86c491cef2d340bede35e_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_a94c57cf58c1b2812e3d1ce9b3837286d}} 
+\mbox{\label{selection_request_8cpp_a4a7a5336f56c689d43717ed65d216928}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Limit\+Where\+Order\+By@{select\+Limit\+Where\+Order\+By}}
 \index{select\+Limit\+Where\+Order\+By@{select\+Limit\+Where\+Order\+By}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Limit\+Where\+Order\+By()}
-{\footnotesize\ttfamily void select\+Limit\+Where\+Order\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{limit\+Number,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value,  }\item[{std\+::string}]{to\+Sort\+Column\+Name,  }\item[{std\+::string}]{sort\+By }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Limit\+Where\+Order\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{limit\+Number,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value,  }\item[{std\+::string}]{to\+Sort\+Column\+Name,  }\item[{std\+::string}]{sort\+By }\end{DoxyParamCaption})}
 
 
 
@@ -728,20 +684,20 @@ S\+Q\+L-\/\+Befehl A\+SC\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Colum
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void  Die Funktion gibt ein void zurück -\/$>$ to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde. 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_a94c57cf58c1b2812e3d1ce9b3837286d_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_a4a7a5336f56c689d43717ed65d216928_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_ae4c9217024bfe521a229e0b4162e5ef7}} 
+\mbox{\label{selection_request_8cpp_acf929efd37e4b717717d99807cfe41e2}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Min\+Or\+Max@{select\+Min\+Or\+Max}}
 \index{select\+Min\+Or\+Max@{select\+Min\+Or\+Max}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Min\+Or\+Max()}
-{\footnotesize\ttfamily void select\+Min\+Or\+Max (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{min\+Or\+Max,  }\item[{std\+::string}]{min\+Or\+Max\+Column,  }\item[{std\+::string}]{alias\+Column }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Min\+Or\+Max (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{min\+Or\+Max,  }\item[{std\+::string}]{min\+Or\+Max\+Column,  }\item[{std\+::string}]{alias\+Column }\end{DoxyParamCaption})}
 
 
 
@@ -764,20 +720,20 @@ S\+Q\+L-\/\+Befehl für das Minimum\+: \char`\"{}\+S\+E\+L\+E\+C\+T M\+I\+N(\cha
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void  Boolean als Rückgabewert 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_ae4c9217024bfe521a229e0b4162e5ef7_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_acf929efd37e4b717717d99807cfe41e2_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_a39f437d3c3c841e8a82b9ad1b514007e}} 
+\mbox{\label{selection_request_8cpp_aba0d2e1188ed35207922e408c0f366fc}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Min\+Or\+Max\+Where@{select\+Min\+Or\+Max\+Where}}
 \index{select\+Min\+Or\+Max\+Where@{select\+Min\+Or\+Max\+Where}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Min\+Or\+Max\+Where()}
-{\footnotesize\ttfamily void select\+Min\+Or\+Max\+Where (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{min\+Or\+Max,  }\item[{std\+::string}]{min\+Or\+Max\+Column,  }\item[{std\+::string}]{alias\+Column,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Min\+Or\+Max\+Where (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{min\+Or\+Max,  }\item[{std\+::string}]{min\+Or\+Max\+Column,  }\item[{std\+::string}]{alias\+Column,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value }\end{DoxyParamCaption})}
 
 
 
@@ -805,20 +761,20 @@ S\+Q\+L-\/\+Befehl für das Minimum = \char`\"{}\+S\+E\+L\+E\+C\+T M\+I\+N(\char
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void  Boolean als Rückgabewert 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_a39f437d3c3c841e8a82b9ad1b514007e_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_aba0d2e1188ed35207922e408c0f366fc_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_aab8b32ae4ac6aeddc5c05578b4c79ace}} 
+\mbox{\label{selection_request_8cpp_ac5d1f449131f10de07406afce2eca45f}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Not\+Like@{select\+Not\+Like}}
 \index{select\+Not\+Like@{select\+Not\+Like}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Not\+Like()}
-{\footnotesize\ttfamily void select\+Not\+Like (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{to\+Search\+Column,  }\item[{std\+::string}]{pattern,  }\item[{std\+::string}]{to\+Search }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Not\+Like (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{to\+Search\+Column,  }\item[{std\+::string}]{pattern,  }\item[{std\+::string}]{to\+Search }\end{DoxyParamCaption})}
 
 
 
@@ -849,20 +805,20 @@ S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void  Boolean als Rückgabewert 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_aab8b32ae4ac6aeddc5c05578b4c79ace_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_ac5d1f449131f10de07406afce2eca45f_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_aedcd1503abb6715de26a92d34714dcce}} 
+\mbox{\label{selection_request_8cpp_a0972bc18453bc3a60f21f0f629fddf52}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Null@{select\+Null}}
 \index{select\+Null@{select\+Null}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Null()}
-{\footnotesize\ttfamily void select\+Null (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Null (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name }\end{DoxyParamCaption})}
 
 
 
@@ -881,20 +837,20 @@ S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T $\ast$ \char`\"{} + \char`\"{
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_aedcd1503abb6715de26a92d34714dcce_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_a0972bc18453bc3a60f21f0f629fddf52_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_aff2cca0ae3f40a8b3ec70e85702bb8fc}} 
+\mbox{\label{selection_request_8cpp_a139ed7a657cf0e77c9e30ff75fbf4a49}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Right\+Join@{select\+Right\+Join}}
 \index{select\+Right\+Join@{select\+Right\+Join}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Right\+Join()}
-{\footnotesize\ttfamily void select\+Right\+Join (\begin{DoxyParamCaption}\item[{std\+::string}]{first\+Table\+Name,  }\item[{std\+::string}]{column\+I\+D\+Table\+One,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+One,  }\item[{std\+::string}]{second\+Table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+Two }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Right\+Join (\begin{DoxyParamCaption}\item[{std\+::string}]{first\+Table\+Name,  }\item[{std\+::string}]{column\+I\+D\+Table\+One,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+One,  }\item[{std\+::string}]{second\+Table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns\+Table\+Two }\end{DoxyParamCaption})}
 
 Mithilfe der \char`\"{}select\+Right\+Join\char`\"{} Methode wird eine neue Ergebnistabelle erstellt.~\newline
  Durch Kombinieren von Spaltenwerten von zwei Tabellen (first\+Table und second\+Table) basierend auf dem Join-\/\+Prädikat. ~\newline
@@ -918,20 +874,20 @@ S\+Q\+L-\/\+Befehl\+: select $<$\+Auswahl$>$ F\+R\+OM TabelleA L\+E\+FT J\+O\+IN
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_aff2cca0ae3f40a8b3ec70e85702bb8fc_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_a139ed7a657cf0e77c9e30ff75fbf4a49_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_a6a41ec41130fdce3f2c4dd701438f26a}} 
+\mbox{\label{selection_request_8cpp_a171b9c43b31e26dd2c30acb9344d2da8}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Sort\+Table@{select\+Sort\+Table}}
 \index{select\+Sort\+Table@{select\+Sort\+Table}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Sort\+Table()}
-{\footnotesize\ttfamily void select\+Sort\+Table (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{to\+Sort\+Column\+Name,  }\item[{std\+::string}]{sort\+By }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Sort\+Table (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{to\+Sort\+Column\+Name,  }\item[{std\+::string}]{sort\+By }\end{DoxyParamCaption})}
 
 
 
@@ -953,20 +909,20 @@ S\+Q\+L-\/\+Befehl für A\+SC = \char`\"{}\+S\+E\+L\+E\+C\+T $\ast$ F\+R\+O\+M \
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_a6a41ec41130fdce3f2c4dd701438f26a_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_a171b9c43b31e26dd2c30acb9344d2da8_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_a9f37b58ba921dc5e6b5d4a5d0fefe28e}} 
+\mbox{\label{selection_request_8cpp_a8da8323e6a01c3f2ed669dccd7bf2854}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Sum@{select\+Sum}}
 \index{select\+Sum@{select\+Sum}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Sum()}
-{\footnotesize\ttfamily void select\+Sum (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name,  }\item[{std\+::string}]{alias\+Column\+Name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Sum (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{column\+Name,  }\item[{std\+::string}]{alias\+Column\+Name }\end{DoxyParamCaption})}
 
 
 
@@ -988,20 +944,20 @@ S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T S\+U\+M(\char`\"{} + column\+
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_a9f37b58ba921dc5e6b5d4a5d0fefe28e_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_a8da8323e6a01c3f2ed669dccd7bf2854_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_a3ac5ebbcfb624dc5178315c85c4b15fa}} 
+\mbox{\label{selection_request_8cpp_aa6e291bc8aca21c19e88231d4de51b70}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Table\+Alias@{select\+Table\+Alias}}
 \index{select\+Table\+Alias@{select\+Table\+Alias}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Table\+Alias()}
-{\footnotesize\ttfamily void select\+Table\+Alias (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{alias\+Table\+Name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Table\+Alias (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{alias\+Table\+Name }\end{DoxyParamCaption})}
 
 
 
@@ -1021,20 +977,20 @@ S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + column\+Alias + 
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_a3ac5ebbcfb624dc5178315c85c4b15fa_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_aa6e291bc8aca21c19e88231d4de51b70_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_a4ad130f751f8d14f3f13cbb70b1559c5}} 
+\mbox{\label{selection_request_8cpp_a1dc6e0b39020c0e1877be2e183e2e049}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Union@{select\+Union}}
 \index{select\+Union@{select\+Union}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Union()}
-{\footnotesize\ttfamily void select\+Union (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{column\+Name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Union (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{column\+Name }\end{DoxyParamCaption})}
 
 
 
@@ -1053,20 +1009,20 @@ S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + column\+Name.\+a
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_a4ad130f751f8d14f3f13cbb70b1559c5_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_a1dc6e0b39020c0e1877be2e183e2e049_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_a90eb635de3f1856a45557b42f18eff28}} 
+\mbox{\label{selection_request_8cpp_a7caa0e0e66c9c4cadc4ec5d596bba565}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Where@{select\+Where}}
 \index{select\+Where@{select\+Where}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Where()}
-{\footnotesize\ttfamily void select\+Where (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Where (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value }\end{DoxyParamCaption})}
 
 
 
@@ -1090,20 +1046,20 @@ S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+Columns + \
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void  Die Funktion gibt ein void zurück -\/$>$ to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde. 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_a90eb635de3f1856a45557b42f18eff28_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_a7caa0e0e66c9c4cadc4ec5d596bba565_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_a519933061d4010c3a8d743b7e9fa9939}} 
+\mbox{\label{selection_request_8cpp_ade3cc06b3d1ac3dc344ec9f606290468}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Where\+One\+Column@{select\+Where\+One\+Column}}
 \index{select\+Where\+One\+Column@{select\+Where\+One\+Column}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Where\+One\+Column()}
-{\footnotesize\ttfamily void select\+Where\+One\+Column (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Where\+One\+Column (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value }\end{DoxyParamCaption})}
 
 
 
@@ -1126,20 +1082,20 @@ S\+Q\+L-\/\+Befehl\+: \char`\"{}\+S\+E\+L\+E\+C\+T $\ast$ F\+R\+O\+M \char`\"{} 
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void  Die Funktion gibt ein void zurück -\/$>$ to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde. 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_a519933061d4010c3a8d743b7e9fa9939_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_ade3cc06b3d1ac3dc344ec9f606290468_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{selection_request_8cpp_a94269766ff6e39ba8a38f5623314c3cd}} 
+\mbox{\label{selection_request_8cpp_a1985a11967a7cbb2a2b38416fc6ffad5}} 
 \index{selection\+Request.\+cpp@{selection\+Request.\+cpp}!select\+Where\+Order\+By@{select\+Where\+Order\+By}}
 \index{select\+Where\+Order\+By@{select\+Where\+Order\+By}!selection\+Request.\+cpp@{selection\+Request.\+cpp}}
 \subsubsection{select\+Where\+Order\+By()}
-{\footnotesize\ttfamily void select\+Where\+Order\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value,  }\item[{std\+::string}]{to\+Sortcolumn\+Name,  }\item[{std\+::string}]{sort\+By }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string select\+Where\+Order\+By (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::vector$<$ std\+::string $>$}]{columns,  }\item[{std\+::string}]{condition\+Column,  }\item[{std\+::string}]{condition\+Value,  }\item[{std\+::string}]{to\+Sortcolumn\+Name,  }\item[{std\+::string}]{sort\+By }\end{DoxyParamCaption})}
 
 
 
@@ -1165,12 +1121,12 @@ S\+Q\+L-\/\+Befehl für A\+SC\+: \char`\"{}\+S\+E\+L\+E\+C\+T \char`\"{} + all\+
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Rückgabe}
-void 
+string 
 \end{DoxyReturn}
 Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{selection_request_8cpp_a94269766ff6e39ba8a38f5623314c3cd_cgraph}
+\includegraphics[width=350pt]{selection_request_8cpp_a1985a11967a7cbb2a2b38416fc6ffad5_cgraph}
 \end{center}
 \end{figure}

@@ -13,7 +13,7 @@ Include-\/\+Abhängigkeitsdiagramm für tables.\+cpp\+:\nopagebreak
 \item 
 void \textbf{ create\+Table} (bool primary\+\_\+key, std\+::string table\+Name, std\+::vector$<$ std\+::string $>$ columns)
 \begin{DoxyCompactList}\small\item\em Erstellen einer Tabelle. \end{DoxyCompactList}\item 
-void \textbf{ show\+Table} (std\+::string table\+Name)
+std\+::string \textbf{ show\+Table} (std\+::string table\+Name)
 \begin{DoxyCompactList}\small\item\em Ausgabe der Tabelle. \end{DoxyCompactList}\item 
 void \textbf{ rename\+Table} (std\+::string tablename, std\+::string new\+Table\+Name)
 \begin{DoxyCompactList}\small\item\em Änderung des Tabellennamens. \end{DoxyCompactList}\item 
@@ -27,11 +27,11 @@ void \textbf{ modifier\+Column\+Name} (std\+::string table\+Name, std\+::string 
 \begin{DoxyCompactList}\small\item\em Modifizieren des Spaltennamens. \end{DoxyCompactList}\item 
 void \textbf{ change\+The\+Datatype} (std\+::string table\+Name, std\+::string column\+Name, std\+::string datatype)
 \begin{DoxyCompactList}\small\item\em Ändern des Datentyps. \end{DoxyCompactList}\item 
-void \textbf{ get\+All\+Column} (std\+::string table\+Name)
+std\+::string \textbf{ get\+All\+Column} (std\+::string table\+Name)
 \begin{DoxyCompactList}\small\item\em Anzeigen von Spalten. \end{DoxyCompactList}\item 
-void \textbf{ count\+Datasets} (std\+::string table\+Name)
+std\+::string \textbf{ count\+Datasets} (std\+::string table\+Name)
 \begin{DoxyCompactList}\small\item\em Zählen der Datensätze. \end{DoxyCompactList}\item 
-void \textbf{ show\+Column\+Typ} (std\+::string table\+Name, std\+::string datatype)
+std\+::string \textbf{ show\+Column\+Typ} (std\+::string table\+Name, std\+::string datatype)
 \begin{DoxyCompactList}\small\item\em Datentyp der Spalte anzeigen lassen. \end{DoxyCompactList}\item 
 void \textbf{ delete\+Column} (std\+::string table\+Name, std\+::string column\+Name)
 \begin{DoxyCompactList}\small\item\em Löschen von Spalten. \end{DoxyCompactList}\item 
@@ -83,11 +83,11 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \includegraphics[width=350pt]{tables_8cpp_aef4d6b8ba9c38e5f1b459694421ad9e5_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{tables_8cpp_ad2178bf4577d7eea6caebd8d1c942088}} 
+\mbox{\label{tables_8cpp_a4e62be1037109b753ff7f5a291b5b31c}} 
 \index{tables.\+cpp@{tables.\+cpp}!count\+Datasets@{count\+Datasets}}
 \index{count\+Datasets@{count\+Datasets}!tables.\+cpp@{tables.\+cpp}}
 \subsubsection{count\+Datasets()}
-{\footnotesize\ttfamily void count\+Datasets (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string count\+Datasets (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
 
 
 
@@ -110,7 +110,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{tables_8cpp_ad2178bf4577d7eea6caebd8d1c942088_cgraph}
+\includegraphics[width=350pt]{tables_8cpp_a4e62be1037109b753ff7f5a291b5b31c_cgraph}
 \end{center}
 \end{figure}
 \mbox{\label{tables_8cpp_a018659fc814b4a097c4b4862f42fe554}} 
@@ -318,11 +318,11 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \includegraphics[width=350pt]{tables_8cpp_a9754762b2c19711bf3dcbfceca61d97d_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{tables_8cpp_aceb780082d3f7392e485cac394d6c606}} 
+\mbox{\label{tables_8cpp_a96bdfe7120502a30fdae84c0f6588a7f}} 
 \index{tables.\+cpp@{tables.\+cpp}!get\+All\+Column@{get\+All\+Column}}
 \index{get\+All\+Column@{get\+All\+Column}!tables.\+cpp@{tables.\+cpp}}
 \subsubsection{get\+All\+Column()}
-{\footnotesize\ttfamily void get\+All\+Column (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string get\+All\+Column (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
 
 
 
@@ -345,7 +345,7 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{tables_8cpp_aceb780082d3f7392e485cac394d6c606_cgraph}
+\includegraphics[width=350pt]{tables_8cpp_a96bdfe7120502a30fdae84c0f6588a7f_cgraph}
 \end{center}
 \end{figure}
 \mbox{\label{tables_8cpp_a244b10b3b373f8a174943176101a480f}} 
@@ -571,11 +571,11 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \includegraphics[width=350pt]{tables_8cpp_a4aca01f302c4488d661196653d8f6c28_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{tables_8cpp_addc31570307c41c7327c3da4886ae7bf}} 
+\mbox{\label{tables_8cpp_a8427554ae56596f846166ee15a18ca9a}} 
 \index{tables.\+cpp@{tables.\+cpp}!show\+Column\+Typ@{show\+Column\+Typ}}
 \index{show\+Column\+Typ@{show\+Column\+Typ}!tables.\+cpp@{tables.\+cpp}}
 \subsubsection{show\+Column\+Typ()}
-{\footnotesize\ttfamily void show\+Column\+Typ (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{datatype }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string show\+Column\+Typ (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name,  }\item[{std\+::string}]{datatype }\end{DoxyParamCaption})}
 
 
 
@@ -600,14 +600,14 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{tables_8cpp_addc31570307c41c7327c3da4886ae7bf_cgraph}
+\includegraphics[width=350pt]{tables_8cpp_a8427554ae56596f846166ee15a18ca9a_cgraph}
 \end{center}
 \end{figure}
-\mbox{\label{tables_8cpp_a22fbeb7f18a00bafd4864de51a3bca28}} 
+\mbox{\label{tables_8cpp_aef6c147be23808daed1acc7ca2dd5e7c}} 
 \index{tables.\+cpp@{tables.\+cpp}!show\+Table@{show\+Table}}
 \index{show\+Table@{show\+Table}!tables.\+cpp@{tables.\+cpp}}
 \subsubsection{show\+Table()}
-{\footnotesize\ttfamily void show\+Table (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::string show\+Table (\begin{DoxyParamCaption}\item[{std\+::string}]{table\+Name }\end{DoxyParamCaption})}
 
 
 
@@ -630,6 +630,6 @@ Hier ist ein Graph, der zeigt, was diese Funktion aufruft\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{tables_8cpp_a22fbeb7f18a00bafd4864de51a3bca28_cgraph}
+\includegraphics[width=350pt]{tables_8cpp_aef6c147be23808daed1acc7ca2dd5e7c_cgraph}
 \end{center}
 \end{figure}

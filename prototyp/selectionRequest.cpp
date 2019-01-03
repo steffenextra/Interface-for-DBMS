@@ -66,8 +66,7 @@
 	@param pattern = enhält das ausgewählte Muster
 	@param toSearch = enhält das zu suchende Element
 
-	@return void
-	@toDo Boolean als Rückgabewert
+	@return string
 
 	*/
 
@@ -144,8 +143,7 @@
 	@param pattern = enhält das ausgewählte Muster
 	@param toSearch = enhält das zu suchende Element
 
-	@return void
-	@toDo Boolean als Rückgabewert
+	@return string
 
 	*/
 
@@ -217,8 +215,7 @@
 	@param minOrMaxColumn = Gibt die Spalte an, die den Min/Max Wert enthalten soll
 	@param asColumn = Enhält den gewählten Aliasnamen für die Min/Max Spalte
 
-	@return void
-	@toDo Boolean als Rückgabewert
+	@return string
 
 
 
@@ -259,8 +256,7 @@
 	@param conditionColumn = Enhält den Namen der Bedingungsspalte
 	@param conditionValue = Enhält den Bedigungswert
 
-	@return void
-	@toDo Boolean als Rückgabewert
+	@return string
 
 
 	*/
@@ -301,8 +297,7 @@
 	@param toSortColumnName = Enhält die Spalte zu der sotiert werden soll
 	@param SortBy =Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
 
-	@return void
-	@toDo Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	@return string
 
 	*/
 
@@ -355,8 +350,7 @@
 	@param conditionValue = Enthält den Bedingungswert
 
 
-	@return void 
-	@toDo Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	@return string
 
 	*/
 
@@ -382,8 +376,7 @@
 	@param conditionColumn = Enthält den Namen der Bedingungsspalte
 	@param conditionValue = Enthält den Bedingungswert
 
-	@return void
-	@toDo Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	@return string
 
 	*/
 
@@ -433,10 +426,10 @@
 	@param operators = Enthält die Liste der boolischen Ausdrücke
 
 
-	@return void
-	@toDo Die Funktion gibt ein void zurück -> to Do sollte einen Boolean zurückgeben, ob der Befehl erfolgreich bearbeitet wurde.
+	@return string
 
 	*/
+
 	std::string selectBool(std::string tableName,std::vector<std::string> columns, std::vector<std::string>conditions,std::vector<std::string>conditionValue,std::vector<std::string> conditions2,std::vector<std::string>conditionValue2,std::vector<std::string>operators){
 
 			int i=0;
@@ -511,7 +504,7 @@
 	@param toSortColumnName =Enhält die Spalte zu der sotiert werden soll
 	@param SortBy = Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
 
-	@return void
+	@return string
 
 	*/
 
@@ -563,7 +556,7 @@
 	@param toSortColumnName = Enhält die Spalte zu der sotiert werden soll
 	@param SortBy = Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
 
-	@return void 
+	@return string
 
 	*/
 
@@ -600,7 +593,7 @@
 	@param countColumn = Enthält die zu zählende Spalte
 	@param aliasColumn = Enthält den gewählten Aliasnamen für die zurückgegebene Spalte
 
-	@return void
+	@return string
 
 	*/
 
@@ -624,7 +617,7 @@
 	@param tableName = Name der Tabelle
 	@param column = Enthält die Liste der angezeigten Spalten
 
-	@return void
+	@return string
 
 
 	*/
@@ -666,7 +659,7 @@
 	@param tableName = Name der Tabelle
 	@param countColumn = Enthält die zu zählende Spalte
 
-	@return void
+	@return string
 
 	*/
 
@@ -691,7 +684,7 @@
 	@param tableName = Name der Tabelle
 	@param columnName = Enthält den Spaltennamen von der, der Durchschnitt berechnet werden soll
 
-	@return void
+	@return string
 
 
 	*/
@@ -716,7 +709,7 @@
 	@param columnName = Enthält den Spaltennamen von der, die Summe berechnet werden soll
 	@param aliasColumnName = Enthält den Aliasnamen
 
-	@return void
+	@return string
 
 
 	*/
@@ -740,7 +733,7 @@
 	@param tableName = Enthält die Liste der Tabellennamen
 	@param columnName = Enthält die Liste der Spaltennamen
 
-	@return void
+	@return string
 
 
 	*/
@@ -778,7 +771,7 @@
 	@param searchInColumn = Enthält den Spaltennamen in der die Werte vergleicht werden
 	@param conditionValue = Enthält eine Liste der zu vergleichenden Werten
 
-	@return void
+	@return string
 
 
 	*/
@@ -839,7 +832,7 @@
 	@param condition = Bedingung (... = 'Hans') 
 	@param conditionTwo = Bedingung (... = "Hans")
 
-	@return void
+	@return string
 
 
 	*/
@@ -865,7 +858,7 @@
 	@param columns = Enthält die Liste der zu anzeigenen & zu unbennenen Spalten
 	@param aliases = Enthält die Liste mit den Aliasnamen
 
-	@return void
+	@return string
 
 
 	*/
@@ -906,12 +899,12 @@
 	@param columns = Enthält die Liste der zu anzeigenen Spalten
 	@param aliasTabellennamen = Enthält den Alias-Tabellennamen
 
-	@return void
+	@return string
 
 
 	*/
 
-	void selectTableAlias(std::string tableName,std::vector<std::string>columns,std::string aliasTableName){
+	std::string selectTableAlias(std::string tableName,std::vector<std::string>columns,std::string aliasTableName){
 	
 		std::string columnAlias;
 		int i =0;
@@ -931,8 +924,8 @@
 
 		std::string sqlCommand ="SELECT " + columnAlias + " FROM " + tableName + " AS " + aliasTableName +";";
 		check_error();
-		connection_feedbackAll(sqlCommand.c_str());
-	
+		std::string selects = connection_feedbackAll(sqlCommand.c_str());
+		return selects;
 	}
 
 	/**
@@ -949,12 +942,12 @@
 	@param conditionValue = Enthält den Bedingungswert
 	@param groupByColumns = Enhält die Liste der zu gruppierenden Spaltennamen
 
-	@return void
+	@return string
 
 
 	*/
 
-	void selectGroupBy(std::string tableName, std::vector<std::string>columns,std::string conditionColumn,std::string conditionValue,std::vector<std::string>groupByColumns){
+	std::string selectGroupBy(std::string tableName, std::vector<std::string>columns,std::string conditionColumn,std::string conditionValue,std::vector<std::string>groupByColumns){
 	
 		int i=0;
 		std::string allColumns;
@@ -990,8 +983,8 @@
 
 		std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns + ";";
 		check_error();
-		connection_feedbackAll(sqlCommand.c_str());
-	
+		std::string selects  = connection_feedbackAll(sqlCommand.c_str());
+		return selects;
 	}
 
 	/**
@@ -1011,17 +1004,17 @@
 	@param toSortColumnName = Enthält die Spalte zu der sotiert werden soll
 	@param SortBy = Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
 
-	@return void
+	@return string
 
 
 	*/
 
-	void selectGroupByOrderBy(std::string tableName, std::vector<std::string>columns,std::string conditionColumn,std::string conditionValue,std::vector<std::string>groupByColumns,std::string toSortcolumnName,std::string sortBy){
+	std::string selectGroupByOrderBy(std::string tableName, std::vector<std::string>columns,std::string conditionColumn,std::string conditionValue,std::vector<std::string>groupByColumns,std::string toSortcolumnName,std::string sortBy){
 	
 		int i=0;
 		std::string allColumns;
 		std::string allGroupByColumns;
-
+		std::string selects;
 		while(i<columns.size()){
 			if(columns.size()==1){
 				allColumns +=  columns.at(i) + " ";
@@ -1053,17 +1046,17 @@
 		if(sortBy=="ASC" || sortBy=="asc"){
 			std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns +  " ORDER BY " + toSortcolumnName  + " ASC;";
 			check_error(); 
-			connection_feedbackAll(sqlCommand.c_str());
+			selects = connection_feedbackAll(sqlCommand.c_str());
 		}
 
 		if(sortBy=="DESC" || sortBy=="desc"){
 			std::string sqlCommand ="SELECT " + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns + " ORDER BY " + toSortcolumnName  + " DESC;";
 			check_error(); 
-			connection_feedbackAll(sqlCommand.c_str());
+			selects = connection_feedbackAll(sqlCommand.c_str());
 		}else{
 			//exception Handling
 		}
-
+		return selects;
 	}
 	/**
 
@@ -1085,16 +1078,17 @@
 	@param toSortColumnName = Enthält die Spalte zu der sotiert werden soll
 	@param SortBy = Gibt an ob es Aufsteigend bzw Absteigend sotoiert werden soll
 
-	@return void
+	@return string
 
 
 	*/
 
-	void selectCountGroupByOrderBy(std::string tableName, std::string countColumn,std::vector<std::string>columns,std::string conditionColumn,std::string conditionValue,std::vector<std::string>groupByColumns,std::string sortBy){
+	std::string selectCountGroupByOrderBy(std::string tableName, std::string countColumn,std::vector<std::string>columns,std::string conditionColumn,std::string conditionValue,std::vector<std::string>groupByColumns,std::string sortBy){
 	
 		int i=0;
 		std::string allColumns;
 		std::string allGroupByColumns;
+		std::string selects;
 		while(i<columns.size()){
 			if(columns.size()==1){
 				allColumns +=  columns.at(i) + " ";
@@ -1130,18 +1124,18 @@
 		if(sortBy=="ASC" || sortBy=="asc"){
 			std::string sqlCommand ="SELECT COUNT(" + countColumn +")," + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns +  " ORDER BY COUNT(" + countColumn +") ASC;";
 			check_error(); 
-			connection_feedbackAll(sqlCommand.c_str());
+			selects = connection_feedbackAll(sqlCommand.c_str());
 		}
 
 		if(sortBy=="DESC" || sortBy=="desc"){
 			std::string sqlCommand ="SELECT COUNT(" + countColumn +")," + allColumns + " FROM " + tableName + " WHERE " + conditionColumn  + " = '" + conditionValue + "' GROUP BY " + allGroupByColumns +  " ORDER BY COUNT(" + countColumn +") DESC;";
 			check_error(); 
-			connection_feedbackAll(sqlCommand.c_str());
+			selects = connection_feedbackAll(sqlCommand.c_str());
 		}
 		else{
 			std::cout << "Da ist etwas falsch gelaufen" << std::endl;
 		}
-
+		return selects;
 	}
 
 	/**
@@ -1155,18 +1149,18 @@
 	@param tableName = Name der Tabelle
 	@param ColumnName = Enhält den Namen der Bedingungsspalte
 
-	@return void
+	@return string
 
 
 	*/
 
-	void selectNull(std::string tableName, std::string columnName){
+	std::string selectNull(std::string tableName, std::string columnName){
 
 		std::string first = "SELECT * ";
 		std::string sqlCommand = first + " FROM " + tableName + " WHERE " + columnName + " IS NULL" + " OR ' '; ";
 		check_error();
-		connection_feedbackAll(sqlCommand.c_str());
-
+		std::string selects = connection_feedbackAll(sqlCommand.c_str());
+		return selects;
 	}
 
 	/**
@@ -1187,12 +1181,12 @@
 	@param secondTableName = Enthält den Tabellennamen der zweiten Tabelle
 	@param columnsTableTwo = Enthält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen
 
-	@return void
+	@return string
 
 
 	*/
 
-	void selectInnerJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo){
+	std::string selectInnerJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo){
 
 		int i=0;
 		std::string allColumns;
@@ -1220,8 +1214,8 @@
 		std::string sqlCommand = "SELECT " + allColumns + " FROM " + firstTableName + " INNER JOIN " + secondTableName + " ON " + secondTableName + "."  + columnIDTableOne + "=" + firstTableName + "." + columnIDTableOne + ";"; 	 
 		std::cout << sqlCommand << std::endl;
 		check_error();
-		connection_feedbackAll(sqlCommand.c_str());
-
+		std::string selects = connection_feedbackAll(sqlCommand.c_str());
+		return selects;
 	}
 
 	/**
@@ -1243,12 +1237,12 @@
 	@param secondTableName =Enthält den Tabellennamen der zweiten Tabelle
 	@param columnsTableTwo = Enthält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen
 
-	@return void
+	@return string
 
 
 	*/
 
-	void selectLeftJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo){
+	std::string selectLeftJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo){
 		
 		int i=0;
 		std::string allColumns;
@@ -1278,8 +1272,8 @@
 		std::string sqlCommand = "SELECT " + allColumns + " FROM " + firstTableName + " LEFT JOIN " + secondTableName + " ON " + firstTableName + "."  + columnIDTableOne + "=" + secondTableName + "." + columnIDTableOne + ";"; 	 
 		std::cout << sqlCommand << std::endl;
 		check_error();
-		connection_feedbackAll(sqlCommand.c_str());
-
+		std::string selects = connection_feedbackAll(sqlCommand.c_str());
+		return selects;
 	}
 
 	/**
@@ -1299,12 +1293,12 @@
 	@param secondTableName = Name der zweiten Tabelle
 	@param columnsTableTwo = Enthält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen
 
-	@return void
+	@return string
 
 
 	*/
 
-	void selectRightJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo){
+	std::string selectRightJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo){
 
 		int i=0;
 		std::string allColumns;
@@ -1332,8 +1326,8 @@
 		std::string sqlCommand = "SELECT " + allColumns + " FROM " + secondTableName + " RIGHT JOIN " + firstTableName + " ON " + secondTableName + "."  + columnIDTableOne + "=" + secondTableName + "." + columnIDTableOne + ";"; 	 
 		std::cout << sqlCommand << std::endl;
 		check_error();
-		connection_feedbackAll(sqlCommand.c_str());
-	
+		std::string selects = connection_feedbackAll(sqlCommand.c_str());
+		return selects;
 	}
 
 	/**
@@ -1355,44 +1349,10 @@
 	@param secondTableName = Name der zweiten Tabelle 
 	@param columnsTableTwo = Enthält die Liste der Spalten die aus der zweiten Tabelle angezeigt werden sollen
 
-	@return void
+	@return string
 3
 
 	*/
-
-	void selectFullJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo){
-   // FULL JOIN wird nicht supported LEFT JOIN UNION RIGHT JOIN benutzen 
-	// https://stackoverflow.com/questions/7978663/mysql-full-join
-		int i=0;
-		std::string allColumns;
-
-		while(i<columnsTableOne.size()){
-			allColumns +=  firstTableName + "." + columnsTableOne.at(i) + ", ";
-			i++;
-		}
-
-		i=0;
-
-		while(i<columnsTableTwo.size()){
-			if(columnsTableTwo.size()==1){
-				allColumns +=  secondTableName + "." + columnsTableTwo.at(i) + " ";
-			}else{
-			
-				if (i != columnsTableTwo.size()-1){
-					allColumns += secondTableName + "." + columnsTableOne.at(i) + ", ";
-				}else{
-					allColumns +=  secondTableName + "." + columnsTableTwo.at(i) + " ";
-				}
-			}
-			i++;
-		}
-
-		std::string sqlCommand = "SELECT " + allColumns + " FROM " + firstTableName + " FULL OUTER JOIN " + secondTableName + " ON " + firstTableName + "."  + columnIDTableOne + "=" + secondTableName + "." + columnIDTableOne + ";"; 	 
-		std::cout << sqlCommand << std::endl;
-		check_error();
-		connection_feedbackAll(sqlCommand.c_str());
-	
-	}
 
 
 
