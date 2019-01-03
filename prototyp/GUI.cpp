@@ -1412,8 +1412,11 @@ Fl_Check_Button *queryM;
 		if(((Fl_Button*)w) -> value()){}
 			else{
 
-				selectCount(tableName->value(),countColumn->value(),aliasColumn->value());
-			
+			std::string counts = selectCount(tableName->value(),countColumn->value(),aliasColumn->value());
+			outputWindow = new OutputWindow();
+ 			outputWindow ->show();
+ 			tableOutput -> value(counts.c_str());
+
 			}
 	}
 
@@ -1424,7 +1427,10 @@ Fl_Check_Button *queryM;
 					std::vector<std::string> col = charToVec(columns->value());
 					std::vector<std::string> conditionVal = charToVec(conditionValue->value());
 				
-					selectIn(tableName->value(),col,toSearchColumn->value(),conditionVal);
+					std::string selects = selectIn(tableName->value(),col,toSearchColumn->value(),conditionVal);
+					outputWindow = new OutputWindow();
+ 					outputWindow ->show();
+ 					tableOutput -> value(selects.c_str());
 				}
 
 			}
@@ -1434,16 +1440,20 @@ Fl_Check_Button *queryM;
 		if(((Fl_Button*)w) -> value()){}
 			else{
 				std::vector<std::string> col = charToVec(columns->value());
-				selectDistinct(tableName->value(),col);
-
+				std::string selects = selectDistinct(tableName->value(),col);
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
 	void whenPushedSelectCountDistinctExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectCountDistinct(tableName->value(),countColumn->value());
-
+				std::string selects = selectCountDistinct(tableName->value(),countColumn->value());
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
@@ -1451,8 +1461,10 @@ Fl_Check_Button *queryM;
 		if(((Fl_Button*)w) -> value()){}
 			else{
 			std::vector<std::string> col = charToVec(columns->value());				
-			selectLike(tableName->value(),col,toSearchColumn->value(),pattern->value(),search->value());
-			
+			std::string selects = selectLike(tableName->value(),col,toSearchColumn->value(),pattern->value(),search->value());
+			outputWindow = new OutputWindow();
+ 			outputWindow ->show();
+ 			tableOutput -> value(selects.c_str());
 			}
 
 	}
@@ -1461,40 +1473,50 @@ Fl_Check_Button *queryM;
 		if(((Fl_Button*)w) -> value()){}
 			else{
 				std::vector<std::string> col = charToVec(columns->value());
-				selectNotLike(tableName->value(),col ,toSearchColumn->value(),pattern->value(),search->value());
-
+				std::string selects = selectNotLike(tableName->value(),col ,toSearchColumn->value(),pattern->value(),search->value());
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
 	void whenPushedSelectSumExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectSum(tableName->value(),  sumColumn->value(), aliasColumn->value());
-
+				std::string selects = selectSum(tableName->value(),  sumColumn->value(), aliasColumn->value());
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
 	void whenPushedSelectAverageSumExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectAverageSum(tableName->value(),averageSumColumn->value());
-
+				std::string selects = selectAverageSum(tableName->value(),averageSumColumn->value());
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
 	void whenPushedSelectSortTableExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectSortTable(tableName->value(),sortColumn->value(), sortBy->value());
-
+				std::string selects = selectSortTable(tableName->value(),sortColumn->value(), sortBy->value());
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
 	void whenPushedSelectBetweenExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectBetween(conditionValue->value(),conditionValueTwo->value(),tableName->value(),conditionColumn->value(),conditionColumnTwo->value(), condition->value(),conditionTwo->value());
-
+				std::string selectsselectBetween(conditionValue->value(),conditionValueTwo->value(),tableName->value(),conditionColumn->value(),conditionColumnTwo->value(), condition->value(),conditionTwo->value());
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 
 	}
@@ -1502,16 +1524,20 @@ Fl_Check_Button *queryM;
 	void whenPushedSelectMinOrMaxExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectMinOrMax(tableName->value(),minMaxValue->value(),minMaxColumn->value(),aliasColumn->value());
-
+				std::string selects = selectMinOrMax(tableName->value(),minMaxValue->value(),minMaxColumn->value(),aliasColumn->value());
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
 	void whenPushedSelectMinOrMaxWhereExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectMinOrMaxWhere(tableName->value(),minMaxValue->value(), minMaxColumn->value(),aliasColumn->value(),conditionColumn->value(),conditionValue->value());
-
+				std::string selects = selectMinOrMaxWhere(tableName->value(),minMaxValue->value(), minMaxColumn->value(),aliasColumn->value(),conditionColumn->value(),conditionValue->value());
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
@@ -1522,8 +1548,10 @@ Fl_Check_Button *queryM;
 
 				std::vector<std::string> colum = charToVec(columns->value());
 
-				selectWhere(tableName->value(),colum,conditionColumn->value(),conditionValue->value());
-
+				std::string selects = selectWhere(tableName->value(),colum,conditionColumn->value(),conditionValue->value());
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
@@ -1531,7 +1559,10 @@ Fl_Check_Button *queryM;
 		if(((Fl_Button*)w) -> value()){}
 			else{
 				std::vector<std::string> col = charToVec(columns->value());
-				selectWhereOrderBy(tableName->value(),col,conditionColumn->value(),conditionValue->value(), sortColumn->value(),sortBy->value());
+				std::string selects = selectWhereOrderBy(tableName->value(),col,conditionColumn->value(),conditionValue->value(), sortColumn->value(),sortBy->value());
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
@@ -1539,8 +1570,10 @@ Fl_Check_Button *queryM;
 	void whenPushedSelectWhereOneColumnExecute(Fl_Widget* w, void*){
 		if(((Fl_Button*)w) -> value()){}
 			else{
-				selectWhereOneColumn(tableName->value(),conditionColumn->value(),conditionValue->value());
-
+				std::string selects = selectWhereOneColumn(tableName->value(),conditionColumn->value(),conditionValue->value());
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
@@ -1555,8 +1588,10 @@ Fl_Check_Button *queryM;
 				std::vector<std::string> conValTwo = charToVec(conditionValueTwo->value());
 				std::vector<std::string> op = charToVec(operators -> value());
 
-				selectBool(tableName->value(), col, con, conVal, conTwo, conValTwo, op);
-
+				std::string selects = selectBool(tableName->value(), col, con, conVal, conTwo, conValTwo, op);
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
@@ -1565,8 +1600,10 @@ Fl_Check_Button *queryM;
 			else{
 				std::vector<std::string> col = charToVec(columns->value());
 
-				selectLimitWhereOrderBy(tableName->value(),col,limitNumber->value(), conditionColumn->value(), conditionValue->value(),toSortColumnName->value(),sortBy->value());
-
+				std::string selects = selectLimitWhereOrderBy(tableName->value(),col,limitNumber->value(), conditionColumn->value(), conditionValue->value(),toSortColumnName->value(),sortBy->value());
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
@@ -1576,8 +1613,10 @@ void whenPushedSelectUnionExecute(Fl_Widget* w, void*){
 				std::vector<std::string> tabNam = charToVec(tableName->value());
 				std::vector<std::string> colNam = charToVec(columnName->value());
 				
-				selectUnion(tabNam,colNam);
-
+				std::string selects = selectUnion(tabNam,colNam);
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
@@ -1587,8 +1626,10 @@ void whenPushedSelectColumnAliasExecute(Fl_Widget* w, void*){
 				std::vector<std::string> col = charToVec(columns->value());
 				std::vector<std::string> alias = charToVec(aliases->value());
 				
-				selectColumnsAlias(tableName->value(),col,alias);
-
+				std::string selects = selectColumnsAlias(tableName->value(),col,alias);
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
@@ -1597,8 +1638,10 @@ void whenPushedSelectTableAliasExecute(Fl_Widget* w, void*){
 			else{
 				std::vector<std::string> col = charToVec(columns->value());
 
-				selectTableAlias(tableName->value(), col, aliasTable->value());
-
+				std::string selects = selectTableAlias(tableName->value(), col, aliasTable->value());
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
  	} 
 
@@ -1608,8 +1651,10 @@ void whenPushedSelectGroupByExecute(Fl_Widget* w, void*){
 				std::vector<std::string> col = charToVec(columns->value());
 				std::vector<std::string> groupColumns = charToVec(groupByColumns->value());
 
-				selectGroupBy(tableName->value(),col,conditionColumn->value(),conditionValue->value(),groupColumns);
-
+				std::string selects = selectGroupBy(tableName->value(),col,conditionColumn->value(),conditionValue->value(),groupColumns);
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
@@ -1619,7 +1664,10 @@ void whenPushedSelectGroupByOrderByExecute(Fl_Widget* w, void*){
 				std::vector<std::string> col = charToVec(columns->value());
 				std::vector<std::string> groupColum = charToVec(groupByColumns->value());
 
-				selectGroupByOrderBy(tableName->value(),col,conditionColumn->value(),conditionValue->value(),groupColum, sortColumn->value(), sortBy->value());
+				std::string selects = selectGroupByOrderBy(tableName->value(),col,conditionColumn->value(),conditionValue->value(),groupColum, sortColumn->value(), sortBy->value());
+				outputWindow = new OutputWindow();
+ 				outputWindow ->show();
+ 				tableOutput -> value(selects.c_str());
 			}
 	}
 
