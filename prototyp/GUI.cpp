@@ -2127,7 +2127,8 @@ DeleteDatabase::DeleteDatabase() : Fl_Window(600,400,560,310,"SQL-Interface"){
 //Entry
 
 
-SetEntry::SetEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+
+SetEntry::SetEntry() : Fl_Window(600,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -2150,7 +2151,7 @@ SetEntry::SetEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 	show();
 }
 
-ModifierEntry::ModifierEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+ModifierEntry::ModifierEntry() : Fl_Window(600,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -2176,7 +2177,7 @@ ModifierEntry::ModifierEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 
 }
 
- SetAllEntry::SetAllEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+ SetAllEntry::SetAllEntry() : Fl_Window(600,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -2200,7 +2201,7 @@ ModifierEntry::ModifierEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 
 }
 
-DeleteEntry::DeleteEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+DeleteEntry::DeleteEntry() : Fl_Window(600,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -2225,7 +2226,7 @@ DeleteEntry::DeleteEntry() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 }
 
 //Table-Window
-CreateTable::CreateTable() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+CreateTable::CreateTable() : Fl_Window(600,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -2252,7 +2253,7 @@ CreateTable::CreateTable() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 	show();
 }
 
-ShowTableCommand::ShowTableCommand() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+ShowTableCommand::ShowTableCommand() : Fl_Window(600,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -2272,7 +2273,7 @@ ShowTableCommand::ShowTableCommand() : Fl_Window(1280,400,620,310,"SQL-Interface
 	show();
 }
 
-CountDatasets::CountDatasets() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+CountDatasets::CountDatasets() : Fl_Window(600,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -2293,7 +2294,7 @@ CountDatasets::CountDatasets() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 	show();
 }
 
-RenameTable::RenameTable() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+RenameTable::RenameTable() : Fl_Window(600,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -2313,7 +2314,7 @@ RenameTable::RenameTable() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 	end();
 	show();
 }
-DeleteTable::DeleteTable() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+DeleteTable::DeleteTable() : Fl_Window(600,400,620,310,"SQL-Interface"){	  
 	color(FL_WHITE);
 	begin();
 
@@ -2333,7 +2334,7 @@ DeleteTable::DeleteTable() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 	show();	
 
 }
-SetColumn::SetColumn() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+SetColumn::SetColumn() : Fl_Window(600,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -2364,7 +2365,7 @@ SetColumn::SetColumn() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 	end();
 	show();
 }
-SetColumnWithPrimary::SetColumnWithPrimary() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+SetColumnWithPrimary::SetColumnWithPrimary() : Fl_Window(600,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -2395,7 +2396,7 @@ SetColumnWithPrimary::SetColumnWithPrimary() : Fl_Window(1280,400,620,310,"SQL-I
 	end();
 	show();
 }
- ModifierColumnName::ModifierColumnName() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+ ModifierColumnName::ModifierColumnName() : Fl_Window(600,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -2428,7 +2429,7 @@ SetColumnWithPrimary::SetColumnWithPrimary() : Fl_Window(1280,400,620,310,"SQL-I
 	show();
 }
 
- ChangeDatatype::ChangeDatatype() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+ ChangeDatatype::ChangeDatatype() : Fl_Window(600,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -2459,7 +2460,7 @@ SetColumnWithPrimary::SetColumnWithPrimary() : Fl_Window(1280,400,620,310,"SQL-I
 	show();
 }
 
- GetAllColumns::GetAllColumns() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+ GetAllColumns::GetAllColumns() : Fl_Window(600,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -2478,7 +2479,7 @@ SetColumnWithPrimary::SetColumnWithPrimary() : Fl_Window(1280,400,620,310,"SQL-I
 	end();
 	show();
 }
-ShowColumnType::ShowColumnType() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+ShowColumnType::ShowColumnType() : Fl_Window(600,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -2506,7 +2507,7 @@ ShowColumnType::ShowColumnType() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 	end();
 	show();
 }
-DeleteColumn::DeleteColumn() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+DeleteColumn::DeleteColumn() : Fl_Window(600,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -2528,7 +2529,7 @@ DeleteColumn::DeleteColumn() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 	end();
 	show();
 }
-SetSecondaryKey::SetSecondaryKey() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+SetSecondaryKey::SetSecondaryKey() : Fl_Window(600,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -2554,7 +2555,7 @@ SetSecondaryKey::SetSecondaryKey() : Fl_Window(1280,400,620,310,"SQL-Interface")
 	show();
 }
 
-DeleteSecondaryKey::DeleteSecondaryKey() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+DeleteSecondaryKey::DeleteSecondaryKey() : Fl_Window(600,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -2576,7 +2577,7 @@ DeleteSecondaryKey::DeleteSecondaryKey() : Fl_Window(1280,400,620,310,"SQL-Inter
 	show();
 }
 
-SetPrimaryKey::SetPrimaryKey() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+SetPrimaryKey::SetPrimaryKey() : Fl_Window(600,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -2597,7 +2598,7 @@ SetPrimaryKey::SetPrimaryKey() : Fl_Window(1280,400,620,310,"SQL-Interface"){
 	end();
 	show();
 }
-DeletePrimaryKey::DeletePrimaryKey() : Fl_Window(1280,400,620,310,"SQL-Interface"){	  
+DeletePrimaryKey::DeletePrimaryKey() : Fl_Window(600,400,620,310,"SQL-Interface"){	  
 		
 	color(FL_WHITE);
 	begin();
@@ -2618,7 +2619,7 @@ DeletePrimaryKey::DeletePrimaryKey() : Fl_Window(1280,400,620,310,"SQL-Interface
 	show();
 }
 
-SelectLike::SelectLike() :  Fl_Window(1280,400,620,310,"SQL-Interface"){	 
+SelectLike::SelectLike() :  Fl_Window(600,400,620,310,"SQL-Interface"){	 
 		
     color(FL_WHITE);
     begin();
@@ -2644,7 +2645,7 @@ SelectLike::SelectLike() :  Fl_Window(1280,400,620,310,"SQL-Interface"){
     show();
 }
 
-SelectNotLike::SelectNotLike() :  Fl_Window(1280,400,620,310,"SQL-Interface"){	 
+SelectNotLike::SelectNotLike() :  Fl_Window(600,400,620,310,"SQL-Interface"){	 
 		
     color(FL_WHITE);
     begin();
@@ -2671,7 +2672,7 @@ SelectNotLike::SelectNotLike() :  Fl_Window(1280,400,620,310,"SQL-Interface"){
     show();
 }
 
-SelectMinOrMax::SelectMinOrMax() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectMinOrMax::SelectMinOrMax() : Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -2695,7 +2696,7 @@ SelectMinOrMax::SelectMinOrMax() : Fl_Window(1280,400,620,310,"SQL-Interface"){
     show();
 }
 
-SelectMinOrMaxWhere::SelectMinOrMaxWhere() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectMinOrMaxWhere::SelectMinOrMaxWhere() : Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -2723,7 +2724,7 @@ SelectMinOrMaxWhere::SelectMinOrMaxWhere() : Fl_Window(1280,400,620,310,"SQL-Int
     show();
 }
 
-SelectWhereOneColumn::SelectWhereOneColumn() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectWhereOneColumn::SelectWhereOneColumn() : Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -2745,7 +2746,7 @@ SelectWhereOneColumn::SelectWhereOneColumn() : Fl_Window(1280,400,620,310,"SQL-I
     show();
 }
 
-SelectWhere::SelectWhere()  : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectWhere::SelectWhere()  : Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -2770,7 +2771,7 @@ SelectWhere::SelectWhere()  : Fl_Window(1280,400,620,310,"SQL-Interface"){
 
 }
 
-SelectWhereBool::SelectWhereBool() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectWhereBool::SelectWhereBool() : Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -2799,7 +2800,7 @@ SelectWhereBool::SelectWhereBool() : Fl_Window(1280,400,620,310,"SQL-Interface")
     show();
 }
 
-SelectWhereOrderBy::SelectWhereOrderBy() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectWhereOrderBy::SelectWhereOrderBy() : Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -2830,7 +2831,7 @@ SelectWhereOrderBy::SelectWhereOrderBy() : Fl_Window(1280,400,620,310,"SQL-Inter
     show();
 }
 
-SelectSortTable::SelectSortTable() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectSortTable::SelectSortTable() : Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -2851,7 +2852,7 @@ SelectSortTable::SelectSortTable() : Fl_Window(1280,400,620,310,"SQL-Interface")
     show();
 }
 
-SelectCount::SelectCount() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectCount::SelectCount() : Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -2875,7 +2876,7 @@ SelectCount::SelectCount() : Fl_Window(1280,400,620,310,"SQL-Interface"){
     show();
 }
 
-SelectDistinct::SelectDistinct() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectDistinct::SelectDistinct() : Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -2894,7 +2895,7 @@ SelectDistinct::SelectDistinct() : Fl_Window(1280,400,620,310,"SQL-Interface"){
     show();
 }
 
-SelectCountDistinct::SelectCountDistinct() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectCountDistinct::SelectCountDistinct() : Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -2912,7 +2913,7 @@ SelectCountDistinct::SelectCountDistinct() : Fl_Window(1280,400,620,310,"SQL-Int
     show();
 }
 
-SelectAverageSum::SelectAverageSum()  : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectAverageSum::SelectAverageSum()  : Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -2932,7 +2933,7 @@ SelectAverageSum::SelectAverageSum()  : Fl_Window(1280,400,620,310,"SQL-Interfac
     show();
 }
 
-SelectSum::SelectSum()  : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectSum::SelectSum()  : Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -2952,7 +2953,7 @@ SelectSum::SelectSum()  : Fl_Window(1280,400,620,310,"SQL-Interface"){
     show();
 }
 
-SelectIn::SelectIn()   : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectIn::SelectIn()   : Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -2974,7 +2975,7 @@ SelectIn::SelectIn()   : Fl_Window(1280,400,620,310,"SQL-Interface"){
     show();
 }
 
-SelectBetween::SelectBetween()  : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectBetween::SelectBetween()  : Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -2998,7 +2999,7 @@ SelectBetween::SelectBetween()  : Fl_Window(1280,400,620,310,"SQL-Interface"){
     show();
 }
 
-SelectColumnsAlias::SelectColumnsAlias() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectColumnsAlias::SelectColumnsAlias() : Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -3018,7 +3019,7 @@ SelectColumnsAlias::SelectColumnsAlias() : Fl_Window(1280,400,620,310,"SQL-Inter
     show();
 }
 
-SelectTableAlias::SelectTableAlias() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectTableAlias::SelectTableAlias() : Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -3037,7 +3038,7 @@ SelectTableAlias::SelectTableAlias() : Fl_Window(1280,400,620,310,"SQL-Interface
     show();
 }
 
-SelectGroupBy::SelectGroupBy() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectGroupBy::SelectGroupBy() : Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -3062,7 +3063,7 @@ SelectGroupBy::SelectGroupBy() : Fl_Window(1280,400,620,310,"SQL-Interface"){
     show();
 }
 
-SelectGroupByOrderBy::SelectGroupByOrderBy(): Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectGroupByOrderBy::SelectGroupByOrderBy(): Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -3090,7 +3091,7 @@ SelectGroupByOrderBy::SelectGroupByOrderBy(): Fl_Window(1280,400,620,310,"SQL-In
     show();
 }
 
-SelectCountGroupByOrderBy::SelectCountGroupByOrderBy(): Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectCountGroupByOrderBy::SelectCountGroupByOrderBy(): Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -3120,7 +3121,7 @@ SelectCountGroupByOrderBy::SelectCountGroupByOrderBy(): Fl_Window(1280,400,620,3
     show();
 }
 
-SelectNull::SelectNull(): Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectNull::SelectNull(): Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -3139,7 +3140,7 @@ SelectNull::SelectNull(): Fl_Window(1280,400,620,310,"SQL-Interface"){
     show();
 }
 
-SelectInnerJoin::SelectInnerJoin() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectInnerJoin::SelectInnerJoin() : Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -3160,7 +3161,7 @@ SelectInnerJoin::SelectInnerJoin() : Fl_Window(1280,400,620,310,"SQL-Interface")
     show();
 }
 
-SelectRightJoin::SelectRightJoin() : Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectRightJoin::SelectRightJoin() : Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -3181,7 +3182,7 @@ SelectRightJoin::SelectRightJoin() : Fl_Window(1280,400,620,310,"SQL-Interface")
     show();
 }
 
-SelectLeftJoin::SelectLeftJoin(): Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectLeftJoin::SelectLeftJoin(): Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -3202,7 +3203,7 @@ SelectLeftJoin::SelectLeftJoin(): Fl_Window(1280,400,620,310,"SQL-Interface"){
     show();
 }
 
-SelectLimitWhereOrderBy::SelectLimitWhereOrderBy(): Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectLimitWhereOrderBy::SelectLimitWhereOrderBy(): Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -3224,7 +3225,7 @@ SelectLimitWhereOrderBy::SelectLimitWhereOrderBy(): Fl_Window(1280,400,620,310,"
     show();
 }
 
-SelectUnion::SelectUnion(): Fl_Window(1280,400,620,310,"SQL-Interface"){ 
+SelectUnion::SelectUnion(): Fl_Window(600,400,620,310,"SQL-Interface"){ 
 		
     color(FL_WHITE);
     begin();
@@ -3247,7 +3248,7 @@ SelectUnion::SelectUnion(): Fl_Window(1280,400,620,310,"SQL-Interface"){
 
 
 
-OutputWindow::OutputWindow(): Fl_Window(1280,400,800,400,"SQL-Interface"){
+OutputWindow::OutputWindow(): Fl_Window(600,400,600,400,"SQL-Interface"){
 	
 	color(FL_WHITE);
     begin();
