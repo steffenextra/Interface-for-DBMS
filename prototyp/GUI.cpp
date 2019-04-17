@@ -199,8 +199,14 @@ Fl_Check_Button *saveConf;
 
 		if(((Fl_Button*)w)->value()){
 		}
-		else{			
-			loadConf("config.txt");
+		else{		
+			if(!(port==0)){	
+				loadConf("config.txt");
+				connectionWindow->hide();
+				categoryWindow = new CategoryWindow();
+			}else{
+				connectoutput->value("Verbindung fehlgeschlagen");
+			}
 		}
 
 	}

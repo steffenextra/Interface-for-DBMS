@@ -27,12 +27,17 @@ void loadConf(char *name){
 
 	std::ifstream f;
 	std::string s;
+	std::vector<char> val (s.begin(), s.end());
 	f.open(name, std::ios::in);
+	int count =0;
+
 	while(!f.eof()){
 		getline(f,s);
-		//strcpy(puffer,s.c_str());	
-		std::cout << s << std::endl;
+		val.push_back(s.c_str());
+		count++;
 	}
+	connectionless(val.at(0), val.at(1), val.at(2),val.at(3),val.at(4), pathto, 0);
+
 
 }
 
