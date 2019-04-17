@@ -1,6 +1,5 @@
 #include "GUI.hpp"
 
-
 Fl_Box *box1;
 Fl_Input *host;
 Fl_Input *name;
@@ -15,6 +14,7 @@ Fl_Button *selectRequestButton;
 Fl_Button *backButton;
 Fl_Button *executeButton;
 Fl_Button *destroyWindow;
+Fl_Button *useConf;
 Fl_Input_Choice *databasesCommands;
 Fl_Input_Choice *tableCommands;
 Fl_Input_Choice *entryCommands;
@@ -163,6 +163,7 @@ Fl_Multiline_Output *tableOutput;
 Fl_Check_Button *feedbackM;
 Fl_Check_Button *feedbackAllM;
 Fl_Check_Button *queryM;
+Fl_Check_Button *saveConf;
 
 //Destruktoren fehlen
 
@@ -176,6 +177,7 @@ Fl_Check_Button *queryM;
 				
 				if (connectionless(host->value(),name->value(),pwd->value(),database->value(),port1,pathto,0)==1){
 				connectionWindow->hide();
+				conf(host->value(), name->value(), pwd->value(), database->value(), port1, saveConf->value());
 				categoryWindow = new CategoryWindow();
 				}else {
 					connectoutput->value("Verbindung fehlgeschlagen");
@@ -183,11 +185,24 @@ Fl_Check_Button *queryM;
 				}
 
 			}
+	
 			else{
 				//Exception
 			}
+	
 		}
 		
+	}
+
+
+	void whenPushedUseConf(Fl_Widget* w, void*){
+
+		if(((Fl_Button*)w)->value()){
+		}
+		else{			
+			loadConf("config.txt");
+		}
+
 	}
 
 	std::vector<std::string> charToVec(const char* value){
@@ -1764,7 +1779,9 @@ void whenPushedSelectNullExecute(Fl_Widget* w, void*){
 		connect->callback((Fl_Callback*) whenPushedConnect);
 		connectoutput = new Fl_Output(170,260,200,30, "Meldung"); 
 		connectoutput->callback((Fl_Callback*)whenPushedConnect);
-        
+		saveConf = new Fl_Check_Button(350, 220,100,30, "Konfiguration speichern");
+        useConf = new Fl_Button(410,0,150,30, "Konfiguration laden");
+        useConf->callback((Fl_Callback*)whenPushedUseConf);
         end();
         show();
     }

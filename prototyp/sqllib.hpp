@@ -20,9 +20,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <vector>
+#include <fstream>
 
+//---conf_save---
 
-
+void conf(const char host [], const char user [], const char password [], const char database [], int port, bool safeconf);
+void loadConf(char *name);
 
 //---Connection---
 
@@ -96,3 +99,8 @@ std::string selectNull(std::string tableName, std::string columnName);
 std::string selectInnerJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo);
 std::string selectLeftJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo);
 std::string selectRightJoin(std::string firstTableName, std::string columnIDTableOne,std:: vector <std::string> columnsTableOne,std::string secondTableName,std::vector <std::string> columnsTableTwo);
+
+
+
+
+
