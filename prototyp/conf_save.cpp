@@ -18,7 +18,7 @@ void conf( const char host [], const char user [], const char password [], const
 			in << port << std::endl;
 			in.close();
 		}
-	
+
 	}
 
 }
@@ -33,10 +33,10 @@ void loadConf(char *name){
 
 	while(!f.eof()){
 		getline(f,s);
-		val.push_back(s.c_str());
+//		val.push_back(s.c_str());
 		count++;
 	}
-	connectionless(val.at(0), val.at(1), val.at(2),val.at(3),val.at(4), pathto, 0);
+//	connectionless(val.at(0), val.at(1), val.at(2),val.at(3),val.at(4), pathto, 0);
 
 
 }
