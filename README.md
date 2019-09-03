@@ -12,7 +12,7 @@
 
 <b>	---Einrichtung---	</b>
 
- Der Socket für XAMPP auf Linux sowie MAMP auf MacOS wurden bereits implementiert falls diese Bibliothek local genutzt werden soll.<br>
+ Der Socket für XAMPP auf Unix-Systemen sowie MAMP auf MacOS wurden bereits implementiert falls diese Bibliothek local genutzt werden soll.<br>
 
  Sollte die Anwendung nicht Lokal genutzt werden, muss der Ort an dem der spezifische SQL-Socket <br>
  clientseitig liegt identifiziert werden um mit dem SQL-Server zu kommunizieren.<br>
